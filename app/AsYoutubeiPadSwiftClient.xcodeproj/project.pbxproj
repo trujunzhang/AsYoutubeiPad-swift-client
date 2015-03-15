@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5E1F0DBB1AB5A70700254A82 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E1F0DBA1AB5A70700254A82 /* SWRevealViewController.m */; };
 		5EB2B7F11AB5A30000ABF1F8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EB2B7F01AB5A30000ABF1F8 /* AppDelegate.swift */; };
 		5EB2B7F31AB5A30000ABF1F8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EB2B7F21AB5A30000ABF1F8 /* ViewController.swift */; };
 		5EB2B7F61AB5A30000ABF1F8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5EB2B7F41AB5A30000ABF1F8 /* Main.storyboard */; };
@@ -26,6 +27,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5E1F0DB91AB5A70700254A82 /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
+		5E1F0DBA1AB5A70700254A82 /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
 		5EB2B7EB1AB5A30000ABF1F8 /* AsYoutubeiPadSwiftClient.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AsYoutubeiPadSwiftClient.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5EB2B7EF1AB5A30000ABF1F8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5EB2B7F01AB5A30000ABF1F8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -56,9 +59,36 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5E1F0DB51AB5A5F800254A82 /* dependencies */ = {
+			isa = PBXGroup;
+			children = (
+				5E1F0DB81AB5A70700254A82 /* SWRevealViewController */,
+			);
+			name = dependencies;
+			sourceTree = "<group>";
+		};
+		5E1F0DB61AB5A62D00254A82 /* modules */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = modules;
+			sourceTree = "<group>";
+		};
+		5E1F0DB81AB5A70700254A82 /* SWRevealViewController */ = {
+			isa = PBXGroup;
+			children = (
+				5E1F0DB91AB5A70700254A82 /* SWRevealViewController.h */,
+				5E1F0DBA1AB5A70700254A82 /* SWRevealViewController.m */,
+			);
+			name = SWRevealViewController;
+			path = ../../../../wanghaogithub720/cocoapods/Cocoapods_Libraries/SWRevealViewController/SWRevealViewController;
+			sourceTree = "<group>";
+		};
 		5EB2B7E21AB5A30000ABF1F8 = {
 			isa = PBXGroup;
 			children = (
+				5E1F0DB61AB5A62D00254A82 /* modules */,
+				5E1F0DB51AB5A5F800254A82 /* dependencies */,
 				5EB2B7ED1AB5A30000ABF1F8 /* AsYoutubeiPadSwiftClient */,
 				5EB2B8031AB5A30000ABF1F8 /* AsYoutubeiPadSwiftClientTests */,
 				5EB2B7EC1AB5A30000ABF1F8 /* Products */,
@@ -215,6 +245,7 @@
 			files = (
 				5EB2B7F31AB5A30000ABF1F8 /* ViewController.swift in Sources */,
 				5EB2B7F11AB5A30000ABF1F8 /* AppDelegate.swift in Sources */,
+				5E1F0DBB1AB5A70700254A82 /* SWRevealViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -412,6 +443,7 @@
 				5EB2B80C1AB5A30000ABF1F8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		5EB2B80D1AB5A30000ABF1F8 /* Build configuration list for PBXNativeTarget "AsYoutubeiPadSwiftClientTests" */ = {
 			isa = XCConfigurationList;
@@ -420,6 +452,7 @@
 				5EB2B80F1AB5A30000ABF1F8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
