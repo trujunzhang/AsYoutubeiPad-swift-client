@@ -1,0 +1,15 @@
+PODS:
+  - AsyncDisplayKit (111.1.1):
+    - AsyncDisplayKit/ASDealloc2MainObject (= 111.1.1)
+  - AsyncDisplayKit/ASDealloc2MainObject (111.1.1)
+  - SWRevealViewController (111.1.1)
+
+DEPENDENCIES:
+  - AsyncDisplayKit
+  - SWRevealViewController
+
+SPEC CHECKSUMS:
+  AsyncDisplayKit: 3f2a66bc0d6fc2cf4fc9d02d756d2c80edee51e2
+  SWRevealViewController: 43466a1aa9210c763645bd6c3e75ca59261723aa
+
+COCOAPODS: 0.35.0
