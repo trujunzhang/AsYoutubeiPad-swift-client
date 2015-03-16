@@ -19,6 +19,9 @@ target 'AsYoutubeiPadSwiftClient', :exclusive => true do
 
   pod 'AsyncDisplayKit'
 
-  pod 'Google-API-Client'
+  pod 'Google-API-Client/YouTube'
+
+  # ________________project library___________________
+  pod "App_Module_Resources", :path => "../modules/App_Module_Resources"
 
 end

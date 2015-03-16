@@ -482,6 +482,7 @@
 		5E86FF3C1AB5C58B00283DF8 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				5ECF1C731AB6CC2B007C9B72 /* youtube_slide_menu */,
 				5E86FF3D1AB5C5A500283DF8 /* Business-Logic-Layer */,
 			);
 			name = Modules;
@@ -504,9 +505,17 @@
 			name = tabbars;
 			sourceTree = "<group>";
 		};
+		5E89359F1AB6CFD6008EA8DD /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
 		5EBCDCE71AB5C22C0023F037 = {
 			isa = PBXGroup;
 			children = (
+				5E89359F1AB6CFD6008EA8DD /* Resources */,
 				5E86FF3C1AB5C58B00283DF8 /* Modules */,
 				5E86FF3B1AB5C58200283DF8 /* Dependencies */,
 				5EBCDCF21AB5C22C0023F037 /* AsYoutubeiPadSwiftClient */,
@@ -918,6 +927,13 @@
 			path = "../dependencies/YouTubeAPI3-Objective-C-wrapper/Pod/Classes/YoutubeVideo-Extends";
 			sourceTree = "<group>";
 		};
+		5ECF1C731AB6CC2B007C9B72 /* youtube_slide_menu */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = youtube_slide_menu;
+			sourceTree = "<group>";
+		};
 		5ED70A9A1AB6B59800DFB2AE /* RequestHelper */ = {
 			isa = PBXGroup;
 			children = (
@@ -1319,6 +1335,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				GCC_WARN_ABOUT_DEPRECATED_FUNCTIONS = NO;
+				GCC_WARN_UNUSED_FUNCTION = NO;
+				GCC_WARN_UNUSED_VALUE = NO;
+				GCC_WARN_UNUSED_VARIABLE = NO;
 				INFOPLIST_FILE = AsYoutubeiPadSwiftClient/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1333,6 +1353,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				GCC_WARN_ABOUT_DEPRECATED_FUNCTIONS = NO;
+				GCC_WARN_UNUSED_FUNCTION = NO;
+				GCC_WARN_UNUSED_VALUE = NO;
+				GCC_WARN_UNUSED_VARIABLE = NO;
 				INFOPLIST_FILE = AsYoutubeiPadSwiftClient/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
