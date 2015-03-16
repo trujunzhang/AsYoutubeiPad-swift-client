@@ -3,6 +3,21 @@ source 'https://github.com/CocoaPods/Specs.git'
 platform :ios, 7.0
 
 target 'AsYoutubeiPadSwiftClient', :exclusive => true do
-  pod 'AsyncDisplayKit'
+  # ________________common tools library___________________
+
+  pod 'ASImageResize'
+  pod 'XMLDictionary'
+  pod 'Regexer'
+  pod 'Bolts'
+  pod 'SDWebImage'
+  pod 'AFNetworking'
   pod 'SWRevealViewController'
+  pod 'ISMemoryCache'
+  pod 'EGOCache'
+  pod 'SQPersist'
+
+  pod 'AsyncDisplayKit'
+
+  pod 'Google-API-Client'
+
 end
