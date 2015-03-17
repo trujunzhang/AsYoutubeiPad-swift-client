@@ -8,27 +8,64 @@
 
 import UIKit
 
+
 class SubscriptionsViewController: UIViewController {
 
+    @IBOutlet var textxx: UITextField!
+
     @IBOutlet var menuButton: UIBarButtonItem!
+//    var menuTableViewController: AsMenuTableViewController
+
+
     override func viewDidLoad() {
         super.viewDidLoad()
-
-
 
         // Do any additional setup after loading the view.
         if self.revealViewController() != nil {
             menuButton.target = self.revealViewController()
             menuButton.action = "revealToggle:"
-            self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
+            self.view.addGestureRecognizer(self.revealViewController().tapGestureRecognizer())
         }
+
+
+        self.makeAsMenuTableViewController()
+
+    }
+
+    func makeAsMenuTableViewController(){
+        var menuViewController:AsMenuTableViewController = AsMenuTableViewController()
+        self.addChildViewController(menuViewController)
+        
+        var addView =  menuViewController.view;
+        self.view.addSubview(addView)
+        
+        menuViewController.didMoveToParentViewController(self)
+
+        
+        addView.frame=self.view.bounds;
+        
+    }
+
+
+    func fetchingData(){
+        let AFHTTPManager = AFHTTPRequestOperationManager()
+        AFHTTPManager.GET(
+            "http://api.openweathermap.org/data/2.5/forecast/daily?q=atlanta&mode=json&units=metric&cnt=5",
+            parameters: nil,
+            success: {(operation: AFHTTPRequestOperation!,responseObject: AnyObject!) in
+                println("Data is : " + responseObject.description)
+//                self.textxx!.text = responseObject.description
+            },
+            failure: { (operation: AFHTTPRequestOperation!,error: NSError!)in
+                println("Error: " + error.localizedDescription)
+        })
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
+
 
     /*
     // MARK: - Navigation

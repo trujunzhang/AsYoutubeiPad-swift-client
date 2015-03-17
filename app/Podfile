@@ -25,3 +25,10 @@ target 'AsYoutubeiPadSwiftClient', :exclusive => true do
   pod "App_Module_Resources", :path => "../modules/App_Module_Resources"
 
 end
+
+
+target 'AsYoutubeiPadSwiftClientTests', :exclusive => true do
+
+    pod 'Expecta'
+    
+end
