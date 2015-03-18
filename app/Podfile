@@ -1,25 +1,36 @@
 source 'https://github.com/CocoaPods/Specs.git'
-
-platform :ios, 7.0
+platform :ios, '8.0'
+#use_frameworks!
 
 inhibit_all_warnings!
 
+link_with 'AsYoutubeiPadSwiftClient', 'AsYoutubeiPadSwiftClientTests'
+
+def import_pods
+    pod 'XMLDictionary'
+    pod 'Regexer'
+    pod 'Bolts'
+    
+#    pod 'SDWebImage'
+
+    pod 'SWRevealViewController'
+#    pod 'ISMemoryCache'
+#    pod 'EGOCache'
+
+    pod 'SQPersist'
+
+    pod 'AsyncDisplayKit'
+
+    pod 'Google-API-Client/YouTube'
+
+    pod 'AFNetworking'
+
+end
+
 target 'AsYoutubeiPadSwiftClient', :exclusive => true do
   # ________________common tools library___________________
+  import_pods
 
-  pod 'XMLDictionary'
-  pod 'Regexer'
-  pod 'Bolts'
-  pod 'SDWebImage'
-  pod 'AFNetworking'
-  pod 'SWRevealViewController'
-  pod 'ISMemoryCache'
-  pod 'EGOCache'
-  pod 'SQPersist'
-
-  pod 'AsyncDisplayKit'
-
-  pod 'Google-API-Client/YouTube'
 
   # ________________project library___________________
   pod "App_Module_Resources", :path => "../modules/App_Module_Resources"
@@ -28,7 +39,12 @@ end
 
 
 target 'AsYoutubeiPadSwiftClientTests', :exclusive => true do
+  import_pods
 
-    pod 'Expecta'
-    
+    #pod 'Expecta'
+    pod 'OCMock'
+    pod 'OCMockito'
+
+
+
 end

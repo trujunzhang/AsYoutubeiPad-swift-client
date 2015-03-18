@@ -8,6 +8,9 @@
 
 import UIKit
 
+import Alamofire
+import Haneke
+
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
@@ -23,7 +26,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     func setupRevealViewController(){
+        
+        Alamofire.request(.GET, "http://httpbin.org/get", parameters: ["foo": "bar"])
+            .response { (request, response, data, error) in
+                println(request)
+                println(response)
+                println(error)
+        }
 
+        
+        let cache = Cache<JSON>(name: "github")
+        let URL = NSURL(string: "https://api.github.com/users/haneke")!
+        
+        cache.fetch(URL: URL).onSuccess { JSON in
+            println(JSON.dictionary?["bio"])
+        }
     }
 
     func applicationWillResignActive(application: UIApplication) {

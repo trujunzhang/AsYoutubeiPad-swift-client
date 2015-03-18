@@ -7,7 +7,7 @@
 //
 
 #import "YoutubeParser.h"
-#import "ISMemoryCache.h"
+//#import "ISMemoryCache.h"
 #import "RXMatch.h"
 #import "NSString+Regexer.h"
 #import "YoutubeConstants.h"
@@ -317,15 +317,15 @@
 #pragma mark -
 #pragma mark Url cache
 
-
-+ (void)cacheWithKey:(NSString *)key withValue:(id)value {
-    [[ISMemoryCache sharedCache] setObject:value forKey:key];
-}
-
-
-+ (id)queryCacheWithKey:(NSString *)key {
-    return [[ISMemoryCache sharedCache] objectForKey:key];
-}
+//
+//+ (void)cacheWithKey:(NSString *)key withValue:(id)value {
+//    [[ISMemoryCache sharedCache] setObject:value forKey:key];
+//}
+//
+//
+//+ (id)queryCacheWithKey:(NSString *)key {
+//    return [[ISMemoryCache sharedCache] objectForKey:key];
+//}
 
 #pragma mark -
 #pragma mark

@@ -80,4 +80,4 @@ Podfile.lock
 
 # customize plugins
 .DS_Store
-
+Carthage

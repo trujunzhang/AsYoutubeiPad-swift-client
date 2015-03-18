@@ -7,7 +7,7 @@
 //
 
 #import "SDWebImageCacheImplement.h"
-#import "SDImageCache.h"
+//#import "SDImageCache.h"
 #import "SDWebImageManager.h"
 
 

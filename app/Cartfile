@@ -1,0 +1,5 @@
+github "Alamofire/Alamofire" >= 1.1
+github "petejkim/expecta"
+github "Quick/Quick"
+github "Haneke/HanekeSwift"
+

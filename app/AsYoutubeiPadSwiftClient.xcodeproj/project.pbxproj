@@ -7,11 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		5E31803C1AB6B08700AA3F33 /* AsyncDisplayKitStatic.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E3180201AB6B08700AA3F33 /* AsyncDisplayKitStatic.m */; };
-		5E31803D1AB6B08800AA3F33 /* AsCacheMultiplexImageNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E3180231AB6B08700AA3F33 /* AsCacheMultiplexImageNode.m */; };
-		5E31803E1AB6B08800AA3F33 /* ASCacheNetworkImageNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E3180251AB6B08700AA3F33 /* ASCacheNetworkImageNode.m */; };
-		5E31803F1AB6B08800AA3F33 /* ImageCacheInterface.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E3180281AB6B08700AA3F33 /* ImageCacheInterface.m */; };
-		5E3180401AB6B08800AA3F33 /* SDWebImageCacheImplement.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E31802A1AB6B08700AA3F33 /* SDWebImageCacheImplement.m */; };
 		5E3180411AB6B08800AA3F33 /* DebugUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E31802D1AB6B08700AA3F33 /* DebugUtils.m */; };
 		5E3180421AB6B08800AA3F33 /* ImageViewEffect.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E3180301AB6B08700AA3F33 /* ImageViewEffect.m */; };
 		5E3180431AB6B08800AA3F33 /* NSString+PJR.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E3180331AB6B08700AA3F33 /* NSString+PJR.m */; };
@@ -19,6 +14,12 @@
 		5E3180451AB6B08800AA3F33 /* FileOwner.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E3180391AB6B08700AA3F33 /* FileOwner.m */; };
 		5E3180461AB6B08800AA3F33 /* UIView+Ext.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E31803B1AB6B08700AA3F33 /* UIView+Ext.m */; };
 		5E32E8111AB6DFC8008931F6 /* AsMenuTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E32E8101AB6DFC8008931F6 /* AsMenuTableViewController.swift */; };
+		5E39F8871AB91E5C00A285AE /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E39F8861AB91E5C00A285AE /* Alamofire.framework */; };
+		5E39F88A1AB91EF000A285AE /* Haneke.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E39F8891AB91EF000A285AE /* Haneke.framework */; };
+		5E5EF9661AB831CB00CCB831 /* MySwiftClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E6062021AB81D8600FED7E5 /* MySwiftClass.swift */; };
+		5E6062031AB81D8600FED7E5 /* MySwiftClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E6062021AB81D8600FED7E5 /* MySwiftClass.swift */; };
+		5E78F67A1AB83681006799F1 /* AsMenuTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E32E8101AB6DFC8008931F6 /* AsMenuTableViewController.swift */; };
+		5E78F67B1AB836B1006799F1 /* SubscriptionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E86FF411AB5C5C800283DF8 /* SubscriptionsViewController.swift */; };
 		5E86FF3F1AB5C5B300283DF8 /* LeftMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E86FF3E1AB5C5B300283DF8 /* LeftMenuViewController.swift */; };
 		5E86FF421AB5C5C800283DF8 /* SubscriptionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E86FF411AB5C5C800283DF8 /* SubscriptionsViewController.swift */; };
 		5E9E1ECB1AB7226F00523CC0 /* GYWrapSubscriptionsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E9E1ECA1AB7226F00523CC0 /* GYWrapSubscriptionsTests.swift */; };
@@ -34,7 +35,6 @@
 		5ECB223A1AB6AF03001C510D /* MABYT3_ActivityRecommendation.m in Sources */ = {isa = PBXBuildFile; fileRef = 5ECB217E1AB6AF03001C510D /* MABYT3_ActivityRecommendation.m */; };
 		5ECB223B1AB6AF03001C510D /* MABYT3_ActivitySnippet.m in Sources */ = {isa = PBXBuildFile; fileRef = 5ECB21801AB6AF03001C510D /* MABYT3_ActivitySnippet.m */; };
 		5ECB223C1AB6AF03001C510D /* MABYT3_ActivitySocial.m in Sources */ = {isa = PBXBuildFile; fileRef = 5ECB21821AB6AF03001C510D /* MABYT3_ActivitySocial.m */; };
-		5ECB223D1AB6AF03001C510D /* MABYT3_APIRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 5ECB21851AB6AF03001C510D /* MABYT3_APIRequest.m */; };
 		5ECB223E1AB6AF03001C510D /* MABYT3_Track.m in Sources */ = {isa = PBXBuildFile; fileRef = 5ECB21881AB6AF03001C510D /* MABYT3_Track.m */; };
 		5ECB223F1AB6AF03001C510D /* MABYT3_Transcript.m in Sources */ = {isa = PBXBuildFile; fileRef = 5ECB218A1AB6AF03001C510D /* MABYT3_Transcript.m */; };
 		5ECB22401AB6AF03001C510D /* MABYT3_TranscriptList.m in Sources */ = {isa = PBXBuildFile; fileRef = 5ECB218C1AB6AF03001C510D /* MABYT3_TranscriptList.m */; };
@@ -111,13 +111,12 @@
 		5ECB22891AB6AF03001C510D /* YoutubeAuthInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 5ECB22311AB6AF03001C510D /* YoutubeAuthInfo.m */; };
 		5ECB228A1AB6AF03001C510D /* YoutubeVideoCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 5ECB22341AB6AF03001C510D /* YoutubeVideoCache.m */; };
 		5ECB228B1AB6AF03001C510D /* YoutubeVideoDescriptionStringAttribute.m in Sources */ = {isa = PBXBuildFile; fileRef = 5ECB22361AB6AF03001C510D /* YoutubeVideoDescriptionStringAttribute.m */; };
-		5ED70AA71AB6B59800DFB2AE /* GYoutubeHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 5ED70A9C1AB6B59800DFB2AE /* GYoutubeHelper.m */; };
 		5ED70AA81AB6B59800DFB2AE /* GYoutubeAuthUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 5ED70A9F1AB6B59800DFB2AE /* GYoutubeAuthUser.m */; };
 		5ED70AA91AB6B59800DFB2AE /* GYoutubeRequestInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 5ED70AA11AB6B59800DFB2AE /* GYoutubeRequestInfo.m */; };
 		5ED70AAA1AB6B59800DFB2AE /* YoutubeResponseInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 5ED70AA31AB6B59800DFB2AE /* YoutubeResponseInfo.m */; };
 		5ED70AAB1AB6B59800DFB2AE /* YoutubeParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 5ED70AA61AB6B59800DFB2AE /* YoutubeParser.m */; };
-		7F09845E8DC1C8EC295BAC17 /* libPods-AsYoutubeiPadSwiftClient.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DB717ABE64B6EF2FE2ED8651 /* libPods-AsYoutubeiPadSwiftClient.a */; };
-		E3E217D3AD57040B11A0671B /* libPods-AsYoutubeiPadSwiftClientTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 570C823272A10512F52E3473 /* libPods-AsYoutubeiPadSwiftClientTests.a */; };
+		D02DC44C1D388FF8D47CD4D2 /* libPods-AsYoutubeiPadSwiftClient.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 643CB5AECE13A0D50F097746 /* libPods-AsYoutubeiPadSwiftClient.a */; };
+		E51B8F7E257266B73D3B2A0D /* libPods-AsYoutubeiPadSwiftClientTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C3B0BF885CDA89AA03EAAB2 /* libPods-AsYoutubeiPadSwiftClientTests.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -131,18 +130,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		570C823272A10512F52E3473 /* libPods-AsYoutubeiPadSwiftClientTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-AsYoutubeiPadSwiftClientTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		5E31801F1AB6B08700AA3F33 /* AsyncDisplayKitStatic.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AsyncDisplayKitStatic.h; sourceTree = "<group>"; };
-		5E3180201AB6B08700AA3F33 /* AsyncDisplayKitStatic.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AsyncDisplayKitStatic.m; sourceTree = "<group>"; };
-		5E3180221AB6B08700AA3F33 /* AsCacheMultiplexImageNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AsCacheMultiplexImageNode.h; sourceTree = "<group>"; };
-		5E3180231AB6B08700AA3F33 /* AsCacheMultiplexImageNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AsCacheMultiplexImageNode.m; sourceTree = "<group>"; };
-		5E3180241AB6B08700AA3F33 /* ASCacheNetworkImageNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASCacheNetworkImageNode.h; sourceTree = "<group>"; };
-		5E3180251AB6B08700AA3F33 /* ASCacheNetworkImageNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASCacheNetworkImageNode.m; sourceTree = "<group>"; };
-		5E3180261AB6B08700AA3F33 /* CacheImageConstant.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CacheImageConstant.h; sourceTree = "<group>"; };
-		5E3180271AB6B08700AA3F33 /* ImageCacheInterface.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageCacheInterface.h; sourceTree = "<group>"; };
-		5E3180281AB6B08700AA3F33 /* ImageCacheInterface.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageCacheInterface.m; sourceTree = "<group>"; };
-		5E3180291AB6B08700AA3F33 /* SDWebImageCacheImplement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDWebImageCacheImplement.h; sourceTree = "<group>"; };
-		5E31802A1AB6B08700AA3F33 /* SDWebImageCacheImplement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDWebImageCacheImplement.m; sourceTree = "<group>"; };
+		1C3B0BF885CDA89AA03EAAB2 /* libPods-AsYoutubeiPadSwiftClientTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-AsYoutubeiPadSwiftClientTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5E31802C1AB6B08700AA3F33 /* DebugUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DebugUtils.h; sourceTree = "<group>"; };
 		5E31802D1AB6B08700AA3F33 /* DebugUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DebugUtils.m; sourceTree = "<group>"; };
 		5E31802F1AB6B08700AA3F33 /* ImageViewEffect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageViewEffect.h; sourceTree = "<group>"; };
@@ -156,6 +144,9 @@
 		5E31803A1AB6B08700AA3F33 /* UIView+Ext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Ext.h"; sourceTree = "<group>"; };
 		5E31803B1AB6B08700AA3F33 /* UIView+Ext.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Ext.m"; sourceTree = "<group>"; };
 		5E32E8101AB6DFC8008931F6 /* AsMenuTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AsMenuTableViewController.swift; path = ../modules/youtube_slide_menu/Pod/Classes/TableViewController/AsMenuTableViewController.swift; sourceTree = "<group>"; };
+		5E39F8861AB91E5C00A285AE /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
+		5E39F8891AB91EF000A285AE /* Haneke.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Haneke.framework; path = Carthage/Build/iOS/Haneke.framework; sourceTree = "<group>"; };
+		5E6062021AB81D8600FED7E5 /* MySwiftClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MySwiftClass.swift; sourceTree = "<group>"; };
 		5E86FF3E1AB5C5B300283DF8 /* LeftMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LeftMenuViewController.swift; path = "../modules/Business-Logic-Layer/Pod/Classes/leftmenu/LeftMenuViewController.swift"; sourceTree = "<group>"; };
 		5E86FF411AB5C5C800283DF8 /* SubscriptionsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SubscriptionsViewController.swift; path = "../modules/Business-Logic-Layer/Pod/Classes/tabbars/SubscriptionsViewController.swift"; sourceTree = "<group>"; };
 		5E9902301AB5C3C700391615 /* AsYoutubeiPadSwiftClient-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "AsYoutubeiPadSwiftClient-Bridging-Header.h"; sourceTree = "<group>"; };
@@ -182,8 +173,6 @@
 		5ECB21801AB6AF03001C510D /* MABYT3_ActivitySnippet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MABYT3_ActivitySnippet.m; sourceTree = "<group>"; };
 		5ECB21811AB6AF03001C510D /* MABYT3_ActivitySocial.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MABYT3_ActivitySocial.h; sourceTree = "<group>"; };
 		5ECB21821AB6AF03001C510D /* MABYT3_ActivitySocial.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MABYT3_ActivitySocial.m; sourceTree = "<group>"; };
-		5ECB21841AB6AF03001C510D /* MABYT3_APIRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MABYT3_APIRequest.h; sourceTree = "<group>"; };
-		5ECB21851AB6AF03001C510D /* MABYT3_APIRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MABYT3_APIRequest.m; sourceTree = "<group>"; };
 		5ECB21871AB6AF03001C510D /* MABYT3_Track.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MABYT3_Track.h; sourceTree = "<group>"; };
 		5ECB21881AB6AF03001C510D /* MABYT3_Track.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MABYT3_Track.m; sourceTree = "<group>"; };
 		5ECB21891AB6AF03001C510D /* MABYT3_Transcript.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MABYT3_Transcript.h; sourceTree = "<group>"; };
@@ -339,8 +328,6 @@
 		5ECB22341AB6AF03001C510D /* YoutubeVideoCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YoutubeVideoCache.m; sourceTree = "<group>"; };
 		5ECB22351AB6AF03001C510D /* YoutubeVideoDescriptionStringAttribute.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YoutubeVideoDescriptionStringAttribute.h; sourceTree = "<group>"; };
 		5ECB22361AB6AF03001C510D /* YoutubeVideoDescriptionStringAttribute.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YoutubeVideoDescriptionStringAttribute.m; sourceTree = "<group>"; };
-		5ED70A9B1AB6B59800DFB2AE /* GYoutubeHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GYoutubeHelper.h; sourceTree = "<group>"; };
-		5ED70A9C1AB6B59800DFB2AE /* GYoutubeHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GYoutubeHelper.m; sourceTree = "<group>"; };
 		5ED70A9E1AB6B59800DFB2AE /* GYoutubeAuthUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GYoutubeAuthUser.h; sourceTree = "<group>"; };
 		5ED70A9F1AB6B59800DFB2AE /* GYoutubeAuthUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GYoutubeAuthUser.m; sourceTree = "<group>"; };
 		5ED70AA01AB6B59800DFB2AE /* GYoutubeRequestInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GYoutubeRequestInfo.h; sourceTree = "<group>"; };
@@ -351,11 +338,11 @@
 		5ED70AA51AB6B59800DFB2AE /* YoutubeParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YoutubeParser.h; sourceTree = "<group>"; };
 		5ED70AA61AB6B59800DFB2AE /* YoutubeParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YoutubeParser.m; sourceTree = "<group>"; };
 		5ED70AAC1AB6B64800DFB2AE /* GTLYouTube_Sources.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GTLYouTube_Sources.h; sourceTree = "<group>"; };
+		643CB5AECE13A0D50F097746 /* libPods-AsYoutubeiPadSwiftClient.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-AsYoutubeiPadSwiftClient.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7691D91426A5CCFB076684C4 /* Pods-AsYoutubeiPadSwiftClientTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AsYoutubeiPadSwiftClientTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-AsYoutubeiPadSwiftClientTests/Pods-AsYoutubeiPadSwiftClientTests.release.xcconfig"; sourceTree = "<group>"; };
 		922EFBB0ED0EC42B0E9566FB /* Pods-AsYoutubeiPadSwiftClient.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AsYoutubeiPadSwiftClient.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AsYoutubeiPadSwiftClient/Pods-AsYoutubeiPadSwiftClient.debug.xcconfig"; sourceTree = "<group>"; };
 		A9C2C565D43AC6F2DCD40AD1 /* Pods-AsYoutubeiPadSwiftClient.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AsYoutubeiPadSwiftClient.release.xcconfig"; path = "Pods/Target Support Files/Pods-AsYoutubeiPadSwiftClient/Pods-AsYoutubeiPadSwiftClient.release.xcconfig"; sourceTree = "<group>"; };
 		C8DB4AA29840FCCEE884154C /* Pods-AsYoutubeiPadSwiftClientTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AsYoutubeiPadSwiftClientTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AsYoutubeiPadSwiftClientTests/Pods-AsYoutubeiPadSwiftClientTests.debug.xcconfig"; sourceTree = "<group>"; };
-		DB717ABE64B6EF2FE2ED8651 /* libPods-AsYoutubeiPadSwiftClient.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-AsYoutubeiPadSwiftClient.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -363,7 +350,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7F09845E8DC1C8EC295BAC17 /* libPods-AsYoutubeiPadSwiftClient.a in Frameworks */,
+				5E39F88A1AB91EF000A285AE /* Haneke.framework in Frameworks */,
+				5E39F8871AB91E5C00A285AE /* Alamofire.framework in Frameworks */,
+				D02DC44C1D388FF8D47CD4D2 /* libPods-AsYoutubeiPadSwiftClient.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -371,7 +360,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E3E217D3AD57040B11A0671B /* libPods-AsYoutubeiPadSwiftClientTests.a in Frameworks */,
+				E51B8F7E257266B73D3B2A0D /* libPods-AsYoutubeiPadSwiftClientTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -381,8 +370,10 @@
 		533132D809B076BA3BF83C66 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				DB717ABE64B6EF2FE2ED8651 /* libPods-AsYoutubeiPadSwiftClient.a */,
-				570C823272A10512F52E3473 /* libPods-AsYoutubeiPadSwiftClientTests.a */,
+				5E39F8891AB91EF000A285AE /* Haneke.framework */,
+				5E39F8861AB91E5C00A285AE /* Alamofire.framework */,
+				643CB5AECE13A0D50F097746 /* libPods-AsYoutubeiPadSwiftClient.a */,
+				1C3B0BF885CDA89AA03EAAB2 /* libPods-AsYoutubeiPadSwiftClientTests.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -390,8 +381,6 @@
 		5E31801D1AB6B07800AA3F33 /* IOS_Collection_Code */ = {
 			isa = PBXGroup;
 			children = (
-				5E31801E1AB6B08700AA3F33 /* AsyncDisplayKitCatelog */,
-				5E3180211AB6B08700AA3F33 /* CacheImage */,
 				5E31802B1AB6B08700AA3F33 /* debug */,
 				5E31802E1AB6B08700AA3F33 /* effect */,
 				5E3180311AB6B08700AA3F33 /* uikit-Category */,
@@ -399,33 +388,6 @@
 				5E3180371AB6B08700AA3F33 /* xibViews */,
 			);
 			name = IOS_Collection_Code;
-			sourceTree = "<group>";
-		};
-		5E31801E1AB6B08700AA3F33 /* AsyncDisplayKitCatelog */ = {
-			isa = PBXGroup;
-			children = (
-				5E31801F1AB6B08700AA3F33 /* AsyncDisplayKitStatic.h */,
-				5E3180201AB6B08700AA3F33 /* AsyncDisplayKitStatic.m */,
-			);
-			name = AsyncDisplayKitCatelog;
-			path = ../dependencies/IOS_Collection_Code/Pod/Classes/AsyncDisplayKitCatelog;
-			sourceTree = "<group>";
-		};
-		5E3180211AB6B08700AA3F33 /* CacheImage */ = {
-			isa = PBXGroup;
-			children = (
-				5E3180221AB6B08700AA3F33 /* AsCacheMultiplexImageNode.h */,
-				5E3180231AB6B08700AA3F33 /* AsCacheMultiplexImageNode.m */,
-				5E3180241AB6B08700AA3F33 /* ASCacheNetworkImageNode.h */,
-				5E3180251AB6B08700AA3F33 /* ASCacheNetworkImageNode.m */,
-				5E3180261AB6B08700AA3F33 /* CacheImageConstant.h */,
-				5E3180271AB6B08700AA3F33 /* ImageCacheInterface.h */,
-				5E3180281AB6B08700AA3F33 /* ImageCacheInterface.m */,
-				5E3180291AB6B08700AA3F33 /* SDWebImageCacheImplement.h */,
-				5E31802A1AB6B08700AA3F33 /* SDWebImageCacheImplement.m */,
-			);
-			name = CacheImage;
-			path = ../dependencies/IOS_Collection_Code/Pod/Classes/CacheImage;
 			sourceTree = "<group>";
 		};
 		5E31802B1AB6B08700AA3F33 /* debug */ = {
@@ -556,6 +518,7 @@
 		5EBCDCF21AB5C22C0023F037 /* AsYoutubeiPadSwiftClient */ = {
 			isa = PBXGroup;
 			children = (
+				5E6062021AB81D8600FED7E5 /* MySwiftClass.swift */,
 				5EBCDCF51AB5C22C0023F037 /* AppDelegate.swift */,
 				5EBCDCF71AB5C22C0023F037 /* ViewController.swift */,
 				5EBCDCF91AB5C22C0023F037 /* Main.storyboard */,
@@ -613,7 +576,6 @@
 			isa = PBXGroup;
 			children = (
 				5ECB21761AB6AF03001C510D /* Activity */,
-				5ECB21831AB6AF03001C510D /* APICalls */,
 				5ECB21861AB6AF03001C510D /* Caption */,
 				5ECB218F1AB6AF03001C510D /* Channel */,
 				5ECB21B61AB6AF03001C510D /* ChannelSection */,
@@ -644,15 +606,6 @@
 				5ECB21821AB6AF03001C510D /* MABYT3_ActivitySocial.m */,
 			);
 			path = Activity;
-			sourceTree = "<group>";
-		};
-		5ECB21831AB6AF03001C510D /* APICalls */ = {
-			isa = PBXGroup;
-			children = (
-				5ECB21841AB6AF03001C510D /* MABYT3_APIRequest.h */,
-				5ECB21851AB6AF03001C510D /* MABYT3_APIRequest.m */,
-			);
-			path = APICalls;
 			sourceTree = "<group>";
 		};
 		5ECB21861AB6AF03001C510D /* Caption */ = {
@@ -958,8 +911,6 @@
 			isa = PBXGroup;
 			children = (
 				5ED70AAC1AB6B64800DFB2AE /* GTLYouTube_Sources.h */,
-				5ED70A9B1AB6B59800DFB2AE /* GYoutubeHelper.h */,
-				5ED70A9C1AB6B59800DFB2AE /* GYoutubeHelper.m */,
 				5ED70A9D1AB6B59800DFB2AE /* model */,
 				5ED70AA41AB6B59800DFB2AE /* YoutubeConstants.h */,
 				5ED70AA51AB6B59800DFB2AE /* YoutubeParser.h */,
@@ -1005,6 +956,7 @@
 				5EBCDCED1AB5C22C0023F037 /* Frameworks */,
 				5EBCDCEE1AB5C22C0023F037 /* Resources */,
 				C54BC0F442931D539EC210D5 /* Copy Pods Resources */,
+				5E39F8881AB91E6D00A285AE /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -1123,6 +1075,21 @@
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
+		5E39F8881AB91E6D00A285AE /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/Alamofire.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/Haneke.framework",
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/Volumes/macshare/SHARE/HomeBrew/homebrew-master/bin/carthage copy-frameworks";
+		};
 		8323D7F476C8F9D8444E7E6E /* Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -1165,7 +1132,6 @@
 				5ECB22611AB6AF03001C510D /* MABYT3_SubscriptionContentDetails.m in Sources */,
 				5ECB225F1AB6AF03001C510D /* MABYT3_SubscriberSnippet.m in Sources */,
 				5ECB22831AB6AF03001C510D /* NSString+Time.m in Sources */,
-				5E31803F1AB6B08800AA3F33 /* ImageCacheInterface.m in Sources */,
 				5ED70AA91AB6B59800DFB2AE /* GYoutubeRequestInfo.m in Sources */,
 				5ECB22771AB6AF03001C510D /* MABYT3_ConvertTranscriptToSrt.m in Sources */,
 				5ECB22441AB6AF03001C510D /* MABYT3_ChannelBrandingSettingsImage.m in Sources */,
@@ -1178,7 +1144,6 @@
 				5ED70AAB1AB6B59800DFB2AE /* YoutubeParser.m in Sources */,
 				5ECB22511AB6AF03001C510D /* MABYT3_ChannelSnippet.m in Sources */,
 				5ECB22451AB6AF03001C510D /* MABYT3_ChannelBrandingSettingsWatch.m in Sources */,
-				5E31803E1AB6B08800AA3F33 /* ASCacheNetworkImageNode.m in Sources */,
 				5ECB22421AB6AF03001C510D /* MABYT3_ChannelBrandingSettings.m in Sources */,
 				5ECB22581AB6AF03001C510D /* MABYT3_PlayListContentDetails.m in Sources */,
 				5ECB22851AB6AF03001C510D /* HCYoutubeParser.m in Sources */,
@@ -1190,7 +1155,6 @@
 				5E86FF421AB5C5C800283DF8 /* SubscriptionsViewController.swift in Sources */,
 				5ECB22601AB6AF03001C510D /* MABYT3_Subscription.m in Sources */,
 				5ECB22791AB6AF03001C510D /* MABYT3_Language.m in Sources */,
-				5ED70AA71AB6B59800DFB2AE /* GYoutubeHelper.m in Sources */,
 				5ECB22521AB6AF03001C510D /* MABYT3_ChannelStatistics.m in Sources */,
 				5ECB227C1AB6AF03001C510D /* MABYT3_RegionRestriction.m in Sources */,
 				5ECB22631AB6AF03001C510D /* MABYT3_AudioStreams.m in Sources */,
@@ -1210,7 +1174,6 @@
 				5ECB223A1AB6AF03001C510D /* MABYT3_ActivityRecommendation.m in Sources */,
 				5ECB22891AB6AF03001C510D /* YoutubeAuthInfo.m in Sources */,
 				5ECB223E1AB6AF03001C510D /* MABYT3_Track.m in Sources */,
-				5ECB223D1AB6AF03001C510D /* MABYT3_APIRequest.m in Sources */,
 				5ECB22701AB6AF03001C510D /* MABYT3_VideoSuggestions.m in Sources */,
 				5ECB22551AB6AF03001C510D /* MABYT3_ChannelSectionContentDetails.m in Sources */,
 				5ECB22821AB6AF03001C510D /* NSString+XMLEntities.m in Sources */,
@@ -1229,8 +1192,6 @@
 				5E32E8111AB6DFC8008931F6 /* AsMenuTableViewController.swift in Sources */,
 				5ECB226C1AB6AF03001C510D /* MABYT3_VideoSnippet.m in Sources */,
 				5ECB22401AB6AF03001C510D /* MABYT3_TranscriptList.m in Sources */,
-				5E31803C1AB6B08700AA3F33 /* AsyncDisplayKitStatic.m in Sources */,
-				5E31803D1AB6B08800AA3F33 /* AsCacheMultiplexImageNode.m in Sources */,
 				5ECB22471AB6AF03001C510D /* MABYT3_PropertyURL.m in Sources */,
 				5ECB22641AB6AF03001C510D /* MABYT3_ThumbnailDetails.m in Sources */,
 				5EBCDCF61AB5C22C0023F037 /* AppDelegate.swift in Sources */,
@@ -1248,6 +1209,7 @@
 				5ECB225C1AB6AF03001C510D /* MABYT3_PlayListItemSnippet.m in Sources */,
 				5ECB22881AB6AF03001C510D /* YoutubeAuthDataStore.m in Sources */,
 				5ECB225E1AB6AF03001C510D /* MABYT3_SearchItemSnippet.m in Sources */,
+				5E6062031AB81D8600FED7E5 /* MySwiftClass.swift in Sources */,
 				5ECB22751AB6AF03001C510D /* MAB_GLink.m in Sources */,
 				5ECB22841AB6AF03001C510D /* SYSubtitleItem.m in Sources */,
 				5ECB227A1AB6AF03001C510D /* MABYT3_Location.m in Sources */,
@@ -1262,7 +1224,6 @@
 				5ECB22671AB6AF03001C510D /* MABYT3_VideoFileDetails.m in Sources */,
 				5ECB22621AB6AF03001C510D /* MABYT3_SubscriptionSnippet.m in Sources */,
 				5ECB22541AB6AF03001C510D /* MABYT3_ChannelSection.m in Sources */,
-				5E3180401AB6B08800AA3F33 /* SDWebImageCacheImplement.m in Sources */,
 				5ECB22801AB6AF03001C510D /* GTMNSString+HTML.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1272,6 +1233,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				5E9E1ECB1AB7226F00523CC0 /* GYWrapSubscriptionsTests.swift in Sources */,
+				5E78F67B1AB836B1006799F1 /* SubscriptionsViewController.swift in Sources */,
+				5E5EF9661AB831CB00CCB831 /* MySwiftClass.swift in Sources */,
+				5E78F67A1AB83681006799F1 /* AsMenuTableViewController.swift in Sources */,
 				5EBCDD0C1AB5C22C0023F037 /* AsYoutubeiPadSwiftClientTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1391,6 +1355,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				GCC_WARN_ABOUT_DEPRECATED_FUNCTIONS = NO;
 				GCC_WARN_UNUSED_FUNCTION = NO;
 				GCC_WARN_UNUSED_VALUE = NO;
@@ -1409,6 +1377,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				GCC_WARN_ABOUT_DEPRECATED_FUNCTIONS = NO;
 				GCC_WARN_UNUSED_FUNCTION = NO;
 				GCC_WARN_UNUSED_VALUE = NO;
@@ -1436,6 +1408,7 @@
 				INFOPLIST_FILE = AsYoutubeiPadSwiftClientTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "AsYoutubeiPadSwiftClient/AsYoutubeiPadSwiftClient-Bridging-Header.h";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/AsYoutubeiPadSwiftClient.app/AsYoutubeiPadSwiftClient";
 			};
 			name = Debug;
@@ -1452,6 +1425,7 @@
 				INFOPLIST_FILE = AsYoutubeiPadSwiftClientTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "AsYoutubeiPadSwiftClient/AsYoutubeiPadSwiftClient-Bridging-Header.h";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/AsYoutubeiPadSwiftClient.app/AsYoutubeiPadSwiftClient";
 			};
 			name = Release;

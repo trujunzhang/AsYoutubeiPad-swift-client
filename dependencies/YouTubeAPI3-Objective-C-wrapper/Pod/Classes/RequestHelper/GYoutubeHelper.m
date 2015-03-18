@@ -84,10 +84,10 @@ static GYoutubeHelper *instance = nil;
     self.youTubeService.APIKey = apiKey;
 
     // 2
-    YTOAuth2Authentication *auth;
-    auth = [GTMOAuth2ViewControllerTouch authForGoogleFromKeychainForName:kKeychainItemName
-                                                                 clientID:kMyClientID
-                                                             clientSecret:kMyClientSecret];
+//    YTOAuth2Authentication *auth;
+//    auth = [GTMOAuth2ViewControllerTouch authForGoogleFromKeychainForName:kKeychainItemName
+//                                                                 clientID:kMyClientID
+//                                                             clientSecret:kMyClientSecret];
     // 3
     [self fetchAuthorizeInfo:auth];
 

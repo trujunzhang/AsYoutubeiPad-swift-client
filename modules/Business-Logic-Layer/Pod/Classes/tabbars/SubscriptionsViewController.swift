@@ -48,17 +48,17 @@ class SubscriptionsViewController: UIViewController {
 
 
     func fetchingData(){
-        let AFHTTPManager = AFHTTPRequestOperationManager()
-        AFHTTPManager.GET(
-            "http://api.openweathermap.org/data/2.5/forecast/daily?q=atlanta&mode=json&units=metric&cnt=5",
-            parameters: nil,
-            success: {(operation: AFHTTPRequestOperation!,responseObject: AnyObject!) in
-                println("Data is : " + responseObject.description)
-//                self.textxx!.text = responseObject.description
-            },
-            failure: { (operation: AFHTTPRequestOperation!,error: NSError!)in
-                println("Error: " + error.localizedDescription)
-        })
+//        let AFHTTPManager = AFHTTPRequestOperationManager()
+//        AFHTTPManager.GET(
+//            "http://api.openweathermap.org/data/2.5/forecast/daily?q=atlanta&mode=json&units=metric&cnt=5",
+//            parameters: nil,
+//            success: {(operation: AFHTTPRequestOperation!,responseObject: AnyObject!) in
+//                println("Data is : " + responseObject.description)
+////                self.textxx!.text = responseObject.description
+//            },
+//            failure: { (operation: AFHTTPRequestOperation!,error: NSError!)in
+//                println("Error: " + error.localizedDescription)
+//        })
     }
 
     override func didReceiveMemoryWarning() {
