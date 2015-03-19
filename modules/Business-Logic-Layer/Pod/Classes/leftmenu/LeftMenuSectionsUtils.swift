@@ -82,6 +82,31 @@ class LeftMenuSectionsUtils :NSObject{
     }
 
 
+    func getSignInMenuItemTree() -> MenuSectionItemInfo{
+        return
+              MenuSectionItemInfo(
+                  sectionIdentifier:    CellIdentifier.SignUserCellIdentifier,
+                  sectionType:          MenuSectionType.LMenuTreeUser,
+                  headerTitle:          "",
+                  rows:                 getSignUserCategoriess(),
+                  isHideTitle:          true,
+                  isRemoteImage:        false
+                  )
+    }
+
+
+    func getEmptySubscriptionsMenuItemTree() -> MenuSectionItemInfo{
+        return
+              MenuSectionItemInfo(
+                  sectionIdentifier:    CellIdentifier.SubscriptionsCellIdentifier,
+                  sectionType:          MenuSectionType.LMenuTreeSubscriptions,
+                  headerTitle:          "  Subscriptions",
+                  rows:                 [],
+                  isHideTitle:          false,
+                  isRemoteImage:        true
+                  )
+    }
+
 
 
 }
