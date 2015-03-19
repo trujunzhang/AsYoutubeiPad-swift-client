@@ -9,20 +9,20 @@
 import Foundation
 
 class LeftMenuSectionsUtils :NSObject{
-
+    
     enum MenuSectionType {
         case LMenuTreeCategories
         case LMenuTreeUser
         case LMenuTreeSubscriptions
     }
-
+    
     enum CellIdentifier {
         case CategoriesCellIdentifier
         case SignUserCellIdentifier
         case SubscriptionsCellIdentifier
     }
-
-
+    
+    
     struct MenuSectionItemInfo {
         var sectionIdentifier :    CellIdentifier
         var sectionType :          MenuSectionType
@@ -31,14 +31,14 @@ class LeftMenuSectionsUtils :NSObject{
         var isHideTitle :          Bool
         var isRemoteImage :        Bool
     }
-
+    
     struct MenuRowItemInfo {
         var title :       String
         var imageUrl :    String
         var rowHParas :   Int
     }
-
-
+    
+    
     func getDefaultCategories() ->[MenuRowItemInfo]{
         return [
             MenuRowItemInfo(title: "Autos & Vehicles",        imageUrl: "Autos",           rowHParas: YTPlayListItemsType.kUploadsTag.rawValue     ),
@@ -58,7 +58,7 @@ class LeftMenuSectionsUtils :NSObject{
             MenuRowItemInfo(title: "Travel & Events",         imageUrl: "Travel",          rowHParas: YTPlayListItemsType.kUploadsTag.rawValue     ),
         ]
     }
-
+    
     func getSignUserCategoriess() ->[MenuRowItemInfo]{
         return [
             MenuRowItemInfo(title: "Subscriptions",           imageUrl: "subscriptions",   rowHParas: YTPlayListItemsType.kUploadsTag.rawValue           ),
@@ -68,49 +68,51 @@ class LeftMenuSectionsUtils :NSObject{
             MenuRowItemInfo(title: "Playlists",               imageUrl: "playlists",       rowHParas: YTPlayListItemsType.kUploadsTag.rawValue           ),
         ]
     }
-
+    
     func getCategoriesMenuItemTree() -> MenuSectionItemInfo{
         return
-              MenuSectionItemInfo(
-                  sectionIdentifier:    CellIdentifier.CategoriesCellIdentifier,
-                  sectionType:          MenuSectionType.LMenuTreeCategories,
-                  headerTitle:          "Categories",
-                  rows:                 getDefaultCategories(),
-                  isHideTitle:          false,
-                  isRemoteImage:        false
-              )
+            MenuSectionItemInfo(
+                sectionIdentifier:    CellIdentifier.CategoriesCellIdentifier,
+                sectionType:          MenuSectionType.LMenuTreeCategories,
+                headerTitle:          "Categories",
+                rows:                 getDefaultCategories(),
+                isHideTitle:          false,
+                isRemoteImage:        false
+        )
     }
-
-
+    
+    
     func getSignInMenuItemTree() -> MenuSectionItemInfo{
         return
-              MenuSectionItemInfo(
-                  sectionIdentifier:    CellIdentifier.SignUserCellIdentifier,
-                  sectionType:          MenuSectionType.LMenuTreeUser,
-                  headerTitle:          "",
-                  rows:                 getSignUserCategoriess(),
-                  isHideTitle:          true,
-                  isRemoteImage:        false
-                  )
+            MenuSectionItemInfo(
+                sectionIdentifier:    CellIdentifier.SignUserCellIdentifier,
+                sectionType:          MenuSectionType.LMenuTreeUser,
+                headerTitle:          "",
+                rows:                 getSignUserCategoriess(),
+                isHideTitle:          true,
+                isRemoteImage:        false
+        )
     }
-
-
+    
+    
     func getEmptySubscriptionsMenuItemTree() -> MenuSectionItemInfo{
         return
-              MenuSectionItemInfo(
-                  sectionIdentifier:    CellIdentifier.SubscriptionsCellIdentifier,
-                  sectionType:          MenuSectionType.LMenuTreeSubscriptions,
-                  headerTitle:          "  Subscriptions",
-                  rows:                 [],
-                  isHideTitle:          false,
-                  isRemoteImage:        true
-                  )
+            MenuSectionItemInfo(
+                sectionIdentifier:    CellIdentifier.SubscriptionsCellIdentifier,
+                sectionType:          MenuSectionType.LMenuTreeSubscriptions,
+                headerTitle:          "  Subscriptions",
+                rows:                 [],
+                isHideTitle:          false,
+                isRemoteImage:        true
+        )
     }
-
+    
     func getSignOutMenuItemTreeArray() -> [MenuSectionItemInfo]{
-        return [getCategoriesMenuItemTree()]
+        return [
+            getCategoriesMenuItemTree()
+        ]
     }
-
+    
     func getSignInMenuItemTreeArray() -> [MenuSectionItemInfo]{
         return [
             getSignInMenuItemTree(),
@@ -118,5 +120,5 @@ class LeftMenuSectionsUtils :NSObject{
             getCategoriesMenuItemTree()
         ]
     }
-
+    
 }
