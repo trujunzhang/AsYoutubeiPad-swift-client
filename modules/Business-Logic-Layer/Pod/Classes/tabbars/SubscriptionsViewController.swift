@@ -11,8 +11,6 @@ import UIKit
 
 class SubscriptionsViewController: UIViewController {
 
-    @IBOutlet var textxx: UITextField!
-
     @IBOutlet var menuButton: UIBarButtonItem!
 //    var menuTableViewController: AsMenuTableViewController
 

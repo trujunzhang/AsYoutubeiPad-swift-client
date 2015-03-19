@@ -18,6 +18,8 @@
 		5E39F88A1AB91EF000A285AE /* Haneke.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E39F8891AB91EF000A285AE /* Haneke.framework */; };
 		5E5EF9661AB831CB00CCB831 /* MySwiftClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E6062021AB81D8600FED7E5 /* MySwiftClass.swift */; };
 		5E6062031AB81D8600FED7E5 /* MySwiftClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E6062021AB81D8600FED7E5 /* MySwiftClass.swift */; };
+		5E695A5E1ABAAA1900689D9B /* YoutubeApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E695A5D1ABAAA1900689D9B /* YoutubeApi.swift */; };
+		5E695A601ABAB6C000689D9B /* LeftMenuSectionsUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E695A5F1ABAB6C000689D9B /* LeftMenuSectionsUtils.swift */; };
 		5E78F67A1AB83681006799F1 /* AsMenuTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E32E8101AB6DFC8008931F6 /* AsMenuTableViewController.swift */; };
 		5E78F67B1AB836B1006799F1 /* SubscriptionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E86FF411AB5C5C800283DF8 /* SubscriptionsViewController.swift */; };
 		5E86FF3F1AB5C5B300283DF8 /* LeftMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E86FF3E1AB5C5B300283DF8 /* LeftMenuViewController.swift */; };
@@ -147,6 +149,8 @@
 		5E39F8861AB91E5C00A285AE /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
 		5E39F8891AB91EF000A285AE /* Haneke.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Haneke.framework; path = Carthage/Build/iOS/Haneke.framework; sourceTree = "<group>"; };
 		5E6062021AB81D8600FED7E5 /* MySwiftClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MySwiftClass.swift; sourceTree = "<group>"; };
+		5E695A5D1ABAAA1900689D9B /* YoutubeApi.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = YoutubeApi.swift; path = "../modules/google-api-services-youtube/Pod/Classes/helper/YoutubeApi.swift"; sourceTree = "<group>"; };
+		5E695A5F1ABAB6C000689D9B /* LeftMenuSectionsUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LeftMenuSectionsUtils.swift; path = "../modules/Business-Logic-Layer/Pod/Classes/leftmenu/LeftMenuSectionsUtils.swift"; sourceTree = "<group>"; };
 		5E86FF3E1AB5C5B300283DF8 /* LeftMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LeftMenuViewController.swift; path = "../modules/Business-Logic-Layer/Pod/Classes/leftmenu/LeftMenuViewController.swift"; sourceTree = "<group>"; };
 		5E86FF411AB5C5C800283DF8 /* SubscriptionsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SubscriptionsViewController.swift; path = "../modules/Business-Logic-Layer/Pod/Classes/tabbars/SubscriptionsViewController.swift"; sourceTree = "<group>"; };
 		5E9902301AB5C3C700391615 /* AsYoutubeiPadSwiftClient-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "AsYoutubeiPadSwiftClient-Bridging-Header.h"; sourceTree = "<group>"; };
@@ -442,6 +446,14 @@
 			path = ../dependencies/IOS_Collection_Code/Pod/Classes/xibViews;
 			sourceTree = "<group>";
 		};
+		5E695A5C1ABAA9A000689D9B /* google-api-services-youtube */ = {
+			isa = PBXGroup;
+			children = (
+				5E695A5D1ABAAA1900689D9B /* YoutubeApi.swift */,
+			);
+			name = "google-api-services-youtube";
+			sourceTree = "<group>";
+		};
 		5E86FF3B1AB5C58200283DF8 /* Dependencies */ = {
 			isa = PBXGroup;
 			children = (
@@ -454,6 +466,7 @@
 		5E86FF3C1AB5C58B00283DF8 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				5E695A5C1ABAA9A000689D9B /* google-api-services-youtube */,
 				5ECF1C731AB6CC2B007C9B72 /* youtube_slide_menu */,
 				5E86FF3D1AB5C5A500283DF8 /* Business-Logic-Layer */,
 			);
@@ -473,6 +486,7 @@
 			isa = PBXGroup;
 			children = (
 				5E86FF411AB5C5C800283DF8 /* SubscriptionsViewController.swift */,
+				5E695A5F1ABAB6C000689D9B /* LeftMenuSectionsUtils.swift */,
 			);
 			name = tabbars;
 			sourceTree = "<group>";
@@ -1088,7 +1102,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "/Volumes/macshare/SHARE/HomeBrew/homebrew-master/bin/carthage copy-frameworks";
+			shellScript = "/usr/local/bin/carthage copy-frameworks";
 		};
 		8323D7F476C8F9D8444E7E6E /* Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -1142,7 +1156,9 @@
 				5ECB226D1AB6AF03001C510D /* MABYT3_VideoStatistics.m in Sources */,
 				5ECB226E1AB6AF03001C510D /* MABYT3_VideoStatus.m in Sources */,
 				5ED70AAB1AB6B59800DFB2AE /* YoutubeParser.m in Sources */,
+				5E695A601ABAB6C000689D9B /* LeftMenuSectionsUtils.swift in Sources */,
 				5ECB22511AB6AF03001C510D /* MABYT3_ChannelSnippet.m in Sources */,
+				5E695A5E1ABAAA1900689D9B /* YoutubeApi.swift in Sources */,
 				5ECB22451AB6AF03001C510D /* MABYT3_ChannelBrandingSettingsWatch.m in Sources */,
 				5ECB22421AB6AF03001C510D /* MABYT3_ChannelBrandingSettings.m in Sources */,
 				5ECB22581AB6AF03001C510D /* MABYT3_PlayListContentDetails.m in Sources */,

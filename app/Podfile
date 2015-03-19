@@ -9,21 +9,21 @@ link_with 'AsYoutubeiPadSwiftClient', 'AsYoutubeiPadSwiftClientTests'
 def import_pods
     pod 'XMLDictionary'
     pod 'Regexer'
-    pod 'Bolts'
-    
+    # pod 'Bolts'
+
 #    pod 'SDWebImage'
 
     pod 'SWRevealViewController'
 #    pod 'ISMemoryCache'
 #    pod 'EGOCache'
 
-    pod 'SQPersist'
+    # pod 'SQPersist'
 
     pod 'AsyncDisplayKit'
 
     pod 'Google-API-Client/YouTube'
 
-    pod 'AFNetworking'
+    # pod 'AFNetworking'
 
 end
 
