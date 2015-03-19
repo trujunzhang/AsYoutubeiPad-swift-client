@@ -69,7 +69,7 @@ class LeftMenuSectionsUtils :NSObject{
         ]
     }
 
-    func getCategoriesMenuItemTrees() -> MenuSectionItemInfo{
+    func getCategoriesMenuItemTree() -> MenuSectionItemInfo{
         return
               MenuSectionItemInfo(
                   sectionIdentifier:    CellIdentifier.CategoriesCellIdentifier,
@@ -107,6 +107,16 @@ class LeftMenuSectionsUtils :NSObject{
                   )
     }
 
+    func getSignOutMenuItemTreeArray() -> [MenuSectionItemInfo]{
+        return [getCategoriesMenuItemTree()]
+    }
 
+    func getSignInMenuItemTreeArray() -> [MenuSectionItemInfo]{
+        return [
+            getSignInMenuItemTree(),
+            getEmptySubscriptionsMenuItemTree(),
+            getCategoriesMenuItemTree()
+        ]
+    }
 
 }
