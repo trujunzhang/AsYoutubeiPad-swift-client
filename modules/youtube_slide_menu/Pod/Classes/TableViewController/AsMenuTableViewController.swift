@@ -20,7 +20,6 @@ class AsMenuTableViewController: UIViewController , ASTableViewDataSource, ASTab
         super.init(nibName: nil, bundle: nil)
         self.tableView.asyncDataSource = self
         self.tableView.asyncDelegate = self
-        
     }
     
     required init(coder aDecoder: NSCoder) {
@@ -55,5 +54,7 @@ class AsMenuTableViewController: UIViewController , ASTableViewDataSource, ASTab
     func tableView(tableView: UITableView!, numberOfRowsInSection section: Int) -> Int {
         return 20
     }
+    
+    // MARK: ASTableView table view and delegate.
     
 }

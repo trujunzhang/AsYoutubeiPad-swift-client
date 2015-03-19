@@ -20,6 +20,7 @@
 		5E6062031AB81D8600FED7E5 /* MySwiftClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E6062021AB81D8600FED7E5 /* MySwiftClass.swift */; };
 		5E695A5E1ABAAA1900689D9B /* YoutubeApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E695A5D1ABAAA1900689D9B /* YoutubeApi.swift */; };
 		5E695A601ABAB6C000689D9B /* LeftMenuSectionsUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E695A5F1ABAB6C000689D9B /* LeftMenuSectionsUtils.swift */; };
+		5E695A621ABADBF100689D9B /* AsMenuTableRowCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E695A611ABADBF100689D9B /* AsMenuTableRowCell.swift */; };
 		5E78F67A1AB83681006799F1 /* AsMenuTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E32E8101AB6DFC8008931F6 /* AsMenuTableViewController.swift */; };
 		5E78F67B1AB836B1006799F1 /* SubscriptionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E86FF411AB5C5C800283DF8 /* SubscriptionsViewController.swift */; };
 		5E86FF3F1AB5C5B300283DF8 /* LeftMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E86FF3E1AB5C5B300283DF8 /* LeftMenuViewController.swift */; };
@@ -151,6 +152,7 @@
 		5E6062021AB81D8600FED7E5 /* MySwiftClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MySwiftClass.swift; sourceTree = "<group>"; };
 		5E695A5D1ABAAA1900689D9B /* YoutubeApi.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = YoutubeApi.swift; path = "../modules/google-api-services-youtube/Pod/Classes/helper/YoutubeApi.swift"; sourceTree = "<group>"; };
 		5E695A5F1ABAB6C000689D9B /* LeftMenuSectionsUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LeftMenuSectionsUtils.swift; path = "../modules/Business-Logic-Layer/Pod/Classes/leftmenu/LeftMenuSectionsUtils.swift"; sourceTree = "<group>"; };
+		5E695A611ABADBF100689D9B /* AsMenuTableRowCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AsMenuTableRowCell.swift; path = ../modules/youtube_slide_menu/Pod/Classes/TableViewController/AsMenuTableRowCell.swift; sourceTree = "<group>"; };
 		5E86FF3E1AB5C5B300283DF8 /* LeftMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LeftMenuViewController.swift; path = "../modules/Business-Logic-Layer/Pod/Classes/leftmenu/LeftMenuViewController.swift"; sourceTree = "<group>"; };
 		5E86FF411AB5C5C800283DF8 /* SubscriptionsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SubscriptionsViewController.swift; path = "../modules/Business-Logic-Layer/Pod/Classes/tabbars/SubscriptionsViewController.swift"; sourceTree = "<group>"; };
 		5E9902301AB5C3C700391615 /* AsYoutubeiPadSwiftClient-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "AsYoutubeiPadSwiftClient-Bridging-Header.h"; sourceTree = "<group>"; };
@@ -917,6 +919,7 @@
 			isa = PBXGroup;
 			children = (
 				5E32E8101AB6DFC8008931F6 /* AsMenuTableViewController.swift */,
+				5E695A611ABADBF100689D9B /* AsMenuTableRowCell.swift */,
 			);
 			name = youtube_slide_menu;
 			sourceTree = "<group>";
@@ -1188,6 +1191,7 @@
 				5ECB22781AB6AF03001C510D /* MABYT3_GuideCategory.m in Sources */,
 				5ECB225A1AB6AF03001C510D /* MABYT3_PlayListItem.m in Sources */,
 				5ECB223A1AB6AF03001C510D /* MABYT3_ActivityRecommendation.m in Sources */,
+				5E695A621ABADBF100689D9B /* AsMenuTableRowCell.swift in Sources */,
 				5ECB22891AB6AF03001C510D /* YoutubeAuthInfo.m in Sources */,
 				5ECB223E1AB6AF03001C510D /* MABYT3_Track.m in Sources */,
 				5ECB22701AB6AF03001C510D /* MABYT3_VideoSuggestions.m in Sources */,
