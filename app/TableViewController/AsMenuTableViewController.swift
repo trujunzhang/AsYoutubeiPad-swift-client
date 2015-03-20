@@ -12,27 +12,21 @@ import UIKit
 
 class AsMenuTableViewController: UIViewController , ASTableViewDataSource, ASTableViewDelegate {
 
-    
-//    var x :Int
+
     var tableView: ASTableView
-    var fileName = "data.txt"
-//    var album : MenuRowItemInfo?
-//        var _diffResults = Array<MenuRowItemInfo>()
-//    let classOne = LeftMenuSectionsUtils()
-//    var tableData = TableData(width: 2345)
-
-//
-
-    
-//    var XXX :MenuSectionItemInfo
-//    var menuSections: [MenuSectionItemInfo]=[];
+    var leftMenuSectionsUtils :LeftMenuSectionsUtils = LeftMenuSectionsUtils()
+    var menuSections : [MenuSectionItemInfo] = []
 
     // MARK: UIViewController.
-    required override init() {        
+    required override init() {
         self.tableView = ASTableView()
         super.init(nibName: nil, bundle: nil)
         self.tableView.asyncDataSource = self
         self.tableView.asyncDelegate = self
+        
+        self.tableView.backgroundColor = UIColor.clearColor()
+
+        menuSections = self.leftMenuSectionsUtils.getSignInMenuItemTreeArray()
     }
 
     required init(coder aDecoder: NSCoder) {
@@ -42,12 +36,12 @@ class AsMenuTableViewController: UIViewController , ASTableViewDataSource, ASTab
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.addSubview(self.tableView)
-        
+
     }
 
     override func viewWillLayoutSubviews() {
         self.tableView.frame = self.view.bounds
-        
+
     }
 
     override func prefersStatusBarHidden() -> Bool {
@@ -56,21 +50,27 @@ class AsMenuTableViewController: UIViewController , ASTableViewDataSource, ASTab
 
     // MARK: ASTableView data source and delegate.
     func tableView(tableView: ASTableView!, nodeForRowAtIndexPath indexPath: NSIndexPath!) -> ASCellNode! {
-
-        let patter = NSString(format: "[%ld.%ld] says hello!", indexPath.section, indexPath.row)
-        let node = ASTextCellNode()
-        node.text = patter
-        return node
+        let row = menuSections[indexPath.section].rows[indexPath.row]
+        let cell = AsMenuTableRowCell(nodeCellSize: CGSizeMake(100, 100), title: row.title, iconUrl: row.imageUrl, isRemoteImage: false)
+        
+//        let patter = NSString(format: "[%ld.%ld] says hello!", indexPath.section, indexPath.row)
+//        let node = ASTextCellNode()
+//        node.text = patter
+        return cell
     }
 
     func numberOfSectionsInTableView(tableView: UITableView!) -> Int {
-        return 1
+        return menuSections.count
     }
 
     func tableView(tableView: UITableView!, numberOfRowsInSection section: Int) -> Int {
-        return 20
+        return menuSections[section].rows.count
     }
 
+    //- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section;
+    func tableView(tableView: UITableView!, titleForHeaderInSection section: Int) -> String {
+        return menuSections[section].headerTitle
+    }
 
 
 

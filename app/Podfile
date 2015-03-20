@@ -31,6 +31,8 @@ target 'AsYoutubeiPadSwiftClient', :exclusive => true do
   # ________________common tools library___________________
   import_pods
 
+  pod  'Reveal-iOS-SDK'
+
 
   # ________________project library___________________
   pod "App_Module_Resources", :path => "../modules/App_Module_Resources"
