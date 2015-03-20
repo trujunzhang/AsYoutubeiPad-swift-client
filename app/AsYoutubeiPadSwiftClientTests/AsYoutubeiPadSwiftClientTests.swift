@@ -13,7 +13,7 @@ class AsYoutubeiPadSwiftClientTests: XCTestCase {
     
     func testSwiftInSwift()
     {
-        var xy=SubscriptionsViewController()
+//        var xy=SubscriptionsViewController()
         
         var swift = MySwiftClass()
         XCTAssertEqual(swift.swiftString, "swift", "error")
