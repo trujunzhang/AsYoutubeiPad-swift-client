@@ -8,8 +8,6 @@
 
 import UIKit
 
-
-
 class AsMenuTableViewController: UIViewController , ASTableViewDataSource, ASTableViewDelegate {
     let TABLE_ROW_HEIGHT :CGFloat = 48
     
