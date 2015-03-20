@@ -28,34 +28,8 @@ class SubscriptionsViewController: UIViewController {
             self.view.addGestureRecognizer(self.revealViewController().tapGestureRecognizer())
         }
 
-        self.setupUI()
-        self.makeAsMenuTableViewController()
-
     }
 
-    func setupUI(){
-        let backgroundImage =  UIImage(named: "mt_side_menu_bg")?.stretchableImageWithLeftCapWidth(1, topCapHeight: 0)
-
-        let backgroundView = UIView(frame: self.view.bounds)
-        backgroundView.backgroundColor = UIColor(patternImage: backgroundImage!)
-        
-        self.view.addSubview(backgroundView)
-    }
-
-    func makeAsMenuTableViewController(){
-
-        var menuViewController:AsMenuTableViewController = AsMenuTableViewController()
-        self.addChildViewController(menuViewController)
-
-        var addView =  menuViewController.view;
-        self.view.addSubview(addView)
-
-        menuViewController.didMoveToParentViewController(self)
-
-
-        addView.frame=self.view.bounds;
-
-    }
 
 
     func fetchingData(){

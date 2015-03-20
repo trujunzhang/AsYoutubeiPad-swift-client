@@ -9,38 +9,38 @@
 import UIKit
 
 class LeftMenuViewController: UIViewController ,SWRevealViewControllerDelegate{
-
+    let REAR_VIEW_WIDTH :CGFloat = 240.0
+    
     required init(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
     }
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Do any additional setup after loading the view.
-        self.revealViewController().rearViewRevealWidth = 700;
-
+        self.revealViewController().rearViewRevealWidth = REAR_VIEW_WIDTH;
+        
         initMenuTableView()
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
+    
     func initMenuTableView() {
-
+        
+        var menuViewController:AsMenuTableViewController = AsMenuTableViewController(viewWidth: REAR_VIEW_WIDTH)
+        self.addChildViewController(menuViewController)
+        
+        var addView =  menuViewController.view;
+        self.view.addSubview(addView)
+        
+        menuViewController.didMoveToParentViewController(self)
+        addView.frame=self.view.bounds;
     }
-
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+    
+    
+    
 }

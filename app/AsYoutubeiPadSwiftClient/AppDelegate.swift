@@ -16,13 +16,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
     
-//        var currentPhoto : LeftMenuSectionsUtils?
-    
-
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
+        
+        let rootViewController:SWRevealViewController = self.window?.rootViewController as SWRevealViewController
+        
+//        rootViewController.setFrontViewPosition(FrontViewPositionRight, animated: true)
+//rootViewController.setFrontViewPosition(FrontViewPositionRight, animated: true)
+//        rootViewController.setFrontViewPosition(frontViewPosition: FrontViewPosition, animated: <#Bool#>)
+//        var position:FrontViewPosition = FrontViewPosition.FrontViewPositionRight
 
-        setupRevealViewController()
+//        = FrontViewPosition.FrontViewPositionRight
+        
+        rootViewController.revealToggleAnimated(true)
 
         return true
     }
