@@ -23,8 +23,10 @@ class AsMenuTableViewController: UIViewController , ASTableViewDataSource, ASTab
         super.init(nibName: nil, bundle: nil)
         self.tableView.asyncDataSource = self
         self.tableView.asyncDelegate = self
-        
+
         self.tableView.backgroundColor = UIColor.clearColor()
+        self.tableView.separatorStyle = UITableViewCellSeparatorStyle.None
+
 
         menuSections = self.leftMenuSectionsUtils.getSignInMenuItemTreeArray()
     }
@@ -51,11 +53,8 @@ class AsMenuTableViewController: UIViewController , ASTableViewDataSource, ASTab
     // MARK: ASTableView data source and delegate.
     func tableView(tableView: ASTableView!, nodeForRowAtIndexPath indexPath: NSIndexPath!) -> ASCellNode! {
         let row = menuSections[indexPath.section].rows[indexPath.row]
-        let cell = AsMenuTableRowCell(nodeCellSize: CGSizeMake(100, 100), title: row.title, iconUrl: row.imageUrl, isRemoteImage: false)
-        
-//        let patter = NSString(format: "[%ld.%ld] says hello!", indexPath.section, indexPath.row)
-//        let node = ASTextCellNode()
-//        node.text = patter
+        let cell = AsMenuTableRowCell(nodeCellSize: CGSizeMake(256, 60), title: row.title, iconUrl: row.imageUrl, isRemoteImage: false)
+
         return cell
     }
 
