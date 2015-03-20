@@ -21,12 +21,13 @@ class AsMenuTableRowCell :ASCellNode{
     init(nodeCellSize: CGSize, title: String, iconUrl: String, isRemoteImage: Bool) {
         super.init()
         
+        _nodeCellSize = nodeCellSize
+        
         // 1
         makeImageNode(iconUrl, isRemoteImage: isRemoteImage)
         self.addSubnode(_videoChannelThumbnailsNode)
         
         // 2
-        _nodeCellSize = nodeCellSize
         _channelTitleTextNode = ASTextNode()
         
         let textStyle = NSMutableParagraphStyle.defaultParagraphStyle().mutableCopy() as NSMutableParagraphStyle

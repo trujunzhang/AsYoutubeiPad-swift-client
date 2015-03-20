@@ -62,9 +62,13 @@ class AsMenuTableViewController: UIViewController , ASTableViewDataSource, ASTab
     
     // MARK: ASTableView data source and delegate.
     func tableView(tableView: ASTableView!, nodeForRowAtIndexPath indexPath: NSIndexPath!) -> ASCellNode! {
-        let row = menuSections[indexPath.section].rows[indexPath.row]
-        let cell = AsMenuTableRowCell(nodeCellSize: CGSizeMake(self.menuTableWidth, TABLE_ROW_HEIGHT), title: row.title, iconUrl: row.imageUrl, isRemoteImage: false)
-        
+        var cell: ASCellNode!
+        if(indexPath.section == 0 && indexPath.row == 0){
+            cell = AsMenuTableHeaderCell(nodeCellSize: CGSizeMake(self.menuTableWidth, TABLE_ROW_HEIGHT))
+        }else{
+            let row = menuSections[indexPath.section].rows[indexPath.row]
+            cell = AsMenuTableRowCell(nodeCellSize: CGSizeMake(self.menuTableWidth, TABLE_ROW_HEIGHT), title: row.title, iconUrl: row.imageUrl, isRemoteImage: false)
+        }
         return cell
     }
     
@@ -76,7 +80,6 @@ class AsMenuTableViewController: UIViewController , ASTableViewDataSource, ASTab
         return menuSections[section].rows.count
     }
     
-    //- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section;
     func tableView(tableView: UITableView!, titleForHeaderInSection section: Int) -> String {
         return menuSections[section].headerTitle
     }
