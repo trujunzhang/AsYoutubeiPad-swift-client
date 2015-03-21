@@ -12,10 +12,12 @@ import UIKit
 class AsMenuTableHeaderCell :ASCellNode{
     
     var _nodeCellSize:CGSize?
-    var _delegate : ASTableCellProtocols?
-    var _videoChannelThumbnailsNode:ASImageNode?
-    var _channelTitleTextNode:ASTextNode?
     var _isLogin: Bool?
+    var _delegate : ASTableCellProtocols?
+    
+    
+    var asNodeDictionary = [String:ASDisplayNode]()
+    
     
     init(nodeCellSize: CGSize,isLogin:Bool, delegate:ASTableCellProtocols ) {
         super.init()
@@ -32,6 +34,10 @@ class AsMenuTableHeaderCell :ASCellNode{
             self.makeLoginUI()
         }
         
+        for node in asNodeDictionary.values {
+            self.addSubnode(node as ASDisplayNode)
+        }
+        
         // 3
         self.backgroundColor = UIColor.clearColor()
     }
@@ -39,13 +45,13 @@ class AsMenuTableHeaderCell :ASCellNode{
     // MARK: Make different panel by login status
     func makeLoginUI(){
         // 1
-        _videoChannelThumbnailsNode = ASImageNode()
+        let    _videoChannelThumbnailsNode = ASImageNode()
         _videoChannelThumbnailsNode?.image =  UIImage(named: "signin")
         _videoChannelThumbnailsNode?.addTarget(self, action: "buttonTapped:", forControlEvents: .TouchUpInside)
-        self.addSubnode(_videoChannelThumbnailsNode)
+        asNodeDictionary["icon"]=_videoChannelThumbnailsNode!
         
         // 2
-        _channelTitleTextNode = ASTextNode()
+        let   _channelTitleTextNode = ASTextNode()
         
         let textStyle = NSMutableParagraphStyle.defaultParagraphStyle().mutableCopy() as NSMutableParagraphStyle
         textStyle.alignment = NSTextAlignment.Left
@@ -55,27 +61,11 @@ class AsMenuTableHeaderCell :ASCellNode{
         let attributedString = NSAttributedString(string: "Sign In", attributes: textFontAttributes)
         
         _channelTitleTextNode?.attributedString = attributedString
-        
-        self.addSubnode(_channelTitleTextNode)
-        
+        asNodeDictionary["title"]=_channelTitleTextNode!
     }
     
     func makeUserProfileUI(){
         
-    }
-    
-    
-    
-    
-    func setText(text:String){
-        let textStyle = NSMutableParagraphStyle.defaultParagraphStyle().mutableCopy() as NSMutableParagraphStyle
-        textStyle.alignment = NSTextAlignment.Left
-        
-        let textFontAttributes = [NSFontAttributeName: UIFont.systemFontOfSize(TITLE_FONT_SIZE), NSForegroundColorAttributeName: UIColor.whiteColor(), NSParagraphStyleAttributeName: textStyle]
-        
-        let attributedString = NSAttributedString(string: "wanghao", attributes: textFontAttributes)
-        
-        _channelTitleTextNode?.attributedString = attributedString
     }
     
     func buttonTapped(sender :idtype_t){
@@ -95,13 +85,15 @@ class AsMenuTableHeaderCell :ASCellNode{
         var height = _nodeCellSize?.height
         var vTop = (height! - ICON_HEIGHT)/2
         
-        _videoChannelThumbnailsNode?.frame = CGRectMake(ICON_PADDING_LEFT, vTop, ICON_HEIGHT, ICON_HEIGHT)
+        let    _videoChannelThumbnailsNode = asNodeDictionary["icon"] as ASImageNode
+        _videoChannelThumbnailsNode.frame = CGRectMake(ICON_PADDING_LEFT, vTop, ICON_HEIGHT, ICON_HEIGHT)
         
         var vLeft = ICON_PADDING_LEFT + ICON_HEIGHT + ICON_PADDING_RIGHT
         vTop = (height! - TITLE_FONT_SIZE)/2-3
         var vWidth = width! - vLeft
-        _channelTitleTextNode?.frame = CGRectMake(vLeft, vTop, vWidth,  height!-vTop)
-        _channelTitleTextNode?.frame = CGRectMake(vLeft, vTop, 200,  height!-vTop)
+        
+        let   _channelTitleTextNode = asNodeDictionary["title"] as ASTextNode
+        _channelTitleTextNode.frame = CGRectMake(vLeft, vTop, vWidth,  height!-vTop)
     }
     
     
