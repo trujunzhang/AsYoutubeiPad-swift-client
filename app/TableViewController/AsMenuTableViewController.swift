@@ -8,7 +8,9 @@
 
 import UIKit
 
-class AsMenuTableViewController: UIViewController , ASTableViewDataSource, ASTableViewDelegate {
+
+
+class AsMenuTableViewController: UIViewController ,ASTableCellProtocols,  ASTableViewDataSource, ASTableViewDelegate {
     let TABLE_ROW_HEIGHT :CGFloat = 48
     
     var menuTableWidth:CGFloat!
@@ -64,7 +66,7 @@ class AsMenuTableViewController: UIViewController , ASTableViewDataSource, ASTab
     func tableView(tableView: ASTableView!, nodeForRowAtIndexPath indexPath: NSIndexPath!) -> ASCellNode! {
         var cell: ASCellNode!
         if(indexPath.section == 0 && indexPath.row == 0){
-            cell = AsMenuTableHeaderCell(nodeCellSize: CGSizeMake(self.menuTableWidth, TABLE_ROW_HEIGHT))
+            cell = AsMenuTableHeaderCell(nodeCellSize:  CGSizeMake(self.menuTableWidth, 80), delegate: self)
         }else{
             let row = menuSections[indexPath.section].rows[indexPath.row]
             cell = AsMenuTableRowCell(nodeCellSize: CGSizeMake(self.menuTableWidth, TABLE_ROW_HEIGHT), title: row.title, iconUrl: row.imageUrl, isRemoteImage: false)
@@ -85,7 +87,22 @@ class AsMenuTableViewController: UIViewController , ASTableViewDataSource, ASTab
     }
     
     
-    
     // MARK: ASTableView table view and delegate.
+    func tableView(tableView: UITableView!, shouldHighlightRowAtIndexPath indexPath: NSIndexPath!) -> Bool {
+        return true
+    }
+    
+    func tableView(tableView: UITableView!, didSelectRowAtIndexPath indexPath: NSIndexPath!) {
+        
+    }
+    
+    // MARK: ASTableCellProtocols delegate.
+    func updateForRowAtIndexPath(section:Int, row:Int, rowType:LeftTableRowType){
+        var indexPath: NSIndexPath = NSIndexPath(forRow: row, inSection: section)
+        self.tableView.reloadRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.None)
+        
+    }
+    
+    
     
 }

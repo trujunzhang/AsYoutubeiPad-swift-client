@@ -10,6 +10,7 @@ import Foundation
 import UIKit
 
 class AsMenuTableRowCell :ASCellNode{
+
     
     let ICON_HEIGHT:CGFloat = 26.0
     let TITLE_FONT_SIZE:CGFloat = 16

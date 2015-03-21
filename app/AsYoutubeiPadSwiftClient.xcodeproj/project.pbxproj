@@ -11,6 +11,7 @@
 		5E39F88A1AB91EF000A285AE /* Haneke.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E39F8891AB91EF000A285AE /* Haneke.framework */; };
 		5E5EF9661AB831CB00CCB831 /* MySwiftClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E6062021AB81D8600FED7E5 /* MySwiftClass.swift */; };
 		5E6062031AB81D8600FED7E5 /* MySwiftClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E6062021AB81D8600FED7E5 /* MySwiftClass.swift */; };
+		5E98BC101ABD41CD00E7F456 /* AsTableCellProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E98BC0F1ABD41CD00E7F456 /* AsTableCellProtocols.swift */; };
 		5E9E1ECB1AB7226F00523CC0 /* GYWrapSubscriptionsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E9E1ECA1AB7226F00523CC0 /* GYWrapSubscriptionsTests.swift */; };
 		5EBCDCF61AB5C22C0023F037 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EBCDCF51AB5C22C0023F037 /* AppDelegate.swift */; };
 		5EBCDCF81AB5C22C0023F037 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EBCDCF71AB5C22C0023F037 /* ViewController.swift */; };
@@ -45,6 +46,7 @@
 		5E39F8861AB91E5C00A285AE /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
 		5E39F8891AB91EF000A285AE /* Haneke.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Haneke.framework; path = Carthage/Build/iOS/Haneke.framework; sourceTree = "<group>"; };
 		5E6062021AB81D8600FED7E5 /* MySwiftClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MySwiftClass.swift; sourceTree = "<group>"; };
+		5E98BC0F1ABD41CD00E7F456 /* AsTableCellProtocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AsTableCellProtocols.swift; sourceTree = "<group>"; };
 		5E9902301AB5C3C700391615 /* AsYoutubeiPadSwiftClient-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "AsYoutubeiPadSwiftClient-Bridging-Header.h"; sourceTree = "<group>"; };
 		5E9E1ECA1AB7226F00523CC0 /* GYWrapSubscriptionsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GYWrapSubscriptionsTests.swift; path = ../../UnitTests/Youtube.wrapper/GYWrapSubscriptionsTests.swift; sourceTree = "<group>"; };
 		5EBCDCF01AB5C22C0023F037 /* AsYoutubeiPadSwiftClient.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AsYoutubeiPadSwiftClient.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -210,6 +212,7 @@
 				5EF4AC971ABC700A005D6D09 /* AsMenuTableHeaderCell.swift */,
 				5ECFEECD1ABB288F00779904 /* AsMenuTableRowCell.swift */,
 				5ECFEECE1ABB288F00779904 /* AsMenuTableViewController.swift */,
+				5E98BC0F1ABD41CD00E7F456 /* AsTableCellProtocols.swift */,
 			);
 			path = TableViewController;
 			sourceTree = SOURCE_ROOT;
@@ -424,6 +427,7 @@
 				5ECFEED01ABB288F00779904 /* AsMenuTableViewController.swift in Sources */,
 				5ECFEEC51ABB282700779904 /* LeftMenuSectionsUtils.swift in Sources */,
 				5EBCDCF81AB5C22C0023F037 /* ViewController.swift in Sources */,
+				5E98BC101ABD41CD00E7F456 /* AsTableCellProtocols.swift in Sources */,
 				5ECFEEC61ABB282700779904 /* LeftMenuViewController.swift in Sources */,
 				5EBCDCF61AB5C22C0023F037 /* AppDelegate.swift in Sources */,
 				5E6062031AB81D8600FED7E5 /* MySwiftClass.swift in Sources */,
