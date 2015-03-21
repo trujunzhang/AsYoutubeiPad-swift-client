@@ -20,6 +20,7 @@ class YoutubeUserProfile : NSObject{
     
     override init() {
         isLogin = false
+//        isLogin = true
         
         super.init()
     }

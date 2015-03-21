@@ -62,11 +62,11 @@ class AsMenuTableRowCell :ASCellNode{
     func layout(){
         var width = _nodeCellSize?.width
         var height = _nodeCellSize?.height
-        var vTop = (height! - ICON_HEIGHT)/2
+        var vTop = (height! - LOGIN_ICON_WH)/2
         
-        _videoChannelThumbnailsNode?.frame = CGRectMake(ICON_PADDING_LEFT, vTop, ICON_HEIGHT, ICON_HEIGHT)
+        _videoChannelThumbnailsNode?.frame = CGRectMake(ICON_PADDING_LEFT, vTop, LOGIN_ICON_WH, LOGIN_ICON_WH)
         
-        var vLeft = ICON_PADDING_LEFT + ICON_HEIGHT + ICON_PADDING_RIGHT
+        var vLeft = ICON_PADDING_LEFT + LOGIN_ICON_WH + ICON_PADDING_RIGHT
         vTop = (height! - TITLE_FONT_SIZE)/2-3
         var vWidth = width! - vLeft
         _channelTitleTextNode?.frame = CGRectMake(vLeft, vTop, vWidth,  height!-vTop)
