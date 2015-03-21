@@ -10,10 +10,6 @@ import Foundation
 import UIKit
 
 class AsMenuTableRowCell :ASCellNode{
-
-    
-    let ICON_HEIGHT:CGFloat = 26.0
-    let TITLE_FONT_SIZE:CGFloat = 16
     
     var _nodeCellSize:CGSize?;
     var _videoChannelThumbnailsNode:ASImageNode?;
@@ -64,17 +60,16 @@ class AsMenuTableRowCell :ASCellNode{
     
     
     func layout(){
-        
+        var width = _nodeCellSize?.width
         var height = _nodeCellSize?.height
-        
-        var vLeft:CGFloat = 16.0
         var vTop = (height! - ICON_HEIGHT)/2
         
-        _videoChannelThumbnailsNode?.frame = CGRectMake(vLeft, vTop, ICON_HEIGHT, ICON_HEIGHT)
+        _videoChannelThumbnailsNode?.frame = CGRectMake(ICON_PADDING_LEFT, vTop, ICON_HEIGHT, ICON_HEIGHT)
         
-        vLeft = 16 + ICON_HEIGHT + 16
+        var vLeft = ICON_PADDING_LEFT + ICON_HEIGHT + ICON_PADDING_RIGHT
         vTop = (height! - TITLE_FONT_SIZE)/2-3
-        _channelTitleTextNode?.frame = CGRectMake(vLeft, vTop, 200,  height!-vTop)
+        var vWidth = width! - vLeft
+        _channelTitleTextNode?.frame = CGRectMake(vLeft, vTop, vWidth,  height!-vTop)
     }
     
     

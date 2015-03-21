@@ -9,7 +9,7 @@
 import UIKit
 
 class LeftMenuViewController: UIViewController ,SWRevealViewControllerDelegate{
-    let REAR_VIEW_WIDTH :CGFloat = 240.0
+
     
     required init(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)

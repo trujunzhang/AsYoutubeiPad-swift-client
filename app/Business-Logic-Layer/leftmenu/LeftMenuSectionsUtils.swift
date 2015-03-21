@@ -9,6 +9,7 @@
 import Foundation
 import UIKit
 
+let REAR_VIEW_WIDTH :CGFloat = 280.0
 
 public enum CellIdentifier {
     case UseProfileCellIdentifier
@@ -39,13 +40,13 @@ public enum MenuSectionType {
 }
 
 public class LeftMenuSectionsUtils {
-
+    
     func getHeaderPanelArray() ->[MenuRowItemInfo]{
         return [
             MenuRowItemInfo(title: "HeaderPanel",        imageUrl: "",       rowHParas: -1           ),
         ]
     }
-
+    
     func getDefaultCategories() ->[MenuRowItemInfo]{
         return [
             MenuRowItemInfo(title: "Autos & Vehicles",        imageUrl: "Autos",           rowHParas: YTPlayListItemsType.kUploadsTag.rawValue     ),
@@ -65,7 +66,7 @@ public class LeftMenuSectionsUtils {
             MenuRowItemInfo(title: "Travel & Events",         imageUrl: "Travel",          rowHParas: YTPlayListItemsType.kUploadsTag.rawValue     ),
         ]
     }
-
+    
     func getSignUserCategoriess() ->[MenuRowItemInfo]{
         return [
             MenuRowItemInfo(title: "Subscriptions",    imageUrl: "subscriptions",   rowHParas: YTPlayListItemsType.kUploadsTag.rawValue           ),
@@ -75,20 +76,20 @@ public class LeftMenuSectionsUtils {
             MenuRowItemInfo(title: "Playlists",        imageUrl: "playlists",       rowHParas: YTPlayListItemsType.kUploadsTag.rawValue           ),
         ]
     }
-
+    
     func getHeaderMenuItemTree() -> MenuSectionItemInfo{
         return
-              MenuSectionItemInfo(
-                  sectionIdentifier:    CellIdentifier.UseProfileCellIdentifier,
-                  sectionType:          MenuSectionType.LMenuTreeUser,
-                  headerTitle:          "",
-                  rows:                 getHeaderPanelArray(),
-                  isHideTitle:          true,
-                  isRemoteImage:        false
-                  )
-
+            MenuSectionItemInfo(
+                sectionIdentifier:    CellIdentifier.UseProfileCellIdentifier,
+                sectionType:          MenuSectionType.LMenuTreeUser,
+                headerTitle:          "",
+                rows:                 getHeaderPanelArray(),
+                isHideTitle:          true,
+                isRemoteImage:        false
+        )
+        
     }
-
+    
     func getCategoriesMenuItemTree() -> MenuSectionItemInfo{
         return
             MenuSectionItemInfo(
@@ -100,8 +101,8 @@ public class LeftMenuSectionsUtils {
                 isRemoteImage:        false
         )
     }
-
-
+    
+    
     func getSignInMenuItemTree() -> MenuSectionItemInfo{
         return
             MenuSectionItemInfo(
@@ -113,8 +114,8 @@ public class LeftMenuSectionsUtils {
                 isRemoteImage:        false
         )
     }
-
-
+    
+    
     func getEmptySubscriptionsMenuItemTree() -> MenuSectionItemInfo{
         return
             MenuSectionItemInfo(
@@ -126,14 +127,14 @@ public class LeftMenuSectionsUtils {
                 isRemoteImage:        true
         )
     }
-
+    
     func getSignOutMenuItemTreeArray() -> [MenuSectionItemInfo]{
         return [
             getHeaderMenuItemTree(),
             getCategoriesMenuItemTree()
         ]
     }
-
+    
     func getSignInMenuItemTreeArray() -> [MenuSectionItemInfo]{
         return [
             getHeaderMenuItemTree(),
@@ -142,5 +143,5 @@ public class LeftMenuSectionsUtils {
             getCategoriesMenuItemTree()
         ]
     }
-
+    
 }

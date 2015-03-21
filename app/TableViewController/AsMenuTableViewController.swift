@@ -11,7 +11,7 @@ import UIKit
 
 
 class AsMenuTableViewController: UIViewController ,ASTableCellProtocols,  ASTableViewDataSource, ASTableViewDelegate {
-    let TABLE_ROW_HEIGHT :CGFloat = 48
+    
     
     var menuTableWidth:CGFloat!
     
@@ -66,7 +66,8 @@ class AsMenuTableViewController: UIViewController ,ASTableCellProtocols,  ASTabl
     func tableView(tableView: ASTableView!, nodeForRowAtIndexPath indexPath: NSIndexPath!) -> ASCellNode! {
         var cell: ASCellNode!
         if(indexPath.section == 0 && indexPath.row == 0){
-            cell = AsMenuTableHeaderCell(nodeCellSize:  CGSizeMake(self.menuTableWidth, 80), delegate: self)
+            let _isLogin = YoutubeUserProfile.sharedInstance.isLogin
+            cell = AsMenuTableHeaderCell(nodeCellSize:  CGSizeMake(self.menuTableWidth, 80),isLogin: _isLogin! , delegate: self)
         }else{
             let row = menuSections[indexPath.section].rows[indexPath.row]
             cell = AsMenuTableRowCell(nodeCellSize: CGSizeMake(self.menuTableWidth, TABLE_ROW_HEIGHT), title: row.title, iconUrl: row.imageUrl, isRemoteImage: false)
@@ -97,8 +98,9 @@ class AsMenuTableViewController: UIViewController ,ASTableCellProtocols,  ASTabl
     }
     
     // MARK: ASTableCellProtocols delegate.
-    func updateForRowAtIndexPath(section:Int, row:Int, rowType:LeftTableRowType){
-        var indexPath: NSIndexPath = NSIndexPath(forRow: row, inSection: section)
+    func updateForRowAtIndexPath(indexPath: NSIndexPath!, rowType:LeftTableRowType){
+        YoutubeUserProfile.sharedInstance.isLogin=true
+
         self.tableView.reloadRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.None)
         
     }

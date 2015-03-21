@@ -11,31 +11,37 @@ import UIKit
 
 class AsMenuTableHeaderCell :ASCellNode{
     
-    
-    let ICON_HEIGHT:CGFloat = 26.0
-    let TITLE_FONT_SIZE:CGFloat = 16
-    
     var _nodeCellSize:CGSize?
     var _delegate : ASTableCellProtocols?
     var _videoChannelThumbnailsNode:ASImageNode?
     var _channelTitleTextNode:ASTextNode?
+    var _isLogin: Bool?
     
-    init(nodeCellSize: CGSize, delegate:ASTableCellProtocols ) {
+    init(nodeCellSize: CGSize,isLogin:Bool, delegate:ASTableCellProtocols ) {
         super.init()
         
         selectionStyle = UITableViewCellSelectionStyle.None;
-        
+        _isLogin = isLogin
         _nodeCellSize = nodeCellSize
+        
         _delegate = delegate
         
+        if(_isLogin == true){
+            self.makeUserProfileUI()
+        }else{
+            self.makeLoginUI()
+        }
         
+        // 3
+        self.backgroundColor = UIColor.clearColor()
+    }
+    
+    // MARK: Make different panel by login status
+    func makeLoginUI(){
         // 1
-        var title = "Travel"
-        let dateFormatter = NSDateFormatter()
-        dateFormatter.dateFormat = "'at' h:mm:ss" // superset of OP's format
-        let str = dateFormatter.stringFromDate(NSDate())
-
-        makeImageNode("Travel", isRemoteImage: false)
+        _videoChannelThumbnailsNode = ASImageNode()
+        _videoChannelThumbnailsNode?.image =  UIImage(named: "signin")
+        _videoChannelThumbnailsNode?.addTarget(self, action: "buttonTapped:", forControlEvents: .TouchUpInside)
         self.addSubnode(_videoChannelThumbnailsNode)
         
         // 2
@@ -46,30 +52,18 @@ class AsMenuTableHeaderCell :ASCellNode{
         
         let textFontAttributes = [NSFontAttributeName: UIFont.systemFontOfSize(TITLE_FONT_SIZE), NSForegroundColorAttributeName: UIColor.whiteColor(), NSParagraphStyleAttributeName: textStyle]
         
-        let attributedString = NSAttributedString(string: str, attributes: textFontAttributes)
+        let attributedString = NSAttributedString(string: "Sign In", attributes: textFontAttributes)
         
         _channelTitleTextNode?.attributedString = attributedString
         
         self.addSubnode(_channelTitleTextNode)
         
-        // 3
-        self.backgroundColor = UIColor.clearColor()
     }
     
-    func makeImageNode(iconUrl: String ,isRemoteImage:Bool) {
-        if(isRemoteImage){
-            
-        }else{
-            _videoChannelThumbnailsNode = ASImageNode()
-            let image = UIImage(named: iconUrl)
-            _videoChannelThumbnailsNode?.image = image
-        }
-        
-        //        _videoChannelThumbnailsNode?.addTarget(self, action: "buttonTapped:", forControlEvents: ASControlNodeEvent.ASControlNodeEventTouchUpInside)
-        
-        _videoChannelThumbnailsNode?.addTarget(self, action: "buttonTapped:", forControlEvents: .TouchUpInside)
+    func makeUserProfileUI(){
         
     }
+    
     
     
     
@@ -82,18 +76,11 @@ class AsMenuTableHeaderCell :ASCellNode{
         let attributedString = NSAttributedString(string: "wanghao", attributes: textFontAttributes)
         
         _channelTitleTextNode?.attributedString = attributedString
-        
-        //        self.setNeedsLayout()
-        //        self.setNeedsDisplay()
-        
-        //                self.invalidateCalculatedSize()
     }
     
     func buttonTapped(sender :idtype_t){
-        //        _channelTitleTextNode
-        println("tapped button")
         if(_delegate != nil){
-            _delegate?.updateForRowAtIndexPath(0, row: 0, rowType: .LeftTableRowType_Header)
+            _delegate?.updateForRowAtIndexPath(NSIndexPath(forRow: 0, inSection: 0), rowType: .LeftTableRowType_Header)
         }
     }
     
@@ -104,16 +91,16 @@ class AsMenuTableHeaderCell :ASCellNode{
     
     
     func layout(){
-        
+        var width = _nodeCellSize?.width
         var height = _nodeCellSize?.height
-        
-        var vLeft:CGFloat = 16.0
         var vTop = (height! - ICON_HEIGHT)/2
         
-        _videoChannelThumbnailsNode?.frame = CGRectMake(vLeft, vTop, ICON_HEIGHT, ICON_HEIGHT)
+        _videoChannelThumbnailsNode?.frame = CGRectMake(ICON_PADDING_LEFT, vTop, ICON_HEIGHT, ICON_HEIGHT)
         
-        vLeft = 16 + ICON_HEIGHT + 16
+        var vLeft = ICON_PADDING_LEFT + ICON_HEIGHT + ICON_PADDING_RIGHT
         vTop = (height! - TITLE_FONT_SIZE)/2-3
+        var vWidth = width! - vLeft
+        _channelTitleTextNode?.frame = CGRectMake(vLeft, vTop, vWidth,  height!-vTop)
         _channelTitleTextNode?.frame = CGRectMake(vLeft, vTop, 200,  height!-vTop)
     }
     
