@@ -1,4 +1,5 @@
 github "Alamofire/Alamofire" "1.1.4"
+github "robb/Cartography" "0.2.1"
 github "Haneke/HanekeSwift" "v0.8.1"
-github "Quick/Quick" "v0.3.0"
+github "ReactKit/SwiftTask" "2.6.4"
 github "petejkim/expecta" "v0.3.2"

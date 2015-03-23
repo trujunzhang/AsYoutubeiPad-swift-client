@@ -1,5 +1,7 @@
 github "Alamofire/Alamofire" >= 1.1
 github "petejkim/expecta"
-github "Quick/Quick"
 github "Haneke/HanekeSwift"
-
+#github "railsware/Sleipnir"
+#github "jmascia/KLCPopup"
+github "ReactKit/SwiftTask"
+github "robb/Cartography"

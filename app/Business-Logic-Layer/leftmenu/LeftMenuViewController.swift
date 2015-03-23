@@ -19,7 +19,6 @@ class LeftMenuViewController: UIViewController ,SWRevealViewControllerDelegate{
         super.viewDidLoad()
         
         // Do any additional setup after loading the view.
-        self.revealViewController().rearViewRevealWidth = REAR_VIEW_WIDTH;
         
         initMenuTableView()
     }

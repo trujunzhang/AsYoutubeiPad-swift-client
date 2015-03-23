@@ -20,13 +20,19 @@ enum YTPlayListItemsType: Int {
 }
 
 
+ let myChannelId = "UC0wObT_HayGfWLdRAnFyPwA"
+ let baseURLString = "https://www.googleapis.com/youtube/v3"
+
+ let apiKey            = "AIzaSyBd9kf5LB41bYWnxI3pfoxHJ2njRvmAA90"
+ let kMyClientID       = "632947002586-hsu569tme6lt8635vvoofi5mnkqfkqus.apps.googleusercontent.com"
+ let kMyClientSecret   = "dHWxjaetid5ckoVMzp0LmzJt"
+ let scope             = "https://www.googleapis.com/auth/youtube https://www.googleapis.com/auth/youtube.readonly https://www.googleapis.com/auth/youtubepartner https://www.googleapis.com/auth/youtubepartner-channel-audit https://www.googleapis.com/auth/youtube.upload"
+
+
+
 struct YoutubeApi {
     enum Router: URLRequestConvertible {
-        
-        static let myChannelId = "UC0wObT_HayGfWLdRAnFyPwA"
-        static let baseURLString = "https://www.googleapis.com/youtube/v3"
-        static let consumerKey = "AIzaSyD3P0pZd-yJY67sjcL9dQ_mp2Yagrihf9E"
-        
+
         case channels(Int)
         case subscriptions(String,String,String)
         
@@ -50,7 +56,7 @@ struct YoutubeApi {
                 }
                 }()
             
-            let URL = NSURL(string: Router.baseURLString)
+            let URL = NSURL(string: baseURLString)
             let URLRequest = NSURLRequest(URL: URL!.URLByAppendingPathComponent(path))
             let encoding = Alamofire.ParameterEncoding.URL
             

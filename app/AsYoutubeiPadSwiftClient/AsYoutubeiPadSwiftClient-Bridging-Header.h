@@ -10,4 +10,8 @@
 #import <SWRevealViewController/SWRevealViewController.h>
 
 
+
+#import "GTMOAuth2Authentication.h"
+#import "GTMOAuth2ViewControllerTouch.h"
+
 //#import <AFNetworking/AFNetworking.h>

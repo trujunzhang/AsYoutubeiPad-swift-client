@@ -19,7 +19,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
         
-        let rootViewController:SWRevealViewController = self.window?.rootViewController as SWRevealViewController
+        let revealViewController:SWRevealViewController = self.window?.rootViewController as SWRevealViewController
+        revealViewController.toggleAnimationDuration = 0.8
+        revealViewController.rearViewRevealWidth = REAR_VIEW_WIDTH
+        
+        var animationType:SWRevealToggleAnimationType
+//        = .SWRevealToggleAnimationTypeSpring
+
+        
+//                revealViewController.toggleAnimationType = SWRevealToggleAnimationType.SWRevealToggleAnimationTypeSpring
         
 //        rootViewController.setFrontViewPosition(FrontViewPositionRight, animated: true)
 //rootViewController.setFrontViewPosition(FrontViewPositionRight, animated: true)
@@ -28,7 +36,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 //        = FrontViewPosition.FrontViewPositionRight
         
-        rootViewController.revealToggleAnimated(true)
+        revealViewController.revealToggleAnimated(true)
 
         return true
     }
