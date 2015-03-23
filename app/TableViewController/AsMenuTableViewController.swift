@@ -34,8 +34,12 @@ class AsMenuTableViewController: UIViewController ,ASTableCellProtocols,  ASTabl
         self.tableView.backgroundColor = UIColor.clearColor()
         self.tableView.separatorStyle = UITableViewCellSeparatorStyle.None
         
-        
-        menuSections = self.leftMenuSectionsUtils.getSignInMenuItemTreeArray()
+        if (YoutubeUserProfile.sharedInstance.isLogin == true) {
+            menuSections = self.leftMenuSectionsUtils.getSignInMenuItemTreeArray()
+        }else{
+             menuSections = self.leftMenuSectionsUtils.getSignOutMenuItemTreeArray()
+        }
+      
         
         YoutubeFetcher.sharedInstance._delegate = self
     }
@@ -110,6 +114,7 @@ class AsMenuTableViewController: UIViewController ,ASTableCellProtocols,  ASTabl
     }
     
     func endFetchingUserSubscriptions(array:NSArray){
+//        YoutubeModelParser
         self.tableView.insertSections(NSIndexSet(index: 1), withRowAnimation: UITableViewRowAnimation.None)
     }
     

@@ -11,6 +11,7 @@ import Foundation
 
 class YoutubeModelParser {
     
+    // MARK: Parse for GTLYouTubeChannel
     func getAuthChannelSnippetThumbnailUrl(channel :GTLYouTubeChannel) -> NSString {
         return channel.snippet.thumbnails.high.url
     }
@@ -21,6 +22,21 @@ class YoutubeModelParser {
         return channel.identifier
     }
     
+    // MARK: Parse for GTLYouTubeSubscription
+    class  func getSubscriptionTitle(subscription :GTLYouTubeSubscription) -> NSString {
+        return subscription.snippet.title
+    }
     
+    class func convertToMenuRowArrayFromSubscriptions(subscriptions :NSArray) -> [MenuRowItemInfo] {// array of MenuRowItemInfo
+        var rows = [MenuRowItemInfo]()
+        
+        for subscription in subscriptions {
+            var title = self.getSubscriptionTitle(subscription as GTLYouTubeSubscription)
+            var rowItem : MenuRowItemInfo =
+            MenuRowItemInfo(title: title,  imageUrl: "subscriptions",   rowHParas: YTPlayListItemsType.kUploadsTag.rawValue)
+            rows.append(rowItem)
+        }
+        return rows
+    }
     
 }

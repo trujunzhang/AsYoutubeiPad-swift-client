@@ -138,8 +138,8 @@ public class LeftMenuSectionsUtils {
     func getSignInMenuItemTreeArray() -> [MenuSectionItemInfo]{
         return [
             getHeaderMenuItemTree(),
-            getSignInMenuItemTree(),
-            getEmptySubscriptionsMenuItemTree(),
+            getSignInMenuItemTree(), // insert
+            getEmptySubscriptionsMenuItemTree(), //insert 
             getCategoriesMenuItemTree()
         ]
     }

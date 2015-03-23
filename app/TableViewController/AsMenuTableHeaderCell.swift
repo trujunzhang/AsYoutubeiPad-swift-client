@@ -31,7 +31,7 @@ class AsMenuTableHeaderCell: ASCellNode {
         } else {
             self.makeLoginUI()
         }
-
+        
         for node in asNodeDictionary.values {
             self.addSubnode(node as ASDisplayNode)
         }
