@@ -27,6 +27,7 @@
 		5ECFEECF1ABB288F00779904 /* AsMenuTableRowCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ECFEECD1ABB288F00779904 /* AsMenuTableRowCell.swift */; };
 		5ECFEED01ABB288F00779904 /* AsMenuTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ECFEECE1ABB288F00779904 /* AsMenuTableViewController.swift */; };
 		5ECFEED31ABB28C600779904 /* YoutubeApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ECFEED21ABB28C600779904 /* YoutubeApi.swift */; };
+		5ED3E8DD1AC015D4008985D7 /* YoutubeFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ED3E8DC1AC015D4008985D7 /* YoutubeFetcher.swift */; };
 		5EF4AC981ABC700A005D6D09 /* AsMenuTableHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EF4AC971ABC700A005D6D09 /* AsMenuTableHeaderCell.swift */; };
 		D02DC44C1D388FF8D47CD4D2 /* libPods-AsYoutubeiPadSwiftClient.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 643CB5AECE13A0D50F097746 /* libPods-AsYoutubeiPadSwiftClient.a */; };
 		E51B8F7E257266B73D3B2A0D /* libPods-AsYoutubeiPadSwiftClientTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C3B0BF885CDA89AA03EAAB2 /* libPods-AsYoutubeiPadSwiftClientTests.a */; };
@@ -68,6 +69,7 @@
 		5ECFEECD1ABB288F00779904 /* AsMenuTableRowCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AsMenuTableRowCell.swift; sourceTree = "<group>"; };
 		5ECFEECE1ABB288F00779904 /* AsMenuTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AsMenuTableViewController.swift; sourceTree = "<group>"; };
 		5ECFEED21ABB28C600779904 /* YoutubeApi.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YoutubeApi.swift; sourceTree = "<group>"; };
+		5ED3E8DC1AC015D4008985D7 /* YoutubeFetcher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YoutubeFetcher.swift; sourceTree = "<group>"; };
 		5EF4AC971ABC700A005D6D09 /* AsMenuTableHeaderCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AsMenuTableHeaderCell.swift; sourceTree = "<group>"; };
 		643CB5AECE13A0D50F097746 /* libPods-AsYoutubeiPadSwiftClient.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-AsYoutubeiPadSwiftClient.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7691D91426A5CCFB076684C4 /* Pods-AsYoutubeiPadSwiftClientTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AsYoutubeiPadSwiftClientTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-AsYoutubeiPadSwiftClientTests/Pods-AsYoutubeiPadSwiftClientTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -224,6 +226,7 @@
 			children = (
 				5ECFEED21ABB28C600779904 /* YoutubeApi.swift */,
 				5EB291071ABD76FB00131D73 /* YoutubeUserProfile.swift */,
+				5ED3E8DC1AC015D4008985D7 /* YoutubeFetcher.swift */,
 			);
 			name = youtubeapi;
 			path = "Business-Logic-Layer/youtubeapi";
@@ -437,6 +440,7 @@
 				5E6062031AB81D8600FED7E5 /* MySwiftClass.swift in Sources */,
 				5EF4AC981ABC700A005D6D09 /* AsMenuTableHeaderCell.swift in Sources */,
 				5ECFEECB1ABB282700779904 /* SubscriptionsViewController.swift in Sources */,
+				5ED3E8DD1AC015D4008985D7 /* YoutubeFetcher.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -575,7 +579,7 @@
 				GCC_WARN_UNUSED_VALUE = NO;
 				GCC_WARN_UNUSED_VARIABLE = NO;
 				INFOPLIST_FILE = AsYoutubeiPadSwiftClient/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "AsYoutubeiPadSwiftClient/AsYoutubeiPadSwiftClient-Bridging-Header.h";
@@ -599,7 +603,7 @@
 				GCC_WARN_UNUSED_VALUE = NO;
 				GCC_WARN_UNUSED_VARIABLE = NO;
 				INFOPLIST_FILE = AsYoutubeiPadSwiftClient/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "AsYoutubeiPadSwiftClient/AsYoutubeiPadSwiftClient-Bridging-Header.h";

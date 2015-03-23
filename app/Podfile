@@ -31,7 +31,7 @@ target 'AsYoutubeiPadSwiftClient', :exclusive => true do
   # ________________common tools library___________________
   import_pods
 
-  pod  'Reveal-iOS-SDK'
+  #pod  'Reveal-iOS-SDK'
 
 
   # ________________project library___________________
@@ -44,8 +44,8 @@ target 'AsYoutubeiPadSwiftClientTests', :exclusive => true do
   import_pods
 
     #pod 'Expecta'
-    pod 'OCMock'
-    pod 'OCMockito'
+    #pod 'OCMock'
+    #pod 'OCMockito'
 
 
 

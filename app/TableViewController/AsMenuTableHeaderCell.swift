@@ -178,9 +178,9 @@ class AsMenuTableHeaderCell: ASCellNode {
     func startLogIn() {
 
         if (YoutubeUserProfile.sharedInstance.isLogin == true) {
-//            self.auth = GTMOAuth2ViewControllerTouch.authForGoogleFromKeychainForName("Google", clientID: kMyClientID, clientSecret: kMyClientSecret)
-
-//            self.authorizeRequest()
+            //            self.auth = GTMOAuth2ViewControllerTouch.authForGoogleFromKeychainForName("Google", clientID: kMyClientID, clientSecret: kMyClientSecret)
+            
+            //            self.authorizeRequest()
         } else {
             var gvc: GTMOAuth2ViewControllerTouch! = GTMOAuth2ViewControllerTouch(scope: scope, clientID: kMyClientID, clientSecret: kMyClientSecret, keychainItemName: "Google", delegate: self, finishedSelector: "viewController:finishedWithAuth:error:")
 
