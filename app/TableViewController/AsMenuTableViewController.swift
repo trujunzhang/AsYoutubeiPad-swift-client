@@ -37,9 +37,9 @@ class AsMenuTableViewController: UIViewController ,ASTableCellProtocols,  ASTabl
         if (YoutubeUserProfile.sharedInstance.isLogin == true) {
             menuSections = self.leftMenuSectionsUtils.getSignInMenuItemTreeArray()
         }else{
-             menuSections = self.leftMenuSectionsUtils.getSignOutMenuItemTreeArray()
+            menuSections = self.leftMenuSectionsUtils.getSignOutMenuItemTreeArray()
         }
-      
+        
         
         YoutubeFetcher.sharedInstance._delegate = self
     }
@@ -103,6 +103,12 @@ class AsMenuTableViewController: UIViewController ,ASTableCellProtocols,  ASTabl
         
     }
     
+    func tableView(tableView: UITableView!, willDisplayHeaderView view:UIView!, forSection section: NSInteger!) {
+        var x = 0
+    }
+    
+    
+    
     // MARK: ASTableCellProtocols delegate.
     func updateForRowAtIndexPath(indexPath: NSIndexPath!, rowType:LeftTableRowType){
         self.tableView.reloadRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.None)
@@ -114,8 +120,10 @@ class AsMenuTableViewController: UIViewController ,ASTableCellProtocols,  ASTabl
     }
     
     func endFetchingUserSubscriptions(array:NSArray){
-//        YoutubeModelParser
-        self.tableView.insertSections(NSIndexSet(index: 1), withRowAnimation: UITableViewRowAnimation.None)
+        var rows : [MenuRowItemInfo] =  YoutubeModelParser.convertToMenuRowArrayFromSubscriptions(array)
+        menuSections = self.leftMenuSectionsUtils.getSignInMenuItemTreeArrayWithSubscriptions(rows)
+        
+        self.tableView.insertSections(NSIndexSet(index: 2), withRowAnimation: UITableViewRowAnimation.None)
     }
     
 }

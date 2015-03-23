@@ -116,13 +116,13 @@ public class LeftMenuSectionsUtils {
     }
     
     
-    func getEmptySubscriptionsMenuItemTree() -> MenuSectionItemInfo{
+    func getEmptySubscriptionsMenuItemTree(rows : [MenuRowItemInfo]) -> MenuSectionItemInfo{
         return
             MenuSectionItemInfo(
                 sectionIdentifier:    CellIdentifier.SubscriptionsCellIdentifier,
                 sectionType:          MenuSectionType.LMenuTreeSubscriptions,
                 headerTitle:          "  Subscriptions",
-                rows:                 [],
+                rows:                 rows,
                 isHideTitle:          false,
                 isRemoteImage:        true
         )
@@ -138,8 +138,16 @@ public class LeftMenuSectionsUtils {
     func getSignInMenuItemTreeArray() -> [MenuSectionItemInfo]{
         return [
             getHeaderMenuItemTree(),
-            getSignInMenuItemTree(), // insert
-            getEmptySubscriptionsMenuItemTree(), //insert 
+            getSignInMenuItemTree(),
+            getCategoriesMenuItemTree()
+        ]
+    }
+    
+    func getSignInMenuItemTreeArrayWithSubscriptions(rows : [MenuRowItemInfo]) -> [MenuSectionItemInfo]{
+        return [
+            getHeaderMenuItemTree(),
+            getSignInMenuItemTree(),
+            getEmptySubscriptionsMenuItemTree(rows),
             getCategoriesMenuItemTree()
         ]
     }
