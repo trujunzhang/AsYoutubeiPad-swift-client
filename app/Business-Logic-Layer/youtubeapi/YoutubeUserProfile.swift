@@ -27,15 +27,14 @@ class YoutubeUserProfile: NSObject {
         super.init()
         
         isLogin = self.hasLogin()
-    
+        
         //        isLogin = true
         
         if(isLogin == true){
-            let auth = GTMOAuth2ViewControllerTouch.authForGoogleFromKeychainForName("Google", clientID: kMyClientID, clientSecret: kMyClientSecret)
-            self.authorizeRequest( self.auth )
+            self.auth = GTMOAuth2ViewControllerTouch.authForGoogleFromKeychainForName("Google", clientID: kMyClientID, clientSecret: kMyClientSecret)
         }
         
-
+        
     }
     
     func hasLogin() -> Bool {

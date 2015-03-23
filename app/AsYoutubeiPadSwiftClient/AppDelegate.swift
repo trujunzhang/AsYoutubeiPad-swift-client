@@ -23,20 +23,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         revealViewController.toggleAnimationDuration = 0.8
         revealViewController.rearViewRevealWidth = REAR_VIEW_WIDTH
         
-        var animationType:SWRevealToggleAnimationType
-//        = .SWRevealToggleAnimationTypeSpring
-
-        
-//                revealViewController.toggleAnimationType = SWRevealToggleAnimationType.SWRevealToggleAnimationTypeSpring
-        
-//        rootViewController.setFrontViewPosition(FrontViewPositionRight, animated: true)
-//rootViewController.setFrontViewPosition(FrontViewPositionRight, animated: true)
-//        rootViewController.setFrontViewPosition(frontViewPosition: FrontViewPosition, animated: <#Bool#>)
-//        var position:FrontViewPosition = FrontViewPosition.FrontViewPositionRight
-
-//        = FrontViewPosition.FrontViewPositionRight
+//        var animationType:SWRevealToggleAnimationType
         
         revealViewController.revealToggleAnimated(true)
+        
+        YoutubeFetcher.sharedInstance.initLoggedUser()
 
         return true
     }

@@ -14,5 +14,6 @@
 #import "GTMOAuth2ViewControllerTouch.h"
 
 #import "GTLYouTube.h"
+#import "GTLService.h"
 
 //#import <AFNetworking/AFNetworking.h>
