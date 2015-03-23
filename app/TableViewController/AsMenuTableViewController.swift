@@ -10,7 +10,7 @@ import UIKit
 
 
 
-class AsMenuTableViewController: UIViewController ,ASTableCellProtocols,  ASTableViewDataSource, ASTableViewDelegate {
+class AsMenuTableViewController: UIViewController ,ASTableCellProtocols,  ASTableViewDataSource, ASTableViewDelegate ,AuthorUserFetchingDelegate{
     
     
     var menuTableWidth:CGFloat!
@@ -36,6 +36,8 @@ class AsMenuTableViewController: UIViewController ,ASTableCellProtocols,  ASTabl
         
         
         menuSections = self.leftMenuSectionsUtils.getSignInMenuItemTreeArray()
+        
+        YoutubeFetcher.sharedInstance._delegate = self
     }
     
     required init(coder aDecoder: NSCoder) {
@@ -99,12 +101,16 @@ class AsMenuTableViewController: UIViewController ,ASTableCellProtocols,  ASTabl
     
     // MARK: ASTableCellProtocols delegate.
     func updateForRowAtIndexPath(indexPath: NSIndexPath!, rowType:LeftTableRowType){
-        YoutubeUserProfile.sharedInstance.isLogin=true
-        
         self.tableView.reloadRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.None)
-        
     }
     
+    // MARK: - protocol for AuthorUserFetchingDelegate
+    func endFetchingUserChannel(channel :GTLYouTubeChannel){
+        self.updateForRowAtIndexPath(NSIndexPath(forRow: 0, inSection: 0), rowType: .LeftTableRowType_Header)
+    }
     
+    func endFetchingUserSubscriptions(array:NSArray){
+        self.tableView.insertSections(NSIndexSet(index: 1), withRowAnimation: UITableViewRowAnimation.None)
+    }
     
 }

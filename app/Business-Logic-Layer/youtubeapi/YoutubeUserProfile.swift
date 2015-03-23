@@ -8,11 +8,13 @@
 
 import Foundation
 
+let hasLoggedIn: NSString! = "hasLoggedInKey"
+
 class YoutubeUserProfile: NSObject {
     var isLogin: Bool?
     var auth: GTMOAuth2Authentication!
-    let hasLoggedIn: NSString! = "hasLoggedInKey"
     
+    var userChannel: GTLYouTubeChannel?
     
     class var sharedInstance: YoutubeUserProfile {
         
@@ -52,7 +54,7 @@ class YoutubeUserProfile: NSObject {
     
     func authorizeRequest(finishedWithAuth: GTMOAuth2Authentication!) {
         self.auth = finishedWithAuth
-        
+            
         self.saveLoggedInFlag()
         
         println("self \(self.auth)")

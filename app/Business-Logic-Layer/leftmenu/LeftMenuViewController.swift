@@ -21,6 +21,8 @@ class LeftMenuViewController: UIViewController ,SWRevealViewControllerDelegate{
         // Do any additional setup after loading the view.
         
         initMenuTableView()
+        
+        
     }
     
     override func didReceiveMemoryWarning() {
@@ -40,6 +42,7 @@ class LeftMenuViewController: UIViewController ,SWRevealViewControllerDelegate{
         addView.frame=self.view.bounds;
     }
     
+
     
     
 }
