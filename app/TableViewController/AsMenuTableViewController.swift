@@ -80,7 +80,7 @@ class AsMenuTableViewController: UIViewController ,ASTableCellProtocols,  ASTabl
             let _isLogin = YoutubeUserProfile.sharedInstance.isLogin
             cell = AsMenuTableHeaderCell(nodeCellSize:  CGSizeMake(self.menuTableWidth, 50+20),parent: self.parentViewController! , delegate: self)
         case MenuRowType.LMenuTreeRowSectionTitle:
-            cell = AsMenuTableSectionTitleCell(nodeCellSize: CGSizeMake(self.menuTableWidth, 20), title: row.title)
+            cell = AsMenuTableSectionTitleCell(nodeCellSize: CGSizeMake(self.menuTableWidth, 40), title: row.title)
         default:
             cell = AsMenuTableRowCell(nodeCellSize: CGSizeMake(self.menuTableWidth, TABLE_ROW_HEIGHT), title: row.title, iconUrl: row.imageUrl, isRemoteImage: false)
         }
@@ -102,6 +102,13 @@ class AsMenuTableViewController: UIViewController ,ASTableCellProtocols,  ASTabl
     
     // MARK: ASTableView table view and delegate.
     func tableView(tableView: UITableView!, shouldHighlightRowAtIndexPath indexPath: NSIndexPath!) -> Bool {
+        var sectionInfo : MenuSectionItemInfo = menuSections[indexPath.section]
+        var rowType :MenuRowType = sectionInfo.rowType
+        
+        if(rowType == MenuRowType.LMenuTreeRowSectionTitle){
+            return false
+        }
+        
         return true
     }
     
@@ -112,8 +119,7 @@ class AsMenuTableViewController: UIViewController ,ASTableCellProtocols,  ASTabl
     func tableView(tableView: UITableView!, willDisplayHeaderView view:UIView!, forSection section: NSInteger!) {
         var x = 0
     }
-    
-    
+
     
     // MARK: ASTableCellProtocols delegate.
     func updateForRowAtIndexPath(indexPath: NSIndexPath!, rowType:LeftTableRowType){
@@ -129,7 +135,10 @@ class AsMenuTableViewController: UIViewController ,ASTableCellProtocols,  ASTabl
         var rows : [MenuRowItemInfo] =  YoutubeModelParser.convertToMenuRowArrayFromSubscriptions(array)
         menuSections = self.leftMenuSectionsUtils.getSignInMenuItemTreeArrayWithSubscriptions(rows)
         
-        //        self.tableView.insertSections(NSIndexSet(index: 2), withRowAnimation: UITableViewRowAnimation.None)
+        var indexSet : NSMutableIndexSet = NSMutableIndexSet()
+        indexSet.addIndex(2)
+        indexSet.addIndex(3)
+        self.tableView.insertSections(indexSet, withRowAnimation: UITableViewRowAnimation.None)
     }
     
 }
