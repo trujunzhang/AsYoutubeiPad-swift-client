@@ -15,6 +15,8 @@ class AsMenuTableHeaderCell: ASCellNode {
     var _parent: UIViewController?
     var _delegate: ASTableCellProtocols?
     
+    let PADINGTOP: CGFloat = 20
+    
     var asNodeDictionary = [String: ASDisplayNode]()
     
     
@@ -38,6 +40,7 @@ class AsMenuTableHeaderCell: ASCellNode {
         
         // 3
         self.backgroundColor = UIColor.clearColor()
+        //        self.backgroundColor = UIColor.redColor()
     }
     
     // MARK: Make different panel by login status
@@ -90,7 +93,7 @@ class AsMenuTableHeaderCell: ASCellNode {
         textStyle = NSMutableParagraphStyle.defaultParagraphStyle().mutableCopy() as NSMutableParagraphStyle
         textStyle.alignment = NSTextAlignment.Left
         
-        textFontAttributes = [NSFontAttributeName: UIFont.systemFontOfSize(12), NSForegroundColorAttributeName: UIColor.grayColor(), NSParagraphStyleAttributeName: textStyle]
+        textFontAttributes = [NSFontAttributeName: UIFont.systemFontOfSize(13), NSForegroundColorAttributeName: UIColor.grayColor(), NSParagraphStyleAttributeName: textStyle]
         userName.attributedString = NSAttributedString(string: "wanghaobackup@gmail.com", attributes: textFontAttributes)
         
         asNodeDictionary["userName"] = userName
@@ -119,6 +122,9 @@ class AsMenuTableHeaderCell: ASCellNode {
         
         var width = _nodeCellSize?.width
         var height = _nodeCellSize?.height
+        
+        height = height! - PADINGTOP // padding top
+        
         var middleY = height! / 2
         var nodeSize:CGSize?
         var nodeHeight:CGFloat?
@@ -126,7 +132,7 @@ class AsMenuTableHeaderCell: ASCellNode {
         //1
         var vLeft:CGFloat = LEFT_MIDDLE_X - USER_ICON_WH / 2
         var vTop :CGFloat = (height! - USER_ICON_WH) / 2
-        userThumbnail.frame = CGRectMake(vLeft, vTop, USER_ICON_WH, USER_ICON_WH)
+        userThumbnail.frame = CGRectMake(vLeft, vTop + PADINGTOP, USER_ICON_WH, USER_ICON_WH)
         
         //3
         var verticalSecondX = vLeft + USER_ICON_WH + ICON_PADDING_RIGHT
@@ -135,36 +141,39 @@ class AsMenuTableHeaderCell: ASCellNode {
         nodeSize = nickName.measure(_nodeCellSize!)
         nodeHeight = nodeSize?.height
         vTop = middleY - nodeHeight!
-        nickName.frame = CGRectMake(verticalSecondX, vTop, vWidth, nodeHeight!)
+        nickName.frame = CGRectMake(verticalSecondX, vTop + PADINGTOP, vWidth, nodeHeight!)
         
         //4
         nodeSize = userName.measure(_nodeCellSize!)
         nodeHeight = nodeSize?.height
         vTop = middleY
-        userName.frame = CGRectMake(verticalSecondX, vTop + 2, vWidth, nodeHeight!)
+        userName.frame = CGRectMake(verticalSecondX, vTop + 2 + PADINGTOP, vWidth, nodeHeight!)
         
         //2
         vLeft = width! - LOGIN_OUT_ICON_PADDING_RIGHT - LOGIN_ICON_WH
         vTop = (height! - LOGIN_ICON_WH) / 2
-        signoutIcon.frame = CGRectMake(vLeft, vTop, LOGIN_ICON_WH, LOGIN_ICON_WH)
-        
-        
+        signoutIcon.frame = CGRectMake(vLeft, vTop + PADINGTOP, LOGIN_ICON_WH, LOGIN_ICON_WH)
     }
     
     func layoutLoginUI() {
+        let _videoChannelThumbnailsNode = asNodeDictionary["icon"] as ASImageNode
+        let _channelTitleTextNode = asNodeDictionary["title"] as ASTextNode
+        
         var width = _nodeCellSize?.width
         var height = _nodeCellSize?.height
         
-        var vTop = (height! - LOGIN_ICON_WH) / 2
-        let _videoChannelThumbnailsNode = asNodeDictionary["icon"] as ASImageNode
-        _videoChannelThumbnailsNode.frame = CGRectMake(ICON_PADDING_LEFT, vTop, LOGIN_ICON_WH, LOGIN_ICON_WH)
+        height = height! - PADINGTOP // padding top
         
+        //1
+        var vTop = (height! - LOGIN_ICON_WH) / 2
+        _videoChannelThumbnailsNode.frame = CGRectMake(ICON_PADDING_LEFT, vTop + PADINGTOP, LOGIN_ICON_WH, LOGIN_ICON_WH)
+        
+        //2
         var vLeft = ICON_PADDING_LEFT + LOGIN_ICON_WH + ICON_PADDING_RIGHT
         vTop = (height! - TITLE_FONT_SIZE) / 2 - 3
         var vWidth = width! - vLeft
         
-        let _channelTitleTextNode = asNodeDictionary["title"] as ASTextNode
-        _channelTitleTextNode.frame = CGRectMake(vLeft, vTop, vWidth, height! - vTop)
+        _channelTitleTextNode.frame = CGRectMake(vLeft, vTop + PADINGTOP, vWidth, height! - vTop)
         
     }
     

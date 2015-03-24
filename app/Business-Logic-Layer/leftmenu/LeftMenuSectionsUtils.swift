@@ -84,6 +84,11 @@ public class LeftMenuSectionsUtils {
         ]
     }
     
+    func getSectionHeaderItemInfo(title: NSString) ->MenuRowItemInfo{
+        return
+            MenuRowItemInfo(title: title,        imageUrl: "",       rowHParas: YTPlayListItemsType.kUploadsTag.rawValue           )
+    }
+    
     func getHeaderMenuItemTree() -> MenuSectionItemInfo{
         return
             MenuSectionItemInfo(
@@ -125,6 +130,18 @@ public class LeftMenuSectionsUtils {
         )
     }
     
+    func getSectionTitleMenuItemTree(row : MenuRowItemInfo) -> MenuSectionItemInfo{
+        return
+            MenuSectionItemInfo(
+                sectionIdentifier:    CellIdentifier.SubscriptionsCellIdentifier,
+                sectionType:          MenuSectionType.LMenuTreeSubscriptions,
+                rowType    :          MenuRowType.LMenuTreeRowSectionTitle,
+                headerTitle:          "",
+                rows:                 [row],
+                isHideTitle:          false,
+                isRemoteImage:        true
+        )
+    }
     
     func getEmptySubscriptionsMenuItemTree(rows : [MenuRowItemInfo]) -> MenuSectionItemInfo{
         return
@@ -142,6 +159,7 @@ public class LeftMenuSectionsUtils {
     func getSignOutMenuItemTreeArray() -> [MenuSectionItemInfo]{
         return [
             getHeaderMenuItemTree(),
+            getSectionTitleMenuItemTree(getSectionHeaderItemInfo("Categories")),
             getCategoriesMenuItemTree()
         ]
     }
@@ -150,6 +168,7 @@ public class LeftMenuSectionsUtils {
         return [
             getHeaderMenuItemTree(),
             getSignInMenuItemTree(),
+            getSectionTitleMenuItemTree(getSectionHeaderItemInfo("Categories")),
             getCategoriesMenuItemTree()
         ]
     }
@@ -159,6 +178,7 @@ public class LeftMenuSectionsUtils {
             getHeaderMenuItemTree(),
             getSignInMenuItemTree(),
             getEmptySubscriptionsMenuItemTree(rows),
+            getSectionTitleMenuItemTree(getSectionHeaderItemInfo("Categories")),
             getCategoriesMenuItemTree()
         ]
     }

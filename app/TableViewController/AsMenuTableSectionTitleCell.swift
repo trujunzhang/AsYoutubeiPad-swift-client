@@ -15,7 +15,7 @@ class AsMenuTableSectionTitleCell:ASCellNode {
     var _nodeTitle:ASTextNode?
     var _divider:ASDisplayNode?
     
-    init(nodeCellSize: CGSize, title: String, iconUrl: String, isRemoteImage: Bool) {
+    init(nodeCellSize: CGSize, title: String) {
         super.init()
         
         _nodeCellSize = nodeCellSize
@@ -50,7 +50,6 @@ class AsMenuTableSectionTitleCell:ASCellNode {
     }
     
     
-    
     func layout(){
         var width = _nodeCellSize?.width
         var height = _nodeCellSize?.height
@@ -60,20 +59,23 @@ class AsMenuTableSectionTitleCell:ASCellNode {
         
         var middleY = height! / 2
         
+        // 2
+        var scale :CGFloat = UIScreen.mainScreen().scale
+        var pixelHeight:CGFloat =  1.0 / scale
+        vTop = height! - pixelHeight
+        _divider?.frame = CGRectMake(0.0, vTop!, width!,   pixelHeight)
+        
         //1
         var vLeft = ICON_PADDING_LEFT
         var vWidth = width! - vLeft
         
         nodeSize = _nodeTitle?.measure(_nodeCellSize!)
         nodeHeight = nodeSize?.height
-        vTop = middleY - nodeHeight!/2
+        vTop = vTop! - nodeHeight! - 3
         
         _nodeTitle?.frame = CGRectMake(vLeft, vTop!, vWidth,  nodeHeight!)
         
-        // 2
-        var scale :CGFloat = UIScreen.mainScreen().scale
-        var pixelHeight:CGFloat =  1.0 / scale
-        _divider?.frame = CGRectMake(0.0, 0.0, width!,  pixelHeight)
+        
     }
     
     

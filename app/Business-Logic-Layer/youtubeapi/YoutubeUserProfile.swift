@@ -44,6 +44,7 @@ class YoutubeUserProfile: NSObject {
         var hasLoggedInFlag: Bool! = defaults?.boolForKey(hasLoggedIn)
         
         return hasLoggedInFlag
+//        return false
     }
     
     func saveLoggedInFlag() {

@@ -72,14 +72,16 @@ class AsMenuTableViewController: UIViewController ,ASTableCellProtocols,  ASTabl
     func tableView(tableView: ASTableView!, nodeForRowAtIndexPath indexPath: NSIndexPath!) -> ASCellNode! {
         var cell: ASCellNode!
         var sectionInfo : MenuSectionItemInfo = menuSections[indexPath.section]
+        let row = sectionInfo.rows[indexPath.row]
         
         var rowType :MenuRowType = sectionInfo.rowType
         switch rowType {
         case MenuRowType.LMenuTreeRowUserHeader:
             let _isLogin = YoutubeUserProfile.sharedInstance.isLogin
-            cell = AsMenuTableHeaderCell(nodeCellSize:  CGSizeMake(self.menuTableWidth, 80),parent: self.parentViewController! , delegate: self)
-          default:
-            let row = sectionInfo.rows[indexPath.row]
+            cell = AsMenuTableHeaderCell(nodeCellSize:  CGSizeMake(self.menuTableWidth, 50+20),parent: self.parentViewController! , delegate: self)
+        case MenuRowType.LMenuTreeRowSectionTitle:
+            cell = AsMenuTableSectionTitleCell(nodeCellSize: CGSizeMake(self.menuTableWidth, 20), title: row.title)
+        default:
             cell = AsMenuTableRowCell(nodeCellSize: CGSizeMake(self.menuTableWidth, TABLE_ROW_HEIGHT), title: row.title, iconUrl: row.imageUrl, isRemoteImage: false)
         }
         return cell
@@ -93,9 +95,9 @@ class AsMenuTableViewController: UIViewController ,ASTableCellProtocols,  ASTabl
         return menuSections[section].rows.count
     }
     
-    func tableView(tableView: UITableView!, titleForHeaderInSection section: Int) -> String {
-        return menuSections[section].headerTitle
-    }
+    //    func tableView(tableView: UITableView!, titleForHeaderInSection section: Int) -> String {
+    //        return menuSections[section].headerTitle
+    //    }
     
     
     // MARK: ASTableView table view and delegate.
@@ -127,7 +129,7 @@ class AsMenuTableViewController: UIViewController ,ASTableCellProtocols,  ASTabl
         var rows : [MenuRowItemInfo] =  YoutubeModelParser.convertToMenuRowArrayFromSubscriptions(array)
         menuSections = self.leftMenuSectionsUtils.getSignInMenuItemTreeArrayWithSubscriptions(rows)
         
-        self.tableView.insertSections(NSIndexSet(index: 2), withRowAnimation: UITableViewRowAnimation.None)
+        //        self.tableView.insertSections(NSIndexSet(index: 2), withRowAnimation: UITableViewRowAnimation.None)
     }
     
 }
