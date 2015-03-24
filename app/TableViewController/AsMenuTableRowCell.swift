@@ -13,7 +13,7 @@ class AsMenuTableRowCell :ASCellNode{
     
     var _nodeCellSize:CGSize?;
     var _videoChannelThumbnailsNode:ASImageNode?;
-    var _channelTitleTextNode:ASTextNode?;
+    var _nodeTitle:ASTextNode?;
     
     init(nodeCellSize: CGSize, title: String, iconUrl: String, isRemoteImage: Bool) {
         super.init()
@@ -25,18 +25,18 @@ class AsMenuTableRowCell :ASCellNode{
         self.addSubnode(_videoChannelThumbnailsNode)
         
         // 2
-        _channelTitleTextNode = ASTextNode()
+        _nodeTitle = AsNodeMaker.makeNodeText()
         
         let textStyle = NSMutableParagraphStyle.defaultParagraphStyle().mutableCopy() as NSMutableParagraphStyle
         textStyle.alignment = NSTextAlignment.Left
         
-        let textFontAttributes = [NSFontAttributeName: UIFont.systemFontOfSize(TITLE_FONT_SIZE), NSForegroundColorAttributeName: UIColor.whiteColor(), NSParagraphStyleAttributeName: textStyle]
+        let textFontAttributes = [NSFontAttributeName: UIFont.systemFontOfSize(TITLE_FONT_SIZE), NSForegroundColorAttributeName: UIColor.grayColor(), NSParagraphStyleAttributeName: textStyle]
         
         let attributedString = NSAttributedString(string: title, attributes: textFontAttributes)
         
-        _channelTitleTextNode?.attributedString = attributedString
+        _nodeTitle?.attributedString = attributedString
         
-        self.addSubnode(_channelTitleTextNode)
+        self.addSubnode(_nodeTitle)
         
         // 3
         self.backgroundColor = UIColor.clearColor()
@@ -62,14 +62,25 @@ class AsMenuTableRowCell :ASCellNode{
     func layout(){
         var width = _nodeCellSize?.width
         var height = _nodeCellSize?.height
-        var vTop = (height! - LOGIN_ICON_WH)/2
+        var vTop:CGFloat?
+        var nodeSize:CGSize?
+        var nodeHeight:CGFloat?
         
-        _videoChannelThumbnailsNode?.frame = CGRectMake(ICON_PADDING_LEFT, vTop, LOGIN_ICON_WH, LOGIN_ICON_WH)
+        var middleY = height! / 2
         
+        //1
+        vTop = (height! - LOGIN_ICON_WH)/2
+        _videoChannelThumbnailsNode?.frame = CGRectMake(ICON_PADDING_LEFT, vTop!, LOGIN_ICON_WH, LOGIN_ICON_WH)
+        
+        //2
         var vLeft = ICON_PADDING_LEFT + LOGIN_ICON_WH + ICON_PADDING_RIGHT
-        vTop = (height! - TITLE_FONT_SIZE)/2-3
         var vWidth = width! - vLeft
-        _channelTitleTextNode?.frame = CGRectMake(vLeft, vTop, vWidth,  height!-vTop)
+        
+        nodeSize = _nodeTitle?.measure(_nodeCellSize!)
+        nodeHeight = nodeSize?.height
+        vTop = middleY - nodeHeight!/2
+        
+        _nodeTitle?.frame = CGRectMake(vLeft, vTop!, vWidth,  nodeHeight!)
     }
     
     

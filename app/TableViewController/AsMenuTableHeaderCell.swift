@@ -49,16 +49,16 @@ class AsMenuTableHeaderCell: ASCellNode {
         asNodeDictionary["icon"] = _videoChannelThumbnailsNode!
         
         // 2
-        let _channelTitleTextNode = ASTextNode()
+        let _channelTitleTextNode = AsNodeMaker.makeNodeText()
         
         let textStyle = NSMutableParagraphStyle.defaultParagraphStyle().mutableCopy() as NSMutableParagraphStyle
         textStyle.alignment = NSTextAlignment.Left
         
         let textFontAttributes = [NSFontAttributeName: UIFont.systemFontOfSize(TITLE_FONT_SIZE), NSForegroundColorAttributeName: UIColor.whiteColor(), NSParagraphStyleAttributeName: textStyle]
         
-        _channelTitleTextNode?.attributedString = NSAttributedString(string: "Sign In", attributes: textFontAttributes)
+        _channelTitleTextNode.attributedString = NSAttributedString(string: "Sign In", attributes: textFontAttributes)
         
-        asNodeDictionary["title"] = _channelTitleTextNode!
+        asNodeDictionary["title"] = _channelTitleTextNode
     }
     
     func makeUserProfileUI() {
@@ -74,26 +74,26 @@ class AsMenuTableHeaderCell: ASCellNode {
         asNodeDictionary["signoutIcon"] = signoutIcon!
         
         // 3: top
-        let nickName = ASTextNode()
+        let nickName =  AsNodeMaker.makeNodeText()
         
         var textStyle = NSMutableParagraphStyle.defaultParagraphStyle().mutableCopy() as NSMutableParagraphStyle
         textStyle.alignment = NSTextAlignment.Left
         
         var textFontAttributes = [NSFontAttributeName: UIFont.systemFontOfSize(TITLE_FONT_SIZE), NSForegroundColorAttributeName: UIColor.whiteColor(), NSParagraphStyleAttributeName: textStyle]
-        nickName?.attributedString = NSAttributedString(string: "Zhang Trujun", attributes: textFontAttributes)
+        nickName.attributedString = NSAttributedString(string: "Zhang Trujun", attributes: textFontAttributes)
         
-        asNodeDictionary["nickName"] = nickName!
+        asNodeDictionary["nickName"] = nickName
         
         // 3: bottom
-        let userName = ASTextNode()
+        let userName = AsNodeMaker.makeNodeText()
         
         textStyle = NSMutableParagraphStyle.defaultParagraphStyle().mutableCopy() as NSMutableParagraphStyle
         textStyle.alignment = NSTextAlignment.Left
         
         textFontAttributes = [NSFontAttributeName: UIFont.systemFontOfSize(12), NSForegroundColorAttributeName: UIColor.grayColor(), NSParagraphStyleAttributeName: textStyle]
-        userName?.attributedString = NSAttributedString(string: "wanghaobackup@gmail.com", attributes: textFontAttributes)
+        userName.attributedString = NSAttributedString(string: "wanghaobackup@gmail.com", attributes: textFontAttributes)
         
-        asNodeDictionary["userName"] = userName!
+        asNodeDictionary["userName"] = userName
     }
     
     
@@ -131,7 +131,7 @@ class AsMenuTableHeaderCell: ASCellNode {
         //3
         var verticalSecondX = vLeft + USER_ICON_WH + ICON_PADDING_RIGHT
         var vWidth = width! - verticalSecondX - LOGIN_OUT_ICON_PADDING_RIGHT - LOGIN_ICON_WH - ICON_PADDING_RIGHT
-
+        
         nodeSize = nickName.measure(_nodeCellSize!)
         nodeHeight = nodeSize?.height
         vTop = middleY - nodeHeight!
@@ -140,7 +140,7 @@ class AsMenuTableHeaderCell: ASCellNode {
         //4
         nodeSize = userName.measure(_nodeCellSize!)
         nodeHeight = nodeSize?.height
-        vTop = middleY 
+        vTop = middleY
         userName.frame = CGRectMake(verticalSecondX, vTop + 2, vWidth, nodeHeight!)
         
         //2
@@ -183,20 +183,14 @@ class AsMenuTableHeaderCell: ASCellNode {
     
     func startLogIn() {
         
-        if (YoutubeUserProfile.sharedInstance.isLogin == true) {
-            //            self.auth = GTMOAuth2ViewControllerTouch.authForGoogleFromKeychainForName("Google", clientID: kMyClientID, clientSecret: kMyClientSecret)
-            
-            //            self.authorizeRequest()
-        } else {
-            var gvc: GTMOAuth2ViewControllerTouch! = GTMOAuth2ViewControllerTouch(scope: scope, clientID: kMyClientID, clientSecret: kMyClientSecret, keychainItemName: "Google", delegate: self, finishedSelector: "viewController:finishedWithAuth:error:")
-            
-            var navController:UINavigationController = UINavigationController(rootViewController: gvc)
-            
-            let controller: UIViewController = UIApplication.sharedApplication().keyWindow!.rootViewController!
-            
-            controller.modalPresentationStyle = UIModalPresentationStyle.None
-            controller.presentViewController(navController, animated: true, completion: nil)
-        }
+        var gvc: GTMOAuth2ViewControllerTouch! = GTMOAuth2ViewControllerTouch(scope: scope, clientID: kMyClientID, clientSecret: kMyClientSecret, keychainItemName: "Google", delegate: self, finishedSelector: "viewController:finishedWithAuth:error:")
+        
+        var navController:UINavigationController = UINavigationController(rootViewController: gvc)
+        
+        let controller: UIViewController = UIApplication.sharedApplication().keyWindow!.rootViewController!
+        
+        controller.modalPresentationStyle = UIModalPresentationStyle.None
+        controller.presentViewController(navController, animated: true, completion: nil)
     }
     
     

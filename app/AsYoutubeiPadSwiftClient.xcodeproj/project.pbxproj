@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5E244DC41AC176C60052FA37 /* AsNodeMaker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E244DC31AC176C60052FA37 /* AsNodeMaker.swift */; };
 		5E39F8871AB91E5C00A285AE /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E39F8861AB91E5C00A285AE /* Alamofire.framework */; };
 		5E39F88A1AB91EF000A285AE /* Haneke.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E39F8891AB91EF000A285AE /* Haneke.framework */; };
 		5E5EF9661AB831CB00CCB831 /* MySwiftClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E6062021AB81D8600FED7E5 /* MySwiftClass.swift */; };
@@ -46,6 +47,7 @@
 
 /* Begin PBXFileReference section */
 		1C3B0BF885CDA89AA03EAAB2 /* libPods-AsYoutubeiPadSwiftClientTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-AsYoutubeiPadSwiftClientTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		5E244DC31AC176C60052FA37 /* AsNodeMaker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AsNodeMaker.swift; path = AsyncDisplay/AsNodeMaker.swift; sourceTree = "<group>"; };
 		5E39F8861AB91E5C00A285AE /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
 		5E39F8891AB91EF000A285AE /* Haneke.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Haneke.framework; path = Carthage/Build/iOS/Haneke.framework; sourceTree = "<group>"; };
 		5E6062021AB81D8600FED7E5 /* MySwiftClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MySwiftClass.swift; sourceTree = "<group>"; };
@@ -111,6 +113,14 @@
 				1C3B0BF885CDA89AA03EAAB2 /* libPods-AsYoutubeiPadSwiftClientTests.a */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		5E244DC21AC175F40052FA37 /* AsyncDisplay */ = {
+			isa = PBXGroup;
+			children = (
+				5E244DC31AC176C60052FA37 /* AsNodeMaker.swift */,
+			);
+			name = AsyncDisplay;
 			sourceTree = "<group>";
 		};
 		5E9E1EC91AB7221D00523CC0 /* youtube-request */ = {
@@ -188,6 +198,7 @@
 		5ECFEEB71ABB282700779904 /* Business-Logic-Layer */ = {
 			isa = PBXGroup;
 			children = (
+				5E244DC21AC175F40052FA37 /* AsyncDisplay */,
 				5ECFEEB81ABB282700779904 /* .gitkeep */,
 				5ECFEEB91ABB282700779904 /* leftmenu */,
 				5ECFEEC11ABB282700779904 /* tabbars */,
@@ -444,6 +455,7 @@
 				5E6062031AB81D8600FED7E5 /* MySwiftClass.swift in Sources */,
 				5EF4AC981ABC700A005D6D09 /* AsMenuTableHeaderCell.swift in Sources */,
 				5ECFEECB1ABB282700779904 /* SubscriptionsViewController.swift in Sources */,
+				5E244DC41AC176C60052FA37 /* AsNodeMaker.swift in Sources */,
 				5ED3E8DD1AC015D4008985D7 /* YoutubeFetcher.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
