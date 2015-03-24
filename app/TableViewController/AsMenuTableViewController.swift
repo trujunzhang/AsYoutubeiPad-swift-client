@@ -71,11 +71,15 @@ class AsMenuTableViewController: UIViewController ,ASTableCellProtocols,  ASTabl
     // MARK: ASTableView data source and delegate.
     func tableView(tableView: ASTableView!, nodeForRowAtIndexPath indexPath: NSIndexPath!) -> ASCellNode! {
         var cell: ASCellNode!
-        if(indexPath.section == 0 && indexPath.row == 0){
+        var sectionInfo : MenuSectionItemInfo = menuSections[indexPath.section]
+        
+        var rowType :MenuRowType = sectionInfo.rowType
+        switch rowType {
+        case MenuRowType.LMenuTreeRowUserHeader:
             let _isLogin = YoutubeUserProfile.sharedInstance.isLogin
             cell = AsMenuTableHeaderCell(nodeCellSize:  CGSizeMake(self.menuTableWidth, 80),parent: self.parentViewController! , delegate: self)
-        }else{
-            let row = menuSections[indexPath.section].rows[indexPath.row]
+          default:
+            let row = sectionInfo.rows[indexPath.row]
             cell = AsMenuTableRowCell(nodeCellSize: CGSizeMake(self.menuTableWidth, TABLE_ROW_HEIGHT), title: row.title, iconUrl: row.imageUrl, isRemoteImage: false)
         }
         return cell

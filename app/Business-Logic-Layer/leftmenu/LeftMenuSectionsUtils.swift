@@ -27,10 +27,17 @@ public struct MenuRowItemInfo {
 public struct MenuSectionItemInfo {
     var sectionIdentifier :    CellIdentifier
     var sectionType :          MenuSectionType
+    var rowType     :          MenuRowType
     var headerTitle :          String
     var rows :                 [MenuRowItemInfo]
     var isHideTitle :          Bool
     var isRemoteImage :        Bool
+}
+
+public enum MenuRowType {
+    case LMenuTreeRowUserHeader
+    case LMenuTreeRowSectionTitle
+    case LMenuTreeRowLine
 }
 
 public enum MenuSectionType {
@@ -82,6 +89,7 @@ public class LeftMenuSectionsUtils {
             MenuSectionItemInfo(
                 sectionIdentifier:    CellIdentifier.UseProfileCellIdentifier,
                 sectionType:          MenuSectionType.LMenuTreeUser,
+                rowType    :          MenuRowType.LMenuTreeRowUserHeader,
                 headerTitle:          "",
                 rows:                 getHeaderPanelArray(),
                 isHideTitle:          true,
@@ -95,6 +103,7 @@ public class LeftMenuSectionsUtils {
             MenuSectionItemInfo(
                 sectionIdentifier:    CellIdentifier.CategoriesCellIdentifier,
                 sectionType:          MenuSectionType.LMenuTreeCategories,
+                rowType    :          MenuRowType.LMenuTreeRowLine,
                 headerTitle:          "Categories",
                 rows:                 getDefaultCategories(),
                 isHideTitle:          false,
@@ -108,6 +117,7 @@ public class LeftMenuSectionsUtils {
             MenuSectionItemInfo(
                 sectionIdentifier:    CellIdentifier.SignUserCellIdentifier,
                 sectionType:          MenuSectionType.LMenuTreeUser,
+                rowType    :          MenuRowType.LMenuTreeRowLine,
                 headerTitle:          "",
                 rows:                 getSignUserCategoriess(),
                 isHideTitle:          true,
@@ -121,6 +131,7 @@ public class LeftMenuSectionsUtils {
             MenuSectionItemInfo(
                 sectionIdentifier:    CellIdentifier.SubscriptionsCellIdentifier,
                 sectionType:          MenuSectionType.LMenuTreeSubscriptions,
+                rowType    :          MenuRowType.LMenuTreeRowLine,
                 headerTitle:          "  Subscriptions",
                 rows:                 rows,
                 isHideTitle:          false,
