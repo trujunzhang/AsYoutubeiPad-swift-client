@@ -26,14 +26,18 @@ class YoutubeModelParser {
     class  func getSubscriptionTitle(subscription :GTLYouTubeSubscription) -> NSString {
         return subscription.snippet.title
     }
+    class  func getSubscriptionUrl(subscription :GTLYouTubeSubscription) -> NSString {
+        return subscription.snippet.thumbnails.high.url
+    }
     
     class func convertToMenuRowArrayFromSubscriptions(subscriptions :NSArray) -> [MenuRowItemInfo] {// array of MenuRowItemInfo
         var rows = [MenuRowItemInfo]()
         
         for subscription in subscriptions {
             var title = self.getSubscriptionTitle(subscription as GTLYouTubeSubscription)
+            var url = self.getSubscriptionUrl(subscription as GTLYouTubeSubscription)
             var rowItem : MenuRowItemInfo =
-            MenuRowItemInfo(title: title,  imageUrl: "subscriptions",   rowHParas: YTPlayListItemsType.kUploadsTag.rawValue)
+            MenuRowItemInfo(title: title,  imageUrl: url,   rowHParas: YTPlayListItemsType.kUploadsTag.rawValue)
             rows.append(rowItem)
         }
         return rows

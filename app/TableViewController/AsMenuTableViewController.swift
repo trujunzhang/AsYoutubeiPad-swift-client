@@ -74,6 +74,7 @@ class AsMenuTableViewController: UIViewController ,ASTableCellProtocols,  ASTabl
         var sectionInfo : MenuSectionItemInfo = menuSections[indexPath.section]
         let row = sectionInfo.rows[indexPath.row]
         
+        var isRemoteImage = sectionInfo.isRemoteImage
         var rowType :MenuRowType = sectionInfo.rowType
         switch rowType {
         case MenuRowType.LMenuTreeRowUserHeader:
@@ -82,7 +83,7 @@ class AsMenuTableViewController: UIViewController ,ASTableCellProtocols,  ASTabl
         case MenuRowType.LMenuTreeRowSectionTitle:
             cell = AsMenuTableSectionTitleCell(nodeCellSize: CGSizeMake(self.menuTableWidth, 40), title: row.title)
         default:
-            cell = AsMenuTableRowCell(nodeCellSize: CGSizeMake(self.menuTableWidth, TABLE_ROW_HEIGHT), title: row.title, iconUrl: row.imageUrl, isRemoteImage: false)
+            cell = AsMenuTableRowCell(nodeCellSize: CGSizeMake(self.menuTableWidth, TABLE_ROW_HEIGHT), title: row.title, iconUrl: row.imageUrl, isRemoteImage: isRemoteImage)
         }
         return cell
     }

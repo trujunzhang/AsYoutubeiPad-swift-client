@@ -8,6 +8,8 @@
 
 import Foundation
 import UIKit
+import Haneke
+import Toucan
 
 class AsMenuTableRowCell :ASCellNode{
     
@@ -43,7 +45,18 @@ class AsMenuTableRowCell :ASCellNode{
     }
     
     func makeImageNode(iconUrl: String ,isRemoteImage:Bool) {
+        
         if(isRemoteImage){
+            let url:NSURL = NSURL(string: iconUrl)!
+            
+            _videoChannelThumbnailsNode = ASImageNode()
+            
+            let cache :Cache<UIImage> = WebImageCache.SharedLeftMenuImageCache()
+            cache.fetch(URL: url, formatName: "icons").onSuccess { image in
+                // image will be a nice rounded icon
+                var roundedImage:UIImage = Toucan(image: image).maskWithRoundedRect(cornerRadius: 30).image
+                self._videoChannelThumbnailsNode?.image = roundedImage
+            }
             
         }else{
             _videoChannelThumbnailsNode = ASImageNode()
