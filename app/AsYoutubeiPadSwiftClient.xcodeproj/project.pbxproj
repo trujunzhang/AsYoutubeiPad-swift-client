@@ -10,6 +10,8 @@
 		5E244DC41AC176C60052FA37 /* AsNodeMaker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E244DC31AC176C60052FA37 /* AsNodeMaker.swift */; };
 		5E39F8871AB91E5C00A285AE /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E39F8861AB91E5C00A285AE /* Alamofire.framework */; };
 		5E39F88A1AB91EF000A285AE /* Haneke.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E39F8891AB91EF000A285AE /* Haneke.framework */; };
+		5E57C3471AC2ED2E0009E909 /* AsCacheDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E57C3461AC2ED2E0009E909 /* AsCacheDownloader.swift */; };
+		5E57C3491AC2EE0B0009E909 /* AsImageCacher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E57C3481AC2EE0B0009E909 /* AsImageCacher.swift */; };
 		5E5EF9661AB831CB00CCB831 /* MySwiftClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E6062021AB81D8600FED7E5 /* MySwiftClass.swift */; };
 		5E6062031AB81D8600FED7E5 /* MySwiftClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E6062021AB81D8600FED7E5 /* MySwiftClass.swift */; };
 		5E98BC101ABD41CD00E7F456 /* AsTableCellProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E98BC0F1ABD41CD00E7F456 /* AsTableCellProtocols.swift */; };
@@ -52,6 +54,8 @@
 		5E244DC31AC176C60052FA37 /* AsNodeMaker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AsNodeMaker.swift; path = AsyncDisplay/AsNodeMaker.swift; sourceTree = "<group>"; };
 		5E39F8861AB91E5C00A285AE /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
 		5E39F8891AB91EF000A285AE /* Haneke.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Haneke.framework; path = Carthage/Build/iOS/Haneke.framework; sourceTree = "<group>"; };
+		5E57C3461AC2ED2E0009E909 /* AsCacheDownloader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AsCacheDownloader.swift; path = AsyncDisplay/AsCacheDownloader.swift; sourceTree = "<group>"; };
+		5E57C3481AC2EE0B0009E909 /* AsImageCacher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AsImageCacher.swift; path = AsyncDisplay/AsImageCacher.swift; sourceTree = "<group>"; };
 		5E6062021AB81D8600FED7E5 /* MySwiftClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MySwiftClass.swift; sourceTree = "<group>"; };
 		5E98BC0F1ABD41CD00E7F456 /* AsTableCellProtocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AsTableCellProtocols.swift; sourceTree = "<group>"; };
 		5E9902301AB5C3C700391615 /* AsYoutubeiPadSwiftClient-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "AsYoutubeiPadSwiftClient-Bridging-Header.h"; sourceTree = "<group>"; };
@@ -123,9 +127,18 @@
 			isa = PBXGroup;
 			children = (
 				5E244DC31AC176C60052FA37 /* AsNodeMaker.swift */,
+				5E57C3461AC2ED2E0009E909 /* AsCacheDownloader.swift */,
+				5E57C3481AC2EE0B0009E909 /* AsImageCacher.swift */,
 			);
 			name = AsyncDisplay;
 			sourceTree = "<group>";
+		};
+		5E57C3451AC2ECAE0009E909 /* YoutubePage */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = YoutubePage;
+			sourceTree = SOURCE_ROOT;
 		};
 		5E9E1EC91AB7221D00523CC0 /* youtube-request */ = {
 			isa = PBXGroup;
@@ -166,6 +179,7 @@
 		5EBCDCF21AB5C22C0023F037 /* AsYoutubeiPadSwiftClient */ = {
 			isa = PBXGroup;
 			children = (
+				5E57C3451AC2ECAE0009E909 /* YoutubePage */,
 				5ECFEED11ABB28C600779904 /* youtubeapi */,
 				5ECFEECC1ABB288F00779904 /* TableViewController */,
 				5ECFEEB71ABB282700779904 /* Business-Logic-Layer */,
@@ -459,6 +473,7 @@
 			files = (
 				5ECFEED31ABB28C600779904 /* YoutubeApi.swift in Sources */,
 				5EB3BF841AC2B7C10096B66F /* WebImageCache.swift in Sources */,
+				5E57C3491AC2EE0B0009E909 /* AsImageCacher.swift in Sources */,
 				5ECFEECF1ABB288F00779904 /* AsMenuTableRowCell.swift in Sources */,
 				5ECFEED01ABB288F00779904 /* AsMenuTableViewController.swift in Sources */,
 				5ECFEEC51ABB282700779904 /* LeftMenuSectionsUtils.swift in Sources */,
@@ -470,6 +485,7 @@
 				5EB291081ABD76FB00131D73 /* YoutubeUserProfile.swift in Sources */,
 				5E6062031AB81D8600FED7E5 /* MySwiftClass.swift in Sources */,
 				5EF4AC981ABC700A005D6D09 /* AsMenuTableHeaderCell.swift in Sources */,
+				5E57C3471AC2ED2E0009E909 /* AsCacheDownloader.swift in Sources */,
 				5EAC0A4C1AC17AAE0046B8AB /* AsMenuTableSectionTitleCell.swift in Sources */,
 				5ECFEECB1ABB282700779904 /* SubscriptionsViewController.swift in Sources */,
 				5E244DC41AC176C60052FA37 /* AsNodeMaker.swift in Sources */,

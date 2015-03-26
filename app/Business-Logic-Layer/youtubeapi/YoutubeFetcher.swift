@@ -71,6 +71,31 @@ class YoutubeFetcher: NSObject {
         })
     }
     
+    func fetchingChannelList(channelID: NSString,completeHandler:(NSObject,error: NSError) ->Void!) {
+        let service: GTLService = self.youTubeService!
+        
+        var query: GTLQueryYouTube = GTLQueryYouTube.queryForChannelsListWithPart("snippet") as GTLQueryYouTube
+        query.fields = "items/snippet(thumbnails)"
+        query.identifier = channelID
+        
+        service.executeQuery(query, completionHandler: { //GTLYouTubeChannel array
+            (ticket, resultList, error) -> Void in
+            var channel:GTLYouTubeChannel?
+            
+            if (error == nil) {
+                let result = resultList as GTLYouTubeChannelListResponse
+                let array = result.items() as NSArray
+                if(array.count >= 1){
+                    channel = array[0] as GTLYouTubeChannel
+                }
+            }else{
+            }
+            
+            completeHandler(channel!, error: error)
+            
+        })
+    }
+    
     func fetchingLoggedUserSubscriptions(channel:GTLYouTubeChannel) {
         let service: GTLService = self.youTubeService!
         

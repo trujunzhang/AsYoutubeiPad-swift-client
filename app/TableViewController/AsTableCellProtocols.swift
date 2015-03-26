@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-let LOGIN_ICON_WH:CGFloat = 36.0//26.0
+let LOGIN_ICON_WH:CGFloat = 26.0//26.0
 let USER_ICON_WH:CGFloat = 32.0
 let LEFT_MIDDLE_X:CGFloat = 34.0
 let TITLE_FONT_SIZE:CGFloat = 16.0
