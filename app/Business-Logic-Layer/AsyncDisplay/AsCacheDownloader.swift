@@ -9,6 +9,7 @@
 import Foundation
 import Haneke
 import Toucan
+//import WebImage
 
 class AsCacheDownloader:NSObject ,ASImageDownloaderProtocol{
     

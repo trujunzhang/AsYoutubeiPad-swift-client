@@ -26,9 +26,10 @@ class SubscriptionsViewController: UIViewController {
             menuButton.target = self.revealViewController()
             menuButton.action = "revealToggle:"
             self.view.addGestureRecognizer(self.revealViewController().tapGestureRecognizer())
-//            self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
+            //            self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
         }
         
+
     }
     
     

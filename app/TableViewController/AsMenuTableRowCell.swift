@@ -54,24 +54,12 @@ class AsMenuTableRowCell :ASCellNode{
             let cache:AsImageCacher = AsImageCacher()
             let downloader :AsCacheDownloader = AsCacheDownloader()
             var downloaderNode:ASNetworkImageNode = ASNetworkImageNode(cache:cache, downloader: downloader)
-            
-//            var downloaderNode:ASNetworkImageNode = ASNetworkImageNode()
-            
+
             downloaderNode.clipsToBounds = true
             downloaderNode.cornerRadius = 8.0
             
-            
             downloaderNode.URL = url
-            
-//            let cache :Cache<UIImage> = WebImageCache.SharedLeftMenuImageCache()
-//            cache.fetch(URL: url, formatName: "icons").onSuccess { image in
-//                // image will be a nice rounded icon
-//                var roundedImage:UIImage = image
-////                Toucan(image: image).maskWithRoundedRect(cornerRadius: 30).image
-//                
-//                self._videoChannelThumbnailsNode?.image = roundedImage
-//                
-//            }
+
             _videoChannelThumbnailsNode = downloaderNode
             
         }else{

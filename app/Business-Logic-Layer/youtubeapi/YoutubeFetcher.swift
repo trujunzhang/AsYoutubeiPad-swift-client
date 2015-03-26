@@ -14,6 +14,8 @@ protocol AuthorUserFetchingDelegate  {
 }
 
 class YoutubeFetcher: NSObject {
+    typealias ObjectHandler = (AnyObject!, Bool!) ->Void
+    
     var youTubeService: GTLServiceYouTube?
     var _delegate: AuthorUserFetchingDelegate?
     
@@ -71,7 +73,7 @@ class YoutubeFetcher: NSObject {
         })
     }
     
-    func fetchingChannelList(channelID: NSString,completeHandler:(NSObject,error: NSError) ->Void!) {
+    func fetchingChannelList(channelID: NSString,completeHandler:ObjectHandler) {
         let service: GTLService = self.youTubeService!
         
         var query: GTLQueryYouTube = GTLQueryYouTube.queryForChannelsListWithPart("snippet") as GTLQueryYouTube
@@ -80,18 +82,17 @@ class YoutubeFetcher: NSObject {
         
         service.executeQuery(query, completionHandler: { //GTLYouTubeChannel array
             (ticket, resultList, error) -> Void in
-            var channel:GTLYouTubeChannel?
             
             if (error == nil) {
                 let result = resultList as GTLYouTubeChannelListResponse
                 let array = result.items() as NSArray
                 if(array.count >= 1){
-                    channel = array[0] as GTLYouTubeChannel
+                    let channel = array[0] as GTLYouTubeChannel
+                    completeHandler(channel, true)
                 }
             }else{
+                completeHandler(nil,false)
             }
-            
-            completeHandler(channel!, error: error)
             
         })
     }

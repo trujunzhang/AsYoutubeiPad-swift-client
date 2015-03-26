@@ -34,6 +34,12 @@
 		5ECFEED01ABB288F00779904 /* AsMenuTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ECFEECE1ABB288F00779904 /* AsMenuTableViewController.swift */; };
 		5ECFEED31ABB28C600779904 /* YoutubeApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ECFEED21ABB28C600779904 /* YoutubeApi.swift */; };
 		5ED3E8DD1AC015D4008985D7 /* YoutubeFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ED3E8DC1AC015D4008985D7 /* YoutubeFetcher.swift */; };
+		5EEDE5501AC3F5B800D1AE30 /* YoutubeCacheImageFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EEDE54F1AC3F5B800D1AE30 /* YoutubeCacheImageFetcher.swift */; };
+		5EEDE5511AC3F7D900D1AE30 /* YoutubeFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ED3E8DC1AC015D4008985D7 /* YoutubeFetcher.swift */; };
+		5EEDE5521AC3F7EF00D1AE30 /* YoutubeApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ECFEED21ABB28C600779904 /* YoutubeApi.swift */; };
+		5EEDE5531AC3F88A00D1AE30 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E39F8861AB91E5C00A285AE /* Alamofire.framework */; };
+		5EEDE5541AC3F91D00D1AE30 /* YoutubeUserProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EB291071ABD76FB00131D73 /* YoutubeUserProfile.swift */; };
+		5EEDE5561AC3F9D000D1AE30 /* YoutubeFetcherTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EEDE5551AC3F9D000D1AE30 /* YoutubeFetcherTests.swift */; };
 		5EF4AC981ABC700A005D6D09 /* AsMenuTableHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EF4AC971ABC700A005D6D09 /* AsMenuTableHeaderCell.swift */; };
 		D02DC44C1D388FF8D47CD4D2 /* libPods-AsYoutubeiPadSwiftClient.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 643CB5AECE13A0D50F097746 /* libPods-AsYoutubeiPadSwiftClient.a */; };
 		E51B8F7E257266B73D3B2A0D /* libPods-AsYoutubeiPadSwiftClientTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C3B0BF885CDA89AA03EAAB2 /* libPods-AsYoutubeiPadSwiftClientTests.a */; };
@@ -82,6 +88,8 @@
 		5ECFEECE1ABB288F00779904 /* AsMenuTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AsMenuTableViewController.swift; sourceTree = "<group>"; };
 		5ECFEED21ABB28C600779904 /* YoutubeApi.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YoutubeApi.swift; sourceTree = "<group>"; };
 		5ED3E8DC1AC015D4008985D7 /* YoutubeFetcher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YoutubeFetcher.swift; sourceTree = "<group>"; };
+		5EEDE54F1AC3F5B800D1AE30 /* YoutubeCacheImageFetcher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YoutubeCacheImageFetcher.swift; sourceTree = "<group>"; };
+		5EEDE5551AC3F9D000D1AE30 /* YoutubeFetcherTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = YoutubeFetcherTests.swift; path = ../../UnitTests/youtube.api/YoutubeFetcherTests.swift; sourceTree = "<group>"; };
 		5EF4AC971ABC700A005D6D09 /* AsMenuTableHeaderCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AsMenuTableHeaderCell.swift; sourceTree = "<group>"; };
 		643CB5AECE13A0D50F097746 /* libPods-AsYoutubeiPadSwiftClient.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-AsYoutubeiPadSwiftClient.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7691D91426A5CCFB076684C4 /* Pods-AsYoutubeiPadSwiftClientTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AsYoutubeiPadSwiftClientTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-AsYoutubeiPadSwiftClientTests/Pods-AsYoutubeiPadSwiftClientTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -106,6 +114,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E51B8F7E257266B73D3B2A0D /* libPods-AsYoutubeiPadSwiftClientTests.a in Frameworks */,
+				5EEDE5531AC3F88A00D1AE30 /* Alamofire.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -206,6 +215,7 @@
 		5EBCDD081AB5C22C0023F037 /* AsYoutubeiPadSwiftClientTests */ = {
 			isa = PBXGroup;
 			children = (
+				5EEDE5571AC3F9D400D1AE30 /* youtube-api */,
 				5E9E1EC91AB7221D00523CC0 /* youtube-request */,
 				5EBCDD0B1AB5C22C0023F037 /* AsYoutubeiPadSwiftClientTests.swift */,
 				5EBCDD091AB5C22C0023F037 /* Supporting Files */,
@@ -269,10 +279,19 @@
 				5EB291071ABD76FB00131D73 /* YoutubeUserProfile.swift */,
 				5ED3E8DC1AC015D4008985D7 /* YoutubeFetcher.swift */,
 				5EBC21CD1AC0448400FD9DD4 /* YoutubeModelParser.swift */,
+				5EEDE54F1AC3F5B800D1AE30 /* YoutubeCacheImageFetcher.swift */,
 			);
 			name = youtubeapi;
 			path = "Business-Logic-Layer/youtubeapi";
 			sourceTree = SOURCE_ROOT;
+		};
+		5EEDE5571AC3F9D400D1AE30 /* youtube-api */ = {
+			isa = PBXGroup;
+			children = (
+				5EEDE5551AC3F9D000D1AE30 /* YoutubeFetcherTests.swift */,
+			);
+			name = "youtube-api";
+			sourceTree = "<group>";
 		};
 		A6B01E3262893BD99009488C /* Pods */ = {
 			isa = PBXGroup;
@@ -485,6 +504,7 @@
 				5EB291081ABD76FB00131D73 /* YoutubeUserProfile.swift in Sources */,
 				5E6062031AB81D8600FED7E5 /* MySwiftClass.swift in Sources */,
 				5EF4AC981ABC700A005D6D09 /* AsMenuTableHeaderCell.swift in Sources */,
+				5EEDE5501AC3F5B800D1AE30 /* YoutubeCacheImageFetcher.swift in Sources */,
 				5E57C3471AC2ED2E0009E909 /* AsCacheDownloader.swift in Sources */,
 				5EAC0A4C1AC17AAE0046B8AB /* AsMenuTableSectionTitleCell.swift in Sources */,
 				5ECFEECB1ABB282700779904 /* SubscriptionsViewController.swift in Sources */,
@@ -498,8 +518,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				5E9E1ECB1AB7226F00523CC0 /* GYWrapSubscriptionsTests.swift in Sources */,
+				5EEDE5521AC3F7EF00D1AE30 /* YoutubeApi.swift in Sources */,
+				5EEDE5541AC3F91D00D1AE30 /* YoutubeUserProfile.swift in Sources */,
+				5EEDE5511AC3F7D900D1AE30 /* YoutubeFetcher.swift in Sources */,
 				5E5EF9661AB831CB00CCB831 /* MySwiftClass.swift in Sources */,
 				5EBCDD0C1AB5C22C0023F037 /* AsYoutubeiPadSwiftClientTests.swift in Sources */,
+				5EEDE5561AC3F9D000D1AE30 /* YoutubeFetcherTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -667,6 +691,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
@@ -688,6 +713,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
 				INFOPLIST_FILE = AsYoutubeiPadSwiftClientTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
