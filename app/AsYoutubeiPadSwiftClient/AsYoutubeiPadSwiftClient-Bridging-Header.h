@@ -16,6 +16,7 @@
 #import "GTLYouTube.h"
 #import "GTLService.h"
 
+#import "UIImageView+WebCache.h"
 
 
 //#import <AFNetworking/AFNetworking.h>

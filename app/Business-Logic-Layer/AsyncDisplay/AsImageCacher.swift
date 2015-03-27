@@ -7,6 +7,9 @@
 //
 
 import Foundation
+import Haneke
+import Toucan
+import Alamofire
 
 class AsImageCacher:NSObject, ASImageCacheProtocol {
     
@@ -21,9 +24,16 @@ class AsImageCacher:NSObject, ASImageCacheProtocol {
         // ASMultiplexImageNode callbacks
         dispatch_async(callbackQueue, {
             if(completion != nil) {
+                let cache :Cache<UIImage> = WebImageCache.SharedLeftMenuImageCache()
+                cache.fetch(key: URL.URLString).onSuccess { data in
+                    // Do something with data
+                    let image:UIImage = data as UIImage
+                    completion(image.CGImage)
+                }
+                
                 //                UIImage *cacheImage = [YTCacheImplement getCacheImageWithURL:URL];
                 //                completion(cacheImage.CGImage);
-                completion(nil)
+                
             }
         });
         

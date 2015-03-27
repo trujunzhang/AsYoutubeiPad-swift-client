@@ -55,8 +55,8 @@ class AsMenuTableRowCell :ASCellNode{
             let downloader :AsCacheDownloader = AsCacheDownloader()
             var downloaderNode:ASNetworkImageNode = ASNetworkImageNode(cache:cache, downloader: downloader)
 
-            downloaderNode.clipsToBounds = true
-            downloaderNode.cornerRadius = 8.0
+//            downloaderNode.clipsToBounds = true
+//            downloaderNode.cornerRadius = 8.0
             
             downloaderNode.URL = url
 

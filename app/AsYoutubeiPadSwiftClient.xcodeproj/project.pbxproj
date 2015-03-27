@@ -57,6 +57,7 @@
 
 /* Begin PBXFileReference section */
 		1C3B0BF885CDA89AA03EAAB2 /* libPods-AsYoutubeiPadSwiftClientTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-AsYoutubeiPadSwiftClientTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		5E033EA41AC4122A001014A8 /* SDWebImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SDWebImage.framework; path = Carthage/Build/iOS/SDWebImage.framework; sourceTree = "<group>"; };
 		5E244DC31AC176C60052FA37 /* AsNodeMaker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AsNodeMaker.swift; path = AsyncDisplay/AsNodeMaker.swift; sourceTree = "<group>"; };
 		5E39F8861AB91E5C00A285AE /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
 		5E39F8891AB91EF000A285AE /* Haneke.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Haneke.framework; path = Carthage/Build/iOS/Haneke.framework; sourceTree = "<group>"; };
@@ -124,6 +125,7 @@
 		533132D809B076BA3BF83C66 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				5E033EA41AC4122A001014A8 /* SDWebImage.framework */,
 				5E39F8891AB91EF000A285AE /* Haneke.framework */,
 				5E39F8861AB91E5C00A285AE /* Alamofire.framework */,
 				643CB5AECE13A0D50F097746 /* libPods-AsYoutubeiPadSwiftClient.a */,
