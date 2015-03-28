@@ -27,4 +27,16 @@ Pod::Spec.new do |s|
 
   s.resource = "Pod/Assets/*/*.*"
 
+  s.subspec 'CacheImage' do |sub|
+    sub.source_files = 'Pod/Classes/CacheImage/*.{h,m}'
+  end
+
+  s.subspec 'ImageEffects' do |sub|
+    sub.source_files = 'Pod/Classes/ImageEffects/*.{h,m}'
+  end
+
+  s.subspec 'STCollapseTableView' do |sub|
+    sub.source_files = 'Pod/Classes/STCollapseTableView/*.{h,m}'
+  end    
+  
 end

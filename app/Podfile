@@ -19,11 +19,12 @@ def import_pods
 
     # pod 'SQPersist'
 
-    pod 'AsyncDisplayKit'
+    # pod 'AsyncDisplayKit'
 
     pod 'Google-API-Client/YouTube'
 
     # pod 'AFNetworking'
+
 
 end
 
@@ -31,7 +32,7 @@ target 'AsYoutubeiPadSwiftClient', :exclusive => true do
   # ________________common tools library___________________
   import_pods
 
-  #pod  'Reveal-iOS-SDK'
+  pod  'Reveal-iOS-SDK'
 
 
   # ________________project library___________________

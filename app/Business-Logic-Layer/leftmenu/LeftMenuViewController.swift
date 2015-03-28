@@ -32,14 +32,14 @@ class LeftMenuViewController: UIViewController ,SWRevealViewControllerDelegate{
     
     func initMenuTableView() {
         
-        var menuViewController:AsMenuTableViewController = AsMenuTableViewController(viewWidth: REAR_VIEW_WIDTH)
-        self.addChildViewController(menuViewController)
-        
-        var addView =  menuViewController.view;
-        self.view.addSubview(addView)
-        
-        menuViewController.didMoveToParentViewController(self)
-        addView.frame=self.view.bounds;
+//        var menuViewController:AsMenuTableViewController = AsMenuTableViewController(viewWidth: REAR_VIEW_WIDTH)
+//        self.addChildViewController(menuViewController)
+//        
+//        var addView =  menuViewController.view;
+//        self.view.addSubview(addView)
+//        
+//        menuViewController.didMoveToParentViewController(self)
+//        addView.frame=self.view.bounds;
     }
     
 

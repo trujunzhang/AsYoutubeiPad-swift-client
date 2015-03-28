@@ -11,7 +11,8 @@ import UIKit
 import Haneke
 import Toucan
 
-class AsMenuTableRowCell :ASCellNode{
+//class AsMenuTableRowCell :ASCellNode{
+    class AsMenuTableRowCell :ASDisplayNode{
     
     var _nodeCellSize:CGSize?
     var _videoChannelThumbnailsNode:ASImageNode?
@@ -41,7 +42,8 @@ class AsMenuTableRowCell :ASCellNode{
         _nodeTitle?.attributedString = attributedString
         
         self.addSubnode(_nodeTitle)
-        
+
+
         // 3
         self.backgroundColor = UIColor.clearColor()
     }

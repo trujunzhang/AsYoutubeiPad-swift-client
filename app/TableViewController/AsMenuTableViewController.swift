@@ -11,17 +11,13 @@ import UIKit
 
 
 class AsMenuTableViewController: UIViewController ,ASTableCellProtocols,  ASTableViewDataSource, ASTableViewDelegate ,AuthorUserFetchingDelegate{
-    
-    
-    var menuTableWidth:CGFloat!
-    
+
     var tableView: ASTableView
     var leftMenuSectionsUtils :LeftMenuSectionsUtils = LeftMenuSectionsUtils()
     var menuSections : [MenuSectionItemInfo] = []
     
     convenience init(viewWidth:CGFloat) {
         self.init()
-        self.menuTableWidth = viewWidth
     }
     
     // MARK: UIViewController.
@@ -51,7 +47,7 @@ class AsMenuTableViewController: UIViewController ,ASTableCellProtocols,  ASTabl
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.setupUI()
+//        self.setupUI()
         self.view.addSubview(self.tableView)
     }
     
@@ -59,14 +55,14 @@ class AsMenuTableViewController: UIViewController ,ASTableCellProtocols,  ASTabl
         self.tableView.frame = self.view.bounds
     }
     
-    func setupUI(){
-        let backgroundImage =  UIImage(named: "mt_side_menu_bg")?.stretchableImageWithLeftCapWidth(1, topCapHeight: 0)
-        
-        let backgroundView = UIView(frame: self.view.bounds)
-        backgroundView.backgroundColor = UIColor(patternImage: backgroundImage!)
-        
-        self.view.addSubview(backgroundView)
-    }
+//    func setupUI(){
+//        let backgroundImage =  UIImage(named: "container_background")?.stretchableImageWithLeftCapWidth(1, topCapHeight: 0)
+//        
+//        let backgroundView = UIView(frame: self.view.bounds)
+//        backgroundView.backgroundColor = UIColor(patternImage: backgroundImage!)
+//        
+////        self.view.addSubview(backgroundView)
+//    }
     
     // MARK: ASTableView data source and delegate.
     func tableView(tableView: ASTableView!, nodeForRowAtIndexPath indexPath: NSIndexPath!) -> ASCellNode! {
@@ -79,11 +75,12 @@ class AsMenuTableViewController: UIViewController ,ASTableCellProtocols,  ASTabl
         switch rowType {
         case MenuRowType.LMenuTreeRowUserHeader:
             let _isLogin = YoutubeUserProfile.sharedInstance.isLogin
-            cell = AsMenuTableHeaderCell(nodeCellSize:  CGSizeMake(self.menuTableWidth, 50+20),parent: self.parentViewController! , delegate: self)
+            cell = AsMenuTableHeaderCell(nodeCellSize:  CGSizeMake(REAR_VIEW_WIDTH, 50+20),parent: self.parentViewController! , delegate: self)
         case MenuRowType.LMenuTreeRowSectionTitle:
-            cell = AsMenuTableSectionTitleCell(nodeCellSize: CGSizeMake(self.menuTableWidth, 40), title: row.title)
+            cell = AsMenuTableSectionTitleCell(nodeCellSize: CGSizeMake(REAR_VIEW_WIDTH, 40), title: row.title)
         default:
-            cell = AsMenuTableRowCell(nodeCellSize: CGSizeMake(self.menuTableWidth, TABLE_ROW_HEIGHT), title: row.title, iconUrl: row.imageUrl, isRemoteImage: isRemoteImage)
+        let x = 0
+//            cell = AsMenuTableRowCell(nodeCellSize: CGSizeMake(REAR_VIEW_WIDTH, TABLE_ROW_HEIGHT), title: row.title, iconUrl: row.imageUrl, isRemoteImage: isRemoteImage)
         }
         return cell
     }

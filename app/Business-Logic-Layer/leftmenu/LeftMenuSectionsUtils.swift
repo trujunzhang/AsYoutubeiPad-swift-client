@@ -159,7 +159,7 @@ public class LeftMenuSectionsUtils {
     func getSignOutMenuItemTreeArray() -> [MenuSectionItemInfo]{
         return [
             getHeaderMenuItemTree(),
-            _insertSectionHeaderItem(getSectionHeaderItemInfo("Categories")),// section-header
+//            _insertSectionHeaderItem(getSectionHeaderItemInfo("Categories")),// section-header
             getCategoriesMenuItemTree()
         ]
     }
