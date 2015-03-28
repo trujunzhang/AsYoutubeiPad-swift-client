@@ -158,7 +158,7 @@ public class LeftMenuSectionsUtils {
     
     func getSignOutMenuItemTreeArray() -> [MenuSectionItemInfo]{
         return [
-            getHeaderMenuItemTree(),
+//            getHeaderMenuItemTree(),
 //            _insertSectionHeaderItem(getSectionHeaderItemInfo("Categories")),// section-header
             getCategoriesMenuItemTree()
         ]
@@ -166,23 +166,23 @@ public class LeftMenuSectionsUtils {
     
     func getSignInMenuItemTreeArray() -> [MenuSectionItemInfo]{
         return [
-            getHeaderMenuItemTree(),
+//            getHeaderMenuItemTree(),
             getSignInMenuItemTree(),
             // insert two sections
-            _insertSectionHeaderItem(getSectionHeaderItemInfo("Categories")),// section-header
+//            _insertSectionHeaderItem(getSectionHeaderItemInfo("Categories")),// section-header
             getCategoriesMenuItemTree()
         ]
     }
     
     func getSignInMenuItemTreeArrayWithSubscriptions(rows : [MenuRowItemInfo]) -> [MenuSectionItemInfo]{
         return [
-            getHeaderMenuItemTree(),
+//            getHeaderMenuItemTree(),
             getSignInMenuItemTree(),
             // ............................
-            _insertSectionHeaderItem(getSectionHeaderItemInfo("Subscriptions")),// section-header
+//            _insertSectionHeaderItem(getSectionHeaderItemInfo("Subscriptions")),// section-header
             getEmptySubscriptionsMenuItemTree(rows),
             // ............................
-            _insertSectionHeaderItem(getSectionHeaderItemInfo("Categories")),// section-header
+//            _insertSectionHeaderItem(getSectionHeaderItemInfo("Categories")),// section-header
             getCategoriesMenuItemTree()
         ]
     }

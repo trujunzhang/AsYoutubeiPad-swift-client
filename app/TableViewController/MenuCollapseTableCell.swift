@@ -22,7 +22,9 @@ class MenuCollapseTableCell: UITableViewCell {
     func setupCell(title: String, iconUrl: String, isRemoteImage: Bool) {
         
         _isRemoteImage = isRemoteImage
+
         self.titleLabel.text = title
+        self.titleLabel.textColor = UIColor.whiteColor()
         
         if(isRemoteImage == true){
             let url:NSURL = NSURL(string: iconUrl)!
