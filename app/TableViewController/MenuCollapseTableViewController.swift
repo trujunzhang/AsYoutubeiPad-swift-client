@@ -11,7 +11,7 @@ import Foundation
 
 class MenuCollapseTableViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, AuthorUserFetchingDelegate {
     
-    @IBOutlet var tableView: STCollapseTableView!
+    @IBOutlet var tableView: UITableView!
     let nodeConstructionQueue = NSOperationQueue()
     
     
@@ -34,7 +34,7 @@ class MenuCollapseTableViewController: UIViewController, UITableViewDataSource, 
 
         
 //        if (YoutubeUserProfile.sharedInstance.isLogin == true) {
-//            menuSections = self.leftMenuSectionsUtils.getSignInMenuItemTreeArray()
+            menuSections = self.leftMenuSectionsUtils.getSignInMenuItemTreeArray()
 //        } else {
 //            menuSections = self.leftMenuSectionsUtils.getSignOutMenuItemTreeArray()
 //        }
@@ -51,7 +51,7 @@ class MenuCollapseTableViewController: UIViewController, UITableViewDataSource, 
         self.tableView.dataSource = self
         self.tableView.delegate = self
         
-        self.tableView.exclusiveSections = true
+//        self.tableView.exclusiveSections = true
         
         let main:UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
         
@@ -64,8 +64,8 @@ class MenuCollapseTableViewController: UIViewController, UITableViewDataSource, 
  
         self.tableView.reloadData()
         
-        self.tableView.openSection(0, animated: true)
-        self.tableView.openSection(1, animated: true)
+//        self.tableView.openSection(0, animated: true)
+//        self.tableView.openSection(1, animated: true)
         
         
         YoutubeFetcher.sharedInstance._delegate = self
@@ -112,8 +112,8 @@ class MenuCollapseTableViewController: UIViewController, UITableViewDataSource, 
     func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         var header:UILabel = UILabel()
         header.text = "wanghao"
-        header.textColor = UIColor.redColor()
-        header.backgroundColor = UIColor.blueColor()
+//        header.textColor = UIColor.redColor()
+//        header.backgroundColor = UIColor.blueColor()
         
         return header
     }
@@ -135,10 +135,10 @@ class MenuCollapseTableViewController: UIViewController, UITableViewDataSource, 
     }
     
     func endFetchingUserSubscriptions(array: NSArray) {
-//        var rows: [MenuRowItemInfo] = YoutubeModelParser.convertToMenuRowArrayFromSubscriptions(array)
-//        menuSections = self.leftMenuSectionsUtils.getSignInMenuItemTreeArrayWithSubscriptions(rows)
-//        
-//        self.tableView.reloadData()
+        var rows: [MenuRowItemInfo] = YoutubeModelParser.convertToMenuRowArrayFromSubscriptions(array)
+        menuSections = self.leftMenuSectionsUtils.getSignInMenuItemTreeArrayWithSubscriptions(rows)
+//
+        self.tableView.reloadData()
 //        self.tableView.openSection(1, animated: true)
         //        self.tableView.insertSections(indexSet, withRowAnimation: UITableViewRowAnimation.None)
     }
