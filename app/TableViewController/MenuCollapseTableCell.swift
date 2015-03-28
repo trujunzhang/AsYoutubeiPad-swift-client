@@ -25,9 +25,12 @@ class MenuCollapseTableCell: UITableViewCell {
 
         self.titleLabel.text = title
         self.titleLabel.textColor = UIColor.whiteColor()
+  
         
         if(isRemoteImage == true){
             let url:NSURL = NSURL(string: iconUrl)!
+            let image = UIImage(named: "thumbnail_border")
+            self.iconImage.image = image
             self.iconImage.hnk_setImageFromURL(url)
         }else{
             let image = UIImage(named: iconUrl)

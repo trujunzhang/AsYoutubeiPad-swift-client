@@ -75,7 +75,7 @@
                                     <constraint firstAttribute="height" constant="600" id="WKD-RI-Nae"/>
                                 </constraints>
                             </imageView>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="g6I-bl-aaX">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="g6I-bl-aaX" customClass="STCollapseTableView">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -92,7 +92,7 @@
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pRj-QR-Hnb">
                                                     <rect key="frame" x="64" y="15" width="513" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
@@ -165,6 +165,47 @@
             </objects>
             <point key="canvasLocation" x="1277" y="709"/>
         </scene>
+        <!--Menu Table Logged Header View-->
+        <scene sceneID="PX5-GT-Vsa">
+            <objects>
+                <viewController storyboardIdentifier="MenuTableLoggedHeaderView" id="e1a-Cu-jPP" customClass="MenuTableLoggedHeaderView" customModule="AsYoutubeiPadSwiftClient" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="z1i-EP-M9n"/>
+                        <viewControllerLayoutGuide type="bottom" id="13Y-hF-f4Z"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="kaG-Cb-jmg">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="60"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="account_default_thumbnail.png" translatesAutoresizingMaskIntoConstraints="NO" id="9vV-v5-p0e">
+                                <rect key="frame" x="12" y="6" width="48" height="48"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dWK-aI-iWI">
+                                <rect key="frame" x="78" y="8" width="459" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KoW-Om-dgx">
+                                <rect key="frame" x="78" y="32" width="459" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="signout.png" translatesAutoresizingMaskIntoConstraints="NO" id="g8d-0b-S20">
+                                <rect key="frame" x="558" y="17" width="26" height="26"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </view>
+                    <nil key="simulatedStatusBarMetrics"/>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="600" height="60"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kWU-oJ-1Ft" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="803" y="1643"/>
+        </scene>
         <!--Item-->
         <scene sceneID="kth-J6-jb2">
             <objects>
@@ -184,9 +225,32 @@
             </objects>
             <point key="canvasLocation" x="2089" y="709"/>
         </scene>
+        <!--Menu Table Sign In Header View-->
+        <scene sceneID="d33-Nw-r0L">
+            <objects>
+                <viewController storyboardIdentifier="MenuTableSignInHeaderView" id="V1V-k1-pXV" customClass="MenuTableSignInHeaderView" customModule="AsYoutubeiPadSwiftClient" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="mfO-H2-hqW"/>
+                        <viewControllerLayoutGuide type="bottom" id="epo-Pf-3Gs"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="OkM-3e-cIj">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="200"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <nil key="simulatedStatusBarMetrics"/>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="600" height="200"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3jm-m3-3u5" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1563" y="1643"/>
+        </scene>
     </scenes>
     <resources>
+        <image name="account_default_thumbnail.png" width="48" height="48"/>
         <image name="container_background.png" width="320" height="731"/>
         <image name="reveal-icon" width="22" height="16"/>
+        <image name="signout.png" width="26" height="26"/>
     </resources>
 </document>
