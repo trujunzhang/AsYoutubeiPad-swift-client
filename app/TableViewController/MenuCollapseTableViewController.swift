@@ -135,11 +135,11 @@ class MenuCollapseTableViewController: UIViewController, UITableViewDataSource, 
     }
     
     func endFetchingUserSubscriptions(array: NSArray) {
-        var rows: [MenuRowItemInfo] = YoutubeModelParser.convertToMenuRowArrayFromSubscriptions(array)
-        menuSections = self.leftMenuSectionsUtils.getSignInMenuItemTreeArrayWithSubscriptions(rows)
-        
-        self.tableView.reloadData()
-        self.tableView.openSection(1, animated: true)
+//        var rows: [MenuRowItemInfo] = YoutubeModelParser.convertToMenuRowArrayFromSubscriptions(array)
+//        menuSections = self.leftMenuSectionsUtils.getSignInMenuItemTreeArrayWithSubscriptions(rows)
+//        
+//        self.tableView.reloadData()
+//        self.tableView.openSection(1, animated: true)
         //        self.tableView.insertSections(indexSet, withRowAnimation: UITableViewRowAnimation.None)
     }
     
