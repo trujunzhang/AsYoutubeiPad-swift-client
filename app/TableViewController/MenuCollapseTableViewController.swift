@@ -136,11 +136,11 @@ class MenuCollapseTableViewController: UIViewController, UITableViewDataSource, 
     }
     
     func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 40.0
+        return TABLE_SECTION_HEADER_HEIGHT
     }
     
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-         return 40.0
+         return TABLE_ROW_HEIGHT
     }
     
     

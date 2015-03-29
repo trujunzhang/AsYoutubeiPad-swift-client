@@ -36,11 +36,13 @@ class MenuTableLoggedHeaderView: UIViewController {
     }
     
     func setupView() {
-        
         //        let userChannel: GTLYouTubeChannel = YoutubeUserProfile.sharedInstance.userChannel!
-        
-        userNameLabel.text = "wanghao"
-        
+
+        nickNameLabel.textColor = UIColor.whiteColor()
+        userNameLabel.textColor = UIColor.whiteColor()
+
+        nickNameLabel.text = "Trujun Zhang"
+        userNameLabel.text = "wanghaobackup@gmail.com"
     }
     
     func layoutUserProfileUI() {
