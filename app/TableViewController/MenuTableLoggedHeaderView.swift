@@ -25,7 +25,7 @@ class MenuTableLoggedHeaderView: UIViewController {
         
         self.setupView()
         
-//        self.layoutUserProfileUI()
+        self.layoutUserProfileUI()
         
         self.view.frame = CGRectMake(0, 0, REAR_VIEW_WIDTH, TABLE_HEADER_VIEW_HEIGHT)
     }
@@ -36,16 +36,15 @@ class MenuTableLoggedHeaderView: UIViewController {
     }
     
     func setupView() {
-
+        
         //        let userChannel: GTLYouTubeChannel = YoutubeUserProfile.sharedInstance.userChannel!
         
         userNameLabel.text = "wanghao"
-
+        
     }
     
     func layoutUserProfileUI() {
         
-        var userThumbnail = thumbnailImageView
         var nickName = nickNameLabel
         var userName = userNameLabel
         
@@ -60,12 +59,12 @@ class MenuTableLoggedHeaderView: UIViewController {
         //1
         var vLeft: CGFloat = LEFT_MIDDLE_X - USER_ICON_WH / 2
         var vTop: CGFloat = (height! - USER_ICON_WH) / 2
-        userThumbnail.frame = CGRectMake(vLeft, vTop , USER_ICON_WH, USER_ICON_WH)
         
-        //3
+        
         var verticalSecondX = vLeft + USER_ICON_WH + ICON_PADDING_RIGHT
         var vWidth = width! - verticalSecondX - LOGIN_OUT_ICON_PADDING_RIGHT - LOGIN_ICON_WH - ICON_PADDING_RIGHT
         
+        //3
         nodeHeight = 20
         vTop = middleY - nodeHeight!
         nickName.frame = CGRectMake(verticalSecondX, vTop, vWidth, nodeHeight!)
