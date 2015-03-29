@@ -9,7 +9,6 @@
 import Foundation
 import UIKit
 
-let REAR_VIEW_WIDTH :CGFloat = 280.0
 
 public enum CellIdentifier {
     case UseProfileCellIdentifier

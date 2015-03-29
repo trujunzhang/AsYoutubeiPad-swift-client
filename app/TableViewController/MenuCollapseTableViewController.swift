@@ -30,7 +30,7 @@ class MenuCollapseTableViewController: UIViewController, UITableViewDataSource, 
         self.setupViewController()
     }
     
-    func setupViewController(){
+    func setupViewController() {
         
         
         //        if (YoutubeUserProfile.sharedInstance.isLogin == true) {
@@ -45,17 +45,6 @@ class MenuCollapseTableViewController: UIViewController, UITableViewDataSource, 
         super.viewDidLoad()
         
         // Do any additional setup after loading the view, typically from a nib.
-//        let backgroundImage:UIImage = UIImage(named: "container_background")!
-//        let backgroundImageView:UIImageView = UIImageView(image: backgroundImage)
-//        backgroundImageView.contentMode = .ScaleAspectFill
-//        
-//        self.view.addSubview(backgroundImageView)
-
-        
-//        let background = UIImage(named: "container_background")
-//        self.view.backgroundColor = UIColor(patternImage: background!)
-
-        
         self.tableView.backgroundColor = UIColor.clearColor()
         self.tableView.separatorStyle = UITableViewCellSeparatorStyle.None
         
@@ -64,28 +53,45 @@ class MenuCollapseTableViewController: UIViewController, UITableViewDataSource, 
         
         //        self.tableView.exclusiveSections = true
         
-        let main:UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-        
-        let headerViewController:MenuTableLoggedHeaderView = main.instantiateViewControllerWithIdentifier("MenuTableLoggedHeaderView") as MenuTableLoggedHeaderView
-        
-        
-        let headerView : UIView = headerViewController.view
-        headerView.frame = CGRectMake(0, 0, 200, 60)
-        self.tableView.tableHeaderView = headerView
-        
         self.tableView.reloadData()
         
         //        self.tableView.openSection(0, animated: true)
         //        self.tableView.openSection(1, animated: true)
         
+        self.setupTableHeaderView()
         
         YoutubeFetcher.sharedInstance._delegate = self
         
     }
     
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    func setupTableHeaderView() {
+        //        let main: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        
+        let main: UIStoryboard = self.storyboard!
+        
+        var headerViewController: UIViewController
+//        if(YoutubeUserProfile.sharedInstance.isLogin == true){
+                    if (YoutubeUserProfile.sharedInstance.isLogin == false) {
+            headerViewController =
+                main.instantiateViewControllerWithIdentifier("MenuTableLoggedHeaderView") as UIViewController
+        } else {
+            headerViewController =
+                main.instantiateViewControllerWithIdentifier("MenuTableSignInHeaderView") as UIViewController
+        }
+
+        let headerView:UIView = UIView()
+        headerView.frame = CGRectMake(0, 0, REAR_VIEW_WIDTH, TABLE_HEADER_VIEW_HEIGHT)
+        headerView.addSubview(headerViewController.view)
+        
+        self.addChildViewController(headerViewController)
+        
+        self.tableView.tableHeaderView = headerView
     }
     
     
@@ -121,7 +127,7 @@ class MenuCollapseTableViewController: UIViewController, UITableViewDataSource, 
     }
     
     func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        var header:UILabel = UILabel()
+        var header: UILabel = UILabel()
         header.text = "wanghao"
         //        header.textColor = UIColor.redColor()
         //        header.backgroundColor = UIColor.blueColor()
@@ -148,7 +154,7 @@ class MenuCollapseTableViewController: UIViewController, UITableViewDataSource, 
     func endFetchingUserSubscriptions(array: NSArray) {
         var rows: [MenuRowItemInfo] = YoutubeModelParser.convertToMenuRowArrayFromSubscriptions(array)
         menuSections = self.leftMenuSectionsUtils.getSignInMenuItemTreeArrayWithSubscriptions(rows)
-        //
+        
         self.tableView.reloadData()
         //        self.tableView.openSection(1, animated: true)
         //        self.tableView.insertSections(indexSet, withRowAnimation: UITableViewRowAnimation.None)
