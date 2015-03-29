@@ -71,20 +71,16 @@ class MenuCollapseTableViewController: UIViewController, UITableViewDataSource, 
     }
     
     func setupTableHeaderView() {
-        //        let main: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-        
-        let main: UIStoryboard = self.storyboard!
-        
         var headerViewController: UIViewController
         if(YoutubeUserProfile.sharedInstance.isLogin == true){
-//                    if (YoutubeUserProfile.sharedInstance.isLogin == false) {
+            //                    if (YoutubeUserProfile.sharedInstance.isLogin == false) {
             headerViewController =
-                main.instantiateViewControllerWithIdentifier("MenuTableLoggedHeaderView") as UIViewController
+                self.storyboard!.instantiateViewControllerWithIdentifier("MenuTableLoggedHeaderView") as UIViewController
         } else {
             headerViewController =
-                main.instantiateViewControllerWithIdentifier("MenuTableSignInHeaderView") as UIViewController
+                self.storyboard!.instantiateViewControllerWithIdentifier("MenuTableSignInHeaderView") as UIViewController
         }
-
+        
         let headerView:UIView = UIView()
         headerView.frame = CGRectMake(0, 0, REAR_VIEW_WIDTH, TABLE_HEADER_VIEW_HEIGHT)
         headerView.addSubview(headerViewController.view)
@@ -127,19 +123,31 @@ class MenuCollapseTableViewController: UIViewController, UITableViewDataSource, 
     }
     
     func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        let headerViewInSection :MenuSectionHeaderView = MenuSectionHeaderView()
+         var sectionInfo: MenuSectionItemInfo = menuSections[section]
         
-        headerViewInSection.setupView("wanghao")
+        var menuSectionHeaderView: MenuSectionHeaderView =
+        self.storyboard!.instantiateViewControllerWithIdentifier("MenuSectionHeaderView") as MenuSectionHeaderView
+        
+        menuSectionHeaderView.setupView(sectionInfo.headerTitle)
+        
+        let headerViewInSection:UIView = UIView()
+        headerViewInSection.frame = CGRectMake(0, 0, REAR_VIEW_WIDTH, TABLE_SECTION_HEADER_HEIGHT)
+        headerViewInSection.addSubview(menuSectionHeaderView.view)
+        
         
         return headerViewInSection
     }
     
     func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+         var sectionInfo: MenuSectionItemInfo = menuSections[section]
+        if(sectionInfo.isHideTitle == true){
+            return 0
+        }
         return TABLE_SECTION_HEADER_HEIGHT
     }
     
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-         return TABLE_ROW_HEIGHT
+        return TABLE_ROW_HEIGHT
     }
     
     

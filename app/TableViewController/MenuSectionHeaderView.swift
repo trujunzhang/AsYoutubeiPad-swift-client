@@ -7,29 +7,29 @@
 //
 
 import Foundation
+import UIKit
 
-class MenuSectionHeaderView: UIView {
+class MenuSectionHeaderView: UIViewController {
     
-    var titleLabel:UILabel?
-    var divideView:UIView?
+
+    @IBOutlet var titleLabel: UILabel!
+    
+    var headerTitle:NSString?
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        titleLabel.textColor = UIColor.whiteColor()
+        
+        titleLabel.text = headerTitle
+        
+        self.view.frame = CGRectMake(0, 0, REAR_VIEW_WIDTH, TABLE_SECTION_HEADER_HEIGHT)
+    }
     
     func setupView(title:NSString){
-        //1
-        titleLabel = UILabel()
-        
-        titleLabel?.text = title
-        titleLabel?.textColor = UIColor.whiteColor()
-        
-//        self.addSubview(titleLabel!)
-        
-        // 2
+        headerTitle = title
     }
     
-    override func layoutSubviews() {
-        let height:CGFloat = TABLE_SECTION_HEADER_HEIGHT
-        
-        
-        
-    }
-
+    
+    
 }

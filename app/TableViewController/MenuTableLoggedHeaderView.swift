@@ -25,27 +25,28 @@ class MenuTableLoggedHeaderView: UIViewController {
         
         self.setupView()
         
-        self.layoutUserProfileUI()
+        
         
         self.view.frame = CGRectMake(0, 0, REAR_VIEW_WIDTH, TABLE_HEADER_VIEW_HEIGHT)
     }
     
     
-    override func viewWillLayoutSubviews() {
-        
+    override func viewDidLayoutSubviews() {
+        self.layoutUserProfileUI()
     }
     
     func setupView() {
         //        let userChannel: GTLYouTubeChannel = YoutubeUserProfile.sharedInstance.userChannel!
-
+        
         nickNameLabel.textColor = UIColor.whiteColor()
         userNameLabel.textColor = UIColor.whiteColor()
-
+        
         nickNameLabel.text = "Trujun Zhang"
         userNameLabel.text = "wanghaobackup@gmail.com"
     }
     
     func layoutUserProfileUI() {
+        
         
         var nickName = nickNameLabel
         var userName = userNameLabel
@@ -53,18 +54,23 @@ class MenuTableLoggedHeaderView: UIViewController {
         var width = _nodeCellSize?.width
         var height = _nodeCellSize?.height
         
+        var thumbnailRect:CGRect = thumbnailImageView.frame
+        var eventButtonX:CGFloat = eventButton.frame.origin.x
+        
+        var thumbnailRightX = thumbnailRect.origin.x + thumbnailRect.size.width
+        
+        let rightWidth = width! - eventButtonX + ICON_PADDING_RIGHT
+        var verticalSecondX = thumbnailRightX + ICON_PADDING_RIGHT
+        var vWidth:CGFloat = width! - verticalSecondX - rightWidth
+        
         
         var middleY = height! / 2
-        var nodeSize: CGSize?
         var nodeHeight: CGFloat?
         
         //1
         var vLeft: CGFloat = LEFT_MIDDLE_X - USER_ICON_WH / 2
         var vTop: CGFloat = (height! - USER_ICON_WH) / 2
         
-        
-        var verticalSecondX = vLeft + USER_ICON_WH + ICON_PADDING_RIGHT
-        var vWidth = width! - verticalSecondX - LOGIN_OUT_ICON_PADDING_RIGHT - LOGIN_ICON_WH - ICON_PADDING_RIGHT
         
         //3
         nodeHeight = 20
@@ -76,6 +82,7 @@ class MenuTableLoggedHeaderView: UIViewController {
         vTop = middleY
         userName.frame = CGRectMake(verticalSecondX, vTop + 2, vWidth, nodeHeight!)
         
+//        userName.backgroundColor = UIColor.redColor()
     }
     
 }
