@@ -12,23 +12,27 @@ import Foundation
 class YoutubeModelParser {
     
     // MARK: Parse for GTLYouTubeChannel
-    func getAuthChannelSnippetThumbnailUrl(channel :GTLYouTubeChannel) -> NSString {
+    class func getAuthChannelSnippetThumbnailUrl(channel :GTLYouTubeChannel) -> NSString {
         //        return channel.snippet.thumbnails.high.url
         var stand :GTLYouTubeThumbnail = channel.snippet.thumbnails.standard
         
         return stand.url
     }
-    func getAuthChannelTitle(channel :GTLYouTubeChannel) -> NSString {
+    
+    class func getAuthChannelTitle(channel :GTLYouTubeChannel) -> NSString {
         return channel.snippet.title
     }
-    func getAuthChannelID(channel :GTLYouTubeChannel) -> NSString {
+    
+    class func getAuthChannelID(channel :GTLYouTubeChannel) -> NSString {
         return channel.identifier
     }
+    
     
     // MARK: Parse for GTLYouTubeSubscription
     class  func getSubscriptionTitle(subscription :GTLYouTubeSubscription) -> NSString {
         return subscription.snippet.title
     }
+    
     class  func getSubscriptionUrl(subscription :GTLYouTubeSubscription) -> NSString {
         var thumbnails:GTLYouTubeThumbnailDetails = subscription.snippet.thumbnails
         var dictionary :NSMutableDictionary = thumbnails.JSON["default"] as NSMutableDictionary

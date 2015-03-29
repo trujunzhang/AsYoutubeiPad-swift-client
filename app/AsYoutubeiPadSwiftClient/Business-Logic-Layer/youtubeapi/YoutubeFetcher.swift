@@ -30,6 +30,7 @@ class YoutubeFetcher: NSObject {
     
     override init() {
         super.init()
+
         
         self.youTubeService = GTLServiceYouTube()
         self.youTubeService?.shouldFetchNextPages = true
@@ -59,8 +60,14 @@ class YoutubeFetcher: NSObject {
                 let result = resultList as GTLYouTubeChannelListResponse
                 let array = result.items() as NSArray
                 if(array.count >= 1){
-                    let channel = array[0] as GTLYouTubeChannel
-                    YoutubeUserProfile.sharedInstance.userChannel = channel
+                    let channel:GTLYouTubeChannel = array[0] as GTLYouTubeChannel
+
+                    var channelID :NSString       = YoutubeModelParser.getAuthChannelID(channel)
+                    var title :NSString            = YoutubeModelParser.getAuthChannelTitle(channel)
+//                    var userName :NSString        = YoutubeModelParser.getAuthChannelTitle(channel)
+                    
+//                    YoutubeUserProfile.sharedInstance.saveLoggedUserChannelInfo(channelID, title: title, userName: userName)
+//                    YoutubeUserProfile.sharedInstance.userChannel = channel
                     
                     if(self._delegate != nil){
                         self._delegate?.endFetchingUserChannel(channel)

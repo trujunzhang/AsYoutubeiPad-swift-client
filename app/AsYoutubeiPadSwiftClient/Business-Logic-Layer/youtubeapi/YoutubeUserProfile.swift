@@ -8,13 +8,18 @@
 
 import Foundation
 
-let hasLoggedIn: NSString! = "hasLoggedInKey"
+
+public struct LoggedUserChannelInfo {
+    var channelID :       String
+    var title :           String
+    var userName :        String
+}
 
 class YoutubeUserProfile: NSObject {
     var isLogin: Bool?
     var auth: GTMOAuth2Authentication!
     
-    var userChannel: GTLYouTubeChannel?
+    var userChannel: LoggedUserChannelInfo?
     
     class var sharedInstance: YoutubeUserProfile {
         
@@ -29,33 +34,56 @@ class YoutubeUserProfile: NSObject {
         super.init()
         
         isLogin = self.hasLogin()
-        
         //        isLogin = true
+        
+        userChannel = LoggedUserChannelInfo(channelID: "", title: "", userName: "")
         
         if(isLogin == true){
             self.auth = GTMOAuth2ViewControllerTouch.authForGoogleFromKeychainForName("Google", clientID: kMyClientID, clientSecret: kMyClientSecret)
+            
+            userChannel = self.loadLoggedUserChannelInfo()
         }
-        
         
     }
     
+    //MARK :
+    func loadLoggedUserChannelInfo() ->LoggedUserChannelInfo {
+        var _userChannel: LoggedUserChannelInfo?
+        
+        _userChannel = LoggedUserChannelInfo(channelID: "", title: "", userName: "")
+        
+        return _userChannel!
+    }
+    
+    func saveLoggedUserChannelInfo(channelID : String,title :  String,userName : String){
+        userChannel = LoggedUserChannelInfo(channelID: channelID, title: title, userName: userName)
+        
+        var defaults = NSUserDefaults.standardUserDefaults()
+        
+        defaults.setObject(channelID, forKey: "channelID")
+        
+        defaults.synchronize()
+    }
+    
+    
+    //MARK :
     func hasLogin() -> Bool {
         var defaults: NSUserDefaults? = NSUserDefaults.standardUserDefaults()
-        var hasLoggedInFlag: Bool! = defaults?.boolForKey(hasLoggedIn)
+        var hasLoggedInFlag: Bool! = defaults?.boolForKey("hasLoggedInKey")
         
         return hasLoggedInFlag
-//        return false
+        //        return false
     }
     
     func saveLoggedInFlag() {
         var defaults = NSUserDefaults.standardUserDefaults()
-        defaults.setBool(true, forKey: hasLoggedIn)
+        defaults.setBool(true, forKey: "hasLoggedInKey")
         defaults.synchronize()
     }
     
     func authorizeRequest(finishedWithAuth: GTMOAuth2Authentication!) {
         self.auth = finishedWithAuth
-            
+        
         self.saveLoggedInFlag()
         
         println("self \(self.auth)")

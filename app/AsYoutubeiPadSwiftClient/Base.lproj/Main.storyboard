@@ -83,14 +83,15 @@
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="n4o-di-Ugk" id="hrp-gP-asy">
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="rWj-Uu-zYX">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="rWj-Uu-zYX">
                                                     <rect key="frame" x="16" y="8" width="32" height="32"/>
                                                     <constraints>
+                                                        <constraint firstAttribute="height" constant="32" id="YB8-Sh-h7w"/>
                                                         <constraint firstAttribute="width" constant="32" id="uha-Qy-UeL"/>
                                                     </constraints>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pRj-QR-Hnb">
-                                                    <rect key="frame" x="64" y="15" width="513" height="21"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pRj-QR-Hnb">
+                                                    <rect key="frame" x="64" y="15" width="513" height="17"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -102,6 +103,7 @@
                                                 <constraint firstAttribute="bottomMargin" secondItem="rWj-Uu-zYX" secondAttribute="bottom" constant="-1" id="b5f-Ks-qO4"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="pRj-QR-Hnb" secondAttribute="trailing" constant="15" id="gBa-Ou-1cy"/>
                                                 <constraint firstItem="pRj-QR-Hnb" firstAttribute="leading" secondItem="rWj-Uu-zYX" secondAttribute="trailing" constant="16" id="hQL-cv-6XD"/>
+                                                <constraint firstAttribute="centerY" secondItem="pRj-QR-Hnb" secondAttribute="centerY" id="snk-Od-kE4"/>
                                                 <constraint firstItem="rWj-Uu-zYX" firstAttribute="top" secondItem="hrp-gP-asy" secondAttribute="topMargin" id="xew-oY-oWn"/>
                                             </constraints>
                                         </tableViewCellContentView>
