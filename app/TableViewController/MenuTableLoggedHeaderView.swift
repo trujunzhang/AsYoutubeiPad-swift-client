@@ -10,6 +10,12 @@ import Foundation
 
 class MenuTableLoggedHeaderView: UIViewController {
 
+    @IBOutlet var thumbnailImageView: UIImageView!
     
+    @IBOutlet var nickNameLabel: UILabel!
+    
+    @IBOutlet var userNameLabel: UILabel!
+    
+    @IBOutlet var eventButton: UIImageView!
     
 }
