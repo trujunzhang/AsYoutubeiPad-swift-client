@@ -25,7 +25,9 @@ class MenuTableLoggedHeaderView: UIViewController {
         
         self.setupView()
         
-        self.layoutUserProfileUI()
+//        self.layoutUserProfileUI()
+        
+        self.view.frame = CGRectMake(0, 0, REAR_VIEW_WIDTH, TABLE_HEADER_VIEW_HEIGHT)
     }
     
     
@@ -44,7 +46,6 @@ class MenuTableLoggedHeaderView: UIViewController {
     func layoutUserProfileUI() {
         
         var userThumbnail = thumbnailImageView
-        var signoutIcon = eventButton
         var nickName = nickNameLabel
         var userName = userNameLabel
         
@@ -74,10 +75,6 @@ class MenuTableLoggedHeaderView: UIViewController {
         vTop = middleY
         userName.frame = CGRectMake(verticalSecondX, vTop + 2, vWidth, nodeHeight!)
         
-        //2
-        vLeft = width! - LOGIN_OUT_ICON_PADDING_RIGHT - LOGIN_ICON_WH
-        vTop = (height! - LOGIN_ICON_WH) / 2
-        signoutIcon.frame = CGRectMake(vLeft, vTop , LOGIN_ICON_WH, LOGIN_ICON_WH)
     }
     
 }

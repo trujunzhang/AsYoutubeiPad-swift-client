@@ -23,8 +23,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 
         if(rootViewController is SWRevealViewController){
             let revealViewController:SWRevealViewController = rootViewController  as SWRevealViewController
+            
             revealViewController.toggleAnimationDuration = 0.8
             revealViewController.rearViewRevealWidth = REAR_VIEW_WIDTH
+            revealViewController.rearViewRevealOverdraw = 0
             
             revealViewController.revealToggleAnimated(true)
             

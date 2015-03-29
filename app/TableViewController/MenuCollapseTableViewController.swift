@@ -76,8 +76,8 @@ class MenuCollapseTableViewController: UIViewController, UITableViewDataSource, 
         let main: UIStoryboard = self.storyboard!
         
         var headerViewController: UIViewController
-//        if(YoutubeUserProfile.sharedInstance.isLogin == true){
-                    if (YoutubeUserProfile.sharedInstance.isLogin == false) {
+        if(YoutubeUserProfile.sharedInstance.isLogin == true){
+//                    if (YoutubeUserProfile.sharedInstance.isLogin == false) {
             headerViewController =
                 main.instantiateViewControllerWithIdentifier("MenuTableLoggedHeaderView") as UIViewController
         } else {
