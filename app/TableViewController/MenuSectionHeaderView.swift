@@ -23,7 +23,7 @@ class MenuSectionHeaderView: UIViewController {
         
         titleLabel.text = headerTitle
         
-        self.view.frame = CGRectMake(0, 0, REAR_VIEW_WIDTH, TABLE_SECTION_HEADER_HEIGHT)
+        self.view.frame = CGRectMake(0, 0, REAR_VIEW_WIDTH, TABLE_SECTION_HEADER_HEIGHT - 3)
     }
     
     func setupView(title:NSString){
