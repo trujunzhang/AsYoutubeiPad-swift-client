@@ -10,4 +10,5 @@ import Foundation
 
 class MenuTableSignInHeaderView: UIViewController {
 
+    @IBOutlet var eventButton: UIImageView!
 }

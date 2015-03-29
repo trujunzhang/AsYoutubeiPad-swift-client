@@ -249,13 +249,27 @@
                         <viewControllerLayoutGuide type="bottom" id="epo-Pf-3Gs"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="OkM-3e-cIj">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="200"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="60"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="signout.png" translatesAutoresizingMaskIntoConstraints="NO" id="XS0-LE-aad">
+                                <rect key="frame" x="24" y="14" width="26" height="26"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Login in" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ufy-O2-99U">
+                                <rect key="frame" x="71" y="16" width="124" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <nil key="simulatedStatusBarMetrics"/>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-                    <size key="freeformSize" width="600" height="200"/>
+                    <size key="freeformSize" width="600" height="60"/>
+                    <connections>
+                        <outlet property="eventButton" destination="XS0-LE-aad" id="JEF-nG-11X"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3jm-m3-3u5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
