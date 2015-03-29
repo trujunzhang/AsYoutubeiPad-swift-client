@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		5E39F8871AB91E5C00A285AE /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E39F8861AB91E5C00A285AE /* Alamofire.framework */; };
 		5E39F88A1AB91EF000A285AE /* Haneke.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E39F8891AB91EF000A285AE /* Haneke.framework */; };
+		5E49965B1AC7E0D0009F5BBB /* MenuSectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E49965A1AC7E0D0009F5BBB /* MenuSectionHeaderView.swift */; };
 		5E4ED0481AC6748F007DE4ED /* MenuCollapseTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E4ED0471AC6748F007DE4ED /* MenuCollapseTableViewController.swift */; };
 		5E5051971AC69A2200442AD0 /* AsTableCellProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E5051961AC69A2200442AD0 /* AsTableCellProtocols.swift */; };
 		5E5051991AC69A4800442AD0 /* MenuCollapseTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E5051981AC69A4800442AD0 /* MenuCollapseTableCell.swift */; };
@@ -58,6 +59,7 @@
 		5E033EA41AC4122A001014A8 /* SDWebImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SDWebImage.framework; path = Carthage/Build/iOS/SDWebImage.framework; sourceTree = "<group>"; };
 		5E39F8861AB91E5C00A285AE /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
 		5E39F8891AB91EF000A285AE /* Haneke.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Haneke.framework; path = Carthage/Build/iOS/Haneke.framework; sourceTree = "<group>"; };
+		5E49965A1AC7E0D0009F5BBB /* MenuSectionHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuSectionHeaderView.swift; sourceTree = "<group>"; };
 		5E4ED0471AC6748F007DE4ED /* MenuCollapseTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuCollapseTableViewController.swift; sourceTree = "<group>"; };
 		5E5051961AC69A2200442AD0 /* AsTableCellProtocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AsTableCellProtocols.swift; sourceTree = "<group>"; };
 		5E5051981AC69A4800442AD0 /* MenuCollapseTableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuCollapseTableCell.swift; sourceTree = "<group>"; };
@@ -256,6 +258,7 @@
 				5E5051981AC69A4800442AD0 /* MenuCollapseTableCell.swift */,
 				5EDC6AB01AC6B5B9000EEC12 /* MenuTableLoggedHeaderView.swift */,
 				5EDC6AB21AC6B5D8000EEC12 /* MenuTableSignInHeaderView.swift */,
+				5E49965A1AC7E0D0009F5BBB /* MenuSectionHeaderView.swift */,
 			);
 			path = TableViewController;
 			sourceTree = SOURCE_ROOT;
@@ -479,6 +482,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5E49965B1AC7E0D0009F5BBB /* MenuSectionHeaderView.swift in Sources */,
 				5E5051991AC69A4800442AD0 /* MenuCollapseTableCell.swift in Sources */,
 				5ECFEED31ABB28C600779904 /* YoutubeApi.swift in Sources */,
 				5EB3BF841AC2B7C10096B66F /* WebImageCache.swift in Sources */,

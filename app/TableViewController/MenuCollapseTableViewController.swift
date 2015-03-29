@@ -127,12 +127,11 @@ class MenuCollapseTableViewController: UIViewController, UITableViewDataSource, 
     }
     
     func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        var header: UILabel = UILabel()
-        header.text = "wanghao"
-        //        header.textColor = UIColor.redColor()
-        //        header.backgroundColor = UIColor.blueColor()
+        let headerViewInSection :MenuSectionHeaderView = MenuSectionHeaderView()
         
-        return header
+        headerViewInSection.setupView("wanghao")
+        
+        return headerViewInSection
     }
     
     func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
