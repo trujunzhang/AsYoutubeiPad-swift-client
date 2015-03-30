@@ -22,14 +22,20 @@ class MenuCollapseTableCell: UITableViewCell {
         _isRemoteImage = isRemoteImage
         
         self.titleLabel.text = title
-        self.titleLabel.textColor = UIColor.whiteColor()
+//        self.titleLabel.textColor = UIColor.whiteColor()
         
         
         if (isRemoteImage == true) {
-            let url: NSURL = NSURL(string: iconUrl)!
+            let URL: NSURL = NSURL(string: iconUrl)!
             let image = UIImage(named: "thumbnail_border")
             self.iconImage.image = image
-            self.iconImage.hnk_setImageFromURL(url)
+            self.iconImage.hnk_setImageFromURL(URL)
+            
+//            let cache = WebImageCache.SharedLeftMenuImageCache()
+//            cache.fetch(URL: URL, formatName: "icons").onSuccess { image in
+//                // image will be a nice rounded icon
+//                self.iconImage.image = image
+//            }
         } else {
             let image = UIImage(named: iconUrl)
             self.iconImage.image = image

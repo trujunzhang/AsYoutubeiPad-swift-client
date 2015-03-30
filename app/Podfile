@@ -13,7 +13,7 @@ def import_pods
 
     pod 'SDWebImage'
 
-    pod 'SWRevealViewController'
+#    pod 'SWRevealViewController'
 #    pod 'ISMemoryCache'
 #    pod 'EGOCache'
 

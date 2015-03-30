@@ -29,7 +29,12 @@ class SubscriptionsViewController: UIViewController {
             //            self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
         }
         
+        let button:UIButton = UIButton()
+        button.setTitle("wanghao", forState: .Normal)
+        button.setTitleColor(UIColor.redColor(), forState: .Normal)
+        button.frame = CGRectMake(100, 100, 200, 44)
 
+        self.view.addSubview(button)
     }
     
     

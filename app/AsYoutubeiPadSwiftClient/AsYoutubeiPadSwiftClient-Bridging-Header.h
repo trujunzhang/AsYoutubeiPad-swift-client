@@ -6,7 +6,7 @@
 
 //#import "ASTableView.h"
 
-#import <SWRevealViewController/SWRevealViewController.h>
+#import "SWRevealViewController.h"
 
 #import "GTMOAuth2Authentication.h"
 #import "GTMOAuth2ViewControllerTouch.h"

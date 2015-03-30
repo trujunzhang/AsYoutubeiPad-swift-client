@@ -1,0 +1,1433 @@
+{
+ "kind": "youtube#subscriptionListResponse",
+ "etag": "\"9iWEWaGPvvCMMVNTPHF9GiusHJA/2VwcYXQq8yecRIFeXWCSiUdGIno\"",
+ "nextPageToken": "CDIQAA",
+ "pageInfo": {
+  "totalResults": 151,
+  "resultsPerPage": 50
+ },
+ "items": [
+  {
+
+   "kind": "youtube#subscription",
+   "etag": "\"9iWEWaGPvvCMMVNTPHF9GiusHJA/lJvhohcSgTB5C10RgSof4Pz6_RQ\"",
+   "id": "QmeTdj_6PqKCdSgz_RNI14jqAk54CfX0AZhmhoVBMxI",
+   "snippet": {
+    "publishedAt": "2015-02-04T16:24:39.000Z",
+    "title": "JFK Library",
+    "description": "The John F. Kennedy Presidential Library and Museum is dedicated to the memory of our nation's thirty-fifth president and to all those who through the art of politics seek a new and better world.\r\n\r\nLocated on a ten-acre park, overlooking the sea that he loved and the city that launched him to greatness, the Library stands as a vibrant tribute to the life and times of John F. Kennedy.\r\n\r\nThe Kennedy Library is one of  13 Presidential Libraries administered by the National Archives and Records Administration.\r\n\r\nThis site is published by the John F. Kennedy Library Foundation in support of the John F. Kennedy Presidential Library and Museum.",
+    "resourceId": {
+     "kind": "youtube#channel",
+     "channelId": "UCl-radPCbXcrYCE4EdNH3QA"
+    },
+    "channelId": "UC0wObT_HayGfWLdRAnFyPwA",
+    "thumbnails": {
+     "default": {
+      "url": "https://yt3.ggpht.com/-ezvOfB8fjXo/AAAAAAAAAAI/AAAAAAAAAAA/KXp1CPMOE8c/s88-c-k-no/photo.jpg"
+     },
+     "high": {
+      "url": "https://yt3.ggpht.com/-ezvOfB8fjXo/AAAAAAAAAAI/AAAAAAAAAAA/KXp1CPMOE8c/s240-c-k-no/photo.jpg"
+     }
+    }
+   },
+   "contentDetails": {
+    "totalItemCount": 181,
+    "newItemCount": 1,
+    "activityType": "all"
+   }
+  },
+  {
+
+   "kind": "youtube#subscription",
+   "etag": "\"9iWEWaGPvvCMMVNTPHF9GiusHJA/1NJq8MJE2s1a8mS7Swf2bdr8sp0\"",
+   "id": "QmeTdj_6PqKCdSgz_RNI18tbL34A7WgqSCNULPyNjE4",
+   "snippet": {
+    "publishedAt": "2015-03-01T05:42:52.000Z",
+    "title": "Robert Harris",
+    "description": "",
+    "resourceId": {
+     "kind": "youtube#channel",
+     "channelId": "UCejjF--PW1v2IyEo1A6US0A"
+    },
+    "channelId": "UC0wObT_HayGfWLdRAnFyPwA",
+    "thumbnails": {
+     "default": {
+      "url": "https://yt3.ggpht.com/-g9XtTsLeCA4/AAAAAAAAAAI/AAAAAAAAAAA/5hyKPDptEzY/s88-c-k-no/photo.jpg"
+     },
+     "high": {
+      "url": "https://yt3.ggpht.com/-g9XtTsLeCA4/AAAAAAAAAAI/AAAAAAAAAAA/5hyKPDptEzY/s240-c-k-no/photo.jpg"
+     }
+    }
+   },
+   "contentDetails": {
+    "totalItemCount": 61,
+    "newItemCount": 1,
+    "activityType": "all"
+   }
+  },
+  {
+
+   "kind": "youtube#subscription",
+   "etag": "\"9iWEWaGPvvCMMVNTPHF9GiusHJA/1ukjtxApSUxnxdDTBAd4tKmZp54\"",
+   "id": "QmeTdj_6PqKCdSgz_RNI1xnIOkOfMBznyHOvyUMlvOE",
+   "snippet": {
+    "publishedAt": "2014-11-12T05:47:14.000Z",
+    "title": "Jean-Marc Denis",
+    "description": "I am a product designer working @Google, previously @Sparrow. This Youtube channel will mostly be about design videos.",
+    "resourceId": {
+     "kind": "youtube#channel",
+     "channelId": "UCU8W5R6NAX0LMa-0qR3Tzhg"
+    },
+    "channelId": "UC0wObT_HayGfWLdRAnFyPwA",
+    "thumbnails": {
+     "default": {
+      "url": "https://yt3.ggpht.com/-T9nxvrpfFsg/AAAAAAAAAAI/AAAAAAAAAAA/I8k3RgS1NaU/s88-c-k-no/photo.jpg"
+     },
+     "high": {
+      "url": "https://yt3.ggpht.com/-T9nxvrpfFsg/AAAAAAAAAAI/AAAAAAAAAAA/I8k3RgS1NaU/s240-c-k-no/photo.jpg"
+     }
+    }
+   },
+   "contentDetails": {
+    "totalItemCount": 33,
+    "newItemCount": 0,
+    "activityType": "all"
+   }
+  },
+  {
+
+   "kind": "youtube#subscription",
+   "etag": "\"9iWEWaGPvvCMMVNTPHF9GiusHJA/J-KNHVOT3EhLS9KCY4niLmohepI\"",
+   "id": "QmeTdj_6PqKCdSgz_RNI1wqmi2XIm0A3O8Pel-iQJN8",
+   "snippet": {
+    "publishedAt": "2015-02-01T17:43:11.000Z",
+    "title": "clintonlibrary42",
+    "description": "Welcome to the official YouTube channel for the William Jefferson Clinton Presidential Library and Musuem.  The Clinton Presidential Library is located in Little Rock, Arkansas, and is part of the National Archives and Records Administration.  The Clinton Presidential Library houses Presidential records created by the Clinton Administration, with the collection encompassing textual documents, audio/visual records, and physical artifacts.  This channel carries representative examples of the video archives held at the Clinton Presidential Library.\r\n\r\nKeep up to date with the Clinton Presidential Library on Twitter & Facebook.  Also be sure to check out our webpage which is frequently updated with new content from the Archives.  All links are below.\r\n\r\nFor NARA's comment & privacy policy regarding this channel, please reference the link below.",
+    "resourceId": {
+     "kind": "youtube#channel",
+     "channelId": "UCMkYd9teJEBlCOwDan6qPpg"
+    },
+    "channelId": "UC0wObT_HayGfWLdRAnFyPwA",
+    "thumbnails": {
+     "default": {
+      "url": "https://yt3.ggpht.com/-DBeXp3Ylry0/AAAAAAAAAAI/AAAAAAAAAAA/0SNJCbieXEY/s88-c-k-no/photo.jpg"
+     },
+     "high": {
+      "url": "https://yt3.ggpht.com/-DBeXp3Ylry0/AAAAAAAAAAI/AAAAAAAAAAA/0SNJCbieXEY/s240-c-k-no/photo.jpg"
+     }
+    }
+   },
+   "contentDetails": {
+    "totalItemCount": 422,
+    "newItemCount": 2,
+    "activityType": "all"
+   }
+  },
+  {
+
+   "kind": "youtube#subscription",
+   "etag": "\"9iWEWaGPvvCMMVNTPHF9GiusHJA/KyvTl6rWHpJA8YGIeY3xm6_uCbQ\"",
+   "id": "QmeTdj_6PqKCdSgz_RNI1zlly0y_Mhys9CM2JqjsH8Q",
+   "snippet": {
+    "publishedAt": "2015-02-16T12:55:31.000Z",
+    "title": "TheLBJLibrary",
+    "description": "The Lyndon Baines Johnson Library and Museum is one of 13 presidential libraries administered by the National Archives and Records Administration. The Library houses the papers from the entire public career of Lyndon Baines Johnson and his close associates, as well as film, video, and audio archival materials. In addition to supporting research, the Library also  seeks to increase public awareness of the American experience through relevant Museum exhibitions, educational activities, and community programs.",
+    "resourceId": {
+     "kind": "youtube#channel",
+     "channelId": "UCwRQxHVCyShQyky_HzHdZEQ"
+    },
+    "channelId": "UC0wObT_HayGfWLdRAnFyPwA",
+    "thumbnails": {
+     "default": {
+      "url": "https://yt3.ggpht.com/-wCqOeX1gbJs/AAAAAAAAAAI/AAAAAAAAAAA/Dy20PDnOja8/s88-c-k-no/photo.jpg"
+     },
+     "high": {
+      "url": "https://yt3.ggpht.com/-wCqOeX1gbJs/AAAAAAAAAAI/AAAAAAAAAAA/Dy20PDnOja8/s240-c-k-no/photo.jpg"
+     }
+    }
+   },
+   "contentDetails": {
+    "totalItemCount": 856,
+    "newItemCount": 1,
+    "activityType": "all"
+   }
+  },
+  {
+
+   "kind": "youtube#subscription",
+   "etag": "\"9iWEWaGPvvCMMVNTPHF9GiusHJA/dkLw-D419EdcTwPAjLu29h6fAEQ\"",
+   "id": "QmeTdj_6PqKCdSgz_RNI19X8BmVPYU6o8TvEqQJ6Pa0",
+   "snippet": {
+    "publishedAt": "2014-12-05T05:25:17.000Z",
+    "title": "ReaganFoundation",
+    "description": "The Ronald Reagan Presidential Foundation is the non-profit organization created by President Reagan himself and specifically charged by him with continuing his legacy and sharing his principles - individual liberty, economic opportunity, global democracy and national pride.",
+    "resourceId": {
+     "kind": "youtube#channel",
+     "channelId": "UCEJi23qnygQHE5UeLXoV_JQ"
+    },
+    "channelId": "UC0wObT_HayGfWLdRAnFyPwA",
+    "thumbnails": {
+     "default": {
+      "url": "https://yt3.ggpht.com/-jHDMsrK9wCk/AAAAAAAAAAI/AAAAAAAAAAA/jL51zDEpLNU/s88-c-k-no/photo.jpg"
+     },
+     "high": {
+      "url": "https://yt3.ggpht.com/-jHDMsrK9wCk/AAAAAAAAAAI/AAAAAAAAAAA/jL51zDEpLNU/s240-c-k-no/photo.jpg"
+     }
+    }
+   },
+   "contentDetails": {
+    "totalItemCount": 697,
+    "newItemCount": 7,
+    "activityType": "all"
+   }
+  },
+  {
+
+   "kind": "youtube#subscription",
+   "etag": "\"9iWEWaGPvvCMMVNTPHF9GiusHJA/6KbnSLH3LkuJd_EWXyOhZm8I7Hk\"",
+   "id": "QmeTdj_6PqKCdSgz_RNI13wyPnmDobx7v0PvccO2_fg",
+   "snippet": {
+    "publishedAt": "2014-09-03T14:12:59.000Z",
+    "title": "Google Developers",
+    "description": "The Google Developers channel, offers lessons, talks, the latest news & best practices. Learn Android, Chrome,  Web Development, Polymer, Performance, iOS & more!\n\nTake advantage of this resource by subscribing to the official Google Developers channel here: https://www.youtube.com/channel/UC_x5XG1OV2P6uZZ5FSM9Ttw?sub_confirmation=1\n \nFollow Google Developers on Twitter: https://twitter.com/googledevs\n\nFollow Google Developers on Google+: https://plus.google.com/+GoogleDevelopers\n\nCheck out the Google Developers Blog: http://googledevelopers.blogspot.com/",
+    "resourceId": {
+     "kind": "youtube#channel",
+     "channelId": "UC_x5XG1OV2P6uZZ5FSM9Ttw"
+    },
+    "channelId": "UC0wObT_HayGfWLdRAnFyPwA",
+    "thumbnails": {
+     "default": {
+      "url": "https://yt3.ggpht.com/-Fgp8KFpgQqE/AAAAAAAAAAI/AAAAAAAAAAA/Wyh1vV5Up0I/s88-c-k-no/photo.jpg"
+     },
+     "high": {
+      "url": "https://yt3.ggpht.com/-Fgp8KFpgQqE/AAAAAAAAAAI/AAAAAAAAAAA/Wyh1vV5Up0I/s240-c-k-no/photo.jpg"
+     }
+    }
+   },
+   "contentDetails": {
+    "totalItemCount": 3479,
+    "newItemCount": 3,
+    "activityType": "all"
+   }
+  },
+  {
+
+   "kind": "youtube#subscription",
+   "etag": "\"9iWEWaGPvvCMMVNTPHF9GiusHJA/oM9_QxzFVd-WkLEr2q7mX_Fz2Vs\"",
+   "id": "QmeTdj_6PqKCdSgz_RNI1yIaUX77Q46GwBy6b7Ue2YA",
+   "snippet": {
+    "publishedAt": "2015-02-11T14:26:58.000Z",
+    "title": "angularjs",
+    "description": "AngularJS is a client-side JavaScript framework that lets you extend HTML vocabulary for your application. The resulting environment is extraordinarily expressive, readable, and quick to develop.  \r\n\r\nFor more info, visit http://angularjs.org.",
+    "resourceId": {
+     "kind": "youtube#channel",
+     "channelId": "UCbn1OgGei-DV7aSRo_HaAiw"
+    },
+    "channelId": "UC0wObT_HayGfWLdRAnFyPwA",
+    "thumbnails": {
+     "default": {
+      "url": "https://i.ytimg.com/i/bn1OgGei-DV7aSRo_HaAiw/1.jpg?v=4f8f2cc9"
+     },
+     "high": {
+      "url": "https://i.ytimg.com/i/bn1OgGei-DV7aSRo_HaAiw/mq1.jpg?v=4f8f2cc9"
+     }
+    }
+   },
+   "contentDetails": {
+    "totalItemCount": 41,
+    "newItemCount": 0,
+    "activityType": "all"
+   }
+  },
+  {
+
+   "kind": "youtube#subscription",
+   "etag": "\"9iWEWaGPvvCMMVNTPHF9GiusHJA/6UftaLCBLrCP8wXbH96-q4cOqrM\"",
+   "id": "QmeTdj_6PqKCdSgz_RNI1yS8K1Ib4zMjcIAqKuVejIQ",
+   "snippet": {
+    "publishedAt": "2014-07-01T12:37:23.000Z",
+    "title": "JetBrainsTV",
+    "description": "Welcome to JetBrainsTV on YouTube, the official video channel for JetBrains and our entire suite of software development tools including: IntelliJ IDEA, ReSharper and PhpStorm. Learn to get the most from our products and the latest technologies in our demos, tutorials and webinars. Develop with Pleasure!",
+    "resourceId": {
+     "kind": "youtube#channel",
+     "channelId": "UCGp4UBwpTNegd_4nCpuBcow"
+    },
+    "channelId": "UC0wObT_HayGfWLdRAnFyPwA",
+    "thumbnails": {
+     "default": {
+      "url": "https://yt3.ggpht.com/-WN2QoG2w_j8/AAAAAAAAAAI/AAAAAAAAAAA/BWEYAdxfiq4/s88-c-k-no/photo.jpg"
+     },
+     "high": {
+      "url": "https://yt3.ggpht.com/-WN2QoG2w_j8/AAAAAAAAAAI/AAAAAAAAAAA/BWEYAdxfiq4/s240-c-k-no/photo.jpg"
+     }
+    }
+   },
+   "contentDetails": {
+    "totalItemCount": 604,
+    "newItemCount": 2,
+    "activityType": "all"
+   }
+  },
+  {
+
+   "kind": "youtube#subscription",
+   "etag": "\"9iWEWaGPvvCMMVNTPHF9GiusHJA/hIPfEDDAY0jizG6Mz6UukxeaG_s\"",
+   "id": "QmeTdj_6PqKCdSgz_RNI1wle-tjgZeCJpTyEczaBiB8",
+   "snippet": {
+    "publishedAt": "2014-09-29T15:19:35.000Z",
+    "title": "Adobe Acrobat",
+    "description": "Adobe Acrobat is the professional standard for creating high-impact PDF communications that drives tighter collaboration and productivity across teams in today's dynamic business environments. \n\nAdobe Reader is the global standard for reliably viewing, printing, and commenting on PDF documents.",
+    "resourceId": {
+     "kind": "youtube#channel",
+     "channelId": "UCl78QGX_hfK6zT8Mc-2w8GA"
+    },
+    "channelId": "UC0wObT_HayGfWLdRAnFyPwA",
+    "thumbnails": {
+     "default": {
+      "url": "https://yt3.ggpht.com/-dA6zKILl8r8/AAAAAAAAAAI/AAAAAAAAAAA/sfMOjI1ROkU/s88-c-k-no/photo.jpg"
+     },
+     "high": {
+      "url": "https://yt3.ggpht.com/-dA6zKILl8r8/AAAAAAAAAAI/AAAAAAAAAAA/sfMOjI1ROkU/s240-c-k-no/photo.jpg"
+     }
+    }
+   },
+   "contentDetails": {
+    "totalItemCount": 158,
+    "newItemCount": 1,
+    "activityType": "all"
+   }
+  },
+  {
+
+   "kind": "youtube#subscription",
+   "etag": "\"9iWEWaGPvvCMMVNTPHF9GiusHJA/yw8R-I8G_OHyXiTYyk7Vnyg_LQ8\"",
+   "id": "QmeTdj_6PqKCdSgz_RNI18Ole9pOgnw9otopK_uIUS0",
+   "snippet": {
+    "publishedAt": "2015-02-08T13:18:56.000Z",
+    "title": "Proxist201",
+    "description": "",
+    "resourceId": {
+     "kind": "youtube#channel",
+     "channelId": "UCwQNs_Ev0yd5LfhjqqOK8mg"
+    },
+    "channelId": "UC0wObT_HayGfWLdRAnFyPwA",
+    "thumbnails": {
+     "default": {
+      "url": "https://yt3.ggpht.com/-HEDdWrB7vCc/AAAAAAAAAAI/AAAAAAAAAAA/LP3MiYEZoBY/s88-c-k-no/photo.jpg"
+     },
+     "high": {
+      "url": "https://yt3.ggpht.com/-HEDdWrB7vCc/AAAAAAAAAAI/AAAAAAAAAAA/LP3MiYEZoBY/s240-c-k-no/photo.jpg"
+     }
+    }
+   },
+   "contentDetails": {
+    "totalItemCount": 95,
+    "newItemCount": 5,
+    "activityType": "all"
+   }
+  },
+  {
+
+   "kind": "youtube#subscription",
+   "etag": "\"9iWEWaGPvvCMMVNTPHF9GiusHJA/-xmR-8UJvvChzTn6mqcQ8fuIeTc\"",
+   "id": "QmeTdj_6PqKCdSgz_RNI13MRvZjsXtbuMWfiW44HGpw",
+   "snippet": {
+    "publishedAt": "2015-03-28T13:37:24.000Z",
+    "title": "Alan Forbes",
+    "description": "",
+    "resourceId": {
+     "kind": "youtube#channel",
+     "channelId": "UC28kJmX6wIbD5BxvosP5ziQ"
+    },
+    "channelId": "UC0wObT_HayGfWLdRAnFyPwA",
+    "thumbnails": {
+     "default": {
+      "url": "https://yt3.ggpht.com/-S3YTvlo-02c/AAAAAAAAAAI/AAAAAAAAAAA/Cpd34IsgXIg/s88-c-k-no/photo.jpg"
+     },
+     "high": {
+      "url": "https://yt3.ggpht.com/-S3YTvlo-02c/AAAAAAAAAAI/AAAAAAAAAAA/Cpd34IsgXIg/s240-c-k-no/photo.jpg"
+     }
+    }
+   },
+   "contentDetails": {
+    "totalItemCount": 54,
+    "newItemCount": 0,
+    "activityType": "all"
+   }
+  },
+  {
+
+   "kind": "youtube#subscription",
+   "etag": "\"9iWEWaGPvvCMMVNTPHF9GiusHJA/fD-VGPld25puMsckKeY4FI2SC-I\"",
+   "id": "QmeTdj_6PqKCdSgz_RNI16bMJL-bfu_y6e-jr_2uEkA",
+   "snippet": {
+    "publishedAt": "2015-03-14T19:43:30.000Z",
+    "title": "LearnToProgram: You Can Code.",
+    "description": "LearnToProgram aims to train more computer programmers than any company on the face of the Earth.  By making our computer, mobile and web programming courses available to individual students, through corporate LMS systems, and to schools, we seek to provide dynamic, engaging and thorough programming courses to as many learners as possible.  Specializing in beginners, courses are available in everything from HTML to native Android application development.\n\nPlease, visit with www.LearnToProgram.tv to learn more about our individual, corporate and school offerings, and to obtain a sample of our course library.",
+    "resourceId": {
+     "kind": "youtube#channel",
+     "channelId": "UCkg_xpBf5gMSnBZx8uRG-yg"
+    },
+    "channelId": "UC0wObT_HayGfWLdRAnFyPwA",
+    "thumbnails": {
+     "default": {
+      "url": "https://yt3.ggpht.com/-9avSrtRmd50/AAAAAAAAAAI/AAAAAAAAAAA/1N-XB9W5ZM0/s88-c-k-no/photo.jpg"
+     },
+     "high": {
+      "url": "https://yt3.ggpht.com/-9avSrtRmd50/AAAAAAAAAAI/AAAAAAAAAAA/1N-XB9W5ZM0/s240-c-k-no/photo.jpg"
+     }
+    }
+   },
+   "contentDetails": {
+    "totalItemCount": 317,
+    "newItemCount": 1,
+    "activityType": "all"
+   }
+  },
+  {
+
+   "kind": "youtube#subscription",
+   "etag": "\"9iWEWaGPvvCMMVNTPHF9GiusHJA/1tJ7LTdOUz_kvblQrZj_zSw2ITI\"",
+   "id": "QmeTdj_6PqKCdSgz_RNI1-2EFk3HxVXNIpJXvTIBetw",
+   "snippet": {
+    "publishedAt": "2015-01-31T13:14:07.000Z",
+    "title": "Tuts+ Web Design",
+    "description": "Webdesigntuts+ is a blog made to house and showcase some of the best web design tutorials and articles around.",
+    "resourceId": {
+     "kind": "youtube#channel",
+     "channelId": "UCTP1DN8Us94z0ciuCx71scg"
+    },
+    "channelId": "UC0wObT_HayGfWLdRAnFyPwA",
+    "thumbnails": {
+     "default": {
+      "url": "https://yt3.ggpht.com/-2rvOAn59yH4/AAAAAAAAAAI/AAAAAAAAAAA/WwPgXeM7t2E/s88-c-k-no/photo.jpg"
+     },
+     "high": {
+      "url": "https://yt3.ggpht.com/-2rvOAn59yH4/AAAAAAAAAAI/AAAAAAAAAAA/WwPgXeM7t2E/s240-c-k-no/photo.jpg"
+     }
+    }
+   },
+   "contentDetails": {
+    "totalItemCount": 247,
+    "newItemCount": 0,
+    "activityType": "all"
+   }
+  },
+  {
+
+   "kind": "youtube#subscription",
+   "etag": "\"9iWEWaGPvvCMMVNTPHF9GiusHJA/caUSn7znm2fHNTHWfv9WDr3DDyQ\"",
+   "id": "QmeTdj_6PqKCdSgz_RNI11QLCNstoysWADWm6aOYIMQ",
+   "snippet": {
+    "publishedAt": "2014-11-16T15:56:00.000Z",
+    "title": "Facebook Developers",
+    "description": "Welcome to Facebook's official developers channel on YouTube.  Learn how to grow your apps with Facebook by watching our videos.",
+    "resourceId": {
+     "kind": "youtube#channel",
+     "channelId": "UCP_lo1MFyx5IXDeD9s_6nUw"
+    },
+    "channelId": "UC0wObT_HayGfWLdRAnFyPwA",
+    "thumbnails": {
+     "default": {
+      "url": "https://yt3.ggpht.com/-_fIE9mAwl2A/AAAAAAAAAAI/AAAAAAAAAAA/1MqIzOK9img/s88-c-k-no/photo.jpg"
+     },
+     "high": {
+      "url": "https://yt3.ggpht.com/-_fIE9mAwl2A/AAAAAAAAAAI/AAAAAAAAAAA/1MqIzOK9img/s240-c-k-no/photo.jpg"
+     }
+    }
+   },
+   "contentDetails": {
+    "totalItemCount": 287,
+    "newItemCount": 11,
+    "activityType": "all"
+   }
+  },
+  {
+
+   "kind": "youtube#subscription",
+   "etag": "\"9iWEWaGPvvCMMVNTPHF9GiusHJA/os29fUipHBr4qfMCPizb2fK3D-A\"",
+   "id": "QmeTdj_6PqKCdSgz_RNI17CTG6HZOupwpq03SN8pCpo",
+   "snippet": {
+    "publishedAt": "2015-01-25T05:55:13.000Z",
+    "title": "Tuts+ Code",
+    "description": "",
+    "resourceId": {
+     "kind": "youtube#channel",
+     "channelId": "UCd-EhXGbXSozuzsAAdPIn3A"
+    },
+    "channelId": "UC0wObT_HayGfWLdRAnFyPwA",
+    "thumbnails": {
+     "default": {
+      "url": "https://yt3.ggpht.com/-3hk8QoUjDWU/AAAAAAAAAAI/AAAAAAAAAAA/afcL2snzj1I/s88-c-k-no/photo.jpg"
+     },
+     "high": {
+      "url": "https://yt3.ggpht.com/-3hk8QoUjDWU/AAAAAAAAAAI/AAAAAAAAAAA/afcL2snzj1I/s240-c-k-no/photo.jpg"
+     }
+    }
+   },
+   "contentDetails": {
+    "totalItemCount": 188,
+    "newItemCount": 0,
+    "activityType": "all"
+   }
+  },
+  {
+
+   "kind": "youtube#subscription",
+   "etag": "\"9iWEWaGPvvCMMVNTPHF9GiusHJA/okVhep9sV9IITB_KwJkGunGymcM\"",
+   "id": "QmeTdj_6PqKCdSgz_RNI12l7ds1vKDW_jlK8FKA5wSs",
+   "snippet": {
+    "publishedAt": "2015-03-12T19:52:57.000Z",
+    "title": "Renn Seo",
+    "description": "신디사이저, DAW, 각종 게임, Emacs, 기타 개발 관련 등등 너무너무 잡다한 동영상을 올릴 계획입니다.",
+    "resourceId": {
+     "kind": "youtube#channel",
+     "channelId": "UCsJXkw_Ssp-1myJFm4_SMJA"
+    },
+    "channelId": "UC0wObT_HayGfWLdRAnFyPwA",
+    "thumbnails": {
+     "default": {
+      "url": "https://yt3.ggpht.com/-gziHJHcfa5M/AAAAAAAAAAI/AAAAAAAAAAA/rH38be-Py68/s88-c-k-no/photo.jpg"
+     },
+     "high": {
+      "url": "https://yt3.ggpht.com/-gziHJHcfa5M/AAAAAAAAAAI/AAAAAAAAAAA/rH38be-Py68/s240-c-k-no/photo.jpg"
+     }
+    }
+   },
+   "contentDetails": {
+    "totalItemCount": 132,
+    "newItemCount": 0,
+    "activityType": "all"
+   }
+  },
+  {
+
+   "kind": "youtube#subscription",
+   "etag": "\"9iWEWaGPvvCMMVNTPHF9GiusHJA/0nkUXwO7v6bGi-Z5ddN3spdc9j4\"",
+   "id": "QmeTdj_6PqKCdSgz_RNI18_5lno4Ha8TEJ1QQO6_gug",
+   "snippet": {
+    "publishedAt": "2015-02-16T13:05:04.000Z",
+    "title": "Abraham Lincoln Presidential Library and Museum",
+    "description": "The Abraham Lincoln Presidential Library and Museum in Springfield, IL is the heart of the Lincoln legacy.  \n\nMuseum Open 9 - 5 Daily.\n212 N. Sixth Street, Springfield, IL 62701\nFor more information about the library and museum please go to:\n\nhttp://www.presidentlincoln.gov\n\nT: (800) 610-2094 or (217) 782-5764",
+    "resourceId": {
+     "kind": "youtube#channel",
+     "channelId": "UCcVnq0_u0RRIFUIndbS3rng"
+    },
+    "channelId": "UC0wObT_HayGfWLdRAnFyPwA",
+    "thumbnails": {
+     "default": {
+      "url": "https://yt3.ggpht.com/-JANsSJaKjDA/AAAAAAAAAAI/AAAAAAAAAAA/PfF87hcRUmo/s88-c-k-no/photo.jpg"
+     },
+     "high": {
+      "url": "https://yt3.ggpht.com/-JANsSJaKjDA/AAAAAAAAAAI/AAAAAAAAAAA/PfF87hcRUmo/s240-c-k-no/photo.jpg"
+     }
+    }
+   },
+   "contentDetails": {
+    "totalItemCount": 168,
+    "newItemCount": 1,
+    "activityType": "all"
+   }
+  },
+  {
+
+   "kind": "youtube#subscription",
+   "etag": "\"9iWEWaGPvvCMMVNTPHF9GiusHJA/5gaXh1HNMXYMgeNtI19BE7nsqoQ\"",
+   "id": "QmeTdj_6PqKCdSgz_RNI1843Wg1HxbkCKJP1hsypz2M",
+   "snippet": {
+    "publishedAt": "2015-02-11T10:02:33.000Z",
+    "title": "roslundb",
+    "description": "Railroads, Historic Sites and Points of Interest in and about, but not limited to Georgia.  My hometown of Wellsboro, Pennsylvania and railroads are featured often.",
+    "resourceId": {
+     "kind": "youtube#channel",
+     "channelId": "UCmq4oh96OepSJRZ0WzZVATw"
+    },
+    "channelId": "UC0wObT_HayGfWLdRAnFyPwA",
+    "thumbnails": {
+     "default": {
+      "url": "https://yt3.ggpht.com/-nqMqhtk_7eE/AAAAAAAAAAI/AAAAAAAAAAA/vuXxJQ9aIhA/s88-c-k-no/photo.jpg"
+     },
+     "high": {
+      "url": "https://yt3.ggpht.com/-nqMqhtk_7eE/AAAAAAAAAAI/AAAAAAAAAAA/vuXxJQ9aIhA/s240-c-k-no/photo.jpg"
+     }
+    }
+   },
+   "contentDetails": {
+    "totalItemCount": 195,
+    "newItemCount": 0,
+    "activityType": "all"
+   }
+  },
+  {
+
+   "kind": "youtube#subscription",
+   "etag": "\"9iWEWaGPvvCMMVNTPHF9GiusHJA/nAURN7eoY3kv0YnlPZl7ApAuw2Y\"",
+   "id": "QmeTdj_6PqKCdSgz_RNI1417-I8oP5VN4WVXiWRGzj4",
+   "snippet": {
+    "publishedAt": "2015-02-06T17:36:58.000Z",
+    "title": "John Lindquist",
+    "description": "Egghead.io and other videos",
+    "resourceId": {
+     "kind": "youtube#channel",
+     "channelId": "UCKW92i7iQFuNILqQOUOCrFw"
+    },
+    "channelId": "UC0wObT_HayGfWLdRAnFyPwA",
+    "thumbnails": {
+     "default": {
+      "url": "https://yt3.ggpht.com/-MLv7gFu0q14/AAAAAAAAAAI/AAAAAAAAAAA/kgV7b6LL5sk/s88-c-k-no/photo.jpg"
+     },
+     "high": {
+      "url": "https://yt3.ggpht.com/-MLv7gFu0q14/AAAAAAAAAAI/AAAAAAAAAAA/kgV7b6LL5sk/s240-c-k-no/photo.jpg"
+     }
+    }
+   },
+   "contentDetails": {
+    "totalItemCount": 148,
+    "newItemCount": 0,
+    "activityType": "all"
+   }
+  },
+  {
+
+   "kind": "youtube#subscription",
+   "etag": "\"9iWEWaGPvvCMMVNTPHF9GiusHJA/LabDldp3Glig7LId2rbpmKKX0zM\"",
+   "id": "QmeTdj_6PqKCdSgz_RNI1-IXETpLA0nxHZEGbaz2374",
+   "snippet": {
+    "publishedAt": "2014-10-04T11:15:10.000Z",
+    "title": "Alan Brown",
+    "description": "My channel consists of historical videos for students of History across the world.  The main focus is on modern history, principally European and British, ranging from 1900 through to 1960.  However, from time to time I shall upload other useful films which fall outside of that year range.  I have been teaching history for more than 20 years, and these films form part of my extensive collection of documentaries which have proven extremely useful to my students.  I hope you enjoy them!  All films are uploaded for educational purposes only.  No copyright infringement is intended and the films are not monetised.  Any advertising which appears is not of my doing.",
+    "resourceId": {
+     "kind": "youtube#channel",
+     "channelId": "UCb4eIVujwUhasgDr4YO0vyg"
+    },
+    "channelId": "UC0wObT_HayGfWLdRAnFyPwA",
+    "thumbnails": {
+     "default": {
+      "url": "https://yt3.ggpht.com/-OOCPFUNQojA/AAAAAAAAAAI/AAAAAAAAAAA/Z4V4VjLaI3U/s88-c-k-no/photo.jpg"
+     },
+     "high": {
+      "url": "https://yt3.ggpht.com/-OOCPFUNQojA/AAAAAAAAAAI/AAAAAAAAAAA/Z4V4VjLaI3U/s240-c-k-no/photo.jpg"
+     }
+    }
+   },
+   "contentDetails": {
+    "totalItemCount": 54,
+    "newItemCount": 3,
+    "activityType": "all"
+   }
+  },
+  {
+
+   "kind": "youtube#subscription",
+   "etag": "\"9iWEWaGPvvCMMVNTPHF9GiusHJA/NlNe4PrWNAlWtGUadL8a3O3yEd8\"",
+   "id": "QmeTdj_6PqKCdSgz_RNI14Dxc_BSgXqc5Mk7zFgLhUU",
+   "snippet": {
+    "publishedAt": "2014-09-29T14:50:11.000Z",
+    "title": "O'Reilly - Video Training",
+    "description": "Infinite Skills is a video training publisher, founded with the goal in mind to provide high quality computer based training to consumers. Since Infinite Skills started creating its own software training titles, we have published over 200 individual titles, ranging from mainstream programs such as Adobe Photoshop, to niche training such as Revit and Maya. Infinite Skills continues to innovate and lead the market in new technology and training techniques, and will do so for many years to come.",
+    "resourceId": {
+     "kind": "youtube#channel",
+     "channelId": "UCFvbB4_qLYRrOQNuFudz-Mg"
+    },
+    "channelId": "UC0wObT_HayGfWLdRAnFyPwA",
+    "thumbnails": {
+     "default": {
+      "url": "https://yt3.ggpht.com/-rNVCH3wTQ-0/AAAAAAAAAAI/AAAAAAAAAAA/Rw-JfBUuEVw/s88-c-k-no/photo.jpg"
+     },
+     "high": {
+      "url": "https://yt3.ggpht.com/-rNVCH3wTQ-0/AAAAAAAAAAI/AAAAAAAAAAA/Rw-JfBUuEVw/s240-c-k-no/photo.jpg"
+     }
+    }
+   },
+   "contentDetails": {
+    "totalItemCount": 3993,
+    "newItemCount": 20,
+    "activityType": "all"
+   }
+  },
+  {
+
+   "kind": "youtube#subscription",
+   "etag": "\"9iWEWaGPvvCMMVNTPHF9GiusHJA/aT2Mf7YG48HKYn4li4o0SNXtLIU\"",
+   "id": "QmeTdj_6PqKCdSgz_RNI13ql1yeaDHcwpuldLeRXZrY",
+   "snippet": {
+    "publishedAt": "2014-09-25T14:45:18.000Z",
+    "title": "inauguralvideo",
+    "description": "Since 1901, the Joint Congressional Committee on Inaugural Ceremonies has been responsible for the planning and execution of the swearing-in ceremonies and the luncheon for the Inauguration of the President of the United States at the U.S. Capitol.\r\n\r\nhttp://inaugural.senate.gov",
+    "resourceId": {
+     "kind": "youtube#channel",
+     "channelId": "UCT0OddH-0Avs8FI-TH1FQXw"
+    },
+    "channelId": "UC0wObT_HayGfWLdRAnFyPwA",
+    "thumbnails": {
+     "default": {
+      "url": "https://i.ytimg.com/i/T0OddH-0Avs8FI-TH1FQXw/1.jpg?v=50734994"
+     },
+     "high": {
+      "url": "https://i.ytimg.com/i/T0OddH-0Avs8FI-TH1FQXw/mq1.jpg?v=50734994"
+     }
+    }
+   },
+   "contentDetails": {
+    "totalItemCount": 21,
+    "newItemCount": 0,
+    "activityType": "all"
+   }
+  },
+  {
+
+   "kind": "youtube#subscription",
+   "etag": "\"9iWEWaGPvvCMMVNTPHF9GiusHJA/ll8WTXkTUUNrkPp7-0mtabf-vcg\"",
+   "id": "QmeTdj_6PqKCdSgz_RNI1-zy7K7QngzB9Ms9PlTF2H4",
+   "snippet": {
+    "publishedAt": "2014-12-02T05:37:15.000Z",
+    "title": "Screencast Academy",
+    "description": "Video tutorials for Mac and IOS.",
+    "resourceId": {
+     "kind": "youtube#channel",
+     "channelId": "UCyuKHB47IX1kSefEIjSGFhg"
+    },
+    "channelId": "UC0wObT_HayGfWLdRAnFyPwA",
+    "thumbnails": {
+     "default": {
+      "url": "https://yt3.ggpht.com/-6lXTr8IkmIU/AAAAAAAAAAI/AAAAAAAAAAA/0TOI7_D3Z1Y/s88-c-k-no/photo.jpg"
+     },
+     "high": {
+      "url": "https://yt3.ggpht.com/-6lXTr8IkmIU/AAAAAAAAAAI/AAAAAAAAAAA/0TOI7_D3Z1Y/s240-c-k-no/photo.jpg"
+     }
+    }
+   },
+   "contentDetails": {
+    "totalItemCount": 71,
+    "newItemCount": 0,
+    "activityType": "all"
+   }
+  },
+  {
+
+   "kind": "youtube#subscription",
+   "etag": "\"9iWEWaGPvvCMMVNTPHF9GiusHJA/yZxVn-4Lqv2FYrxoRuFD1KpFIeY\"",
+   "id": "QmeTdj_6PqKCdSgz_RNI11LGjAa9SVxHlEQL9Aa6p34",
+   "snippet": {
+    "publishedAt": "2014-08-31T03:03:25.000Z",
+    "title": "YouTube for Developers",
+    "description": "The official channel of the YouTube Developer Relations team. Subscribe for notifications about the latest videos that matter to developers using YouTube APIs!",
+    "resourceId": {
+     "kind": "youtube#channel",
+     "channelId": "UCtVd0c0tGXuTSbU5d8cSBUg"
+    },
+    "channelId": "UC0wObT_HayGfWLdRAnFyPwA",
+    "thumbnails": {
+     "default": {
+      "url": "https://yt3.ggpht.com/-33vP8vVISfY/AAAAAAAAAAI/AAAAAAAAAAA/dZRpDDrolKA/s88-c-k-no/photo.jpg"
+     },
+     "high": {
+      "url": "https://yt3.ggpht.com/-33vP8vVISfY/AAAAAAAAAAI/AAAAAAAAAAA/dZRpDDrolKA/s240-c-k-no/photo.jpg"
+     }
+    }
+   },
+   "contentDetails": {
+    "totalItemCount": 4,
+    "newItemCount": 0,
+    "activityType": "all"
+   }
+  },
+  {
+
+   "kind": "youtube#subscription",
+   "etag": "\"9iWEWaGPvvCMMVNTPHF9GiusHJA/a9DuT1WVV2rS4G5VQNy6b7Aj_Ns\"",
+   "id": "QmeTdj_6PqKCdSgz_RNI1_SXEKZwMJXtrVx3VdEkkXg",
+   "snippet": {
+    "publishedAt": "2014-10-03T14:34:12.000Z",
+    "title": "lynda.com",
+    "description": "The lynda.com channel features 10 percent of our course content, available for all to watch. With a lynda.com subscription, members receive unlimited access to our complete library of high quality, current, and engaging video tutorials. Find out more about membership at http://www.lynda.com/plans.\n\nlynda.com is an online learning company that helps anyone learn software, creative, and business skills to achieve their personal and professional goals. We carefully select the world's top experts who are the best in their field, passionate about their subject matter, and know how to teach. Members tell us that a lynda.com subscription instills self-confidence and unlocks a sense of accomplishment that they have not found anywhere else.",
+    "resourceId": {
+     "kind": "youtube#channel",
+     "channelId": "UCikzJG7RbnNZhKLqqaXRM6A"
+    },
+    "channelId": "UC0wObT_HayGfWLdRAnFyPwA",
+    "thumbnails": {
+     "default": {
+      "url": "https://yt3.ggpht.com/-3amhJe8Avf4/AAAAAAAAAAI/AAAAAAAAAAA/RaazJaKNWYk/s88-c-k-no/photo.jpg"
+     },
+     "high": {
+      "url": "https://yt3.ggpht.com/-3amhJe8Avf4/AAAAAAAAAAI/AAAAAAAAAAA/RaazJaKNWYk/s240-c-k-no/photo.jpg"
+     }
+    }
+   },
+   "contentDetails": {
+    "totalItemCount": 10214,
+    "newItemCount": 25,
+    "activityType": "all"
+   }
+  },
+  {
+
+   "kind": "youtube#subscription",
+   "etag": "\"9iWEWaGPvvCMMVNTPHF9GiusHJA/j41ukD0aV0y3hK1VBzokgQ4uVlk\"",
+   "id": "QmeTdj_6PqKCdSgz_RNI11CsTVxDMmthXLvBIbVtuQE",
+   "snippet": {
+    "publishedAt": "2014-08-21T07:26:30.000Z",
+    "title": "Mad Monarchist",
+    "description": "\"They cannot understand as yet that we are not fighting a political party but a sect of murderers of all contemporary spiritual culture.\"\r\n\r\n\"The evil which has fallen upon the land, with the object of destroying the divine principle in the human soul, must be extirpated root and branch. Fury against the heads of the revolution, its devoted followers, must know no boundaries.\"\r\n\r\n\"If the madness and corruption of mankind continue to threaten the divine spirit in man's heart, to shed blood and to prevent all moral progress, then the Asian state must put an end to this destructive process and establish a sure and lasting peace.\" \r\n\r\nPan-Monarchism: Support It!\r\n\r\nVisit the\r\nMAD MONARCHIST BLOG @\r\nhttp://madmonarchist.blogspot.com/\r\n\r\n\r\n_♥_♥___♥_♥_ Put This\r\n♥___♥_♥___♥ Heart\r\n_♥___♥___♥_ On Your\r\n__♥_____♥__ Page If\r\n___♥___♥___ You Love\r\n____♥_♥____ All\r\n_____♥_____ Romanovs\r\n\r\n\"For every monarchy overthrown the sky becomes less brilliant, because it loses a star. A republic is ugliness set free.\" ~Anatole France\r\n\r\n\"The president of a republic is as though you pick a player from one of two teams and make him umpire.\" ~Czar Simeon II of Bulgaria\r\n\r\nIn fact, after having abolished the monarchy, the best of all governments, [the French Revolution] had transferred all the public power to the people — the people... ever easy to deceive and to lead into every excess ~Pope Pius VI, Pourquoi Notre Voix\r\n\r\nI am a true servant of my King and country, not only as a dutiful subject but because I am a convinced monarchist, politically and intellectually. I mean by that, quite apart from myself and my relationship to my Bavarian and German fatherland, I believe monarchy to be the most successful form of government that the history of mankind has known.  ~Adolf von Harnier\r\n\r\nIn Italy they are already speaking about a republic, but keep in mind that there is nothing less suited to Italians...... The Italians are individualists and a republic will become the cause of confusion and disorder. Certainly of corruption. I have no doubt of it. When all this comes to pass who will profit from it? ~King Victor Emmanuel III of Italy\r\n\r\nIf a nation does not want a monarchy, change the nations mind. If a nation does not need a monarchy, change the nations needs. ~Jan Christian Smuts, Prime Minister of South Africa\r\n\r\nConstitutions become the ultimate tyranny. They're organized power on such a scale as to be overwhelming. The constitution is social power mobilized and it has no conscience. It can crush the highest and the lowest, removing all dignity and individuality. It has an unstable balance point and no limitations. I, however, have limitations. In my desire to provide an ultimate protection for my people, I forbid a constitution. ~Frank Herbert's \"Dune Messiah\"\r\n\r\nPietas prevailed, and out of the blood of Caesar the monarchy was born. ~Sir Ronald Syme",
+    "resourceId": {
+     "kind": "youtube#channel",
+     "channelId": "UCJDbxi-geHp0QZjpczniN2Q"
+    },
+    "channelId": "UC0wObT_HayGfWLdRAnFyPwA",
+    "thumbnails": {
+     "default": {
+      "url": "https://yt3.ggpht.com/-7pcSS4MRJxs/AAAAAAAAAAI/AAAAAAAAAAA/RDOM3nMrjpA/s88-c-k-no/photo.jpg"
+     },
+     "high": {
+      "url": "https://yt3.ggpht.com/-7pcSS4MRJxs/AAAAAAAAAAI/AAAAAAAAAAA/RDOM3nMrjpA/s240-c-k-no/photo.jpg"
+     }
+    }
+   },
+   "contentDetails": {
+    "totalItemCount": 556,
+    "newItemCount": 1,
+    "activityType": "all"
+   }
+  },
+  {
+
+   "kind": "youtube#subscription",
+   "etag": "\"9iWEWaGPvvCMMVNTPHF9GiusHJA/jlbUWVdUUtEtY2L6IWRIy0EUZh4\"",
+   "id": "QmeTdj_6PqKCdSgz_RNI19u1BA5ynIC8PCETOq4wQZQ",
+   "snippet": {
+    "publishedAt": "2015-02-06T18:44:11.000Z",
+    "title": "ng-conf",
+    "description": "",
+    "resourceId": {
+     "kind": "youtube#channel",
+     "channelId": "UCm9iiIfgmVODUJxINecHQkA"
+    },
+    "channelId": "UC0wObT_HayGfWLdRAnFyPwA",
+    "thumbnails": {
+     "default": {
+      "url": "https://yt3.ggpht.com/-UumxxBXCMio/AAAAAAAAAAI/AAAAAAAAAAA/yhMjPPtaiKw/s88-c-k-no/photo.jpg"
+     },
+     "high": {
+      "url": "https://yt3.ggpht.com/-UumxxBXCMio/AAAAAAAAAAI/AAAAAAAAAAA/yhMjPPtaiKw/s240-c-k-no/photo.jpg"
+     }
+    }
+   },
+   "contentDetails": {
+    "totalItemCount": 106,
+    "newItemCount": 0,
+    "activityType": "all"
+   }
+  },
+  {
+
+   "kind": "youtube#subscription",
+   "etag": "\"9iWEWaGPvvCMMVNTPHF9GiusHJA/4iFhh0eKJzym7L42-uSVb2rZ8rU\"",
+   "id": "QmeTdj_6PqKCdSgz_RNI190XFRfAP0ijO1lLZPxUwnc",
+   "snippet": {
+    "publishedAt": "2014-12-12T07:13:50.000Z",
+    "title": "Quality Coding",
+    "description": "Visit qualitycoding.org for tools, tips & techniques for building quality in to iOS development.",
+    "resourceId": {
+     "kind": "youtube#channel",
+     "channelId": "UC69XtVGLRydpG7o1nkdQs8Q"
+    },
+    "channelId": "UC0wObT_HayGfWLdRAnFyPwA",
+    "thumbnails": {
+     "default": {
+      "url": "https://yt3.ggpht.com/-0nG0M6NvTtY/AAAAAAAAAAI/AAAAAAAAAAA/xY-F1TXRBf4/s88-c-k-no/photo.jpg"
+     },
+     "high": {
+      "url": "https://yt3.ggpht.com/-0nG0M6NvTtY/AAAAAAAAAAI/AAAAAAAAAAA/xY-F1TXRBf4/s240-c-k-no/photo.jpg"
+     }
+    }
+   },
+   "contentDetails": {
+    "totalItemCount": 4,
+    "newItemCount": 0,
+    "activityType": "all"
+   }
+  },
+  {
+
+   "kind": "youtube#subscription",
+   "etag": "\"9iWEWaGPvvCMMVNTPHF9GiusHJA/j7Dd75-7twcv65ZGIg-6V-EeXcE\"",
+   "id": "QmeTdj_6PqKCdSgz_RNI17tVVvpDtYuZW7SGilNDDFk",
+   "snippet": {
+    "publishedAt": "2014-11-12T05:47:14.000Z",
+    "title": "The Online Piano and Violin Tutor",
+    "description": "Professional Violin, Piano & Theory Lessons to everyone at all ages by\nAlison M Sparrow  BA Music (Hons), London College of Music Examiner. \n\nFor collaborations and business inquiries, please contact via Channel Pages: http://ChannelPages.com/theonlinepianotutor",
+    "resourceId": {
+     "kind": "youtube#channel",
+     "channelId": "UCLLxyaKSNav9f9Vqvp99npQ"
+    },
+    "channelId": "UC0wObT_HayGfWLdRAnFyPwA",
+    "thumbnails": {
+     "default": {
+      "url": "https://yt3.ggpht.com/-6h1R3UqbjE4/AAAAAAAAAAI/AAAAAAAAAAA/GzBJZ8gN4DA/s88-c-k-no/photo.jpg"
+     },
+     "high": {
+      "url": "https://yt3.ggpht.com/-6h1R3UqbjE4/AAAAAAAAAAI/AAAAAAAAAAA/GzBJZ8gN4DA/s240-c-k-no/photo.jpg"
+     }
+    }
+   },
+   "contentDetails": {
+    "totalItemCount": 338,
+    "newItemCount": 4,
+    "activityType": "all"
+   }
+  },
+  {
+
+   "kind": "youtube#subscription",
+   "etag": "\"9iWEWaGPvvCMMVNTPHF9GiusHJA/JQBn4UHgFoJdn4bE8WUPzFYCSvc\"",
+   "id": "QmeTdj_6PqKCdSgz_RNI1zCfGAvDjFtcwCqDZd4HxS0",
+   "snippet": {
+    "publishedAt": "2014-08-06T00:47:29.000Z",
+    "title": "Global App Initiative",
+    "description": "We are a unique organization where students design and develop mobile app software for nonprofit organizations.\nEstablished at Boston University in September 2012.\n\nEmail us at gai@bu.edu for more information.",
+    "resourceId": {
+     "kind": "youtube#channel",
+     "channelId": "UCLiify2gtHRSXRYuJe3AvGw"
+    },
+    "channelId": "UC0wObT_HayGfWLdRAnFyPwA",
+    "thumbnails": {
+     "default": {
+      "url": "https://yt3.ggpht.com/-vtRCtG7DEWY/AAAAAAAAAAI/AAAAAAAAAAA/HvKyRpSTqoY/s88-c-k-no/photo.jpg"
+     },
+     "high": {
+      "url": "https://yt3.ggpht.com/-vtRCtG7DEWY/AAAAAAAAAAI/AAAAAAAAAAA/HvKyRpSTqoY/s240-c-k-no/photo.jpg"
+     }
+    }
+   },
+   "contentDetails": {
+    "totalItemCount": 34,
+    "newItemCount": 0,
+    "activityType": "all"
+   }
+  },
+  {
+
+   "kind": "youtube#subscription",
+   "etag": "\"9iWEWaGPvvCMMVNTPHF9GiusHJA/U5b1LNr5iqKjYq9Ecw5EMW8Qo74\"",
+   "id": "QmeTdj_6PqKCdSgz_RNI1wtUOQOPh-0Z3k5QbDBSZz8",
+   "snippet": {
+    "publishedAt": "2014-07-20T14:32:56.000Z",
+    "title": "TheAppleEdge",
+    "description": "TheAppleEdge brings you tons of cool things such as reviews, unboxings, tutorials, graphics, etc. Subscribe and stay tuned for more amazing stuff!\n\nFollow us on twitter for a behind the scenes look and a peek into our upcoming videos and projects.",
+    "resourceId": {
+     "kind": "youtube#channel",
+     "channelId": "UC1-bpWFX44G2uWkszFm5MEA"
+    },
+    "channelId": "UC0wObT_HayGfWLdRAnFyPwA",
+    "thumbnails": {
+     "default": {
+      "url": "https://yt3.ggpht.com/-hWQiTp4aj0U/AAAAAAAAAAI/AAAAAAAAAAA/kQpWL-1F_mw/s88-c-k-no/photo.jpg"
+     },
+     "high": {
+      "url": "https://yt3.ggpht.com/-hWQiTp4aj0U/AAAAAAAAAAI/AAAAAAAAAAA/kQpWL-1F_mw/s240-c-k-no/photo.jpg"
+     }
+    }
+   },
+   "contentDetails": {
+    "totalItemCount": 9,
+    "newItemCount": 0,
+    "activityType": "all"
+   }
+  },
+  {
+
+   "kind": "youtube#subscription",
+   "etag": "\"9iWEWaGPvvCMMVNTPHF9GiusHJA/2dtAFTEJsa66AOqFN1_cuzuzkX0\"",
+   "id": "QmeTdj_6PqKCdSgz_RNI1y1K2HZse3vj6Ob8WAToQuA",
+   "snippet": {
+    "publishedAt": "2014-07-07T14:36:29.000Z",
+    "title": "DesignCourse",
+    "description": "Bringing to you the best video tutorials on all things design.  From web design, to corporate identity, 3D, to print design and more.  Subscribe to us now.  http://www.designcourse.com",
+    "resourceId": {
+     "kind": "youtube#channel",
+     "channelId": "UCVyRiMvfUNMA1UPlDPzG5Ow"
+    },
+    "channelId": "UC0wObT_HayGfWLdRAnFyPwA",
+    "thumbnails": {
+     "default": {
+      "url": "https://yt3.ggpht.com/-aG9Fhs8oDSs/AAAAAAAAAAI/AAAAAAAAAAA/FgPzEXHXIOQ/s88-c-k-no/photo.jpg"
+     },
+     "high": {
+      "url": "https://yt3.ggpht.com/-aG9Fhs8oDSs/AAAAAAAAAAI/AAAAAAAAAAA/FgPzEXHXIOQ/s240-c-k-no/photo.jpg"
+     }
+    }
+   },
+   "contentDetails": {
+    "totalItemCount": 247,
+    "newItemCount": 3,
+    "activityType": "all"
+   }
+  },
+  {
+
+   "kind": "youtube#subscription",
+   "etag": "\"9iWEWaGPvvCMMVNTPHF9GiusHJA/BlxmFE8p6tNzIz_ygDqsag--2S8\"",
+   "id": "QmeTdj_6PqKCdSgz_RNI179dPIa8FFFXqR7zlyEPAFs",
+   "snippet": {
+    "publishedAt": "2015-01-22T04:37:35.000Z",
+    "title": "Elance",
+    "description": "Elance: Where businesses find, hire and collaborate with a world of great online freelancers.\n\nWelcome to the official Elance YouTube channel!\n\nAs the world's leading platform for online employment, Elance helps businesses hire and manage in the cloud. For businesses looking to staff-up a team on an hourly or project basis, Elance offers instant access to qualified professionals who work online and provides the tools to hire, view work as it progresses and pay for results.",
+    "resourceId": {
+     "kind": "youtube#channel",
+     "channelId": "UC67ZYW49GiiDkOk_yIDRroQ"
+    },
+    "channelId": "UC0wObT_HayGfWLdRAnFyPwA",
+    "thumbnails": {
+     "default": {
+      "url": "https://yt3.ggpht.com/-cbkmZrlNAPQ/AAAAAAAAAAI/AAAAAAAAAAA/h5PBvUOCKpI/s88-c-k-no/photo.jpg"
+     },
+     "high": {
+      "url": "https://yt3.ggpht.com/-cbkmZrlNAPQ/AAAAAAAAAAI/AAAAAAAAAAA/h5PBvUOCKpI/s240-c-k-no/photo.jpg"
+     }
+    }
+   },
+   "contentDetails": {
+    "totalItemCount": 91,
+    "newItemCount": 0,
+    "activityType": "all"
+   }
+  },
+  {
+
+   "kind": "youtube#subscription",
+   "etag": "\"9iWEWaGPvvCMMVNTPHF9GiusHJA/vqRuQxSEruTxCnea4-X4w2h1HpA\"",
+   "id": "QmeTdj_6PqKCdSgz_RNI14Y1x6UmCkXYCX4f_YNUyhc",
+   "snippet": {
+    "publishedAt": "2014-11-12T06:55:25.000Z",
+    "title": "MusicalesyOpera",
+    "description": "Creado por Luis M. Guerrero.",
+    "resourceId": {
+     "kind": "youtube#channel",
+     "channelId": "UCX4c8SFh4rhhQ-VMj1tl4Tg"
+    },
+    "channelId": "UC0wObT_HayGfWLdRAnFyPwA",
+    "thumbnails": {
+     "default": {
+      "url": "https://yt3.ggpht.com/-T2ooFO9Wfzw/AAAAAAAAAAI/AAAAAAAAAAA/hY-Xg8pRlm4/s88-c-k-no/photo.jpg"
+     },
+     "high": {
+      "url": "https://yt3.ggpht.com/-T2ooFO9Wfzw/AAAAAAAAAAI/AAAAAAAAAAA/hY-Xg8pRlm4/s240-c-k-no/photo.jpg"
+     }
+    }
+   },
+   "contentDetails": {
+    "totalItemCount": 60,
+    "newItemCount": 0,
+    "activityType": "all"
+   }
+  },
+  {
+
+   "kind": "youtube#subscription",
+   "etag": "\"9iWEWaGPvvCMMVNTPHF9GiusHJA/X_2OfO8najCijl-A6WABxrIV30M\"",
+   "id": "QmeTdj_6PqKCdSgz_RNI1ylumaHUrzU04QhiEV7w0Cs",
+   "snippet": {
+    "publishedAt": "2014-09-30T03:47:22.000Z",
+    "title": "J.A. Romanov",
+    "description": "X-Plane simulator video",
+    "resourceId": {
+     "kind": "youtube#channel",
+     "channelId": "UCx19n_wOCj4Z2U63M_RpY2Q"
+    },
+    "channelId": "UC0wObT_HayGfWLdRAnFyPwA",
+    "thumbnails": {
+     "default": {
+      "url": "https://yt3.ggpht.com/-Y_19MrdnKMw/AAAAAAAAAAI/AAAAAAAAAAA/EqVWJPE7C04/s88-c-k-no/photo.jpg"
+     },
+     "high": {
+      "url": "https://yt3.ggpht.com/-Y_19MrdnKMw/AAAAAAAAAAI/AAAAAAAAAAA/EqVWJPE7C04/s240-c-k-no/photo.jpg"
+     }
+    }
+   },
+   "contentDetails": {
+    "totalItemCount": 39,
+    "newItemCount": 1,
+    "activityType": "all"
+   }
+  },
+  {
+
+   "kind": "youtube#subscription",
+   "etag": "\"9iWEWaGPvvCMMVNTPHF9GiusHJA/GndTyfrV6AVDn8ZOP5DBboBIG6U\"",
+   "id": "QmeTdj_6PqKCdSgz_RNI12XnR5BbKsuc4-T0fOwDLJI",
+   "snippet": {
+    "publishedAt": "2014-09-29T05:03:57.000Z",
+    "title": "Joseph Nobles",
+    "description": "",
+    "resourceId": {
+     "kind": "youtube#channel",
+     "channelId": "UCoMZKJA1PcpE3vqULWuXHIQ"
+    },
+    "channelId": "UC0wObT_HayGfWLdRAnFyPwA",
+    "thumbnails": {
+     "default": {
+      "url": "https://yt3.ggpht.com/-R-PWzaMuVMU/AAAAAAAAAAI/AAAAAAAAAAA/62emnX14O08/s88-c-k-no/photo.jpg"
+     },
+     "high": {
+      "url": "https://yt3.ggpht.com/-R-PWzaMuVMU/AAAAAAAAAAI/AAAAAAAAAAA/62emnX14O08/s240-c-k-no/photo.jpg"
+     }
+    }
+   },
+   "contentDetails": {
+    "totalItemCount": 9,
+    "newItemCount": 1,
+    "activityType": "all"
+   }
+  },
+  {
+
+   "kind": "youtube#subscription",
+   "etag": "\"9iWEWaGPvvCMMVNTPHF9GiusHJA/QQvjNV6AZQ5vj7WSqhGKVTwxhbU\"",
+   "id": "QmeTdj_6PqKCdSgz_RNI18SIF86LpdL3llab1fbU6iE",
+   "snippet": {
+    "publishedAt": "2014-09-07T15:22:01.000Z",
+    "title": "dottotech",
+    "description": "After spending over 15 years hosting and producing Dotto Tech on TV (Canada) We are now focusing on delivering excellent how-to content on YouTube.\n\nAlthough the channel has been around for a long time, we only made the channel a priority on September of 2013. \n\nEach week we will be publishing 2 productivity videos, focusing on using your computer and smart devices for personal productivity.\n\nWe will also be publishing videos on:\nGrowing a YouTube Channel\nMasterCaster Videos, how to Screencast, podcast, webcast and produce webinars and tutorials\n\nFor More information on the show Please visit us at:\n\nhttp://www.dottotech.com",
+    "resourceId": {
+     "kind": "youtube#channel",
+     "channelId": "UC9BqPtCcSyHvQsbl2rumM4w"
+    },
+    "channelId": "UC0wObT_HayGfWLdRAnFyPwA",
+    "thumbnails": {
+     "default": {
+      "url": "https://yt3.ggpht.com/-Z_ntdaoYEAY/AAAAAAAAAAI/AAAAAAAAAAA/Yv8WSYxtwKM/s88-c-k-no/photo.jpg"
+     },
+     "high": {
+      "url": "https://yt3.ggpht.com/-Z_ntdaoYEAY/AAAAAAAAAAI/AAAAAAAAAAA/Yv8WSYxtwKM/s240-c-k-no/photo.jpg"
+     }
+    }
+   },
+   "contentDetails": {
+    "totalItemCount": 648,
+    "newItemCount": 4,
+    "activityType": "all"
+   }
+  },
+  {
+
+   "kind": "youtube#subscription",
+   "etag": "\"9iWEWaGPvvCMMVNTPHF9GiusHJA/ytWlSFyUNLphZj7EPwt6k7qcu6A\"",
+   "id": "QmeTdj_6PqKCdSgz_RNI1y-QtVL9xzZhIuBo0TNVycQ",
+   "snippet": {
+    "publishedAt": "2014-08-15T23:12:27.000Z",
+    "title": "AmpexDataSystems",
+    "description": "",
+    "resourceId": {
+     "kind": "youtube#channel",
+     "channelId": "UCztYOVbRsB-G0UlZGlvQ4oA"
+    },
+    "channelId": "UC0wObT_HayGfWLdRAnFyPwA",
+    "thumbnails": {
+     "default": {
+      "url": "https://i.ytimg.com/i/ztYOVbRsB-G0UlZGlvQ4oA/1.jpg?v=7419a2"
+     },
+     "high": {
+      "url": "https://i.ytimg.com/i/ztYOVbRsB-G0UlZGlvQ4oA/mq1.jpg?v=7419a2"
+     }
+    }
+   },
+   "contentDetails": {
+    "totalItemCount": 3,
+    "newItemCount": 0,
+    "activityType": "all"
+   }
+  },
+  {
+
+   "kind": "youtube#subscription",
+   "etag": "\"9iWEWaGPvvCMMVNTPHF9GiusHJA/XCKfxKc9uOHk1nhOLhLGXEVs1qk\"",
+   "id": "QmeTdj_6PqKCdSgz_RNI10bCihTcCSFwtVNuJmX7gHo",
+   "snippet": {
+    "publishedAt": "2014-08-07T04:42:54.000Z",
+    "title": "Michael Younesi",
+    "description": "",
+    "resourceId": {
+     "kind": "youtube#channel",
+     "channelId": "UCvKDmhl2_lOFUKSloRcHA4A"
+    },
+    "channelId": "UC0wObT_HayGfWLdRAnFyPwA",
+    "thumbnails": {
+     "default": {
+      "url": "https://yt3.ggpht.com/-kYO6I_mZLk0/AAAAAAAAAAI/AAAAAAAAAAA/UE47CHe2WXc/s88-c-k-no/photo.jpg"
+     },
+     "high": {
+      "url": "https://yt3.ggpht.com/-kYO6I_mZLk0/AAAAAAAAAAI/AAAAAAAAAAA/UE47CHe2WXc/s240-c-k-no/photo.jpg"
+     }
+    }
+   },
+   "contentDetails": {
+    "totalItemCount": 3,
+    "newItemCount": 0,
+    "activityType": "all"
+   }
+  },
+  {
+
+   "kind": "youtube#subscription",
+   "etag": "\"9iWEWaGPvvCMMVNTPHF9GiusHJA/0TU9QdC4itK4vf9Vdjxa_gjjm60\"",
+   "id": "QmeTdj_6PqKCdSgz_RNI13vL1CjXrEgbl8gP2AB6z9U",
+   "snippet": {
+    "publishedAt": "2014-07-31T15:25:39.000Z",
+    "title": "Code With Chris",
+    "description": "Learn iOS Development and how to turn your app idea into a reality!",
+    "resourceId": {
+     "kind": "youtube#channel",
+     "channelId": "UC2D6eRvCeMtcF5OGHf1-trw"
+    },
+    "channelId": "UC0wObT_HayGfWLdRAnFyPwA",
+    "thumbnails": {
+     "default": {
+      "url": "https://yt3.ggpht.com/-2Wnnz8T2dgk/AAAAAAAAAAI/AAAAAAAAAAA/Un2DAIYTACQ/s88-c-k-no/photo.jpg"
+     },
+     "high": {
+      "url": "https://yt3.ggpht.com/-2Wnnz8T2dgk/AAAAAAAAAAI/AAAAAAAAAAA/Un2DAIYTACQ/s240-c-k-no/photo.jpg"
+     }
+    }
+   },
+   "contentDetails": {
+    "totalItemCount": 90,
+    "newItemCount": 2,
+    "activityType": "all"
+   }
+  },
+  {
+
+   "kind": "youtube#subscription",
+   "etag": "\"9iWEWaGPvvCMMVNTPHF9GiusHJA/jVevVTePP9CzHGqDUD6mTjlVBLQ\"",
+   "id": "QmeTdj_6PqKCdSgz_RNI19hWSthLJi_ozwxylVyCcA8",
+   "snippet": {
+    "publishedAt": "2014-07-25T13:19:49.000Z",
+    "title": "BTI360",
+    "description": "BTI360's public",
+    "resourceId": {
+     "kind": "youtube#channel",
+     "channelId": "UCXOThDQobPsnQjnfUPTF-Jg"
+    },
+    "channelId": "UC0wObT_HayGfWLdRAnFyPwA",
+    "thumbnails": {
+     "default": {
+      "url": "https://yt3.ggpht.com/-hTI9JgEM4UA/AAAAAAAAAAI/AAAAAAAAAAA/8LhwatvaF4E/s88-c-k-no/photo.jpg"
+     },
+     "high": {
+      "url": "https://yt3.ggpht.com/-hTI9JgEM4UA/AAAAAAAAAAI/AAAAAAAAAAA/8LhwatvaF4E/s240-c-k-no/photo.jpg"
+     }
+    }
+   },
+   "contentDetails": {
+    "totalItemCount": 55,
+    "newItemCount": 0,
+    "activityType": "all"
+   }
+  },
+  {
+
+   "kind": "youtube#subscription",
+   "etag": "\"9iWEWaGPvvCMMVNTPHF9GiusHJA/PzTEjPpacAqnISCSw2ZCrXMzUsQ\"",
+   "id": "QmeTdj_6PqKCdSgz_RNI15YkaeY_kaCldp2sO4WiOHw",
+   "snippet": {
+    "publishedAt": "2014-07-20T01:06:20.000Z",
+    "title": "Android Developers",
+    "description": "Welcome to the Android Developers channel on YouTube. This is the home for Android Developers Live videos from our live events, as well as for videos containing demos, tutorials, and anything else related to Android development.",
+    "resourceId": {
+     "kind": "youtube#channel",
+     "channelId": "UCVHFbqXqoYvEWM1Ddxl0QDg"
+    },
+    "channelId": "UC0wObT_HayGfWLdRAnFyPwA",
+    "thumbnails": {
+     "default": {
+      "url": "https://yt3.ggpht.com/-mGTYed3Uh-E/AAAAAAAAAAI/AAAAAAAAAAA/g61cLkyPLvo/s88-c-k-no/photo.jpg"
+     },
+     "high": {
+      "url": "https://yt3.ggpht.com/-mGTYed3Uh-E/AAAAAAAAAAI/AAAAAAAAAAA/g61cLkyPLvo/s240-c-k-no/photo.jpg"
+     }
+    }
+   },
+   "contentDetails": {
+    "totalItemCount": 526,
+    "newItemCount": 1,
+    "activityType": "all"
+   }
+  },
+  {
+
+   "kind": "youtube#subscription",
+   "etag": "\"9iWEWaGPvvCMMVNTPHF9GiusHJA/Cz8mUkcONuamdobIxEHa-5RaqYw\"",
+   "id": "QmeTdj_6PqKCdSgz_RNI1-hFFrz4KLxL9tgeEs7y9fM",
+   "snippet": {
+    "publishedAt": "2014-07-19T04:19:45.000Z",
+    "title": "Fieldsports Channel",
+    "description": "The best hunting, shooting and fishing in the world. Celebrate the outdoors.",
+    "resourceId": {
+     "kind": "youtube#channel",
+     "channelId": "UCfoEqIFtqfc6xBV185DQnBw"
+    },
+    "channelId": "UC0wObT_HayGfWLdRAnFyPwA",
+    "thumbnails": {
+     "default": {
+      "url": "https://yt3.ggpht.com/-mhyYPklAIls/AAAAAAAAAAI/AAAAAAAAAAA/ZMF2bL5nubc/s88-c-k-no/photo.jpg"
+     },
+     "high": {
+      "url": "https://yt3.ggpht.com/-mhyYPklAIls/AAAAAAAAAAI/AAAAAAAAAAA/ZMF2bL5nubc/s240-c-k-no/photo.jpg"
+     }
+    }
+   },
+   "contentDetails": {
+    "totalItemCount": 1608,
+    "newItemCount": 17,
+    "activityType": "all"
+   }
+  },
+  {
+
+   "kind": "youtube#subscription",
+   "etag": "\"9iWEWaGPvvCMMVNTPHF9GiusHJA/wF6IV-eU9oN-QRoTxSe3jW62HqE\"",
+   "id": "QmeTdj_6PqKCdSgz_RNI1zRJrK1kp1UZZJ-OD5QnmXs",
+   "snippet": {
+    "publishedAt": "2014-07-17T12:29:56.000Z",
+    "title": "Pieter Omvlee",
+    "description": "",
+    "resourceId": {
+     "kind": "youtube#channel",
+     "channelId": "UCgFckrt4POt3Qd0-BeJonjg"
+    },
+    "channelId": "UC0wObT_HayGfWLdRAnFyPwA",
+    "thumbnails": {
+     "default": {
+      "url": "https://yt3.ggpht.com/-6VNUjXrktv0/AAAAAAAAAAI/AAAAAAAAAAA/DZJrkIVWNnM/s88-c-k-no/photo.jpg"
+     },
+     "high": {
+      "url": "https://yt3.ggpht.com/-6VNUjXrktv0/AAAAAAAAAAI/AAAAAAAAAAA/DZJrkIVWNnM/s240-c-k-no/photo.jpg"
+     }
+    }
+   },
+   "contentDetails": {
+    "totalItemCount": 6,
+    "newItemCount": 0,
+    "activityType": "all"
+   }
+  },
+  {
+
+   "kind": "youtube#subscription",
+   "etag": "\"9iWEWaGPvvCMMVNTPHF9GiusHJA/9J6NPRe95s6Sd9OOKX4BOSb9zME\"",
+   "id": "QmeTdj_6PqKCdSgz_RNI12cq1Pa4sTR7urbNq0b8G4w",
+   "snippet": {
+    "publishedAt": "2014-07-07T13:29:49.000Z",
+    "title": "Karl Miller",
+    "description": "Sample clips from programming on Adobe TV.  For more great videos, visit us at http://tv.adobe.com",
+    "resourceId": {
+     "kind": "youtube#channel",
+     "channelId": "UCppqA-uJ4duBJymLy8vyEDQ"
+    },
+    "channelId": "UC0wObT_HayGfWLdRAnFyPwA",
+    "thumbnails": {
+     "default": {
+      "url": "https://yt3.ggpht.com/-9bePKSXMCZQ/AAAAAAAAAAI/AAAAAAAAAAA/G9OXGBbfxbo/s88-c-k-no/photo.jpg"
+     },
+     "high": {
+      "url": "https://yt3.ggpht.com/-9bePKSXMCZQ/AAAAAAAAAAI/AAAAAAAAAAA/G9OXGBbfxbo/s240-c-k-no/photo.jpg"
+     }
+    }
+   },
+   "contentDetails": {
+    "totalItemCount": 136,
+    "newItemCount": 0,
+    "activityType": "all"
+   }
+  },
+  {
+
+   "kind": "youtube#subscription",
+   "etag": "\"9iWEWaGPvvCMMVNTPHF9GiusHJA/-TwVC8mtfMPHHMhCDaESLInUMYg\"",
+   "id": "QmeTdj_6PqKCdSgz_RNI15Su2ejBCpiWxNlXgyGxHZQ",
+   "snippet": {
+    "publishedAt": "2014-07-04T13:45:13.000Z",
+    "title": "ScreenCastsOnline Video Tutorials",
+    "description": "Video tutorials to help you get the most out of your Mac, iPhone or iPad",
+    "resourceId": {
+     "kind": "youtube#channel",
+     "channelId": "UCSgwg6C__wjdnVPXJO6Ur4Q"
+    },
+    "channelId": "UC0wObT_HayGfWLdRAnFyPwA",
+    "thumbnails": {
+     "default": {
+      "url": "https://yt3.ggpht.com/-mynqchzaHhM/AAAAAAAAAAI/AAAAAAAAAAA/lL3yakZpKHs/s88-c-k-no/photo.jpg"
+     },
+     "high": {
+      "url": "https://yt3.ggpht.com/-mynqchzaHhM/AAAAAAAAAAI/AAAAAAAAAAA/lL3yakZpKHs/s240-c-k-no/photo.jpg"
+     }
+    }
+   },
+   "contentDetails": {
+    "totalItemCount": 254,
+    "newItemCount": 0,
+    "activityType": "all"
+   }
+  },
+  {
+
+   "kind": "youtube#subscription",
+   "etag": "\"9iWEWaGPvvCMMVNTPHF9GiusHJA/JEeB2_NiiItn6Rs5FJJU6-3zoDk\"",
+   "id": "QmeTdj_6PqKCdSgz_RNI155xVwQn2NHeshT7WeTSNXo",
+   "snippet": {
+    "publishedAt": "2014-01-25T08:01:48.000Z",
+    "title": "LevelUpTuts",
+    "description": "Tutorials for front-end web developers.\n\nLevel Up Tuts was started by Scott Tolinski and Ben Schaaf as a way to provide free tutorials on web development and other media applications. We hope that you find our information useful in your growth as a media creator. Because we are full time (and freelance) developers, Level Up Tuts is a side project we work hard to bring to you. If you enjoy what you are learning feel free to make a donation so we can keep making new tutorials.\n\nPlease help Level Up Tuts improve by filling out this quick questionnaire\nhttps://docs.google.com/forms/d/1x7MTNp_umnvdkwJ5dfOVnnJtndkYdU7EDoCE9r8bYBk/viewform",
+    "resourceId": {
+     "kind": "youtube#channel",
+     "channelId": "UCyU5wkjgQYGRB0hIHMwm2Sg"
+    },
+    "channelId": "UC0wObT_HayGfWLdRAnFyPwA",
+    "thumbnails": {
+     "default": {
+      "url": "https://yt3.ggpht.com/-MogFBYbYHgM/AAAAAAAAAAI/AAAAAAAAAAA/8e-NkR3Q1LE/s88-c-k-no/photo.jpg"
+     },
+     "high": {
+      "url": "https://yt3.ggpht.com/-MogFBYbYHgM/AAAAAAAAAAI/AAAAAAAAAAA/8e-NkR3Q1LE/s240-c-k-no/photo.jpg"
+     }
+    }
+   },
+   "contentDetails": {
+    "totalItemCount": 596,
+    "newItemCount": 4,
+    "activityType": "uploads"
+   }
+  },
+  {
+
+   "kind": "youtube#subscription",
+   "etag": "\"9iWEWaGPvvCMMVNTPHF9GiusHJA/VU3V3APPsd0fmOlNmuWbiTNYLa0\"",
+   "id": "QmeTdj_6PqKCdSgz_RNI19-1HCcl6Gk7ltbgh_ujRrg",
+   "snippet": {
+    "publishedAt": "2015-03-27T18:46:37.000Z",
+    "title": "App Ninja",
+    "description": "This channel contains programming tutorials for iOS development covering the basics of both Objective-C and Swift as well as the Xcode IDE and other third-party tools and libraries that make creating apps a little bit easier.",
+    "resourceId": {
+     "kind": "youtube#channel",
+     "channelId": "UCWXkTYk-_IbQwlJkc8yWUPQ"
+    },
+    "channelId": "UC0wObT_HayGfWLdRAnFyPwA",
+    "thumbnails": {
+     "default": {
+      "url": "https://yt3.ggpht.com/-T1Hi_i3ESws/AAAAAAAAAAI/AAAAAAAAAAA/JFUCqcHCTwo/s88-c-k-no/photo.jpg"
+     },
+     "high": {
+      "url": "https://yt3.ggpht.com/-T1Hi_i3ESws/AAAAAAAAAAI/AAAAAAAAAAA/JFUCqcHCTwo/s240-c-k-no/photo.jpg"
+     }
+    }
+   },
+   "contentDetails": {
+    "totalItemCount": 17,
+    "newItemCount": 0,
+    "activityType": "all"
+   }
+  }
+ ]
+}
+ 

@@ -9,7 +9,8 @@
 import Foundation
 import UIKit
 
-let REAR_VIEW_WIDTH :CGFloat = 280.0
+let REAR_VIEW_WIDTH :CGFloat = 300.0
+
 let TABLE_HEADER_VIEW_HEIGHT :CGFloat = 60.0
 let TABLE_ROW_HEIGHT :CGFloat = 56.0
 let TABLE_SECTION_HEADER_HEIGHT :CGFloat = 48.0

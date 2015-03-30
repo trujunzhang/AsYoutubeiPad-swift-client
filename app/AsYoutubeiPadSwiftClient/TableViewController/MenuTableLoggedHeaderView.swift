@@ -24,9 +24,7 @@ class MenuTableLoggedHeaderView: UIViewController {
         _nodeCellSize = CGSizeMake(REAR_VIEW_WIDTH, TABLE_HEADER_VIEW_HEIGHT)
         
         self.setupView()
-        
-        
-        
+                        
         self.view.frame = CGRectMake(0, 0, REAR_VIEW_WIDTH, TABLE_HEADER_VIEW_HEIGHT)
     }
     

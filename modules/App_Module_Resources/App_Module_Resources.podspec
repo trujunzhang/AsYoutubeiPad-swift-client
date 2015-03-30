@@ -37,6 +37,14 @@ Pod::Spec.new do |s|
 
   s.subspec 'STCollapseTableView' do |sub|
     sub.source_files = 'Pod/Classes/STCollapseTableView/*.{h,m}'
-  end    
+  end  
+
+  s.subspec 'SWRevealViewController' do |sub|
+    sub.source_files = 'Pod/Classes/SWRevealViewController/*.{h,m}'
+  end        
+
+  s.subspec 'RDVTabBarController' do |sub|
+    sub.source_files = 'Pod/Classes/RDVTabBarController/*.{h,m}'
+  end  
   
 end
