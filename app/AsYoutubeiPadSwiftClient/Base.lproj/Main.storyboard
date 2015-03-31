@@ -412,7 +412,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="300"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="IAh-ye-RRU">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IAh-ye-RRU">
                                 <rect key="frame" x="0.0" y="200" width="600" height="100"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="680-o4-zYC">
@@ -429,12 +429,24 @@
                                     </label>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="LHH-g8-WG9"/>
+                                </constraints>
                             </view>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="channels4_banner.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="81l-IM-Hxo">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="121"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="channels4_banner.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="81l-IM-Hxo">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="200"/>
                             </imageView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="81l-IM-Hxo" firstAttribute="top" secondItem="TdQ-hj-GiF" secondAttribute="top" id="0SU-bs-LqS"/>
+                            <constraint firstItem="IAh-ye-RRU" firstAttribute="leading" secondItem="TdQ-hj-GiF" secondAttribute="leading" id="Db6-sw-uOU"/>
+                            <constraint firstAttribute="bottom" secondItem="IAh-ye-RRU" secondAttribute="bottom" id="OeB-3y-uBm"/>
+                            <constraint firstAttribute="trailing" secondItem="IAh-ye-RRU" secondAttribute="trailing" id="QA8-dB-rEV"/>
+                            <constraint firstItem="81l-IM-Hxo" firstAttribute="leading" secondItem="TdQ-hj-GiF" secondAttribute="leading" id="gHB-t3-jt6"/>
+                            <constraint firstAttribute="trailing" secondItem="81l-IM-Hxo" secondAttribute="trailing" id="miP-BO-y1x"/>
+                            <constraint firstItem="IAh-ye-RRU" firstAttribute="top" secondItem="81l-IM-Hxo" secondAttribute="bottom" id="v7e-Nz-oMB"/>
+                        </constraints>
                     </view>
                     <nil key="simulatedStatusBarMetrics"/>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>

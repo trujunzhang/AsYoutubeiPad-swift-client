@@ -22,6 +22,7 @@ class ChannelPageViewController:UIViewController {
         
         channelBannerViewController = _channelBannerViewController
         channelBannerView = _channelBannerViewController.view
+        channelBannerView?.frame = CGRectMake(0, 0, self.view.frame.size.width, 200)
         
         self.view.addSubview(channelBannerView!)
     }
