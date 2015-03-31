@@ -438,22 +438,26 @@
                                         </state>
                                     </button>
                                 </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="F84-Yu-AKb" secondAttribute="trailing" constant="20" id="0Xj-Ql-ztE"/>
                                     <constraint firstAttribute="height" constant="47" id="LHH-g8-WG9"/>
                                     <constraint firstAttribute="centerY" secondItem="F84-Yu-AKb" secondAttribute="centerY" id="iTL-BN-cBx"/>
                                 </constraints>
                             </view>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="channels4_banner.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="81l-IM-Hxo">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="channels4_banner.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="81l-IM-Hxo">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="253"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="IAh-ye-RRU" firstAttribute="leading" secondItem="TdQ-hj-GiF" secondAttribute="leading" id="Db6-sw-uOU"/>
+                            <constraint firstItem="IAh-ye-RRU" firstAttribute="top" secondItem="81l-IM-Hxo" secondAttribute="bottom" id="GxU-lB-IT5"/>
                             <constraint firstAttribute="bottom" secondItem="IAh-ye-RRU" secondAttribute="bottom" id="OeB-3y-uBm"/>
                             <constraint firstAttribute="trailing" secondItem="IAh-ye-RRU" secondAttribute="trailing" id="QA8-dB-rEV"/>
+                            <constraint firstItem="81l-IM-Hxo" firstAttribute="leading" secondItem="TdQ-hj-GiF" secondAttribute="leading" id="VGH-hK-bmP"/>
+                            <constraint firstAttribute="trailing" secondItem="81l-IM-Hxo" secondAttribute="trailing" id="kx9-5o-ynt"/>
+                            <constraint firstItem="81l-IM-Hxo" firstAttribute="top" secondItem="TdQ-hj-GiF" secondAttribute="top" id="oTe-tx-OoC"/>
                         </constraints>
                     </view>
                     <nil key="simulatedStatusBarMetrics"/>

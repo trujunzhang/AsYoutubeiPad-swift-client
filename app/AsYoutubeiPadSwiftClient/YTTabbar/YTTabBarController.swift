@@ -28,26 +28,46 @@ class YTTabBarController: UIViewController,YTTabBarDelegate {
     var tabBarView:YTTabBar?
     var isFirstAppear:Bool?
     
+    var tabBarItemsViewController : YTTabBarItemsViewController?
+    var tabBarItemsDictionary:TabBarItemsDictionary?
     
-    init(_viewControllers: NSDictionary, tabBarView _tabBarView: UIView){
+    override init(){
         super.init()
         
-        viewControllers = _viewControllers
+        
     }
     
     required init(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+        super.init(coder: aDecoder)
+    }
+    
+    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?) {
+        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
     }
     
     
     override func viewDidLoad() {
+        super.viewDidLoad()
         //        tabBarView = YTTabBar(frame: CGRectZero, viewControllers: nil, appearance: nil)
         //        tabBarView.delegate = self
+        // 1
+        let storyboard:UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let _tabBarItemsViewController:YTTabBarItemsViewController = storyboard.instantiateViewControllerWithIdentifier("YTTabBarItemsViewController") as YTTabBarItemsViewController
+        
+        tabBarItemsViewController = _tabBarItemsViewController
+        
+        let tabBarItemsView:UIView = _tabBarItemsViewController.view!
+        tabBarItemsView.frame = CGRectMake(0, 0, self.view.frame.size.width, 44)
+        
+        self.addChildViewController(tabBarItemsViewController!)
+        
+        tabBarItemsDictionary =  tabBarItemsViewController?.makeTabBarItemsDictionary()
         
         presentationView = UIView()
         
-        self.view.addSubview(tabBarView!)
-        self.view.addSubview(presentationView!)
+        self.view.addSubview(tabBarItemsView)
+        //        self.view.addSubview(tabBarView!)
+        //        self.view.addSubview(presentationView!)
     }
     
     

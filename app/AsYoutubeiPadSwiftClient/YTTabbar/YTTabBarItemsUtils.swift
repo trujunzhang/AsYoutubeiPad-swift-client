@@ -23,6 +23,14 @@ class YTTabBarItemsUtils:NSObject {
         return buttons
     }
     
-    
+//    func getTabBarController() -> YTTabBarController{
+//        // 1.
+//        let tabBarItemsViewController : YTTabBarItemsViewController = YTTabBarItemsViewController()
+//        
+//        
+//        let tabBarController:YTTabBarController = YTTabBarController(nil)
+//        
+//        return tabBarController
+//    }
     
 }

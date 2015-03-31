@@ -24,6 +24,7 @@ class YTTabBarItemsViewController:UIViewController {
     let tabBarItemsDictionary:TabBarItemsDictionary?
     
     override func viewDidLoad() {
+        var x = 0
     }
     
     func makeTabBarItemsDictionary() ->TabBarItemsDictionary {
