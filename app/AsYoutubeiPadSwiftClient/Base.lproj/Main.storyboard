@@ -412,40 +412,42 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="300"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IAh-ye-RRU">
-                                <rect key="frame" x="0.0" y="200" width="600" height="100"/>
+                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="IAh-ye-RRU">
+                                <rect key="frame" x="0.0" y="253" width="600" height="47"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="680-o4-zYC">
-                                        <rect key="frame" x="31" y="39" width="67" height="21"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="JFK Libaray" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="680-o4-zYC">
+                                        <rect key="frame" x="10" y="4" width="82" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o88-WK-nXR">
-                                        <rect key="frame" x="31" y="59" width="67" height="21"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="8,809 Subscribers" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o88-WK-nXR">
+                                        <rect key="frame" x="10" y="25" width="265" height="18"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="F84-Yu-AKb">
+                                        <rect key="frame" x="470" y="8" width="110" height="30"/>
+                                        <state key="normal" title="Button">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="100" id="LHH-g8-WG9"/>
                                 </constraints>
                             </view>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="channels4_banner.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="81l-IM-Hxo">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="200"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="channels4_banner.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="81l-IM-Hxo">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="253"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="81l-IM-Hxo" firstAttribute="top" secondItem="TdQ-hj-GiF" secondAttribute="top" id="0SU-bs-LqS"/>
                             <constraint firstItem="IAh-ye-RRU" firstAttribute="leading" secondItem="TdQ-hj-GiF" secondAttribute="leading" id="Db6-sw-uOU"/>
                             <constraint firstAttribute="bottom" secondItem="IAh-ye-RRU" secondAttribute="bottom" id="OeB-3y-uBm"/>
                             <constraint firstAttribute="trailing" secondItem="IAh-ye-RRU" secondAttribute="trailing" id="QA8-dB-rEV"/>
-                            <constraint firstItem="81l-IM-Hxo" firstAttribute="leading" secondItem="TdQ-hj-GiF" secondAttribute="leading" id="gHB-t3-jt6"/>
-                            <constraint firstAttribute="trailing" secondItem="81l-IM-Hxo" secondAttribute="trailing" id="miP-BO-y1x"/>
-                            <constraint firstItem="IAh-ye-RRU" firstAttribute="top" secondItem="81l-IM-Hxo" secondAttribute="bottom" id="v7e-Nz-oMB"/>
                         </constraints>
                     </view>
                     <nil key="simulatedStatusBarMetrics"/>
