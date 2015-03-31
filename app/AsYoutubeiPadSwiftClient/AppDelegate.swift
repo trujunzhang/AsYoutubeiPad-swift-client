@@ -30,7 +30,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             revealViewController.rearViewRevealWidth = REAR_VIEW_WIDTH
             revealViewController.rearViewRevealOverdraw = 0
             
-            revealViewController.revealToggleAnimated(true)
+//            revealViewController.revealToggleAnimated(true)
             
             YoutubeFetcher.sharedInstance.initLoggedUser()
         }

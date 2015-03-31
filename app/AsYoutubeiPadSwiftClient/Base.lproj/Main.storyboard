@@ -147,12 +147,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="Ysq-5c-rnT">
-                        <barButtonItem key="leftBarButtonItem" image="reveal-icon" id="1yQ-fR-JGw"/>
-                    </navigationItem>
-                    <connections>
-                        <outlet property="menuButton" destination="1yQ-fR-JGw" id="7E7-gk-SGe"/>
-                    </connections>
+                    <navigationItem key="navigationItem" id="Ysq-5c-rnT"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ph9-w3-Y4h" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -331,31 +326,84 @@
             </objects>
             <point key="canvasLocation" x="1189" y="1837"/>
         </scene>
-        <!--View Controller-->
+        <!--Tab Bar Items View Controller-->
         <scene sceneID="waI-wJ-8Fz">
             <objects>
-                <viewController id="uzZ-75-4S5" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="YTTabBarItemsViewController" id="uzZ-75-4S5" customClass="YTTabBarItemsViewController" customModule="AsYoutubeiPadSwiftClient" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="GIo-Fc-AT6"/>
                         <viewControllerLayoutGuide type="bottom" id="rhY-xC-XLd"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="6lP-wK-Xya">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="100"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="tab_titles_background.png" translatesAutoresizingMaskIntoConstraints="NO" id="Cur-nR-tAM">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
+                            </imageView>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uCx-aY-T3v">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KTt-ys-7X7">
+                                        <rect key="frame" x="0.0" y="0.0" width="106" height="44"/>
+                                        <state key="normal" title="Activity" backgroundImage="tab_titles_button_selected.png">
+                                            <color key="titleColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8NC-KG-R5W">
+                                        <rect key="frame" x="108" y="0.0" width="106" height="44"/>
+                                        <state key="normal" title="Videos" backgroundImage="tab_titles_button.png">
+                                            <color key="titleColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2xD-VS-wBC">
+                                        <rect key="frame" x="216" y="0.0" width="106" height="44"/>
+                                        <state key="normal" backgroundImage="tab_titles_button_selected.png">
+                                            <attributedString key="attributedTitle">
+                                                <fragment content="PlayList">
+                                                    <attributes>
+                                                        <color key="NSColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <font key="NSFont" size="18" name="HelveticaNeue"/>
+                                                    </attributes>
+                                                </fragment>
+                                            </attributedString>
+                                        </state>
+                                    </button>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="tab_separator.png" translatesAutoresizingMaskIntoConstraints="NO" id="wlu-ez-JmM">
+                                        <rect key="frame" x="106" y="0.0" width="2" height="44"/>
+                                    </imageView>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="tab_separator.png" translatesAutoresizingMaskIntoConstraints="NO" id="rEf-ww-GBP">
+                                        <rect key="frame" x="214" y="0.0" width="2" height="44"/>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="centerY" secondItem="Cur-nR-tAM" secondAttribute="centerY" id="1QW-bd-pRB"/>
+                            <constraint firstItem="Cur-nR-tAM" firstAttribute="top" secondItem="GIo-Fc-AT6" secondAttribute="bottom" id="WeM-sV-DIX"/>
+                            <constraint firstAttribute="centerX" secondItem="Cur-nR-tAM" secondAttribute="centerX" id="Y8z-jG-jae"/>
+                            <constraint firstItem="Cur-nR-tAM" firstAttribute="leading" secondItem="6lP-wK-Xya" secondAttribute="leading" id="gj6-8U-vls"/>
+                        </constraints>
                     </view>
                     <nil key="simulatedStatusBarMetrics"/>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-                    <size key="freeformSize" width="600" height="100"/>
+                    <size key="freeformSize" width="600" height="44"/>
+                    <connections>
+                        <outlet property="activityButton" destination="KTt-ys-7X7" id="oem-IV-UmJ"/>
+                        <outlet property="playListButton" destination="2xD-VS-wBC" id="7cR-Be-q4w"/>
+                        <outlet property="videosButton" destination="8NC-KG-R5W" id="fvo-wJ-RG7"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MuX-uj-vnT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1081" y="2294"/>
+            <point key="canvasLocation" x="1128" y="2300"/>
         </scene>
         <!--Channel Banner View Controller-->
         <scene sceneID="yEj-Ku-1fh">
             <objects>
-                <viewController id="vEm-uK-8aN" customClass="ChannelBannerViewController" customModule="AsYoutubeiPadSwiftClient" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ChannelBannerViewController" id="vEm-uK-8aN" customClass="ChannelBannerViewController" customModule="AsYoutubeiPadSwiftClient" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="UNj-Ki-hJ4"/>
                         <viewControllerLayoutGuide type="bottom" id="eAI-Ea-iE9"/>
@@ -364,9 +412,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="300"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="channels4_banner.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="81l-IM-Hxo">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="121"/>
-                            </imageView>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="IAh-ye-RRU">
                                 <rect key="frame" x="0.0" y="200" width="600" height="100"/>
                                 <subviews>
@@ -385,6 +430,9 @@
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="channels4_banner.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="81l-IM-Hxo">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="121"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -402,7 +450,10 @@
         <image name="cell_divider.png" width="1" height="1"/>
         <image name="channels4_banner.jpg" width="1060" height="177"/>
         <image name="container_background.png" width="320" height="568"/>
-        <image name="reveal-icon" width="22" height="16"/>
         <image name="signout.png" width="26" height="26"/>
+        <image name="tab_separator.png" width="1" height="44"/>
+        <image name="tab_titles_background.png" width="30" height="44"/>
+        <image name="tab_titles_button.png" width="106" height="44"/>
+        <image name="tab_titles_button_selected.png" width="106" height="44"/>
     </resources>
 </document>

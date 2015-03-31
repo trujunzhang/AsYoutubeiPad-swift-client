@@ -10,31 +10,40 @@ import UIKit
 
 
 
-class SubscriptionsViewController: UIViewController {
+class SubscriptionsViewController: FrontBaseViewController {
     
     
     var currentPhoto : LeftMenuSectionsUtils?
     
-    @IBOutlet var menuButton: UIBarButtonItem!
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // Do any additional setup after loading the view.
-        if self.revealViewController() != nil {
-            menuButton.target = self.revealViewController()
-            menuButton.action = "revealToggle:"
-            self.view.addGestureRecognizer(self.revealViewController().tapGestureRecognizer())
-            //            self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
-        }
+        let channelPageViewController: ChannelPageViewController = ChannelPageViewController()
+        
+        channelPageViewController.view.frame = self.view.frame
+        
+        self.view.addSubview(channelPageViewController.view)
+    }
+    
+    func test(){
         
         let button:UIButton = UIButton()
         button.setTitle("wanghao", forState: .Normal)
         button.setTitleColor(UIColor.redColor(), forState: .Normal)
         button.frame = CGRectMake(100, 100, 200, 44)
-
-        self.view.addSubview(button)
+        
+        //        self.view.addSubview(button)
+        
+        
+        var tabBarItemsController: UIViewController =
+        self.storyboard!.instantiateViewControllerWithIdentifier("YTTabBarItemsViewController") as UIViewController
+        
+        
+        let headerView:UIView = UIView()
+        headerView.frame = CGRectMake(0, 100, self.view.frame.size.width, 44)
+        headerView.addSubview(tabBarItemsController.view)
+        
+        //        self.view.addSubview(headerView)
     }
     
     

@@ -10,6 +10,9 @@ import Foundation
 
 class ChannelBannerViewController:UIViewController {
     
+        
+    override func viewDidLoad() {
+        
+    }
     
-
 }

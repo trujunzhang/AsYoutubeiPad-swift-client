@@ -13,7 +13,10 @@
 		5E5EF9661AB831CB00CCB831 /* MySwiftClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E6062021AB81D8600FED7E5 /* MySwiftClass.swift */; };
 		5E6062031AB81D8600FED7E5 /* MySwiftClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E6062021AB81D8600FED7E5 /* MySwiftClass.swift */; };
 		5E8923721AC6DF7700FCD444 /* Autolayout.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5E8923701AC6DF7700FCD444 /* Autolayout.storyboard */; };
+		5E91710A1ACA707E000FE107 /* FrontBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E9171091ACA707E000FE107 /* FrontBaseViewController.swift */; };
 		5E9E1ECB1AB7226F00523CC0 /* GYWrapSubscriptionsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E9E1ECA1AB7226F00523CC0 /* GYWrapSubscriptionsTests.swift */; };
+		5EB152171ACA430F00DC74DC /* YTTabBarItemsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EB152161ACA430F00DC74DC /* YTTabBarItemsViewController.swift */; };
+		5EB152191ACA5F8800DC74DC /* ChannelPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EB152181ACA5F8800DC74DC /* ChannelPageViewController.swift */; };
 		5EB90D971AC8FAA400F5A69A /* ChannelBannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EB90D961AC8FAA400F5A69A /* ChannelBannerViewController.swift */; };
 		5EBCDCF61AB5C22C0023F037 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EBCDCF51AB5C22C0023F037 /* AppDelegate.swift */; };
 		5EBCDCF81AB5C22C0023F037 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EBCDCF71AB5C22C0023F037 /* ViewController.swift */; };
@@ -67,8 +70,11 @@
 		5E5B94B21AC972C300BF2FB8 /* YTTabBarItemsUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YTTabBarItemsUtils.swift; sourceTree = "<group>"; };
 		5E6062021AB81D8600FED7E5 /* MySwiftClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MySwiftClass.swift; sourceTree = "<group>"; };
 		5E8923711AC6DF7700FCD444 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Autolayout.storyboard; sourceTree = "<group>"; };
+		5E9171091ACA707E000FE107 /* FrontBaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FrontBaseViewController.swift; sourceTree = "<group>"; };
 		5E9902301AB5C3C700391615 /* AsYoutubeiPadSwiftClient-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "AsYoutubeiPadSwiftClient-Bridging-Header.h"; sourceTree = "<group>"; };
 		5E9E1ECA1AB7226F00523CC0 /* GYWrapSubscriptionsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GYWrapSubscriptionsTests.swift; path = ../../UnitTests/Youtube.wrapper/GYWrapSubscriptionsTests.swift; sourceTree = "<group>"; };
+		5EB152161ACA430F00DC74DC /* YTTabBarItemsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YTTabBarItemsViewController.swift; sourceTree = "<group>"; };
+		5EB152181ACA5F8800DC74DC /* ChannelPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ChannelPageViewController.swift; path = AsYoutubeiPadSwiftClient/YoutubePage/ChannelPageViewController.swift; sourceTree = SOURCE_ROOT; };
 		5EB90D961AC8FAA400F5A69A /* ChannelBannerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ChannelBannerViewController.swift; path = AsYoutubeiPadSwiftClient/YoutubePage/ChannelBannerViewController.swift; sourceTree = SOURCE_ROOT; };
 		5EBCDCF01AB5C22C0023F037 /* AsYoutubeiPadSwiftClient.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AsYoutubeiPadSwiftClient.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5EBCDCF41AB5C22C0023F037 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -144,6 +150,7 @@
 			isa = PBXGroup;
 			children = (
 				5EB90D961AC8FAA400F5A69A /* ChannelBannerViewController.swift */,
+				5EB152181ACA5F8800DC74DC /* ChannelPageViewController.swift */,
 			);
 			path = YoutubePage;
 			sourceTree = SOURCE_ROOT;
@@ -255,6 +262,7 @@
 			isa = PBXGroup;
 			children = (
 				5EC94FF21AC82E9300844E61 /* SubscriptionsViewController.swift */,
+				5E9171091ACA707E000FE107 /* FrontBaseViewController.swift */,
 			);
 			path = tabbars;
 			sourceTree = "<group>";
@@ -290,6 +298,7 @@
 				5EE6D3151AC96BCF0069E91E /* YTTabBarController.swift */,
 				5EE6D3171AC96DC50069E91E /* YTTabBar.swift */,
 				5E5B94B21AC972C300BF2FB8 /* YTTabBarItemsUtils.swift */,
+				5EB152161ACA430F00DC74DC /* YTTabBarItemsViewController.swift */,
 			);
 			path = YTTabbar;
 			sourceTree = "<group>";
@@ -504,15 +513,18 @@
 				5EBCDCF61AB5C22C0023F037 /* AppDelegate.swift in Sources */,
 				5E6062031AB81D8600FED7E5 /* MySwiftClass.swift in Sources */,
 				5EE6D3161AC96BCF0069E91E /* YTTabBarController.swift in Sources */,
+				5EB152171ACA430F00DC74DC /* YTTabBarItemsViewController.swift in Sources */,
 				5E5B94B31AC972C300BF2FB8 /* YTTabBarItemsUtils.swift in Sources */,
 				5EC9501B1AC82EF500844E61 /* MenuSectionHeaderView.swift in Sources */,
 				5EC94FFF1AC82E9300844E61 /* LeftMenuSectionsUtils.swift in Sources */,
 				5EC9501C1AC82EF500844E61 /* MenuTableLoggedHeaderView.swift in Sources */,
+				5E91710A1ACA707E000FE107 /* FrontBaseViewController.swift in Sources */,
 				5EB90D971AC8FAA400F5A69A /* ChannelBannerViewController.swift in Sources */,
 				5EC950171AC82EF500844E61 /* AsTableCellProtocols.swift in Sources */,
 				5EC950001AC82E9300844E61 /* LeftMenuViewController.swift in Sources */,
 				5EC950051AC82E9300844E61 /* YoutubeModelParser.swift in Sources */,
 				5EC950061AC82E9300844E61 /* YoutubeUserProfile.swift in Sources */,
+				5EB152191ACA5F8800DC74DC /* ChannelPageViewController.swift in Sources */,
 				5EC94FFD1AC82E9300844E61 /* WebImageCache.swift in Sources */,
 				5EC950031AC82E9300844E61 /* YoutubeCacheImageFetcher.swift in Sources */,
 				5EC950011AC82E9300844E61 /* SubscriptionsViewController.swift in Sources */,

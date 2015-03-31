@@ -123,7 +123,7 @@ class MenuCollapseTableViewController: UIViewController, UITableViewDataSource, 
     }
     
     func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-         var sectionInfo: MenuSectionItemInfo = menuSections[section]
+        var sectionInfo: MenuSectionItemInfo = menuSections[section]
         
         var menuSectionHeaderView: MenuSectionHeaderView =
         self.storyboard!.instantiateViewControllerWithIdentifier("MenuSectionHeaderView") as MenuSectionHeaderView

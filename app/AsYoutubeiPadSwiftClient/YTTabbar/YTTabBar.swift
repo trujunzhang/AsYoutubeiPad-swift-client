@@ -14,18 +14,49 @@ protocol YTTabBarDelegate  {
 
 class YTTabBar:UIView {
     var delegate:YTTabBarDelegate?
+    
     var selectedButton:UIButton?
     var selectedViewController:UIViewController?
     
-
-     init(frame: CGRect, viewControllers: NSMutableArray, appearance:NSDictionary) {
+    // Mark : Private variables
+    var tabBarItemsDictionary:TabBarItemsDictionary?
+    
+    
+    
+    init(frame: CGRect,  _tabBarItemsDictionary:TabBarItemsDictionary) {
         super.init(frame: frame)
+        
+        tabBarItemsDictionary = _tabBarItemsDictionary
     }
-
-     required init(coder aDecoder: NSCoder) {
-         fatalError("init(coder:) has not been implemented")
-     }
-
+    
+    required init(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    
+    func initSubViewsWithControllers(){
+        
+        
+    }
+    
+    // Mark :
+    func setSelectedButton(_selectedButton:UIButton){
+        //        var oldButtonIndex = buttons?.indexOfObject(selectedButton!)
+        //        var newButtonIndex = buttons?.indexOfObject(_selectedButton)
+        //
+        //        if (oldButtonIndex != NSNotFound) {
+        //            selectedButton?.setImage(nil, forState: .Normal)
+        //        }
+        //
+        //        if (newButtonIndex != NSNotFound) {
+        //            selectedButton?.setImage(nil, forState: .Normal)
+        //        }
+        
+        selectedButton = _selectedButton
+    }
+    
+    
+    
     
     
 }
