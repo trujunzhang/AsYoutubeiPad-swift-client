@@ -18,8 +18,7 @@ class ChannelPageViewController:UIViewController {
     
     override func viewDidLoad() {
         // 1. Top channel Banner panel
-        let storyboard:UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-        var _channelBannerViewController: ChannelBannerViewController = storyboard.instantiateViewControllerWithIdentifier("ChannelBannerViewController") as ChannelBannerViewController
+        var _channelBannerViewController: ChannelBannerViewController = StoryBoardUtils.getChannelBannerViewController()
         
         channelBannerViewController = _channelBannerViewController
         channelBannerView = _channelBannerViewController.view
@@ -30,6 +29,7 @@ class ChannelPageViewController:UIViewController {
         // 2.
         var tabBarController:YTTabBarController = YTTabBarController()
         var tabBarView:UIView = tabBarController.view!
+        tabBarView.frame = CGRectMake(0, 100, self.view.frame.size.width, 200)
         
         self.view.addSubview(tabBarView)
         
