@@ -51,8 +51,7 @@ class YTTabBarController: UIViewController,YTTabBarDelegate {
         //        tabBarView = YTTabBar(frame: CGRectZero, viewControllers: nil, appearance: nil)
         //        tabBarView.delegate = self
         // 1
-        let storyboard:UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-        let _tabBarItemsViewController:YTTabBarItemsViewController = storyboard.instantiateViewControllerWithIdentifier("YTTabBarItemsViewController") as YTTabBarItemsViewController
+        var _tabBarItemsViewController: YTTabBarItemsViewController = StoryBoardUtils.getYTTabBarItemsViewController()
         
         tabBarItemsViewController = _tabBarItemsViewController
         

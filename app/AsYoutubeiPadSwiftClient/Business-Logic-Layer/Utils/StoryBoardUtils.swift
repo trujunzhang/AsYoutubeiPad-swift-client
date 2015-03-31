@@ -19,10 +19,17 @@ class StoryBoardUtils:NSObject {
     
     
     class func getChannelBannerViewController() -> ChannelBannerViewController {
-        let storyboard:UIStoryboard = getMainStoryBoard()
-        var _channelBannerViewController: ChannelBannerViewController = storyboard.instantiateViewControllerWithIdentifier("ChannelBannerViewController") as ChannelBannerViewController
+        var viewController: ChannelBannerViewController = getMainStoryBoard().instantiateViewControllerWithIdentifier("ChannelBannerViewController") as ChannelBannerViewController
         
-        return _channelBannerViewController
+        return viewController
     }
+    
+    class func getYTTabBarItemsViewController() -> YTTabBarItemsViewController {
+        var viewController: YTTabBarItemsViewController = getMainStoryBoard().instantiateViewControllerWithIdentifier("YTTabBarItemsViewController") as YTTabBarItemsViewController
+        
+        return viewController
+    }
+    
+    
     
 }
