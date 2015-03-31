@@ -24,14 +24,14 @@ class ChannelPageViewController:UIViewController {
         channelBannerView = _channelBannerViewController.view
         channelBannerView?.frame = CGRectMake(0, 0, self.view.frame.size.width, 200)
         
-//        self.view.addSubview(channelBannerView!)
+        self.view.addSubview(channelBannerView!)
         
         // 2.
         var tabBarController:YTTabBarController = YTTabBarController()
         var tabBarView:UIView = tabBarController.view!
-        tabBarView.frame = CGRectMake(0, 100, self.view.frame.size.width, 200)
+        tabBarView.frame = CGRectMake(0, 200, self.view.frame.size.width, 200)
         
-        self.view.addSubview(tabBarView)
+//        self.view.addSubview(tabBarView)
         
     }
     

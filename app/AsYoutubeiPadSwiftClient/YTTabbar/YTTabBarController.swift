@@ -14,7 +14,7 @@ protocol YTTabBarControllerDelegate  {
 }
 
 
-class YTTabBarController: UIViewController,YTTabBarDelegate {
+class YTTabBarController: UIViewController {
     
     var viewControllers:NSDictionary?
     var selectedViewController:UIViewController?
@@ -25,48 +25,31 @@ class YTTabBarController: UIViewController,YTTabBarDelegate {
     
     // Mark : Private variables
     var presentationView:UIView?
-    var tabBarView:YTTabBar?
     var isFirstAppear:Bool?
     
     var tabBarItemsViewController : YTTabBarItemsViewController?
     var tabBarItemsDictionary:TabBarItemsDictionary?
     
-    override init(){
-        super.init()
-        
-        
-    }
-    
-    required init(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
-    }
-    
-    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?) {
-        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
-    }
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        //        tabBarView = YTTabBar(frame: CGRectZero, viewControllers: nil, appearance: nil)
-        //        tabBarView.delegate = self
         // 1
         var _tabBarItemsViewController: YTTabBarItemsViewController = StoryBoardUtils.getYTTabBarItemsViewController()
-        
-        tabBarItemsViewController = _tabBarItemsViewController
         
         let tabBarItemsView:UIView = _tabBarItemsViewController.view!
         tabBarItemsView.frame = CGRectMake(0, 0, self.view.frame.size.width, 44)
         
+        tabBarItemsViewController = _tabBarItemsViewController
         self.addChildViewController(tabBarItemsViewController!)
         
         tabBarItemsDictionary =  tabBarItemsViewController?.makeTabBarItemsDictionary()
         
+        // 2
         presentationView = UIView()
         
+        // 3
         self.view.addSubview(tabBarItemsView)
-        //        self.view.addSubview(tabBarView!)
-        //        self.view.addSubview(presentationView!)
+        self.view.addSubview(presentationView!)
     }
     
     
@@ -83,7 +66,7 @@ class YTTabBarController: UIViewController,YTTabBarDelegate {
     
     // Mark : View Controller Selection
     func selectViewController(viewController:UIViewController, withButton button:UIButton) {
-        tabBarView?.setSelectedButton(button)
+        //        tabBarView?.setSelectedButton(button)
         selectViewController(viewController)
     }
     
@@ -102,9 +85,9 @@ class YTTabBarController: UIViewController,YTTabBarDelegate {
     
     
     // Mark : YTTabBarDelegate
-    func tabBar(tabBar: YTTabBar, didPressButton button: UIButton, atIndex tabIndex:NSInteger){
-        
-    }
+    //    func tabBar(tabBar: YTTabBar, didPressButton button: UIButton, atIndex tabIndex:NSInteger){
+    //
+    //    }
     
     
 }

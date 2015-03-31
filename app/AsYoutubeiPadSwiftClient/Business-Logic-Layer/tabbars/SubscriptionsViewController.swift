@@ -12,6 +12,7 @@ import UIKit
 
 class SubscriptionsViewController: FrontBaseViewController {
     
+    @IBOutlet var container: UIView!
     
     var currentPhoto : LeftMenuSectionsUtils?
     
@@ -20,9 +21,9 @@ class SubscriptionsViewController: FrontBaseViewController {
         
         let channelPageViewController: ChannelPageViewController = ChannelPageViewController()
         
-        channelPageViewController.view.frame = self.view.frame
+        channelPageViewController.view.frame = container.bounds
         
-        self.view.addSubview(channelPageViewController.view)
+        container.addSubview(channelPageViewController.view)
     }
     
     func test(){
@@ -45,23 +46,7 @@ class SubscriptionsViewController: FrontBaseViewController {
         
         //        self.view.addSubview(headerView)
     }
-    
-    
-    
-    func fetchingData(){
-        //        let AFHTTPManager = AFHTTPRequestOperationManager()
-        //        AFHTTPManager.GET(
-        //            "http://api.openweathermap.org/data/2.5/forecast/daily?q=atlanta&mode=json&units=metric&cnt=5",
-        //            parameters: nil,
-        //            success: {(operation: AFHTTPRequestOperation!,responseObject: AnyObject!) in
-        //                println("Data is : " + responseObject.description)
-        ////                self.textxx!.text = responseObject.description
-        //            },
-        //            failure: { (operation: AFHTTPRequestOperation!,error: NSError!)in
-        //                println("Error: " + error.localizedDescription)
-        //        })
-    }
-    
+
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

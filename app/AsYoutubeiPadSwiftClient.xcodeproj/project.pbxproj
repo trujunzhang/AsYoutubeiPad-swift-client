@@ -46,7 +46,6 @@
 		5EC950211AC8300100844E61 /* YoutubeUserProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EC94FF81AC82E9300844E61 /* YoutubeUserProfile.swift */; };
 		5EC950221AC8302100844E61 /* LeftMenuSectionsUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EC94FEF1AC82E9300844E61 /* LeftMenuSectionsUtils.swift */; };
 		5EE6D3161AC96BCF0069E91E /* YTTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EE6D3151AC96BCF0069E91E /* YTTabBarController.swift */; };
-		5EE6D3181AC96DC50069E91E /* YTTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EE6D3171AC96DC50069E91E /* YTTabBar.swift */; };
 		5EEDE5531AC3F88A00D1AE30 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E39F8861AB91E5C00A285AE /* Alamofire.framework */; };
 		5EEDE5561AC3F9D000D1AE30 /* YoutubeFetcherTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EEDE5551AC3F9D000D1AE30 /* YoutubeFetcherTests.swift */; };
 		D02DC44C1D388FF8D47CD4D2 /* libPods-AsYoutubeiPadSwiftClient.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 643CB5AECE13A0D50F097746 /* libPods-AsYoutubeiPadSwiftClient.a */; };
@@ -104,7 +103,6 @@
 		5EC950111AC82EF500844E61 /* MenuTableLoggedHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuTableLoggedHeaderView.swift; sourceTree = "<group>"; };
 		5EC950121AC82EF500844E61 /* MenuTableSignInHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuTableSignInHeaderView.swift; sourceTree = "<group>"; };
 		5EE6D3151AC96BCF0069E91E /* YTTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YTTabBarController.swift; sourceTree = "<group>"; };
-		5EE6D3171AC96DC50069E91E /* YTTabBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YTTabBar.swift; sourceTree = "<group>"; };
 		5EEDE5551AC3F9D000D1AE30 /* YoutubeFetcherTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = YoutubeFetcherTests.swift; path = ../../UnitTests/youtube.api/YoutubeFetcherTests.swift; sourceTree = "<group>"; };
 		643CB5AECE13A0D50F097746 /* libPods-AsYoutubeiPadSwiftClient.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-AsYoutubeiPadSwiftClient.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7691D91426A5CCFB076684C4 /* Pods-AsYoutubeiPadSwiftClientTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AsYoutubeiPadSwiftClientTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-AsYoutubeiPadSwiftClientTests/Pods-AsYoutubeiPadSwiftClientTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -307,7 +305,6 @@
 			isa = PBXGroup;
 			children = (
 				5EE6D3151AC96BCF0069E91E /* YTTabBarController.swift */,
-				5EE6D3171AC96DC50069E91E /* YTTabBar.swift */,
 				5E5B94B21AC972C300BF2FB8 /* YTTabBarItemsUtils.swift */,
 				5EB152161ACA430F00DC74DC /* YTTabBarItemsViewController.swift */,
 			);
@@ -539,7 +536,6 @@
 				5EC94FFD1AC82E9300844E61 /* WebImageCache.swift in Sources */,
 				5EC950031AC82E9300844E61 /* YoutubeCacheImageFetcher.swift in Sources */,
 				5EC950011AC82E9300844E61 /* SubscriptionsViewController.swift in Sources */,
-				5EE6D3181AC96DC50069E91E /* YTTabBar.swift in Sources */,
 				5EC9501A1AC82EF500844E61 /* MenuCollapseTableViewController.swift in Sources */,
 				5EC89FA11ACAC017003E3920 /* StoryBoardUtils.swift in Sources */,
 				5EC9501D1AC82EF500844E61 /* MenuTableSignInHeaderView.swift in Sources */,

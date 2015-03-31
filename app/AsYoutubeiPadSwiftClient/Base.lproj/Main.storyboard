@@ -143,11 +143,26 @@
                         <viewControllerLayoutGuide type="bottom" id="diS-6f-Lea"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="CVI-AF-qvL">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="64" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lSz-ec-R83">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="lSz-ec-R83" firstAttribute="top" secondItem="CVI-AF-qvL" secondAttribute="top" id="IDj-cm-kOv"/>
+                            <constraint firstItem="lSz-ec-R83" firstAttribute="leading" secondItem="CVI-AF-qvL" secondAttribute="leading" id="Xoj-dq-CRF"/>
+                            <constraint firstAttribute="centerX" secondItem="lSz-ec-R83" secondAttribute="centerX" id="Zrm-Qx-wJb"/>
+                            <constraint firstAttribute="centerY" secondItem="lSz-ec-R83" secondAttribute="centerY" id="dj6-qG-gk3"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Ysq-5c-rnT"/>
+                    <connections>
+                        <outlet property="container" destination="lSz-ec-R83" id="OIm-Y4-0Uf"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ph9-w3-Y4h" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
