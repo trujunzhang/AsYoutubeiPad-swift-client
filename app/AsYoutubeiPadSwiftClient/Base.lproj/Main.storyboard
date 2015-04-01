@@ -351,14 +351,14 @@
                         <viewControllerLayoutGuide type="bottom" id="rhY-xC-XLd"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="6lP-wK-Xya">
-                        <rect key="frame" x="0.0" y="0.0" width="322" height="41"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="41"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mt_segmented_light_bg.png" translatesAutoresizingMaskIntoConstraints="NO" id="Cur-nR-tAM">
-                                <rect key="frame" x="0.0" y="0.0" width="322" height="41"/>
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="41"/>
                             </imageView>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uCx-aY-T3v">
-                                <rect key="frame" x="0.0" y="0.0" width="322" height="41"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uCx-aY-T3v">
+                                <rect key="frame" x="139" y="0.0" width="322" height="41"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KTt-ys-7X7">
                                         <rect key="frame" x="0.0" y="0.0" width="106" height="41"/>
@@ -389,21 +389,28 @@
                                     </imageView>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="322" id="A9s-US-zpP"/>
+                                    <constraint firstAttribute="height" constant="41" id="YOg-4B-NRa"/>
+                                </constraints>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="centerY" secondItem="Cur-nR-tAM" secondAttribute="centerY" id="1QW-bd-pRB"/>
+                            <constraint firstAttribute="centerX" secondItem="uCx-aY-T3v" secondAttribute="centerX" id="BZE-n5-hGv"/>
                             <constraint firstItem="Cur-nR-tAM" firstAttribute="top" secondItem="GIo-Fc-AT6" secondAttribute="bottom" id="WeM-sV-DIX"/>
                             <constraint firstAttribute="centerX" secondItem="Cur-nR-tAM" secondAttribute="centerX" id="Y8z-jG-jae"/>
                             <constraint firstItem="Cur-nR-tAM" firstAttribute="leading" secondItem="6lP-wK-Xya" secondAttribute="leading" id="gj6-8U-vls"/>
+                            <constraint firstAttribute="centerY" secondItem="uCx-aY-T3v" secondAttribute="centerY" id="uOG-T9-clf"/>
                         </constraints>
                     </view>
                     <nil key="simulatedStatusBarMetrics"/>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-                    <size key="freeformSize" width="322" height="41"/>
+                    <size key="freeformSize" width="600" height="41"/>
                     <connections>
                         <outlet property="activityButton" destination="KTt-ys-7X7" id="oem-IV-UmJ"/>
+                        <outlet property="buttonGroupPanel" destination="uCx-aY-T3v" id="VpY-qA-YjU"/>
                         <outlet property="playListButton" destination="2xD-VS-wBC" id="7cR-Be-q4w"/>
                         <outlet property="separator1" destination="wlu-ez-JmM" id="Hyt-Zq-CIM"/>
                         <outlet property="separator2" destination="rEf-ww-GBP" id="OVP-xu-DMl"/>

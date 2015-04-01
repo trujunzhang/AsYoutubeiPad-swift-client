@@ -18,6 +18,9 @@ struct TabBarItemsDictionary {
 
 class YTTabBarItemsViewController:UIViewController {
     
+    @IBOutlet var buttonGroupPanel: UIView!
+    
+    
     @IBOutlet var activityButton: UIButton!
     
     @IBOutlet var videosButton: UIButton!
@@ -32,6 +35,13 @@ class YTTabBarItemsViewController:UIViewController {
     
     override func viewDidLoad() {
         
+//        layout(buttonGroupPanel!) { view1 in
+//            
+//            view1.centerX == view1.superview!.centerX
+//            view1.width == 322
+//            
+//            view1.top == view1.superview!.top
+//        }
 
     }
     
