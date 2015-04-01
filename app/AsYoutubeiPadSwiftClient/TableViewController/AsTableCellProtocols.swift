@@ -24,6 +24,8 @@ let ICON_PADDING_LEFT:CGFloat = 16.0
 let ICON_PADDING_RIGHT:CGFloat = 16.0
 let LOGIN_OUT_ICON_PADDING_RIGHT:CGFloat = 16.0
 
+let TAB_HEIGHT:CGFloat = 42
+
 public enum LeftTableRowType {
     case LeftTableRowType_Header
     case LeftTableRowType_Section

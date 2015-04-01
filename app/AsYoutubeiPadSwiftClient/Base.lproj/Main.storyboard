@@ -146,8 +146,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="487"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lSz-ec-R83">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lSz-ec-R83">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="487"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
                         </subviews>
@@ -351,44 +351,45 @@
                         <viewControllerLayoutGuide type="bottom" id="rhY-xC-XLd"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="6lP-wK-Xya">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="41"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="42"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mt_segmented_light_bg.png" translatesAutoresizingMaskIntoConstraints="NO" id="Cur-nR-tAM">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="41"/>
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="42"/>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uCx-aY-T3v">
                                 <rect key="frame" x="139" y="0.0" width="322" height="41"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KTt-ys-7X7">
-                                        <rect key="frame" x="0.0" y="0.0" width="106" height="41"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="106" height="38"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <state key="normal" title="Activity">
                                             <color key="titleColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8NC-KG-R5W">
-                                        <rect key="frame" x="108" y="0.0" width="106" height="41"/>
+                                        <rect key="frame" x="108" y="0.0" width="106" height="38"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <state key="normal" title="Videos">
-                                            <color key="titleColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2xD-VS-wBC">
-                                        <rect key="frame" x="216" y="0.0" width="106" height="41"/>
+                                        <rect key="frame" x="216" y="0.0" width="106" height="38"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
                                         <state key="normal" title="PlayList">
-                                            <color key="titleColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                     </button>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="tab_separator.png" translatesAutoresizingMaskIntoConstraints="NO" id="wlu-ez-JmM">
-                                        <rect key="frame" x="106" y="0.0" width="2" height="41"/>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="mt_segmented_seperator.png" translatesAutoresizingMaskIntoConstraints="NO" id="wlu-ez-JmM">
+                                        <rect key="frame" x="106" y="0.0" width="2" height="38"/>
                                     </imageView>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="tab_separator.png" translatesAutoresizingMaskIntoConstraints="NO" id="rEf-ww-GBP">
-                                        <rect key="frame" x="214" y="0.0" width="2" height="41"/>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="mt_segmented_seperator.png" translatesAutoresizingMaskIntoConstraints="NO" id="rEf-ww-GBP">
+                                        <rect key="frame" x="214" y="0.0" width="2" height="38"/>
                                     </imageView>
                                 </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="322" id="A9s-US-zpP"/>
                                     <constraint firstAttribute="height" constant="41" id="YOg-4B-NRa"/>
@@ -401,13 +402,13 @@
                             <constraint firstAttribute="centerX" secondItem="uCx-aY-T3v" secondAttribute="centerX" id="BZE-n5-hGv"/>
                             <constraint firstItem="Cur-nR-tAM" firstAttribute="top" secondItem="GIo-Fc-AT6" secondAttribute="bottom" id="WeM-sV-DIX"/>
                             <constraint firstAttribute="centerX" secondItem="Cur-nR-tAM" secondAttribute="centerX" id="Y8z-jG-jae"/>
+                            <constraint firstItem="uCx-aY-T3v" firstAttribute="top" secondItem="6lP-wK-Xya" secondAttribute="top" id="ZwU-yQ-6ZB"/>
                             <constraint firstItem="Cur-nR-tAM" firstAttribute="leading" secondItem="6lP-wK-Xya" secondAttribute="leading" id="gj6-8U-vls"/>
-                            <constraint firstAttribute="centerY" secondItem="uCx-aY-T3v" secondAttribute="centerY" id="uOG-T9-clf"/>
                         </constraints>
                     </view>
                     <nil key="simulatedStatusBarMetrics"/>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-                    <size key="freeformSize" width="600" height="41"/>
+                    <size key="freeformSize" width="600" height="42"/>
                     <connections>
                         <outlet property="activityButton" destination="KTt-ys-7X7" id="oem-IV-UmJ"/>
                         <outlet property="buttonGroupPanel" destination="uCx-aY-T3v" id="VpY-qA-YjU"/>
@@ -459,7 +460,6 @@
                                         </state>
                                     </button>
                                 </subviews>
-                                <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="F84-Yu-AKb" secondAttribute="trailing" constant="20" id="0Xj-Ql-ztE"/>
                                     <constraint firstAttribute="height" constant="47" id="LHH-g8-WG9"/>
@@ -497,7 +497,7 @@
         <image name="channels4_banner.jpg" width="1060" height="177"/>
         <image name="container_background.png" width="320" height="568"/>
         <image name="mt_segmented_light_bg.png" width="5" height="41"/>
+        <image name="mt_segmented_seperator.png" width="1" height="41"/>
         <image name="signout.png" width="26" height="26"/>
-        <image name="tab_separator.png" width="1" height="44"/>
     </resources>
 </document>

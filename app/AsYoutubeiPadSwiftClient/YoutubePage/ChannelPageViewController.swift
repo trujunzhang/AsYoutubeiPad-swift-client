@@ -22,18 +22,16 @@ class ChannelPageViewController:UIViewController {
         
         channelBannerViewController = _channelBannerViewController
         channelBannerView = _channelBannerViewController.view
-//        channelBannerView?.frame = CGRectMake(0, 0, self.view.frame.size.width, 200)
         
         self.view.addSubview(channelBannerView!)
         
         // 2.
         var tabBarController:YTTabBarController = YTTabBarController()
         var _tabBarView:UIView = tabBarController.view!
-//        _tabBarView.frame = CGRectMake(0, 200, self.view.frame.size.width, 200)
         
         tabBarView = _tabBarView
         
-        tabBarView?.backgroundColor = UIColor.blueColor()
+//        tabBarView?.backgroundColor = UIColor.blueColor()
         
         self.view.addSubview(tabBarView!)
         

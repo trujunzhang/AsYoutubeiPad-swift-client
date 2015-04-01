@@ -60,7 +60,7 @@ class YTTabBarController: UIViewController {
             view1.centerX == view1.superview!.centerX
 
             view1.width   == view1.superview!.width
-            view1.height  == 41
+            view1.height  == TAB_HEIGHT
             
             view1.top == view1.superview!.top
         }
