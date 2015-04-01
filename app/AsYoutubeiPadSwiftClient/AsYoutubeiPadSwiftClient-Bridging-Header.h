@@ -16,6 +16,8 @@
 
 #import "STCollapseTableView.h"
 
+#import "CHTCollectionViewWaterfallLayout.h"
+
 //#import "ImageCacheInterface.h"
 
 //#import <AFNetworking/AFNetworking.h>

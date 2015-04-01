@@ -30,7 +30,7 @@ class YoutubeFetcher: NSObject {
     
     override init() {
         super.init()
-
+        
         
         self.youTubeService = GTLServiceYouTube()
         self.youTubeService?.shouldFetchNextPages = true
@@ -61,13 +61,13 @@ class YoutubeFetcher: NSObject {
                 let array = result.items() as NSArray
                 if(array.count >= 1){
                     let channel:GTLYouTubeChannel = array[0] as GTLYouTubeChannel
-
+                    
                     var channelID :NSString       = YoutubeModelParser.getAuthChannelID(channel)
                     var title :NSString            = YoutubeModelParser.getAuthChannelTitle(channel)
-//                    var userName :NSString        = YoutubeModelParser.getAuthChannelTitle(channel)
+                    //                    var userName :NSString        = YoutubeModelParser.getAuthChannelTitle(channel)
                     
-//                    YoutubeUserProfile.sharedInstance.saveLoggedUserChannelInfo(channelID, title: title, userName: userName)
-//                    YoutubeUserProfile.sharedInstance.userChannel = channel
+                    //                    YoutubeUserProfile.sharedInstance.saveLoggedUserChannelInfo(channelID, title: title, userName: userName)
+                    //                    YoutubeUserProfile.sharedInstance.userChannel = channel
                     
                     if(self._delegate != nil){
                         self._delegate?.endFetchingUserChannel(channel)
@@ -125,6 +125,31 @@ class YoutubeFetcher: NSObject {
         })
         
     }
+    
+    // Mark : searchList
+    
+    func search(q:NSString) {
+        let service: GTLService = self.youTubeService!
+        
+        var query: GTLQueryYouTube = GTLQueryYouTube.queryForSubscriptionsListWithPart("id,snippet") as GTLQueryYouTube
+        query.maxResults = 50 // used (important)
+        query.q = q
+        query.fields = "items/snippet(title,resourceId,thumbnails),nextPageToken"
+        
+        service.executeQuery(query, completionHandler: { // GTLYouTubeSubscription array
+            (ticket, resultList, error) -> Void in
+            
+            if (error == nil) {
+                let result = resultList as GTLYouTubeSubscriptionListResponse
+                let array = result.items() as NSArray
+                if(self._delegate != nil){
+                    self._delegate?.endFetchingUserSubscriptions(array)
+                }
+            }
+        })
+        
+    }
+    
     
     
 }
