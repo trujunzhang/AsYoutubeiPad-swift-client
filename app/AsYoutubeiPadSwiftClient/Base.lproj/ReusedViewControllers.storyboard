@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
+    </dependencies>
+    <scenes>
+        <!--Channel Banner View Controller-->
+        <scene sceneID="0WL-8T-tRl">
+            <objects>
+                <viewController storyboardIdentifier="ChannelBannerViewController" id="aoz-kY-xMM" customClass="ChannelBannerViewController" customModule="AsYoutubeiPadSwiftClient" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="S8W-iX-85r"/>
+                        <viewControllerLayoutGuide type="bottom" id="tao-ad-AWo"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="TWU-UC-ghp">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="300"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="69j-KY-f09">
+                                <rect key="frame" x="0.0" y="256" width="600" height="44"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ipad_titlebar_iOS7.png" translatesAutoresizingMaskIntoConstraints="NO" id="Wbk-Dv-rs2">
+                                        <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="JFK Libaray" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tHY-od-n4g">
+                                        <rect key="frame" x="10" y="7" width="265" height="16"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="8,809 Subscribers" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oTA-9T-aH7">
+                                        <rect key="frame" x="10" y="23" width="265" height="15"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="V2o-cY-ewi">
+                                        <rect key="frame" x="470" y="7" width="110" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="110" id="Hmq-hX-fWl"/>
+                                            <constraint firstAttribute="height" constant="30" id="fTM-4e-4ga"/>
+                                        </constraints>
+                                        <state key="normal" backgroundImage="Subscribed-bg.png">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="Wbk-Dv-rs2" secondAttribute="bottom" id="5vn-D3-bqJ"/>
+                                    <constraint firstAttribute="centerY" secondItem="V2o-cY-ewi" secondAttribute="centerY" id="BgZ-Eq-dvy"/>
+                                    <constraint firstItem="Wbk-Dv-rs2" firstAttribute="leading" secondItem="69j-KY-f09" secondAttribute="leading" id="JkY-N5-m5S"/>
+                                    <constraint firstAttribute="trailing" secondItem="Wbk-Dv-rs2" secondAttribute="trailing" id="M90-b2-Mae"/>
+                                    <constraint firstItem="Wbk-Dv-rs2" firstAttribute="top" secondItem="69j-KY-f09" secondAttribute="top" id="Mxb-nQ-GPK"/>
+                                    <constraint firstAttribute="height" constant="44" id="iaL-67-DjO"/>
+                                    <constraint firstAttribute="trailing" secondItem="V2o-cY-ewi" secondAttribute="trailing" constant="20" id="kjy-bF-pDy"/>
+                                </constraints>
+                            </view>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="channels4_banner.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="VMv-v3-sWs">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="256"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="VMv-v3-sWs" secondAttribute="trailing" id="NcL-Rr-Omp"/>
+                            <constraint firstItem="VMv-v3-sWs" firstAttribute="top" secondItem="TWU-UC-ghp" secondAttribute="top" id="Q58-kL-8N9"/>
+                            <constraint firstItem="69j-KY-f09" firstAttribute="top" secondItem="VMv-v3-sWs" secondAttribute="bottom" id="VaN-J5-EdF"/>
+                            <constraint firstAttribute="bottom" secondItem="69j-KY-f09" secondAttribute="bottom" id="VmY-kz-zlP"/>
+                            <constraint firstItem="69j-KY-f09" firstAttribute="leading" secondItem="TWU-UC-ghp" secondAttribute="leading" id="ZgH-Yc-7fL"/>
+                            <constraint firstItem="VMv-v3-sWs" firstAttribute="leading" secondItem="TWU-UC-ghp" secondAttribute="leading" id="ctv-59-Dmg"/>
+                            <constraint firstAttribute="trailing" secondItem="69j-KY-f09" secondAttribute="trailing" id="j9c-N5-GJl"/>
+                        </constraints>
+                    </view>
+                    <nil key="simulatedStatusBarMetrics"/>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="600" height="300"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eNs-7S-kJX" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-210" y="1526"/>
+        </scene>
+        <!--Videos Collection View Controller-->
+        <scene sceneID="kz8-Zk-dqz">
+            <objects>
+                <viewController storyboardIdentifier="YTVideosCollectionViewController" id="4vv-Of-Xsk" customClass="YTVideosCollectionViewController" customModule="AsYoutubeiPadSwiftClient" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="sJP-4A-plg"/>
+                        <viewControllerLayoutGuide type="bottom" id="USD-eb-yup"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="kg5-LQ-O9M">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="u8s-ED-R7v">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="WOA-4v-D1G" customClass="CHTCollectionViewWaterfallLayout">
+                                    <size key="itemSize" width="50" height="50"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="k5v-EP-O1O">
+                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="RSa-z4-TlN" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="78" y="2278"/>
+        </scene>
+        <!--Tab Bar Items View Controller-->
+        <scene sceneID="PoY-Yo-WF6">
+            <objects>
+                <viewController storyboardIdentifier="YTTabBarItemsViewController" id="W0Z-AI-8YS" customClass="YTTabBarItemsViewController" customModule="AsYoutubeiPadSwiftClient" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="H02-Yf-ZuR"/>
+                        <viewControllerLayoutGuide type="bottom" id="jQF-ra-bY2"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="OJh-aV-mB1">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="42"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mt_segmented_light_bg.png" translatesAutoresizingMaskIntoConstraints="NO" id="y0z-Jd-Iu3">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="42"/>
+                            </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GRr-b6-gKv">
+                                <rect key="frame" x="139" y="0.0" width="322" height="41"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="il4-Es-oq8">
+                                        <rect key="frame" x="0.0" y="0.0" width="106" height="38"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <state key="normal" title="Activity">
+                                            <color key="titleColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0fQ-05-Vp0">
+                                        <rect key="frame" x="108" y="0.0" width="106" height="38"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <state key="normal" title="Videos">
+                                            <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="T7W-NZ-2sp">
+                                        <rect key="frame" x="216" y="0.0" width="106" height="38"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
+                                        <state key="normal" title="PlayLists">
+                                            <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                    </button>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="mt_segmented_seperator.png" translatesAutoresizingMaskIntoConstraints="NO" id="2U8-wD-cNC">
+                                        <rect key="frame" x="106" y="0.0" width="2" height="38"/>
+                                    </imageView>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="mt_segmented_seperator.png" translatesAutoresizingMaskIntoConstraints="NO" id="4ce-zl-f29">
+                                        <rect key="frame" x="214" y="0.0" width="2" height="38"/>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="322" id="0Df-1T-GhB"/>
+                                    <constraint firstAttribute="height" constant="41" id="Od6-WC-UPu"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="centerY" secondItem="y0z-Jd-Iu3" secondAttribute="centerY" id="0Xf-93-WEx"/>
+                            <constraint firstItem="y0z-Jd-Iu3" firstAttribute="top" secondItem="H02-Yf-ZuR" secondAttribute="bottom" id="Cz1-WV-CSI"/>
+                            <constraint firstAttribute="centerX" secondItem="y0z-Jd-Iu3" secondAttribute="centerX" id="ad5-pz-smJ"/>
+                            <constraint firstItem="y0z-Jd-Iu3" firstAttribute="leading" secondItem="OJh-aV-mB1" secondAttribute="leading" id="lhC-QZ-a6X"/>
+                            <constraint firstItem="GRr-b6-gKv" firstAttribute="top" secondItem="OJh-aV-mB1" secondAttribute="top" id="u0T-cr-idi"/>
+                            <constraint firstAttribute="centerX" secondItem="GRr-b6-gKv" secondAttribute="centerX" id="ynM-C8-Nxi"/>
+                        </constraints>
+                    </view>
+                    <nil key="simulatedStatusBarMetrics"/>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="600" height="42"/>
+                    <connections>
+                        <outlet property="activityButton" destination="il4-Es-oq8" id="91h-yc-Y6Y"/>
+                        <outlet property="buttonGroupPanel" destination="GRr-b6-gKv" id="jMI-xG-UD0"/>
+                        <outlet property="playListButton" destination="T7W-NZ-2sp" id="lOg-2S-tGQ"/>
+                        <outlet property="separator1" destination="2U8-wD-cNC" id="xWg-Ef-xbf"/>
+                        <outlet property="separator2" destination="4ce-zl-f29" id="Bfc-kw-tGs"/>
+                        <outlet property="videosButton" destination="0fQ-05-Vp0" id="yoM-A8-8eI"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nk4-Xq-PEm" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="492" y="1496"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="Subscribed-bg.png" width="110" height="30"/>
+        <image name="channels4_banner.jpg" width="1060" height="177"/>
+        <image name="ipad_titlebar_iOS7.png" width="320" height="44"/>
+        <image name="mt_segmented_light_bg.png" width="5" height="41"/>
+        <image name="mt_segmented_seperator.png" width="1" height="41"/>
+    </resources>
+</document>

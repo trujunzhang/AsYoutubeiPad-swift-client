@@ -17,15 +17,28 @@ class StoryBoardUtils:NSObject {
         return storyboard
     }
     
+    private class func getReusedStoryBoard() -> UIStoryboard {
+        let storyboard:UIStoryboard = UIStoryboard(name: "ReusedViewControllers", bundle: nil)
+        
+        return storyboard
+    }
+    
     
     class func getChannelBannerViewController() -> ChannelBannerViewController {
-        var viewController: ChannelBannerViewController = getMainStoryBoard().instantiateViewControllerWithIdentifier("ChannelBannerViewController") as ChannelBannerViewController
+        var viewController: ChannelBannerViewController = getReusedStoryBoard().instantiateViewControllerWithIdentifier("ChannelBannerViewController") as ChannelBannerViewController
         
         return viewController
     }
     
     class func getYTTabBarItemsViewController() -> YTTabBarItemsViewController {
-        var viewController: YTTabBarItemsViewController = getMainStoryBoard().instantiateViewControllerWithIdentifier("YTTabBarItemsViewController") as YTTabBarItemsViewController
+        var viewController: YTTabBarItemsViewController = getReusedStoryBoard().instantiateViewControllerWithIdentifier("YTTabBarItemsViewController") as YTTabBarItemsViewController
+        
+        return viewController
+    }
+    
+    
+    class func getYTVideosCollectionViewController() -> YTVideosCollectionViewController {
+        var viewController: YTVideosCollectionViewController = getReusedStoryBoard().instantiateViewControllerWithIdentifier("YTVideosCollectionViewController") as YTVideosCollectionViewController
         
         return viewController
     }
