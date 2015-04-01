@@ -16,8 +16,7 @@ class FrontBaseViewController:UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
+
         
         // Do any additional setup after loading the view.
         if self.revealViewController() != nil {

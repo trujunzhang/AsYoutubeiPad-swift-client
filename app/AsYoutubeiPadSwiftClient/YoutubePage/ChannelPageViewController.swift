@@ -7,14 +7,14 @@
 //
 
 import Foundation
+import Cartography
 
 class ChannelPageViewController:UIViewController {
     
     var channelBannerViewController: ChannelBannerViewController?
     var channelBannerView : UIView?;
-    var tabBarPannel : YTTabBarController?
+    var tabBarView : UIView?
     
-
     
     override func viewDidLoad() {
         // 1. Top channel Banner panel
@@ -22,22 +22,43 @@ class ChannelPageViewController:UIViewController {
         
         channelBannerViewController = _channelBannerViewController
         channelBannerView = _channelBannerViewController.view
-        channelBannerView?.frame = CGRectMake(0, 0, self.view.frame.size.width, 200)
+//        channelBannerView?.frame = CGRectMake(0, 0, self.view.frame.size.width, 200)
         
         self.view.addSubview(channelBannerView!)
         
         // 2.
         var tabBarController:YTTabBarController = YTTabBarController()
-        var tabBarView:UIView = tabBarController.view!
-        tabBarView.frame = CGRectMake(0, 200, self.view.frame.size.width, 200)
+        var _tabBarView:UIView = tabBarController.view!
+//        _tabBarView.frame = CGRectMake(0, 200, self.view.frame.size.width, 200)
         
-//        self.view.addSubview(tabBarView)
+        tabBarView = _tabBarView
+        
+        tabBarView?.backgroundColor = UIColor.blueColor()
+        
+        self.view.addSubview(tabBarView!)
+        
+        //3.
+        layout(channelBannerView!, tabBarView!) { view1, view2 in
+            
+            view1.centerX == view1.superview!.centerX
+            view2.centerX == view1.centerX
+            
+            view1.width   == view1.superview!.width
+            view2.width   == view1.width
+            
+            view1.height  == 200
+            
+            view1.top == view1.superview!.top
+            view2.top == view1.bottom
+            
+            view2.bottom == view2.superview!.bottom
+        }
+    }
+    
+    override func viewDidLayoutSubviews() {
         
     }
     
-    func makeTabBarViewPanel(){
-        
-    }
     
     
 }

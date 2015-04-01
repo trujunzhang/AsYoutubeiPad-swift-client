@@ -472,6 +472,7 @@
 				"$(SRCROOT)/Carthage/Build/iOS/Alamofire.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/Haneke.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/Toucan.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/Cartography.framework",
 			);
 			outputPaths = (
 			);

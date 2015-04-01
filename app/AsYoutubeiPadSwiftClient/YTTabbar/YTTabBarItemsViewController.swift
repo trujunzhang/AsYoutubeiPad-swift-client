@@ -7,11 +7,14 @@
 //
 
 import Foundation
+import Cartography
 
 struct TabBarItemsDictionary {
     var buttons:NSMutableDictionary?
     var viewControllers:NSMutableDictionary?
 }
+
+
 
 class YTTabBarItemsViewController:UIViewController {
     
@@ -21,10 +24,15 @@ class YTTabBarItemsViewController:UIViewController {
     
     @IBOutlet var playListButton: UIButton!
     
+    @IBOutlet var separator1: UIImageView!
+    
+    @IBOutlet var separator2: UIImageView!
+    
     let tabBarItemsDictionary:TabBarItemsDictionary?
     
     override func viewDidLoad() {
-        var x = 0
+        
+
     }
     
     func makeTabBarItemsDictionary() ->TabBarItemsDictionary {

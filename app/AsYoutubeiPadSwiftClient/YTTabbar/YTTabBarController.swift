@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import Cartography
 
 protocol YTTabBarControllerDelegate  {
     func ytTabBarController(tabBarController: YTTabBarController, shouldSelectViewController viewController: UIViewController) -> Bool
@@ -27,6 +28,7 @@ class YTTabBarController: UIViewController {
     var presentationView:UIView?
     var isFirstAppear:Bool?
     
+    var tabBarItemsView : UIView?
     var tabBarItemsViewController : YTTabBarItemsViewController?
     var tabBarItemsDictionary:TabBarItemsDictionary?
     
@@ -36,10 +38,11 @@ class YTTabBarController: UIViewController {
         // 1
         var _tabBarItemsViewController: YTTabBarItemsViewController = StoryBoardUtils.getYTTabBarItemsViewController()
         
-        let tabBarItemsView:UIView = _tabBarItemsViewController.view!
-        tabBarItemsView.frame = CGRectMake(0, 0, self.view.frame.size.width, 44)
+        let _tabBarItemsView:UIView = _tabBarItemsViewController.view!
+//        _tabBarItemsView.frame = CGRectMake(0, 0, self.view.frame.size.width, 44)
         
         tabBarItemsViewController = _tabBarItemsViewController
+        tabBarItemsView = _tabBarItemsView
         self.addChildViewController(tabBarItemsViewController!)
         
         tabBarItemsDictionary =  tabBarItemsViewController?.makeTabBarItemsDictionary()
@@ -48,8 +51,19 @@ class YTTabBarController: UIViewController {
         presentationView = UIView()
         
         // 3
-        self.view.addSubview(tabBarItemsView)
+        self.view.addSubview(_tabBarItemsView)
         self.view.addSubview(presentationView!)
+        
+        // 4
+        layout(tabBarItemsView!) { view1 in
+            
+            view1.centerX == view1.superview!.centerX
+
+            view1.width   == 322
+            view1.height  == 41
+            
+            view1.top == view1.superview!.top
+        }
     }
     
     
