@@ -153,6 +153,10 @@
     [self.parameters setObject:pageToken forKey:@"pageToken"];
 }
 
+-(NSString *)getPageToken {
+    return [self.parameters objectForKey:@"pageToken"];
+}
+
 
 #pragma mark -
 #pragma mark

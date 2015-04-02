@@ -132,23 +132,6 @@ class YoutubeFetcher: NSObject {
     
     // Mark : searchList
     
-    //- (void)searchByQueryWithRequestInfo:(GYoutubeRequestInfo *)info completionHandler:(YoutubeResponseBlock)responseHandler errorHandler:(ErrorResponseBlock)errorHandler {
-    //NSURLSessionDataTask *task =
-    //[[MABYT3_APIRequest sharedInstance]
-    //searchForParameters:info.parameters
-    //completion:^(YoutubeResponseInfo *responseInfo, NSError *error) {
-    //if(responseInfo) {
-    //NSLog(@"nextPageToken = %@", responseInfo.pageToken);
-    //[info putNextPageToken:responseInfo.pageToken];
-    //
-    //[self fetchVideoListWithVideoId:[YoutubeParser getVideoIdsBySearchResult:responseInfo.array]
-    //completionHandler:responseHandler
-    //errorHandler:errorHandler];
-    //} else {
-    //NSLog(@"ERROR: %@", error);
-    //}
-    //}];
-    //}
     
     func prepareRequestSearch(queryTeam:NSString,completeHandler: ObjectHandler) ->GYoutubeRequestInfo {
         var requestInfo: GYoutubeRequestInfo = GYoutubeRequestInfo()
@@ -164,14 +147,42 @@ class YoutubeFetcher: NSObject {
         MABYT3_APIRequest.sharedInstance().searchForParameters(requestInfo.parameters, completion: { (responseInfo, error) -> Void in
             
             if (error == nil) {
-                requestInfo.putNextPageToken(responseInfo.pageToken)
+                // 2
                 let videoIds:NSString = YoutubeParser.getVideoIdsBySearchResult(responseInfo.array)
-                var x = 0
+                
+                self.fetchVideoListWithVideoId(videoIds, completeHandler: { (object, sucess) -> Void in
+                    
+                    if(sucess == true){
+                        // 1. pageToken
+                        requestInfo.putNextPageToken(responseInfo.pageToken)
+                        // 2. array of YoutubeVideoCache
+                        completeHandler(object, true)
+                    }else{
+                        completeHandler(nil, false)
+                    }
+                })
+                
             }else{
-                var y = 0
+                completeHandler(nil, false)
             }
         })
     }
+    
+    func fetchVideoListWithVideoId(videoIds:NSString, completeHandler: ObjectHandler) {
+        let parameters:NSMutableDictionary = NSMutableDictionary()
+        parameters.setObject("id,snippet,contentDetails,statistics", forKey: "part")
+        parameters.setObject(videoIds, forKey: "id")
+        
+        MABYT3_APIRequest.sharedInstance().LISTVideosForURL(parameters, completion: {  (responseInfo, error) -> Void in
+            if (error == nil) {
+                completeHandler(responseInfo.array, true)
+            }else{
+                completeHandler(nil, false)
+            }
+        })
+    }
+    
+    
     
     
 }

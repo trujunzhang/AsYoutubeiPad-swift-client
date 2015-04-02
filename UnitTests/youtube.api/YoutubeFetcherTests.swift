@@ -9,6 +9,7 @@
 
 import XCTest
 
+
 class YoutubeFetcherTests: XCTestCase {
     
     override func setUp() {
@@ -21,28 +22,11 @@ class YoutubeFetcherTests: XCTestCase {
         super.tearDown()
     }
     
-//    func testFetchingChannelList() {
-//        let expectation = expectationWithDescription("fetchingChannelList")
-//        
-//        YoutubeFetcher.sharedInstance.fetchingChannelList("UC0wObT_HayGfWLdRAnFyPwA", completeHandler: { (object, sucess) -> Void in
-//            var channel :GTLYouTubeChannel = object as GTLYouTubeChannel
-//            var imageUrl = channel.snippet.thumbnails.high
-//            
-//            expectation.fulfill()
-//            
-//        })
-//        
-//        waitForExpectationsWithTimeout(10) { (error) in
-//            XCTAssertNil(error, "\(error)")
-//        }
-//        
-//    }
-    
-    func testSearchVideosByVideoType() {
-        let expectation = expectationWithDescription("SearchVideoListByVideoType")
+    func _testFetchingChannelList() {
+        let expectation = expectationWithDescription("fetchingChannelList")
         
-        YoutubeFetcher.sharedInstance.prepareRequestSearch("sketch 3", completeHandler: { (object, sucess) -> Void in
-            var channel :GTLYouTubeVideo = object as GTLYouTubeVideo
+        YoutubeFetcher.sharedInstance.fetchingChannelList("UC0wObT_HayGfWLdRAnFyPwA", completeHandler: { (object, sucess) -> Void in
+            var channel :GTLYouTubeChannel = object as GTLYouTubeChannel
             var imageUrl = channel.snippet.thumbnails.high
             
             expectation.fulfill()
@@ -51,6 +35,32 @@ class YoutubeFetcherTests: XCTestCase {
         
         waitForExpectationsWithTimeout(10) { (error) in
             XCTAssertNil(error, "\(error)")
+        }
+        
+    }
+    
+    func testSearchVideosByVideoType() {
+        let expectation = expectationWithDescription("SearchVideoListByVideoType")
+        
+        var requestInfo: GYoutubeRequestInfo =
+        YoutubeFetcher.sharedInstance.prepareRequestSearch("sketch 3", completeHandler: { (object, sucess) -> Void in
+            var array:NSArray = object as NSArray
+            
+            var length = array.count
+            
+            XCTAssertGreaterThan(length, 0, "Array length must greater than 0")
+            
+            XCTAssertEqual(array[0] is YoutubeVideoCache, true, "Array object must being YoutubeVideoCache")
+            var videoCache:YoutubeVideoCache = array[0] as YoutubeVideoCache
+            
+            expectation.fulfill()
+        })
+        
+        waitForExpectationsWithTimeout(10) { (error) in
+            XCTAssertNil(error, "\(error)")
+            var pageToken = requestInfo.getPageToken()
+            
+            XCTAssertNotNil(pageToken, "pageToken not nil")
         }
         
     }

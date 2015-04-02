@@ -66,6 +66,7 @@ typedef NS_ENUM (NSUInteger, YTPlaylistItemsType) {
 
 - (void)makeRequestForSearch:(YTSegmentItemType)itemType withQueryTeam:(NSString *)queryTeam;
 
+-(NSString *)getPageToken ;
 - (void)putNextPageToken:(NSString *)token;
 
 - (BOOL)hasNextPage;

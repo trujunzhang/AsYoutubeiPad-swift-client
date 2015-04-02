@@ -11,30 +11,6 @@ import XCTest
 
 class AsYoutubeiPadSwiftClientTests: XCTestCase {
     
-    func testSwiftInSwift()
-    {
-//        var xy=SubscriptionsViewController()
-        
-        var swift = MySwiftClass()
-        XCTAssertEqual(swift.swiftString, "swift", "error")
-    }
-    
-//    func testOBJCInSwift()
-//    {
-//        var swift = MySwiftClass()
-//        XCTAssertEqual(swift.objcString, "objc", "error")
-//    }
-//    
-//    func testOBJCInOBJC()
-//    {
-//        var objc = MyOBJCClass()
-//        XCTAssertEqual(objc.objcStrng, "objc", "error")
-//    }
-//    
-//    func testSwiftInOBJC()
-//    {
-//        var objc = MyOBJCClass()
-//        XCTAssertEqual(objc.swiftString, "swift", "error")
-//    }
+
     
 }
