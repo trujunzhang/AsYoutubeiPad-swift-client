@@ -59,7 +59,7 @@ class YoutubeFetcherTests: XCTestCase {
         waitForExpectationsWithTimeout(10) { (error) in
             XCTAssertNil(error, "\(error)")
             var pageToken = requestInfo.getPageToken()
-            
+
             XCTAssertNotNil(pageToken, "pageToken not nil")
         }
         

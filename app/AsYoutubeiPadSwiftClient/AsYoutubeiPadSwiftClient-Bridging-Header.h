@@ -15,6 +15,9 @@
 #import "GTLService.h"
 
 #import "MABYouTube_Sources.h"
+#import "YoutubeParser.h"
+#import "GYoutubeRequestInfo.h"
+
 
 #import "STCollapseTableView.h"
 

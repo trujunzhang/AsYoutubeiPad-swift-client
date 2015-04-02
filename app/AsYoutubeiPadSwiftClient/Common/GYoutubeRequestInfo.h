@@ -6,7 +6,8 @@
 //  Copyright (c) 2014 djzhang. All rights reserved.
 //
 
-
+#import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 
 typedef NS_ENUM (NSUInteger, YTSegmentItemType) {
     YTSegmentItemVideo,
@@ -28,10 +29,12 @@ typedef NS_ENUM (NSUInteger, YTPlaylistItemsType) {
 
 #pragma mark - request
 @property (nonatomic, strong) NSMutableDictionary *parameters;
-@property (nonatomic, copy) NSString *nextPageToken;
-@property (nonatomic, strong) NSMutableArray *videoList;
 
+
+-(NSMutableArray*) getVideoList;
+-(NSUInteger)getVideoListCount;
 - (void)appendNextPageData:(NSArray *)array;
+
 
 #pragma mark -
 

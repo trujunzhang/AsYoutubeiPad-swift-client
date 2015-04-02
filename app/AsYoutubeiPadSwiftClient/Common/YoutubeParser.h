@@ -6,6 +6,7 @@
 //  Copyright (c) 2014 djzhang. All rights reserved.
 //
 
+#import <Foundation/Foundation.h>
 
 @interface YoutubeParser : NSObject
 

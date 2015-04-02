@@ -20,6 +20,7 @@ class YTVideosCollectionViewController: UIViewController, UICollectionViewDataSo
         })
     }
     
+    
     required init(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
     }
@@ -31,10 +32,8 @@ class YTVideosCollectionViewController: UIViewController, UICollectionViewDataSo
     
     // Mark : delegate of UICollectionViewDataSource
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        //        let array = requestInfo?.videoList
-        //        return array?.count!
-        
-        return 0
+//        return requestInfo?.getVideoListCount()
+        return 1
     }
     
     // The cell that is returned must be retrieved from a call to -dequeueReusableCellWithReuseIdentifier:forIndexPath:

@@ -11,7 +11,10 @@
 @interface GYoutubeRequestInfo () {
 
 }
+
 @property (nonatomic, copy) NSString *queryType;
+@property (nonatomic, strong) NSMutableArray *videoList;
+@property (nonatomic, copy) NSString *nextPageToken;
 
 @end
 
@@ -36,6 +39,16 @@
     self.hasLoadingMore = YES;
     self.isLoading = NO;
     self.hasFirstFetch = YES;
+}
+
+#pragma mark - 
+#pragma mark 
+
+-(NSMutableArray*) getVideoList{
+    return self.videoList;
+}
+-(NSUInteger)getVideoListCount{
+    return self.videoList.count;
 }
 
 #pragma mark - search

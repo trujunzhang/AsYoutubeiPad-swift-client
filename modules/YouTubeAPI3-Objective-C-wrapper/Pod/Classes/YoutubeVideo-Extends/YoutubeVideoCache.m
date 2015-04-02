@@ -7,8 +7,6 @@
 //
 
 #import "YoutubeVideoCache.h"
-#import "YoutubeParser.h"
-
 
 @interface YoutubeVideoCache () {
 }
@@ -19,8 +17,8 @@
 
 
 - (void)parseDescriptionString {
-    if(self.descriptionStringAttributeArray == nil)
-        [YoutubeParser parseDescriptionStringWithRegExp:self];
+//    if(self.descriptionStringAttributeArray == nil)
+//        [YoutubeParser parseDescriptionStringWithRegExp:self];
 }
 
 @end
