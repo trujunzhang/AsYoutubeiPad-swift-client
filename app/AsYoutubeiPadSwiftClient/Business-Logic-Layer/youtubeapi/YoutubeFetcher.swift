@@ -132,34 +132,42 @@ class YoutubeFetcher: NSObject {
     
     // Mark : searchList
     
-    func search(q: NSString, completeHandler: ObjectHandler) {
-        let service: GTLService = self.youTubeService!
+    //- (void)searchByQueryWithRequestInfo:(GYoutubeRequestInfo *)info completionHandler:(YoutubeResponseBlock)responseHandler errorHandler:(ErrorResponseBlock)errorHandler {
+    //NSURLSessionDataTask *task =
+    //[[MABYT3_APIRequest sharedInstance]
+    //searchForParameters:info.parameters
+    //completion:^(YoutubeResponseInfo *responseInfo, NSError *error) {
+    //if(responseInfo) {
+    //NSLog(@"nextPageToken = %@", responseInfo.pageToken);
+    //[info putNextPageToken:responseInfo.pageToken];
+    //
+    //[self fetchVideoListWithVideoId:[YoutubeParser getVideoIdsBySearchResult:responseInfo.array]
+    //completionHandler:responseHandler
+    //errorHandler:errorHandler];
+    //} else {
+    //NSLog(@"ERROR: %@", error);
+    //}
+    //}];
+    //}
+    
+    func prepareRequestSearch(completeHandler: ObjectHandler) ->GYoutubeRequestInfo {
+        var requestInfo: GYoutubeRequestInfo?
         
-        var query: GTLQueryYouTube = GTLQueryYouTube.queryForSearchListWithPart("id,snippet") as GTLQueryYouTube
-        query.maxResults = 50
-        query.type = "video"
-        query.q = q
-        query.fields = "items(id/videoId),nextPageToken"
+        requestInfo.makeRequestForSearchWithQueryTeam("wanghao")
         
-        service.executeQuery(query, completionHandler: {
-            // GTLYouTubeSubscription array
-            (ticket, resultList, error) -> Void in
-            
+        search(requestInfo!, completeHandler: completeHandler)
+        
+        return requestInfo!
+    }
+    
+    func search(requestInfo: GYoutubeRequestInfo, completeHandler: ObjectHandler) {
+        MABYT3_APIRequest.sharedInstance().searchForParameters(requestInfo.parameters, completion: { (responseInfo, error) -> Void in
             if (error == nil) {
-                let result = resultList as GTLYouTubeSearchListResponse
-                let array = result.items()
-                
-                var x = array.count
-                if (array.count >= 1) {
-                    let channel = array[0] as GTLYouTubeVideo
-                    completeHandler(channel, true)
-                }
-            } else {
-                completeHandler(nil, false)
+                var x = 0
+            }else{
+                var y = 0
             }
-            
         })
-        
     }
     
     

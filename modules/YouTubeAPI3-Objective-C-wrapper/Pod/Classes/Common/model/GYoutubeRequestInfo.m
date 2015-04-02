@@ -17,9 +17,6 @@
 
 @implementation GYoutubeRequestInfo
 
-#pragma mark - for search
-
-
 - (instancetype)init {
     self = [super init];
     if(self) {
@@ -34,7 +31,6 @@
 #pragma mark - 
 #pragma mark 
 
-
 - (void)baseReset {
     self.nextPageToken = @"";
     self.hasLoadingMore = YES;
@@ -42,6 +38,23 @@
     self.hasFirstFetch = YES;
 }
 
+#pragma mark - search
+
+- (void)makeRequestForSearchWithQueryTeam:(NSString *)queryTeam {
+    [self baseReset];
+
+    NSArray *queryTypeArray = [GYoutubeRequestInfo getQueryTypeArray];
+    self.queryType = queryTypeArray[0];
+    NSDictionary *parameters = @{
+            @"q" : queryTeam,
+            @"type" : self.queryType,
+            @"part" : @"id,snippet",
+            @"fields" : @"items(id/videoId),nextPageToken",
+    };
+    self.parameters = [[NSMutableDictionary alloc] initWithDictionary:parameters];
+}
+
+// "AV2OkzIGykA"
 - (void)resetRequestInfoForSuggestionList:(NSString *)videoId {
     self.itemType = YTSegmentItemVideo;
 
@@ -50,12 +63,13 @@
 
     [self baseReset];
 
-    self.parameters = [[NSMutableDictionary alloc] initWithDictionary:@{
+    NSDictionary *parameters = @{
             @"part" : @"id,snippet",
             @"type" : @"video",
             @"relatedToVideoId" : videoId,
             @"fields" : @"items(id/videoId),nextPageToken",
-    }];
+    };
+    self.parameters = [[NSMutableDictionary alloc] initWithDictionary:parameters];
 }
 
 
@@ -78,10 +92,11 @@
 
     [self baseReset];
 
-    self.parameters = [[NSMutableDictionary alloc] initWithDictionary:@{
+    NSDictionary *parameters = @{
             @"channelId" : channelId,
             @"part" : @"id,contentDetails",
-    }];
+    };
+    self.parameters = [[NSMutableDictionary alloc] initWithDictionary:parameters];
 }
 
 
@@ -93,12 +108,13 @@
 
     [self baseReset];
 
-    self.parameters = [[NSMutableDictionary alloc] initWithDictionary:@{
+    NSDictionary *parameters = @{
             @"channelId" : channelId,
             @"part" : @"id,snippet",
             @"order" : @"date",
             @"fields" : @"items(id/videoId),nextPageToken",
-    }];
+    };
+    self.parameters = [[NSMutableDictionary alloc] initWithDictionary:parameters];
 }
 
 
@@ -110,33 +126,15 @@
 
     [self baseReset];
 
-    self.parameters = [[NSMutableDictionary alloc] initWithDictionary:@{
+    NSDictionary *parameters = @{
             @"channelId" : channelId,
             @"part" : @"id,snippet",
-    }];
+    };
+    self.parameters = [[NSMutableDictionary alloc] initWithDictionary:parameters];
 }
 
 
-- (void)resetRequestInfoForSearchWithItemType:(YTSegmentItemType)itemType withQueryTeam:(NSString *)queryTeam {
-    [self resetInfo];
-
-    self.queryType = [GYoutubeRequestInfo getQueryTypeArray][itemType];
-
-    self.itemType = [self getItemType];
-    self.itemIdentify = [GYoutubeRequestInfo getIdentifyByItemType:self.itemType];
-
-    [self baseReset];
-
-    self.parameters = [[NSMutableDictionary alloc] initWithDictionary:@{
-            @"q" : queryTeam,
-            @"type" : self.queryType,
-            @"part" : @"id,snippet",
-            @"fields" : @"items(id/videoId),nextPageToken",
-    }];
-}
-
-
-#pragma mark - 
+#pragma mark -
 #pragma mark 
 
 
@@ -178,12 +176,8 @@
 
 
 - (void)resetInfo {
-    [self resetVideoList];
-    self.hasLoadingMore = YES;
-}
-
-- (void)resetVideoList {
     self.videoList = [[NSMutableArray alloc] init];
+    self.hasLoadingMore = YES;
 }
 
 
@@ -193,7 +187,7 @@
 
 
 - (void)appendNextPageData:(NSArray *)array {
-//    NSLog(@"append leng = %d", array.count);
+    NSLog(@"leng = %d", array.count);
     [self.videoList addObjectsFromArray:array];
 }
 
@@ -202,18 +196,29 @@
 
 
 + (NSArray *)getChannelPageSegmentTitlesArray {
-    return [NSArray arrayWithObjects:@"Activity", @"Videos", @"Playlists", nil];
+    NSArray *array = [NSArray arrayWithObjects:
+            @"Activity",
+            @"Videos",
+            @"Playlists",
+                    nil];
+    return array;
 }
 
 
 + (NSArray *)getSegmentTitlesArray {
-    return [NSArray arrayWithObjects:@"Videos", @"Channels", @"Playlists", nil];
-
+    NSArray *array = [NSArray arrayWithObjects:
+            @"Videos",
+            @"Channels",
+            @"Playlists",
+                    nil];
+    return array;
 }
 
 
 + (NSArray *)getQueryTypeArray {
-    return [NSArray arrayWithObjects:@"video", @"channel", @"playlist", nil];
+    return @[@"video",
+            @"channel",
+            @"playlist"];
 }
 
 

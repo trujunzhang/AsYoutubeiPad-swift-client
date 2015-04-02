@@ -53,5 +53,6 @@
 
 #import "YoutubeParser.h"
 #import "YoutubeResponseInfo.h"
+#import "GYoutubeRequestInfo.h"
 
 #import "MABYT3_APIRequest.h"

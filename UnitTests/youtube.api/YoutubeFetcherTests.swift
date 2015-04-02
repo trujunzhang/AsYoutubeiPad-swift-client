@@ -41,13 +41,13 @@ class YoutubeFetcherTests: XCTestCase {
     func testSearchVideosByVideoType() {
         let expectation = expectationWithDescription("SearchVideoListByVideoType")
         
-        YoutubeFetcher.sharedInstance.search("sketch 3", completeHandler: { (object, sucess) -> Void in
-            var channel :GTLYouTubeVideo = object as GTLYouTubeVideo
-            var imageUrl = channel.snippet.thumbnails.high
-            
-            expectation.fulfill()
-            
-        })
+//        YoutubeFetcher.sharedInstance.search("sketch 3", completeHandler: { (object, sucess) -> Void in
+//            var channel :GTLYouTubeVideo = object as GTLYouTubeVideo
+//            var imageUrl = channel.snippet.thumbnails.high
+//            
+//            expectation.fulfill()
+//            
+//        })
         
         waitForExpectationsWithTimeout(10) { (error) in
             XCTAssertNil(error, "\(error)")

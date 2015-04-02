@@ -7,8 +7,6 @@
 //
 
 
-#include "YoutubeConstants.h"
-
 
 typedef NS_ENUM (NSUInteger, YTSegmentItemType) {
     YTSegmentItemVideo,
@@ -16,10 +14,9 @@ typedef NS_ENUM (NSUInteger, YTSegmentItemType) {
     YTSegmentItemPlaylist
 };
 
-
+// Playlist pop-up menu item tags.
 typedef NS_ENUM (NSUInteger, YTPlaylistItemsType) {
-    // Playlist pop-up menu item tags.
-            kUploadsTag = 0,
+    kUploadsTag = 0,
     kLikesTag = 1,
     kFavoritesTag = 2,
     kWatchHistoryTag = 3,
@@ -29,27 +26,31 @@ typedef NS_ENUM (NSUInteger, YTPlaylistItemsType) {
 
 @interface GYoutubeRequestInfo : NSObject
 
+#pragma mark - request
+@property (nonatomic, strong) NSMutableDictionary *parameters;
+@property (nonatomic, copy) NSString *nextPageToken;
 @property (nonatomic, strong) NSMutableArray *videoList;
 
 - (void)appendNextPageData:(NSArray *)array;
 
-@property (nonatomic) BOOL hasLoadingMore;
+#pragma mark -
+
 @property (nonatomic) BOOL hasFirstFetch;
-
-@property (nonatomic, strong) NSMutableDictionary *parameters;
-
-@property (nonatomic) YTSegmentItemType itemType;
-@property (nonatomic, copy) NSString *itemIdentify;
-
-@property (nonatomic, assign) YTPlaylistItemsType playlistItemsType;
-
-@property (nonatomic, copy) NSString *nextPageToken;
+@property (nonatomic) BOOL hasLoadingMore;
 
 @property (nonatomic) BOOL isLoading;
 
-- (void)resetInfo;
+#pragma mark -
+@property (nonatomic) enum YTSegmentItemType itemType;
+@property (nonatomic, copy) NSString *itemIdentify;
+@property (nonatomic) YTPlaylistItemsType playlistItemsType;
+#pragma mark -
+- (void)makeRequestForSearch:(YTSegmentItemType)itemType withQueryTeam:(NSString *)queryTeam;
+- (void)makeRequestForSearchWithQueryTeam:(NSString *)queryTeam;
 
-- (void)resetVideoList;
+#pragma mark -
+
+- (void)resetInfo;
 
 - (void)resetRequestInfoForSuggestionList:(NSString *)id1;
 
@@ -61,7 +62,7 @@ typedef NS_ENUM (NSUInteger, YTPlaylistItemsType) {
 
 - (void)resetRequestInfoForPlayListFromChannelWithChannelId:(NSString *)channelId;
 
-- (void)resetRequestInfoForSearchWithItemType:(YTSegmentItemType)itemType withQueryTeam:(NSString *)queryTeam;
+- (void)makeRequestForSearch:(YTSegmentItemType)itemType withQueryTeam:(NSString *)queryTeam;
 
 - (void)putNextPageToken:(NSString *)token;
 
