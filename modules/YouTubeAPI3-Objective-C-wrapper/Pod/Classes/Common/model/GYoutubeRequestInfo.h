@@ -44,7 +44,9 @@ typedef NS_ENUM (NSUInteger, YTPlaylistItemsType) {
 @property (nonatomic) enum YTSegmentItemType itemType;
 @property (nonatomic, copy) NSString *itemIdentify;
 @property (nonatomic) YTPlaylistItemsType playlistItemsType;
+
 #pragma mark -
+
 - (void)makeRequestForSearch:(YTSegmentItemType)itemType withQueryTeam:(NSString *)queryTeam;
 - (void)makeRequestForSearchWithQueryTeam:(NSString *)queryTeam;
 

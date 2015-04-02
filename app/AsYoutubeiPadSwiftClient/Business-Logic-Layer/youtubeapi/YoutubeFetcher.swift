@@ -150,19 +150,22 @@ class YoutubeFetcher: NSObject {
     //}];
     //}
     
-    func prepareRequestSearch(completeHandler: ObjectHandler) ->GYoutubeRequestInfo {
-        var requestInfo: GYoutubeRequestInfo?
+    func prepareRequestSearch(queryTeam:NSString,completeHandler: ObjectHandler) ->GYoutubeRequestInfo {
+        var requestInfo: GYoutubeRequestInfo = GYoutubeRequestInfo()
         
-        requestInfo.makeRequestForSearchWithQueryTeam("wanghao")
+        requestInfo.makeRequestForSearchWithQueryTeam(queryTeam)
         
-        search(requestInfo!, completeHandler: completeHandler)
+        search(requestInfo, completeHandler: completeHandler)
         
-        return requestInfo!
+        return requestInfo
     }
     
     func search(requestInfo: GYoutubeRequestInfo, completeHandler: ObjectHandler) {
         MABYT3_APIRequest.sharedInstance().searchForParameters(requestInfo.parameters, completion: { (responseInfo, error) -> Void in
+            
             if (error == nil) {
+                requestInfo.putNextPageToken(responseInfo.pageToken)
+                let videoIds:NSString = YoutubeParser.getVideoIdsBySearchResult(responseInfo.array)
                 var x = 0
             }else{
                 var y = 0

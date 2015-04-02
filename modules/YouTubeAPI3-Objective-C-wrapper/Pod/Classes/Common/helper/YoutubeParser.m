@@ -9,6 +9,10 @@
 #import "YoutubeParser.h"
 #import "GTLYouTubeChannelContentDetails.h"
 
+#import "MABYT3_Activity.h"
+#import "MABYT3_ResourceId.h"
+#import "MABYT3_ActivityContentDetails.h"
+#import "MABYT3_SearchItem.h"
 
 @interface YoutubeParser ()
 
@@ -17,52 +21,45 @@
 
 @implementation YoutubeParser
 
-//
-//+ (NSString *)getVideoIdsByActivityList:(NSMutableArray *)searchResultList {
-//    NSMutableArray *videoIds = [[NSMutableArray alloc] init];
-//    for (YTYouTubeActivity *searchResult in searchResultList) {
-//        NSString *videoId = [YoutubeParser getvideoIdByActivity:searchResult.contentDetails];
-//        if(videoId)
-//            [videoIds addObject:videoId];
-//    }
-//    return [videoIds componentsJoinedByString:@","];
-//}
-//
-//
-//+ (NSString *)getvideoIdByActivity:(YTYouTubeActivityContentDetails *)contentDetails {
-//
-//    NSArray *resourceArray = [NSArray arrayWithObjects:
-//            contentDetails.upload,
-//            contentDetails.like,
-//            contentDetails.favorite,
-//                    nil];
-//
-//
-//    for (YTYouTubeResourceId *resourceId in resourceArray) {
-//        if(![resourceId.videoId isEqualToString:@""])
-//            return resourceId.videoId;
-//    }
-//
-//    return nil;
-//}
-//
-//
-//+ (NSString *)getVideoIdsBySearchResult:(NSMutableArray *)searchResultList {
-//    NSMutableArray *videoIds = [[NSMutableArray alloc] init];
-//    for (YTYouTubeSearchResult *searchResult in searchResultList) {
-//        if(debugCollectionViewToDetail) {
-//            // pXvzypp8mlo
-//            // 58kDMw779xc
-//            // pXvzypp8mlo
-//            [videoIds addObject:@"82urkb3mJaQ"];// test
-//        } else {
-//            [videoIds addObject:searchResult.identifier.videoId];// used
-//        }
-//    }
-//    return [videoIds componentsJoinedByString:@","];
-//}
-//
-//
+
++ (NSString *)getVideoIdsByActivityList:(NSMutableArray *)searchResultList {
+    NSMutableArray *videoIds = [[NSMutableArray alloc] init];
+    for (MABYT3_Activity *searchResult in searchResultList) {
+        NSString *videoId = [YoutubeParser getvideoIdByActivity:searchResult.contentDetails];
+        if(videoId)
+            [videoIds addObject:videoId];
+    }
+    return [videoIds componentsJoinedByString:@","];
+}
+
+
++ (NSString *)getvideoIdByActivity:(MABYT3_ActivityContentDetails *)contentDetails {
+    
+    NSArray *resourceArray = [NSArray arrayWithObjects:
+                              contentDetails.upload,
+                              contentDetails.like,
+                              contentDetails.favorite,
+                              nil];
+    
+    
+    for (MABYT3_ResourceId *resourceId in resourceArray) {
+        if(![resourceId.videoId isEqualToString:@""])
+            return resourceId.videoId;
+    }
+    
+    return nil;
+}
+
+
++ (NSString *)getVideoIdsBySearchResult:(NSMutableArray *)searchResultList {
+    NSMutableArray *videoIds = [[NSMutableArray alloc] init];
+    for (MABYT3_SearchItem *searchResult in searchResultList) {
+        [videoIds addObject:searchResult.identifier.videoId];// used
+    }
+    return [videoIds componentsJoinedByString:@","];
+}
+
+
 //#pragma mark -
 //#pragma mark Subscription
 //
