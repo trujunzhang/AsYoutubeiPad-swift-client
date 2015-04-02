@@ -23,7 +23,7 @@ def import_pods
 
     pod 'Google-API-Client/YouTube'
 
-    # pod 'AFNetworking'
+    pod 'AFNetworking'
 
     pod 'CHTCollectionViewWaterfallLayout'
 
@@ -38,6 +38,7 @@ target 'AsYoutubeiPadSwiftClient', :exclusive => true do
 
   # ________________project library___________________
   pod "App_Module_Resources", :path => "../modules/App_Module_Resources"
+  pod "YouTubeAPI3-Objective-C-wrapper", :path => "../modules/YouTubeAPI3-Objective-C-wrapper"
 
 end
 

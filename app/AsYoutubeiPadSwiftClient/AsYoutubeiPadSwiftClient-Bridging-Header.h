@@ -14,6 +14,8 @@
 #import "GTLYouTube.h"
 #import "GTLService.h"
 
+#import "MABYouTube_Sources.h"
+
 #import "STCollapseTableView.h"
 
 #import "CHTCollectionViewWaterfallLayout.h"

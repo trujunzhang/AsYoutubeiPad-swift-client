@@ -45,17 +45,17 @@ class YoutubeModelParser {
 //        return [NSString stringWithFormat:@"%d likes, %d dislikes", [likeCount intValue], [dislikeCount intValue]];
 //    }
 
-    func getVideoDescription(video: GTLYouTubeVideo) -> NSString {
-        return video.snippet.descriptionString;
-    }
+//    func getVideoDescription(video: GTLYouTubeVideo) -> NSString {
+//        return video.snippet.descriptionString;
+//    }
 
     func getVideoSnippetChannelTitle(video: GTLYouTubeVideo) -> NSString {
         return video.snippet.channelTitle;
     }
 
-    func getVideoSnippetChannelPublishedAt(video: GTLYouTubeVideo) -> NSString {
-        return video.snippet.publishedAt.min_string;
-    }
+//    func getVideoSnippetChannelPublishedAt(video: GTLYouTubeVideo) -> NSString {
+//        return video.snippet.publishedAt.min_string;
+//    }
 
 //    func getVideoDurationForVideoInfo(video: GTLYouTubeVideo) -> NSString {
 //        NSString *durationString = [YoutubeParser parseISO8601Duration:video.contentDetails.duration];
