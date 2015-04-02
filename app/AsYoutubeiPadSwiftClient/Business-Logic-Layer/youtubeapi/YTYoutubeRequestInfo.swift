@@ -43,6 +43,14 @@ class YTYoutubeRequestInfo: NSObject {
         self.queryType = .YTSegmentItemVideo
         self.queryTypeString = "video"
         
+//        var fieldsValue:NSString = "items(id/videoId),nextPageToken"
+//        var _parameters:NSMutableDictionary = [
+//            "q" : queryTeam,
+//            "type" : self.queryTypeString,
+//            "part" : "id,snippet",
+//            "fields" : fieldsValue,
+//        ]
+        
         self.parameters = NSMutableDictionary()
         
         self.parameters?.setObject(queryTeam, forKey: "q")
