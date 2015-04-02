@@ -42,7 +42,7 @@ class YoutubeFetcherTests: XCTestCase {
     func testSearchVideosByVideoType() {
         let expectation = expectationWithDescription("SearchVideoListByVideoType")
         
-        var requestInfo: GYoutubeRequestInfo =
+        var requestInfo: YTYoutubeRequestInfo =
         YoutubeFetcher.sharedInstance.prepareRequestSearch("sketch 3", completeHandler: { (object, sucess) -> Void in
             var array:NSArray = object as NSArray
             

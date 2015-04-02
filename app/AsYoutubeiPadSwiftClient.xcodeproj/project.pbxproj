@@ -32,6 +32,7 @@
 		5EBCDD001AB5C22C0023F037 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5EBCDCFE1AB5C22C0023F037 /* LaunchScreen.xib */; };
 		5EBCDD0C1AB5C22C0023F037 /* AsYoutubeiPadSwiftClientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EBCDD0B1AB5C22C0023F037 /* AsYoutubeiPadSwiftClientTests.swift */; };
 		5EC0DEEE1ACD4F2B00EC14C9 /* YTYoutubeRequestInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EC0DEED1ACD4F2B00EC14C9 /* YTYoutubeRequestInfo.swift */; };
+		5EC0DEEF1ACD544900EC14C9 /* YTYoutubeRequestInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EC0DEED1ACD4F2B00EC14C9 /* YTYoutubeRequestInfo.swift */; };
 		5EC89FA11ACAC017003E3920 /* StoryBoardUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EC89FA01ACAC017003E3920 /* StoryBoardUtils.swift */; };
 		5EC94FFD1AC82E9300844E61 /* WebImageCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EC94FEC1AC82E9300844E61 /* WebImageCache.swift */; };
 		5EC94FFF1AC82E9300844E61 /* LeftMenuSectionsUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EC94FEF1AC82E9300844E61 /* LeftMenuSectionsUtils.swift */; };
@@ -603,6 +604,7 @@
 				5EC9501F1AC82FD700844E61 /* YoutubeModelParser.swift in Sources */,
 				5EC950221AC8302100844E61 /* LeftMenuSectionsUtils.swift in Sources */,
 				5EAFEFFC1ACD4B8A000C2E74 /* YoutubeParser.m in Sources */,
+				5EC0DEEF1ACD544900EC14C9 /* YTYoutubeRequestInfo.swift in Sources */,
 				5E5EF9661AB831CB00CCB831 /* MySwiftClass.swift in Sources */,
 				5EBCDD0C1AB5C22C0023F037 /* AsYoutubeiPadSwiftClientTests.swift in Sources */,
 				5EEDE5561AC3F9D000D1AE30 /* YoutubeFetcherTests.swift in Sources */,

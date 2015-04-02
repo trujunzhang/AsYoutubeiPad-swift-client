@@ -133,8 +133,8 @@ class YoutubeFetcher: NSObject {
     // Mark : searchList
     
     
-    func prepareRequestSearch(queryTeam:NSString,completeHandler: ObjectHandler) ->GYoutubeRequestInfo {
-        var requestInfo: GYoutubeRequestInfo = GYoutubeRequestInfo()
+    func prepareRequestSearch(queryTeam:NSString,completeHandler: ObjectHandler) -> YTYoutubeRequestInfo {
+        var requestInfo: YTYoutubeRequestInfo = YTYoutubeRequestInfo()
         
         requestInfo.makeRequestForSearchWithQueryTeam(queryTeam)
         
@@ -143,7 +143,7 @@ class YoutubeFetcher: NSObject {
         return requestInfo
     }
     
-    func search(requestInfo: GYoutubeRequestInfo, completeHandler: ObjectHandler) {
+    func search(requestInfo: YTYoutubeRequestInfo, completeHandler: ObjectHandler) {
         MABYT3_APIRequest.sharedInstance().searchForParameters(requestInfo.parameters, completion: { (responseInfo, error) -> Void in
             
             if (error == nil) {

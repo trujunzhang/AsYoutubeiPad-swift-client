@@ -10,7 +10,7 @@ import Foundation
 
 class YTVideosCollectionViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
     
-    var requestInfo: GYoutubeRequestInfo?
+    var requestInfo: YTYoutubeRequestInfo?
     
     override init() {
         super.init()

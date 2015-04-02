@@ -11,9 +11,9 @@ import Foundation
 
 
 enum YTSegmentItemType :Int{
-  case  YTSegmentItemVideo    = 0
-  case  YTSegmentItemChannel  = 1
-  case  YTSegmentItemPlaylist = 2
+    case  YTSegmentItemVideo    = 0
+    case  YTSegmentItemChannel  = 1
+    case  YTSegmentItemPlaylist = 2
 }
 
 //enum YTPlaylistItemsType :Int{
@@ -21,22 +21,55 @@ enum YTSegmentItemType :Int{
 
 class YTYoutubeRequestInfo: NSObject {
     var parameters: NSMutableDictionary?
-
+    
     var nextPageToken    : NSString?
     var hasLoadingMore   : Bool?
     var isLoading        : Bool?
     var hasFirstFetch    : Bool?
-
+    
+    var queryType        : YTSegmentItemType?
+    var queryTypeString  : NSString?
+    
     func baseReset() {
-       nextPageToken = ""
-       hasLoadingMore = true
-       isLoading = false
-       hasFirstFetch = true
+        nextPageToken = ""
+        hasLoadingMore = true
+        isLoading = false
+        hasFirstFetch = true
     }
-
+    
     func makeRequestForSearchWithQueryTeam(queryTeam:NSString){
-
-
+        self.baseReset()
+        
+        self.queryType = .YTSegmentItemVideo
+        self.queryTypeString = "video"
+        
+        self.parameters = NSMutableDictionary()
+        
+        self.parameters?.setObject(queryTeam, forKey: "q")
+        self.parameters?.setObject("id,snippet", forKey: "part")
+        self.parameters?.setObject(self.queryTypeString!, forKey: "type")
+        self.parameters?.setObject("items(id/videoId),nextPageToken", forKey: "fields")
     }
+    
+    func putNextPageToken(pageToken:NSString){
+//        if(pageToken == nil || pageToken.isEqualToString("") == true) {
+//            hasLoadingMore = NO;
+//            return;
+//        }
 
+//        if(nextPageToken.isEqualToString("") == false && pageToken.isEqualToString(nextPageToken) == true) {
+//            hasLoadingMore = NO;
+//        }
+//        
+//        if(nextPageToken.isEqualToString("") == true) { // First request
+//            nextPageToken = pageToken;
+//        }
+        
+        self.parameters?.setObject(pageToken, forKey: "pageToken")
+    }
+    
+    func getPageToken() -> NSString{
+        return self.parameters?.objectForKey("pageToken") as NSString
+    }
+    
 }
