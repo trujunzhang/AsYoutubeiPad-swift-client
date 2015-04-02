@@ -144,6 +144,7 @@ class YoutubeFetcher: NSObject {
     }
     
     func search(requestInfo: YTYoutubeRequestInfo, completeHandler: ObjectHandler) {
+        
         MABYT3_APIRequest.sharedInstance().searchForParameters(requestInfo.parameters, completion: { (responseInfo, error) -> Void in
             
             if (error == nil) {

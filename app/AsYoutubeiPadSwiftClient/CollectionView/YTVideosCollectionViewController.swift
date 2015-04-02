@@ -10,13 +10,19 @@ import Foundation
 
 class YTVideosCollectionViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
     
-    var requestInfo: YTYoutubeRequestInfo?
+    var requestInfo = YTYoutubeRequestInfo()
     
     override init() {
         super.init()
         
         requestInfo = YoutubeFetcher.sharedInstance.prepareRequestSearch("Sketch 3", completeHandler: { (object, sucess) -> Void in
-            
+            if(sucess == true){
+                var array:NSArray = object as NSArray
+                
+                var length = array.count
+                
+                self.requestInfo.appendArray(array)
+            }
         })
     }
     
@@ -36,7 +42,9 @@ class YTVideosCollectionViewController: UIViewController, UICollectionViewDataSo
         
 //        return requestInfo?.getVideoListCount()
         return 1
-//        return count
+        
+//        return requestInfo?.videoList?.count
+    
     }
     
     // The cell that is returned must be retrieved from a call to -dequeueReusableCellWithReuseIdentifier:forIndexPath:

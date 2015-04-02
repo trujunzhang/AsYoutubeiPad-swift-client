@@ -20,64 +20,59 @@ enum YTSegmentItemType :Int{
 //}
 
 class YTYoutubeRequestInfo: NSObject {
-    var parameters: NSMutableDictionary?
+    var parameters = NSMutableDictionary()
+    var videoList = NSMutableArray()
     
-    var nextPageToken    : NSString?
-    var hasLoadingMore   : Bool?
-    var isLoading        : Bool?
-    var hasFirstFetch    : Bool?
+    var nextPageToken    = ""
+    var hasLoadingMore   = true
+    var isLoading        = false
+    var hasFirstFetch    = true
     
     var queryType        : YTSegmentItemType?
-    var queryTypeString  : NSString?
     
-    func baseReset() {
-        nextPageToken = ""
-        hasLoadingMore = true
-        isLoading = false
-        hasFirstFetch = true
+    
+    func getVideoListCount() -> Int {
+        return videoList.count
     }
     
     func makeRequestForSearchWithQueryTeam(queryTeam:NSString){
-        self.baseReset()
-        
         self.queryType = .YTSegmentItemVideo
-        self.queryTypeString = "video"
+        var queryTypeString = "video"
         
-//        var fieldsValue:NSString = "items(id/videoId),nextPageToken"
-//        var _parameters:NSMutableDictionary = [
-//            "q" : queryTeam,
-//            "type" : self.queryTypeString,
-//            "part" : "id,snippet",
-//            "fields" : fieldsValue,
-//        ]
+        //        var fieldsValue:NSString = "items(id/videoId),nextPageToken"
+        var _parameters:NSMutableDictionary = [
+            "q" : queryTeam,
+            "type" : queryTypeString,
+            "part" : "id,snippet",
+            "fields" : "items(id/videoId),nextPageToken",
+        ]
         
-        self.parameters = NSMutableDictionary()
-        
-        self.parameters?.setObject(queryTeam, forKey: "q")
-        self.parameters?.setObject("id,snippet", forKey: "part")
-        self.parameters?.setObject(self.queryTypeString!, forKey: "type")
-        self.parameters?.setObject("items(id/videoId),nextPageToken", forKey: "fields")
+        self.parameters.setDictionary(_parameters)
+    }
+    
+    func appendArray(array:NSArray){
+        videoList.addObjectsFromArray(array)
     }
     
     func putNextPageToken(pageToken:NSString){
-//        if(pageToken == nil || pageToken.isEqualToString("") == true) {
-//            hasLoadingMore = NO;
-//            return;
-//        }
-
-//        if(nextPageToken.isEqualToString("") == false && pageToken.isEqualToString(nextPageToken) == true) {
-//            hasLoadingMore = NO;
-//        }
-//        
-//        if(nextPageToken.isEqualToString("") == true) { // First request
-//            nextPageToken = pageToken;
-//        }
+        //        if(pageToken == nil || pageToken.isEqualToString("") == true) {
+        //            hasLoadingMore = NO;
+        //            return;
+        //        }
         
-        self.parameters?.setObject(pageToken, forKey: "pageToken")
+        //        if(nextPageToken.isEqualToString("") == false && pageToken.isEqualToString(nextPageToken) == true) {
+        //            hasLoadingMore = NO;
+        //        }
+        //
+        //        if(nextPageToken.isEqualToString("") == true) { // First request
+        //            nextPageToken = pageToken;
+        //        }
+        
+        self.parameters.setObject(pageToken, forKey: "pageToken")
     }
     
     func getPageToken() -> NSString{
-        return self.parameters?.objectForKey("pageToken") as NSString
+        return self.parameters.objectForKey("pageToken") as NSString
     }
     
 }
