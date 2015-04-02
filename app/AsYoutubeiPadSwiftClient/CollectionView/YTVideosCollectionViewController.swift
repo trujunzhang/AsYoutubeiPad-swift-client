@@ -32,8 +32,11 @@ class YTVideosCollectionViewController: UIViewController, UICollectionViewDataSo
     
     // Mark : delegate of UICollectionViewDataSource
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+//        var count:int  = requestInfo?.getVideoList().count
+        
 //        return requestInfo?.getVideoListCount()
         return 1
+//        return count
     }
     
     // The cell that is returned must be retrieved from a call to -dequeueReusableCellWithReuseIdentifier:forIndexPath:
