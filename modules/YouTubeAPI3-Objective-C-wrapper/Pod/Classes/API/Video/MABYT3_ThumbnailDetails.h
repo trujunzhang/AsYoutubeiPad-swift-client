@@ -17,19 +17,19 @@
 
 // The default image for this resource.
 // Remapped to 'defaultProperty' to avoid language reserved word 'default'.
-@property (retain) MABYT3_Thumbnail *defaultProperty;
+@property (strong, nonatomic)  MABYT3_Thumbnail *defaultProperty;
 
 // The high quality image for this resource.
-@property (retain) MABYT3_Thumbnail *high;
+@property (strong, nonatomic)  MABYT3_Thumbnail *high;
 
 // The maximum resolution quality image for this resource.
-@property (retain) MABYT3_Thumbnail *maxres;
+@property (strong, nonatomic)  MABYT3_Thumbnail *maxres;
 
 // The medium quality image for this resource.
-@property (retain) MABYT3_Thumbnail *medium;
+@property (strong, nonatomic)  MABYT3_Thumbnail *medium;
 
 // The standard quality image for this resource.
-@property (retain) MABYT3_Thumbnail *standard;
+@property (strong, nonatomic)  MABYT3_Thumbnail *standard;
 
 
 - (id)initFromDictionary:(NSDictionary *)dict;

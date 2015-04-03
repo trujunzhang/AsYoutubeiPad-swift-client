@@ -7,11 +7,24 @@
 //
 
 import UIKit
+import Haneke
 
 class YTVideoCollectionViewCell: UICollectionViewCell {
     
     
     @IBOutlet var titleLabel: UILabel!
+    
+    @IBOutlet var infoLabel: UILabel!
+    
+    @IBOutlet var thumbnailImage: UIImageView!
+    
+    @IBOutlet var channelContainer: UIView!
+    
+    @IBOutlet var channelThumbnailImage: UIImageView!
+    
+    @IBOutlet var channelTitleLabel: UILabel!
+    
+    
     
     var  videoCache:YoutubeVideoCache?
     
@@ -19,9 +32,17 @@ class YTVideoCollectionViewCell: UICollectionViewCell {
     func setupCell(_videoCache:YoutubeVideoCache){
         videoCache = _videoCache
         
-        let title = YoutubeParser.getVideoSnippetTitle(videoCache)
+        let videoTitle = YoutubeParser.getVideoSnippetTitle(videoCache)
+        let thumbnailUrl = YoutubeModelParser.getVideoSnippetThumbnails(videoCache!)
+        let channelTitle = YoutubeParser.getVideoSnippetChannelTitle(videoCache)
         
-        titleLabel.text = title
+        // 1
+        let url = NSURL(string: thumbnailUrl)
+        thumbnailImage.hnk_setImageFromURL(url!)
+        
+        // 2
+        titleLabel.text = videoTitle
+        
     }
     
     

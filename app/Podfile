@@ -27,6 +27,10 @@ def import_pods
 
     pod 'CHTCollectionViewWaterfallLayout'
 
+  # ________________project library___________________
+  pod "App_Module_Resources", :path => "../modules/App_Module_Resources"
+  pod "YouTubeAPI3-Objective-C-wrapper", :path => "../modules/YouTubeAPI3-Objective-C-wrapper"
+
 end
 
 target 'AsYoutubeiPadSwiftClient', :exclusive => true do
@@ -34,11 +38,6 @@ target 'AsYoutubeiPadSwiftClient', :exclusive => true do
   import_pods
 
   pod  'Reveal-iOS-SDK'
-
-
-  # ________________project library___________________
-  pod "App_Module_Resources", :path => "../modules/App_Module_Resources"
-  pod "YouTubeAPI3-Objective-C-wrapper", :path => "../modules/YouTubeAPI3-Objective-C-wrapper"
 
 end
 

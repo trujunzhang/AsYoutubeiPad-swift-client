@@ -46,6 +46,11 @@
 #import "MABYT3_Language.h"
 #import "MABYT3_GuideCategory.h"
 #import "MABYT3_ChannelSection.h"
+#import "MABYT3_VideoSnippet.h"
+#import "MABYT3_VideoContentDetails.h" 
+#import "MABYT3_VideoStatistics.h" 
+#import "MABYT3_VideoStatus.h" 
+#import "MABYT3_VideoLiveStreamingDetails.h" 
 
 #import "MABYT3_TranscriptList.h"
 #import "MABYT3_Transcript.h"

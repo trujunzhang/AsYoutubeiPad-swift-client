@@ -14,9 +14,7 @@
 #import "MABYT3_ActivityContentDetails.h"
 #import "MABYT3_SearchItem.h"
 
-@interface YoutubeParser ()
-
-@end
+#import "YoutubeVideoCache.h"
 
 
 @implementation YoutubeParser
@@ -77,74 +75,80 @@
 //+ (NSString *)getSubscriptionSnippetTitle:(YTYouTubeSubscription *)subscription {
 //    return subscription.snippet.title;
 //}
-//
-//
-//#pragma mark -
-//#pragma mark  Video cache
-//
-//
-//+ (NSString *)getVideoSnippetThumbnails:(YTYouTubeVideoCache *)video {
-//    return video.snippet.thumbnails.medium.url;
+
+
+#pragma mark -
+#pragma mark  Video cache
+
+
+//+ (NSString *)getVideoSnippetThumbnails:(YoutubeVideoCache *)video {
+//    
+//    MABYT3_ThumbnailDetails *thumbnailDetails =  video.snippet.thumbnails;
+//    MABYT3_Thumbnail *standard = thumbnailDetails.standard;
+//    
+//    return @"";
+////    return thumbnailDetails.standard.url;
+//    //    return video.snippet.thumbnails[@"medium"].medium.url;
 //}
-//
-//
-//+ (NSString *)getWatchVideoId:(YTYouTubeVideoCache *)video {
-//    return video.identifier;
-//}
-//
-//
-//+ (NSString *)getChannelIdByVideo:(YTYouTubeVideoCache *)video {
-//    return video.snippet.channelId;
-//}
-//
-//
-//+ (NSString *)getVideoSnippetTitle:(YTYouTubeVideoCache *)video {
-//    return video.snippet.title;
-//}
-//
-//
-//+ (NSString *)getVideoStatisticsViewCount:(YTYouTubeVideoCache *)video {
-//    NSNumber *number = video.statistics.viewCount;
-//
-//    NSNumberFormatter *formatter = [NSNumberFormatter new];
-//    [formatter setNumberStyle:NSNumberFormatterDecimalStyle];
-//    NSString *newString = [formatter stringFromNumber:[NSNumber numberWithInteger:number]];
-//
-//    return [NSString stringWithFormat:@"%@ views", newString];
-//}
-//
-//
-//+ (NSString *)getVideoStatisticsLikeCount:(YTYouTubeVideoCache *)video {
-//    NSNumber *likeCount = video.statistics.likeCount;
-//    NSNumber *dislikeCount = video.statistics.dislikeCount;
-//
-//    return [NSString stringWithFormat:@"%d likes, %d dislikes", [likeCount intValue], [dislikeCount intValue]];
-//}
-//
-//
-//+ (NSString *)getVideoDescription:(YTYouTubeVideoCache *)video {
-//    return video.snippet.descriptionString;
-//}
-//
-//
-//+ (NSString *)getVideoSnippetChannelTitle:(YTYouTubeVideoCache *)video {
-//    return video.snippet.channelTitle;
-//}
-//
-//
-//+ (NSString *)getVideoSnippetChannelPublishedAt:(YTYouTubeVideoCache *)video {
-//    return video.snippet.publishedAt.min_string;
-//}
-//
-//
-//+ (NSString *)getVideoDurationForVideoInfo:(YTYouTubeVideoCache *)video {
-//    NSString *durationString = [YoutubeParser parseISO8601Duration:video.contentDetails.duration];
-////   NSLog(@"durationString = %@", durationString);
-//    return [NSString stringWithFormat:@" %@ ", durationString];
-//}
-//
-//
-//+ (void)parseDescriptionStringWithRegExp:(YTYouTubeVideoCache *)videoCache {
+
+
++ (NSString *)getWatchVideoId:(YoutubeVideoCache *)video {
+    return video.identifier;
+}
+
+
++ (NSString *)getChannelIdByVideo:(YoutubeVideoCache *)video {
+    return video.snippet.channelId;
+}
+
+
++ (NSString *)getVideoSnippetTitle:(YoutubeVideoCache *)video {
+    return video.snippet.title;
+}
+
+
++ (NSString *)getVideoStatisticsViewCount:(YoutubeVideoCache *)video {
+    NSNumber *number = video.statistics.viewCount;
+
+    NSNumberFormatter *formatter = [NSNumberFormatter new];
+    [formatter setNumberStyle:NSNumberFormatterDecimalStyle];
+    NSString *newString = [formatter stringFromNumber:[NSNumber numberWithInteger:number]];
+
+    return [NSString stringWithFormat:@"%@ views", newString];
+}
+
+
++ (NSString *)getVideoStatisticsLikeCount:(YoutubeVideoCache *)video {
+    NSNumber *likeCount = video.statistics.likeCount;
+    NSNumber *dislikeCount = video.statistics.dislikeCount;
+
+    return [NSString stringWithFormat:@"%d likes, %d dislikes", [likeCount intValue], [dislikeCount intValue]];
+}
+
+
++ (NSString *)getVideoDescription:(YoutubeVideoCache *)video {
+    return video.snippet.descriptionString;
+}
+
+
++ (NSString *)getVideoSnippetChannelTitle:(YoutubeVideoCache *)video {
+    return video.snippet.channelTitle;
+}
+
+
++ (NSString *)getVideoSnippetChannelPublishedAt:(YoutubeVideoCache *)video {
+    return video.snippet.publishedAt.min_string;
+}
+
+
++ (NSString *)getVideoDurationForVideoInfo:(YoutubeVideoCache *)video {
+    NSString *durationString = [YoutubeParser parseISO8601Duration:video.contentDetails.duration];
+//   NSLog(@"durationString = %@", durationString);
+    return [NSString stringWithFormat:@" %@ ", durationString];
+}
+
+
+//+ (void)parseDescriptionStringWithRegExp:(YoutubeVideoCache *)videoCache {
 //    NSString *videoDescription = [YoutubeParser getVideoDescription:videoCache];
 //
 //    NSMutableString *address = [[NSMutableString alloc] initWithString:videoDescription];
@@ -179,8 +183,8 @@
 //
 //    videoCache.descriptionStringAttributeArray = descriptionStringAttributeArray;
 //}
-//
-//
+
+
 //#pragma mark -
 //#pragma mark Channel for other request
 //
@@ -252,60 +256,47 @@
 //    return channel.contentDetails.relatedPlaylists;
 //}
 //
-//
-//+ (NSString *)parseISO8601Duration:(NSString *)duration {
-////   NSString * duration = @"P1DT10H15M49S";
-//
-//    int i = 0, days = 0, hours = 0, minutes = 0, seconds = 0;
-//
-//    while (i < duration.length) {
-//        NSString *str = [duration substringWithRange:NSMakeRange(i, duration.length - i)];
-//
-//        i++;
-//
-//        if([str hasPrefix:@"P"] || [str hasPrefix:@"T"])
-//            continue;
-//
-//        NSScanner *sc = [NSScanner scannerWithString:str];
-//        int value = 0;
-//
-//        if([sc scanInt:&value]) {
-//            i += [sc scanLocation] - 1;
-//
-//            str = [duration substringWithRange:NSMakeRange(i, duration.length - i)];
-//
-//            i++;
-//
-//            if([str hasPrefix:@"D"])
-//                days = value;
-//            else if([str hasPrefix:@"H"])
-//                hours = value;
-//            else if([str hasPrefix:@"M"])
-//                minutes = value;
-//            else if([str hasPrefix:@"S"])
-//                seconds = value;
-//        }
-//    }
-//
-//    if(hours == 0) {
-//        return [NSString stringWithFormat:@"%02d:%02d", minutes, seconds];
-//    }
-//    return [NSString stringWithFormat:@"%02d:%02d:%02d", hours, minutes, seconds];
-//}
-//
-//
-//#pragma mark -
-//#pragma mark Url cache
-//
-//
-//+ (void)cacheWithKey:(NSString *)key withValue:(NSString *)value {
-//    [[ISMemoryCache sharedCache] setObject:value forKey:key];
-//}
-//
-//
-//+ (NSString *)checkAndAppendThumbnailWithChannelId:(NSString *)key {
-//    return [[ISMemoryCache sharedCache] objectForKey:key];
-//}
-//
+
++ (NSString *)parseISO8601Duration:(NSString *)duration {
+//   NSString * duration = @"P1DT10H15M49S";
+
+    int i = 0, days = 0, hours = 0, minutes = 0, seconds = 0;
+
+    while (i < duration.length) {
+        NSString *str = [duration substringWithRange:NSMakeRange(i, duration.length - i)];
+
+        i++;
+
+        if([str hasPrefix:@"P"] || [str hasPrefix:@"T"])
+            continue;
+
+        NSScanner *sc = [NSScanner scannerWithString:str];
+        int value = 0;
+
+        if([sc scanInt:&value]) {
+            i += [sc scanLocation] - 1;
+
+            str = [duration substringWithRange:NSMakeRange(i, duration.length - i)];
+
+            i++;
+
+            if([str hasPrefix:@"D"])
+                days = value;
+            else if([str hasPrefix:@"H"])
+                hours = value;
+            else if([str hasPrefix:@"M"])
+                minutes = value;
+            else if([str hasPrefix:@"S"])
+                seconds = value;
+        }
+    }
+
+    if(hours == 0) {
+        return [NSString stringWithFormat:@"%02d:%02d", minutes, seconds];
+    }
+    return [NSString stringWithFormat:@"%02d:%02d:%02d", hours, minutes, seconds];
+}
+
+
 
 @end
