@@ -1,7 +1,116 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
     </dependencies>
-    <scenes/>
+    <scenes>
+        <!--Video Watch View Controller-->
+        <scene sceneID="wmx-Js-EVU">
+            <objects>
+                <viewController storyboardIdentifier="YTVideoWatchViewController" id="pOx-h6-aYs" customClass="YTVideoWatchViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="yAK-vq-4uy"/>
+                        <viewControllerLayoutGuide type="bottom" id="hGJ-OT-DQg"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Wmb-WG-qPm">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="URj-Xm-xA5" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="251" y="258"/>
+        </scene>
+        <!--Video Watch Side View Controller-->
+        <scene sceneID="YZp-zI-BLo">
+            <objects>
+                <viewController storyboardIdentifier="YTVideoWatchSideViewController" id="WeF-cF-Aol" customClass="YTVideoWatchSideViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Ldx-r0-W9n"/>
+                        <viewControllerLayoutGuide type="bottom" id="mFo-E1-hxt"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="nS9-N4-Mnn">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iBf-Eb-lfP" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-676" y="2299"/>
+        </scene>
+        <!--Movie Embedded View Controller-->
+        <scene sceneID="Gyq-VS-Hhm">
+            <objects>
+                <viewController storyboardIdentifier="MovieEmbeddedViewController" id="vw9-6M-iCp" customClass="MovieEmbeddedViewController" customModule="AsYoutubeiPadSwiftClient" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="zPC-4y-9LX"/>
+                        <viewControllerLayoutGuide type="bottom" id="RIl-ey-aw2"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="JH3-Bg-02A">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ep1-K2-yGH" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="220" y="1475"/>
+        </scene>
+        <!--Video Watch Info View Controller-->
+        <scene sceneID="RuG-mH-dim">
+            <objects>
+                <viewController storyboardIdentifier="YTVideoWatchInfoViewController" id="g9e-mD-rzC" customClass="YTVideoWatchInfoViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="vpF-YX-VYP"/>
+                        <viewControllerLayoutGuide type="bottom" id="kwS-W3-YNl"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="eyp-Dj-2jW">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="g3Q-pW-H0a" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1392" y="1279"/>
+        </scene>
+        <!--Video Watch Playlist Header View Controller-->
+        <scene sceneID="WpG-sG-VBY">
+            <objects>
+                <viewController storyboardIdentifier="YTVideoWatchPlaylistHeaderViewController" id="ME0-kX-hue" customClass="YTVideoWatchPlaylistHeaderViewController" customModule="AsYoutubeiPadSwiftClient" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="qLi-iI-5WK"/>
+                        <viewControllerLayoutGuide type="bottom" id="eC3-wJ-aE1"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="85j-i4-LtK">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="agP-mx-GUV" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1036" y="2403"/>
+        </scene>
+        <!--Video Watch Playlist View Controller-->
+        <scene sceneID="sY5-hL-4ML">
+            <objects>
+                <viewController storyboardIdentifier="YTVideoWatchPlaylistViewController" id="P1R-FV-dgv" customClass="YTVideoWatchPlaylistViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="weN-x1-Mz1"/>
+                        <viewControllerLayoutGuide type="bottom" id="xrZ-TR-BIX"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="4O3-iB-D9n">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="617-zI-Fq3" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2060" y="2411"/>
+        </scene>
+    </scenes>
 </document>

@@ -22,8 +22,13 @@ class StoryBoardUtils:NSObject {
         
         return storyboard
     }
-    
+    private class func getVideoWatchStoryboard() -> UIStoryboard {
+        let storyboard:UIStoryboard = UIStoryboard(name: "VideoWatchStoryboard", bundle: nil)
+        
+        return storyboard
+    }
 
+    // MARK : getReusedStoryBoard
     
     class func getChannelBannerViewController() -> ChannelBannerViewController {
         var viewController: ChannelBannerViewController = getReusedStoryBoard().instantiateViewControllerWithIdentifier("ChannelBannerViewController") as ChannelBannerViewController
@@ -44,6 +49,44 @@ class StoryBoardUtils:NSObject {
         return viewController
     }
     
+    
+    // MARK : WatchView
+    
+    class func getYTVideoWatchViewController() -> YTVideoWatchViewController {
+        var viewController: YTVideoWatchViewController = getVideoWatchStoryboard().instantiateViewControllerWithIdentifier("YTVideoWatchViewController") as YTVideoWatchViewController
+        
+        return viewController
+    }
+    
+    class func getMovieEmbeddedViewController() -> MovieEmbeddedViewController {
+        var viewController: MovieEmbeddedViewController = getVideoWatchStoryboard().instantiateViewControllerWithIdentifier("MovieEmbeddedViewController") as MovieEmbeddedViewController
+        
+        return viewController
+    }
+    
+    class func getYTVideoWatchInfoViewController() -> YTVideoWatchInfoViewController {
+        var viewController: YTVideoWatchInfoViewController = getVideoWatchStoryboard().instantiateViewControllerWithIdentifier("YTVideoWatchInfoViewController") as YTVideoWatchInfoViewController
+        
+        return viewController
+    }
+    
+    class func getYTVideoWatchSideViewController() -> YTVideoWatchSideViewController {
+        var viewController: YTVideoWatchSideViewController = getVideoWatchStoryboard().instantiateViewControllerWithIdentifier("YTVideoWatchSideViewController") as YTVideoWatchSideViewController
+        
+        return viewController
+    }
+    
+    class func getYTVideoWatchPlaylistHeaderViewController() -> YTVideoWatchPlaylistHeaderViewController {
+        var viewController: YTVideoWatchPlaylistHeaderViewController = getVideoWatchStoryboard().instantiateViewControllerWithIdentifier("YTVideoWatchPlaylistHeaderViewController") as YTVideoWatchPlaylistHeaderViewController
+        
+        return viewController
+    }
+    
+    class func getYTVideoWatchPlaylistViewController() -> YTVideoWatchPlaylistViewController {
+        var viewController: YTVideoWatchPlaylistViewController = getVideoWatchStoryboard().instantiateViewControllerWithIdentifier("YTVideoWatchPlaylistViewController") as YTVideoWatchPlaylistViewController
+        
+        return viewController
+    }
     
     
 }
