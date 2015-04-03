@@ -35,6 +35,7 @@ class YTVideoCollectionViewCell: UICollectionViewCell {
         let videoTitle = YoutubeParser.getVideoSnippetTitle(videoCache)
         let thumbnailUrl = YoutubeModelParser.getVideoSnippetThumbnails(videoCache!)
         let channelTitle = YoutubeParser.getVideoSnippetChannelTitle(videoCache)
+        let publishedAgo = YoutubeParser.getVideoSnippetChannelPublishedAt(videoCache)
         
         // 1
         let url = NSURL(string: thumbnailUrl)
@@ -43,6 +44,12 @@ class YTVideoCollectionViewCell: UICollectionViewCell {
         // 2
         titleLabel.text = videoTitle
         
+        // 3
+        infoLabel.text = publishedAgo
+        
+        // 4
+        channelTitleLabel.text = channelTitle
+
     }
     
     
