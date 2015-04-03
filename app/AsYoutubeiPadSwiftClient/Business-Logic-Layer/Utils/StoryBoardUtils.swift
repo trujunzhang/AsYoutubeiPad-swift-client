@@ -22,6 +22,7 @@ class StoryBoardUtils:NSObject {
         
         return storyboard
     }
+    
     private class func getVideoWatchStoryboard() -> UIStoryboard {
         let storyboard:UIStoryboard = UIStoryboard(name: "VideoWatchStoryboard", bundle: nil)
         
@@ -51,13 +52,6 @@ class StoryBoardUtils:NSObject {
     
     
     // MARK : WatchView
-    
-    class func getYTVideoWatchViewController() -> YTVideoWatchViewController {
-        var viewController: YTVideoWatchViewController = getVideoWatchStoryboard().instantiateViewControllerWithIdentifier("YTVideoWatchViewController") as YTVideoWatchViewController
-        
-        return viewController
-    }
-    
     class func getMovieEmbeddedViewController() -> MovieEmbeddedViewController {
         var viewController: MovieEmbeddedViewController = getVideoWatchStoryboard().instantiateViewControllerWithIdentifier("MovieEmbeddedViewController") as MovieEmbeddedViewController
         

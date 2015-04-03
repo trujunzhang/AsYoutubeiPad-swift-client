@@ -17,7 +17,8 @@ class SubscriptionsViewController: FrontBaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let channelPageViewController: ChannelPageViewController = ChannelPageViewController()
+//        let channelPageViewController: ChannelPageViewController = ChannelPageViewController()
+        let channelPageViewController: YTVideoWatchViewController = YTVideoWatchViewController()
         
         channelPageViewController.view.frame = container.bounds
         
