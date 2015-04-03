@@ -170,9 +170,22 @@ class YoutubeFetcher: NSObject {
     }
     
     func fetchVideoListWithVideoId(videoIds:NSString, completeHandler: ObjectHandler) {
-        let parameters:NSMutableDictionary = NSMutableDictionary()
-        parameters.setObject("id,snippet,contentDetails,statistics", forKey: "part")
-        parameters.setObject(videoIds, forKey: "id")
+        fetchVideoList(videoIds, fields: "", completeHandler: completeHandler)
+    }
+    
+    func fetchVideoDescription(videoIds:NSString, completeHandler: ObjectHandler) {
+        fetchVideoList(videoIds, fields: "", completeHandler: completeHandler)
+    }
+    
+    func fetchVideoList(videoIds:NSString, fields: NSString, completeHandler: ObjectHandler) {
+        var parameters = NSMutableDictionary(dictionary: [
+            "part"   : "id,snippet,contentDetails,statistics",
+            "id"     : videoIds,
+            ]
+        )
+        if(fields.isEqualToString("") == false){
+            parameters.setValue(fields, forKey: "fields")
+        }
         
         MABYT3_APIRequest.sharedInstance().LISTVideosForURL(parameters, completion: {  (responseInfo, error) -> Void in
             if (error == nil) {
@@ -185,14 +198,12 @@ class YoutubeFetcher: NSObject {
     
     // MARK : thumbnail
     func fetchChannelForThumbnail(channelID:NSString, completeHandler: ObjectHandler) {
-        let _parameters = [
+        var parameters = NSMutableDictionary(dictionary: [
             "part"   : "snippet",
             "fields" : "items/snippet(thumbnails)",
             "id"     : channelID,
-        ]
-        
-        var parameters = NSMutableDictionary()
-        parameters.setDictionary(_parameters)
+            ]
+        )
         
         MABYT3_APIRequest.sharedInstance().LISTChannelsThumbnailsForURL(parameters, completion: {  (responseInfo, error) -> Void in
             if (error == nil) {
@@ -202,6 +213,7 @@ class YoutubeFetcher: NSObject {
             }
         })
     }
+    
     
     
     

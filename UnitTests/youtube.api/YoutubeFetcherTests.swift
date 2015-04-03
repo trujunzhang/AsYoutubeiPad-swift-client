@@ -14,7 +14,7 @@ class YoutubeFetcherTests: XCTestCase {
     var requestInfo = YTYoutubeRequestInfo()
     var isSucess = false
     
-    var videoID = "eoXneK3WlgQ"
+    var videoID :NSString = "eoXneK3WlgQ"
     
     override func setUp() {
         super.setUp()
@@ -45,7 +45,7 @@ class YoutubeFetcherTests: XCTestCase {
         
     }
     
-    func testSearchVideosByVideoType() {
+    func _testSearchVideosByVideoType() {
         let expectation = expectationWithDescription("SearchVideoListByVideoType")
         
         var videoCache:YoutubeVideoCache? // used
@@ -88,8 +88,7 @@ class YoutubeFetcherTests: XCTestCase {
         }
     }
     
-    func testFetchChannelForThumbnail(){
-        var isSucess = false
+    func _testFetchChannelForThumbnail(){
         let expectation = expectationWithDescription("fetchChannelForThumbnail")
         
         YoutubeFetcher.sharedInstance.fetchChannelForThumbnail("UCl-radPCbXcrYCE4EdNH3QA", completeHandler: { (object, sucess) -> Void in
@@ -118,6 +117,34 @@ class YoutubeFetcherTests: XCTestCase {
         }
     }
     
+    func testFetchVideoDescription(){
+        let expectation = expectationWithDescription("fetchVideoDescription")
+        
+        YoutubeFetcher.sharedInstance.fetchVideoDescription("eoXneK3WlgQ", completeHandler: { (object, sucess) -> Void in
+            
+            XCTAssertNotNil(object, "object not nil")
+            
+            self.isSucess = sucess
+            
+            if(sucess == true){
+                var array:NSArray = object as NSArray
+                
+                XCTAssertGreaterThan(array.count, 0, "Array length must greater than 0")
+                
+                XCTAssertEqual(array[0] is YoutubeVideoCache, true, "Array object must being YoutubeVideoCache")
+                
+                var videoCache :YoutubeVideoCache = array[0] as YoutubeVideoCache
+                var description = YoutubeParser.getVideoDescription(videoCache)
+                XCTAssertNotNil(description, "description must not nil")
+            }
+            expectation.fulfill()
+            
+        })
+        
+        waitForExpectationsWithTimeout(10) { (error) in
+            XCTAssertNil(error, "\(error)")
+        }
+    }
     
     
 }
