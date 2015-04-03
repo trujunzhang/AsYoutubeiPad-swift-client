@@ -183,6 +183,26 @@ class YoutubeFetcher: NSObject {
         })
     }
     
+    // MARK : thumbnail
+    func fetchChannelForThumbnail(channelID:NSString, completeHandler: ObjectHandler) {
+        let _parameters = [
+            "part"   : "snippet",
+            "fields" : "items/snippet(thumbnails)",
+            "id"     : channelID,
+        ]
+        
+        var parameters = NSMutableDictionary()
+        parameters.setDictionary(_parameters)
+        
+        MABYT3_APIRequest.sharedInstance().LISTChannelsThumbnailsForURL(parameters, completion: {  (responseInfo, error) -> Void in
+            if (error == nil) {
+                completeHandler(responseInfo.array, true)
+            }else{
+                completeHandler(nil, false)
+            }
+        })
+    }
+    
     
     
     

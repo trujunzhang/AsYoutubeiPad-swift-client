@@ -12,10 +12,13 @@ import XCTest
 
 class YoutubeFetcherTests: XCTestCase {
     var requestInfo = YTYoutubeRequestInfo()
+    var isSucess = false
     
     override func setUp() {
         super.setUp()
         // Put setup code here. This method is called before the invocation of each test method in the class.
+        
+        isSucess = false
     }
     
     override func tearDown() {
@@ -43,25 +46,23 @@ class YoutubeFetcherTests: XCTestCase {
     func testSearchVideosByVideoType() {
         let expectation = expectationWithDescription("SearchVideoListByVideoType")
         
-        var isSucess = false
-        
-        var videoCache:YoutubeVideoCache?
+        var videoCache:YoutubeVideoCache? // used
         
         requestInfo =
             YoutubeFetcher.sharedInstance.prepareRequestSearch("sketch 3", completeHandler: { (object, sucess) -> Void in
                 XCTAssertNotNil(object, "object not nil")
                 
-                isSucess = sucess
+                self.isSucess = sucess
                 
                 if(sucess == true){
                     var array:NSArray = object as NSArray
                     
-                    var length = array.count
+                    XCTAssertGreaterThan(array.count, 0, "Array length must greater than 0")
                     
-                    XCTAssertGreaterThan(length, 0, "Array length must greater than 0")
+                    let model:AnyObject = array[0]
+                    videoCache = model  as YoutubeVideoCache // Used
+                    XCTAssertEqual(model is YoutubeVideoCache, true, "Array object must being YoutubeVideoCache")
                     
-                    XCTAssertEqual(array[0] is YoutubeVideoCache, true, "Array object must being YoutubeVideoCache")
-                    videoCache = array[0] as YoutubeVideoCache
                     
                     self.requestInfo.appendArray(array)
                 }
@@ -71,7 +72,7 @@ class YoutubeFetcherTests: XCTestCase {
         waitForExpectationsWithTimeout(10) { (error) in
             XCTAssertNil(error, "\(error)")
             
-            if(isSucess == true){
+            if(self.isSucess == true){
                 var pageToken = self.requestInfo.getPageToken()
                 XCTAssertNotNil(pageToken, "pageToken not nil")
                 
@@ -83,7 +84,36 @@ class YoutubeFetcherTests: XCTestCase {
                 XCTAssertEqual(identifier!, expectVideoCache.identifier, "the same YoutubeVideoCache")
             }
         }
+    }
+    
+    func testFetchChannelForThumbnail(){
+        var isSucess = false
+        let expectation = expectationWithDescription("fetchChannelForThumbnail")
         
+        YoutubeFetcher.sharedInstance.fetchChannelForThumbnail("UCl-radPCbXcrYCE4EdNH3QA", completeHandler: { (object, sucess) -> Void in
+            
+            XCTAssertNotNil(object, "object not nil")
+            
+            self.isSucess = sucess
+            
+            if(sucess == true){
+                var array:NSArray = object as NSArray
+                
+                XCTAssertEqual(array.count, 1, "Array length must be one")
+                
+                XCTAssertEqual(array[0] is MABYT3_Channel, true, "Array object must being MABYT3_Channel")
+                
+                var channel :MABYT3_Channel = array[0] as MABYT3_Channel
+                var imageUrl = YoutubeModelParser.getMABChannelThumbnalUrl(channel)
+                XCTAssertNotNil(imageUrl, "imageUrl must not nil")
+            }
+            expectation.fulfill()
+            
+        })
+        
+        waitForExpectationsWithTimeout(10) { (error) in
+            XCTAssertNil(error, "\(error)")
+        }
     }
     
     
