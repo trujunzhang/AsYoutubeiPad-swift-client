@@ -13,16 +13,15 @@ class YTVideoCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet var titleLabel: UILabel!
     
-    var youTubeVideo:GTLYouTubeVideo?
+    var  videoCache:YoutubeVideoCache?
     
-    init(_youTubeVideo:GTLYouTubeVideo) {
-        super.init()
+    
+    func setupCell(_videoCache:YoutubeVideoCache){
+        videoCache = _videoCache
         
-        youTubeVideo = _youTubeVideo
-    }
-    
-    required init(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
+        let title = YoutubeParser.getVideoSnippetTitle(videoCache)
+        
+        titleLabel.text = title
     }
     
     

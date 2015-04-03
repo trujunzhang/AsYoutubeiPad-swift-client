@@ -2,7 +2,6 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Channel Banner View Controller-->
@@ -108,21 +107,16 @@
                                             <rect key="frame" x="0.0" y="0.0" width="183" height="155"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R5Q-cK-Fv9">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R5Q-cK-Fv9">
                                                     <rect key="frame" x="33" y="67" width="111" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
                                         <color key="backgroundColor" red="0.92156862750000001" green="0.27058823529999998" blue="0.1333333333" alpha="1" colorSpace="calibratedRGB"/>
-                                        <constraints>
-                                            <constraint firstItem="R5Q-cK-Fv9" firstAttribute="leading" secondItem="k5v-EP-O1O" secondAttribute="leadingMargin" constant="25" id="GwE-zI-GfO"/>
-                                            <constraint firstItem="R5Q-cK-Fv9" firstAttribute="centerY" secondItem="k5v-EP-O1O" secondAttribute="centerY" id="J3S-vu-HZ7"/>
-                                            <constraint firstAttribute="trailingMargin" secondItem="R5Q-cK-Fv9" secondAttribute="trailing" constant="31" id="lHb-7a-2a6"/>
-                                        </constraints>
                                         <connections>
                                             <outlet property="titleLabel" destination="R5Q-cK-Fv9" id="uTD-L3-tBt"/>
                                         </connections>

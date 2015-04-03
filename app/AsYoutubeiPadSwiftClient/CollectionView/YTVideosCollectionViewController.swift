@@ -44,16 +44,15 @@ class YTVideosCollectionViewController: UIViewController, UICollectionViewDataSo
         self.collectionView.dataSource = self
         self.collectionView.delegate = self
         
-        self.view.backgroundColor = UIColor.yellowColor()
-        self.collectionView.backgroundColor = UIColor.orangeColor()
+//        self.view.backgroundColor = UIColor.yellowColor()
+//        self.collectionView.backgroundColor = UIColor.orangeColor()
         
         makeRequestTask()
     }
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
-        
-        var x = 0
+
     }
     
     override func viewDidAppear(animated: Bool) {
@@ -67,9 +66,10 @@ class YTVideosCollectionViewController: UIViewController, UICollectionViewDataSo
     
     // The cell that is returned must be retrieved from a call to -dequeueReusableCellWithReuseIdentifier:forIndexPath:
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCellWithReuseIdentifier("YTVideoCollectionViewCell", forIndexPath: indexPath) as YTVideoCollectionViewCell
+        let cell:YTVideoCollectionViewCell = collectionView.dequeueReusableCellWithReuseIdentifier("YTVideoCollectionViewCell", forIndexPath: indexPath) as YTVideoCollectionViewCell
         
-        
+        let videoCache:YoutubeVideoCache = self.requestInfo.videoList[indexPath.row] as YoutubeVideoCache
+        cell.setupCell(videoCache)
         
         return cell
     }
