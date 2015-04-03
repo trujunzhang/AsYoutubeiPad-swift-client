@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		5E39F8871AB91E5C00A285AE /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E39F8861AB91E5C00A285AE /* Alamofire.framework */; };
 		5E39F88A1AB91EF000A285AE /* Haneke.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E39F8891AB91EF000A285AE /* Haneke.framework */; };
+		5E3F679B1ACEBE2F006850CE /* VideoWatchStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5E3F67991ACEBE2F006850CE /* VideoWatchStoryboard.storyboard */; };
 		5E5B94B31AC972C300BF2FB8 /* YTTabBarItemsUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E5B94B21AC972C300BF2FB8 /* YTTabBarItemsUtils.swift */; };
 		5E5EF9661AB831CB00CCB831 /* MySwiftClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E6062021AB81D8600FED7E5 /* MySwiftClass.swift */; };
 		5E6062031AB81D8600FED7E5 /* MySwiftClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E6062021AB81D8600FED7E5 /* MySwiftClass.swift */; };
@@ -76,6 +77,7 @@
 		5E033EA41AC4122A001014A8 /* SDWebImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SDWebImage.framework; path = Carthage/Build/iOS/SDWebImage.framework; sourceTree = "<group>"; };
 		5E39F8861AB91E5C00A285AE /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
 		5E39F8891AB91EF000A285AE /* Haneke.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Haneke.framework; path = Carthage/Build/iOS/Haneke.framework; sourceTree = "<group>"; };
+		5E3F679A1ACEBE2F006850CE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/VideoWatchStoryboard.storyboard; sourceTree = "<group>"; };
 		5E5B94B21AC972C300BF2FB8 /* YTTabBarItemsUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YTTabBarItemsUtils.swift; sourceTree = "<group>"; };
 		5E6062021AB81D8600FED7E5 /* MySwiftClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MySwiftClass.swift; sourceTree = "<group>"; };
 		5E8923711AC6DF7700FCD444 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Autolayout.storyboard; sourceTree = "<group>"; };
@@ -239,6 +241,7 @@
 				5E9902301AB5C3C700391615 /* AsYoutubeiPadSwiftClient-Bridging-Header.h */,
 				5E8923701AC6DF7700FCD444 /* Autolayout.storyboard */,
 				5EB01F031ACC25AC00C00AFE /* ReusedViewControllers.storyboard */,
+				5E3F67991ACEBE2F006850CE /* VideoWatchStoryboard.storyboard */,
 			);
 			path = AsYoutubeiPadSwiftClient;
 			sourceTree = "<group>";
@@ -460,6 +463,7 @@
 				5EBCDCFB1AB5C22C0023F037 /* Main.storyboard in Resources */,
 				5EBCDD001AB5C22C0023F037 /* LaunchScreen.xib in Resources */,
 				5EB01F051ACC25AC00C00AFE /* ReusedViewControllers.storyboard in Resources */,
+				5E3F679B1ACEBE2F006850CE /* VideoWatchStoryboard.storyboard in Resources */,
 				5EBCDCFD1AB5C22C0023F037 /* Images.xcassets in Resources */,
 				5E8923721AC6DF7700FCD444 /* Autolayout.storyboard in Resources */,
 			);
@@ -622,6 +626,14 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		5E3F67991ACEBE2F006850CE /* VideoWatchStoryboard.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5E3F679A1ACEBE2F006850CE /* Base */,
+			);
+			name = VideoWatchStoryboard.storyboard;
+			sourceTree = "<group>";
+		};
 		5E8923701AC6DF7700FCD444 /* Autolayout.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
