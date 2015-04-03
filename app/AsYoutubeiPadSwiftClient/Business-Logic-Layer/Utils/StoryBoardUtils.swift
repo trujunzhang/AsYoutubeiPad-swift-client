@@ -23,6 +23,7 @@ class StoryBoardUtils:NSObject {
         return storyboard
     }
     
+
     
     class func getChannelBannerViewController() -> ChannelBannerViewController {
         var viewController: ChannelBannerViewController = getReusedStoryBoard().instantiateViewControllerWithIdentifier("ChannelBannerViewController") as ChannelBannerViewController

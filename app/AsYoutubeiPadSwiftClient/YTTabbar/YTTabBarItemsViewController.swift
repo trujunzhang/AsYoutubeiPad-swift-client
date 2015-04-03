@@ -35,18 +35,11 @@ class YTTabBarItemsViewController:UIViewController {
     
     override func viewDidLoad() {
         
-//        layout(buttonGroupPanel!) { view1 in
-//            
-//            view1.centerX == view1.superview!.centerX
-//            view1.width == 322
-//            
-//            view1.top == view1.superview!.top
-//        }
-
     }
     
     func makeTabBarItemsDictionary() ->TabBarItemsDictionary {
         let controller:UIViewController? = UIViewController()
+        let collectionView:YTVideosCollectionViewController = StoryBoardUtils.getYTVideosCollectionViewController()
         
         //1
         let buttons:NSMutableDictionary = NSMutableDictionary()
@@ -56,7 +49,7 @@ class YTTabBarItemsViewController:UIViewController {
         
         //2
         let viewControllers:NSMutableDictionary = NSMutableDictionary()
-        viewControllers.setObject(controller!, forKey: "Activity")
+        viewControllers.setObject(collectionView, forKey: "Activity")
         viewControllers.setObject(controller!, forKey: "Videos")
         viewControllers.setObject(controller!, forKey: "PlayList")
         

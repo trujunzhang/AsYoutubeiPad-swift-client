@@ -22,6 +22,8 @@ class SubscriptionsViewController: FrontBaseViewController {
         channelPageViewController.view.frame = container.bounds
         
         container.addSubview(channelPageViewController.view)
+        
+        self.addChildViewController(channelPageViewController)
     }
     
     func test(){
@@ -41,6 +43,7 @@ class SubscriptionsViewController: FrontBaseViewController {
         let headerView:UIView = UIView()
         headerView.frame = CGRectMake(0, 100, self.view.frame.size.width, 44)
         headerView.addSubview(tabBarItemsController.view)
+        
         
         //        self.view.addSubview(headerView)
     }

@@ -9,6 +9,10 @@
 import UIKit
 
 class YTVideoCollectionViewCell: UICollectionViewCell {
+    
+    
+    @IBOutlet var titleLabel: UILabel!
+    
     var youTubeVideo:GTLYouTubeVideo?
     
     init(_youTubeVideo:GTLYouTubeVideo) {

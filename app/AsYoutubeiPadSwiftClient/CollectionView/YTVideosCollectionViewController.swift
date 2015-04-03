@@ -10,11 +10,16 @@ import Foundation
 
 class YTVideosCollectionViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
     
+    @IBOutlet var collectionView: UICollectionView!
+    
     var requestInfo = YTYoutubeRequestInfo()
     
     override init() {
         super.init()
-        
+
+    }
+    
+    func makeRequestTask(){
         requestInfo = YoutubeFetcher.sharedInstance.prepareRequestSearch("Sketch 3", completeHandler: { (object, sucess) -> Void in
             if(sucess == true){
                 var array:NSArray = object as NSArray
@@ -22,6 +27,8 @@ class YTVideosCollectionViewController: UIViewController, UICollectionViewDataSo
                 var length = array.count
                 
                 self.requestInfo.appendArray(array)
+                
+                self.collectionView.reloadData()
             }
         })
     }
@@ -33,26 +40,38 @@ class YTVideosCollectionViewController: UIViewController, UICollectionViewDataSo
     
     // Mark :
     override func viewDidLoad() {
+        super.viewDidLoad()
+        self.collectionView.dataSource = self
+        self.collectionView.delegate = self
         
+        self.view.backgroundColor = UIColor.yellowColor()
+        self.collectionView.backgroundColor = UIColor.orangeColor()
+        
+        makeRequestTask()
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        var x = 0
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
     }
     
     // Mark : delegate of UICollectionViewDataSource
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-//        var count:int  = requestInfo?.getVideoList().count
-        
-//        return requestInfo?.getVideoListCount()
-        return 1
-        
-//        return requestInfo?.videoList?.count
-    
+        return self.requestInfo.getVideoListCount()
     }
     
     // The cell that is returned must be retrieved from a call to -dequeueReusableCellWithReuseIdentifier:forIndexPath:
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCellWithReuseIdentifier("YTVideoCollectionViewCell", forIndexPath: indexPath) as YTVideoCollectionViewCell
         
-        var cell: YTVideoCollectionViewCell?
         
-        return cell!
+        
+        return cell
     }
     
     

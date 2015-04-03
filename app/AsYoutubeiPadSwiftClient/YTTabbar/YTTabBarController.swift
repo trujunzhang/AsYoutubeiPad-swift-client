@@ -8,6 +8,7 @@
 
 import Foundation
 import Cartography
+import Cartography
 
 protocol YTTabBarControllerDelegate  {
     func ytTabBarController(tabBarController: YTTabBarController, shouldSelectViewController viewController: UIViewController) -> Bool
@@ -17,16 +18,20 @@ protocol YTTabBarControllerDelegate  {
 
 class YTTabBarController: UIViewController {
     
-    var viewControllers:NSDictionary?
+    var viewControllers = NSDictionary()
+    
     var selectedViewController:UIViewController?
-    var selectedIndex:NSInteger = 0
+    var selectedIndex = 0
+    
     var delegate:YTTabBarControllerDelegate?
-    var tabBarAppearanceSettings:NSDictionary?
-    var debug:Bool?
+    
+    var tabBarAppearanceSettings = NSDictionary()
+    
+    var debug = false
     
     // Mark : Private variables
     var presentationView:UIView?
-    var isFirstAppear:Bool?
+    var isFirstAppear = false
     
     var tabBarItemsView : UIView?
     var tabBarItemsViewController : YTTabBarItemsViewController?
@@ -39,7 +44,6 @@ class YTTabBarController: UIViewController {
         var _tabBarItemsViewController: YTTabBarItemsViewController = StoryBoardUtils.getYTTabBarItemsViewController()
         
         let _tabBarItemsView:UIView = _tabBarItemsViewController.view!
-//        _tabBarItemsView.frame = CGRectMake(0, 0, self.view.frame.size.width, 44)
         
         tabBarItemsViewController = _tabBarItemsViewController
         tabBarItemsView = _tabBarItemsView
@@ -50,31 +54,54 @@ class YTTabBarController: UIViewController {
         // 2
         presentationView = UIView()
         
+        presentationView?.backgroundColor = UIColor.blueColor()
+        
         // 3
         self.view.addSubview(_tabBarItemsView)
         self.view.addSubview(presentationView!)
         
         // 4
-        layout(tabBarItemsView!) { view1 in
+        layout(tabBarItemsView!,presentationView!) { view1,view2 in
             
             view1.centerX == view1.superview!.centerX
-
+            view2.centerX == view1.centerX
+            
             view1.width   == view1.superview!.width
+            view2.width   == view1.width
+            
             view1.height  == TAB_HEIGHT
             
-            view1.top == view1.superview!.top
+            view1.top     == view1.superview!.top
+            view2.top     == view1.bottom
+            
+            view2.bottom  == view2.superview!.bottom
         }
+        
+        
     }
     
     
     override func viewWillAppear(animated: Bool) {
-        //         NSParameterAssert(_viewControllers.count > 0);
-        
+        // 5
+        self.viewFirstViewController()
+    }
+    
+    func viewFirstViewController() {
         // Select first view controller on first Launch.
         if(isFirstAppear == false){
             isFirstAppear = true
-            //            [self selectViewController:[_viewControllers firstObject]];
             
+            var dictionary = tabBarItemsDictionary?.viewControllers
+            
+            var dic:NSMutableDictionary = dictionary!
+            
+            let controller : UIViewController = dic.objectForKey("Activity") as UIViewController
+            
+            var bDictionary = tabBarItemsDictionary?.buttons
+            
+            let button : UIButton = bDictionary?.objectForKey("Activity") as UIButton
+            
+            self.selectViewController(controller, withButton: button)
         }
     }
     
@@ -85,7 +112,9 @@ class YTTabBarController: UIViewController {
     }
     
     func selectViewController(viewController:UIViewController){
-        if let presentedView:UIView = presentationView?.subviews.first! as? UIView {
+        let subviews = presentationView?.subviews
+        if(subviews?.count > 0){
+            let presentedView:UIView = subviews?.first! as UIView
             presentedView.removeFromSuperview()
         }
         
@@ -94,7 +123,14 @@ class YTTabBarController: UIViewController {
     }
     
     func fitView(toPresentView:UIView, intoView containerView:UIView ){
-        
+        layout(toPresentView,containerView) { view1,view2 in
+            
+            view1.centerX == view2.centerX
+            view1.centerY == view2.centerY
+            
+            view1.width   == view2.width
+            view1.height  == view2.height
+        }
     }
     
     

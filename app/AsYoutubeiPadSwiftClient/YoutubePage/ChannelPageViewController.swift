@@ -31,6 +31,8 @@ class ChannelPageViewController:UIViewController {
         
         tabBarView = _tabBarView
         
+        self.addChildViewController(tabBarController)
+        
 //        tabBarView?.backgroundColor = UIColor.blueColor()
         
         self.view.addSubview(tabBarView!)
@@ -53,8 +55,12 @@ class ChannelPageViewController:UIViewController {
         }
     }
     
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+    }
+    
     override func viewDidLayoutSubviews() {
-        
+        var x = 0
     }
     
     

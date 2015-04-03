@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Channel Banner View Controller-->
@@ -90,30 +91,56 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="u8s-ED-R7v">
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="u8s-ED-R7v">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="WOA-4v-D1G" customClass="CHTCollectionViewWaterfallLayout">
-                                    <size key="itemSize" width="50" height="50"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="WOA-4v-D1G">
+                                    <size key="itemSize" width="183" height="155"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="k5v-EP-O1O">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="YTVideoCollectionViewCell" id="k5v-EP-O1O" customClass="YTVideoCollectionViewCell" customModule="AsYoutubeiPadSwiftClient" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="183" height="155"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R5Q-cK-Fv9">
+                                                    <rect key="frame" x="33" y="67" width="111" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
+                                        <color key="backgroundColor" red="0.92156862750000001" green="0.27058823529999998" blue="0.1333333333" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstItem="R5Q-cK-Fv9" firstAttribute="leading" secondItem="k5v-EP-O1O" secondAttribute="leadingMargin" constant="25" id="GwE-zI-GfO"/>
+                                            <constraint firstItem="R5Q-cK-Fv9" firstAttribute="centerY" secondItem="k5v-EP-O1O" secondAttribute="centerY" id="J3S-vu-HZ7"/>
+                                            <constraint firstAttribute="trailingMargin" secondItem="R5Q-cK-Fv9" secondAttribute="trailing" constant="31" id="lHb-7a-2a6"/>
+                                        </constraints>
+                                        <connections>
+                                            <outlet property="titleLabel" destination="R5Q-cK-Fv9" id="uTD-L3-tBt"/>
+                                        </connections>
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="u8s-ED-R7v" firstAttribute="leading" secondItem="kg5-LQ-O9M" secondAttribute="leading" id="1OR-dQ-5Vq"/>
+                            <constraint firstItem="u8s-ED-R7v" firstAttribute="bottom" secondItem="USD-eb-yup" secondAttribute="top" id="AFj-08-Q98"/>
+                            <constraint firstAttribute="centerX" secondItem="u8s-ED-R7v" secondAttribute="centerX" id="NEF-cf-PlV"/>
+                            <constraint firstAttribute="centerY" secondItem="u8s-ED-R7v" secondAttribute="centerY" id="Thd-KI-BEf"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="collectionView" destination="u8s-ED-R7v" id="Mwq-AW-Aln"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RSa-z4-TlN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
