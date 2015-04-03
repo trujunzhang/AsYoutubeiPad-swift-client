@@ -14,6 +14,8 @@ class YoutubeFetcherTests: XCTestCase {
     var requestInfo = YTYoutubeRequestInfo()
     var isSucess = false
     
+    var videoID = "eoXneK3WlgQ"
+    
     override func setUp() {
         super.setUp()
         // Put setup code here. This method is called before the invocation of each test method in the class.

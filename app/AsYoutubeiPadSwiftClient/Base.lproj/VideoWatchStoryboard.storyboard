@@ -7,7 +7,7 @@
         <!--Video Watch Side View Controller-->
         <scene sceneID="YZp-zI-BLo">
             <objects>
-                <viewController storyboardIdentifier="YTVideoWatchSideViewController" id="WeF-cF-Aol" customClass="YTVideoWatchSideViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="YTVideoWatchSideViewController" id="WeF-cF-Aol" customClass="YTVideoWatchSideViewController" customModule="AsYoutubeiPadSwiftClient" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Ldx-r0-W9n"/>
                         <viewControllerLayoutGuide type="bottom" id="mFo-E1-hxt"/>
@@ -43,7 +43,7 @@
         <!--Video Watch Info View Controller-->
         <scene sceneID="RuG-mH-dim">
             <objects>
-                <viewController storyboardIdentifier="YTVideoWatchInfoViewController" id="g9e-mD-rzC" customClass="YTVideoWatchInfoViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="YTVideoWatchInfoViewController" id="g9e-mD-rzC" customClass="YTVideoWatchInfoViewController" customModule="AsYoutubeiPadSwiftClient" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="vpF-YX-VYP"/>
                         <viewControllerLayoutGuide type="bottom" id="kwS-W3-YNl"/>
@@ -79,7 +79,7 @@
         <!--Video Watch Playlist View Controller-->
         <scene sceneID="sY5-hL-4ML">
             <objects>
-                <viewController storyboardIdentifier="YTVideoWatchPlaylistViewController" id="P1R-FV-dgv" customClass="YTVideoWatchPlaylistViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="YTVideoWatchPlaylistViewController" id="P1R-FV-dgv" customClass="YTVideoWatchPlaylistViewController" customModule="AsYoutubeiPadSwiftClient" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="weN-x1-Mz1"/>
                         <viewControllerLayoutGuide type="bottom" id="xrZ-TR-BIX"/>

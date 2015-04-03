@@ -8,8 +8,13 @@
 
 import Foundation
 
-class YTVideoWatchInfoViewController:UIViewController {
+class YTVideoWatchInfoViewController: UIViewController {
+    
+    var videoID = ""
+
+    
     override func viewDidLoad() {
         
     }
+    
 }

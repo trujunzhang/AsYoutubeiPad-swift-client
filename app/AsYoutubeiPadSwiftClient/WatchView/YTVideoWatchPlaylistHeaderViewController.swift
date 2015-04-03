@@ -9,6 +9,9 @@
 import Foundation
 
 class YTVideoWatchPlaylistHeaderViewController: UIViewController {
+    
+    var videoID = ""
+
     override func viewDidLoad() {
         
     }

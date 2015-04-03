@@ -8,8 +8,10 @@
 
 import Foundation
 
-class MovieEmbeddedViewController:UIViewController {
+class MovieEmbeddedViewController: UIViewController {
     
+    var videoID = ""
+
     override func viewDidLoad() {
         
     }

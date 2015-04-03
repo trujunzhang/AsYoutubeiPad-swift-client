@@ -9,8 +9,10 @@
 import Foundation
 
 
-class YTVideoWatchSideViewController:UIViewController {
+class YTVideoWatchSideViewController: UIViewController {
     
+    var videoID = ""
+
     override func viewDidLoad() {
         
     }
