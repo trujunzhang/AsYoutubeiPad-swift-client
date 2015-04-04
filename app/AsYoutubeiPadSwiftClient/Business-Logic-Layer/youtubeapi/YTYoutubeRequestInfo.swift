@@ -41,6 +41,7 @@ class YTYoutubeRequestInfo: NSObject {
             "part" : "snippet",
             "type" : "video",
             "relatedToVideoId":relatedToVideoId,
+            "fields" : "items(id/videoId),nextPageToken"
         ]
         
         self.parameters.setDictionary(_parameters)
