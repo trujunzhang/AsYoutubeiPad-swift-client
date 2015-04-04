@@ -9,6 +9,7 @@
 import UIKit
 import XCTest
 
+
 class YouTubeExtractorUtilsTests: YoutubeFetcherBaseTests {
     
     override func setUp() {
@@ -32,18 +33,21 @@ class YouTubeExtractorUtilsTests: YoutubeFetcherBaseTests {
             self.isSucess = sucess
             
             if(sucess == true){
-                var array:NSArray = object as NSArray
+                var dict:NSMutableDictionary = object as NSMutableDictionary
                 
-                XCTAssertTrue(array.count > 0, "Array length must greater than 0")
+                XCTAssertTrue(dict.count > 0, "dict length must greater than 0")
                 
-                let model:AnyObject = array[0]
-                let youtubeVideo:IGYouTubeVideo = model  as IGYouTubeVideo // Used
-                XCTAssertTrue(model is IGYouTubeVideo, "Array object must being IGYouTubeVideo")
+//               let last:IGYouTubeVideo = dict.objectForKey(YTVideoQualityStringSmall240)
+
                 
-                let url:NSString = youtubeVideo.videoURL.URLString
+                //                let model:AnyObject = array[0]
+                //                let youtubeVideo:IGYouTubeVideo = model  as IGYouTubeVideo // Used
+                //                XCTAssertTrue(model is IGYouTubeVideo, "Array object must being IGYouTubeVideo")
+                //
+                //                let url:NSString = youtubeVideo.videoURL.URLString
+                //
+                //                XCTAssertFalse(url.isEqualToString(""), "url object must not nil")
                 
-                XCTAssertFalse(url.isEqualToString(""), "url object must not nil")
-                                
             }
             expectation.fulfill()
             
