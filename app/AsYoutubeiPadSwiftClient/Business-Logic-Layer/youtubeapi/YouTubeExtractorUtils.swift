@@ -23,7 +23,7 @@ class YouTubeExtractorUtils  {
         IGYouTubeExtractor.sharedInstance().extractVideoForIdentifier(videoID) { (array, error) -> Void in
             if(error == nil){
                 
-                let convert:NSMutableDictionary = self.resolveVideoQuality(array)
+                let convert:Dictionary<String,IGYouTubeVideo> = self.resolveVideoQuality(array)
                 completeHandler(convert,true)
                 
             }else{
@@ -32,14 +32,14 @@ class YouTubeExtractorUtils  {
         }
     }
     
-    class func resolveVideoQuality(array: NSArray) -> NSMutableDictionary{
-        let convert:NSMutableDictionary = NSMutableDictionary()
+    class func resolveVideoQuality(array: NSArray) -> [String:IGYouTubeVideo]{
+        var convert:[String:IGYouTubeVideo] = [:]
         
         for model in array {
             let last:IGYouTubeVideo = model as IGYouTubeVideo
             let qualityString = qualityStringForQuality(last.quality)
-            
-            convert.setValue(last, forKey: qualityString)
+
+            convert[qualityString] = last
         }
         
         return convert

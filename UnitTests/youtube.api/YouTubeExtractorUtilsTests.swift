@@ -33,20 +33,16 @@ class YouTubeExtractorUtilsTests: YoutubeFetcherBaseTests {
             self.isSucess = sucess
             
             if(sucess == true){
-                var dict:NSMutableDictionary = object as NSMutableDictionary
+                var dict:[String:IGYouTubeVideo] = object as Dictionary
                 
                 XCTAssertTrue(dict.count > 0, "dict length must greater than 0")
                 
-//               let last:IGYouTubeVideo = dict.objectForKey(YTVideoQualityStringSmall240)
-
+                let last:IGYouTubeVideo = dict[YTVideoQualityStringSmall240]!
                 
-                //                let model:AnyObject = array[0]
-                //                let youtubeVideo:IGYouTubeVideo = model  as IGYouTubeVideo // Used
-                //                XCTAssertTrue(model is IGYouTubeVideo, "Array object must being IGYouTubeVideo")
-                //
-                //                let url:NSString = youtubeVideo.videoURL.URLString
-                //
-                //                XCTAssertFalse(url.isEqualToString(""), "url object must not nil")
+                XCTAssertNotNil(last, "IGYouTubeVideo not nil")
+                
+                let url:NSString = last.videoURL.URLString
+                XCTAssertFalse(url.isEqualToString(""), "url object must not nil")
                 
             }
             expectation.fulfill()
