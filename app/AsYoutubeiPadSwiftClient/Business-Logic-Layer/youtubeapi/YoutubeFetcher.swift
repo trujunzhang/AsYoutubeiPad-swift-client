@@ -15,7 +15,7 @@ protocol AuthorUserFetchingDelegate {
 }
 
 class YoutubeFetcher: NSObject {
-    typealias ObjectHandler = (AnyObject!, Bool!) -> Void
+  
     
     var youTubeService: GTLServiceYouTube?
     var _delegate: AuthorUserFetchingDelegate?

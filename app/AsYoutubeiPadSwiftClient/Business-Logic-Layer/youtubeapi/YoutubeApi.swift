@@ -30,6 +30,7 @@ enum YTPlayListItemsType: Int {
 
  let scope             = "https://www.googleapis.com/auth/youtube https://www.googleapis.com/auth/youtube.readonly"
 
+  typealias ObjectHandler = (AnyObject!, Bool!) -> Void
 
 struct YoutubeApi {
     

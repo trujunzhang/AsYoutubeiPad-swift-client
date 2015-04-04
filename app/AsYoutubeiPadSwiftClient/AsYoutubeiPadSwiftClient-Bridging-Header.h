@@ -22,6 +22,8 @@
 
 #import "CHTCollectionViewWaterfallLayout.h"
 
+#import "IGYouTubeExtractor.h"
+
 //#import "ImageCacheInterface.h"
 
 //#import <AFNetworking/AFNetworking.h>
