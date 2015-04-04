@@ -28,7 +28,7 @@ class YoutubeFetcherTests: XCTestCase {
         super.tearDown()
     }
     
-    func testFetchingChannelList() {
+    func _testFetchingChannelList() {
         let expectation = expectationWithDescription("fetchingChannelList")
         
         YoutubeFetcher.sharedInstance.fetchingChannelList("UC0wObT_HayGfWLdRAnFyPwA", completeHandler: { (object, sucess) -> Void in
@@ -44,7 +44,7 @@ class YoutubeFetcherTests: XCTestCase {
         
     }
     
-    func testSearchVideosByVideoType() {
+    func _testSearchVideosByVideoType() {
         let expectation = expectationWithDescription("SearchVideoListByVideoType")
         
         var videoCache:YoutubeVideoCache? // used
@@ -86,7 +86,7 @@ class YoutubeFetcherTests: XCTestCase {
         }
     }
     
-    func testFetchChannelForThumbnail(){
+    func _testFetchChannelForThumbnail(){
         let expectation = expectationWithDescription("fetchChannelForThumbnail")
         
         YoutubeFetcher.sharedInstance.fetchChannelForThumbnail("UCl-radPCbXcrYCE4EdNH3QA", completeHandler: { (object, sucess) -> Void in
