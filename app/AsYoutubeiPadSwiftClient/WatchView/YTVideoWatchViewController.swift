@@ -15,6 +15,7 @@ class YTVideoWatchViewController: UIViewController {
 
     
     var movieEmbeddedViewController:MovieEmbeddedViewController?
+    var movieEmbeddedView: UIView?
     var videoWatchInfoViewController:YTVideoWatchInfoViewController?
     var videoWatchSideViewController:YTVideoWatchSideViewController?
     var videoWatchPlaylistHeaderViewController:YTVideoWatchPlaylistHeaderViewController?
@@ -28,8 +29,8 @@ class YTVideoWatchViewController: UIViewController {
         movieEmbeddedViewController                    = StoryBoardUtils.getMovieEmbeddedViewController()
         movieEmbeddedViewController?.videoID = videoID
         
-//        let movieEmbeddedView:UIView = movieEmbeddedViewController?.view
-//        self.view.addSubview(movieEmbeddedView)
+        movieEmbeddedView = movieEmbeddedViewController?.view
+        self.view.addSubview(movieEmbeddedView!)
         self.addChildViewController(movieEmbeddedViewController!)
         
         // 2
