@@ -9,7 +9,7 @@
 import UIKit
 import XCTest
 
-class YoutubeFetcherForVideosTests: YoutubeFetcherTests {
+class YoutubeFetcherForVideosTests: YoutubeFetcherBaseTests {
 
     override func setUp() {
         super.setUp()
@@ -36,7 +36,7 @@ class YoutubeFetcherForVideosTests: YoutubeFetcherTests {
                 if(sucess == true){
                     var array:NSArray = object as NSArray
                     
-                    XCTAssertTrue(array.count > 1000, "Array length must greater than 0")
+                    XCTAssertTrue(array.count > 0, "Array length must greater than 0")
                     
                     let model:AnyObject = array[0]
                     videoCache = model  as YoutubeVideoCache // Used
@@ -63,6 +63,37 @@ class YoutubeFetcherForVideosTests: YoutubeFetcherTests {
             }
         }
     }
+    
+    
+    func testFetchVideoDescription(){
+        let expectation = expectationWithDescription("fetchVideoDescription")
+        
+        YoutubeFetcher.sharedInstance.fetchVideoDescription(videoID, completeHandler: { (object, sucess) -> Void in
+            
+            XCTAssertNotNil(object, "object not nil")
+            
+            self.isSucess = sucess
+            
+            if(sucess == true){
+                var array:NSArray = object as NSArray
+                
+                XCTAssertTrue(array.count == 1, "Array length must be one")
+                
+                XCTAssertTrue(array[0] is YoutubeVideoCache, "Array object must being YoutubeVideoCache")
+                
+                var videoCache :YoutubeVideoCache = array[0] as YoutubeVideoCache
+                var description = YoutubeParser.getVideoDescription(videoCache)
+                XCTAssertNotNil(description, "description must not nil")
+            }
+            expectation.fulfill()
+            
+        })
+        
+        waitForExpectationsWithTimeout(10) { (error) in
+            XCTAssertNil(error, "\(error)")
+        }
+    }
+    
 
 
 }

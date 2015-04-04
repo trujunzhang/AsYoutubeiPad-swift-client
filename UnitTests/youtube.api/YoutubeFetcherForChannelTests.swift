@@ -1,26 +1,19 @@
 //
-//  YoutubeFetcherTests.swift
+//  YoutubeFetcherForChannelTests.swift
 //  AsYoutubeiPadSwiftClient
 //
-//  Created by djzhang on 3/26/15.
+//  Created by djzhang on 4/4/15.
 //  Copyright (c) 2015 djzhang. All rights reserved.
 //
 
-
+import UIKit
 import XCTest
 
+class YoutubeFetcherForChannelTests: YoutubeFetcherBaseTests {
 
-class YoutubeFetcherTests: XCTestCase {
-    var requestInfo = YTYoutubeRequestInfo()
-    var isSucess = false
-    
-    var videoID :NSString = "eoXneK3WIgQ"
-    
     override func setUp() {
         super.setUp()
         // Put setup code here. This method is called before the invocation of each test method in the class.
-        
-        isSucess = false
     }
     
     override func tearDown() {
@@ -43,7 +36,7 @@ class YoutubeFetcherTests: XCTestCase {
         }
         
     }
-        
+    
     func _testFetchChannelForThumbnail(){
         let expectation = expectationWithDescription("fetchChannelForThumbnail")
         
@@ -72,35 +65,6 @@ class YoutubeFetcherTests: XCTestCase {
             XCTAssertNil(error, "\(error)")
         }
     }
-    
-    func _testFetchVideoDescription(){
-        let expectation = expectationWithDescription("fetchVideoDescription")
-        
-        YoutubeFetcher.sharedInstance.fetchVideoDescription(videoID, completeHandler: { (object, sucess) -> Void in
-            
-            XCTAssertNotNil(object, "object not nil")
-            
-            self.isSucess = sucess
-            
-            if(sucess == true){
-                var array:NSArray = object as NSArray
-                
-                XCTAssertTrue(array.count == 1, "Array length must be one")
-                
-                XCTAssertTrue(array[0] is YoutubeVideoCache, "Array object must being YoutubeVideoCache")
-                
-                var videoCache :YoutubeVideoCache = array[0] as YoutubeVideoCache
-                var description = YoutubeParser.getVideoDescription(videoCache)
-                XCTAssertNotNil(description, "description must not nil")
-            }
-            expectation.fulfill()
-            
-        })
-        
-        waitForExpectationsWithTimeout(10) { (error) in
-            XCTAssertNil(error, "\(error)")
-        }
-    }
-    
-    
+
+
 }
