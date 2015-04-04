@@ -169,23 +169,28 @@ class YoutubeFetcher: NSObject {
         })
     }
     
+    // MARK : Videos.List
     func fetchVideoListWithVideoId(videoIds:NSString, completeHandler: ObjectHandler) {
-        fetchVideoList(videoIds, fields: "", completeHandler: completeHandler)
-    }
-    
-    func fetchVideoDescription(videoIds:NSString, completeHandler: ObjectHandler) {
-        fetchVideoList(videoIds, fields: "", completeHandler: completeHandler)
-    }
-    
-    func fetchVideoList(videoIds:NSString, fields: NSString, completeHandler: ObjectHandler) {
-        var parameters = NSMutableDictionary(dictionary: [
+        var parameters =  [
             "part"   : "id,snippet,contentDetails,statistics",
             "id"     : videoIds,
             ]
-        )
-        if(fields.isEqualToString("") == false){
-            parameters.setValue(fields, forKey: "fields")
-        }
+
+        fetchVideoList(parameters, completeHandler: completeHandler)
+    }
+    
+    func fetchVideoDescription(videoId:NSString, completeHandler: ObjectHandler) {
+        var parameters =  [
+            "part"   : "snippet, statistics",
+            "id"     : videoId,
+        ]
+        
+        fetchVideoList(parameters, completeHandler: completeHandler)
+    }
+    
+    func fetchVideoList(_parameters:NSDictionary, completeHandler: ObjectHandler) {
+        
+        var  parameters:NSMutableDictionary = NSMutableDictionary(dictionary:_parameters)
         
         MABYT3_APIRequest.sharedInstance().LISTVideosForURL(parameters, completion: {  (responseInfo, error) -> Void in
             if (error == nil) {

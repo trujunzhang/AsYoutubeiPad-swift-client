@@ -14,7 +14,7 @@ class YoutubeFetcherTests: XCTestCase {
     var requestInfo = YTYoutubeRequestInfo()
     var isSucess = false
     
-    var videoID :NSString = "eoXneK3WlgQ"
+    var videoID :NSString = "eoXneK3WIgQ"
     
     override func setUp() {
         super.setUp()
@@ -28,7 +28,7 @@ class YoutubeFetcherTests: XCTestCase {
         super.tearDown()
     }
     
-    func _testFetchingChannelList() {
+    func testFetchingChannelList() {
         let expectation = expectationWithDescription("fetchingChannelList")
         
         YoutubeFetcher.sharedInstance.fetchingChannelList("UC0wObT_HayGfWLdRAnFyPwA", completeHandler: { (object, sucess) -> Void in
@@ -36,7 +36,6 @@ class YoutubeFetcherTests: XCTestCase {
             var imageUrl = channel.snippet.thumbnails.high
             
             expectation.fulfill()
-            
         })
         
         waitForExpectationsWithTimeout(10) { (error) in
@@ -45,7 +44,7 @@ class YoutubeFetcherTests: XCTestCase {
         
     }
     
-    func _testSearchVideosByVideoType() {
+    func testSearchVideosByVideoType() {
         let expectation = expectationWithDescription("SearchVideoListByVideoType")
         
         var videoCache:YoutubeVideoCache? // used
@@ -59,12 +58,11 @@ class YoutubeFetcherTests: XCTestCase {
                 if(sucess == true){
                     var array:NSArray = object as NSArray
                     
-                    XCTAssertGreaterThan(array.count, 0, "Array length must greater than 0")
+                    XCTAssertTrue(array.count > 0, "Array length must greater than 0")
                     
                     let model:AnyObject = array[0]
                     videoCache = model  as YoutubeVideoCache // Used
-                    XCTAssertEqual(model is YoutubeVideoCache, true, "Array object must being YoutubeVideoCache")
-                    
+                    XCTAssertTrue(model is YoutubeVideoCache, "Array object must being YoutubeVideoCache")
                     
                     self.requestInfo.appendArray(array)
                 }
@@ -79,7 +77,7 @@ class YoutubeFetcherTests: XCTestCase {
                 XCTAssertNotNil(pageToken, "pageToken not nil")
                 
                 var length = self.requestInfo.getVideoListCount()
-                XCTAssertEqual(length, 20, "fetching data length is equal")
+                XCTAssertTrue(length == 20, "fetching data length is equal")
                 
                 var expectVideoCache:YoutubeVideoCache = self.requestInfo.videoList[0] as YoutubeVideoCache
                 var identifier = videoCache?.identifier
@@ -88,7 +86,7 @@ class YoutubeFetcherTests: XCTestCase {
         }
     }
     
-    func _testFetchChannelForThumbnail(){
+    func testFetchChannelForThumbnail(){
         let expectation = expectationWithDescription("fetchChannelForThumbnail")
         
         YoutubeFetcher.sharedInstance.fetchChannelForThumbnail("UCl-radPCbXcrYCE4EdNH3QA", completeHandler: { (object, sucess) -> Void in
@@ -100,9 +98,9 @@ class YoutubeFetcherTests: XCTestCase {
             if(sucess == true){
                 var array:NSArray = object as NSArray
                 
-                XCTAssertEqual(array.count, 1, "Array length must be one")
+                XCTAssertTrue(array.count == 1, "Array length must be one")
                 
-                XCTAssertEqual(array[0] is MABYT3_Channel, true, "Array object must being MABYT3_Channel")
+                XCTAssertTrue(array[0] is MABYT3_Channel, "Array object must being MABYT3_Channel")
                 
                 var channel :MABYT3_Channel = array[0] as MABYT3_Channel
                 var imageUrl = YoutubeModelParser.getMABChannelThumbnalUrl(channel)
@@ -120,7 +118,7 @@ class YoutubeFetcherTests: XCTestCase {
     func testFetchVideoDescription(){
         let expectation = expectationWithDescription("fetchVideoDescription")
         
-        YoutubeFetcher.sharedInstance.fetchVideoDescription("eoXneK3WlgQ", completeHandler: { (object, sucess) -> Void in
+        YoutubeFetcher.sharedInstance.fetchVideoDescription(videoID, completeHandler: { (object, sucess) -> Void in
             
             XCTAssertNotNil(object, "object not nil")
             
@@ -129,9 +127,9 @@ class YoutubeFetcherTests: XCTestCase {
             if(sucess == true){
                 var array:NSArray = object as NSArray
                 
-                XCTAssertGreaterThan(array.count, 0, "Array length must greater than 0")
+                XCTAssertTrue(array.count == 1, "Array length must be one")
                 
-                XCTAssertEqual(array[0] is YoutubeVideoCache, true, "Array object must being YoutubeVideoCache")
+                XCTAssertTrue(array[0] is YoutubeVideoCache, "Array object must being YoutubeVideoCache")
                 
                 var videoCache :YoutubeVideoCache = array[0] as YoutubeVideoCache
                 var description = YoutubeParser.getVideoDescription(videoCache)
