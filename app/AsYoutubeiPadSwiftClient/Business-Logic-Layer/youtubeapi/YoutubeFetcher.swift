@@ -133,7 +133,7 @@ class YoutubeFetcher: NSObject {
     // Mark : searchList
     
     
-    func prepareRequestSearch(queryTeam:NSString,completeHandler: ObjectHandler) -> YTYoutubeRequestInfo {
+    func prepareRequestSearch(queryTeam: NSString,completeHandler: ObjectHandler) -> YTYoutubeRequestInfo {
         var requestInfo: YTYoutubeRequestInfo = YTYoutubeRequestInfo()
         
         requestInfo.makeRequestForSearchWithQueryTeam(queryTeam)
@@ -142,6 +142,17 @@ class YoutubeFetcher: NSObject {
         
         return requestInfo
     }
+    
+    func prepareFetchingRelativeVideos(relatedToVideoId: NSString, completeHandler: ObjectHandler) -> YTYoutubeRequestInfo {
+        var requestInfo: YTYoutubeRequestInfo = YTYoutubeRequestInfo()
+        
+        requestInfo.makeRequestForRelatedVideo(relatedToVideoId)
+        
+        search(requestInfo, completeHandler: completeHandler)
+        
+        return requestInfo
+    }
+
     
     func search(requestInfo: YTYoutubeRequestInfo, completeHandler: ObjectHandler) {
         
@@ -169,6 +180,9 @@ class YoutubeFetcher: NSObject {
         })
     }
     
+
+    
+    
     // MARK : Videos.List
     func fetchVideoListWithVideoId(videoIds:NSString, completeHandler: ObjectHandler) {
         var parameters =  [
@@ -189,10 +203,8 @@ class YoutubeFetcher: NSObject {
     }
     
     func fetchVideoList(_parameters:NSDictionary, completeHandler: ObjectHandler) {
-        
-        var  parameters:NSMutableDictionary = NSMutableDictionary(dictionary:_parameters)
-        
-        MABYT3_APIRequest.sharedInstance().LISTVideosForURL(parameters, completion: {  (responseInfo, error) -> Void in
+
+        MABYT3_APIRequest.sharedInstance().LISTVideosForURL(NSMutableDictionary(dictionary:_parameters), completion: {  (responseInfo, error) -> Void in
             if (error == nil) {
                 completeHandler(responseInfo.array, true)
             }else{

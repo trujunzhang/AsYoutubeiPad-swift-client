@@ -35,12 +35,22 @@ class YTYoutubeRequestInfo: NSObject {
         return videoList.count
     }
     
+    
+    func makeRequestForRelatedVideo(relatedToVideoId:NSString){
+        var _parameters = [
+            "part" : "snippet",
+            "type" : "video",
+            "relatedToVideoId":relatedToVideoId,
+        ]
+        
+        self.parameters.setDictionary(_parameters)
+    }
+    
     func makeRequestForSearchWithQueryTeam(queryTeam:NSString){
         self.queryType = .YTSegmentItemVideo
         var queryTypeString = "video"
         
-        //        var fieldsValue:NSString = "items(id/videoId),nextPageToken"
-        var _parameters:NSMutableDictionary = [
+        var _parameters = [
             "q" : queryTeam,
             "type" : queryTypeString,
             "part" : "id,snippet",
