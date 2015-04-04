@@ -11,8 +11,20 @@ import Foundation
 class MovieEmbeddedViewController: UIViewController {
     
     var videoID = ""
-
+    var dict:[String:IGYouTubeVideo] = [:]
+    
     override func viewDidLoad() {
-        
+        YoutubeExtractor()
+    }
+    
+    func YoutubeExtractor(){
+        YouTubeExtractorUtils.YoutubeExtractor(videoID, completeHandler: { (object, sucess) -> Void in
+            
+            if(sucess == true){
+                self.dict = object as Dictionary
+                
+            }
+            
+        })
     }
 }
