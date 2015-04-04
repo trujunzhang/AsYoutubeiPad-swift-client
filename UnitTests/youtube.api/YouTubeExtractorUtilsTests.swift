@@ -43,8 +43,7 @@ class YouTubeExtractorUtilsTests: YoutubeFetcherBaseTests {
                 let url:NSString = youtubeVideo.videoURL.URLString
                 
                 XCTAssertFalse(url.isEqualToString(""), "url object must not nil")
-                
-                
+                                
             }
             expectation.fulfill()
             
