@@ -22,7 +22,7 @@ class YoutubeFetcherForVideosTests: YoutubeFetcherBaseTests {
     }
 
     
-    func testSearchVideosByVideoType() {
+    func _testSearchVideosByVideoType() {
         let expectation = expectationWithDescription("SearchVideoListByVideoType")
         
         var videoCache:YoutubeVideoCache? // used
@@ -64,6 +64,49 @@ class YoutubeFetcherForVideosTests: YoutubeFetcherBaseTests {
         }
     }
     
+    
+    func testFetchingRelativeVideos() {
+        let expectation = expectationWithDescription("fetchingRelativeVideos")
+        
+        var videoCache:YoutubeVideoCache? // used
+        
+        requestInfo =
+            YoutubeFetcher.sharedInstance.prepareFetchingRelativeVideos(videoID, completeHandler: { (object, sucess) -> Void in
+                XCTAssertNotNil(object, "object not nil")
+                
+                self.isSucess = sucess
+                
+                if(sucess == true){
+                    var array:NSArray = object as NSArray
+                    
+                    XCTAssertTrue(array.count > 0, "Array length must greater than 0")
+                    
+                    let model:AnyObject = array[0]
+                    videoCache = model  as YoutubeVideoCache // Used
+                    XCTAssertTrue(model is YoutubeVideoCache, "Array object must being YoutubeVideoCache")
+                    
+                    self.requestInfo.appendArray(array)
+                }
+                expectation.fulfill()
+            })
+        
+        waitForExpectationsWithTimeout(10) { (error) in
+            XCTAssertNil(error, "\(error)")
+            
+            if(self.isSucess == true){
+                var pageToken = self.requestInfo.getPageToken()
+                XCTAssertNotNil(pageToken, "pageToken not nil")
+                
+                var length = self.requestInfo.getVideoListCount()
+                XCTAssertTrue(length == 20, "fetching data length is equal")
+                
+                var expectVideoCache:YoutubeVideoCache = self.requestInfo.videoList[0] as YoutubeVideoCache
+                var identifier = videoCache?.identifier
+                XCTAssertEqual(identifier!, expectVideoCache.identifier, "the same YoutubeVideoCache")
+            }
+        }
+    }
+
     
     func testFetchVideoDescription(){
         let expectation = expectationWithDescription("fetchVideoDescription")
