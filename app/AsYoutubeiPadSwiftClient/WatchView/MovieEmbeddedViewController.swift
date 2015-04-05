@@ -9,13 +9,17 @@
 import Foundation
 import Cartography
 
-class MovieEmbeddedViewController: UIViewController {
+class MovieEmbeddedViewController: UIViewController,ALMoviePlayerControllerDelegate {
     
     var videoID = ""
     var dict:[String:IGYouTubeVideo] = [:]
     
+    var moviePlayer : ALMoviePlayerController?
+    
     override func viewDidLoad() {
         YoutubeExtractor()
+        
+        self.view.backgroundColor = UIColor.redColor()
     }
     
     func YoutubeExtractor(){
@@ -29,4 +33,16 @@ class MovieEmbeddedViewController: UIViewController {
             
         })
     }
+    
+    func setupMoviePlayer(){
+        moviePlayer = ALMoviePlayerController(frame: self.view.frame)
+        
+    }
+    
+    // MARK : protocol for ALMoviePlayerControllerDelegate
+    func moviePlayerWillMoveFromWindow(){
+        
+    }
+    
+    
 }

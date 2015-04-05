@@ -7,7 +7,7 @@
 //
 
 import Foundation
-
+import Cartography
 class YTVideoWatchViewController: UIViewController {
     
     
@@ -50,8 +50,22 @@ class YTVideoWatchViewController: UIViewController {
         videoWatchPlaylistViewController?.videoID = videoID
         
         
-        
+        setupViewLayout()
     }
+    
+    func setupViewLayout(){
+        layout(movieEmbeddedView!) { view1 in
+            
+            view1.centerX == view1.superview!.centerX
+            view1.centerY == view1.superview!.centerY
+            
+            view1.width   == view1.superview!.width
+            view1.height  == view1.superview!.height
+
+        }
+    }
+    
+    
     
     
 }

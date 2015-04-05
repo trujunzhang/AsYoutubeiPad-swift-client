@@ -67,13 +67,7 @@ struct YoutubeApi {
         }
     }
     
-    enum ImageSize: Int {
-        case Tiny = 1
-        case Small = 2
-        case Medium = 3
-        case Large = 4
-        case XLarge = 5
-    }
+
 }
 
 

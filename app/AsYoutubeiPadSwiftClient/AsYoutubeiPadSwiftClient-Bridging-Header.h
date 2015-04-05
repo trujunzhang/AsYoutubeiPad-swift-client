@@ -24,6 +24,8 @@
 
 #import "IGYouTubeExtractor.h"
 
+#import "ALMoviePlayerController.h"
+
 //#import "ImageCacheInterface.h"
 
 //#import <AFNetworking/AFNetworking.h>

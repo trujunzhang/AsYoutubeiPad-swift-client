@@ -33,6 +33,8 @@ def import_pods
   pod "App_Module_Resources", :path => "../modules/App_Module_Resources"
   pod "YouTubeAPI3-Objective-C-wrapper", :path => "../modules/YouTubeAPI3-Objective-C-wrapper"
 
+  pod "WPMoviePlayerController", :path => "../dependencies/WPMoviePlayerController"
+
 end
 
 target 'AsYoutubeiPadSwiftClient', :exclusive => true do
