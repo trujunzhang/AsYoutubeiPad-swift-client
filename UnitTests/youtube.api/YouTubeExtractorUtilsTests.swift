@@ -37,11 +37,12 @@ class YouTubeExtractorUtilsTests: YoutubeFetcherBaseTests {
                 
                 XCTAssertTrue(dict.count > 0, "dict length must greater than 0")
                 
-                let last:IGYouTubeVideo = dict[YTVideoQualityStringSmall240]!
+                let gVideo:IGYouTubeVideo = dict[YTVideoQualityStringSmall240]!
                 
-                XCTAssertNotNil(last, "IGYouTubeVideo not nil")
+                XCTAssertNotNil(gVideo, "IGYouTubeVideo not nil")
                 
-                let url:NSString = last.videoURL.URLString
+                let videoURL:NSURL = gVideo.videoURL
+                let url:NSString = videoURL.URLString
                 XCTAssertFalse(url.isEqualToString(""), "url object must not nil")
                 
                 

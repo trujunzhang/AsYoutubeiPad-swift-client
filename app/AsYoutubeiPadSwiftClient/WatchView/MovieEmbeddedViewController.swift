@@ -19,6 +19,8 @@ class MovieEmbeddedViewController: UIViewController,ALMoviePlayerControllerDeleg
     override func viewDidLoad() {
         YoutubeExtractor()
         
+        setupMoviePlayer()
+        
         self.view.backgroundColor = UIColor.redColor()
     }
     
@@ -28,15 +30,39 @@ class MovieEmbeddedViewController: UIViewController,ALMoviePlayerControllerDeleg
             if(sucess == true){
                 self.dict = object as Dictionary
                 
-                var x = 0
+                let gVideo:IGYouTubeVideo = self.dict[YTVideoQualityStringMedium360]!
+                let videoURL:NSURL = gVideo.videoURL
+                
+                self.moviePlayer?.contentURL = videoURL
+                layout(self.moviePlayer!.view!) { view1 in
+                    
+                    view1.centerX == view1.superview!.centerX
+                    view1.centerY == view1.superview!.centerY
+                    
+                    view1.width   == view1.superview!.width
+                    view1.height  == view1.superview!.height
+                    
+                }
             }
             
         })
     }
     
     func setupMoviePlayer(){
-        moviePlayer = ALMoviePlayerController(frame: self.view.frame)
+        // create a movie player
+        moviePlayer = ALMoviePlayerController()
+        moviePlayer?.delegate = self
         
+        // create the controls
+        var  movieControls:ALMoviePlayerControls = ALMoviePlayerControls(moviePlayer: moviePlayer, style: ALMoviePlayerControlsStyleFullscreen)
+        
+        // assign the controls to the movie player
+        moviePlayer?.controls = movieControls
+        
+        // add movie player to your view
+        self.view.addSubview(moviePlayer!.view)
+        
+
     }
     
     // MARK : protocol for ALMoviePlayerControllerDelegate
