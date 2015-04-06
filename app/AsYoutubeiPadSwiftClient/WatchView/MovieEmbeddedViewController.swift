@@ -19,22 +19,31 @@ class MovieEmbeddedViewController: UIViewController,ALMoviePlayerControllerDeleg
     
     var playerView: UIView?
     
-    var fullscreenBarViewController : MovieEmbeddedFullscreenBarViewController?
-    var fullscreenBarView : UIView?
     
     var normalBarViewController : MovieEmbeddedNormalBarViewController?
-    var normalBarView : UIView?
+    var normalBarRootView : UIView?
+    var normalBottomBarView : UIView?
     
     override func viewDidLoad() {
         YoutubeExtractor()
         
         setupMoviePlayer()
+        
         setupEmbeddedBars()
         
-        // add movie player to your view
-        self.view.addSubview(playerView!)
         
-        self.view.backgroundColor = UIColor.redColor()
+        // add movie player to your view
+        //        self.view.addSubview(playerView!)
+        
+        
+        self.view.backgroundColor = UIColor.blackColor()
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        
+        toggleEmbeddedBar()
     }
     
     func YoutubeExtractor(){
@@ -48,24 +57,21 @@ class MovieEmbeddedViewController: UIViewController,ALMoviePlayerControllerDeleg
                 let videoURL:NSURL = gVideo.videoURL
                 
                 // 2.1
-                self.moviePlayer?.contentURL = videoURL
-                
-                
-                
+                //                self.moviePlayer?.contentURL = videoURL
             }
             
         })
     }
     
     override func viewDidLayoutSubviews() {
-        layout(self.playerView!) { view1 in
-            
-            view1.leading == view1.superview!.leading
-            view1.trailing == view1.superview!.trailing
-            
-            view1.top   == view1.superview!.top
-            view1.bottom  == view1.superview!.bottom
-        }
+        //        layout(self.playerView!) { view1 in
+        //
+        //            view1.leading == view1.superview!.leading
+        //            view1.trailing == view1.superview!.trailing
+        //
+        //            view1.top   == view1.superview!.top
+        //            view1.bottom  == view1.superview!.bottom
+        //        }
     }
     
     
@@ -93,14 +99,21 @@ class MovieEmbeddedViewController: UIViewController,ALMoviePlayerControllerDeleg
     }
     
     func setupEmbeddedBars() {
-         fullscreenBarViewController = StoryBoardUtils.getMovieEmbeddedFullscreenBarViewController()
-
-         normalBarViewController = StoryBoardUtils.getMovieEmbeddedNormalBarViewController()
+        // fullscreen bar
+        //        fullscreenBarViewController = StoryBoardUtils.getMovieEmbeddedFullscreenBarViewController()
         
-        
+        // normal bar
+        normalBarViewController = StoryBoardUtils.getMovieEmbeddedNormalBarViewController()
+        self.addChildViewController(normalBarViewController!)
     }
     
-    
+    func toggleEmbeddedBar(){
+        normalBarRootView = normalBarViewController?.view
+//        normalBottomBarView = normalBarViewController?.bottomBarPanel
+        
+        self.view.addSubview(normalBarRootView!)
+    }
+        
     
     // MARK : protocol for ALMoviePlayerControllerDelegate
     func moviePlayerWillMoveFromWindow(){

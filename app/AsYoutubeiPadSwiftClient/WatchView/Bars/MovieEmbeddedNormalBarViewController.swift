@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import Cartography
 
 class MovieEmbeddedNormalBarViewController: UIViewController {
     
@@ -15,13 +16,18 @@ class MovieEmbeddedNormalBarViewController: UIViewController {
     
     // MARK : bottom bar views
     @IBOutlet var bottomBarPanel: UIView!
-    
+//    normalBottomBarView?.frame = CGRectMake(0, 0, 576, 43)
     
     override func viewDidLoad() {
-        
+        let view : UIView = bottomBarPanel
+
     }
     
     override func viewDidLayoutSubviews() {
-        
+
     }
 }
+
+
+
+
