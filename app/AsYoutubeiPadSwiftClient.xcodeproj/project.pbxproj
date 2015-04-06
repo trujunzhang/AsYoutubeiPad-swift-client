@@ -23,6 +23,8 @@
 		5E85EDE71ACEC403009170D8 /* YTVideoWatchPlaylistViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E85EDE61ACEC403009170D8 /* YTVideoWatchPlaylistViewController.swift */; };
 		5E8923721AC6DF7700FCD444 /* Autolayout.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5E8923701AC6DF7700FCD444 /* Autolayout.storyboard */; };
 		5E91710A1ACA707E000FE107 /* FrontBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E9171091ACA707E000FE107 /* FrontBaseViewController.swift */; };
+		5E986B991AD26B42008620D3 /* MovieEmbeddedNormalBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E986B981AD26B42008620D3 /* MovieEmbeddedNormalBarViewController.swift */; };
+		5E986B9B1AD26B77008620D3 /* MovieEmbeddedFullscreenBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E986B9A1AD26B77008620D3 /* MovieEmbeddedFullscreenBarViewController.swift */; };
 		5E9E1ECB1AB7226F00523CC0 /* GYWrapSubscriptionsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E9E1ECA1AB7226F00523CC0 /* GYWrapSubscriptionsTests.swift */; };
 		5EAE2BE11ACF891200DA9372 /* YoutubeFetcherForVideosTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EAE2BE01ACF891200DA9372 /* YoutubeFetcherForVideosTests.swift */; };
 		5EAE2BE31ACF8ACC00DA9372 /* YoutubeFetcherForChannelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EAE2BE21ACF8ACC00DA9372 /* YoutubeFetcherForChannelTests.swift */; };
@@ -104,6 +106,8 @@
 		5E85EDE61ACEC403009170D8 /* YTVideoWatchPlaylistViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = YTVideoWatchPlaylistViewController.swift; path = WatchView/YTVideoWatchPlaylistViewController.swift; sourceTree = "<group>"; };
 		5E8923711AC6DF7700FCD444 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Autolayout.storyboard; sourceTree = "<group>"; };
 		5E9171091ACA707E000FE107 /* FrontBaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FrontBaseViewController.swift; sourceTree = "<group>"; };
+		5E986B981AD26B42008620D3 /* MovieEmbeddedNormalBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MovieEmbeddedNormalBarViewController.swift; path = WatchView/Bars/MovieEmbeddedNormalBarViewController.swift; sourceTree = "<group>"; };
+		5E986B9A1AD26B77008620D3 /* MovieEmbeddedFullscreenBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MovieEmbeddedFullscreenBarViewController.swift; path = WatchView/Bars/MovieEmbeddedFullscreenBarViewController.swift; sourceTree = "<group>"; };
 		5E9902301AB5C3C700391615 /* AsYoutubeiPadSwiftClient-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "AsYoutubeiPadSwiftClient-Bridging-Header.h"; sourceTree = "<group>"; };
 		5E9E1ECA1AB7226F00523CC0 /* GYWrapSubscriptionsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GYWrapSubscriptionsTests.swift; path = ../../UnitTests/Youtube.wrapper/GYWrapSubscriptionsTests.swift; sourceTree = "<group>"; };
 		5EAE2BE01ACF891200DA9372 /* YoutubeFetcherForVideosTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = YoutubeFetcherForVideosTests.swift; path = ../../UnitTests/youtube.api/YoutubeFetcherForVideosTests.swift; sourceTree = "<group>"; };
@@ -257,6 +261,8 @@
 		5EB12CFD1AD237A500BD2490 /* Bars */ = {
 			isa = PBXGroup;
 			children = (
+				5E986B981AD26B42008620D3 /* MovieEmbeddedNormalBarViewController.swift */,
+				5E986B9A1AD26B77008620D3 /* MovieEmbeddedFullscreenBarViewController.swift */,
 			);
 			name = Bars;
 			sourceTree = "<group>";
@@ -639,6 +645,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				5EC950041AC82E9300844E61 /* YoutubeFetcher.swift in Sources */,
+				5E986B991AD26B42008620D3 /* MovieEmbeddedNormalBarViewController.swift in Sources */,
+				5E986B9B1AD26B77008620D3 /* MovieEmbeddedFullscreenBarViewController.swift in Sources */,
 				5EB57D5C1ACFB6EE0060036F /* YouTubeExtractorUtils.swift in Sources */,
 				5EC0DEEE1ACD4F2B00EC14C9 /* YTYoutubeRequestInfo.swift in Sources */,
 				5EBCDCF81AB5C22C0023F037 /* ViewController.swift in Sources */,
