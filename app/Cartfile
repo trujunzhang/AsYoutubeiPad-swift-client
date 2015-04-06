@@ -1,6 +1,5 @@
 github "facebook/pop"              "master"
 github "Alamofire/Alamofire"       "master"
-github "AFNetworking/AFNetworking" "master"
 github "petejkim/expecta"          "master"
 github "Haneke/HanekeSwift"        "master"
 #github "railsware/Sleipnir"       "master"   
@@ -11,4 +10,5 @@ github "facebook/AsyncDisplayKit"  "master"
 github "rs/SDWebImage"             "master"
 github "DaveWoodCom/XCGLogger"     "master"
 #github "mozilla/firefox-ios"       "master"
+#github "AFNetworking/AFNetworking" "master"
 

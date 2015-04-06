@@ -12,7 +12,7 @@ class YTVideoWatchViewController: UIViewController {
     
     
     var videoID = ""
-
+    
     
     var movieEmbeddedViewController:MovieEmbeddedViewController?
     var movieEmbeddedView: UIView?
@@ -56,12 +56,18 @@ class YTVideoWatchViewController: UIViewController {
     func setupViewLayout(){
         layout(movieEmbeddedView!) { view1 in
             
-            view1.centerX == view1.superview!.centerX
-            view1.centerY == view1.superview!.centerY
+            //            view1.centerX == view1.superview!.centerX
+            //            view1.centerY == view1.superview!.centerY
             
-            view1.width   == view1.superview!.width
-            view1.height  == view1.superview!.height
-
+            //            view1.width   == view1.superview!.width
+            //            view1.height  == view1.superview!.height
+            
+            view1.leading == view1.superview!.leading
+            view1.top == view1.superview!.top
+            
+            
+            view1.width   == 578
+            view1.height  == 324
         }
     }
     
