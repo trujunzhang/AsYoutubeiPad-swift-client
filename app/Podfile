@@ -35,6 +35,9 @@ def import_pods
 
   pod "WPMoviePlayerController", :path => "../dependencies/WPMoviePlayerController"
 
+  pod "YKMediaPlayerKit", :path => "../dependencies/YKMediaPlayerKit"
+  
+
 end
 
 target 'AsYoutubeiPadSwiftClient', :exclusive => true do

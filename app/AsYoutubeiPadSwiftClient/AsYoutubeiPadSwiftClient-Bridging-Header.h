@@ -6,25 +6,38 @@
 
 //#import "ASTableView.h"
 
+// Library: SWRevealViewController
 #import "SWRevealViewController.h"
 
+// Library: GTM
 #import "GTMOAuth2Authentication.h"
 #import "GTMOAuth2ViewControllerTouch.h"
 
+// Library : google-api-client[Youtube]
 #import "GTLYouTube.h"
 #import "GTLService.h"
 
+// Library: YouTubeAPI3-Objective-C-wrapper
 #import "MABYouTube_Sources.h"
 #import "YoutubeParser.h"
 
-
+// Library: STCollapseTableView
 #import "STCollapseTableView.h"
 
+// Library: CHTCollectionViewWaterfallLayout
 #import "CHTCollectionViewWaterfallLayout.h"
 
+// Library: IGYouTubeExtractor
 #import "IGYouTubeExtractor.h"
 
+// Library: ALMoviePlayerController
 #import "ALMoviePlayerController.h"
+
+// Library: YKMediaPlayerKit
+#import "YKMediaPlayerKit.h"
+#import "YKVimeoVideo.h"
+#import "YKYouTubeVideo.h"
+#import "YKDirectVideo.h"
 
 //#import "ImageCacheInterface.h"
 

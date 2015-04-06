@@ -14,12 +14,20 @@ class MovieEmbeddedViewController: UIViewController,ALMoviePlayerControllerDeleg
     var videoID = ""
     var dict:[String:IGYouTubeVideo] = [:]
     
+    // v1.0
     var moviePlayer : ALMoviePlayerController?
+    // v2.0
+    var unknownVideo: YKYouTubeVideo?
+    var player:MPMoviePlayerViewController?
     
     override func viewDidLoad() {
         YoutubeExtractor()
         
-        setupMoviePlayer()
+        //        setupMoviePlayer()
+        
+        self.unknownVideo = YKYouTubeVideo()
+        player = self.unknownVideo!.movieViewController(YKQualityOptions.High)
+        self.view.addSubview(player!.view)
         
         self.view.backgroundColor = UIColor.redColor()
     }
@@ -30,11 +38,17 @@ class MovieEmbeddedViewController: UIViewController,ALMoviePlayerControllerDeleg
             if(sucess == true){
                 self.dict = object as Dictionary
                 
+                // 1
                 let gVideo:IGYouTubeVideo = self.dict[YTVideoQualityStringMedium360]!
                 let videoURL:NSURL = gVideo.videoURL
                 
-                self.moviePlayer?.contentURL = videoURL
-                layout(self.moviePlayer!.view!) { view1 in
+                // 2.1
+                //                self.moviePlayer?.contentURL = videoURL
+                // 2.2
+                self.unknownVideo?.contentURL = videoURL
+                self.unknownVideo?.play(YKQualityOptions.High)
+                
+                layout(self.player!.view!) { view1 in
                     
                     view1.centerX == view1.superview!.centerX
                     view1.centerY == view1.superview!.centerY
@@ -47,6 +61,7 @@ class MovieEmbeddedViewController: UIViewController,ALMoviePlayerControllerDeleg
             
         })
     }
+    
     
     func setupMoviePlayer(){
         // create a movie player
@@ -62,7 +77,6 @@ class MovieEmbeddedViewController: UIViewController,ALMoviePlayerControllerDeleg
         // add movie player to your view
         self.view.addSubview(moviePlayer!.view)
         
-
     }
     
     // MARK : protocol for ALMoviePlayerControllerDelegate
