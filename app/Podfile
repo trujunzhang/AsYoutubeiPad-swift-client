@@ -11,7 +11,10 @@ def import_pods
     pod 'Regexer'
     # pod 'Bolts'
 
+
+
     pod 'SDWebImage'
+    pod 'AFNetworking'    
 
 #    pod 'SWRevealViewController'
 #    pod 'ISMemoryCache'
@@ -19,11 +22,10 @@ def import_pods
 
     # pod 'SQPersist'
 
+    # pod 'pop'
     # pod 'AsyncDisplayKit'
 
     pod 'Google-API-Client/YouTube'
-
-    pod 'AFNetworking'
 
     pod 'CHTCollectionViewWaterfallLayout'
 
@@ -36,6 +38,9 @@ def import_pods
   pod "WPMoviePlayerController", :path => "../dependencies/WPMoviePlayerController"
 
   pod "YKMediaPlayerKit", :path => "../dependencies/YKMediaPlayerKit"
+  pod "MPMoviePlayerController-Subtitles", :path => "../dependencies/MPMoviePlayerController-Subtitles"
+
+  
   
 
 end

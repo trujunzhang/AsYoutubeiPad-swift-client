@@ -9,7 +9,7 @@
 // Library: SWRevealViewController
 #import "SWRevealViewController.h"
 
-// Library: GTM
+// Library: gtm-oauth2
 #import "GTMOAuth2Authentication.h"
 #import "GTMOAuth2ViewControllerTouch.h"
 
@@ -38,6 +38,15 @@
 #import "YKVimeoVideo.h"
 #import "YKYouTubeVideo.h"
 #import "YKDirectVideo.h"
+
+// Library: MPMoviePlayerController-Subtitles
+#import "MPMoviePlayerController+Subtitles.h"
+
+// Library: facebook/Pop
+#import <pop/POP.h>
+
+// Library: SDWebImage
+#import "WebImage.h"
 
 //#import "ImageCacheInterface.h"
 
