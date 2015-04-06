@@ -17,13 +17,19 @@ class MovieEmbeddedViewController: UIViewController,ALMoviePlayerControllerDeleg
     // v1.0
     var moviePlayer : ALMoviePlayerController?
     
-    
     var playerView: UIView?
+    
+    var fullscreenBarViewController : MovieEmbeddedFullscreenBarViewController?
+    var fullscreenBarView : UIView?
+    
+    var normalBarViewController : MovieEmbeddedNormalBarViewController?
+    var normalBarView : UIView?
     
     override func viewDidLoad() {
         YoutubeExtractor()
         
         setupMoviePlayer()
+        setupEmbeddedBars()
         
         // add movie player to your view
         self.view.addSubview(playerView!)
@@ -86,6 +92,13 @@ class MovieEmbeddedViewController: UIViewController,ALMoviePlayerControllerDeleg
         playerView = moviePlayer!.view
     }
     
+    func setupEmbeddedBars() {
+         fullscreenBarViewController = StoryBoardUtils.getMovieEmbeddedFullscreenBarViewController()
+
+         normalBarViewController = StoryBoardUtils.getMovieEmbeddedNormalBarViewController()
+        
+        
+    }
     
     
     

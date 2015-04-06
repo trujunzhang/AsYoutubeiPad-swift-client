@@ -22,10 +22,10 @@
             </objects>
             <point key="canvasLocation" x="-676" y="2299"/>
         </scene>
-        <!--View Controller-->
+        <!--Movie Embedded Normal Bar View Controller-->
         <scene sceneID="tTj-Ge-q3A">
             <objects>
-                <viewController id="4Mb-8q-N4Z" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MovieEmbeddedNormalBarViewController" id="4Mb-8q-N4Z" customClass="MovieEmbeddedNormalBarViewController" customModule="AsYoutubeiPadSwiftClient" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="foo-ms-G2J"/>
                         <viewControllerLayoutGuide type="bottom" id="Fyp-Kh-GwY"/>

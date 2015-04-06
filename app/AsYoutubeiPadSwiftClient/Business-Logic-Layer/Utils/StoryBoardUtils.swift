@@ -82,5 +82,22 @@ class StoryBoardUtils:NSObject {
         return viewController
     }
     
+    // MARK: MovieEmbedded Bars
+    class func getMovieEmbeddedNormalBarViewController() -> MovieEmbeddedNormalBarViewController {
+        var viewController: MovieEmbeddedNormalBarViewController = getVideoWatchStoryboard().instantiateViewControllerWithIdentifier("MovieEmbeddedNormalBarViewController") as MovieEmbeddedNormalBarViewController
+        
+        return viewController
+    }
+    
+    class func getMovieEmbeddedFullscreenBarViewController() -> MovieEmbeddedFullscreenBarViewController {
+        var viewController: MovieEmbeddedFullscreenBarViewController = getVideoWatchStoryboard().instantiateViewControllerWithIdentifier("MovieEmbeddedFullscreenBarViewController") as MovieEmbeddedFullscreenBarViewController
+        
+        return viewController
+    }
+    
+    
+    
+    
+    
     
 }
