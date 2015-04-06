@@ -80,4 +80,11 @@ Podfile.lock
 
 # customize plugins
 .DS_Store
-Carthage
+
+Cartfile.private
+Cartfile.resolved
+
+#/Volumes/Home/Developing/SketchProjects/AsYoutubeiPad-swift-client/app/.gitignore
+#/Volumes/Home/Developing/SketchProjects/AsYoutubeiPad-swift-client/app/Carthage/Checkouts
+
+Carthage/
