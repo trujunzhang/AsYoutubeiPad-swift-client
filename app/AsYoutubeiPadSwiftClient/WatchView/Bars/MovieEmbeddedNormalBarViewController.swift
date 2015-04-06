@@ -10,6 +10,13 @@ import Foundation
 
 class MovieEmbeddedNormalBarViewController: UIViewController {
     
+    // MARK : top bar views
+    @IBOutlet var topBarPanel: UIView!
+    
+    // MARK : bottom bar views
+    @IBOutlet var bottomBarPanel: UIView!
+    
+    
     override func viewDidLoad() {
         
     }

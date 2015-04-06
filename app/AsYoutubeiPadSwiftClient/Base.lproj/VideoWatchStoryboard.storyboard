@@ -45,6 +45,10 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <connections>
+                        <outlet property="bottomBarPanel" destination="Gto-aw-vLc" id="0ZO-95-HCn"/>
+                        <outlet property="topBarPanel" destination="vAr-va-7DJ" id="fxw-B6-mor"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rsu-ie-ML4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
