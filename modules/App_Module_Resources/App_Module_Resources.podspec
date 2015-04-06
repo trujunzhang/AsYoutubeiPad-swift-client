@@ -27,6 +27,10 @@ Pod::Spec.new do |s|
 
   s.resource = "Pod/Assets/*/*.*"
 
+  s.subspec 'watch_tabbar' do |sub|
+    sub.resource = 'Pod/Assets/*/*/*.*'
+  end  
+
   #s.subspec 'CacheImage' do |sub|
   #  sub.source_files = 'Pod/Classes/CacheImage/*.{h,m}'
   #end

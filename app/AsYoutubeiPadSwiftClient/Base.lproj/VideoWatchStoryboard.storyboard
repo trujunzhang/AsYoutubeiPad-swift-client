@@ -41,7 +41,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Gto-aw-vLc" userLabel="Bottom Bar">
                                 <rect key="frame" x="0.0" y="557" width="576" height="43"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="moviePlay.png" translatesAutoresizingMaskIntoConstraints="NO" id="nza-MD-l1U">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="mp_embedded_pause.png" translatesAutoresizingMaskIntoConstraints="NO" id="nza-MD-l1U">
                                         <rect key="frame" x="14" y="12" width="22" height="20"/>
                                     </imageView>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="mp_fullscreen.png" translatesAutoresizingMaskIntoConstraints="NO" id="YpZ-S9-al8">
@@ -60,7 +60,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="9Ay-Bn-2T7">
-                                        <rect key="frame" x="113" y="5" width="370" height="31"/>
+                                        <rect key="frame" x="85" y="5" width="370" height="31"/>
                                     </slider>
                                 </subviews>
                                 <color key="backgroundColor" red="0.19215686274509805" green="0.19215686274509805" blue="0.19215686274509805" alpha="0.64000000000000001" colorSpace="calibratedRGB"/>
@@ -163,7 +163,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="moviePlay.png" width="20" height="24"/>
-        <image name="mp_fullscreen.png" width="20" height="24"/>
+        <image name="mp_embedded_pause.png" width="18" height="18"/>
+        <image name="mp_fullscreen.png" width="20" height="26"/>
     </resources>
 </document>
