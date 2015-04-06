@@ -22,7 +22,6 @@ class MovieEmbeddedViewController: UIViewController,ALMoviePlayerControllerDeleg
     
     var normalBarViewController : MovieEmbeddedNormalBarViewController?
     var normalBarRootView : UIView?
-    var normalBottomBarView : UIView?
     
     override func viewDidLoad() {
         YoutubeExtractor()
@@ -109,11 +108,19 @@ class MovieEmbeddedViewController: UIViewController,ALMoviePlayerControllerDeleg
     
     func toggleEmbeddedBar(){
         normalBarRootView = normalBarViewController?.view
-//        normalBottomBarView = normalBarViewController?.bottomBarPanel
         
         self.view.addSubview(normalBarRootView!)
-    }
         
+        layout(normalBarRootView!) { view1 in
+            
+            view1.centerX == view1.superview!.centerX
+            view1.centerY == view1.superview!.centerY
+            
+            view1.width   == view1.superview!.width
+            view1.height  == view1.superview!.height
+        }
+    }
+    
     
     // MARK : protocol for ALMoviePlayerControllerDelegate
     func moviePlayerWillMoveFromWindow(){
