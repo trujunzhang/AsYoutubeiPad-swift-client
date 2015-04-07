@@ -22,6 +22,9 @@ class MovieEmbeddedNormalBarViewController: MovieEmbeddedBasedBarViewController 
     
     // MARK : Bottom bar items
     
+    
+    @IBOutlet var bottomBarTopConstraint: NSLayoutConstraint!
+    
     @IBOutlet var durationSlider: UISlider!
     @IBOutlet var timeElapsedLabel: UILabel!
     @IBOutlet var timeRemainingLabel: UILabel!
@@ -39,16 +42,14 @@ class MovieEmbeddedNormalBarViewController: MovieEmbeddedBasedBarViewController 
     // MARK : Test views
     
     @IBOutlet var animatedView: UIView!
-
+    
     @IBOutlet var containerHeightConstraint: NSLayoutConstraint!
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let view : UIView = bottomBarPanel
-        
-//        hideTwoBars()
+        setBarsConstraint(topBarTopConstraint,bottomBarTopConstraint: bottomBarTopConstraint)
     }
     
     // MARK : Events for Top buttons
@@ -64,15 +65,8 @@ class MovieEmbeddedNormalBarViewController: MovieEmbeddedBasedBarViewController 
         var x = 0
     }
     
-    // MARK : hide Top and Bottom bars after xxx seconds
-    func hideTwoBars(){
-        self.performClosureAfterDelay(4, block: { () -> Void in
-            
-            self.popAnimationForTopBar(self.topBarTopConstraint)
-            
-        })
-    }
-      
+    
+    
     
     override func viewDidLayoutSubviews() {
         
