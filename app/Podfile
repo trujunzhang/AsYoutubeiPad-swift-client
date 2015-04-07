@@ -35,10 +35,10 @@ def import_pods
   pod "App_Module_Resources", :path => "../modules/App_Module_Resources"
   pod "YouTubeAPI3-Objective-C-wrapper", :path => "../modules/YouTubeAPI3-Objective-C-wrapper"
 
-  pod "WPMoviePlayerController", :path => "../dependencies/WPMoviePlayerController"
+  #pod "WPMoviePlayerController", :path => "../dependencies/WPMoviePlayerController"
 
-  pod "YKMediaPlayerKit", :path => "../dependencies/YKMediaPlayerKit"
-  pod "MPMoviePlayerController-Subtitles", :path => "../dependencies/MPMoviePlayerController-Subtitles"
+  #pod "YKMediaPlayerKit", :path => "../dependencies/YKMediaPlayerKit"
+  #pod "MPMoviePlayerController-Subtitles", :path => "../dependencies/MPMoviePlayerController-Subtitles"
 
   
   

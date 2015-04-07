@@ -7,7 +7,7 @@
 //
 
 import Foundation
-import Cartography
+
 
 class MovieEmbeddedViewController: UIViewController,ALMoviePlayerControllerDelegate {
     
@@ -23,16 +23,17 @@ class MovieEmbeddedViewController: UIViewController,ALMoviePlayerControllerDeleg
     var normalBarRootView : UIView?
     
     override func viewDidLoad() {
-//        YoutubeExtractor()
+        YoutubeExtractor()
         
-//        setupMoviePlayer()
+        setupMoviePlayer()
         
         setupEmbeddedBars()
         
         
         // add movie player to your view
-        //        self.view.addSubview(playerView!)
-        
+        self.view.addSubview(playerView!)
+        LayoutUtils.LayoutFullView(playerView!)
+
         
         self.view.backgroundColor = UIColor.blackColor()
     }
@@ -40,8 +41,7 @@ class MovieEmbeddedViewController: UIViewController,ALMoviePlayerControllerDeleg
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
         
-        
-        toggleEmbeddedBar()
+        layoutEmbeddedBar()
     }
     
     func YoutubeExtractor(){
@@ -55,21 +55,14 @@ class MovieEmbeddedViewController: UIViewController,ALMoviePlayerControllerDeleg
                 let videoURL:NSURL = gVideo.videoURL
                 
                 // 2.1
-                //                self.moviePlayer?.contentURL = videoURL
+                self.moviePlayer?.contentURL = videoURL
             }
             
         })
     }
     
     override func viewDidLayoutSubviews() {
-        //        layout(self.playerView!) { view1 in
-        //
-        //            view1.leading == view1.superview!.leading
-        //            view1.trailing == view1.superview!.trailing
-        //
-        //            view1.top   == view1.superview!.top
-        //            view1.bottom  == view1.superview!.bottom
-        //        }
+
     }
     
     
@@ -105,19 +98,11 @@ class MovieEmbeddedViewController: UIViewController,ALMoviePlayerControllerDeleg
         self.addChildViewController(normalBarViewController!)
     }
     
-    func toggleEmbeddedBar(){
+    func layoutEmbeddedBar(){
         normalBarRootView = normalBarViewController?.view
         
         self.view.addSubview(normalBarRootView!)
-        
-        layout(normalBarRootView!) { view1 in
-            
-            view1.centerX == view1.superview!.centerX
-            view1.centerY == view1.superview!.centerY
-            
-            view1.width   == view1.superview!.width
-            view1.height  == view1.superview!.height
-        }
+        LayoutUtils.LayoutFullView(normalBarRootView!)
     }
     
     

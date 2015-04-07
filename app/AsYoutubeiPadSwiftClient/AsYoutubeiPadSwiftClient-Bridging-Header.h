@@ -34,10 +34,10 @@
 #import "ALMoviePlayerController.h"
 
 // Library: YKMediaPlayerKit
-#import "YKMediaPlayerKit.h"
-#import "YKVimeoVideo.h"
-#import "YKYouTubeVideo.h"
-#import "YKDirectVideo.h"
+//#import "YKMediaPlayerKit.h"
+//#import "YKVimeoVideo.h"
+//#import "YKYouTubeVideo.h"
+//#import "YKDirectVideo.h"
 
 // Library: MPMoviePlayerController-Subtitles
 #import "MPMoviePlayerController+Subtitles.h"
