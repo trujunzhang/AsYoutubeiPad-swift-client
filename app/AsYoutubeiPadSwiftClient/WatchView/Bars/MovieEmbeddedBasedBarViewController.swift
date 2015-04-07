@@ -12,8 +12,23 @@ let WATCH_BAR_HEIGHT:CGFloat = 43
 
 class MovieEmbeddedBasedBarViewController :UIViewController {
     
+    var tapGesture : UITapGestureRecognizer?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        addGestures()
+    }
+    
+    // MARK : Tap Gesture to show or hide bars
+    
+    func addGestures(){
+        tapGesture = UITapGestureRecognizer(target: self, action: "tapGesture:")
+        self.view.addGestureRecognizer(tapGesture!)
+    }
+    
+    func tapGesture(sender: UITapGestureRecognizer){
+       var x = 0
     }
     
     // MARK : pop animate

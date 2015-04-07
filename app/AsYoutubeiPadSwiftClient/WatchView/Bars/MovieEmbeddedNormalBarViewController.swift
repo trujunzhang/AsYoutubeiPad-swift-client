@@ -48,7 +48,7 @@ class MovieEmbeddedNormalBarViewController: MovieEmbeddedBasedBarViewController 
         
         let view : UIView = bottomBarPanel
         
-        hideTwoBars()
+//        hideTwoBars()
     }
     
     // MARK : Events for Top buttons
