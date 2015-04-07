@@ -83,7 +83,7 @@
     if (self.style == ALMoviePlayerControlsStyleNone)
         return;
 
-    [self setupTwoBars];
+    [self setupTwoBars:nil withoviePlay:nil];
 
     self.activityIndicator = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge];
     self.activityIndicator.alpha = 0.f;

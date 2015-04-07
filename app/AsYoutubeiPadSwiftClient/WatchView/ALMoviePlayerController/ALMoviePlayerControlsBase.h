@@ -91,5 +91,7 @@ Are the controls currently showing on screen?
 
 - (void)hideControls:(void (^)(void))completion;
 
-- (void)setupTwoBars;
+- (void)setTwoBars:(UIView *)topBar withBottomBar:(UIView *)bottomBar withDurationSlider:(UISlider *)durationSlider withTimeElapsedLabel:(UILabel *)timeElapsedLabel withTimeRemainingLabel:(UILabel *)timeRemainingLabel withPlayPauseButton:(ALButton *)playPauseButton moviePause:(NSString *)moviePause moviePlay:(NSString *)moviePlay;
+
+- (void)setupTwoBars:(NSString *)pause withoviePlay:(NSString *)play;
 @end

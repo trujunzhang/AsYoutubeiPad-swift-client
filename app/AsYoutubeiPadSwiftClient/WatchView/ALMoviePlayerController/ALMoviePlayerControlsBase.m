@@ -68,11 +68,11 @@
     _playPauseButton = [[ALButton alloc] init];
     [_bottomBar addSubview:_playPauseButton];
 
-    [self setTwoBars:_topBar withBottomBar:_bottomBar withDurationSlider:_durationSlider withTimeElapsedLabel:_timeElapsedLabel withTimeRemainingLabel:_timeRemainingLabel withPlayPauseButton:_playPauseButton];
+    [self setTwoBars:_topBar withBottomBar:_bottomBar withDurationSlider:_durationSlider withTimeElapsedLabel:_timeElapsedLabel withTimeRemainingLabel:_timeRemainingLabel withPlayPauseButton:_playPauseButton moviePause:nil moviePlay:nil];
 
 }
 
-- (void)setTwoBars:(UIView *)topBar withBottomBar:(UIView *)bottomBar withDurationSlider:(UISlider *)durationSlider withTimeElapsedLabel:(UILabel *)timeElapsedLabel withTimeRemainingLabel:(UILabel *)timeRemainingLabel withPlayPauseButton:(ALButton *)playPauseButton {
+- (void)setTwoBars:(UIView *)topBar withBottomBar:(UIView *)bottomBar withDurationSlider:(UISlider *)durationSlider withTimeElapsedLabel:(UILabel *)timeElapsedLabel withTimeRemainingLabel:(UILabel *)timeRemainingLabel withPlayPauseButton:(ALButton *)playPauseButton moviePause:(NSString *)moviePause moviePlay:(NSString *)moviePlay {
 
     self.topBar = topBar;
     self.bottomBar = bottomBar;
@@ -82,10 +82,12 @@
 
     self.playPauseButton = playPauseButton;
 
-    [self setupTwoBars];
+//    NSString * moviePause =@"";
+//    NSString * moviePlay =@"";
+    [self setupTwoBars:moviePause withMoviePlay:moviePlay];
 }
 
-- (void)setupTwoBars {
+- (void)setupTwoBars:(NSString *)moviePause withMoviePlay:(NSString *)moviePlay {
 
     _durationSlider.value = 0.f;
     _durationSlider.continuous = YES;
@@ -120,8 +122,10 @@
 
 
     //static stuff
-    [_playPauseButton setImage:[UIImage imageNamed:@"moviePause.png"] forState:UIControlStateNormal];
-    [_playPauseButton setImage:[UIImage imageNamed:@"moviePlay.png"] forState:UIControlStateSelected];
+//    [_playPauseButton setImage:[UIImage imageNamed:@"moviePause.png"] forState:UIControlStateNormal];
+//    [_playPauseButton setImage:[UIImage imageNamed:@"moviePlay.png"] forState:UIControlStateSelected];    
+    [_playPauseButton setImage:[UIImage imageNamed:moviePause] forState:UIControlStateNormal];
+    [_playPauseButton setImage:[UIImage imageNamed:moviePlay] forState:UIControlStateSelected];
     [_playPauseButton setSelected:_moviePlayer.playbackState == MPMoviePlaybackStatePlaying ? NO : YES];
     [_playPauseButton addTarget:self action:@selector(playPausePressed:) forControlEvents:UIControlEventTouchUpInside];
     _playPauseButton.delegate = self;
