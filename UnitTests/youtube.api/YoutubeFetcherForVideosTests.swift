@@ -39,7 +39,7 @@ class YoutubeFetcherForVideosTests: YoutubeFetcherBaseTests {
                     XCTAssertTrue(array.count > 0, "Array length must greater than 0")
                     
                     let model:AnyObject = array[0]
-                    videoCache = model  as YoutubeVideoCache // Used
+                    videoCache = model  as? YoutubeVideoCache // Used
                     XCTAssertTrue(model is YoutubeVideoCache, "Array object must being YoutubeVideoCache")
                     
                     self.requestInfo.appendArray(array)
@@ -82,7 +82,7 @@ class YoutubeFetcherForVideosTests: YoutubeFetcherBaseTests {
                     XCTAssertTrue(array.count > 0, "Array length must greater than 0")
                     
                     let model:AnyObject = array[0]
-                    videoCache = model  as YoutubeVideoCache // Used
+                    videoCache = model  as? YoutubeVideoCache // Used
                     XCTAssertTrue(model is YoutubeVideoCache, "Array object must being YoutubeVideoCache")
                     
                     self.requestInfo.appendArray(array)

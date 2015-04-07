@@ -40,26 +40,38 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wYG-dZ-Hme">
                                         <rect key="frame" x="188" y="0.0" width="200" height="43"/>
                                         <subviews>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="watch_later.png" translatesAutoresizingMaskIntoConstraints="NO" id="e3h-SQ-Ras">
-                                                <rect key="frame" x="155" y="9" width="26" height="26"/>
-                                            </imageView>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cc.png" translatesAutoresizingMaskIntoConstraints="NO" id="QTe-Z4-31z">
-                                                <rect key="frame" x="88" y="11" width="24" height="22"/>
-                                            </imageView>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="repeat.png" translatesAutoresizingMaskIntoConstraints="NO" id="xSG-Ip-K3H">
+                                            <button opaque="NO" contentMode="scaleAspectFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HML-1l-RpD" userLabel="watch_later">
+                                                <rect key="frame" x="155" y="11" width="22" height="22"/>
+                                                <state key="normal" backgroundImage="watch_later.png">
+                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="watchLaterButtonEvent:" destination="4Mb-8q-N4Z" eventType="touchUpInside" id="WPG-yQ-fzI"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NCl-6J-gVz" userLabel="repeat">
                                                 <rect key="frame" x="19" y="11" width="22" height="22"/>
-                                            </imageView>
+                                                <state key="normal" backgroundImage="repeat.png">
+                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="repeatButtonEvent:" destination="4Mb-8q-N4Z" eventType="touchUpInside" id="gef-ds-8cf"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mFe-nt-cvs" userLabel="cc">
+                                                <rect key="frame" x="88" y="11" width="22" height="22"/>
+                                                <state key="normal" backgroundImage="cc.png">
+                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="ccButtonEvent:" destination="4Mb-8q-N4Z" eventType="touchUpInside" id="eVP-2J-4jI"/>
+                                                </connections>
+                                            </button>
                                         </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <constraints>
-                                            <constraint firstAttribute="centerY" secondItem="QTe-Z4-31z" secondAttribute="centerY" id="IFD-Fp-607"/>
                                             <constraint firstAttribute="width" constant="200" id="IIt-1E-xm7"/>
-                                            <constraint firstAttribute="centerX" secondItem="QTe-Z4-31z" secondAttribute="centerX" id="NFr-6m-fNO"/>
-                                            <constraint firstItem="xSG-Ip-K3H" firstAttribute="leading" secondItem="wYG-dZ-Hme" secondAttribute="leading" constant="19" id="XbC-Ka-ZY3"/>
                                             <constraint firstAttribute="height" constant="43" id="bEO-vm-HFQ"/>
-                                            <constraint firstAttribute="centerY" secondItem="xSG-Ip-K3H" secondAttribute="centerY" id="fer-E3-OPv"/>
-                                            <constraint firstAttribute="trailing" secondItem="e3h-SQ-Ras" secondAttribute="trailing" constant="19" id="gDf-bg-xrR"/>
-                                            <constraint firstAttribute="centerY" secondItem="e3h-SQ-Ras" secondAttribute="centerY" id="pD9-5F-esR"/>
                                         </constraints>
                                     </view>
                                 </subviews>
@@ -111,12 +123,22 @@
                                     <constraint firstAttribute="centerY" secondItem="nza-MD-l1U" secondAttribute="centerY" id="zQZ-z2-dFP"/>
                                 </constraints>
                             </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UT4-md-xXK">
+                                <rect key="frame" x="195" y="216" width="186" height="169"/>
+                                <color key="backgroundColor" red="0.92156862750000001" green="0.27058823529999998" blue="0.1333333333" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="169" id="Ixg-mL-Hic"/>
+                                    <constraint firstAttribute="width" constant="186" id="ljm-MI-Y4S"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="Gto-aw-vLc" firstAttribute="leading" secondItem="Bf1-yC-8Oc" secondAttribute="leading" id="1BQ-C5-P8F"/>
+                            <constraint firstAttribute="centerX" secondItem="UT4-md-xXK" secondAttribute="centerX" id="2td-7F-vro"/>
                             <constraint firstItem="vAr-va-7DJ" firstAttribute="top" secondItem="Bf1-yC-8Oc" secondAttribute="top" id="7rX-Oe-B6g"/>
                             <constraint firstAttribute="trailing" secondItem="Gto-aw-vLc" secondAttribute="trailing" id="Hb4-5C-VQy"/>
+                            <constraint firstAttribute="centerY" secondItem="UT4-md-xXK" secondAttribute="centerY" id="MkD-r5-7vx"/>
                             <constraint firstAttribute="bottom" secondItem="Gto-aw-vLc" secondAttribute="bottom" id="NN7-fB-AMO"/>
                             <constraint firstAttribute="trailing" secondItem="vAr-va-7DJ" secondAttribute="trailing" id="hls-cN-op1"/>
                             <constraint firstItem="vAr-va-7DJ" firstAttribute="leading" secondItem="Bf1-yC-8Oc" secondAttribute="leading" id="iaJ-uh-KQy"/>
@@ -127,13 +149,18 @@
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="576" height="600"/>
                     <connections>
+                        <outlet property="animatedView" destination="UT4-md-xXK" id="Ear-ru-VPb"/>
                         <outlet property="bottomBarPanel" destination="Gto-aw-vLc" id="0ZO-95-HCn"/>
                         <outlet property="cancelButton" destination="nza-MD-l1U" id="R7f-g1-BQi"/>
+                        <outlet property="ccButton" destination="mFe-nt-cvs" id="B54-n7-aCc"/>
+                        <outlet property="containerHeightConstraint" destination="Ixg-mL-Hic" id="1dy-pG-aUO"/>
                         <outlet property="durationSlider" destination="9Ay-Bn-2T7" id="5Yw-4N-ZAi"/>
                         <outlet property="fullscreenButton" destination="YpZ-S9-al8" id="KvQ-dB-YXP"/>
+                        <outlet property="repeatButton" destination="NCl-6J-gVz" id="Ubw-tb-7EX"/>
                         <outlet property="timeElapsedLabel" destination="uaS-nr-2PJ" id="uwx-2M-DcZ"/>
                         <outlet property="timeRemainingLabel" destination="CgD-Y5-OOM" id="AEp-mM-rnc"/>
                         <outlet property="topBarPanel" destination="vAr-va-7DJ" id="fxw-B6-mor"/>
+                        <outlet property="watchLaterButton" destination="HML-1l-RpD" id="Ykx-fk-QDg"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rsu-ie-ML4" userLabel="First Responder" sceneMemberID="firstResponder"/>

@@ -16,9 +16,9 @@ class MovieEmbeddedNormalBarViewController: UIViewController {
     
     // MARK : bottom bar views
     @IBOutlet var bottomBarPanel: UIView!
-//    normalBottomBarView?.frame = CGRectMake(0, 0, 576, 43)
+    //    normalBottomBarView?.frame = CGRectMake(0, 0, 576, 43)
     
-    // MARK : bottom bar items
+    // MARK : Bottom bar items
     
     @IBOutlet var durationSlider: UISlider!
     @IBOutlet var timeElapsedLabel: UILabel!
@@ -26,16 +26,85 @@ class MovieEmbeddedNormalBarViewController: UIViewController {
     @IBOutlet var cancelButton: UIImageView!
     @IBOutlet var fullscreenButton: UIImageView!
     
+    // MARK : Top bar items
+    
+    @IBOutlet var repeatButton: UIButton!
+    @IBOutlet var ccButton: UIButton!
+    @IBOutlet var watchLaterButton: UIButton!
+    
+    // MARK : Test views
+    
+    @IBOutlet var animatedView: UIView!
+    @IBOutlet var containerHeightConstraint: NSLayoutConstraint!
+    
     
     override func viewDidLoad() {
         let view : UIView = bottomBarPanel
-
+        
+        hideTwoBars()
     }
     
-    override func viewDidLayoutSubviews() {
-
+    // MARK : Events for Top buttons
+    @IBAction func repeatButtonEvent(sender: AnyObject) {
+        var x = 0
     }
-
+    
+    @IBAction func ccButtonEvent(sender: AnyObject) {
+        var x = 0
+    }
+    
+    @IBAction func watchLaterButtonEvent(sender: AnyObject) {
+        var x = 0
+    }
+    
+    // MARK : hide Top and Bottom bars after xxx seconds
+    func hideTwoBars(){
+        self.performClosureAfterDelay(15, block: { () -> Void in
+            
+            self.popAnimationForTopBar()
+            
+        })
+    }
+    
+    func popAnimationForTopBar(){
+        let rWidth:CGFloat = 100
+        
+        let spring : POPSpringAnimation = POPSpringAnimation(propertyNamed: kPOPViewFrame)
+        spring.springBounciness = 20
+        spring.springSpeed = 20
+        
+        
+        let property: POPAnimatableProperty = POPAnimatableProperty.propertyWithName("com.rwt.heightContstraint", initializer: { (object) -> Void in
+            
+            let prop:POPMutableAnimatableProperty = object as POPMutableAnimatableProperty
+            
+            // note the object used is NSLayoutConstraint, the same object we assign the animation to
+            prop.readBlock = {(constraint,values) -> Void in
+                values[0] = constraint.constant
+            }
+            
+            prop.writeBlock = {(object,values) -> Void in
+                let constraint:NSLayoutConstraint = object as NSLayoutConstraint
+                constraint.constant = values[0]
+            }
+            
+            // this helps Pop determine when the animation is over
+            prop.threshold = 0.01
+            
+            
+        }) as POPAnimatableProperty
+        
+        spring.property = property
+        spring.toValue = rWidth
+        
+        self.containerHeightConstraint.pop_addAnimation(spring, forKey: "spring")
+    }
+    
+    
+    override func viewDidLayoutSubviews() {
+        
+    }
+    
 }
 
 
