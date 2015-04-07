@@ -29,7 +29,6 @@ class YTVideoWatchViewController: UIViewController {
         self.view.addSubview(movieEmbeddedView!)
         self.addChildViewController(movieEmbeddedViewController!)
 
-        
 //         setupViewHorizontalLayout()
     }
     

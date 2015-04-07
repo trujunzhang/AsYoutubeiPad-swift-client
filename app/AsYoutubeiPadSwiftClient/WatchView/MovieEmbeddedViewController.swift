@@ -20,10 +20,12 @@ class MovieEmbeddedViewController: UIViewController,ALMoviePlayerControllerDeleg
     
     
     var normalBarViewController : MovieEmbeddedNormalBarViewController?
+    var  movieControls:ALMoviePlayerControls?
     var normalBarRootView : UIView?
     
     override func viewDidLoad() {
-        YoutubeExtractor()
+        
+        //        YoutubeExtractor()
         
         setupMoviePlayer()
         
@@ -33,7 +35,11 @@ class MovieEmbeddedViewController: UIViewController,ALMoviePlayerControllerDeleg
         // add movie player to your view
         self.view.addSubview(playerView!)
         LayoutUtils.LayoutFullView(playerView!)
-
+        
+        // test local movie file
+        let path:NSString = NSBundle.mainBundle().pathForResource("example", ofType: "mp4")!
+        let videoURL:NSURL = NSURL(string: path)!
+        self.moviePlayer?.contentURL = videoURL
         
         self.view.backgroundColor = UIColor.blackColor()
     }
@@ -62,7 +68,7 @@ class MovieEmbeddedViewController: UIViewController,ALMoviePlayerControllerDeleg
     }
     
     override func viewDidLayoutSubviews() {
-
+        
     }
     
     
@@ -72,14 +78,14 @@ class MovieEmbeddedViewController: UIViewController,ALMoviePlayerControllerDeleg
         moviePlayer?.delegate = self
         
         // create the controls
-        var  movieControls:ALMoviePlayerControls = ALMoviePlayerControls(moviePlayer: moviePlayer, style: ALMoviePlayerControlsStyleDefault)
+        movieControls = ALMoviePlayerControls(moviePlayer: moviePlayer, style: ALMoviePlayerControlsStyleDefault)
         
         // optionally customize the controls here...
-        movieControls.barColor = UIColor.blueColor()
-        movieControls.timeRemainingDecrements = true
-        movieControls.barHeight = 120
-        movieControls.fadeDelay = 3.0
-        movieControls.seekRate = 2.0
+//        movieControls.barColor = UIColor.blueColor()
+//        movieControls.timeRemainingDecrements = true
+//        movieControls.barHeight = 120
+//        movieControls.fadeDelay = 3.0
+//        movieControls.seekRate = 2.0
         
         // assign the controls to the movie player
         moviePlayer?.controls = movieControls
@@ -90,12 +96,12 @@ class MovieEmbeddedViewController: UIViewController,ALMoviePlayerControllerDeleg
     }
     
     func setupEmbeddedBars() {
-        // fullscreen bar
-        //        fullscreenBarViewController = StoryBoardUtils.getMovieEmbeddedFullscreenBarViewController()
-        
         // normal bar
         normalBarViewController = StoryBoardUtils.getMovieEmbeddedNormalBarViewController()
         self.addChildViewController(normalBarViewController!)
+        
+        // set bars to play controller
+//        normalBarViewController.setPlayerBars(movieControls)
     }
     
     func layoutEmbeddedBar(){

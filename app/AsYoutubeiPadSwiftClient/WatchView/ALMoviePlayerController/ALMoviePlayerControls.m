@@ -37,7 +37,7 @@
 
 
 @property (nonatomic, assign) ALMoviePlayerControlsState state;
-@property (nonatomic, getter = isShowing) BOOL showing;
+//@property (nonatomic, getter = isShowing) BOOL showing;
 
 @property (nonatomic, strong) NSTimer *durationTimer;
 
@@ -54,7 +54,7 @@
         
         self.moviePlayer = moviePlayer;
         self.style = style;
-        self.showing = NO;
+//        self.showing = NO;
         self.fadeDelay = 5.0;
         self.timeRemainingDecrements = NO;
         self.barColor = [[UIColor blackColor] colorWithAlphaComponent:0.5];
@@ -288,49 +288,49 @@
 }
 
 - (void)showControls:(void(^)(void))completion {
-    if (!self.isShowing) {
-        [NSObject cancelPreviousPerformRequestsWithTarget:self selector:@selector(hideControls:) object:nil];
-        if (self.style == ALMoviePlayerControlsStyleFullscreen || (self.style == ALMoviePlayerControlsStyleDefault && self.moviePlayer.isFullscreen)) {
-            [self.topBar setNeedsDisplay];
-        }
-        [self.bottomBar setNeedsDisplay];
-        [UIView animateWithDuration:0.3 delay:0.0 options:0 animations:^{
-            if (self.style == ALMoviePlayerControlsStyleFullscreen || (self.style == ALMoviePlayerControlsStyleDefault && self.moviePlayer.isFullscreen)) {
-                self.topBar.alpha = 1.f;
-            }
-            self.bottomBar.alpha = 1.f;
-        } completion:^(BOOL finished) {
-            self.showing = YES;
-            if (completion)
-                completion();
-            [self performSelector:@selector(hideControls:) withObject:nil afterDelay:self.fadeDelay];
-        }];
-    } else {
-        if (completion)
-            completion();
-    }
+//    if (!self.isShowing) {
+//        [NSObject cancelPreviousPerformRequestsWithTarget:self selector:@selector(hideControls:) object:nil];
+//        if (self.style == ALMoviePlayerControlsStyleFullscreen || (self.style == ALMoviePlayerControlsStyleDefault && self.moviePlayer.isFullscreen)) {
+//            [self.topBar setNeedsDisplay];
+//        }
+//        [self.bottomBar setNeedsDisplay];
+//        [UIView animateWithDuration:0.3 delay:0.0 options:0 animations:^{
+//            if (self.style == ALMoviePlayerControlsStyleFullscreen || (self.style == ALMoviePlayerControlsStyleDefault && self.moviePlayer.isFullscreen)) {
+//                self.topBar.alpha = 1.f;
+//            }
+//            self.bottomBar.alpha = 1.f;
+//        } completion:^(BOOL finished) {
+//            self.showing = YES;
+//            if (completion)
+//                completion();
+//            [self performSelector:@selector(hideControls:) withObject:nil afterDelay:self.fadeDelay];
+//        }];
+//    } else {
+//        if (completion)
+//            completion();
+//    }
 }
 
 - (void)hideControls:(void(^)(void))completion {
 
-    self.neverHide = YES;
-
-    if (self.isShowing && !self.neverHide) {
-        [NSObject cancelPreviousPerformRequestsWithTarget:self selector:@selector(hideControls:) object:nil];
-        [UIView animateWithDuration:0.3 delay:0.0 options:0 animations:^{
-            if (self.style == ALMoviePlayerControlsStyleFullscreen || (self.style == ALMoviePlayerControlsStyleDefault && self.moviePlayer.isFullscreen)) {
-                self.topBar.alpha = 0.f;
-            }
-            self.bottomBar.alpha = 0.f;
-        } completion:^(BOOL finished) {
-            self.showing = NO;
-            if (completion)
-                completion();
-        }];
-    } else {
-        if (completion)
-            completion();
-    }
+//    self.neverHide = YES;
+//
+//    if (self.isShowing && !self.neverHide) {
+//        [NSObject cancelPreviousPerformRequestsWithTarget:self selector:@selector(hideControls:) object:nil];
+//        [UIView animateWithDuration:0.3 delay:0.0 options:0 animations:^{
+//            if (self.style == ALMoviePlayerControlsStyleFullscreen || (self.style == ALMoviePlayerControlsStyleDefault && self.moviePlayer.isFullscreen)) {
+//                self.topBar.alpha = 0.f;
+//            }
+//            self.bottomBar.alpha = 0.f;
+//        } completion:^(BOOL finished) {
+//            self.showing = NO;
+//            if (completion)
+//                completion();
+//        }];
+//    } else {
+//        if (completion)
+//            completion();
+//    }
 }
 
 - (void)showLoadingIndicators {

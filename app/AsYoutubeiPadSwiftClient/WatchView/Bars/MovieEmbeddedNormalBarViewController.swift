@@ -63,6 +63,9 @@ class MovieEmbeddedNormalBarViewController: MovieEmbeddedBasedBarViewController 
         var x = 0
     }
     
+    func setPlayerBars(moviePlayer : ALMoviePlayerControls){
+        
+    }
     
     
     
