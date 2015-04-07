@@ -105,6 +105,66 @@
 //    self.chooseButton.delegate = nil;
 }
 
+
+- (void)setTwoBars:(UIView *)topBar withBottomBar:(UIView *)bottomBar withDurationSlider:(UISlider *)durationSlider withTimeElapsedLabel:(UILabel *)timeElapsedLabel withTimeRemainingLabel:(UILabel *)timeRemainingLabel withPlayPauseButton:(UIButton *)playPauseButton moviePause:(NSString *)moviePause moviePlay:(NSString *)moviePlay {
+    
+    self.topBar = topBar;
+    self.bottomBar = bottomBar;
+    self.durationSlider = durationSlider;
+    self.timeElapsedLabel = timeElapsedLabel;
+    self.timeRemainingLabel = timeRemainingLabel;
+    
+    self.playPauseButton = playPauseButton;
+    
+    
+    [self setupTwoBars:moviePause withMoviePlay:moviePlay];
+}
+
+- (void)setupTwoBars:(NSString *)moviePause withMoviePlay:(NSString *)moviePlay {
+    
+    self.durationSlider.value = 0.f;
+    self.durationSlider.continuous = YES;
+    
+    [self.durationSlider addTarget:self action:@selector(durationSliderValueChanged:) forControlEvents:UIControlEventValueChanged];
+    [self.durationSlider addTarget:self action:@selector(durationSliderTouchBegan:) forControlEvents:UIControlEventTouchDown];
+    [self.durationSlider addTarget:self action:@selector(durationSliderTouchEnded:) forControlEvents:UIControlEventTouchUpInside];
+    [self.durationSlider addTarget:self action:@selector(durationSliderTouchEnded:) forControlEvents:UIControlEventTouchUpOutside];
+    
+    
+    self.timeElapsedLabel.backgroundColor = [UIColor clearColor];
+    self.timeElapsedLabel.font = [UIFont systemFontOfSize:12.f];
+    self.timeElapsedLabel.textColor = [UIColor lightTextColor];
+    self.timeElapsedLabel.textAlignment = NSTextAlignmentRight;
+    self.timeElapsedLabel.text = @"0:00";
+    self.timeElapsedLabel.layer.shadowColor = [UIColor blackColor].CGColor;
+    self.timeElapsedLabel.layer.shadowRadius = 1.f;
+    self.timeElapsedLabel.layer.shadowOffset = CGSizeMake(1.f, 1.f);
+    self.timeElapsedLabel.layer.shadowOpacity = 0.8f;
+    
+    
+    self.timeRemainingLabel.backgroundColor = [UIColor clearColor];
+    self.timeRemainingLabel.font = [UIFont systemFontOfSize:12.f];
+    self.timeRemainingLabel.textColor = [UIColor lightTextColor];
+    self.timeRemainingLabel.textAlignment = NSTextAlignmentLeft;
+    self.timeRemainingLabel.text = @"0:00";
+    self.timeRemainingLabel.layer.shadowColor = [UIColor blackColor].CGColor;
+    self.timeRemainingLabel.layer.shadowRadius = 1.f;
+    self.timeRemainingLabel.layer.shadowOffset = CGSizeMake(1.f, 1.f);
+    self.timeRemainingLabel.layer.shadowOpacity = 0.8f;
+    
+    
+    
+    //static stuff
+    //    [self.playPauseButton setImage:[UIImage imageNamed:@"moviePause.png"] forState:UIControlStateNormal];
+    //    [self.playPauseButton setImage:[UIImage imageNamed:@"moviePlay.png"] forState:UIControlStateSelected];
+    [self.playPauseButton setImage:[UIImage imageNamed:moviePause] forState:UIControlStateNormal];
+    [self.playPauseButton setImage:[UIImage imageNamed:moviePlay] forState:UIControlStateSelected];
+    [self.playPauseButton setSelected:self.moviePlayer.playbackState == MPMoviePlaybackStatePlaying ? NO : YES];
+    [self.playPauseButton addTarget:self action:@selector(playPausePressed:) forControlEvents:UIControlEventTouchUpInside];
+    //    self.playPauseButton.delegate = self;
+}
+
+
 # pragma mark - Setters
 
 - (void)setState:(ALMoviePlayerControlsState)state {
