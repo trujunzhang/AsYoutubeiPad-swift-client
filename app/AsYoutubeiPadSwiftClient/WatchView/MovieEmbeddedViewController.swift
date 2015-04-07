@@ -14,7 +14,6 @@ class MovieEmbeddedViewController: UIViewController,ALMoviePlayerControllerDeleg
     var videoID = ""
     var dict:[String:IGYouTubeVideo] = [:]
     
-    // v1.0
     var moviePlayer : ALMoviePlayerController?
     
     var playerView: UIView?
@@ -24,9 +23,9 @@ class MovieEmbeddedViewController: UIViewController,ALMoviePlayerControllerDeleg
     var normalBarRootView : UIView?
     
     override func viewDidLoad() {
-        YoutubeExtractor()
+//        YoutubeExtractor()
         
-        setupMoviePlayer()
+//        setupMoviePlayer()
         
         setupEmbeddedBars()
         
