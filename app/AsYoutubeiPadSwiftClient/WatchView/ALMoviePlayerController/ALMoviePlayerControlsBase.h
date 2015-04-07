@@ -1,5 +1,5 @@
 //
-//  ALMoviePlayerBaseControls.h
+//  ALMoviePlayerControlsBase.h
 //  AsYoutubeiPadSwiftClient
 //
 //  Created by djzhang on 4/7/15.
@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ALMoviePlayerBaseControls : UIView
+@interface ALMoviePlayerControlsBase : UIView
 
 
 
