@@ -41,9 +41,6 @@
 
 @property (nonatomic, strong) NSTimer *durationTimer;
 
-@property (nonatomic, strong) UIActivityIndicatorView *activityIndicator;
-
-
 @end
 
 @implementation ALMoviePlayerControls
@@ -63,12 +60,12 @@
         self.barColor = [[UIColor blackColor] colorWithAlphaComponent:0.5];
         
         //in fullscreen mode, move controls away from top status bar and bottom screen bezel. I think the iOS7 control center gestures interfere with the uibutton touch events. this will alleviate that a little (correct me if I'm wrong and/or adjust if necessary).
-        _barHeight = [UIDevice iOSVersion] >= 7.0 ? 70.f : 50.f;
+        self.barHeight = [UIDevice iOSVersion] >= 7.0 ? 70.f : 50.f;
         
         _seekRate = 3.f;
         _state = ALMoviePlayerControlsStateIdle;
         
-        [self setup];
+//        [self setup];
         [self addNotifications];
     }
     return self;
@@ -88,16 +85,16 @@
 
     [self setupTwoBars];
 
-    _activityIndicator = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge];
-    _activityIndicator.alpha = 0.f;
-    _activityIndicator.hidesWhenStopped = YES;
+    self.activityIndicator = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge];
+    self.activityIndicator.alpha = 0.f;
+    self.activityIndicator.hidesWhenStopped = YES;
 }
 
 
 - (void)resetViews {
     [self stopDurationTimer];
     [self nilDelegates];
-    [_activityIndicator removeFromSuperview];
+    [self.activityIndicator removeFromSuperview];
     [self.topBar removeFromSuperview];
     [self.bottomBar removeFromSuperview];
 }
@@ -337,11 +334,11 @@
 }
 
 - (void)showLoadingIndicators {
-    [self addSubview:_activityIndicator];
-    [_activityIndicator startAnimating];
+    [self addSubview:self.activityIndicator];
+    [self.activityIndicator startAnimating];
     
     [UIView animateWithDuration:0.2f animations:^{
-        _activityIndicator.alpha = 1.f;
+        self.activityIndicator.alpha = 1.f;
     }];
 }
 

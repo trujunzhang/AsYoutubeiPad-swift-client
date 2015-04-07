@@ -20,24 +20,9 @@
 
 @class ALMoviePlayerController;
 
-typedef enum {
-    /** Controls are not doing anything */
-    ALMoviePlayerControlsStateIdle,
-    
-    /** Controls are waiting for movie to finish loading */
-    ALMoviePlayerControlsStateLoading,
-    
-    /** Controls are ready to play and/or playing */
-    ALMoviePlayerControlsStateReady,
-    
-} ALMoviePlayerControlsState;
+
 
 @interface ALMoviePlayerControls : ALMoviePlayerControlsBase
-
-/** 
- The state of the controls.
- */
-@property (nonatomic, readonly) ALMoviePlayerControlsState state;
 
 /**
  The color of the control bars. 
@@ -45,13 +30,6 @@ typedef enum {
  Default value is black with a hint of transparency.
  */
 @property (nonatomic, strong) UIColor *barColor;
-
-/**
- The height of the control bars. 
- 
- Default value is 70.f for iOS7+ and 50.f for previous versions.
- */
-@property (nonatomic, assign) CGFloat barHeight;
 
 /**
  The amount of time that the controls should stay on screen before automatically hiding.

@@ -11,6 +11,17 @@
 @class ALMoviePlayerController;
 @class ALButton;
 
+typedef enum {
+    /** Controls are not doing anything */
+            ALMoviePlayerControlsStateIdle,
+
+    /** Controls are waiting for movie to finish loading */
+            ALMoviePlayerControlsStateLoading,
+
+    /** Controls are ready to play and/or playing */
+            ALMoviePlayerControlsStateReady,
+
+} ALMoviePlayerControlsState;
 
 typedef enum {
     /** Controls will appear in a bottom bar */
@@ -42,7 +53,26 @@ typedef enum {
 @property (nonatomic, strong) ALButton *chooseButton;
 
 
+@property (nonatomic, strong) UIActivityIndicatorView *activityIndicator;
+
+
+
 @property (nonatomic, strong) ALMoviePlayerController *moviePlayer;
+
+
+/**
+The height of the control bars.
+
+Default value is 70.f for iOS7+ and 50.f for previous versions.
+*/
+@property (nonatomic, assign) CGFloat barHeight;
+
+
+/**
+The state of the controls.
+*/
+@property (nonatomic, readonly) ALMoviePlayerControlsState state;
+
 
 /**
 The style of the controls. Can be changed on the fly.

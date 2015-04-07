@@ -62,13 +62,17 @@
     [_topBar addSubview:_timeElapsedLabel];
     [_topBar addSubview:_timeRemainingLabel];
 
+    [self makeCancelAndChooseButtons];
 
+    //static stuff
+    _playPauseButton = [[ALButton alloc] init];
+    [_bottomBar addSubview:_playPauseButton];
 
-    [self setTwoBars:_topBar withBottomBar:_bottomBar withDurationSlider:_durationSlider withTimeElapsedLabel:_timeElapsedLabel withTimeRemainingLabel:_timeRemainingLabel];
+    [self setTwoBars:_topBar withBottomBar:_bottomBar withDurationSlider:_durationSlider withTimeElapsedLabel:_timeElapsedLabel withTimeRemainingLabel:_timeRemainingLabel withPlayPauseButton:_playPauseButton];
 
 }
 
-- (void)setTwoBars:(UIView *)topBar withBottomBar:(UIView *)bottomBar withDurationSlider:(UISlider *)durationSlider withTimeElapsedLabel:(UILabel *)timeElapsedLabel withTimeRemainingLabel:(UILabel *)timeRemainingLabel {
+- (void)setTwoBars:(UIView *)topBar withBottomBar:(UIView *)bottomBar withDurationSlider:(UISlider *)durationSlider withTimeElapsedLabel:(UILabel *)timeElapsedLabel withTimeRemainingLabel:(UILabel *)timeRemainingLabel withPlayPauseButton:(ALButton *)playPauseButton {
 
     self.topBar = topBar;
     self.bottomBar = bottomBar;
@@ -76,7 +80,9 @@
     self.timeElapsedLabel = timeElapsedLabel;
     self.timeRemainingLabel = timeRemainingLabel;
 
+    self.playPauseButton = playPauseButton;
 
+    [self setupTwoBars];
 }
 
 - (void)setupTwoBars {
@@ -111,7 +117,18 @@
     _timeRemainingLabel.layer.shadowOffset = CGSizeMake(1.f, 1.f);
     _timeRemainingLabel.layer.shadowOpacity = 0.8f;
 
-    //cancel button
+
+
+    //static stuff
+    [_playPauseButton setImage:[UIImage imageNamed:@"moviePause.png"] forState:UIControlStateNormal];
+    [_playPauseButton setImage:[UIImage imageNamed:@"moviePlay.png"] forState:UIControlStateSelected];
+    [_playPauseButton setSelected:_moviePlayer.playbackState == MPMoviePlaybackStatePlaying ? NO : YES];
+    [_playPauseButton addTarget:self action:@selector(playPausePressed:) forControlEvents:UIControlEventTouchUpInside];
+    _playPauseButton.delegate = self;
+}
+
+- (void)makeCancelAndChooseButtons {
+//cancel button
     _cancelButton = [[ALButton alloc] init];
     [_cancelButton setTitle:@"Choose" forState:UIControlStateNormal];
     _cancelButton.delegate = self;
@@ -129,17 +146,7 @@
 
     [_bottomBar addSubview:_cancelButton];
     [_bottomBar addSubview:_chooseButton];
-
-    //static stuff
-    _playPauseButton = [[ALButton alloc] init];
-    [_playPauseButton setImage:[UIImage imageNamed:@"moviePause.png"] forState:UIControlStateNormal];
-    [_playPauseButton setImage:[UIImage imageNamed:@"moviePlay.png"] forState:UIControlStateSelected];
-    [_playPauseButton setSelected:_moviePlayer.playbackState == MPMoviePlaybackStatePlaying ? NO : YES];
-    [_playPauseButton addTarget:self action:@selector(playPausePressed:) forControlEvents:UIControlEventTouchUpInside];
-    _playPauseButton.delegate = self;
-    [_bottomBar addSubview:_playPauseButton];
 }
-
 
 
 - (void)layoutTwoBarItems {
@@ -150,8 +157,8 @@
     CGFloat seekWidth = 100.f;
     CGFloat seekHeight = 50.f;
 
-    CGFloat playWidth = 18.f*2;
-    CGFloat playHeight = 22.f*2;
+    CGFloat playWidth = 18.f * 2;
+    CGFloat playHeight = 22.f * 2;
 
     CGFloat labelWidth = 30.f;
 
@@ -160,9 +167,9 @@
 
     //bottom bar
     self.bottomBar.frame = CGRectMake(0, self.frame.size.height - self.barHeight, self.frame.size.width, self.barHeight);
-    self.playPauseButton.frame = CGRectMake(CGRectGetWidth(self.bottomBar.frame)/2 - playWidth/2, self.barHeight /2 - playHeight/2, playWidth, playHeight);
-    self.cancelButton.frame = CGRectMake(CGRectGetWidth(self.bottomBar.frame) - seekWidth, self.barHeight /2 - seekHeight/2 + 1.f, seekWidth, seekHeight);
-    self.chooseButton.frame = CGRectMake(0, self.barHeight /2 - seekHeight/2 + 1.f, seekWidth, seekHeight);
+    self.playPauseButton.frame = CGRectMake(CGRectGetWidth(self.bottomBar.frame) / 2 - playWidth / 2, self.barHeight / 2 - playHeight / 2, playWidth, playHeight);
+    self.cancelButton.frame = CGRectMake(CGRectGetWidth(self.bottomBar.frame) - seekWidth, self.barHeight / 2 - seekHeight / 2 + 1.f, seekWidth, seekHeight);
+    self.chooseButton.frame = CGRectMake(0, self.barHeight / 2 - seekHeight / 2 + 1.f, seekWidth, seekHeight);
 
     //duration slider
     self.timeElapsedLabel.frame = CGRectMake(10, 0, labelWidth, self.barHeight);
@@ -173,11 +180,11 @@
     CGFloat sliderWidth = ((timeRemainingX - paddingBetweenLabelsAndSlider) - (timeElapsedX + self.timeElapsedLabel.frame.size.width + paddingBetweenLabelsAndSlider));
 
     self.durationSlider.frame = CGRectMake(timeElapsedX + self.timeElapsedLabel.frame.size.width + paddingBetweenLabelsAndSlider,
-            self.barHeight /2 - sliderHeight/2,
+            self.barHeight / 2 - sliderHeight / 2,
             sliderWidth,
             sliderHeight);
 
-    if (self.state == ALMoviePlayerControlsStateLoading) {
+    if(self.state == ALMoviePlayerControlsStateLoading) {
         _activityIndicator.center = self.center;
     }
 }
