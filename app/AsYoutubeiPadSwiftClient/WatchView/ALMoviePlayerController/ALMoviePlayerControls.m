@@ -62,8 +62,8 @@
         //in fullscreen mode, move controls away from top status bar and bottom screen bezel. I think the iOS7 control center gestures interfere with the uibutton touch events. this will alleviate that a little (correct me if I'm wrong and/or adjust if necessary).
         self.barHeight = [UIDevice iOSVersion] >= 7.0 ? 70.f : 50.f;
         
-        _seekRate = 3.f;
-        _state = ALMoviePlayerControlsStateIdle;
+        self.seekRate = 3.f;
+        self.state = ALMoviePlayerControlsStateIdle;
         
 //        [self setup];
         [self addNotifications];
@@ -108,8 +108,8 @@
 # pragma mark - Setters
 
 - (void)setState:(ALMoviePlayerControlsState)state {
-    if (_state != state) {
-        _state = state;
+    if (self.state != state) {
+        self.state = state;
         
         switch (state) {
             case ALMoviePlayerControlsStateLoading:
