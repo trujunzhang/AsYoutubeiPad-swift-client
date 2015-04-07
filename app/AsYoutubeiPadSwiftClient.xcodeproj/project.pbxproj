@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		5E138D001AD3F222007363C8 /* LayoutUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E138CFF1AD3F222007363C8 /* LayoutUtils.swift */; };
+		5E138D031AD3F514007363C8 /* ALMoviePlayerBaseController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E138D021AD3F514007363C8 /* ALMoviePlayerBaseController.m */; };
 		5E15D4B61AD3EDFE00ECDEA8 /* MPMoviePlayerController+Subtitles.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E15D4B51AD3EDFE00ECDEA8 /* MPMoviePlayerController+Subtitles.m */; };
 		5E39F8871AB91E5C00A285AE /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E39F8861AB91E5C00A285AE /* Alamofire.framework */; };
 		5E39F88A1AB91EF000A285AE /* Haneke.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E39F8891AB91EF000A285AE /* Haneke.framework */; };
@@ -99,6 +100,8 @@
 		1C3B0BF885CDA89AA03EAAB2 /* libPods-AsYoutubeiPadSwiftClientTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-AsYoutubeiPadSwiftClientTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5E033EA41AC4122A001014A8 /* SDWebImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SDWebImage.framework; path = Carthage/Build/iOS/SDWebImage.framework; sourceTree = "<group>"; };
 		5E138CFF1AD3F222007363C8 /* LayoutUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LayoutUtils.swift; path = Utils/LayoutUtils.swift; sourceTree = "<group>"; };
+		5E138D011AD3F514007363C8 /* ALMoviePlayerBaseController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ALMoviePlayerBaseController.h; sourceTree = "<group>"; };
+		5E138D021AD3F514007363C8 /* ALMoviePlayerBaseController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ALMoviePlayerBaseController.m; sourceTree = "<group>"; };
 		5E15D4B41AD3EDFE00ECDEA8 /* MPMoviePlayerController+Subtitles.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MPMoviePlayerController+Subtitles.h"; sourceTree = "<group>"; };
 		5E15D4B51AD3EDFE00ECDEA8 /* MPMoviePlayerController+Subtitles.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MPMoviePlayerController+Subtitles.m"; sourceTree = "<group>"; };
 		5E39F8861AB91E5C00A285AE /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
@@ -456,6 +459,8 @@
 				5EDEBE1A1AD3ED9F007E0066 /* ALMoviePlayerController.m */,
 				5EDEBE1B1AD3ED9F007E0066 /* ALMoviePlayerControls.h */,
 				5EDEBE1C1AD3ED9F007E0066 /* ALMoviePlayerControls.m */,
+				5E138D011AD3F514007363C8 /* ALMoviePlayerBaseController.h */,
+				5E138D021AD3F514007363C8 /* ALMoviePlayerBaseController.m */,
 			);
 			name = ALMoviePlayerController;
 			path = WatchView/ALMoviePlayerController;
@@ -724,6 +729,7 @@
 				5EC950051AC82E9300844E61 /* YoutubeModelParser.swift in Sources */,
 				5EC950061AC82E9300844E61 /* YoutubeUserProfile.swift in Sources */,
 				5EE43FE71AD3C95600054AC5 /* MovieEmbeddedBasedBarViewController.swift in Sources */,
+				5E138D031AD3F514007363C8 /* ALMoviePlayerBaseController.m in Sources */,
 				5E85EDE51ACEC3BA009170D8 /* YTVideoWatchPlaylistHeaderViewController.swift in Sources */,
 				5EB152191ACA5F8800DC74DC /* ChannelPageViewController.swift in Sources */,
 				5EC94FFD1AC82E9300844E61 /* WebImageCache.swift in Sources */,
