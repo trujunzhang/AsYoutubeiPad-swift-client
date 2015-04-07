@@ -9,7 +9,9 @@
 import Foundation
 import Cartography
 
-class MovieEmbeddedNormalBarViewController: UIViewController {
+
+
+class MovieEmbeddedNormalBarViewController: MovieEmbeddedBasedBarViewController {
     
     // MARK : top bar views
     @IBOutlet var topBarPanel: UIView!
@@ -28,6 +30,8 @@ class MovieEmbeddedNormalBarViewController: UIViewController {
     
     // MARK : Top bar items
     
+    @IBOutlet var topBarTopConstraint: NSLayoutConstraint!
+    
     @IBOutlet var repeatButton: UIButton!
     @IBOutlet var ccButton: UIButton!
     @IBOutlet var watchLaterButton: UIButton!
@@ -35,10 +39,13 @@ class MovieEmbeddedNormalBarViewController: UIViewController {
     // MARK : Test views
     
     @IBOutlet var animatedView: UIView!
+
     @IBOutlet var containerHeightConstraint: NSLayoutConstraint!
     
     
     override func viewDidLoad() {
+        super.viewDidLoad()
+        
         let view : UIView = bottomBarPanel
         
         hideTwoBars()
@@ -59,7 +66,7 @@ class MovieEmbeddedNormalBarViewController: UIViewController {
     
     // MARK : hide Top and Bottom bars after xxx seconds
     func hideTwoBars(){
-        self.performClosureAfterDelay(15, block: { () -> Void in
+        self.performClosureAfterDelay(4, block: { () -> Void in
             
             self.popAnimationForTopBar()
             
@@ -67,12 +74,10 @@ class MovieEmbeddedNormalBarViewController: UIViewController {
     }
     
     func popAnimationForTopBar(){
-        let rWidth:CGFloat = 100
+        let rWidth:CGFloat = -WATCH_BAR_HEIGHT
         
-        let spring : POPSpringAnimation = POPSpringAnimation(propertyNamed: kPOPViewFrame)
-        spring.springBounciness = 20
-        spring.springSpeed = 20
-        
+        let spring : POPBasicAnimation = POPBasicAnimation(propertyNamed: kPOPViewFrame)
+
         
         let property: POPAnimatableProperty = POPAnimatableProperty.propertyWithName("com.rwt.heightContstraint", initializer: { (object) -> Void in
             
@@ -97,7 +102,7 @@ class MovieEmbeddedNormalBarViewController: UIViewController {
         spring.property = property
         spring.toValue = rWidth
         
-        self.containerHeightConstraint.pop_addAnimation(spring, forKey: "spring")
+        self.topBarTopConstraint.pop_addAnimation(spring, forKey: "spring")
     }
     
     
