@@ -7,8 +7,6 @@
 //
 
 import Foundation
-import Cartography
-
 
 
 class MovieEmbeddedNormalBarViewController: MovieEmbeddedBasedBarViewController {
