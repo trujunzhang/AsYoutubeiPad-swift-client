@@ -23,10 +23,11 @@ class MovieEmbeddedNormalBarViewController: MovieEmbeddedBasedBarViewController 
     
     @IBOutlet var bottomBarTopConstraint: NSLayoutConstraint!
     
+    @IBOutlet var playPauseButton: UIButton!
     @IBOutlet var durationSlider: UISlider!
     @IBOutlet var timeElapsedLabel: UILabel!
     @IBOutlet var timeRemainingLabel: UILabel!
-    @IBOutlet var cancelButton: UIImageView!
+
     @IBOutlet var fullscreenButton: UIImageView!
     
     // MARK : Top bar items
@@ -64,7 +65,7 @@ class MovieEmbeddedNormalBarViewController: MovieEmbeddedBasedBarViewController 
     }
     
     func setPlayerBars(moviePlayer : ALMoviePlayerControls){
-        
+        moviePlayer.setTwoBars(topBarPanel, withBottomBar: bottomBarPanel, withDurationSlider: durationSlider, withTimeElapsedLabel: timeElapsedLabel, withTimeRemainingLabel: timeRemainingLabel, withPlayPauseButton: playPauseButton, moviePause: "mp_embedded_pause", moviePlay: "mp_embedded_play")
     }
     
     

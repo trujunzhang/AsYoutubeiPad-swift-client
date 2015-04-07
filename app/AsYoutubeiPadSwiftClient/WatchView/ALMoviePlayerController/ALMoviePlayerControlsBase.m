@@ -55,24 +55,24 @@
     [self addSubview:_bottomBar];
 
     // Top bar items
-    _durationSlider = [[UISlider alloc] init];
-    _timeElapsedLabel = [[UILabel alloc] init];
-    _timeRemainingLabel = [[UILabel alloc] init];
-    [_topBar addSubview:_durationSlider];
-    [_topBar addSubview:_timeElapsedLabel];
-    [_topBar addSubview:_timeRemainingLabel];
+    self.durationSlider = [[UISlider alloc] init];
+    self.timeElapsedLabel = [[UILabel alloc] init];
+    self.timeRemainingLabel = [[UILabel alloc] init];
+    [_topBar addSubview:self.durationSlider];
+    [_topBar addSubview:self.timeElapsedLabel];
+    [_topBar addSubview:self.timeRemainingLabel];
 
     [self makeCancelAndChooseButtons];
 
     //static stuff
-    _playPauseButton = [[ALButton alloc] init];
-    [_bottomBar addSubview:_playPauseButton];
+    self.playPauseButton = [[UIButton alloc] init];
+    [_bottomBar addSubview:self.playPauseButton];
 
-    [self setTwoBars:_topBar withBottomBar:_bottomBar withDurationSlider:_durationSlider withTimeElapsedLabel:_timeElapsedLabel withTimeRemainingLabel:_timeRemainingLabel withPlayPauseButton:_playPauseButton moviePause:nil moviePlay:nil];
+    [self setTwoBars:_topBar withBottomBar:_bottomBar withDurationSlider:self.durationSlider withTimeElapsedLabel:self.timeElapsedLabel withTimeRemainingLabel:self.timeRemainingLabel withPlayPauseButton:self.playPauseButton moviePause:nil moviePlay:nil];
 
 }
 
-- (void)setTwoBars:(UIView *)topBar withBottomBar:(UIView *)bottomBar withDurationSlider:(UISlider *)durationSlider withTimeElapsedLabel:(UILabel *)timeElapsedLabel withTimeRemainingLabel:(UILabel *)timeRemainingLabel withPlayPauseButton:(ALButton *)playPauseButton moviePause:(NSString *)moviePause moviePlay:(NSString *)moviePlay {
+- (void)setTwoBars:(UIView *)topBar withBottomBar:(UIView *)bottomBar withDurationSlider:(UISlider *)durationSlider withTimeElapsedLabel:(UILabel *)timeElapsedLabel withTimeRemainingLabel:(UILabel *)timeRemainingLabel withPlayPauseButton:(UIButton *)playPauseButton moviePause:(NSString *)moviePause moviePlay:(NSString *)moviePlay {
 
     self.topBar = topBar;
     self.bottomBar = bottomBar;
@@ -89,67 +89,67 @@
 
 - (void)setupTwoBars:(NSString *)moviePause withMoviePlay:(NSString *)moviePlay {
 
-    _durationSlider.value = 0.f;
-    _durationSlider.continuous = YES;
+    self.durationSlider.value = 0.f;
+    self.durationSlider.continuous = YES;
 
-    [_durationSlider addTarget:self action:@selector(durationSliderValueChanged:) forControlEvents:UIControlEventValueChanged];
-    [_durationSlider addTarget:self action:@selector(durationSliderTouchBegan:) forControlEvents:UIControlEventTouchDown];
-    [_durationSlider addTarget:self action:@selector(durationSliderTouchEnded:) forControlEvents:UIControlEventTouchUpInside];
-    [_durationSlider addTarget:self action:@selector(durationSliderTouchEnded:) forControlEvents:UIControlEventTouchUpOutside];
-
-
-    _timeElapsedLabel.backgroundColor = [UIColor clearColor];
-    _timeElapsedLabel.font = [UIFont systemFontOfSize:12.f];
-    _timeElapsedLabel.textColor = [UIColor lightTextColor];
-    _timeElapsedLabel.textAlignment = NSTextAlignmentRight;
-    _timeElapsedLabel.text = @"0:00";
-    _timeElapsedLabel.layer.shadowColor = [UIColor blackColor].CGColor;
-    _timeElapsedLabel.layer.shadowRadius = 1.f;
-    _timeElapsedLabel.layer.shadowOffset = CGSizeMake(1.f, 1.f);
-    _timeElapsedLabel.layer.shadowOpacity = 0.8f;
+    [self.durationSlider addTarget:self action:@selector(durationSliderValueChanged:) forControlEvents:UIControlEventValueChanged];
+    [self.durationSlider addTarget:self action:@selector(durationSliderTouchBegan:) forControlEvents:UIControlEventTouchDown];
+    [self.durationSlider addTarget:self action:@selector(durationSliderTouchEnded:) forControlEvents:UIControlEventTouchUpInside];
+    [self.durationSlider addTarget:self action:@selector(durationSliderTouchEnded:) forControlEvents:UIControlEventTouchUpOutside];
 
 
-    _timeRemainingLabel.backgroundColor = [UIColor clearColor];
-    _timeRemainingLabel.font = [UIFont systemFontOfSize:12.f];
-    _timeRemainingLabel.textColor = [UIColor lightTextColor];
-    _timeRemainingLabel.textAlignment = NSTextAlignmentLeft;
-    _timeRemainingLabel.text = @"0:00";
-    _timeRemainingLabel.layer.shadowColor = [UIColor blackColor].CGColor;
-    _timeRemainingLabel.layer.shadowRadius = 1.f;
-    _timeRemainingLabel.layer.shadowOffset = CGSizeMake(1.f, 1.f);
-    _timeRemainingLabel.layer.shadowOpacity = 0.8f;
+    self.timeElapsedLabel.backgroundColor = [UIColor clearColor];
+    self.timeElapsedLabel.font = [UIFont systemFontOfSize:12.f];
+    self.timeElapsedLabel.textColor = [UIColor lightTextColor];
+    self.timeElapsedLabel.textAlignment = NSTextAlignmentRight;
+    self.timeElapsedLabel.text = @"0:00";
+    self.timeElapsedLabel.layer.shadowColor = [UIColor blackColor].CGColor;
+    self.timeElapsedLabel.layer.shadowRadius = 1.f;
+    self.timeElapsedLabel.layer.shadowOffset = CGSizeMake(1.f, 1.f);
+    self.timeElapsedLabel.layer.shadowOpacity = 0.8f;
+
+
+    self.timeRemainingLabel.backgroundColor = [UIColor clearColor];
+    self.timeRemainingLabel.font = [UIFont systemFontOfSize:12.f];
+    self.timeRemainingLabel.textColor = [UIColor lightTextColor];
+    self.timeRemainingLabel.textAlignment = NSTextAlignmentLeft;
+    self.timeRemainingLabel.text = @"0:00";
+    self.timeRemainingLabel.layer.shadowColor = [UIColor blackColor].CGColor;
+    self.timeRemainingLabel.layer.shadowRadius = 1.f;
+    self.timeRemainingLabel.layer.shadowOffset = CGSizeMake(1.f, 1.f);
+    self.timeRemainingLabel.layer.shadowOpacity = 0.8f;
 
 
 
     //static stuff
-//    [_playPauseButton setImage:[UIImage imageNamed:@"moviePause.png"] forState:UIControlStateNormal];
-//    [_playPauseButton setImage:[UIImage imageNamed:@"moviePlay.png"] forState:UIControlStateSelected];    
-    [_playPauseButton setImage:[UIImage imageNamed:moviePause] forState:UIControlStateNormal];
-    [_playPauseButton setImage:[UIImage imageNamed:moviePlay] forState:UIControlStateSelected];
-    [_playPauseButton setSelected:_moviePlayer.playbackState == MPMoviePlaybackStatePlaying ? NO : YES];
-    [_playPauseButton addTarget:self action:@selector(playPausePressed:) forControlEvents:UIControlEventTouchUpInside];
-    _playPauseButton.delegate = self;
+//    [self.playPauseButton setImage:[UIImage imageNamed:@"moviePause.png"] forState:UIControlStateNormal];
+//    [self.playPauseButton setImage:[UIImage imageNamed:@"moviePlay.png"] forState:UIControlStateSelected];    
+    [self.playPauseButton setImage:[UIImage imageNamed:moviePause] forState:UIControlStateNormal];
+    [self.playPauseButton setImage:[UIImage imageNamed:moviePlay] forState:UIControlStateSelected];
+    [self.playPauseButton setSelected:_moviePlayer.playbackState == MPMoviePlaybackStatePlaying ? NO : YES];
+    [self.playPauseButton addTarget:self action:@selector(playPausePressed:) forControlEvents:UIControlEventTouchUpInside];
+//    self.playPauseButton.delegate = self;
 }
 
 - (void)makeCancelAndChooseButtons {
 //cancel button
-    _cancelButton = [[ALButton alloc] init];
-    [_cancelButton setTitle:@"Choose" forState:UIControlStateNormal];
-    _cancelButton.delegate = self;
-    _cancelButton.backgroundColor = [UIColor clearColor];
-    [_cancelButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-    [_cancelButton addTarget:self action:@selector(choosePressed:) forControlEvents:UIControlEventTouchUpInside];
-
-    //use button
-    _chooseButton = [[ALButton alloc] init];
-    [_chooseButton setTitle:@"Cancel" forState:UIControlStateNormal];
-    _chooseButton.delegate = self;
-    _chooseButton.backgroundColor = [UIColor clearColor];
-    [_chooseButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-    [_chooseButton addTarget:self action:@selector(cancelPressed:) forControlEvents:UIControlEventTouchUpInside];
-
-    [_bottomBar addSubview:_cancelButton];
-    [_bottomBar addSubview:_chooseButton];
+//    _cancelButton = [[ALButton alloc] init];
+//    [_cancelButton setTitle:@"Choose" forState:UIControlStateNormal];
+//    _cancelButton.delegate = self;
+//    _cancelButton.backgroundColor = [UIColor clearColor];
+//    [_cancelButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+//    [_cancelButton addTarget:self action:@selector(choosePressed:) forControlEvents:UIControlEventTouchUpInside];
+//
+//    //use button
+//    _chooseButton = [[ALButton alloc] init];
+//    [_chooseButton setTitle:@"Cancel" forState:UIControlStateNormal];
+//    _chooseButton.delegate = self;
+//    _chooseButton.backgroundColor = [UIColor clearColor];
+//    [_chooseButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+//    [_chooseButton addTarget:self action:@selector(cancelPressed:) forControlEvents:UIControlEventTouchUpInside];
+//
+//    [_bottomBar addSubview:_cancelButton];
+//    [_bottomBar addSubview:_chooseButton];
 }
 
 
@@ -189,7 +189,7 @@
             sliderHeight);
 
     if(self.state == ALMoviePlayerControlsStateLoading) {
-        _activityIndicator.center = self.center;
+//        _activityIndicator.center = self.center;
     }
 }
 

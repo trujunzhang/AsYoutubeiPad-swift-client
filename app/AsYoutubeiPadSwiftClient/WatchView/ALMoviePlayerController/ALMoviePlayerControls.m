@@ -100,9 +100,9 @@
 }
 
 - (void)nilDelegates {
-    self.playPauseButton.delegate = nil;
-    self.cancelButton.delegate = nil;
-    self.chooseButton.delegate = nil;
+//    self.playPauseButton.delegate = nil;
+//    self.cancelButton.delegate = nil;
+//    self.chooseButton.delegate = nil;
 }
 
 # pragma mark - Setters

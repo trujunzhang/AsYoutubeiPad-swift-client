@@ -44,7 +44,7 @@ typedef enum {
 @property (nonatomic, strong) UIView *topBar;
 @property (nonatomic, strong) UIView *bottomBar;
 @property (nonatomic, strong) UISlider *durationSlider;
-@property (nonatomic, strong) ALButton *playPauseButton;
+@property (nonatomic, strong) UIButton *playPauseButton;
 
 @property (nonatomic, strong) UILabel *timeElapsedLabel;
 @property (nonatomic, strong) UILabel *timeRemainingLabel;
@@ -91,7 +91,7 @@ Are the controls currently showing on screen?
 
 - (void)hideControls:(void (^)(void))completion;
 
-- (void)setTwoBars:(UIView *)topBar withBottomBar:(UIView *)bottomBar withDurationSlider:(UISlider *)durationSlider withTimeElapsedLabel:(UILabel *)timeElapsedLabel withTimeRemainingLabel:(UILabel *)timeRemainingLabel withPlayPauseButton:(ALButton *)playPauseButton moviePause:(NSString *)moviePause moviePlay:(NSString *)moviePlay;
+- (void)setTwoBars:(UIView *)topBar withBottomBar:(UIView *)bottomBar withDurationSlider:(UISlider *)durationSlider withTimeElapsedLabel:(UILabel *)timeElapsedLabel withTimeRemainingLabel:(UILabel *)timeRemainingLabel withPlayPauseButton:(UIButton *)playPauseButton moviePause:(NSString *)moviePause moviePlay:(NSString *)moviePlay;
 
 - (void)setupTwoBars:(NSString *)pause withoviePlay:(NSString *)play;
 @end

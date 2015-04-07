@@ -21,6 +21,7 @@ class MovieEmbeddedViewController: UIViewController,ALMoviePlayerControllerDeleg
     
     var normalBarViewController : MovieEmbeddedNormalBarViewController?
     var  movieControls:ALMoviePlayerControls?
+    
     var normalBarRootView : UIView?
     
     override func viewDidLoad() {
@@ -81,7 +82,7 @@ class MovieEmbeddedViewController: UIViewController,ALMoviePlayerControllerDeleg
         movieControls = ALMoviePlayerControls(moviePlayer: moviePlayer, style: ALMoviePlayerControlsStyleDefault)
         
         // optionally customize the controls here...
-//        movieControls.barColor = UIColor.blueColor()
+        movieControls!.barColor = UIColor.blueColor()
 //        movieControls.timeRemainingDecrements = true
 //        movieControls.barHeight = 120
 //        movieControls.fadeDelay = 3.0
@@ -101,7 +102,7 @@ class MovieEmbeddedViewController: UIViewController,ALMoviePlayerControllerDeleg
         self.addChildViewController(normalBarViewController!)
         
         // set bars to play controller
-//        normalBarViewController.setPlayerBars(movieControls)
+        normalBarViewController!.setPlayerBars(movieControls!)
     }
     
     func layoutEmbeddedBar(){
