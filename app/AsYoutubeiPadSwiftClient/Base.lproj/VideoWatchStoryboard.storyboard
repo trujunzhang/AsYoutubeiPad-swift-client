@@ -37,25 +37,37 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vAr-va-7DJ" userLabel="Top Bar">
                                 <rect key="frame" x="0.0" y="0.0" width="576" height="43"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wYG-dZ-Hme">
-                                        <rect key="frame" x="192" y="0.0" width="127" height="43"/>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wYG-dZ-Hme">
+                                        <rect key="frame" x="213" y="0.0" width="150" height="43"/>
                                         <subviews>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="watch_later.png" translatesAutoresizingMaskIntoConstraints="NO" id="e3h-SQ-Ras">
-                                                <rect key="frame" x="88" y="15" width="20" height="20"/>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="watch_later.png" translatesAutoresizingMaskIntoConstraints="NO" id="e3h-SQ-Ras">
+                                                <rect key="frame" x="105" y="9" width="26" height="26"/>
                                             </imageView>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="cc.png" translatesAutoresizingMaskIntoConstraints="NO" id="QTe-Z4-31z">
-                                                <rect key="frame" x="55" y="15" width="20" height="20"/>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cc.png" translatesAutoresizingMaskIntoConstraints="NO" id="QTe-Z4-31z">
+                                                <rect key="frame" x="63" y="11" width="24" height="22"/>
                                             </imageView>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="repeat.png" translatesAutoresizingMaskIntoConstraints="NO" id="xSG-Ip-K3H">
-                                                <rect key="frame" x="19" y="15" width="20" height="20"/>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="repeat.png" translatesAutoresizingMaskIntoConstraints="NO" id="xSG-Ip-K3H">
+                                                <rect key="frame" x="19" y="11" width="22" height="22"/>
                                             </imageView>
                                         </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="centerY" secondItem="QTe-Z4-31z" secondAttribute="centerY" id="IFD-Fp-607"/>
+                                            <constraint firstAttribute="width" constant="150" id="IIt-1E-xm7"/>
+                                            <constraint firstAttribute="centerX" secondItem="QTe-Z4-31z" secondAttribute="centerX" id="NFr-6m-fNO"/>
+                                            <constraint firstItem="xSG-Ip-K3H" firstAttribute="leading" secondItem="wYG-dZ-Hme" secondAttribute="leading" constant="19" id="XbC-Ka-ZY3"/>
+                                            <constraint firstAttribute="height" constant="43" id="bEO-vm-HFQ"/>
+                                            <constraint firstAttribute="centerY" secondItem="xSG-Ip-K3H" secondAttribute="centerY" id="fer-E3-OPv"/>
+                                            <constraint firstAttribute="trailing" secondItem="e3h-SQ-Ras" secondAttribute="trailing" constant="19" id="gDf-bg-xrR"/>
+                                            <constraint firstAttribute="centerY" secondItem="e3h-SQ-Ras" secondAttribute="centerY" id="pD9-5F-esR"/>
+                                        </constraints>
                                     </view>
                                 </subviews>
                                 <color key="backgroundColor" red="0.19215686274509805" green="0.19215686274509805" blue="0.19215686274509805" alpha="0.64000000000000001" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="43" id="6rP-Eo-dbZ"/>
+                                    <constraint firstAttribute="centerY" secondItem="wYG-dZ-Hme" secondAttribute="centerY" id="S0y-9L-MwR"/>
+                                    <constraint firstAttribute="centerX" secondItem="wYG-dZ-Hme" secondAttribute="centerX" id="pcx-C7-uNb"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Gto-aw-vLc" userLabel="Bottom Bar">
