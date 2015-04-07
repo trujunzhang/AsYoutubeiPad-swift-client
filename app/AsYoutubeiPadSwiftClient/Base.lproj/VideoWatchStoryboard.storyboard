@@ -56,7 +56,7 @@
                                         <rect key="frame" x="14" y="12" width="22" height="20"/>
                                     </imageView>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="mp_fullscreen.png" translatesAutoresizingMaskIntoConstraints="NO" id="YpZ-S9-al8">
-                                        <rect key="frame" x="539" y="12" width="20" height="20"/>
+                                        <rect key="frame" x="541" y="12" width="20" height="20"/>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uaS-nr-2PJ">
                                         <rect key="frame" x="49" y="12" width="42" height="21"/>
