@@ -18,6 +18,15 @@ class MovieEmbeddedNormalBarViewController: UIViewController {
     @IBOutlet var bottomBarPanel: UIView!
 //    normalBottomBarView?.frame = CGRectMake(0, 0, 576, 43)
     
+    // MARK : bottom bar items
+    
+    @IBOutlet var durationSlider: UISlider!
+    @IBOutlet var timeElapsedLabel: UILabel!
+    @IBOutlet var timeRemainingLabel: UILabel!
+    @IBOutlet var cancelButton: UIImageView!
+    @IBOutlet var fullscreenButton: UIImageView!
+    
+    
     override func viewDidLoad() {
         let view : UIView = bottomBarPanel
 

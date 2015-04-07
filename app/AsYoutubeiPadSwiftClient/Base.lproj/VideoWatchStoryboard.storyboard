@@ -71,7 +71,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="9Ay-Bn-2T7">
-                                        <rect key="frame" x="85" y="5" width="370" height="31"/>
+                                        <rect key="frame" x="110" y="5" width="370" height="31"/>
                                     </slider>
                                 </subviews>
                                 <color key="backgroundColor" red="0.19215686274509805" green="0.19215686274509805" blue="0.19215686274509805" alpha="0.64000000000000001" colorSpace="calibratedRGB"/>
@@ -93,6 +93,11 @@
                     <size key="freeformSize" width="576" height="600"/>
                     <connections>
                         <outlet property="bottomBarPanel" destination="Gto-aw-vLc" id="0ZO-95-HCn"/>
+                        <outlet property="cancelButton" destination="nza-MD-l1U" id="R7f-g1-BQi"/>
+                        <outlet property="durationSlider" destination="9Ay-Bn-2T7" id="5Yw-4N-ZAi"/>
+                        <outlet property="fullscreenButton" destination="YpZ-S9-al8" id="KvQ-dB-YXP"/>
+                        <outlet property="timeElapsedLabel" destination="uaS-nr-2PJ" id="uwx-2M-DcZ"/>
+                        <outlet property="timeRemainingLabel" destination="CgD-Y5-OOM" id="AEp-mM-rnc"/>
                         <outlet property="topBarPanel" destination="vAr-va-7DJ" id="fxw-B6-mor"/>
                     </connections>
                 </viewController>
