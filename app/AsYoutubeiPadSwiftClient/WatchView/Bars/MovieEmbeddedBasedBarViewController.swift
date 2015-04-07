@@ -20,6 +20,10 @@ class MovieEmbeddedBasedBarViewController :UIViewController {
         addGestures()
     }
     
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+    }
+    
     // MARK : Tap Gesture to show or hide bars
     
     func addGestures(){
