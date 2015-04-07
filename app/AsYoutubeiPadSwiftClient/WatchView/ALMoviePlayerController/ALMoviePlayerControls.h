@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import <MediaPlayer/MPMoviePlayerController.h>
 #import "ALButton.h"
-#import "ALMoviePlayerBaseController.h"
+#import "ALMoviePlayerBaseControls.h"
 
 @protocol ALMoviePlayerControlsDelegate <NSObject>
 @optional
@@ -47,7 +47,7 @@ typedef enum {
     
 } ALMoviePlayerControlsState;
 
-@interface ALMoviePlayerControls : ALMoviePlayerBaseController 
+@interface ALMoviePlayerControls : ALMoviePlayerBaseControls
 
 /** 
  The style of the controls. Can be changed on the fly.
