@@ -21,21 +21,6 @@
 @class ALMoviePlayerController;
 
 typedef enum {
-    /** Controls will appear in a bottom bar */
-    ALMoviePlayerControlsStyleEmbedded,
-    
-    /** Controls will appear in a top bar and bottom bar */
-    ALMoviePlayerControlsStyleFullscreen,
-    
-    /** Controls will appear as ALMoviePlayerControlsStyleFullscreen when in fullscreen and ALMoviePlayerControlsStyleEmbedded at all other times */
-    ALMoviePlayerControlsStyleDefault,
-    
-    /** Controls will not appear */
-    ALMoviePlayerControlsStyleNone,
-    
-} ALMoviePlayerControlsStyle;
-
-typedef enum {
     /** Controls are not doing anything */
     ALMoviePlayerControlsStateIdle,
     
@@ -48,13 +33,6 @@ typedef enum {
 } ALMoviePlayerControlsState;
 
 @interface ALMoviePlayerControls : ALMoviePlayerControlsBase
-
-/** 
- The style of the controls. Can be changed on the fly.
- 
- Default value is ALMoviePlayerControlsStyleDefault
- */
-@property (nonatomic, assign) ALMoviePlayerControlsStyle style;
 
 /** 
  The state of the controls.
@@ -82,7 +60,7 @@ typedef enum {
  */
 @property (nonatomic, assign) NSTimeInterval fadeDelay;
 
-@property (nonatomic, assign) BOOL neverHide;
+
 
 /**
  The rate at which the movie should fastforward or rewind.
@@ -97,11 +75,6 @@ typedef enum {
  Default value is NO.
  */
 @property (nonatomic) BOOL timeRemainingDecrements;
-
-/**
- Are the controls currently showing on screen?
- */
-@property (nonatomic, readonly, getter = isShowing) BOOL showing;
 
 
 
