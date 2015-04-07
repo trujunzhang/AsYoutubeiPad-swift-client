@@ -34,21 +34,30 @@
                         <rect key="frame" x="0.0" y="0.0" width="576" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vAr-va-7DJ" userLabel="Top Bar">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vAr-va-7DJ" userLabel="Top Bar">
                                 <rect key="frame" x="0.0" y="0.0" width="576" height="43"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="cc.png" translatesAutoresizingMaskIntoConstraints="NO" id="xSG-Ip-K3H">
-                                        <rect key="frame" x="50" y="12" width="22" height="20"/>
-                                    </imageView>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="mp_repeat.png" translatesAutoresizingMaskIntoConstraints="NO" id="QTe-Z4-31z">
-                                        <rect key="frame" x="96" y="12" width="22" height="20"/>
-                                    </imageView>
+                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wYG-dZ-Hme">
+                                        <rect key="frame" x="192" y="0.0" width="127" height="43"/>
+                                        <subviews>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="watch_later.png" translatesAutoresizingMaskIntoConstraints="NO" id="e3h-SQ-Ras">
+                                                <rect key="frame" x="88" y="15" width="20" height="20"/>
+                                            </imageView>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="cc.png" translatesAutoresizingMaskIntoConstraints="NO" id="QTe-Z4-31z">
+                                                <rect key="frame" x="55" y="15" width="20" height="20"/>
+                                            </imageView>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="repeat.png" translatesAutoresizingMaskIntoConstraints="NO" id="xSG-Ip-K3H">
+                                                <rect key="frame" x="19" y="15" width="20" height="20"/>
+                                            </imageView>
+                                        </subviews>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                    </view>
                                 </subviews>
                                 <color key="backgroundColor" red="0.19215686274509805" green="0.19215686274509805" blue="0.19215686274509805" alpha="0.64000000000000001" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="43" id="6rP-Eo-dbZ"/>
+                                </constraints>
                             </view>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Travel.png" translatesAutoresizingMaskIntoConstraints="NO" id="e3h-SQ-Ras">
-                                <rect key="frame" x="10" y="10" width="22" height="20"/>
-                            </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Gto-aw-vLc" userLabel="Bottom Bar">
                                 <rect key="frame" x="0.0" y="557" width="576" height="43"/>
                                 <subviews>
@@ -94,8 +103,11 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="Gto-aw-vLc" firstAttribute="leading" secondItem="Bf1-yC-8Oc" secondAttribute="leading" id="1BQ-C5-P8F"/>
+                            <constraint firstItem="vAr-va-7DJ" firstAttribute="top" secondItem="Bf1-yC-8Oc" secondAttribute="top" id="7rX-Oe-B6g"/>
                             <constraint firstAttribute="trailing" secondItem="Gto-aw-vLc" secondAttribute="trailing" id="Hb4-5C-VQy"/>
                             <constraint firstAttribute="bottom" secondItem="Gto-aw-vLc" secondAttribute="bottom" id="NN7-fB-AMO"/>
+                            <constraint firstAttribute="trailing" secondItem="vAr-va-7DJ" secondAttribute="trailing" id="hls-cN-op1"/>
+                            <constraint firstItem="vAr-va-7DJ" firstAttribute="leading" secondItem="Bf1-yC-8Oc" secondAttribute="leading" id="iaJ-uh-KQy"/>
                         </constraints>
                     </view>
                     <nil key="simulatedStatusBarMetrics"/>
@@ -190,10 +202,10 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Travel.png" width="26" height="26"/>
         <image name="cc.png" width="24" height="22"/>
         <image name="mp_embedded_pause.png" width="18" height="18"/>
         <image name="mp_fullscreen.png" width="20" height="26"/>
-        <image name="mp_repeat.png" width="20" height="20"/>
+        <image name="repeat.png" width="22" height="22"/>
+        <image name="watch_later.png" width="26" height="26"/>
     </resources>
 </document>

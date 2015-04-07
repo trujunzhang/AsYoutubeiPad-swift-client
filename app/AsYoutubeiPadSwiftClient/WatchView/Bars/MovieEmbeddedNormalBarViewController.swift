@@ -35,19 +35,7 @@ class MovieEmbeddedNormalBarViewController: UIViewController {
     override func viewDidLayoutSubviews() {
 
     }
-    
-    // MARK : layout
-    func layoutBottomBar() {
-        layout(durationSlider!,timeRemainingLabel!,fullscreenButton!) { view1,view2,view3 in
-            
-            view1.leading == view1.superview!.leading
-            view1.top == view1.superview!.top
-            
-            
-            view1.width   == view1.superview!.width
-            view1.height  == 324
-        }
-    }
+
 }
 
 
