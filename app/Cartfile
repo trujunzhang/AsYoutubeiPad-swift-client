@@ -11,4 +11,5 @@ github "rs/SDWebImage"             "master"
 github "DaveWoodCom/XCGLogger"     "master"
 #github "mozilla/firefox-ios"       "master"
 #github "AFNetworking/AFNetworking" "master"
+github "BoltsFramework/Bolts-iOS"  "master"
 

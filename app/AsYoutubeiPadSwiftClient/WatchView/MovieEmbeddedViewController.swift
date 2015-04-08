@@ -42,20 +42,20 @@ class MovieEmbeddedViewController: UIViewController {
 
         // Create MoviePlayer
         let player: MPMoviePlayerViewController = MPMoviePlayerViewController(contentURL: fileURL)
-        player.moviePlayer.openSRTFileAtPath(subtitlesPathStr, completion: { (finished) -> Void in
-            
-            // Activate subtitles
-            player.moviePlayer.showSubtitles()
-            
-            // Show video
-            self.playerView = player.view
-            // add movie player to your view
-            self.view.addSubview(self.playerView!)
-            LayoutUtils.LayoutFullView(self.playerView!)
-            
-        }) { (error) -> Void in
-            var x = 0
-        }
+//        player.moviePlayer.openSRTFileAtPath(subtitlesPathStr, completion: { (finished) -> Void in
+//            
+//            // Activate subtitles
+//            player.moviePlayer.showSubtitles()
+//            
+//            // Show video
+//            self.playerView = player.view
+//            // add movie player to your view
+//            self.view.addSubview(self.playerView!)
+//            LayoutUtils.LayoutFullView(self.playerView!)
+//            
+//        }) { (error) -> Void in
+//            var x = 0
+//        }
         
         
     }

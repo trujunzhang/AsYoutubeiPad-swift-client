@@ -48,6 +48,9 @@
 // Library: SDWebImage
 #import "WebImage.h"
 
+// Library: Bolts-iOS
+#import <Bolts/Bolts.h>
+
 //#import "ImageCacheInterface.h"
 
 //#import <AFNetworking/AFNetworking.h>
