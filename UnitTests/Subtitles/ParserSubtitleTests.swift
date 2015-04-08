@@ -29,16 +29,8 @@ class ParserSubtitleTests: XCTestCase {
         
         let fileName = "An_Angular2_Todo_App-First_look_at_App_Development_in_Angular2"
         
-        checkParseSRTFromFile(fileName, expect: expect)
-    }
-    
-    
-    // MARK : check parse result
-    func checkParseSRTFromFile(fileName: String,expect:Int){
-        let subtitleString : String = Tools.readFile(fileName)
-        
-        let  array : NSMutableArray = Tools.checkParseSRTFromString(subtitleString, expect: expect)
-        XCTAssertEqual(array.count, expect, "the same length")
+        let  array :NSMutableArray = Tools.checkParseSRTFromFile(fileName, expect: expect)
+         XCTAssertEqual(array.count, expect, "The same length")
     }
 
     

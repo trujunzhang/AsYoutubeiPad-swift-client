@@ -10,7 +10,15 @@ import Foundation
 
 class Tools: NSObject {
     
-  class  func checkParseSRTFromString(subtitleString: String,expect:Int) ->NSMutableArray {
+    class func checkParseSRTFromFile(fileName: String,expect:Int) -> NSMutableArray{
+        let subtitleString : String = readFile(fileName)
+        
+        let  array : NSMutableArray = checkParseSRTFromString(subtitleString, expect: expect)
+        
+        return array
+    }
+    
+    class  func checkParseSRTFromString(subtitleString: String,expect:Int) ->NSMutableArray {
         
         let soSubtitle:SOSubtitle = SOSubtitle()
         let task:BFTask = soSubtitle.subtitleWithString(subtitleString, error: nil)
@@ -22,14 +30,14 @@ class Tools: NSObject {
     }
     
     // MARK : Utils for parsing subtitle
-  class  func readFile(fileName: String) -> String {
+    class  func readFile(fileName: String) -> String {
         let path = NSBundle.mainBundle().pathForResource(fileName, ofType: "srt")
         var data = String(contentsOfFile:path!, encoding: NSUTF8StringEncoding, error: nil)
         
         return data!
     }
     
-   class func writeStringToFile(subtitleString :NSString){
+    class func writeStringToFile(subtitleString :NSString){
         let file = "subtitleString.srt"
         
         if let dirs : [String] = NSSearchPathForDirectoriesInDomains(NSSearchPathDirectory.DocumentDirectory, NSSearchPathDomainMask.AllDomainsMask, true) as? [String] {

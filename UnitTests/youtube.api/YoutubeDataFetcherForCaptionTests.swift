@@ -116,12 +116,12 @@ class YoutubeDataFetcherForCaptionTests: XCTestCase {
     
     // MARK : Test fetching tracks and then fetching subtitle.
     
-    func _testFetchTracksAndCaptainForVideo() {
+    func testFetchTracksAndCaptainForVideo() {
         let expectation = expectationWithDescription("fetchTracksAndCaptainForVideo")
-
+        
         YoutubeDataFetcher.sharedInstance.fetchCaptainTracksAndCaption(videoID,completeHandler: { (subtitleString, sucess) -> Void in
             
-//            Tools.writeStringToFile(subtitleString as NSString)
+            //            Tools.writeStringToFile(subtitleString as NSString)
             
             XCTAssertNotNil(subtitleString, "object not nil")
             
@@ -133,6 +133,9 @@ class YoutubeDataFetcherForCaptionTests: XCTestCase {
                 var subtitle:NSString = subtitleString as NSString
                 XCTAssertFalse(subtitle.isEqualToString(""), "Array object must be NSString")
                 
+                let expect  = 1923
+                let  array : NSMutableArray = Tools.checkParseSRTFromString(subtitle, expect: expect)
+                XCTAssertEqual(array.count, expect, "The same length")
             }
             expectation.fulfill()
             
@@ -142,6 +145,6 @@ class YoutubeDataFetcherForCaptionTests: XCTestCase {
             XCTAssertNil(error, "\(error)")
         }
     }
-
+    
     
 }
