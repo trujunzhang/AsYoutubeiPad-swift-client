@@ -91,7 +91,6 @@ class MovieEmbeddedViewController: UIViewController,ALMoviePlayerControllerDeleg
         // assign the controls to the movie player
         moviePlayer?.controls = movieControls
         
-        
         // get player view
         playerView = moviePlayer!.view
     }

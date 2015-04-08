@@ -8,18 +8,6 @@
 
 #import "ALMoviePlayerController.h"
 
-@implementation UIDevice (ALSystemVersion)
-
-+ (float)iOSVersion {
-    static float version = 0.f;
-    static dispatch_once_t onceToken;
-    dispatch_once(&onceToken, ^{
-        version = [[[UIDevice currentDevice] systemVersion] floatValue];
-    });
-    return version;
-}
-
-@end
 
 @implementation UIApplication (ALAppDimensions)
 
@@ -29,9 +17,7 @@
     if (UIInterfaceOrientationIsLandscape(orientation)) {
         size = CGSizeMake(size.height, size.width);
     }
-    if (!application.statusBarHidden && [UIDevice iOSVersion] < 7.0) {
-        size.height -= MIN(application.statusBarFrame.size.width, application.statusBarFrame.size.height);
-    }
+
     return size;
 }
 
@@ -86,11 +72,7 @@ static const NSTimeInterval fullscreenAnimationDuration = 0.3;
 }
 
 - (CGFloat)statusBarHeightInOrientation:(UIInterfaceOrientation)orientation {
-    if ([UIDevice iOSVersion] >= 7.0)
         return 0.f;
-    else if ([UIApplication sharedApplication].statusBarHidden)
-        return 0.f;
-    return 20.f;
 }
 
 # pragma mark - Setters
@@ -109,7 +91,9 @@ static const NSTimeInterval fullscreenAnimationDuration = 0.3;
 - (void)setControls:(ALMoviePlayerControls *)controls {
     if (_controls != controls) {
         _controls = controls;
-        _controls.frame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height);
+//        CGRect _rect =  CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height);
+        CGRect _rect =  CGRectMake(0, 0, 200, 200);
+        _controls.frame = _rect;
         [self.view addSubview:_controls];
     }
 }
