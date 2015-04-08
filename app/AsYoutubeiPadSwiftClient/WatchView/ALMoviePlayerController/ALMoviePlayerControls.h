@@ -55,13 +55,9 @@
 @property (nonatomic) BOOL timeRemainingDecrements;
 
 
-
 @property (nonatomic, weak) id<ALMoviePlayerControlsDelegate> delegate;
 
 - (void)setTwoBars:(UIView *)topBar withBottomBar:(UIView *)bottomBar withDurationSlider:(UISlider *)durationSlider withTimeElapsedLabel:(UILabel *)timeElapsedLabel withTimeRemainingLabel:(UILabel *)timeRemainingLabel withPlayPauseButton:(UIButton *)playPauseButton moviePause:(NSString *)moviePause moviePlay:(NSString *)moviePlay;
-
-- (void)setupTwoBars:(NSString *)pause withoviePlay:(NSString *)play;
-
 
 /** 
  The default initializer method. The parameter may not be nil.

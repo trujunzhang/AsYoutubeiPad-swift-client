@@ -42,7 +42,7 @@ class MovieEmbeddedBasedBarViewController :UIViewController {
     // MARK : hide Top and Bottom bars after xxx seconds
     func delayHideTwoBars(){
         self.performClosureAfterDelay(6, block: { () -> Void in
-            self.hideAllBars()
+//            self.hideAllBars()
         })
     }
     

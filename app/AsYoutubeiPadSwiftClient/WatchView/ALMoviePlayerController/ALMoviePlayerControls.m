@@ -11,18 +11,7 @@
 #import <tgmath.h>
 #import <QuartzCore/QuartzCore.h>
 
-@implementation UIDevice (ALSystemVersion)
 
-+ (float)iOSVersion {
-    static float version = 0.f;
-    static dispatch_once_t onceToken;
-    dispatch_once(&onceToken, ^{
-        version = [[[UIDevice currentDevice] systemVersion] floatValue];
-    });
-    return version;
-}
-
-@end
 
 @interface ALMoviePlayerControlsBar : UIView
 
@@ -60,13 +49,13 @@
         self.barColor = [[UIColor blackColor] colorWithAlphaComponent:0.5];
         
         //in fullscreen mode, move controls away from top status bar and bottom screen bezel. I think the iOS7 control center gestures interfere with the uibutton touch events. this will alleviate that a little (correct me if I'm wrong and/or adjust if necessary).
-        self.barHeight = [UIDevice iOSVersion] >= 7.0 ? 70.f : 50.f;
+        self.barHeight = 70.f;
         
         self.seekRate = 3.f;
         self.state = ALMoviePlayerControlsStateIdle;
         
 //        [self setup];
-        [self addNotifications];
+//        [self addNotifications];
     }
     return self;
 }
@@ -118,6 +107,8 @@
     
     
     [self setupTwoBars:moviePause withMoviePlay:moviePlay];
+    
+    [self addNotifications];
 }
 
 - (void)setupTwoBars:(NSString *)moviePause withMoviePlay:(NSString *)moviePlay {

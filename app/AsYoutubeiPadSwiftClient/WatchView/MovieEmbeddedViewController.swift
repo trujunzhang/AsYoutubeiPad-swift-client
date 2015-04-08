@@ -32,15 +32,9 @@ class MovieEmbeddedViewController: UIViewController,ALMoviePlayerControllerDeleg
         
         setupEmbeddedBars()
         
-        
         // add movie player to your view
         self.view.addSubview(playerView!)
         LayoutUtils.LayoutFullView(playerView!)
-        
-        // test local movie file
-        let path:NSString = NSBundle.mainBundle().pathForResource("example", ofType: "mp4")!
-        let videoURL:NSURL = NSURL(string: path)!
-        self.moviePlayer?.contentURL = videoURL
         
         self.view.backgroundColor = UIColor.blackColor()
     }
@@ -49,6 +43,12 @@ class MovieEmbeddedViewController: UIViewController,ALMoviePlayerControllerDeleg
         super.viewDidAppear(animated)
         
         layoutEmbeddedBar()
+        
+        
+        // test local movie file
+        let path:NSString = NSBundle.mainBundle().pathForResource("example", ofType: "mp4")!
+        let videoURL:NSURL = NSURL(string: path)!
+        self.moviePlayer?.contentURL = videoURL
     }
     
     func YoutubeExtractor(){
@@ -100,9 +100,6 @@ class MovieEmbeddedViewController: UIViewController,ALMoviePlayerControllerDeleg
         // normal bar
         normalBarViewController = StoryBoardUtils.getMovieEmbeddedNormalBarViewController()
         self.addChildViewController(normalBarViewController!)
-        
-        // set bars to play controller
-        normalBarViewController!.setPlayerBars(movieControls!)
     }
     
     func layoutEmbeddedBar(){
@@ -110,6 +107,9 @@ class MovieEmbeddedViewController: UIViewController,ALMoviePlayerControllerDeleg
         
         self.view.addSubview(normalBarRootView!)
         LayoutUtils.LayoutFullView(normalBarRootView!)
+        
+        // set bars to play controller
+        normalBarViewController!.setPlayerBars(movieControls!)
     }
     
     
