@@ -26,6 +26,8 @@ class YoutubeDataFetcherForCaptionTests: XCTestCase {
         super.tearDown()
     }
     
+    // MARK : Test captain empty tracks
+    
     func _testFetchCaptainEmptyTracks() {
         let expectation = expectationWithDescription("fetchCaptainEmptyTracks")
         
@@ -38,7 +40,7 @@ class YoutubeDataFetcherForCaptionTests: XCTestCase {
             if(sucess == true){
                 var array:NSArray = object as NSArray
                 
-                XCTAssertTrue(array.count == 0, "Array length must be empty")
+                XCTAssertTrue(array.count == 0, "Array length must be empty") // Returned empty array
             }
             expectation.fulfill()
             
@@ -48,6 +50,8 @@ class YoutubeDataFetcherForCaptionTests: XCTestCase {
             XCTAssertNil(error, "\(error)")
         }
     }
+    
+    // MARK : Test captain tracks
     
     func testFetchCaptainTracks() {
         let expectation = expectationWithDescription("fetchCaptainTracks")
@@ -74,7 +78,7 @@ class YoutubeDataFetcherForCaptionTests: XCTestCase {
             
         })
         
-        waitForExpectationsWithTimeout(20) { (error) in
+        waitForExpectationsWithTimeout(40) { (error) in
             XCTAssertNil(error, "\(error)")
         }
     }

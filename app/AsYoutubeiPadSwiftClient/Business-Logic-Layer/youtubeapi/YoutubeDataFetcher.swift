@@ -19,25 +19,31 @@ class YoutubeDataFetcher : NSObject  {
     }
     
     
+    func fetchCaptainTracksAndCaption(videoID: NSString, completeHandler: ObjectHandler){
+        
+        fetchCaptainTracks(videoID, completeHandler: { (tracksArray, error) -> Void in
+            var array :NSArray = tracksArray as NSArray
+            var track :MABYT3_Track = array[0] as MABYT3_Track
+            if(track.lang_default == true){
+                // 2
+                self.fetchCaptainForVideo(videoID, defaultTrack: track, completeHandler: { (subtitleString, sucess) -> Void in
+                    if(sucess == true){
+                        completeHandler(subtitleString, true)
+                    }else{
+                        completeHandler(nil, false)
+                    }
+                    
+                })
+            }
+        })
+    }
+    
     func fetchCaptainTracks(videoID: NSString, completeHandler: ObjectHandler){
         MABYT3_VideoGoogleRequest.sharedInstance().fetchCaptainTracks(videoID, completion: { (responseInfo, error) -> Void in
             
             if (error == nil) {
-                // 1
                 var array:NSArray = responseInfo.array as NSArray
-                
-                if(array.count == 0){
-                    completeHandler(array, true)
-                }else{
-                    var track :MABYT3_Track = array[0] as MABYT3_Track
-                    if(track.lang_default == true){
-                        // 2
-                        self.fetchCaptainForVideo(videoID, defaultTrack: track, completeHandler: { (object, sucess) -> Void in
-                            
-                        })
-                    }
-                }
-                
+                completeHandler(array, true)
             }else{
                 completeHandler(nil, false)
             }
@@ -49,17 +55,14 @@ class YoutubeDataFetcher : NSObject  {
             
             if (error == nil) {
                 // 2
-                var array:NSArray = responseInfo.array as NSArray
+                var subtitleString:NSString = responseInfo.subtitleString
                 
-                if(array.count == 0){
-                    completeHandler(array, true)
+                if(subtitleString.isEqualToString("") == false){
+                    completeHandler(subtitleString, true)
                 }else{
                     
                 }
-                var track :MABYT3_Track = array[0] as MABYT3_Track
-                var lang_default: Bool = track.lang_default
                 
-                completeHandler(responseInfo.array, true)
                 
             }else{
                 completeHandler(nil, false)
