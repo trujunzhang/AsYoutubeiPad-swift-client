@@ -89,7 +89,4 @@ Are the controls currently showing on screen?
 @property (nonatomic, readonly, getter = isShowing) BOOL showing;
 
 
-- (void)hideControls:(void (^)(void))completion;
-
-
 @end

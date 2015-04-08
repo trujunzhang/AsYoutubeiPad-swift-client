@@ -203,17 +203,7 @@
     [self setTimeLabelValues:currentTime totalTime:totalTime];
 }
 
-- (void)buttonTouchedDown:(UIButton *)button {
-    [NSObject cancelPreviousPerformRequestsWithTarget:self selector:@selector(hideControls:) object:nil];
-}
 
-- (void)buttonTouchedUpOutside:(UIButton *)button {
-    [self performSelector:@selector(hideControls:) withObject:nil afterDelay:self.fadeDelay];
-}
-
-- (void)buttonTouchCancelled:(UIButton *)button {
-    [self performSelector:@selector(hideControls:) withObject:nil afterDelay:self.fadeDelay];
-}
 
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context {
     if (![keyPath isEqualToString:@"layer.sublayers"]) {
@@ -225,13 +215,13 @@
     }
     if (keyWindow.layer.sublayers.count == windowSubviews) {
         [keyWindow removeObserver:self forKeyPath:@"layer.sublayers"];
-        [self performSelector:@selector(hideControls:) withObject:nil afterDelay:self.fadeDelay];
+//        [self performSelector:@selector(hideControls:) withObject:nil afterDelay:self.fadeDelay];
     }
 }
 
 - (void)playPausePressed:(UIButton *)button {
     self.moviePlayer.playbackState == MPMoviePlaybackStatePlaying ? [self.moviePlayer pause] : [self.moviePlayer play];
-    [self performSelector:@selector(hideControls:) withObject:nil afterDelay:self.fadeDelay];
+//    [self performSelector:@selector(hideControls:) withObject:nil afterDelay:self.fadeDelay];
 }
 
 - (void)choosePressed:(UIButton *)button {
@@ -276,7 +266,7 @@
     switch (self.moviePlayer.loadState) {
         case MPMovieLoadStatePlayable:
         case MPMovieLoadStatePlaythroughOK:
-            [self showControls:nil];
+//            [self showControls:nil];
             self.state = ALMoviePlayerControlsStateReady;
             break;
         case MPMovieLoadStateStalled:
@@ -296,7 +286,7 @@
             //local file
             if ([self.moviePlayer.contentURL.scheme isEqualToString:@"file"]) {
                 [self setDurationSliderMaxMinValues];
-                [self showControls:nil];
+//                [self showControls:nil];
             }
         case MPMoviePlaybackStateSeekingBackward:
         case MPMoviePlaybackStateSeekingForward:
@@ -321,10 +311,10 @@
 }
 
 - (void)movieContentURLDidChange:(NSNotification *)note {
-    [self hideControls:^{
-        //don't show loading indicator for local files
-        self.state = [self.moviePlayer.contentURL.scheme isEqualToString:@"file"] ? ALMoviePlayerControlsStateReady : ALMoviePlayerControlsStateLoading;
-    }];
+//    [self hideControls:^{
+//        //don't show loading indicator for local files
+//        self.state = [self.moviePlayer.contentURL.scheme isEqualToString:@"file"] ? ALMoviePlayerControlsStateReady : ALMoviePlayerControlsStateLoading;
+//    }];
 }
 
 # pragma mark - Internal Methods
@@ -338,51 +328,8 @@
     [self.durationTimer invalidate];
 }
 
-- (void)showControls:(void(^)(void))completion {
-//    if (!self.isShowing) {
-//        [NSObject cancelPreviousPerformRequestsWithTarget:self selector:@selector(hideControls:) object:nil];
-//        if (self.style == ALMoviePlayerControlsStyleFullscreen || (self.style == ALMoviePlayerControlsStyleDefault && self.moviePlayer.isFullscreen)) {
-//            [self.topBar setNeedsDisplay];
-//        }
-//        [self.bottomBar setNeedsDisplay];
-//        [UIView animateWithDuration:0.3 delay:0.0 options:0 animations:^{
-//            if (self.style == ALMoviePlayerControlsStyleFullscreen || (self.style == ALMoviePlayerControlsStyleDefault && self.moviePlayer.isFullscreen)) {
-//                self.topBar.alpha = 1.f;
-//            }
-//            self.bottomBar.alpha = 1.f;
-//        } completion:^(BOOL finished) {
-//            self.showing = YES;
-//            if (completion)
-//                completion();
-//            [self performSelector:@selector(hideControls:) withObject:nil afterDelay:self.fadeDelay];
-//        }];
-//    } else {
-//        if (completion)
-//            completion();
-//    }
-}
 
-- (void)hideControls:(void(^)(void))completion {
 
-//    self.neverHide = YES;
-//
-//    if (self.isShowing && !self.neverHide) {
-//        [NSObject cancelPreviousPerformRequestsWithTarget:self selector:@selector(hideControls:) object:nil];
-//        [UIView animateWithDuration:0.3 delay:0.0 options:0 animations:^{
-//            if (self.style == ALMoviePlayerControlsStyleFullscreen || (self.style == ALMoviePlayerControlsStyleDefault && self.moviePlayer.isFullscreen)) {
-//                self.topBar.alpha = 0.f;
-//            }
-//            self.bottomBar.alpha = 0.f;
-//        } completion:^(BOOL finished) {
-//            self.showing = NO;
-//            if (completion)
-//                completion();
-//        }];
-//    } else {
-//        if (completion)
-//            completion();
-//    }
-}
 
 - (void)showLoadingIndicators {
     [self addSubview:self.activityIndicator];

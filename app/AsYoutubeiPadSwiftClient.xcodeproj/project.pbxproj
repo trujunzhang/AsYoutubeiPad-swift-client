@@ -73,7 +73,6 @@
 		5EC950201AC82FE300844E61 /* YoutubeApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EC94FF41AC82E9300844E61 /* YoutubeApi.swift */; };
 		5EC950211AC8300100844E61 /* YoutubeUserProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EC94FF81AC82E9300844E61 /* YoutubeUserProfile.swift */; };
 		5EC950221AC8302100844E61 /* LeftMenuSectionsUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EC94FEF1AC82E9300844E61 /* LeftMenuSectionsUtils.swift */; };
-		5EDEBE1D1AD3ED9F007E0066 /* ALButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EDEBE181AD3ED9F007E0066 /* ALButton.m */; };
 		5EDEBE1E1AD3ED9F007E0066 /* ALMoviePlayerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EDEBE1A1AD3ED9F007E0066 /* ALMoviePlayerController.m */; };
 		5EDEBE1F1AD3ED9F007E0066 /* ALMoviePlayerControls.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EDEBE1C1AD3ED9F007E0066 /* ALMoviePlayerControls.m */; };
 		5EE43FE51AD3BA6000054AC5 /* NSObject_BlockBasedSelector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EE43FE41AD3BA6000054AC5 /* NSObject_BlockBasedSelector.swift */; };
@@ -164,8 +163,6 @@
 		5EC950101AC82EF500844E61 /* MenuSectionHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuSectionHeaderView.swift; sourceTree = "<group>"; };
 		5EC950111AC82EF500844E61 /* MenuTableLoggedHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuTableLoggedHeaderView.swift; sourceTree = "<group>"; };
 		5EC950121AC82EF500844E61 /* MenuTableSignInHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuTableSignInHeaderView.swift; sourceTree = "<group>"; };
-		5EDEBE171AD3ED9F007E0066 /* ALButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ALButton.h; sourceTree = "<group>"; };
-		5EDEBE181AD3ED9F007E0066 /* ALButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ALButton.m; sourceTree = "<group>"; };
 		5EDEBE191AD3ED9F007E0066 /* ALMoviePlayerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ALMoviePlayerController.h; sourceTree = "<group>"; };
 		5EDEBE1A1AD3ED9F007E0066 /* ALMoviePlayerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ALMoviePlayerController.m; sourceTree = "<group>"; };
 		5EDEBE1B1AD3ED9F007E0066 /* ALMoviePlayerControls.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ALMoviePlayerControls.h; sourceTree = "<group>"; };
@@ -453,8 +450,6 @@
 		5EDEBE161AD3ED9F007E0066 /* ALMoviePlayerController */ = {
 			isa = PBXGroup;
 			children = (
-				5EDEBE171AD3ED9F007E0066 /* ALButton.h */,
-				5EDEBE181AD3ED9F007E0066 /* ALButton.m */,
 				5EDEBE191AD3ED9F007E0066 /* ALMoviePlayerController.h */,
 				5EDEBE1A1AD3ED9F007E0066 /* ALMoviePlayerController.m */,
 				5EDEBE1B1AD3ED9F007E0066 /* ALMoviePlayerControls.h */,
@@ -736,7 +731,6 @@
 				5EC950031AC82E9300844E61 /* YoutubeCacheImageFetcher.swift in Sources */,
 				5EB01F021ACC250C00C00AFE /* YTVideosCollectionViewController.swift in Sources */,
 				5EC950011AC82E9300844E61 /* SubscriptionsViewController.swift in Sources */,
-				5EDEBE1D1AD3ED9F007E0066 /* ALButton.m in Sources */,
 				5EC9501A1AC82EF500844E61 /* MenuCollapseTableViewController.swift in Sources */,
 				5E85EDE71ACEC403009170D8 /* YTVideoWatchPlaylistViewController.swift in Sources */,
 				5EC89FA11ACAC017003E3920 /* StoryBoardUtils.swift in Sources */,
