@@ -15,6 +15,7 @@
 @property (nonatomic, strong) NSMutableDictionary *videoDictionary;
 
 // subtitle
+//@property (nonatomic, strong) Boolean *hasSubtitle;
 @property (nonatomic, strong) NSString *subtitleString;
 
 // list

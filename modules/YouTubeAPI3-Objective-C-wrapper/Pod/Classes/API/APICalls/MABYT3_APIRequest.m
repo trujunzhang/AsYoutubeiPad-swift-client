@@ -126,39 +126,39 @@
 
 
 //http://video.google.com/timedtext?type=track&v=boBex_v3_eA&name=&lang=en
-//- (NSURLSessionDataTask *)fetchVideoTranscript:(NSString *)videoId completion:(MABYoutubeResponseBlock)completion {
-//    NSMutableDictionary *dictionary = [[NSMutableDictionary alloc] init];
-//
-//    [dictionary setObject:videoId forKey:@"v"];
-//    [dictionary setObject:@"track" forKey:@"type"];
-//    [dictionary setObject:@"" forKey:@"name"];
-//    [dictionary setObject:@"en" forKey:@"lang"];
-//
-//    NSURLSessionDataTask *task = [self GET:@"/timedtext"
-//                                parameters:dictionary
-//                                   success:^(NSURLSessionDataTask *task, id responseObject) {
-//                                       NSHTTPURLResponse *httpResponse = (NSHTTPURLResponse *)task.response;
-//
-//                                       if(httpResponse.statusCode == 200) {
-//                                           YoutubeResponseInfo *responseInfo = [self parseVideoTranscriptWithData:responseObject];
-//                                           dispatch_async(dispatch_get_main_queue(), ^{
-//                                               completion(responseInfo, nil);
-//                                           });
-//                                       } else {
-//                                           NSError *error = [self getError:responseObject httpresp:httpResponse];
-//                                           dispatch_async(dispatch_get_main_queue(), ^{
-//                                               completion(nil, error);
-//                                           });
-//                                       }
-//
-//                                   } failure:^(NSURLSessionDataTask *task, NSError *error) {
-//                dispatch_async(dispatch_get_main_queue(), ^{
-//                    completion(nil, error);
-//                });
-//            }];
-//
-//    return task;
-//}
+- (NSURLSessionDataTask *)fetchVideoTranscript:(NSString *)videoId completion:(MABYoutubeResponseBlock)completion {
+    NSMutableDictionary *dictionary = [[NSMutableDictionary alloc] init];
+
+    [dictionary setObject:videoId forKey:@"v"];
+    [dictionary setObject:@"track" forKey:@"type"];
+    [dictionary setObject:@"" forKey:@"name"];
+    [dictionary setObject:@"en" forKey:@"lang"];
+
+    NSURLSessionDataTask *task = [self GET:@"/timedtext"
+                                parameters:dictionary
+                                   success:^(NSURLSessionDataTask *task, id responseObject) {
+                                       NSHTTPURLResponse *httpResponse = (NSHTTPURLResponse *)task.response;
+
+                                       if(httpResponse.statusCode == 200) {
+                                           YoutubeResponseInfo *responseInfo = [self parseVideoTranscriptWithData:responseObject];
+                                           dispatch_async(dispatch_get_main_queue(), ^{
+                                               completion(responseInfo, nil);
+                                           });
+                                       } else {
+                                           NSError *error = [self getError:responseObject httpresp:httpResponse];
+                                           dispatch_async(dispatch_get_main_queue(), ^{
+                                               completion(nil, error);
+                                           });
+                                       }
+
+                                   } failure:^(NSURLSessionDataTask *task, NSError *error) {
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    completion(nil, error);
+                });
+            }];
+
+    return task;
+}
 
 
 #pragma mark -
@@ -179,18 +179,18 @@
 }
 
 
-//- (YoutubeResponseInfo *)parseVideoTranscriptWithData:(NSData *)data {
-//    XMLDictionaryParser *parser = [[XMLDictionaryParser alloc] init];
-//    NSDictionary *dict = [parser dictionaryWithData:data];
-//
-//    NSString *convertToSrt = nil;
-//
-//    if(dict && [dict objectForKey:@"text"]) {
-//        convertToSrt = [MABYT3_ConvertTranscriptToSrt convertToSrt:[dict objectForKey:@"text"]];
-//    }
-//
-//    return [YoutubeResponseInfo infoWithSubtitleString:convertToSrt];
-//}
+- (YoutubeResponseInfo *)parseVideoTranscriptWithData:(NSData *)data {
+    XMLDictionaryParser *parser = [[XMLDictionaryParser alloc] init];
+    NSDictionary *dict = [parser dictionaryWithData:data];
+
+    NSString *convertToSrt = nil;
+
+    if(dict && [dict objectForKey:@"text"]) {
+        convertToSrt = [MABYT3_ConvertTranscriptToSrt convertToSrt:[dict objectForKey:@"text"]];
+    }
+
+    return [YoutubeResponseInfo infoWithSubtitleString:convertToSrt];
+}
 
 
 @end
