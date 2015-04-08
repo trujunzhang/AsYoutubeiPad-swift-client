@@ -53,7 +53,7 @@ class YoutubeDataFetcherForCaptionTests: XCTestCase {
     
     // MARK : Test captain tracks
     
-    func testFetchCaptainTracks() {
+    func _testFetchCaptainTracks() {
         let expectation = expectationWithDescription("fetchCaptainTracks")
         
         YoutubeDataFetcher.sharedInstance.fetchCaptainTracks(videoID, completeHandler: { (tracksArray, sucess) -> Void in
@@ -85,7 +85,7 @@ class YoutubeDataFetcherForCaptionTests: XCTestCase {
     
     // MARK : Test fetching subtitle.
     
-    func testFetchCaptainForVideo() {
+    func _testFetchCaptainForVideo() {
         let expectation = expectationWithDescription("fetchCaptainForVideo")
         
         var track :MABYT3_Track = MABYT3_Track()
@@ -116,7 +116,7 @@ class YoutubeDataFetcherForCaptionTests: XCTestCase {
     
     // MARK : Test fetching tracks and then fetching subtitle.
     
-    func testFetchTracksAndCaptainForVideo() {
+    func _testFetchTracksAndCaptainForVideo() {
         let expectation = expectationWithDescription("fetchTracksAndCaptainForVideo")
 
         YoutubeDataFetcher.sharedInstance.fetchCaptainTracksAndCaption(videoID,completeHandler: { (subtitleString, sucess) -> Void in
