@@ -9,23 +9,59 @@
 import Foundation
 
 
-class MovieEmbeddedViewController: UIViewController,ALMoviePlayerControllerDelegate {
+class MovieEmbeddedViewController: UIViewController {
     
     var videoID = ""
     var dict:[String:IGYouTubeVideo] = [:]
-    
-    var moviePlayer : ALMoviePlayerController?
-    
+
     var playerView: UIView?
     
     
     var normalBarViewController : MovieEmbeddedNormalBarViewController?
-    var  movieControls:ALMoviePlayerControls?
-    
     var normalBarRootView : UIView?
     
+    // MARK : Life-Cycle
     override func viewDidLoad() {
+        test02()
+    }
+    
+    
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
         
+        
+    }
+    
+    func test02(){
+        // Video file
+        let filePathStr:NSString = NSBundle.mainBundle().pathForResource("example", ofType: "mp4")!
+        let fileURL :NSURL = NSURL(fileURLWithPath: filePathStr)!
+        
+        // Subtitles file
+        let subtitlesPathStr :NSString = NSBundle.mainBundle().pathForResource("example", ofType: "srt")!
+
+        // Create MoviePlayer
+        let player: MPMoviePlayerViewController = MPMoviePlayerViewController(contentURL: fileURL)
+        player.moviePlayer.openSRTFileAtPath(subtitlesPathStr, completion: { (finished) -> Void in
+            
+            // Activate subtitles
+            player.moviePlayer.showSubtitles()
+            
+            // Show video
+            self.playerView = player.view
+            // add movie player to your view
+            self.view.addSubview(self.playerView!)
+            LayoutUtils.LayoutFullView(self.playerView!)
+            
+        }) { (error) -> Void in
+            var x = 0
+        }
+        
+        
+    }
+    
+    // MARK : TEST 01
+    func test01(){
         //        YoutubeExtractor()
         
         setupMoviePlayer()
@@ -36,19 +72,12 @@ class MovieEmbeddedViewController: UIViewController,ALMoviePlayerControllerDeleg
         self.view.addSubview(playerView!)
         LayoutUtils.LayoutFullView(playerView!)
         
-        self.view.backgroundColor = UIColor.blackColor()
     }
+
     
-    override func viewDidAppear(animated: Bool) {
-        super.viewDidAppear(animated)
-        
+    func view01(){
         layoutEmbeddedBar()
-        
-        
-        // test local movie file
-        let path:NSString = NSBundle.mainBundle().pathForResource("example", ofType: "mp4")!
-        let videoURL:NSURL = NSURL(string: path)!
-        self.moviePlayer?.contentURL = videoURL
+
     }
     
     func YoutubeExtractor(){
@@ -62,7 +91,7 @@ class MovieEmbeddedViewController: UIViewController,ALMoviePlayerControllerDeleg
                 let videoURL:NSURL = gVideo.videoURL
                 
                 // 2.1
-                self.moviePlayer?.contentURL = videoURL
+//                self.moviePlayer?.contentURL = videoURL
             }
             
         })
@@ -74,25 +103,7 @@ class MovieEmbeddedViewController: UIViewController,ALMoviePlayerControllerDeleg
     
     
     func setupMoviePlayer(){
-        // create a movie player
-        moviePlayer = ALMoviePlayerController()
-        moviePlayer?.delegate = self
-        
-        // create the controls
-        movieControls = ALMoviePlayerControls(moviePlayer: moviePlayer, style: ALMoviePlayerControlsStyleDefault)
-        
-        // optionally customize the controls here...
-        movieControls!.barColor = UIColor.blueColor()
-//        movieControls.timeRemainingDecrements = true
-//        movieControls.barHeight = 120
-//        movieControls.fadeDelay = 3.0
-//        movieControls.seekRate = 2.0
-        
-        // assign the controls to the movie player
-        moviePlayer?.controls = movieControls
-        
-        // get player view
-        playerView = moviePlayer!.view
+
     }
     
     func setupEmbeddedBars() {
@@ -106,9 +117,7 @@ class MovieEmbeddedViewController: UIViewController,ALMoviePlayerControllerDeleg
         
         self.view.addSubview(normalBarRootView!)
         LayoutUtils.LayoutFullView(normalBarRootView!)
-        
-        // set bars to play controller
-        normalBarViewController!.setPlayerBars(movieControls!)
+
     }
     
     

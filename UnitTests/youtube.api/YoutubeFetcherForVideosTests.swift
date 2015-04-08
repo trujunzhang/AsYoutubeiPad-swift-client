@@ -65,7 +65,7 @@ class YoutubeFetcherForVideosTests: YoutubeFetcherBaseTests {
     }
     
     
-    func testFetchingRelativeVideos() {
+    func _testFetchingRelativeVideos() {
         let expectation = expectationWithDescription("fetchingRelativeVideos")
         
         var videoCache:YoutubeVideoCache? // used
@@ -108,7 +108,7 @@ class YoutubeFetcherForVideosTests: YoutubeFetcherBaseTests {
     }
 
     
-    func testFetchVideoDescription(){
+    func _testFetchVideoDescription(){
         let expectation = expectationWithDescription("fetchVideoDescription")
         
         YoutubeFetcher.sharedInstance.fetchVideoDescription(videoID, completeHandler: { (object, sucess) -> Void in

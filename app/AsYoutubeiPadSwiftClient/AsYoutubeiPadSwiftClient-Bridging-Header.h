@@ -31,7 +31,7 @@
 #import "IGYouTubeExtractor.h"
 
 // Library: ALMoviePlayerController
-#import "ALMoviePlayerController.h"
+//#import "ALMoviePlayerController.h"
 
 // Library: YKMediaPlayerKit
 //#import "YKMediaPlayerKit.h"

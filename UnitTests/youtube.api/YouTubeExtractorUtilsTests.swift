@@ -22,7 +22,7 @@ class YouTubeExtractorUtilsTests: YoutubeFetcherBaseTests {
         super.tearDown()
     }
     
-    func testYoutubeExtractor() {
+    func _testYoutubeExtractor() {
         
         let expectation = expectationWithDescription("YoutubeExtractor")
         
