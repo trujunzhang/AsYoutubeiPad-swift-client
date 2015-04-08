@@ -17,7 +17,51 @@ class SubscriptionsViewController: FrontBaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-//        let channelPageViewController: ChannelPageViewController = ChannelPageViewController()
+        showMovie()
+    }
+    
+    func showMovie(){
+        // Video file
+        let filePathStr:NSString = NSBundle.mainBundle().pathForResource("example", ofType: "mp4")!
+        let fileURL :NSURL = NSURL(fileURLWithPath: filePathStr)!
+        
+        // Subtitles file
+        let subtitlesPathStr :NSString = NSBundle.mainBundle().pathForResource("example", ofType: "srt")!
+        
+        // Create MoviePlayer
+        let player: MPMoviePlayerController = MPMoviePlayerController()
+        player.contentURL = fileURL
+        player.shouldAutoplay = true
+        player.prepareToPlay()
+        
+        let parser : SOSRTParserHelper = SOSRTParserHelper()
+        
+        player.openSRTFileAtPath(subtitlesPathStr, parserHelper:parser, completion: { (finished) -> Void in
+            
+            // Activate subtitles
+            player.showSubtitles()
+            
+            // add movie player to your view
+//            self.view.addSubview(player.view!)
+//            LayoutUtils.LayoutFullView(player.view!)
+            
+//             [[UIApplication sharedApplication].keyWindow.rootViewController presentMoviePlayerViewControllerAnimated:self.player];
+            
+
+            
+            player.play()
+            
+            }) { (error) -> Void in
+                var x = 0
+        }
+        
+        
+    }
+    
+    func showChannelPage(){
+        
+        //        let channelPageViewController: ChannelPageViewController = ChannelPageViewController() // used
+        
         let channelPageViewController: YTVideoWatchViewController = YTVideoWatchViewController()
         channelPageViewController.videoID = "eoXneK3WIgQ"
         
@@ -49,11 +93,11 @@ class SubscriptionsViewController: FrontBaseViewController {
         
         //        self.view.addSubview(headerView)
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
+    
     
 }
