@@ -8,7 +8,7 @@
 
 import Foundation
 
-class YoutubeDataFetcher {
+class YoutubeDataFetcher : NSObject  {
     class var sharedInstance: YoutubeDataFetcher {
         
         struct Singleton {
@@ -24,9 +24,7 @@ class YoutubeDataFetcher {
             
             if (error == nil) {
                 // 2
-               
-                
-
+                completeHandler(responseInfo.array, true)
                 
             }else{
                 completeHandler(nil, false)

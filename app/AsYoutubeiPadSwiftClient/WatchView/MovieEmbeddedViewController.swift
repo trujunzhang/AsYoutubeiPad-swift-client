@@ -22,7 +22,7 @@ class MovieEmbeddedViewController: UIViewController {
     
     // MARK : Life-Cycle
     override func viewDidLoad() {
-        test02()
+//        test02()
     }
     
     

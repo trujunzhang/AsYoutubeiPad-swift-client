@@ -32,6 +32,7 @@
 		5E9E1ECB1AB7226F00523CC0 /* GYWrapSubscriptionsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E9E1ECA1AB7226F00523CC0 /* GYWrapSubscriptionsTests.swift */; };
 		5EAE05F71AD4D12600ADEA4B /* YoutubeDataFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EAE05F61AD4D12600ADEA4B /* YoutubeDataFetcher.swift */; };
 		5EAE05F91AD4D18100ADEA4B /* YoutubeDataFetcherForCaptionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EAE05F81AD4D18100ADEA4B /* YoutubeDataFetcherForCaptionTests.swift */; };
+		5EAE05FA1AD4D45400ADEA4B /* YoutubeDataFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EAE05F61AD4D12600ADEA4B /* YoutubeDataFetcher.swift */; };
 		5EAE2BE11ACF891200DA9372 /* YoutubeFetcherForVideosTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EAE2BE01ACF891200DA9372 /* YoutubeFetcherForVideosTests.swift */; };
 		5EAE2BE31ACF8ACC00DA9372 /* YoutubeFetcherForChannelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EAE2BE21ACF8ACC00DA9372 /* YoutubeFetcherForChannelTests.swift */; };
 		5EAFEFFB1ACD4B8A000C2E74 /* YoutubeParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EAFEFFA1ACD4B8A000C2E74 /* YoutubeParser.m */; };
@@ -748,6 +749,7 @@
 				5EAE2BE11ACF891200DA9372 /* YoutubeFetcherForVideosTests.swift in Sources */,
 				5EC0DEEF1ACD544900EC14C9 /* YTYoutubeRequestInfo.swift in Sources */,
 				5E5EF9661AB831CB00CCB831 /* MySwiftClass.swift in Sources */,
+				5EAE05FA1AD4D45400ADEA4B /* YoutubeDataFetcher.swift in Sources */,
 				5EBCDD0C1AB5C22C0023F037 /* AsYoutubeiPadSwiftClientTests.swift in Sources */,
 				5EEDE5561AC3F9D000D1AE30 /* YoutubeFetcherBaseTests.swift in Sources */,
 			);
