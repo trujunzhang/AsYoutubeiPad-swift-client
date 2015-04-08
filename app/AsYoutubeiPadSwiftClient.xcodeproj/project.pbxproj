@@ -88,6 +88,7 @@
 		5EC950211AC8300100844E61 /* YoutubeUserProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EC94FF81AC82E9300844E61 /* YoutubeUserProfile.swift */; };
 		5EC950221AC8302100844E61 /* LeftMenuSectionsUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EC94FEF1AC82E9300844E61 /* LeftMenuSectionsUtils.swift */; };
 		5ED8F8311AD503C7009DFFA1 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5ED8F8301AD503C7009DFFA1 /* Bolts.framework */; };
+		5ED8F8331AD50F2A009DFFA1 /* An_Angular2_Todo_App-First_look_at_App_Development_in_Angular2.srt in Resources */ = {isa = PBXBuildFile; fileRef = 5ED8F8321AD50F2A009DFFA1 /* An_Angular2_Todo_App-First_look_at_App_Development_in_Angular2.srt */; };
 		5EE43FE51AD3BA6000054AC5 /* NSObject_BlockBasedSelector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EE43FE41AD3BA6000054AC5 /* NSObject_BlockBasedSelector.swift */; };
 		5EE43FE71AD3C95600054AC5 /* MovieEmbeddedBasedBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EE43FE61AD3C95600054AC5 /* MovieEmbeddedBasedBarViewController.swift */; };
 		5EE6D3161AC96BCF0069E91E /* YTTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EE6D3151AC96BCF0069E91E /* YTTabBarController.swift */; };
@@ -198,6 +199,7 @@
 		5EC950111AC82EF500844E61 /* MenuTableLoggedHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuTableLoggedHeaderView.swift; sourceTree = "<group>"; };
 		5EC950121AC82EF500844E61 /* MenuTableSignInHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuTableSignInHeaderView.swift; sourceTree = "<group>"; };
 		5ED8F8301AD503C7009DFFA1 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Bolts.framework; path = Carthage/Build/iOS/Bolts.framework; sourceTree = "<group>"; };
+		5ED8F8321AD50F2A009DFFA1 /* An_Angular2_Todo_App-First_look_at_App_Development_in_Angular2.srt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "An_Angular2_Todo_App-First_look_at_App_Development_in_Angular2.srt"; path = "../../../AsYoutubeiPad-swift-client copy/UnitTests/response-data/subtitle/An_Angular2_Todo_App-First_look_at_App_Development_in_Angular2.srt"; sourceTree = "<group>"; };
 		5EE43FE41AD3BA6000054AC5 /* NSObject_BlockBasedSelector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NSObject_BlockBasedSelector.swift; path = Utils/NSObject_BlockBasedSelector.swift; sourceTree = "<group>"; };
 		5EE43FE61AD3C95600054AC5 /* MovieEmbeddedBasedBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MovieEmbeddedBasedBarViewController.swift; path = WatchView/Bars/MovieEmbeddedBasedBarViewController.swift; sourceTree = "<group>"; };
 		5EE6D3151AC96BCF0069E91E /* YTTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YTTabBarController.swift; sourceTree = "<group>"; };
@@ -283,6 +285,7 @@
 		5E819B621AD4FBCA00E4571F /* Subtitles */ = {
 			isa = PBXGroup;
 			children = (
+				5ED8F8321AD50F2A009DFFA1 /* An_Angular2_Todo_App-First_look_at_App_Development_in_Angular2.srt */,
 				5E819B651AD4FC7D00E4571F /* youtube.video.timedtext.xml */,
 				5E819B631AD4FBE600E4571F /* ParserSubtitleTests.swift */,
 			);
@@ -675,6 +678,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5ED8F8331AD50F2A009DFFA1 /* An_Angular2_Todo_App-First_look_at_App_Development_in_Angular2.srt in Resources */,
 				5E819B661AD4FC7D00E4571F /* youtube.video.timedtext.xml in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

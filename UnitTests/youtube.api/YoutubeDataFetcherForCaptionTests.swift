@@ -121,6 +121,8 @@ class YoutubeDataFetcherForCaptionTests: XCTestCase {
 
         YoutubeDataFetcher.sharedInstance.fetchCaptainTracksAndCaption(videoID,completeHandler: { (subtitleString, sucess) -> Void in
             
+//            self.writeStringToFile(subtitleString as NSString)
+            
             XCTAssertNotNil(subtitleString, "object not nil")
             
             self.isSucess = sucess
@@ -138,6 +140,19 @@ class YoutubeDataFetcherForCaptionTests: XCTestCase {
         
         waitForExpectationsWithTimeout(40) { (error) in
             XCTAssertNil(error, "\(error)")
+        }
+    }
+    
+    // MARK : 
+    func writeStringToFile(subtitleString :NSString){
+        let file = "subtitleString.srt"
+        
+        if let dirs : [String] = NSSearchPathForDirectoriesInDomains(NSSearchPathDirectory.DocumentDirectory, NSSearchPathDomainMask.AllDomainsMask, true) as? [String] {
+            let dir = dirs[0] //documents directory
+            let path = dir.stringByAppendingPathComponent(file)
+            
+            //writing
+            subtitleString.writeToFile(path, atomically: false, encoding: NSUTF8StringEncoding, error: nil)
         }
     }
     

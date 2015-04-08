@@ -25,7 +25,11 @@ class ParserSubtitleTests: XCTestCase {
     }
     
     func _testParseSubtitle() {
+        let expect  = 1923
         
+        let fileName = "An_Angular2_Todo_App-First_look_at_App_Development_in_Angular2"
+        
+        checkParseSRTFromFile(fileName, expect: expect)
     }
     
     
