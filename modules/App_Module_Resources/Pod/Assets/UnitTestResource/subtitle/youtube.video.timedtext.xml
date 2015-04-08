@@ -1,0 +1,3283 @@
+<transcript>
+   <text start="0" dur="2.617"/>
+   <text start="2.617" dur="0.833">BRAD GREEN: Welcome.</text>
+   <text start="3.45" dur="1.08">Hey, I&amp;#39;m Brad Green.</text>
+   <text start="4.53" dur="2.1">I run the Angular
+project at Google.</text>
+   <text start="6.63" dur="1.73">I&amp;#39;m excited you
+guys could join us.</text>
+   <text start="8.36" dur="3.925">We&amp;#39;re all pretty excited
+on the Angular team.</text>
+   <text start="12.285" dur="1.875">And we&amp;#39;re not good at
+ceremony, so we&amp;#39;re just</text>
+   <text start="14.16" dur="2.62">kind of announcing, we&amp;#39;re
+calling Angular2 in alpha,</text>
+   <text start="16.78" dur="2.34">meaning there are some
+bits out there on GitHub,</text>
+   <text start="19.12" dur="2.58">and we&amp;#39;ll show you later
+how to get to them.</text>
+   <text start="21.7" dur="2.21">But there are some bits
+that you can go play with.</text>
+   <text start="23.91" dur="2.61">And tonight David East
+of the Firebase team</text>
+   <text start="26.52" dur="6.94">is going to come and show us
+the fantastic TodoMVC app done</text>
+   <text start="33.46" dur="1.57">in Angular2.</text>
+   <text start="35.03" dur="2.67">The presentation is maybe
+only about 20 minutes.</text>
+   <text start="37.7" dur="3.18">We will be up here,
+Misko, and Igor,</text>
+   <text start="40.88" dur="1.89">and Naomi and some
+other folks in the team</text>
+   <text start="42.77" dur="3.95">will be taking questions that
+you might have about Angular2.</text>
+   <text start="46.72" dur="3.29">And we&amp;#39;ll skirt issues when
+you asked about the timeline,</text>
+   <text start="50.01" dur="3.34">but you can ask us real
+questions about Angular2.</text>
+   <text start="53.35" dur="2.07">And we can really answer
+them because things</text>
+   <text start="55.42" dur="1.9">are fairly real now.</text>
+   <text start="57.32" dur="4.69">So as always when
+you ask questions</text>
+   <text start="62.01" dur="2.17">we&amp;#39;re going to have
+you sign a form that</text>
+   <text start="64.18" dur="2.36">says it&amp;#39;s OK to release
+them to YouTube.</text>
+   <text start="66.54" dur="2">So please only
+ask stuff that you</text>
+   <text start="68.54" dur="1.696">want to have on live stream.</text>
+   <text start="70.236" dur="1.374">We&amp;#39;re excited to
+be here tonight.</text>
+   <text start="71.61" dur="2.28">I&amp;#39;ll have David come
+up and we&amp;#39;ll get going.</text>
+   <text start="73.89" dur="1.13">David, where&amp;#39;d you go?</text>
+   <text start="75.02" dur="0.75">Oh, there you are.</text>
+   <text start="75.77" dur="0.97">OK.</text>
+   <text start="76.74" dur="0.5">Thanks.</text>
+   <text start="77.24" dur="6.305"/>
+   <text start="83.545" dur="1.375">DAVID EAST: How&amp;#39;s
+everyone doing?</text>
+   <text start="84.92" dur="0.79">Is this good?</text>
+   <text start="85.71" dur="1.25">All right.</text>
+   <text start="86.96" dur="2.63">This kind of gets
+away from me at times.</text>
+   <text start="89.59" dur="2.56">And then I&amp;#39;ll talk over
+here and you can&amp;#39;t hear me.</text>
+   <text start="92.15" dur="1.66">Just keep me in check.</text>
+   <text start="93.81" dur="0.5">All right.</text>
+   <text start="94.31" dur="3.405">So I&amp;#39;m really excited to talk
+to you guys here tonight.</text>
+   <text start="97.715" dur="2.569">I think we have a little
+bit of an interesting topic</text>
+   <text start="100.284" dur="1.416">that you might
+want to hear about.</text>
+   <text start="101.7" dur="3.887">So we&amp;#39;re going to be
+talking about Angular2.</text>
+   <text start="105.587" dur="1.583">So for those of you
+who don&amp;#39;t know me,</text>
+   <text start="107.17" dur="1.02">my name is [INAUDIBLE].</text>
+   <text start="108.19" dur="2.2">I am a developer program
+engineer at Google</text>
+   <text start="110.39" dur="2.332">where I work on Firebase.</text>
+   <text start="112.722" dur="2.06">I actually only work
+on Angular part time</text>
+   <text start="114.782" dur="1.958">where I work on the
+developer experience, which</text>
+   <text start="116.74" dur="2.92">is essentially like creating
+great documentation, code</text>
+   <text start="119.66" dur="2.43">samples, and all the things
+that are going to make all</text>
+   <text start="122.09" dur="2.41">of your lives
+hopefully a lot easier.</text>
+   <text start="124.5" dur="2.75">So this time around if you have
+any problems of documentation</text>
+   <text start="127.25" dur="2.09">you know who to throw things at.</text>
+   <text start="129.34" dur="2.49">So I&amp;#39;ve actually only
+been working on a Angular2</text>
+   <text start="131.83" dur="1.39">for about a month now.</text>
+   <text start="133.22" dur="2.89">So I kind of find it
+kind of surreal and crazy</text>
+   <text start="136.11" dur="2.565">that within a month time
+frame of saying, sure,</text>
+   <text start="138.675" dur="1.405">I can help [INAUDIBLE].</text>
+   <text start="140.08" dur="2.06">Here I am talking to
+you all about something</text>
+   <text start="142.14" dur="1.774">that&amp;#39;s in an alpha stage.</text>
+   <text start="143.914" dur="2.416">So for the past month I&amp;#39;ve
+just been bugging the core team</text>
+   <text start="146.33" dur="1.583">with all these
+questions while they&amp;#39;ve</text>
+   <text start="147.913" dur="2.257">been coding away like crazy.</text>
+   <text start="150.17" dur="3.2">And just sort of every day I
+get a fresh new copy of Angular2</text>
+   <text start="153.37" dur="1.33">and make new stuff with it.</text>
+   <text start="154.7" dur="2.51">So this presentation
+is sort of what</text>
+   <text start="157.21" dur="3.91">I&amp;#39;ve been able to
+pull away from that.</text>
+   <text start="161.12" dur="3.075">So like always in something
+in alpha this is a disclaimer.</text>
+   <text start="164.195" dur="2.375">It&amp;#39;s kind of like what you
+see at the bottom of the email</text>
+   <text start="166.57" dur="2.45">when someone says, don&amp;#39;t talk
+about this if you received</text>
+   <text start="169.02" dur="1.28">it or something.</text>
+   <text start="170.3" dur="1.65">Angular2 is a work in progress.</text>
+   <text start="171.95" dur="2.76">Things might slash will
+probably, definitely</text>
+   <text start="174.71" dur="0.53">will change.</text>
+   <text start="175.24" dur="2.93">So everything you see in here,
+don&amp;#39;t hold me accountable</text>
+   <text start="178.17" dur="2.17">if you see this later and
+you built an app on this.</text>
+   <text start="180.34" dur="2.041">I&amp;#39;m sorry.</text>
+   <text start="182.381" dur="0.499">All right.</text>
+   <text start="182.88" dur="3.2">Before we get talking about a
+lot of the concepts of Angular2</text>
+   <text start="186.08" dur="1.5">I want to talk about
+the motivation.</text>
+   <text start="187.58" dur="0.87">Why are we building Angular2?</text>
+   <text start="188.45" dur="1.8">What are the things
+that are different?</text>
+   <text start="190.25" dur="1.417">And what we&amp;#39;re
+looking to address?</text>
+   <text start="191.667" dur="1.583">And then once that&amp;#39;s
+done, we&amp;#39;re going</text>
+   <text start="193.25" dur="2.51">to talk about concepts, like
+all the new stuff in Angular2</text>
+   <text start="195.76" dur="2.58">that&amp;#39;s really cool, the
+building blocks, and all that.</text>
+   <text start="198.34" dur="3.03">And like Brad said it&amp;#39;s only
+about 20 minutes so there&amp;#39;s not</text>
+   <text start="201.37" dur="1.71">enough time for me
+to cover everything.</text>
+   <text start="203.08" dur="3.52">There is a lot more than what&amp;#39;s
+on here, but if I went more</text>
+   <text start="206.6" dur="2.93">it would be just
+total mind blown,</text>
+   <text start="209.53" dur="2.24">like how do I learn
+all these things.</text>
+   <text start="211.77" dur="3.15">So we&amp;#39;re just going to
+focus on the very basics.</text>
+   <text start="214.92" dur="1.95">And after that I&amp;#39;m going
+to show the Todo app</text>
+   <text start="216.87" dur="2.229">I created, which is
+also very simple.</text>
+   <text start="219.099" dur="2.041">And that&amp;#39;s up on GitHub,
+so you guys will be able</text>
+   <text start="221.14" dur="2.65">check it out afterwards, too.</text>
+   <text start="223.79" dur="0.5">All right.</text>
+   <text start="224.29" dur="2.08">So motivation behind Angular 1.</text>
+   <text start="226.37" dur="1.88">Well, it&amp;#39;s an aging framework.</text>
+   <text start="228.25" dur="2.42">It dates back all
+the way to 2009.</text>
+   <text start="230.67" dur="4.12">So a lot of things in
+2009 didn&amp;#39;t really exist.</text>
+   <text start="234.79" dur="2.9">Right now we are looking
+into the Shadow DOM, and ES6</text>
+   <text start="237.69" dur="3.53">modules, and ES6 in general, and
+that wasn&amp;#39;t really around then.</text>
+   <text start="241.22" dur="2.35">So Angular kind of
+created its own things</text>
+   <text start="243.57" dur="1.79">that helped out there.</text>
+   <text start="245.36" dur="3.689">So now with Angular2 we don&amp;#39;t
+need things like transclusion</text>
+   <text start="249.049" dur="2.041">anymore, because that&amp;#39;s
+what the Shadow DOM does.</text>
+   <text start="251.09" dur="2.17">It provides that
+for us natively.</text>
+   <text start="253.26" dur="3.74">And then also with ES6 modules,
+they replace Angular Modules.</text>
+   <text start="257" dur="2.88">Angular wants to be able to
+sit on top of web standards.</text>
+   <text start="259.88" dur="2.9">It&amp;#39;s not the point of
+creating a web standard,</text>
+   <text start="262.78" dur="1.8">or creating a
+standard of your own,</text>
+   <text start="264.58" dur="3.155">and then using that, we want to
+play nice as the web evolves.</text>
+   <text start="267.735" dur="2.535"/>
+   <text start="270.27" dur="2.08">Another thing is performance.</text>
+   <text start="272.35" dur="1.81">So speed is obviously
+very important.</text>
+   <text start="274.16" dur="2.91">And I have a quote
+from Misko, which was,</text>
+   <text start="277.07" dur="4.92">I&amp;#39;m quoting him from
+tomorrow, and it&amp;#39;s he said,</text>
+   <text start="281.99" dur="3.32">&amp;quot;today Angular2 is 5x
+faster than Angular 1.&amp;quot;</text>
+   <text start="285.31" dur="3.48">So after that hopefully
+it will be faster,</text>
+   <text start="288.79" dur="2.75">but tomorrow it is
+five times faster.</text>
+   <text start="291.54" dur="2.95">And if you don&amp;#39;t believe me
+I have a chart to prove it,</text>
+   <text start="294.49" dur="3">because charts mean
+it&amp;#39;s legitimate.</text>
+   <text start="297.49" dur="4.04">So to the very right over here,
+or I guess my left, your right,</text>
+   <text start="301.53" dur="1.37">we have Angular 1.</text>
+   <text start="302.9" dur="1.702">And so this is a
+deep tree benchmark,</text>
+   <text start="304.602" dur="0.958">which I should mention.</text>
+   <text start="305.56" dur="3.34">So this essentially represents
+a very complex Angular</text>
+   <text start="308.9" dur="2.619">application, very
+deep rooted, nested</text>
+   <text start="311.519" dur="2.291">components, which we&amp;#39;ll talk
+about what components are,</text>
+   <text start="313.81" dur="2.39">but just think about
+very heavily nested DOM,</text>
+   <text start="316.2" dur="2.699">which essentially makes
+up an application.</text>
+   <text start="318.899" dur="1.791">So that&amp;#39;s all the way
+out here to the left.</text>
+   <text start="320.69" dur="1.97">And this is with Angular 1.</text>
+   <text start="322.66" dur="2.82">And this is how fast
+Angular 1 is with that.</text>
+   <text start="325.48" dur="1.58">And then this is the baseline.</text>
+   <text start="327.06" dur="1.62">And this is a fixed cost.</text>
+   <text start="328.68" dur="3.52">So this is essentially
+its hard coded way</text>
+   <text start="332.2" dur="1.71">of building this
+type of application.</text>
+   <text start="333.91" dur="1.92">So it&amp;#39;s going to be really
+fast because everything&amp;#39;s hard</text>
+   <text start="335.83" dur="0.36">coded.</text>
+   <text start="336.19" dur="1.65">You would never do
+this in real life,</text>
+   <text start="337.84" dur="1.68">but this is how we
+can say, OK, this</text>
+   <text start="339.52" dur="4.36">is as fast-- this is a
+bottom level of speed.</text>
+   <text start="343.88" dur="2.01">And then this over
+here is Angular2</text>
+   <text start="345.89" dur="2.164">with two different
+types of optimizations,</text>
+   <text start="348.054" dur="1.416">or, I guess, with
+one optimization</text>
+   <text start="349.47" dur="1.69">and one not optimized.</text>
+   <text start="351.16" dur="2.51">So Angular2, obviously lower
+in this case is better.</text>
+   <text start="353.67" dur="2.45">And Angular2, without a view
+cache, which is essentially</text>
+   <text start="356.12" dur="2.208">without a way of being smart
+about how we&amp;#39;re managing</text>
+   <text start="358.328" dur="4.302">our views, is three times
+slower than the baseline.</text>
+   <text start="362.63" dur="3.27">And the Angular2
+with the view cache,</text>
+   <text start="365.9" dur="3.12">which is being smart about
+keeping around our elements</text>
+   <text start="369.02" dur="3.61">is only 1.4 times slower
+than the baseline.</text>
+   <text start="372.63" dur="2.3">And as you can see this
+is very, very close.</text>
+   <text start="374.93" dur="3.045">And this is just today or
+tomorrow as Misko told me.</text>
+   <text start="377.975" dur="2.655"/>
+   <text start="380.63" dur="2.65">Another thing is the
+simple cognitive model.</text>
+   <text start="383.28" dur="2.44">So when you&amp;#39;re first
+learning Angular,</text>
+   <text start="385.72" dur="1.184">it has a lot of concepts.</text>
+   <text start="386.904" dur="2.416">And each one of these concepts
+has its own learning curve.</text>
+   <text start="389.32" dur="1.583">You could spend an
+entire day learning</text>
+   <text start="390.903" dur="2.117">about all of the different
+things of a controller.</text>
+   <text start="393.02" dur="1.176">And you could start
+learning about all</text>
+   <text start="394.196" dur="1.5">of the different
+things that you can</text>
+   <text start="395.696" dur="2.364">use transclusion
+and directives for.</text>
+   <text start="398.06" dur="2.82">So this is just a list
+of all the concepts</text>
+   <text start="400.88" dur="1.972">that we first start
+learning out in Angular 1.</text>
+   <text start="402.852" dur="1.708">And what&amp;#39;s kind of
+funny about the slide,</text>
+   <text start="404.56" dur="3.02">too, is there&amp;#39;s actually more
+and the screen clipped the rest</text>
+   <text start="407.58" dur="1.03">off.</text>
+   <text start="408.61" dur="2.89">So we kind of start out
+learning these things</text>
+   <text start="411.5" dur="1.632">and these are all
+great concepts.</text>
+   <text start="413.132" dur="1.458">And once we learn
+them, you kind of</text>
+   <text start="414.59" dur="2.07">feel like an advanced
+Angular user.</text>
+   <text start="416.66" dur="3.047">And you can know well how
+to use your controller.</text>
+   <text start="419.707" dur="2.333">You know the difference between
+factory service provider</text>
+   <text start="422.04" dur="2.29">and you&amp;#39;re able to have
+all this flexibility.</text>
+   <text start="424.33" dur="2.58">Well, with Angular we want
+to provide this flexibility.</text>
+   <text start="426.91" dur="3.18">With Angular2 we want to provide
+this flexibility for you guys,</text>
+   <text start="430.09" dur="3.24">but maybe do away with a lot
+of these conceptual models</text>
+   <text start="433.33" dur="3.26">and still have the same power
+and flexibility as before.</text>
+   <text start="436.59" dur="3.03">So later I&amp;#39;m going to
+show you how we take away</text>
+   <text start="439.62" dur="2.732">some of these concepts.</text>
+   <text start="442.352" dur="2.238">Now the motivation
+is web standards.</text>
+   <text start="444.59" dur="3.27">We want to sit on top of web
+standards, not create our own.</text>
+   <text start="447.86" dur="3.15">And performance, so
+being as fast as possible</text>
+   <text start="451.01" dur="2.3">while still introducing
+less concepts for you</text>
+   <text start="453.31" dur="1.88">guys to learn about.</text>
+   <text start="455.19" dur="2">So a lot of you
+have seen Angular2,</text>
+   <text start="457.19" dur="2.66">but for those who haven&amp;#39;t
+this is sort of your not</text>
+   <text start="459.85" dur="3.56">so first, maybe kind of
+first look at Angular2.</text>
+   <text start="463.41" dur="2.23">And I&amp;#39;ll just let it
+sink in for a second.</text>
+   <text start="465.64" dur="3.01">You guys kind of
+take a look at it.</text>
+   <text start="468.65" dur="0.5">All right.</text>
+   <text start="469.15" dur="3.02">Now before we say what
+this actually does,</text>
+   <text start="472.17" dur="2.69">let&amp;#39;s talk about the syntax
+because that&amp;#39;s important.</text>
+   <text start="474.86" dur="1.117">What&amp;#39;s happening?</text>
+   <text start="475.977" dur="1.833">Some of you might be
+looking at this saying,</text>
+   <text start="477.81" dur="1.13">is the Dart version?</text>
+   <text start="478.94" dur="0.76">Is this Java?</text>
+   <text start="479.7" dur="1.289">Is this GWT back?</text>
+   <text start="480.989" dur="1.541">I&amp;#39;m not really sure
+what&amp;#39;s happening.</text>
+   <text start="482.53" dur="2.06">So trust me, GWT is not back.</text>
+   <text start="484.59" dur="1.81">This is AtScript.</text>
+   <text start="486.4" dur="4.4">And AtScript is
+really not too much.</text>
+   <text start="490.8" dur="2.97">It provides syntactical sugar
+for metadata annotations,</text>
+   <text start="493.77" dur="3.18">which is this @ sign right
+here, that @ component,</text>
+   <text start="496.95" dur="0.812">that&amp;#39;s AtScript.</text>
+   <text start="497.762" dur="1.708">If you wondered what
+AtScript stands for,</text>
+   <text start="499.47" dur="3.79">it&amp;#39;s literally just @
+script, AtScript, so nothing</text>
+   <text start="503.26" dur="2.02">too special.</text>
+   <text start="505.28" dur="1.48">So something to
+know about AtScript</text>
+   <text start="506.76" dur="2.06">is it&amp;#39;s not here to
+replace JavaScript.</text>
+   <text start="508.82" dur="1.4">It&amp;#39;s not the intention.</text>
+   <text start="510.22" dur="3.15">It&amp;#39;s merely syntactical
+sugar on top of ES6.</text>
+   <text start="513.37" dur="1.84">It also does types,
+but we&amp;#39;re not even</text>
+   <text start="515.21" dur="2.94">going to talk about
+types because it&amp;#39;s not</text>
+   <text start="518.15" dur="1.43">required with AtScript.</text>
+   <text start="519.58" dur="1.38">Another cool thing
+about AtScript</text>
+   <text start="520.96" dur="4.63">is the Angular team is
+working with TypeScript, V8,</text>
+   <text start="525.59" dur="2.94">and a bunch of other people
+to get this actually worked</text>
+   <text start="528.53" dur="2.37">into a proposal for
+the TC39 committee.</text>
+   <text start="530.9" dur="2.32">So putting this towards
+the future of JavaScript.</text>
+   <text start="533.22" dur="2.9"/>
+   <text start="536.12" dur="1.876">Another thing about
+AtScript is you may say,</text>
+   <text start="537.996" dur="1.374">that&amp;#39;s cool and
+all, but I really</text>
+   <text start="539.37" dur="2.1">don&amp;#39;t want to write
+any of this new stuff.</text>
+   <text start="541.47" dur="2.99">Well, AtScript compiles
+to ES5, so you can still</text>
+   <text start="544.46" dur="2.39">write all the JavaScript
+code that you know today.</text>
+   <text start="546.85" dur="1.28">It&amp;#39;s not required at all.</text>
+   <text start="548.13" dur="3.99">And like I said, types are
+completely optional as well.</text>
+   <text start="552.12" dur="0.5">All right.</text>
+   <text start="552.62" dur="1.439">So back to the component.</text>
+   <text start="554.059" dur="2.291">So we&amp;#39;re going to focus on
+what this actually does now.</text>
+   <text start="556.35" dur="2.12">And now that we know the
+TypeScript&amp;#39;s not scary,</text>
+   <text start="558.47" dur="3.66">syntactical sugar on top of ES6.</text>
+   <text start="562.13" dur="2.96">So this whole thing
+is called a component.</text>
+   <text start="565.09" dur="2.05">And a component is
+how we structure</text>
+   <text start="567.14" dur="1.53">and reason about our UI.</text>
+   <text start="568.67" dur="4.3">An entire Angular application
+is just a tree of components.</text>
+   <text start="572.97" dur="2.54">And as you can see we
+have the first part</text>
+   <text start="575.51" dur="3.43">of the component, which is
+the metadata annotation @</text>
+   <text start="578.94" dur="1.33">component.</text>
+   <text start="580.27" dur="2.51">And this describes
+what our component is.</text>
+   <text start="582.78" dur="3.21">So we have the selector,
+which is the actual HTML</text>
+   <text start="585.99" dur="3.03">tag that will be this component.</text>
+   <text start="589.02" dur="2.11">And then we have
+the template, which</text>
+   <text start="591.13" dur="2.38">excuse the template config,
+this is some of the stuff</text>
+   <text start="593.51" dur="1.55">that you&amp;#39;ll see changing.</text>
+   <text start="595.06" dur="1.61">And then within
+there is the URL,</text>
+   <text start="596.67" dur="1.85">so where my template
+actually lives.</text>
+   <text start="598.52" dur="1.77">So within this
+Component annotation</text>
+   <text start="600.29" dur="4.64">I can say simply, all
+right, this is the selector,</text>
+   <text start="604.93" dur="1.334">this is where my template lives.</text>
+   <text start="606.264" dur="1.707">There&amp;#39;s a lot more
+that can be done here,</text>
+   <text start="607.971" dur="1.989">but this is pretty
+much the bare minimum</text>
+   <text start="609.96" dur="2.89">you can get going for
+creating a component.</text>
+   <text start="612.85" dur="1.88">And the second
+part is the class.</text>
+   <text start="614.73" dur="2.1">Now a class, this
+is not AtScript.</text>
+   <text start="616.83" dur="1.51">This is ES6.</text>
+   <text start="618.34" dur="4.4">And within the class we call
+this the Component controller.</text>
+   <text start="622.74" dur="2.58">So we have a component and you
+have a Component controller,</text>
+   <text start="625.32" dur="2.24">or a Component annotation
+and a Component controller.</text>
+   <text start="627.56" dur="1.67">Component annotation,
+like I said,</text>
+   <text start="629.23" dur="3.72">tells you everything about how
+your component gets wired up.</text>
+   <text start="632.95" dur="2.73">The controller is what
+your template reads from.</text>
+   <text start="635.68" dur="2.68">So how we used to attach things
+to scope or use controller</text>
+   <text start="638.36" dur="4.34">as syntax, we don&amp;#39;t have to
+attach any of these things</text>
+   <text start="642.7" dur="0.5">anymore.</text>
+   <text start="643.2" dur="1.31">It just automatically happens.</text>
+   <text start="644.51" dur="3.37">The templates are self reading
+from this Component controller.</text>
+   <text start="647.88" dur="3">So within a template
+I can say todos</text>
+   <text start="650.88" dur="1.88">and I know that it&amp;#39;s
+my components todos.</text>
+   <text start="652.76" dur="1.57">And it&amp;#39;s the two items.</text>
+   <text start="654.33" dur="4.71">So I could say todos that
+length and I could bind to that.</text>
+   <text start="659.04" dur="2.06">So one more time
+and all together.</text>
+   <text start="661.1" dur="4.37">We have Component annotation and
+we have a Component controller.</text>
+   <text start="665.47" dur="2.415">And together this
+makes one component.</text>
+   <text start="667.885" dur="1">Those are the two parts.</text>
+   <text start="668.885" dur="2.875"/>
+   <text start="671.76" dur="4.09">So now we understand briefly
+how we create components.</text>
+   <text start="675.85" dur="1.407">It&amp;#39;s two simple steps.</text>
+   <text start="677.257" dur="2.333">But we need to understand how
+do we get this on the page</text>
+   <text start="679.59" dur="2.5">because that&amp;#39;s the end goal
+of all of what development is,</text>
+   <text start="682.09" dur="2.627">get something to
+appear on the page.</text>
+   <text start="684.717" dur="2.083">So the current bootstrapping
+process in Angular 1.</text>
+   <text start="686.8" dur="4.71">We have Angular dot module
+and we specifier our app name.</text>
+   <text start="691.51" dur="4.09">Then we have to wire up
+ng-app and specify that also</text>
+   <text start="695.6" dur="1.1">with the app name.</text>
+   <text start="696.7" dur="3.28">And then we create a controller,
+attach things to $scope.</text>
+   <text start="699.98" dur="2.562">And then we have to
+say the ng-controller.</text>
+   <text start="702.542" dur="1.458">And you can do
+ng-view, but this is</text>
+   <text start="704" dur="2.47">just one of the simpler
+ways of getting it set up.</text>
+   <text start="706.47" dur="3.06">And specify the template.</text>
+   <text start="709.53" dur="2.68">And this is roughly six steps.</text>
+   <text start="712.21" dur="2.38">Like we said, Create
+Module, ng-app,</text>
+   <text start="714.59" dur="3.34">create controller, attach items
+to $scope, Declare Controller,</text>
+   <text start="717.93" dur="0.977">Create Template.</text>
+   <text start="718.907" dur="2.583">And each one of these things is
+probably only one to two lines</text>
+   <text start="721.49" dur="2.16">of code each, but they&amp;#39;re
+very dependent on each other.</text>
+   <text start="723.65" dur="1.74">If you misspell the
+app name, it blows up.</text>
+   <text start="725.39" dur="1.3">If you get forget
+ng-app, you kind of</text>
+   <text start="726.69" dur="2.23">refresh the page over and
+over again asking yourself,</text>
+   <text start="728.92" dur="1.29">why is this happening.</text>
+   <text start="730.21" dur="3.33">And then you realize you
+forgot the directive.</text>
+   <text start="733.54" dur="4.62">In Angular2 this is
+a lot more simple.</text>
+   <text start="738.16" dur="2.41">This essentially is your
+bootstrapping process.</text>
+   <text start="740.57" dur="2.24">We already know how
+we create component.</text>
+   <text start="742.81" dur="3.125">So @Component, and then we can
+say export class component,</text>
+   <text start="745.935" dur="2.125">which essentially means
+give this out to the world.</text>
+   <text start="748.06" dur="2.71">This is ES6 syntax as well.</text>
+   <text start="750.77" dur="4.86">And then down here we have more
+ES6 syntax where we bootstrap.</text>
+   <text start="755.63" dur="1.96">So we import Bootstrap
+from angular,</text>
+   <text start="757.59" dur="2.23">because Bootstrap is a
+function provided by Angular,</text>
+   <text start="759.82" dur="1.94">so it&amp;#39;s a manual
+bootstrapping process.</text>
+   <text start="761.76" dur="3.06">And then we import the Todo app
+that we exported out from here.</text>
+   <text start="764.82" dur="3.11">And then we say,
+Bootstrap, this Todo app.</text>
+   <text start="767.93" dur="3.02">And that essentially
+is your process.</text>
+   <text start="770.95" dur="2.78">The only other thing that I
+have sneakily not included</text>
+   <text start="773.73" dur="1.07">is the template.</text>
+   <text start="774.8" dur="3.44">So you&amp;#39;ll need a template, which
+is URL slash Todo slash html,</text>
+   <text start="778.24" dur="2.14">but we&amp;#39;re going to get into
+template syntax in just</text>
+   <text start="780.38" dur="2.376">a second.</text>
+   <text start="782.756" dur="2.374">So there is one little piece
+that I didn&amp;#39;t mention though</text>
+   <text start="785.13" dur="2.195">and that is the ES6 to
+AtScript compilation.</text>
+   <text start="787.325" dur="1.625">If you&amp;#39;re using ES6
+or AtScript, that&amp;#39;s</text>
+   <text start="788.95" dur="2.34">going to run in any
+modern browser right now.</text>
+   <text start="791.29" dur="3.75">So you&amp;#39;ll have to use your
+favorite ES6 compiler.</text>
+   <text start="795.04" dur="2.22">Traceur works very
+well with AtScript.</text>
+   <text start="797.26" dur="3.79">It has experimental options
+that allow you to specify that.</text>
+   <text start="801.05" dur="2.17">And it actually
+works in the browser,</text>
+   <text start="803.22" dur="2.91">which the TodoMVC
+app uses no CLI.</text>
+   <text start="806.13" dur="2.25">It all works in browser.</text>
+   <text start="808.38" dur="2.35">And right now you
+have to use systemjs</text>
+   <text start="810.73" dur="5.05">to import these modules as
+sort of a module loading shim,</text>
+   <text start="815.78" dur="2.95">but right now we&amp;#39;re working
+on sort of a key turn solution</text>
+   <text start="818.73" dur="3.7">where you don&amp;#39;t have to worry
+about the crazy ES6 module</text>
+   <text start="822.43" dur="3.11">loading world.</text>
+   <text start="825.54" dur="2.88">So we saw the six steps
+before, but now it&amp;#39;s just four.</text>
+   <text start="828.42" dur="2.616">And hopefully number
+four goes away one day</text>
+   <text start="831.036" dur="1.624">because it&amp;#39;s just
+the bridge to writing</text>
+   <text start="832.66" dur="2.07">the code we want to
+write for tomorrow.</text>
+   <text start="834.73" dur="3.87">So we create a component,
+give it a template, bootstrap.</text>
+   <text start="838.6" dur="2.58">And sadly, transpile
+until that goes away.</text>
+   <text start="841.18" dur="4.28">And if you write ES5 code you
+don&amp;#39;t have to transpile at all.</text>
+   <text start="845.46" dur="2.64">So it&amp;#39;s a much more
+simple model for getting</text>
+   <text start="848.1" dur="3.171">started with your Angular app.</text>
+   <text start="851.271" dur="0.499">All right.</text>
+   <text start="851.77" dur="2.97">So we&amp;#39;ve talked about
+creating a component and how</text>
+   <text start="854.74" dur="2.28">we get it to appear on a page.</text>
+   <text start="857.02" dur="3.12">But now we have new
+templates syntax.</text>
+   <text start="860.14" dur="2.21">Now, I threw a lot of
+new code at you again.</text>
+   <text start="862.35" dur="3.75">So I&amp;#39;m going to give you all
+a second to let this sink in.</text>
+   <text start="866.1" dur="2.16">Where we were creating
+the component,</text>
+   <text start="868.26" dur="2.685">the code block below
+is its templates.</text>
+   <text start="870.945" dur="4.946"/>
+   <text start="875.891" dur="0.499">All right.</text>
+   <text start="876.39" dur="4.4">So now that I think you guys
+have looked at it a little bit,</text>
+   <text start="880.79" dur="1.78">we have this
+template right here.</text>
+   <text start="882.57" dur="3.21">And essentially this component
+is called name-change.</text>
+   <text start="885.78" dur="2.72">All it does is just
+changes a name.</text>
+   <text start="888.5" dur="2.91">We type into a text box,
+we click Enter, and then</text>
+   <text start="891.41" dur="1.26">that updates.</text>
+   <text start="892.67" dur="2.95">And as you can see right
+here we have the div</text>
+   <text start="895.62" dur="2.78">that displays the name, the
+text box, and the button.</text>
+   <text start="898.4" dur="2.08">You recognize the curlies,
+but what you probably</text>
+   <text start="900.48" dur="4.59">don&amp;#39;t recognize is the
+pound sign, the brackets,</text>
+   <text start="905.07" dur="1.49">and the parentheses.</text>
+   <text start="906.56" dur="3.24">So I&amp;#39;m going to go through
+each one of these one by one.</text>
+   <text start="909.8" dur="4.14">So sort of a new concept in
+Angular2 is Local Variables.</text>
+   <text start="913.94" dur="2.469">And this is something that
+I was kind of geeking out</text>
+   <text start="916.409" dur="1.291">when I first starting using it.</text>
+   <text start="917.7" dur="1.22">I was like, oh my gosh.</text>
+   <text start="918.92" dur="2.09">I can&amp;#39;t believe this
+actually exists.</text>
+   <text start="921.01" dur="2.24">And what you can do
+here is by you saying,</text>
+   <text start="923.25" dur="2.76">pound sign on this text
+box, it gives me a handle.</text>
+   <text start="926.01" dur="3.536">So it&amp;#39;s now Local Variable
+to just the template.</text>
+   <text start="929.546" dur="2.124">It doesn&amp;#39;t bleed out into
+the $scope anywhere else.</text>
+   <text start="931.67" dur="1.695">It just lives inside
+your template.</text>
+   <text start="933.365" dur="1.625">And I can actually
+bind it to the page.</text>
+   <text start="934.99" dur="1.93">So I say, newname.value
+and that&amp;#39;s</text>
+   <text start="936.92" dur="2.23">the property of that input.</text>
+   <text start="939.15" dur="4.126">So if I change the value,
+it changes on the page.</text>
+   <text start="943.276" dur="3.254">And where this comes in
+handy is with Event Handlers.</text>
+   <text start="946.53" dur="1.9">And that&amp;#39;s where we
+saw the parentheses.</text>
+   <text start="948.43" dur="1.83">So you see parentheses click.</text>
+   <text start="950.26" dur="2">And we say click
+equals changeName</text>
+   <text start="952.26" dur="3.59">and that is a function on
+my Component controller.</text>
+   <text start="955.85" dur="3.05">And from there I can pass in
+the event that was clicked on.</text>
+   <text start="958.9" dur="3.88">And then I also can say
+newname.value and that</text>
+   <text start="962.78" dur="4.43">passes that back into my
+Component controller method.</text>
+   <text start="967.21" dur="3.86">So in just two lines of HTML
+I&amp;#39;ve created a Local Variable</text>
+   <text start="971.07" dur="1.43">and I&amp;#39;ve passed its value.</text>
+   <text start="972.5" dur="1.03">It&amp;#39;s very declarative.</text>
+   <text start="973.53" dur="2.83">I don&amp;#39;t have to say
+[INAUDIBLE], getElementById.</text>
+   <text start="976.36" dur="2.68">I don&amp;#39;t have to do
+anything to find it.</text>
+   <text start="979.04" dur="1.91">It&amp;#39;s very easy to look
+at this and reason</text>
+   <text start="980.95" dur="3.98">that I am grabbing the
+value when I click a button.</text>
+   <text start="984.93" dur="2.18">And lastly with the
+array bracket syntax</text>
+   <text start="987.11" dur="1.55">is Property Bindings.</text>
+   <text start="988.66" dur="4.21">Now we&amp;#39;re used to binding
+to attributes in Angular 1.</text>
+   <text start="992.87" dur="1.9">But in Angular2, this
+is a bit different.</text>
+   <text start="994.77" dur="2.33">Rather than binding
+to attributes</text>
+   <text start="997.1" dur="3.02">we&amp;#39;re binding to actual
+properties of a DOM element.</text>
+   <text start="1000.12" dur="3.07">So if you were to write
+document.getElementByID</text>
+   <text start="1003.19" dur="3.869">for a span you could say
+whatever the span handle</text>
+   <text start="1007.059" dur="2.541">is dot text content, and that
+will tell you whatever the text</text>
+   <text start="1009.6" dur="0.74">[INAUDIBLE] time.</text>
+   <text start="1010.34" dur="3.22">There&amp;#39;s no such thing as
+a text content attribute.</text>
+   <text start="1013.56" dur="4.21">So from here I&amp;#39;m binding to
+properties, not attributes.</text>
+   <text start="1017.77" dur="1.97">So now when I update
+this text box,</text>
+   <text start="1019.74" dur="3.1">I can say whenever the
+newname.value changes</text>
+   <text start="1022.84" dur="2.42">I&amp;#39;m going to update it to
+the text content of the span.</text>
+   <text start="1025.26" dur="2.582"/>
+   <text start="1027.842" dur="1.458">So we&amp;#39;ll look at
+this one more time</text>
+   <text start="1029.3" dur="2.296">and so we can reason
+about what&amp;#39;s going on.</text>
+   <text start="1031.596" dur="2.374">We know that we&amp;#39;re displaying
+the name from the Component</text>
+   <text start="1033.97" dur="2.47">controller because we
+have our name property.</text>
+   <text start="1036.44" dur="1.909">And then down here
+we have a text box,</text>
+   <text start="1038.349" dur="2.711">which we gave the Local
+Variable of newname.</text>
+   <text start="1041.06" dur="1.59">When this button
+is clicked, which</text>
+   <text start="1042.65" dur="1.78">we know because of
+the parentheses,</text>
+   <text start="1044.43" dur="2.13">we call the function
+changeName, which</text>
+   <text start="1046.56" dur="1.85">is inside of our
+Component controller.</text>
+   <text start="1048.41" dur="2.77">And we pass that
+the newname.value,</text>
+   <text start="1051.18" dur="1.31">which our changeName does.</text>
+   <text start="1052.49" dur="1.49">It expects a new name.</text>
+   <text start="1053.98" dur="3.11">And then we just simply say
+this dot name equals new name</text>
+   <text start="1057.09" dur="1.24">and our name gets updated.</text>
+   <text start="1058.33" dur="4.48"/>
+   <text start="1062.81" dur="1.77">And one of the
+really great benefits</text>
+   <text start="1064.58" dur="2.43">of using this new
+syntax is uniformity.</text>
+   <text start="1067.01" dur="2.35">Whenever I&amp;#39;m declaring
+an Event Handler</text>
+   <text start="1069.36" dur="1.99">I know I just need to
+use the parentheses.</text>
+   <text start="1071.35" dur="2">And any type of event
+can fit in there.</text>
+   <text start="1073.35" dur="3.52">So if we want to do a
+mouseover, a double-click,</text>
+   <text start="1076.87" dur="1.75">I can use this
+front end developer</text>
+   <text start="1078.62" dur="2.36">knowledge I know about,
+all these DOM events,</text>
+   <text start="1080.98" dur="2.48">and I just need to know
+the syntax for Angular2.</text>
+   <text start="1083.46" dur="3.09">I don&amp;#39;t have to worry about
+knowing about the ng click</text>
+   <text start="1086.55" dur="3.25">directive, or the ng
+model, or ng double-click.</text>
+   <text start="1089.8" dur="4.51">There&amp;#39;s no one-to-one directive
+to event ratio anymore.</text>
+   <text start="1094.31" dur="1.67">This works for all
+events, including</text>
+   <text start="1095.98" dur="2.872">custom events on Web Components.</text>
+   <text start="1098.852" dur="1.458">And then we also
+know that whenever</text>
+   <text start="1100.31" dur="3.374">we want to bind to a property we
+just use array bracket syntax.</text>
+   <text start="1103.684" dur="1.416">So [INAUDIBLE] I
+was saying, there</text>
+   <text start="1105.1" dur="3.15">was always the difference
+between ng model, ng click.</text>
+   <text start="1108.25" dur="3.32">You had to really know what
+that directive did to use it.</text>
+   <text start="1111.57" dur="1.97">And then now I know
+what a property is.</text>
+   <text start="1113.54" dur="1.04">I know this syntax.</text>
+   <text start="1114.58" dur="1.94">I know I&amp;#39;m binding to
+that syntax right away.</text>
+   <text start="1116.52" dur="2.58">There&amp;#39;s no just diving
+into the documentation,</text>
+   <text start="1119.1" dur="2.32">seeing what are the
+side effects of this.</text>
+   <text start="1121.42" dur="4.92">Just by knowing the syntax,
+it&amp;#39;s easy to reason about.</text>
+   <text start="1126.34" dur="2.42">But what this also does,
+it provides us flexibility.</text>
+   <text start="1128.76" dur="2.53">So when we create Web Components
+one of the great new things</text>
+   <text start="1131.29" dur="1.91">about that is you can
+create custom events.</text>
+   <text start="1133.2" dur="2.291">So I could create a Web
+Component that fires out a name</text>
+   <text start="1135.491" dur="2.359">change event, but
+the problem with that</text>
+   <text start="1137.85" dur="3.734">is that I now have to create
+an ng-name-change event.</text>
+   <text start="1141.584" dur="1.666">And that&amp;#39;s what this
+top thing is doing.</text>
+   <text start="1143.25" dur="1.48">It&amp;#39;s from Angular 1.</text>
+   <text start="1144.73" dur="2.23">So now I&amp;#39;ve got to say
+ng-name-change and write</text>
+   <text start="1146.96" dur="1.31">the directive for that.</text>
+   <text start="1148.27" dur="1.67">But in Angular2 I
+won&amp;#39;t have to do that.</text>
+   <text start="1149.94" dur="2.456">I know I have a brand
+new name change event.</text>
+   <text start="1152.396" dur="1.624">So I just pass it
+into the parentheses.</text>
+   <text start="1154.02" dur="1.15">I don&amp;#39;t create a directive.</text>
+   <text start="1155.17" dur="1.14">I don&amp;#39;t do anything at all.</text>
+   <text start="1156.31" dur="1.083">It&amp;#39;s completely supported.</text>
+   <text start="1157.393" dur="3.437"/>
+   <text start="1160.83" dur="3.41">So we know how to
+create components.</text>
+   <text start="1164.24" dur="2.06">We can bootstrap them up.</text>
+   <text start="1166.3" dur="2.2">And we see the new
+template syntax.</text>
+   <text start="1168.5" dur="2.55">But what happens
+when things change?</text>
+   <text start="1171.05" dur="1.392">How does that actually happen?</text>
+   <text start="1172.442" dur="2.458">Well, the great news is that
+you don&amp;#39;t really have to care.</text>
+   <text start="1174.9" dur="1.38">It kind of works magically.</text>
+   <text start="1176.28" dur="1.916">But if you want to know
+what&amp;#39;s under the hood,</text>
+   <text start="1178.196" dur="1.274">and I apologize for this.</text>
+   <text start="1179.47" dur="2.22">This doesn&amp;#39;t come out too
+well in the resolution.</text>
+   <text start="1181.69" dur="2.692">But this is how Angular2
+change detection works.</text>
+   <text start="1184.382" dur="2.208">And this is, in my opinion,
+one of the coolest things</text>
+   <text start="1186.59" dur="2.11">that I&amp;#39;ve seen while
+working with it.</text>
+   <text start="1188.7" dur="2.64">So an Angular2 application
+is just a tree of components.</text>
+   <text start="1191.34" dur="1.59">And this component,
+and by the way,</text>
+   <text start="1192.93" dur="4.12">this is taken from Angular core
+teamer Vic Savkin&amp;#39;s blog post,</text>
+   <text start="1197.05" dur="1.2">which is really awesome.</text>
+   <text start="1198.25" dur="3.48">So I recommend doing the
+read for more information.</text>
+   <text start="1201.73" dur="3.23">But in this case we have an
+app component at the top.</text>
+   <text start="1204.96" dur="2.16">And then an app
+component has a child,</text>
+   <text start="1207.12" dur="3.23">which is a Todos component,
+which has a child of a Todo.</text>
+   <text start="1210.35" dur="4.86">Now whenever a change
+happens it goes down one way.</text>
+   <text start="1215.21" dur="2.76">And it starts at
+the app component,</text>
+   <text start="1217.97" dur="1.62">and it runs change
+detection, and then</text>
+   <text start="1219.59" dur="3.67">it can go down to each one
+of the child components.</text>
+   <text start="1223.26" dur="1.64">And change detection
+is really smart.</text>
+   <text start="1224.9" dur="1.93">So it works at a module level.</text>
+   <text start="1226.83" dur="4.27">So each component only has to
+update its individual updates.</text>
+   <text start="1231.1" dur="3.1">And also, if we do more
+advanced things, such as using</text>
+   <text start="1234.2" dur="4.23">immutable data or observables,
+this component tree</text>
+   <text start="1238.43" dur="1.49">can be very smart
+and say, well I&amp;#39;m</text>
+   <text start="1239.92" dur="2.291">not going to update this
+because I know it&amp;#39;s immutable.</text>
+   <text start="1242.211" dur="3.109">So it gives you
+faster performance.</text>
+   <text start="1245.32" dur="2.41">But you could do a
+really big talk on this.</text>
+   <text start="1247.73" dur="1.64">And I know that Vic will be.</text>
+   <text start="1249.37" dur="3.95">So there will be more
+information about this later.</text>
+   <text start="1253.32" dur="3.29">So the change detection runs,
+but how does change detection</text>
+   <text start="1256.61" dur="1.05">know to run?</text>
+   <text start="1257.66" dur="2.1">And this is one of
+the new libraries</text>
+   <text start="1259.76" dur="1.93">used in Angular called Zone.</text>
+   <text start="1261.69" dur="2.82">And so Zone is kind of like
+the Professor X of Angular,</text>
+   <text start="1264.51" dur="1.9">Professor X of JavaScript.</text>
+   <text start="1266.41" dur="2.32">Whenever an asynchronous
+event happens</text>
+   <text start="1268.73" dur="3.39">it just lets Angular know,
+hey, something has happened.</text>
+   <text start="1272.12" dur="1.1">Run change detection.</text>
+   <text start="1273.22" dur="2">And then so change detection
+runs and everything</text>
+   <text start="1275.22" dur="1.154">gets updated.</text>
+   <text start="1276.374" dur="2.416">And a good example of this,
+for those of you who have ever</text>
+   <text start="1278.79" dur="1.79">dealt with asynchronous
+events in Angular</text>
+   <text start="1280.58" dur="2.81">is when you have to use
+$timeout, so dollar timeout.</text>
+   <text start="1283.39" dur="1.9">In this case this is
+some Firebase code.</text>
+   <text start="1285.29" dur="3.126">And what I&amp;#39;m doing is I&amp;#39;m
+attaching a callback function</text>
+   <text start="1288.416" dur="1.624">whenever something
+updates in Firebase.</text>
+   <text start="1290.04" dur="2.61">And Angular does not know
+anything about Firebase.</text>
+   <text start="1292.65" dur="3.62">So if I want this to be updated
+in my view I call $timeout</text>
+   <text start="1296.27" dur="2.78">and I said, scope that user
+to snap that [? valve. ?]</text>
+   <text start="1299.05" dur="3.46">So this is what we
+currently do in Angular 1.</text>
+   <text start="1302.51" dur="2.95">And this isn&amp;#39;t terribly a
+performant way of doing it</text>
+   <text start="1305.46" dur="1.79">or an easy way to do it.</text>
+   <text start="1307.25" dur="1.56">I pretty much spend
+most of my days</text>
+   <text start="1308.81" dur="3.2">answering Stack Overflow
+questions about this.</text>
+   <text start="1312.01" dur="2.91">So what&amp;#39;s great
+about Angular2 is</text>
+   <text start="1314.92" dur="1.74">that we don&amp;#39;t have
+to do this anymore.</text>
+   <text start="1316.66" dur="2.35">Change detection in
+Angular2 is much smarter.</text>
+   <text start="1319.01" dur="2.58">Whenever this callback
+function fires off</text>
+   <text start="1321.59" dur="3.412">Zone says, hey, by the way, this
+callback function fired off.</text>
+   <text start="1325.002" dur="2.083">Angular says, thanks for
+letting me know about it.</text>
+   <text start="1327.085" dur="1.255">I&amp;#39;m going to run
+change detection.</text>
+   <text start="1328.34" dur="1.75">And then everything
+just sort of happens.</text>
+   <text start="1330.09" dur="2.13">So now when we&amp;#39;re
+writing our code that</text>
+   <text start="1332.22" dur="1.86">lives outside of
+Angular we don&amp;#39;t</text>
+   <text start="1334.08" dur="3.52">have to know about digest,
+apply, timeouts, or anything</text>
+   <text start="1337.6" dur="0.69">like that.</text>
+   <text start="1338.29" dur="0.97">That just happens.</text>
+   <text start="1339.26" dur="2.442">And we can go about
+writing the code,</text>
+   <text start="1341.702" dur="1.458">writing JavaScript
+that we know how</text>
+   <text start="1343.16" dur="4.42">to write without worrying
+about how Angular works.</text>
+   <text start="1347.58" dur="0.5">All right.</text>
+   <text start="1348.08" dur="4.1">So that is pretty much the
+core basic concepts of Angular.</text>
+   <text start="1352.18" dur="2.93">So we&amp;#39;ll take a
+look at the code.</text>
+   <text start="1355.11" dur="2.372">All right.</text>
+   <text start="1357.482" dur="1.958">Well, first I&amp;#39;m going to
+show you how it works.</text>
+   <text start="1359.44" dur="3.46">So this is an Angular2 Todo app.</text>
+   <text start="1362.9" dur="2.4">And like I said, this is
+pretty washed out on this one,</text>
+   <text start="1365.3" dur="3.51">but what I can do is I can
+say, OK, what do I need to do?</text>
+   <text start="1368.81" dur="1.277">I need to give a talk.</text>
+   <text start="1370.087" dur="1.333">And this is written in Firebase.</text>
+   <text start="1371.42" dur="3.34">So if I refresh the
+page, give a talk.</text>
+   <text start="1374.76" dur="1.93">So it persists.</text>
+   <text start="1376.69" dur="2.57">So I can do things
+like check off a list,</text>
+   <text start="1379.26" dur="3">and then I can say,
+OK, clear completed.</text>
+   <text start="1382.26" dur="1.36">And that works.</text>
+   <text start="1383.62" dur="1.33">So it all works.</text>
+   <text start="1384.95" dur="2.035">And when I wrote the
+Firebase piece of this,</text>
+   <text start="1386.985" dur="1.375">I didn&amp;#39;t write a
+single $timeout,</text>
+   <text start="1388.36" dur="1.4">a single anything like that.</text>
+   <text start="1389.76" dur="2.51">It was just all regular code.</text>
+   <text start="1392.27" dur="2.73">And when we actually need to
+port the AngularFire library</text>
+   <text start="1395" dur="3.61">over, it&amp;#39;ll actually
+involve a lot less code</text>
+   <text start="1398.61" dur="4.34">than what we need to do to
+get it to work in Angular 1.</text>
+   <text start="1402.95" dur="2.23">So this is the source code.</text>
+   <text start="1405.18" dur="5.36">And essentially each part--
+this Todo app is three parts.</text>
+   <text start="1410.54" dur="2.31">We have this header,
+where the text box lives.</text>
+   <text start="1412.85" dur="3.54">We have the main, which is
+where we render our Todos.</text>
+   <text start="1416.39" dur="1.92">And then we have this
+footer, which gives us</text>
+   <text start="1418.31" dur="1.686">all of these action
+items down here.</text>
+   <text start="1419.996" dur="1.374">So we&amp;#39;re going to
+do a little bit</text>
+   <text start="1421.37" dur="1.34">of switching back and forth.</text>
+   <text start="1422.71" dur="2.37">So it&amp;#39;s easy for you guys
+to see what&amp;#39;s going on.</text>
+   <text start="1425.08" dur="1.65">So we&amp;#39;ll open up the header.</text>
+   <text start="1426.73" dur="2.56">And the way this header works
+is is the ID of new-todo</text>
+   <text start="1429.29" dur="1.34">is just for styling.</text>
+   <text start="1430.63" dur="3.13">And then placeholder and
+autofocus, just regular</text>
+   <text start="1433.76" dur="1.13">attributes.</text>
+   <text start="1434.89" dur="3.07">And with newtodo I&amp;#39;ve given
+it the local variable.</text>
+   <text start="1437.96" dur="3.52">I say on keyup call my
+Component Controller method,</text>
+   <text start="1441.48" dur="3.68">enterTodo with the
+event given and newtodo.</text>
+   <text start="1445.16" dur="2.34">So now I&amp;#39;m going to go into
+my Component controller.</text>
+   <text start="1447.5" dur="2.6"/>
+   <text start="1450.1" dur="3.305">And right here we have-- where
+would I have entered todo.</text>
+   <text start="1453.405" dur="4.7"/>
+   <text start="1458.105" dur="0.875">AUDIENCE: [INAUDIBLE]</text>
+   <text start="1458.98" dur="0.94">DAVID EAST: Thank you.</text>
+   <text start="1459.92" dur="0.5">See?</text>
+   <text start="1460.42" dur="1.301">I need you guys.</text>
+   <text start="1461.721" dur="0.499">All right.</text>
+   <text start="1462.22" dur="2.02">So what I do in here
+is I get that event.</text>
+   <text start="1464.24" dur="2.01">I can say, hey, which
+key was pressed?</text>
+   <text start="1466.25" dur="2.85">If so, call this.addTodo,
+which is another method.</text>
+   <text start="1469.1" dur="2.18">And then I pass in
+the newTodo.value,</text>
+   <text start="1471.28" dur="1.41">clear out the Todo.</text>
+   <text start="1472.69" dur="3.37">And if we see addTodo
+all addTodo is calls</text>
+   <text start="1476.06" dur="4.63">this.todoService, which is
+my AngularFire service .add</text>
+   <text start="1480.69" dur="2.96">and sends that data
+out to Firebase.</text>
+   <text start="1483.65" dur="3.33">So that&amp;#39;s pretty simple.</text>
+   <text start="1486.98" dur="2.54">So we&amp;#39;ll go and look
+at the body now.</text>
+   <text start="1489.52" dur="1.959">So look at the main piece.</text>
+   <text start="1491.479" dur="1.791">And we have right here,
+we have the ability</text>
+   <text start="1493.27" dur="1.7">to say click toggleAll.</text>
+   <text start="1494.97" dur="2.57">So when I say toggleAll
+I check to see</text>
+   <text start="1497.54" dur="1.52">if the checkbox is checked.</text>
+   <text start="1499.06" dur="3.912">If it&amp;#39;s not, toggle all
+of them, untoggle them.</text>
+   <text start="1502.972" dur="1.958">And then inside here we
+have a new little piece</text>
+   <text start="1504.93" dur="1.91">that I didn&amp;#39;t have
+any slides on,</text>
+   <text start="1506.84" dur="1.86">but it&amp;#39;s definitely
+worth talking about.</text>
+   <text start="1508.7" dur="2.93">We have this bang forEach.</text>
+   <text start="1511.63" dur="3.53">And this is the replacement
+syntax for ng repeat.</text>
+   <text start="1515.16" dur="3.89">So now we can say bang
+forEach, local Variable Todo,</text>
+   <text start="1519.05" dur="2.88">in the list of Todos.</text>
+   <text start="1521.93" dur="5.351">Inside of here is what will be
+repeated, so each list item.</text>
+   <text start="1527.281" dur="1.749">And then from in here
+you can see actually</text>
+   <text start="1529.03" dur="2.11">where we&amp;#39;re binding to class.</text>
+   <text start="1531.14" dur="2.082">We can get even more
+specific to that.</text>
+   <text start="1533.222" dur="1.458">Rather than just
+binding to a class</text>
+   <text start="1534.68" dur="1.84">we can bind to a specific class.</text>
+   <text start="1536.52" dur="4.77">So class.hidden is equal
+if the current Todo that&amp;#39;s</text>
+   <text start="1541.29" dur="4.07">being rendered is the Todo
+that&amp;#39;s also being edited.</text>
+   <text start="1545.36" dur="3">And just like as you
+see in the slides</text>
+   <text start="1548.36" dur="2.68">we can bind to the click,
+or binding to check.</text>
+   <text start="1551.04" dur="2.65">And then we&amp;#39;re also
+binding to double-click.</text>
+   <text start="1553.69" dur="1.72">So this all is very
+uniform syntax.</text>
+   <text start="1555.41" dur="4.06"/>
+   <text start="1559.47" dur="2.44">And then down here I
+actually completed this code.</text>
+   <text start="1561.91" dur="1.76">I didn&amp;#39;t actually
+want this to be done.</text>
+   <text start="1563.67" dur="2.74">So we&amp;#39;ll pretend like
+that&amp;#39;s not there.</text>
+   <text start="1566.41" dur="2.231">And now that that
+was never there,</text>
+   <text start="1568.641" dur="1.749">if we wanted to add a
+click event to clear</text>
+   <text start="1570.39" dur="1.708">all of the completed
+ones, we say, click.</text>
+   <text start="1572.098" dur="3.372"/>
+   <text start="1575.47" dur="2.78">We say that it&amp;#39;s
+clear completed.</text>
+   <text start="1578.25" dur="3.05">Now we go into our Todo
+Component controller.</text>
+   <text start="1581.3" dur="2.38">This method down here at the
+bottom is clear completed.</text>
+   <text start="1583.68" dur="1.55">It just gathers
+all the Todos that</text>
+   <text start="1585.23" dur="1.54">have been marked as completed.</text>
+   <text start="1586.77" dur="1.84">And then it sends it
+off to the Todo servers</text>
+   <text start="1588.61" dur="1.79">to clear all of them.</text>
+   <text start="1590.4" dur="7.66">And so from there when I check
+things off, clear completed,</text>
+   <text start="1598.06" dur="0.5">it works.</text>
+   <text start="1598.56" dur="2.53">So it&amp;#39;s very simple
+to reason about</text>
+   <text start="1601.09" dur="2.05">what&amp;#39;s an event, what&amp;#39;s
+being clicked on,</text>
+   <text start="1603.14" dur="2.15">and how I can actually
+get the values to pass</text>
+   <text start="1605.29" dur="3.192">into these events.</text>
+   <text start="1608.482" dur="0.5">All right.</text>
+   <text start="1608.982" dur="4.258"/>
+   <text start="1613.24" dur="1.84">So that&amp;#39;s what we
+have for you today.</text>
+   <text start="1615.08" dur="2.25">We are going to be able to
+answer a lot more questions</text>
+   <text start="1617.33" dur="1.94">because I&amp;#39;m sure you have a few.</text>
+   <text start="1619.27" dur="1.51">There is no documentation yet.</text>
+   <text start="1620.78" dur="1.37">And so you can throw that at me.</text>
+   <text start="1622.15" dur="1.96">I just said, I&amp;#39;m responsible
+for documentation.</text>
+   <text start="1624.11" dur="2.44">I tell you there&amp;#39;s
+no documentation.</text>
+   <text start="1626.55" dur="1.45">I actually have
+something planned</text>
+   <text start="1628" dur="3.03">that&amp;#39;ll be out probably
+within a week or two</text>
+   <text start="1631.03" dur="1.56">that will be pretty cool.</text>
+   <text start="1632.59" dur="3.46">And it&amp;#39;ll cover pretty
+much this information</text>
+   <text start="1636.05" dur="4.46">in an interactive
+tutorial format.</text>
+   <text start="1640.51" dur="2.1">If you want to check
+out the code for this</text>
+   <text start="1642.61" dur="0.93">that will be posted.</text>
+   <text start="1643.54" dur="2.19">There&amp;#39;s a GitHub repo for that.</text>
+   <text start="1645.73" dur="4.05">And ng-conf is going to be
+very much Angular2 centric.</text>
+   <text start="1649.78" dur="2.095">So all of these advanced
+things, all of the stuff</text>
+   <text start="1651.875" dur="2.125">that I wasn&amp;#39;t even able to
+talk to you about today,</text>
+   <text start="1654" dur="2.4">like routing and
+dependency injection,</text>
+   <text start="1656.4" dur="2.76">that stuff&amp;#39;s going to be
+talked a lot more at ng-conf.</text>
+   <text start="1659.16" dur="1.86">So there&amp;#39;s a lot more
+to be excited about.</text>
+   <text start="1661.02" dur="4">And we&amp;#39;ll be at [? NPM ?] soon.</text>
+   <text start="1665.02" dur="1.59">So that&amp;#39;ll be cool, too.</text>
+   <text start="1666.61" dur="1.29">So all right.</text>
+   <text start="1667.9" dur="0.78">That&amp;#39;s what I got.</text>
+   <text start="1668.68" dur="2.102">If you&amp;#39;ve got any questions.</text>
+   <text start="1670.782" dur="2.976">[APPLAUSE]</text>
+   <text start="1673.758" dur="0.856"/>
+   <text start="1674.614" dur="2.166">BRAD GREEN: David, why don&amp;#39;t
+you just stay up there.</text>
+   <text start="1676.78" dur="3.76">Misko, can you come up?</text>
+   <text start="1680.54" dur="3.63">And I will run the
+microphone around.</text>
+   <text start="1684.17" dur="2.427">And yeah, why don&amp;#39;t
+you come up too, Naomi,</text>
+   <text start="1686.597" dur="0.833">if you would please?</text>
+   <text start="1687.43" dur="3.95"/>
+   <text start="1691.38" dur="1.34">Questions.</text>
+   <text start="1692.72" dur="1.98">Everybody&amp;#39;s flabbergasted
+at the new syntax.</text>
+   <text start="1694.7" dur="0.541">I understand.</text>
+   <text start="1695.241" dur="6.269"/>
+   <text start="1701.51" dur="0.5">Yes?</text>
+   <text start="1702.01" dur="2.166">Question here.</text>
+   <text start="1704.176" dur="1.874">AUDIENCE: What are the
+functional differences</text>
+   <text start="1706.05" dur="2.41">between Local
+Variables and ng model?</text>
+   <text start="1708.46" dur="3.38">So is a Local Variable available
+from the actual business logic?</text>
+   <text start="1711.84" dur="6.46"/>
+   <text start="1718.3" dur="1.375">MISKO: So the
+question is what is</text>
+   <text start="1719.675" dur="4.435">the difference between a
+Local Variable and ng model.</text>
+   <text start="1724.11" dur="2.43">So unfortunately what
+this demo did not show</text>
+   <text start="1726.54" dur="2.71">is there&amp;#39;s going to
+be support for forms.</text>
+   <text start="1729.25" dur="2.82">And so David
+cheated a little bit</text>
+   <text start="1732.07" dur="2.93">by simply binding to events,
+and getting the data out</text>
+   <text start="1735" dur="1.71">of the input elements that way.</text>
+   <text start="1736.71" dur="2.7">So the forms are the
+replacement for ng model.</text>
+   <text start="1739.41" dur="2.52">And at the end of
+the day, really it</text>
+   <text start="1741.93" dur="3.07">should be as simple as changing
+the syntax from ng model</text>
+   <text start="1745" dur="0.81">to something else.</text>
+   <text start="1745.81" dur="1.46">It&amp;#39;s going to be some
+semantic changes.</text>
+   <text start="1747.27" dur="2.02">But fundamentally it&amp;#39;s going
+to work very similarly.</text>
+   <text start="1749.29" dur="1.124">You&amp;#39;re not going to see it.</text>
+   <text start="1750.414" dur="1.646">The reason for the
+change is because we</text>
+   <text start="1752.06" dur="1.98">want to make sure
+that we can retain</text>
+   <text start="1754.04" dur="1.75">this directed acyclic graph.</text>
+   <text start="1755.79" dur="2.77">And we have to make sure that
+any reverse bindings, in order</text>
+   <text start="1758.56" dur="1.81">to get the full
+circle going, has</text>
+   <text start="1760.37" dur="2.08">to execute before
+the change detection.</text>
+   <text start="1762.45" dur="1.39">And so this is
+kind of the reason</text>
+   <text start="1763.84" dur="3.755">we have to move things around,
+but at the end of the day</text>
+   <text start="1767.595" dur="2.125">what you&amp;#39;re going to get
+is going to very much feel</text>
+   <text start="1769.72" dur="2.208">like two-way data binding,
+even though under the hood</text>
+   <text start="1771.928" dur="3.482">we&amp;#39;re going to have to do
+some tricks to make it happen</text>
+   <text start="1775.41" dur="1.875">in the proper order so
+it&amp;#39;s very predictable.</text>
+   <text start="1777.285" dur="8.026"/>
+   <text start="1785.311" dur="0.499">Right.</text>
+   <text start="1785.81" dur="1.03">So two-way data binding.</text>
+   <text start="1786.84" dur="4.002">That&amp;#39;s kind of a love
+hate relationship.</text>
+   <text start="1790.842" dur="1.608">IGOR: [INAUDIBLE]</text>
+   <text start="1792.45" dur="2.22">MISKO: So there is
+this thing in Angular 1</text>
+   <text start="1794.67" dur="1.11">[INAUDIBLE] if you
+have two components</text>
+   <text start="1795.78" dur="1.499">and they&amp;#39;re bound
+to each other, you</text>
+   <text start="1797.279" dur="1.921">can actually set the
+directionality of it</text>
+   <text start="1799.2" dur="1.84">to be two-way data-binding.</text>
+   <text start="1801.04" dur="2.7">And that actually seems
+like a good idea at first</text>
+   <text start="1803.74" dur="1.74">until you have a large
+scale application.</text>
+   <text start="1805.48" dur="2.57">And then it turns out that you
+have no idea what&amp;#39;s going on,</text>
+   <text start="1808.05" dur="1.96">who&amp;#39;s binding to what,
+who&amp;#39;s updating what.</text>
+   <text start="1810.01" dur="4.87">And it turns out to be kind of
+an anti-pattern for large apps.</text>
+   <text start="1814.88" dur="2.32">So to make the large
+apps more predictable,</text>
+   <text start="1817.2" dur="1.68">and easier to
+understand, and debug,</text>
+   <text start="1818.88" dur="4.17">and so on we opted for this
+idea of directed acyclic graph,</text>
+   <text start="1823.05" dur="2.17">which means that you cannot
+have any pointers going</text>
+   <text start="1825.22" dur="1.25">in the reverse direction.</text>
+   <text start="1826.47" dur="1.916">And it turns out all
+kinds of wonderful things</text>
+   <text start="1828.386" dur="1.394">happen if you do that.</text>
+   <text start="1829.78" dur="2.18">But it makes certain
+things not possible,</text>
+   <text start="1831.96" dur="1.74">which is mainly
+two-way data-binding.</text>
+   <text start="1833.7" dur="1.625">And so what we do,
+again, we go back</text>
+   <text start="1835.325" dur="2">to this form which says
+that we want to give you</text>
+   <text start="1837.325" dur="3.387">a syntax that&amp;#39;s going to look
+like two-way data-binding,</text>
+   <text start="1840.712" dur="2.208">but actually it&amp;#39;s going to
+be a very clear state when</text>
+   <text start="1842.92" dur="2.695">a reverse direction happens and
+a forward direction happens.</text>
+   <text start="1845.615" dur="2.985"/>
+   <text start="1848.6" dur="1.34">BRAD GREEN: Over there.</text>
+   <text start="1849.94" dur="2.125">I&amp;#39;ll go back here and then
+I&amp;#39;ll come up front here.</text>
+   <text start="1852.065" dur="2.485"/>
+   <text start="1854.55" dur="2.55">AUDIENCE: What about cross
+controller communication,</text>
+   <text start="1857.1" dur="2.26">like in [INAUDIBLE] broadcast
+and stuff like that?</text>
+   <text start="1859.36" dur="3.35">I mean, they&amp;#39;re not great but
+sometimes they&amp;#39;re [INAUDIBLE].</text>
+   <text start="1862.71" dur="2.73">MISKO: So how do you do cross
+controller communication?</text>
+   <text start="1865.44" dur="0.97">That&amp;#39;s a good question.</text>
+   <text start="1866.41" dur="1.75">We&amp;#39;re also changing
+that one a little bit.</text>
+   <text start="1868.16" dur="3.18">So it turns out there&amp;#39;s actually
+two different kinds of events</text>
+   <text start="1871.34" dur="4.94">you can do in two
+components communicating.</text>
+   <text start="1876.28" dur="2.76">The two components that don&amp;#39;t
+actually know about each other.</text>
+   <text start="1879.04" dur="4.48">So, for example, person
+A implements a fancy text</text>
+   <text start="1883.52" dur="1.58">in a calendar widget.</text>
+   <text start="1885.1" dur="2.62">And person B wants
+to go and consume it.</text>
+   <text start="1887.72" dur="2.85">In this case because they
+don&amp;#39;t know about each other,</text>
+   <text start="1890.57" dur="3.71">kind of the DOM event model kind
+of broadcasting and emitting</text>
+   <text start="1894.28" dur="1.76">is kind of the way
+you want to do this.</text>
+   <text start="1896.04" dur="2.93">But we do that on a DOM level,
+so that the component emitting</text>
+   <text start="1898.97" dur="2.14">it says, I&amp;#39;m emitting
+event foo And then you</text>
+   <text start="1901.11" dur="3.92">do parentheses foo in
+order to listen to it.</text>
+   <text start="1905.03" dur="1.77">The other mode of
+communication is</text>
+   <text start="1906.8" dur="1.68">that within a single
+application when</text>
+   <text start="1908.48" dur="2.39">you have two components that
+have very tight coupling.</text>
+   <text start="1910.87" dur="3.98">So, for example, you have
+a tic-tack-toe application</text>
+   <text start="1914.85" dur="3.25">and it has components that
+is an individual cell.</text>
+   <text start="1918.1" dur="2.87">In that case the better way to
+do it instead of doing events--</text>
+   <text start="1920.97" dur="2.19">you can certainly do
+events-- but a better way</text>
+   <text start="1923.16" dur="3.07">to do it is to simply inject
+the app into the child,</text>
+   <text start="1926.23" dur="1.8">and simply call methods on it.</text>
+   <text start="1928.03" dur="3.03">And the benefits of that
+is that while it gives you</text>
+   <text start="1931.06" dur="1.99">a tight coupling, presumably
+the two components</text>
+   <text start="1933.05" dur="1.791">are already tightly
+coupled because they&amp;#39;re</text>
+   <text start="1934.841" dur="2.489">part of the same app,
+and you can do things</text>
+   <text start="1937.33" dur="1.465">like navigating
+inside of the IDs.</text>
+   <text start="1938.795" dur="1.375">So you just have
+a function call.</text>
+   <text start="1940.17" dur="2.36">And you can click
+through the function call</text>
+   <text start="1942.53" dur="1.95">and get to the destination.</text>
+   <text start="1944.48" dur="2.42">So we give you these
+two different modes</text>
+   <text start="1946.9" dur="1.4">that you can do.</text>
+   <text start="1948.3" dur="3.04">And hopefully that
+solves your problem.</text>
+   <text start="1951.34" dur="1.51">BRAD GREEN: Up front here.</text>
+   <text start="1952.85" dur="2.45">AUDIENCE: So going back
+to your previous comment</text>
+   <text start="1955.3" dur="3.83">you were making, so the example
+David showed, if I recall,</text>
+   <text start="1959.13" dur="4.8">he basically had the events
+and he passed a Local Variable</text>
+   <text start="1963.93" dur="2.43">that went to the function.</text>
+   <text start="1966.36" dur="2.479">And presumably
+the value changed.</text>
+   <text start="1968.839" dur="2.291">Doesn&amp;#39;t it kind of conflict
+with what you were stating?</text>
+   <text start="1971.13" dur="2.07">Because then you
+have no idea what&amp;#39;s</text>
+   <text start="1973.2" dur="3.6">changing the value to
+the local parameter.</text>
+   <text start="1976.8" dur="3.49">MISKO: So there&amp;#39;s the kind
+of digest phase, which</text>
+   <text start="1980.29" dur="2.99">updates the data binding.</text>
+   <text start="1983.28" dur="2.526">But there&amp;#39;s also what I
+don&amp;#39;t have a good name for,</text>
+   <text start="1985.806" dur="1.624">but I just call it
+the reverse binding,</text>
+   <text start="1987.43" dur="2.44">which is what gets
+the data from the UI</text>
+   <text start="1989.87" dur="2.25">and kind of gets it to the
+application, which then you</text>
+   <text start="1992.12" dur="1.07">can do data binding on.</text>
+   <text start="1993.19" dur="3.7">So what you see
+in the parentheses</text>
+   <text start="1996.89" dur="2.23">is really the reverse
+mode data binding.</text>
+   <text start="1999.12" dur="3.619">What you see inside of brackets
+is the forward data binding.</text>
+   <text start="2002.739" dur="1.291">That&amp;#39;s kind of the distinction.</text>
+   <text start="2004.03" dur="2.69">There&amp;#39;s a couple other
+distinctions in there,</text>
+   <text start="2006.72" dur="4.36">but those are fundamentally
+what&amp;#39;s going on.</text>
+   <text start="2011.08" dur="2.98">BRAD GREEN: Back
+in the back there.</text>
+   <text start="2014.06" dur="2.36">I&amp;#39;m coming around.</text>
+   <text start="2016.42" dur="0.5">Don&amp;#39;t move.</text>
+   <text start="2016.92" dur="2.97"/>
+   <text start="2019.89" dur="1.85">AUDIENCE: What about
+$scope inheritance?</text>
+   <text start="2021.74" dur="1.74">Is it going to be
+like class inheritance</text>
+   <text start="2023.48" dur="3.05">because I see here often
+when we refer to a template,</text>
+   <text start="2026.53" dur="2.66">there&amp;#39;s a possibility
+that the template in turn</text>
+   <text start="2029.19" dur="5.425">refers to another widget,
+I mean, [INAUDIBLE]</text>
+   <text start="2034.615" dur="0.875">into a sub-directive.</text>
+   <text start="2035.49" dur="4.892">And how was data going to
+flow through that chain?</text>
+   <text start="2040.382" dur="1.708">MISKO: Is this about
+$scoping inheritance</text>
+   <text start="2042.09" dur="2.029">or referring to directives?</text>
+   <text start="2044.119" dur="1.541">AUDIENCE: $scoping
+inheritance, but I</text>
+   <text start="2045.66" dur="2.8">can see even the
+sub-directives, they</text>
+   <text start="2048.46" dur="2.04">most likely share
+inherit from the parent.</text>
+   <text start="2050.5" dur="1.76">MISKO: Yeah.</text>
+   <text start="2052.26" dur="1.629">I think I understand
+your question.</text>
+   <text start="2053.889" dur="3.283">So I think what you&amp;#39;re asking
+is that in Angular 1x, $scopes</text>
+   <text start="2057.172" dur="1.208">inherited it from each other.</text>
+   <text start="2058.38" dur="0.91">And so if you have
+a component, you</text>
+   <text start="2059.29" dur="1.56">would automatically
+get the parents.</text>
+   <text start="2060.85" dur="2.78">So in Anugular2, because
+of the components,</text>
+   <text start="2063.63" dur="3.5">you can think of Angular2
+component as a Angular 1x</text>
+   <text start="2067.13" dur="2.46">$scope that has private state.</text>
+   <text start="2069.59" dur="0.75">What is it called?</text>
+   <text start="2070.34" dur="0.833">IGOR: Isolate scope.</text>
+   <text start="2071.173" dur="1.447">MISKO: Isolate $scope.</text>
+   <text start="2072.62" dur="2.57">AUDIENCE: OK.</text>
+   <text start="2075.19" dur="3">So we can choose to pass
+whatever information</text>
+   <text start="2078.19" dur="1.042">from the parent&amp;#39;s $scope.</text>
+   <text start="2079.232" dur="0.499">MISKO: Yeah.</text>
+   <text start="2079.731" dur="1.039">So you use data binding.</text>
+   <text start="2080.77" dur="1.48">So there&amp;#39;s two modes you can do.</text>
+   <text start="2082.25" dur="3.179">Actually, there&amp;#39;s three.</text>
+   <text start="2085.429" dur="5.02">You can data bind it through
+the bracket notation.</text>
+   <text start="2090.449" dur="2.6">You can dependency inject
+it and you can dependency</text>
+   <text start="2093.049" dur="2.291">inject the parent controller
+into the child controller,</text>
+   <text start="2095.34" dur="1.802">which is something that
+was not shown here.</text>
+   <text start="2097.142" dur="1.708">And you can actually
+do the reverse thing</text>
+   <text start="2098.85" dur="2.36">where you could actually
+query your children.</text>
+   <text start="2101.21" dur="2.03">So there&amp;#39;s kind of
+three modes of which you</text>
+   <text start="2103.24" dur="1.4">can get a hold of these things.</text>
+   <text start="2104.64" dur="2.32">And they actually play
+to different strengths</text>
+   <text start="2106.96" dur="0.7">and weaknesses.</text>
+   <text start="2107.66" dur="1.51">Depending on the
+situation you are</text>
+   <text start="2109.17" dur="1.87">in you might want to
+use one or the other.</text>
+   <text start="2111.04" dur="1.54">And by giving you
+these choices this</text>
+   <text start="2112.58" dur="1.583">actually becomes a
+lot more expressive</text>
+   <text start="2114.163" dur="1.757">in what you&amp;#39;re trying to do.</text>
+   <text start="2115.92" dur="1.77">AUDIENCE: But then
+when you have templates</text>
+   <text start="2117.69" dur="2.48">and you said that the
+$scope of a variable</text>
+   <text start="2120.17" dur="3.465">is within that template, say,
+for example, when we declared</text>
+   <text start="2123.635" dur="2.555">a new name and the
+newname.value was</text>
+   <text start="2126.19" dur="1.74">available throughout
+the template.</text>
+   <text start="2127.93" dur="3">So it seems like to
+me when a template</text>
+   <text start="2130.93" dur="1.73">is embedded inside
+another template,</text>
+   <text start="2132.66" dur="5.45">so everyone gets to share
+all the values, right?</text>
+   <text start="2138.11" dur="2.565">MISKO: So what&amp;#39;s
+different in Angular2</text>
+   <text start="2140.675" dur="1.875">is that we&amp;#39;re built on
+top of Web Components.</text>
+   <text start="2142.55" dur="2.59">And Web Components have this
+thing called a shadow DOM.</text>
+   <text start="2145.14" dur="2.21">And even if your browser
+doesn&amp;#39;t have shadow DOM</text>
+   <text start="2147.35" dur="2.01">we&amp;#39;re going to
+pretend as if it did,</text>
+   <text start="2149.36" dur="2.5">and we&amp;#39;re going to
+kind of emulate it.</text>
+   <text start="2151.86" dur="1.654">So the new terminology,
+rather than</text>
+   <text start="2153.514" dur="1.916">inventing our own
+terminology of transclusion,</text>
+   <text start="2155.43" dur="4.712">and isolated $scopes, and who
+gets what, we&amp;#39;re simply saying,</text>
+   <text start="2160.142" dur="1.958">look, there is already
+a terminology out there.</text>
+   <text start="2162.1" dur="1.22">It&amp;#39;s called Web Components.</text>
+   <text start="2163.32" dur="1">And we just follow that.</text>
+   <text start="2164.32" dur="2.04">Now what the Web
+Components gives you is it</text>
+   <text start="2166.36" dur="1.267">gives you isolations.</text>
+   <text start="2167.627" dur="2.333">Good programming principles
+says if you have a function,</text>
+   <text start="2169.96" dur="2.18">it should be isolated from
+another function, right?</text>
+   <text start="2172.14" dur="3.66">And because of these isolations
+the variables actually</text>
+   <text start="2175.8" dur="1.79">don&amp;#39;t flow very far.</text>
+   <text start="2177.59" dur="2.86">They only stay within a
+particular component&amp;#39;s view.</text>
+   <text start="2180.45" dur="2.4">And they&amp;#39;re not visible
+inside of child views,</text>
+   <text start="2182.85" dur="1.12">or parent views.</text>
+   <text start="2183.97" dur="3.14">So there&amp;#39;s actually pretty
+strong isolation guarantees</text>
+   <text start="2187.11" dur="0.69">in there.</text>
+   <text start="2187.8" dur="1.541">It&amp;#39;s actually a good
+thing because it</text>
+   <text start="2189.341" dur="1.862">allows you to build
+large apps and you</text>
+   <text start="2191.203" dur="1.583">don&amp;#39;t have worry
+that you accidentally</text>
+   <text start="2192.786" dur="1.754">clobber each other,
+that they have</text>
+   <text start="2194.54" dur="4.08">the same name, or the
+importing of things.</text>
+   <text start="2198.62" dur="2.693">It&amp;#39;s really properly
+isolated this time.</text>
+   <text start="2201.313" dur="2.069">AUDIENCE: Thanks.</text>
+   <text start="2203.382" dur="0.708">BRAD GREEN: Cool.</text>
+   <text start="2204.09" dur="0.583">Next question.</text>
+   <text start="2204.673" dur="3.887"/>
+   <text start="2208.56" dur="2.612">Yes, back row.</text>
+   <text start="2211.172" dur="0.958">I&amp;#39;m getting over there.</text>
+   <text start="2212.13" dur="3.862"/>
+   <text start="2215.992" dur="1.458">AUDIENCE: Will the
+templates end up</text>
+   <text start="2217.45" dur="2.62">taking advantage of some of the
+web components in shadow DOM</text>
+   <text start="2220.07" dur="3.38">stuff for styling, so
+encapsulated CSS instead</text>
+   <text start="2223.45" dur="2.17">of having to do
+ID everywhere to--</text>
+   <text start="2225.62" dur="2.93"/>
+   <text start="2228.55" dur="1.95">MISKO: The short answer is yes.</text>
+   <text start="2230.5" dur="1.43">We&amp;#39;ll take advantage of this.</text>
+   <text start="2231.93" dur="3.15">So Web Components,
+rather, shadow DOM</text>
+   <text start="2235.08" dur="2.88">is available in Chrome and--</text>
+   <text start="2237.96" dur="0.789">IGOR: Chrome.</text>
+   <text start="2238.749" dur="1.041">MISKO: Chrome and Chrome.</text>
+   <text start="2239.79" dur="0.773">OK.</text>
+   <text start="2240.563" dur="2.317">[LAUGHTER]</text>
+   <text start="2242.88" dur="2.76">Now it will be sad if
+Angular only ran on Chrome.</text>
+   <text start="2245.64" dur="2.48">So what we do is
+we say, OK, well,</text>
+   <text start="2248.12" dur="2.65">we think the future is shadow
+DOM and Web Components.</text>
+   <text start="2250.77" dur="3.35">And therefore, we&amp;#39;re going
+just take the vocabulary</text>
+   <text start="2254.12" dur="1.715">that Web Components provides.</text>
+   <text start="2255.835" dur="1.875">So you&amp;#39;re going to have
+to learn about shadow</text>
+   <text start="2257.71" dur="2.686">DOM, the light DOM, the
+[? group ?] projection, and all</text>
+   <text start="2260.396" dur="1.624">this stuff that Web
+Components provide.</text>
+   <text start="2262.02" dur="1.66">The nice thing is,
+any framework that&amp;#39;s</text>
+   <text start="2263.68" dur="0.86">going to be on top
+of web components</text>
+   <text start="2264.54" dur="2.08">will have the same
+exact vocabulary.</text>
+   <text start="2266.62" dur="1.52">And what we&amp;#39;re
+going to do then is</text>
+   <text start="2268.14" dur="3.9">we&amp;#39;re going to actually run the
+Angular in one of, I believe,</text>
+   <text start="2272.04" dur="0.58">four modes.</text>
+   <text start="2272.62" dur="2.25">You can either use shadow
+DOM where it&amp;#39;s required.</text>
+   <text start="2274.87" dur="2.377">And so obviously would
+only run on Chrome.</text>
+   <text start="2277.247" dur="2.083">Or we&amp;#39;re going to enter
+emulated mode, where we&amp;#39;re</text>
+   <text start="2279.33" dur="1.771">going to pretend
+we have shadow DOM.</text>
+   <text start="2281.101" dur="1.749">So we&amp;#39;re going to have
+the same semantics,</text>
+   <text start="2282.85" dur="1.85">but obviously there
+is no shadow DOM.</text>
+   <text start="2284.7" dur="3.31">Now in that mode we can actually
+subdivide in two different sub</text>
+   <text start="2288.01" dur="2.33">modes when it comes to styling.</text>
+   <text start="2290.34" dur="6.58">We can either properly
+isolate the CSS styles</text>
+   <text start="2296.92" dur="4.54">by reading the CSS and
+then prefixing everything</text>
+   <text start="2301.46" dur="1.54">with a component name.</text>
+   <text start="2303" dur="1.37">And then writing it back out.</text>
+   <text start="2304.37" dur="2.82">And so that&amp;#39;s going
+to give you isolation.</text>
+   <text start="2307.19" dur="4.68">But for people who have never
+done Web Components or shadow</text>
+   <text start="2311.87" dur="1.93">roots, it&amp;#39;s going to
+be like, surprise.</text>
+   <text start="2313.8" dur="1.11">Why does it work this way?</text>
+   <text start="2314.91" dur="1.85">Why is the styling [INAUDIBLE]?</text>
+   <text start="2316.76" dur="2.89">So we actually have a different
+mode, which doesn&amp;#39;t do this.</text>
+   <text start="2319.65" dur="2.82">So by default we&amp;#39;re going to
+pretend we have Web Components,</text>
+   <text start="2322.47" dur="1.57">but we&amp;#39;re not
+going to do styling</text>
+   <text start="2324.04" dur="1.862">unless you actually opt into it.</text>
+   <text start="2325.902" dur="2.208">Then there&amp;#39;s going to be a
+couple of learnings to do.</text>
+   <text start="2328.11" dur="1.541">These are actually
+not our learnings.</text>
+   <text start="2329.651" dur="2.219">This is just the standard
+of Web Components, right?</text>
+   <text start="2331.87" dur="1.46">So if you opt into
+this and you&amp;#39;re</text>
+   <text start="2333.33" dur="1.44">willing to do all this
+extra work that the Web</text>
+   <text start="2334.77" dur="1.958">Components will kind of
+require of you in order</text>
+   <text start="2336.728" dur="3.232">to get proper isolation,
+we&amp;#39;re going to support it.</text>
+   <text start="2339.96" dur="1.64">So that&amp;#39;s going to be nice.</text>
+   <text start="2341.6" dur="3.03"/>
+   <text start="2344.63" dur="0.86">BRAD GREEN: Cool.</text>
+   <text start="2345.49" dur="1.03">More questions?</text>
+   <text start="2346.52" dur="0.86">Oh, in front here.</text>
+   <text start="2347.38" dur="4.94"/>
+   <text start="2352.32" dur="2.8">AUDIENCE: So my question
+is, in Angular 1</text>
+   <text start="2355.12" dur="2.47">we use services a lot.</text>
+   <text start="2357.59" dur="2.35">So service kind
+of a [INAUDIBLE],</text>
+   <text start="2359.94" dur="5.08">which is a way to share the
+data in different components.</text>
+   <text start="2365.02" dur="3.84">I saw in the example
+you also used a service.</text>
+   <text start="2368.86" dur="3.24">So my question, are
+they still the same</text>
+   <text start="2372.1" dur="4.05">or is there any difference
+between 1 and 2?</text>
+   <text start="2376.15" dur="0.5">MISKO: Yeah.</text>
+   <text start="2376.65" dur="2.63">So the question
+is about services.</text>
+   <text start="2379.28" dur="1.764">The short answer is,
+yes, it&amp;#39;s the same,</text>
+   <text start="2381.044" dur="1.416">but it&amp;#39;s a little
+more complicated</text>
+   <text start="2382.46" dur="1.56">because in Angular2
+we actually have</text>
+   <text start="2384.02" dur="1.81">a hierarchical
+dependency injector.</text>
+   <text start="2385.83" dur="1.93">So in Angular 1
+everything&amp;#39;s a singleton.</text>
+   <text start="2387.76" dur="3.76">In Angular2 things are
+a singleton with respect</text>
+   <text start="2391.52" dur="2.342">to their injector,
+but because you</text>
+   <text start="2393.862" dur="1.458">can have multiple
+injectors you can</text>
+   <text start="2395.32" dur="1.416">create injectors
+and destroy them,</text>
+   <text start="2396.736" dur="3.314">you can actually control
+the lifetime of objects.</text>
+   <text start="2400.05" dur="4.88">And this is done by
+component in the annotation.</text>
+   <text start="2404.93" dur="1.63">Not only does a
+component declare</text>
+   <text start="2406.56" dur="1.93">what template it wants
+to use in a selector,</text>
+   <text start="2408.49" dur="2.05">it can also
+configurator an injector</text>
+   <text start="2410.54" dur="3.03">for itself, for its shadow
+root, and for its children.</text>
+   <text start="2413.57" dur="3.527">And by configuring
+and then bringing</text>
+   <text start="2417.097" dur="2.083">the components on the page
+through either [? ng ?]</text>
+   <text start="2419.18" dur="3.217">or ng-repeat, or taking them
+out by navigator or router,</text>
+   <text start="2422.397" dur="1.583">you can actually
+control the life time</text>
+   <text start="2423.98" dur="2.81">of the services and
+things that go with it.</text>
+   <text start="2426.79" dur="2.53">So it&amp;#39;s the same concepts
+we&amp;#39;re familiar with.</text>
+   <text start="2429.32" dur="1.997">We made certain
+vocabulary better</text>
+   <text start="2431.317" dur="2.083">so you don&amp;#39;t have to have
+a confusion about what&amp;#39;s</text>
+   <text start="2433.4" dur="3.62">a service and what&amp;#39;s
+a factory and so on.</text>
+   <text start="2437.02" dur="1.514">And we actually
+gave it more power</text>
+   <text start="2438.534" dur="1.916">so that you can have
+this hierarchical things.</text>
+   <text start="2440.45" dur="2.38">And you can lazy load
+into your application</text>
+   <text start="2442.83" dur="3.6">and unload modules and so on.</text>
+   <text start="2446.43" dur="2.78">IGOR: I&amp;#39;ll just try to
+refactor what Misko said.</text>
+   <text start="2449.21" dur="1.92">If you don&amp;#39;t care about
+having more power,</text>
+   <text start="2451.13" dur="2.49">it&amp;#39;s going to be the
+same with better syntax.</text>
+   <text start="2453.62" dur="2.7">If you want more features the
+features will be available,</text>
+   <text start="2456.32" dur="3.76">but you have to understand
+how the hierarchical DI works.</text>
+   <text start="2460.08" dur="3.37">But if you don&amp;#39;t care,
+don&amp;#39;t worry about it.</text>
+   <text start="2463.45" dur="1.92">BRAD GREEN: Thanks, Igor.</text>
+   <text start="2465.37" dur="2.079">Another question.</text>
+   <text start="2467.449" dur="0.906">Yeah?</text>
+   <text start="2468.355" dur="1.111">Back there, then there.</text>
+   <text start="2469.466" dur="3.814"/>
+   <text start="2473.28" dur="3.09">AUDIENCE: So you talked a
+lot about the templates,</text>
+   <text start="2476.37" dur="3.15">but I remember at the time
+there was a design doc about how</text>
+   <text start="2479.52" dur="5.63">Angular supports data and the
+synchronizing with the server,</text>
+   <text start="2485.15" dur="3.16">maybe replacing the dollar HTTP
+services, and stuff like that.</text>
+   <text start="2488.31" dur="2.81">And now there&amp;#39;s also David
+here with the Firebase.</text>
+   <text start="2491.12" dur="3.65"/>
+   <text start="2494.77" dur="2.5">In Angular2 it will
+be different for you</text>
+   <text start="2497.27" dur="1.62">to write an AngularFire?</text>
+   <text start="2498.89" dur="2.585">There will be different
+stuff about that?</text>
+   <text start="2501.475" dur="1.875">MISKO: So I&amp;#39;m going to
+just mention something</text>
+   <text start="2503.35" dur="1.5">and I&amp;#39;m going have both
+of you guys answer it.</text>
+   <text start="2504.85" dur="2.59">I think both Igor has something
+to say because he&amp;#39;s working</text>
+   <text start="2507.44" dur="2.6">on the data services, and
+obviously the Firebase--</text>
+   <text start="2510.04" dur="1.694">David-- guy will have
+something to say.</text>
+   <text start="2511.734" dur="1.416">The first thing I
+want to just say</text>
+   <text start="2513.15" dur="2.39">is that because of
+the Zones many things</text>
+   <text start="2515.54" dur="1.64">will just magically work.</text>
+   <text start="2517.18" dur="3.45">I cannot express to you just
+how excited I am about Zones.</text>
+   <text start="2520.63" dur="2.49">It is the bee&amp;#39;s knees.</text>
+   <text start="2523.12" dur="1.46">DAVID EAST: This is true.</text>
+   <text start="2524.58" dur="2.14">MISKO: So David got
+his Firebase thing</text>
+   <text start="2526.72" dur="1.59">that was not meant
+for Angular, just</text>
+   <text start="2528.31" dur="1.88">a regular plain old Firebase.</text>
+   <text start="2530.19" dur="1.86">And he pulled it in
+into the Todo app,</text>
+   <text start="2532.05" dur="1.64">and it just worked
+out of the box</text>
+   <text start="2533.69" dur="3.646">with not any kind of
+apply, $scope.dollar apply,</text>
+   <text start="2537.336" dur="0.874">or any of that stuff.</text>
+   <text start="2538.21" dur="2.16">It&amp;#39;s just all gone.</text>
+   <text start="2540.37" dur="3.254">Having said that you can talk
+more about the [INAUDIBLE].</text>
+   <text start="2543.624" dur="2.613"/>
+   <text start="2546.237" dur="0.833">[INTERPOSING VOICES]</text>
+   <text start="2547.07" dur="2.3">MISKO: He was asking
+about [INAUDIBLE].</text>
+   <text start="2549.37" dur="1.61">DAVID EAST: You
+would answer that.</text>
+   <text start="2550.98" dur="1.8">IGOR: So this is one
+of the things that</text>
+   <text start="2552.78" dur="3.38">is-- can you hear me?</text>
+   <text start="2556.16" dur="0.6">OK.</text>
+   <text start="2556.76" dur="1.375">So this is one of
+the things that</text>
+   <text start="2558.135" dur="3.355">is not as developed as
+the templating part yet.</text>
+   <text start="2561.49" dur="4.9">We&amp;#39;re looking at different
+solutions for the data layer,</text>
+   <text start="2566.39" dur="4.18">including looking at observables
+that are coming in ES7.</text>
+   <text start="2570.57" dur="1.94">I think this is something
+that could solve</text>
+   <text start="2572.51" dur="1.916">many of the hard problems
+that we&amp;#39;re currently</text>
+   <text start="2574.426" dur="3.094">having with the current
+data approaches in Angular</text>
+   <text start="2577.52" dur="1.73">or even outside of Angular.</text>
+   <text start="2579.25" dur="2.69">And there are some other very
+interesting things coming.</text>
+   <text start="2581.94" dur="1.916">And we&amp;#39;re going to talk
+about that at ng-conf.</text>
+   <text start="2583.856" dur="4.069"/>
+   <text start="2587.925" dur="0.875">DAVID EAST: Is it on?</text>
+   <text start="2588.8" dur="2.04">Oh, it&amp;#39;s on.</text>
+   <text start="2590.84" dur="3.767">Yeah. s far as the AngularFire
+went, like Misko said,</text>
+   <text start="2594.607" dur="2.543">the easiest part was the fact
+that I started writing it</text>
+   <text start="2597.15" dur="0.791">and it just worked.</text>
+   <text start="2597.941" dur="5.027">There&amp;#39;s was no-- when we write
+it, the hardest part&amp;#39;s keeping</text>
+   <text start="2602.968" dur="2.208">everything synchronized,
+but as far as [INAUDIBLE] as</text>
+   <text start="2605.176" dur="3.294">far as Angular goes, is knowing
+when to apply these things</text>
+   <text start="2608.47" dur="1.57">and to do it in a
+more efficient way.</text>
+   <text start="2610.04" dur="2.59">And a lot of that Angular
+internal knowledge</text>
+   <text start="2612.63" dur="2.97">that we are constantly
+refactoring and learning</text>
+   <text start="2615.6" dur="2.46">more about, kind of
+just disappeared.</text>
+   <text start="2618.06" dur="2.34">And so when I wrote
+it I was realizing</text>
+   <text start="2620.4" dur="3.85">I wasn&amp;#39;t writing any
+Angular code at all.</text>
+   <text start="2624.25" dur="1.15">It was all just JavaScript.</text>
+   <text start="2625.4" dur="3.35">And all of that was because
+of Zones, like you said.</text>
+   <text start="2628.75" dur="2.862">So it was pretty magical.</text>
+   <text start="2631.612" dur="0.708">BRAD GREEN: Cool.</text>
+   <text start="2632.32" dur="1.06">Over here.</text>
+   <text start="2633.38" dur="2.72">IGOR: I&amp;#39;ll just add one
+more thing to data layer.</text>
+   <text start="2636.1" dur="1.525">The direction where
+we&amp;#39;re going, we</text>
+   <text start="2637.625" dur="1.625">definitely don&amp;#39;t want
+to couple Angular</text>
+   <text start="2639.25" dur="3.95">with a particular database
+solution, or backend solution.</text>
+   <text start="2643.2" dur="2.14">We want to be backend agnostic.</text>
+   <text start="2645.34" dur="3.89">But we do want to provide some
+of the options out of the box.</text>
+   <text start="2649.23" dur="1.99">So that if you
+want something, it</text>
+   <text start="2651.22" dur="2.23">will be something supported
+by the Angular team.</text>
+   <text start="2653.45" dur="2.819"/>
+   <text start="2656.269" dur="0.541">AUDIENCE: Hi.</text>
+   <text start="2656.81" dur="4.96">Can you talk more about lazy
+loading and loading on demand?</text>
+   <text start="2661.77" dur="3.097">How it&amp;#39;s going to be implemented
+for complex applications?</text>
+   <text start="2664.867" dur="0.833">MISKO: Lazy loading.</text>
+   <text start="2665.7" dur="1.2">OK.</text>
+   <text start="2666.9" dur="3.22">So you can have a
+dependency injector</text>
+   <text start="2670.12" dur="2.05">that is for your application.</text>
+   <text start="2672.17" dur="4.49">And the router will navigate
+to some sub-view, right?</text>
+   <text start="2676.66" dur="1.86">And when you navigate
+to the sub-view</text>
+   <text start="2678.52" dur="2.93">the router can create
+a new child injector.</text>
+   <text start="2681.45" dur="2.08">And the child injector
+requires a set of modules</text>
+   <text start="2683.53" dur="1.8">to be configured with.</text>
+   <text start="2685.33" dur="5.65">And those can be lazy loaded
+from-- lazy loading script</text>
+   <text start="2690.98" dur="2.25">code, that&amp;#39;s not
+difficult in itself.</text>
+   <text start="2693.23" dur="3.145">What is difficult is to be
+able to configure the injector.</text>
+   <text start="2696.375" dur="1.375">And because of
+the way components</text>
+   <text start="2697.75" dur="1.416">are set up and
+because even if you</text>
+   <text start="2699.166" dur="3.814">noticed top level application
+is just a component.</text>
+   <text start="2702.98" dur="3.417">It&amp;#39;s just components
+all the way down.</text>
+   <text start="2706.397" dur="1.833">There&amp;#39;s really no
+difference between saying,</text>
+   <text start="2708.23" dur="3.25">oh, I&amp;#39;m loading a new child
+component, which is lazily,</text>
+   <text start="2711.48" dur="3.26">or I&amp;#39;m actually bootstrapping
+a whole new child application.</text>
+   <text start="2714.74" dur="3.63">The two are essentially
+mentally equivalent.</text>
+   <text start="2718.37" dur="2.16">And so the router is
+going to be the key</text>
+   <text start="2720.53" dur="3.491">to allow us to do lazy loading
+of both the code and everything</text>
+   <text start="2724.021" dur="0.999">else that comes with it.</text>
+   <text start="2725.02" dur="4.939"/>
+   <text start="2729.959" dur="1.791">AUDIENCE: They&amp;#39;re going
+to be configuration</text>
+   <text start="2731.75" dur="2.26">where you say the logic
+of lazy loading, right?</text>
+   <text start="2734.01" dur="0.5">MISKO: Yeah.</text>
+   <text start="2734.51" dur="1.833">So the router, when you
+configure the router</text>
+   <text start="2736.343" dur="3.157">you will specify what&amp;#39;s the URL,
+what&amp;#39;s the component that you</text>
+   <text start="2739.5" dur="1.99">get loaded for
+that URL, and then</text>
+   <text start="2741.49" dur="3.21">the component itself
+will have instructions</text>
+   <text start="2744.7" dur="1.42">on how to configure
+the injector.</text>
+   <text start="2746.12" dur="3.375"/>
+   <text start="2749.495" dur="1.375">BRAD GREEN: Some
+example to come.</text>
+   <text start="2750.87" dur="0.26">OK.</text>
+   <text start="2751.13" dur="2.18">Back here, and then up
+there, and then back there.</text>
+   <text start="2753.31" dur="0.54">OK.</text>
+   <text start="2753.85" dur="2.237">Lots of questions.</text>
+   <text start="2756.087" dur="2.083">AUDIENCE: Hey, I actually
+have a simpler question.</text>
+   <text start="2758.17" dur="2.24">I&amp;#39;m just curious
+about your reasoning</text>
+   <text start="2760.41" dur="1.81">for adding all of
+those weird brackets</text>
+   <text start="2762.22" dur="2.554">and all sort of
+symbols in your DOM.</text>
+   <text start="2764.774" dur="1.666">You&amp;#39;re in the process
+of simplifying it.</text>
+   <text start="2766.44" dur="2.11">Might as well make it simpler.</text>
+   <text start="2768.55" dur="1.614">MISKO: This is a simpler.</text>
+   <text start="2770.164" dur="1.416">AUDIENCE: I mean,
+I&amp;#39;m just curious</text>
+   <text start="2771.58" dur="2.226">behind your reasoning
+for all those weird--</text>
+   <text start="2773.806" dur="1.624">IGOR: So the biggest
+reason is removing</text>
+   <text start="2775.43" dur="3.92">the ambiguity for
+both humans and tools.</text>
+   <text start="2779.35" dur="1.91">If you look at the
+Angular 1 template,</text>
+   <text start="2781.26" dur="3.89">it&amp;#39;s very hard to reason about
+which part of the template</text>
+   <text start="2785.15" dur="3.58">is an Angular expression, which
+part is a literal string, what</text>
+   <text start="2788.73" dur="3.45">is a class name, or
+any kind of value.</text>
+   <text start="2792.18" dur="3.32">It&amp;#39;s very hard to know this
+except at run time when</text>
+   <text start="2795.5" dur="2.8">the directive runs, or
+Angular Compiler runs, that&amp;#39;s</text>
+   <text start="2798.3" dur="1.58">when we have the information.</text>
+   <text start="2799.88" dur="2.21">And often the
+information is only</text>
+   <text start="2802.09" dur="2.29">available to the
+directive itself.</text>
+   <text start="2804.38" dur="2.27">The compiler often
+doesn&amp;#39;t even know</text>
+   <text start="2806.65" dur="1.74">what&amp;#39;s a value,
+what&amp;#39;s an expression.</text>
+   <text start="2808.39" dur="6.27">So what we are trying to do is
+make the syntax less ambiguous,</text>
+   <text start="2814.66" dur="2.35">so that we can statically
+analyze templates</text>
+   <text start="2817.01" dur="2.78">without even knowing what
+the directive is going to do.</text>
+   <text start="2819.79" dur="3.41">This will enable us
+to do two things.</text>
+   <text start="2823.2" dur="3.38">People are going to be
+able to easily reason</text>
+   <text start="2826.58" dur="0.81">about the template.</text>
+   <text start="2827.39" dur="2.67">They&amp;#39;re going to understand,
+OK, there is a binding here.</text>
+   <text start="2830.06" dur="2.32">And the binding is
+to this expression,</text>
+   <text start="2832.38" dur="2.77">from this expression
+to this property.</text>
+   <text start="2835.15" dur="2.53">Or there&amp;#39;s this Event
+Handler, and it&amp;#39;s</text>
+   <text start="2837.68" dur="2.43">obvious from the syntax.</text>
+   <text start="2840.11" dur="2.58">The other thing
+is tools will also</text>
+   <text start="2842.69" dur="3.81">be able to analyze templates
+without understanding how</text>
+   <text start="2846.5" dur="2.68">Angular and each directive
+in Angular works.</text>
+   <text start="2849.18" dur="3.15">So we&amp;#39;ll be able to do things
+like template transformations,</text>
+   <text start="2852.33" dur="2.24">where we can minify
+the template.</text>
+   <text start="2854.57" dur="2.42">We&amp;#39;ll be able to verify
+the template and tell you,</text>
+   <text start="2856.99" dur="1.98">hey, you made a typo
+in this expression</text>
+   <text start="2858.97" dur="7.38">because we know that the
+component has only property</text>
+   <text start="2866.35" dur="4.67">username and a user email,
+and you typed, whatever,</text>
+   <text start="2871.02" dur="1.417">gender or something else.</text>
+   <text start="2872.437" dur="1.583">And we know that
+gender doesn&amp;#39;t exist,</text>
+   <text start="2874.02" dur="4.5">or you made a typo in user
+email and you misspelled it.</text>
+   <text start="2878.52" dur="2.17">We&amp;#39;re going to have that
+information now available</text>
+   <text start="2880.69" dur="0.629">to us.</text>
+   <text start="2881.319" dur="2.041">So we can tell you, hey,
+there&amp;#39;s actually a typo.</text>
+   <text start="2883.36" dur="1.97">Please go fix it.</text>
+   <text start="2885.33" dur="4.45">And David already
+mentioned that we&amp;#39;re</text>
+   <text start="2889.78" dur="2.41">trying to unify this
+so that we don&amp;#39;t need</text>
+   <text start="2892.19" dur="3.781">to create new directives for
+every event that is out there.</text>
+   <text start="2895.971" dur="1.749">This is very important
+for Web Components.</text>
+   <text start="2897.72" dur="3.33">We need generic
+syntax that just works</text>
+   <text start="2901.05" dur="2.94">for Web Components,
+or any custom events,</text>
+   <text start="2903.99" dur="4.2">so that we don&amp;#39;t need to
+be extending the directive</text>
+   <text start="2908.19" dur="3.724">library with every event
+that people come up with.</text>
+   <text start="2911.914" dur="1.916">MISKO: I want to actually
+add something to it.</text>
+   <text start="2913.83" dur="3.23"/>
+   <text start="2917.06" dur="2.9">When you say, can we make it
+simpler, and I kind of jokingly</text>
+   <text start="2919.96" dur="2.54">said that we actually
+did make it simpler,</text>
+   <text start="2922.5" dur="1.77">the thing is when
+you have something</text>
+   <text start="2924.27" dur="1.99">that&amp;#39;s different it
+obviously kind of feels</text>
+   <text start="2926.26" dur="1.312">like, well it&amp;#39;s different.</text>
+   <text start="2927.572" dur="1.208">You made it more complicated.</text>
+   <text start="2928.78" dur="2.945">But let me give you
+empirical data that shows you</text>
+   <text start="2931.725" dur="1.681">that actually we made a simple.</text>
+   <text start="2933.406" dur="2.124">You guys are familiar with
+ng-click, ng-doublclick,</text>
+   <text start="2935.53" dur="2.72">ng-mousemove, and
+all the ng events</text>
+   <text start="2938.25" dur="4.57">names, ng-show, ng-hide,
+ng-storage, ng-disabled,</text>
+   <text start="2942.82" dur="1.59">ng-enabled.</text>
+   <text start="2944.41" dur="1.71">and probably I&amp;#39;m
+missing somebody.</text>
+   <text start="2946.12" dur="2.514">All those directives
+I just named, gone.</text>
+   <text start="2948.634" dur="0.791">They don&amp;#39;t have to.</text>
+   <text start="2949.425" dur="2.715">We don&amp;#39;t need them
+in the new syntax.</text>
+   <text start="2952.14" dur="2.19">So we are actually
+simplifying the whole thing.</text>
+   <text start="2954.33" dur="2.44">Turns out, for example,
+ng-show and ng-hide,</text>
+   <text start="2956.77" dur="3.41">there&amp;#39;s a property called
+hidden on a DOM element.</text>
+   <text start="2960.18" dur="3.97">And if you set it to
+true, the DOM hides.</text>
+   <text start="2964.15" dur="2.35">So all we have to do in
+the new syntax is just say,</text>
+   <text start="2966.5" dur="3.2">bracket, hidden, end
+bracket equals true.</text>
+   <text start="2969.7" dur="2.58">And this isn&amp;#39;t some kind of
+special directive like ng-show</text>
+   <text start="2972.28" dur="2.715">that wakes up and does magical
+things to the compiler.</text>
+   <text start="2974.995" dur="1.375">We&amp;#39;re just setting
+up properties.</text>
+   <text start="2976.37" dur="2.14">It&amp;#39;s really as simple as that.</text>
+   <text start="2978.51" dur="1.92">All of the events
+systems are gone.</text>
+   <text start="2980.43" dur="2">All the strings we had
+to do with a image source</text>
+   <text start="2982.43" dur="3.1">where we had to say, ng-source
+because if you did source,</text>
+   <text start="2985.53" dur="2.36">magical things would happen
+and the browser would</text>
+   <text start="2987.89" dur="3.53">try to pre-fetch
+templates, double curlies.</text>
+   <text start="2991.42" dur="3.21">For example ng-enabled
+and ng-disabled</text>
+   <text start="2994.63" dur="4.45">are there because enabled and
+disabled property is special</text>
+   <text start="2999.08" dur="2.46">and it has to be removed.</text>
+   <text start="3001.54" dur="2.01">Binding the attribute
+value to false,</text>
+   <text start="3003.55" dur="2.56">will still make it disabled
+because the disabled actually,</text>
+   <text start="3006.11" dur="1.43">physically have to get removed.</text>
+   <text start="3007.54" dur="3.9">So all these are examples
+which simply disappear</text>
+   <text start="3011.44" dur="2.55">in the new binding syntax
+because when you say bracket</text>
+   <text start="3013.99" dur="2.55">disable, you&amp;#39;re actually
+writing to the property, not</text>
+   <text start="3016.54" dur="1">the attribute.</text>
+   <text start="3017.54" dur="3.46">And so a lot of things
+actually does get simplified.</text>
+   <text start="3021" dur="3.32">So I just want to kind
+of ask for your patience</text>
+   <text start="3024.32" dur="2.67">and kind of realize that
+just because it&amp;#39;s different,</text>
+   <text start="3026.99" dur="1.5">it doesn&amp;#39;t make it
+more complicated.</text>
+   <text start="3028.49" dur="3.27">We really, really tried to go
+back to the very basics of it.</text>
+   <text start="3031.76" dur="2.68">And rethink why are we
+doing all of these things.</text>
+   <text start="3034.44" dur="1.26">And it will be different.</text>
+   <text start="3035.7" dur="1.35">I totally understand that.</text>
+   <text start="3037.05" dur="2.012">But there are good
+fundamental reasons</text>
+   <text start="3039.062" dur="1.208">why we did all these changes.</text>
+   <text start="3040.27" dur="2.88">And they will be giving
+you benefits long term.</text>
+   <text start="3043.15" dur="1.759">AUDIENCE: Thanks.</text>
+   <text start="3044.909" dur="2.291">BRAD GREEN: And believe it
+or not, nobody mentioned it.</text>
+   <text start="3047.2" dur="2.28">It&amp;#39;s actually all
+valid HTML, even</text>
+   <text start="3049.48" dur="2.59">the bang side in front
+of forEach somehow.</text>
+   <text start="3052.07" dur="0.69">OK.</text>
+   <text start="3052.76" dur="2.339">Another question here.</text>
+   <text start="3055.099" dur="0.541">AUDIENCE: OK.</text>
+   <text start="3055.64" dur="2.49">This one is a bit
+specific, but what</text>
+   <text start="3058.13" dur="3.02">happens if you have a
+component, and let&amp;#39;s say</text>
+   <text start="3061.15" dur="2.93">you create another class
+that inherits from that,</text>
+   <text start="3064.08" dur="1.5">so extends that component.</text>
+   <text start="3065.58" dur="2.75">And then use another
+component annotation on that?</text>
+   <text start="3068.33" dur="2.9"/>
+   <text start="3071.23" dur="2.84">MISKO: The annotations
+themselves do not inherit.</text>
+   <text start="3074.07" dur="3.617">So if you subclass a component
+and you don&amp;#39;t give it</text>
+   <text start="3077.687" dur="3.763">annotation it&amp;#39;s as if
+you don&amp;#39;t know about it.</text>
+   <text start="3081.45" dur="2.39">So you actually have to give
+it a brand new annotation.</text>
+   <text start="3083.84" dur="1.92">Actually if you start
+playing with it,</text>
+   <text start="3085.76" dur="2.22">it actually is the
+proper behavior.</text>
+   <text start="3087.98" dur="1.57">Now there&amp;#39;s more
+to it than that.</text>
+   <text start="3089.55" dur="1.72">Just because you
+annotate something,</text>
+   <text start="3091.27" dur="1.24">it doesn&amp;#39;t mean it&amp;#39;s enabled.</text>
+   <text start="3092.51" dur="4.75">So in Angular 1x once
+you register directive,</text>
+   <text start="3097.26" dur="2.37">that directive is
+available everywhere.</text>
+   <text start="3099.63" dur="3.05">And it makes code
+reuse difficult</text>
+   <text start="3102.68" dur="4.3">because if I register
+a table directive</text>
+   <text start="3106.98" dur="2.25">it&amp;#39;s very likely, because
+table is such a common word,</text>
+   <text start="3109.23" dur="1.815">that somebody else will create
+a different directive that</text>
+   <text start="3111.045" dur="0.965">has the same name.</text>
+   <text start="3112.01" dur="2.32">And they&amp;#39;ll collide and
+there will be problems.</text>
+   <text start="3114.33" dur="5.58">With Angular 2x you import
+the individual directives just</text>
+   <text start="3119.91" dur="2.19">for your template.</text>
+   <text start="3122.1" dur="2.49">And so different components
+can have a different set</text>
+   <text start="3124.59" dur="1.43">of directives that are imported.</text>
+   <text start="3126.02" dur="1.88">And as a result, they
+can have the same names</text>
+   <text start="3127.9" dur="1.45">and it will not collide.</text>
+   <text start="3129.35" dur="2.01">And which will further
+aid reusability.</text>
+   <text start="3131.36" dur="2.382"/>
+   <text start="3133.742" dur="0.708">BRAD GREEN: Cool.</text>
+   <text start="3134.45" dur="0.95">And was there one over here?</text>
+   <text start="3135.4" dur="0.75">Yeah, there we go.</text>
+   <text start="3136.15" dur="3.32"/>
+   <text start="3139.47" dur="2.36">AUDIENCE: So in Angular
+dot 1 dot whatever,</text>
+   <text start="3141.83" dur="1.96">we had the config
+and the run phases.</text>
+   <text start="3143.79" dur="2.26">So what&amp;#39;s happening with
+the config and providers?</text>
+   <text start="3146.05" dur="3.31"/>
+   <text start="3149.36" dur="3.86">MISKO: So the config
+phase is gone.</text>
+   <text start="3153.22" dur="3.08">The dependency injection
+system has a vocabulary</text>
+   <text start="3156.3" dur="2.79">for-- it&amp;#39;s kind of
+closer to Guice,</text>
+   <text start="3159.09" dur="2.52">if you&amp;#39;re familiar with
+that, where you say bind</text>
+   <text start="3161.61" dur="4.34">something to either a
+value or to a factory,</text>
+   <text start="3165.95" dur="2.68">or we kind of specified
+instructions on how</text>
+   <text start="3168.63" dur="1.23">to make one of these things.</text>
+   <text start="3169.86" dur="3.85"/>
+   <text start="3173.71" dur="1.355">IGOR: Objects for configuration?</text>
+   <text start="3175.065" dur="2.535"/>
+   <text start="3177.6" dur="2.27">BRAD GREEN: You have
+to mumble louder.</text>
+   <text start="3179.87" dur="1.59">IGOR: So one of
+the reasons why you</text>
+   <text start="3181.46" dur="2.25">needed the provider
+was to customize</text>
+   <text start="3183.71" dur="2.4">how an object is instantiated.</text>
+   <text start="3186.11" dur="4.09">And what we do now instead
+of having this special phase,</text>
+   <text start="3190.2" dur="2.46">we have config objects
+that are injected</text>
+   <text start="3192.66" dur="3.37">into the constructor
+of each service</text>
+   <text start="3196.03" dur="2.86">or each object that has
+been instantiated by DI.</text>
+   <text start="3198.89" dur="2.98">And using that config object
+you can achieve the same thing</text>
+   <text start="3201.87" dur="1.84">that you did with the
+provider in the past.</text>
+   <text start="3203.71" dur="2.615"/>
+   <text start="3206.325" dur="0.625">BRAD GREEN: OK.</text>
+   <text start="3206.95" dur="1.624">I know I have more
+questions over here.</text>
+   <text start="3208.574" dur="0.506">Back there?</text>
+   <text start="3209.08" dur="0.5">Is there?</text>
+   <text start="3209.58" dur="8.85"/>
+   <text start="3218.43" dur="3.33">AUDIENCE: What is the
+future of Angular 1.x?</text>
+   <text start="3221.76" dur="4.17">I am mainly asking because
+if we have a large project</text>
+   <text start="3225.93" dur="4.02">and how soon we should
+be targeting to upgrade,</text>
+   <text start="3229.95" dur="4.49">or will there be a
+possibility of a project</text>
+   <text start="3234.44" dur="5.47">can partiality upgraded
+to 2.0 and partially can</text>
+   <text start="3239.91" dur="3.64">we use 1.3, or 1.4?</text>
+   <text start="3243.55" dur="3.06">So that way we don&amp;#39;t have
+to migrate entire project,</text>
+   <text start="3246.61" dur="2.29">but we can go phase by phase.</text>
+   <text start="3248.9" dur="0.5">IGOR: Yeah.</text>
+   <text start="3249.4" dur="0.52">Absolutely.</text>
+   <text start="3249.92" dur="2.2">This is one of things we
+are actually discussing.</text>
+   <text start="3252.12" dur="5.21">How could we make it possible
+to run Angular2 application</text>
+   <text start="3257.33" dur="2.33">in an Angular2 application.</text>
+   <text start="3259.66" dur="1.75">And in addition
+to that, also how</text>
+   <text start="3261.41" dur="3.73">could we run Angular2
+application inside of Angular 1</text>
+   <text start="3265.14" dur="2.46">application, or run
+Angular 1 application</text>
+   <text start="3267.6" dur="4.38">and Angular2 application
+side by side in the same VM.</text>
+   <text start="3271.98" dur="2.09">We don&amp;#39;t have all
+the answers yet.</text>
+   <text start="3274.07" dur="1.99">It&amp;#39;s something that is
+totally on our mind.</text>
+   <text start="3276.06" dur="2.22">And I think we&amp;#39;ll
+definitely need it</text>
+   <text start="3278.28" dur="5.6">for any kind of large scale
+migration of big applications.</text>
+   <text start="3283.88" dur="3.56">So we&amp;#39;re working on that.</text>
+   <text start="3287.44" dur="2.66">Please don&amp;#39;t upgrade to
+Angular2 until it&amp;#39;s ready.</text>
+   <text start="3290.1" dur="1.95">It&amp;#39;s not ready yet.</text>
+   <text start="3292.05" dur="3.26">We are showing you this stuff
+just to keep you in the loop</text>
+   <text start="3295.31" dur="4.02">as to what&amp;#39;s going on and get
+your feedback because we still</text>
+   <text start="3299.33" dur="3.31">can change things,
+and sometimes we</text>
+   <text start="3302.64" dur="2.19">just miss stuff or use cases.</text>
+   <text start="3304.83" dur="2.29">And it&amp;#39;s good to have
+discussion about stuff that</text>
+   <text start="3307.12" dur="1.6">is in progress.</text>
+   <text start="3308.72" dur="3.72">So we are definitely
+committed to 1x.</text>
+   <text start="3312.44" dur="3.83">1.4 is launching around
+the ng-conf timeframe.</text>
+   <text start="3316.27" dur="1.85">We are already planning 1.5.</text>
+   <text start="3318.12" dur="4.23">So 1x is nowhere to be dead,
+even though the code base</text>
+   <text start="3322.35" dur="3.62">is aging as David said.</text>
+   <text start="3325.97" dur="0.98">That&amp;#39;s just a fact.</text>
+   <text start="3326.95" dur="2.6"/>
+   <text start="3329.55" dur="1.92">The work we&amp;#39;re
+doing for Angular2</text>
+   <text start="3331.47" dur="2.69">is because we know that
+at one point in the future</text>
+   <text start="3334.16" dur="2.04">Angular 1 is going
+to be obsolete.</text>
+   <text start="3336.2" dur="2.54">And we want to be
+ready for that.</text>
+   <text start="3338.74" dur="1.737">So we&amp;#39;re committed
+to supporting 1x.</text>
+   <text start="3340.477" dur="1.833">We&amp;#39;re going to talk
+more about the migration</text>
+   <text start="3342.31" dur="2.94">story and the support
+story at ng-conf.</text>
+   <text start="3345.25" dur="0.875">AUDIENCE: [INAUDIBLE]</text>
+   <text start="3346.125" dur="3.465"/>
+   <text start="3349.59" dur="5.11">IGOR: Does the story include
+[INAUDIBLE] from 1 to 2?</text>
+   <text start="3354.7" dur="2.89">We&amp;#39;ll talk about it at ng-conf.</text>
+   <text start="3357.59" dur="2">We&amp;#39;ll see.</text>
+   <text start="3359.59" dur="1.8">As I said, Angular2&amp;#39;s
+not finished yet.</text>
+   <text start="3361.39" dur="2.85">So we don&amp;#39;t really know
+what the options are.</text>
+   <text start="3364.24" dur="3.22">Some kind of tooling that
+would help the migration</text>
+   <text start="3367.46" dur="2.035">is a possibility, but
+we don&amp;#39;t know yet.</text>
+   <text start="3369.495" dur="2.325"/>
+   <text start="3371.82" dur="1.75">AUDIENCE: Could you
+talk a little bit more</text>
+   <text start="3373.57" dur="2.7">about how you achieved
+those performance numbers</text>
+   <text start="3376.27" dur="2.1">that David was showing up there?</text>
+   <text start="3378.37" dur="2.19">It was pretty impressive.</text>
+   <text start="3380.56" dur="1.35">IGOR: We made them up.</text>
+   <text start="3381.91" dur="0.9">[LAUGHTER]</text>
+   <text start="3382.81" dur="0.24">MISKO: I wish it
+was that simple.</text>
+   <text start="3383.05" dur="1.916">AUDIENCE: No, I thought
+Brad was the marketing</text>
+   <text start="3384.966" dur="3.854">and you guys were in
+engineering-- oh, never mind.</text>
+   <text start="3388.82" dur="3.48">MISKO: So a lot of that is
+actually, believe it or not,</text>
+   <text start="3392.3" dur="0.51">documented.</text>
+   <text start="3392.81" dur="2.93">So I&amp;#39;m trying to do a brain
+dump of all this stuff.</text>
+   <text start="3395.74" dur="1.79">And somewhere in
+the Angular Repo</text>
+   <text start="3397.53" dur="1.99">there is a folder called Docs.</text>
+   <text start="3399.52" dur="4.54">And it talks about
+how views work.</text>
+   <text start="3404.06" dur="1.49">One of the things
+we do in Angular2</text>
+   <text start="3405.55" dur="4.72">is we&amp;#39;re trying to
+remove the need for you</text>
+   <text start="3410.27" dur="1.74">to ever get a hold
+of a DOM element.</text>
+   <text start="3412.01" dur="1.75">So a link function is kind
+of a common place where</text>
+   <text start="3413.76" dur="1.15">you get a hold of
+the DOM element,</text>
+   <text start="3414.91" dur="2.21">and then you do all kinds of
+magical things inside of there,</text>
+   <text start="3417.12" dur="0.27">right?</text>
+   <text start="3417.39" dur="0.96">So we removed that.</text>
+   <text start="3418.35" dur="2.8">And because we removed
+that we can really</text>
+   <text start="3421.15" dur="1.96">reason about a
+template statically.</text>
+   <text start="3423.11" dur="2.41">So one of the things we can
+do is we can reuse the views.</text>
+   <text start="3425.52" dur="2.93">In the Angular 1x we can&amp;#39;t
+do it because once we</text>
+   <text start="3428.45" dur="1.515">give the element
+to a directive we</text>
+   <text start="3429.965" dur="1.875">have no idea what you&amp;#39;re
+going to do with it.</text>
+   <text start="3431.84" dur="0.86">You might destroy it.</text>
+   <text start="3432.7" dur="0.833">You might remove it.</text>
+   <text start="3433.533" dur="1.087">You might rearrange it.</text>
+   <text start="3434.62" dur="2.53">And therefore we can
+no longer reuse it.</text>
+   <text start="3437.15" dur="2.36">As far as we&amp;#39;re concerned
+it&amp;#39;s been mutilated</text>
+   <text start="3439.51" dur="2.21">and it&amp;#39;s no good for us.</text>
+   <text start="3441.72" dur="2.87">Maybe a strong word.</text>
+   <text start="3444.59" dur="3.38">So in Angular 2x,
+because we don&amp;#39;t actually</text>
+   <text start="3447.97" dur="2.26">give you the element
+we know exactly what</text>
+   <text start="3450.23" dur="1.97">we have done to
+the DOM structure.</text>
+   <text start="3452.2" dur="1.417">And we know how to undo it.</text>
+   <text start="3453.617" dur="2.333">And it turns out that this
+is what allows a view caching</text>
+   <text start="3455.95" dur="2.7">and that&amp;#39;s a huge
+performance improvement.</text>
+   <text start="3458.65" dur="4.12">The other place is in Angular
+1x you can kind of at any point</text>
+   <text start="3462.77" dur="3.39">just say $scope.$watch and start
+watching anything you want.</text>
+   <text start="3466.16" dur="1.78">We made this all
+declarative so then we</text>
+   <text start="3467.94" dur="4.35">can pre-allocate all of the
+data structures ahead of time</text>
+   <text start="3472.29" dur="2.72">and figure out, OK, when
+somebody instantiates</text>
+   <text start="3475.01" dur="1.615">this particular
+component, these are</text>
+   <text start="3476.625" dur="2.195">all the watches that
+they&amp;#39;re going to have.</text>
+   <text start="3478.82" dur="3.76">And what we do is we lay out
+a prototypical component.</text>
+   <text start="3482.58" dur="2.54">We lay out all of its
+supporting data structures,</text>
+   <text start="3485.12" dur="2.97">it&amp;#39;s injectors, everything
+you can possibly imagine.</text>
+   <text start="3488.09" dur="1.06">We lay it all out.</text>
+   <text start="3489.15" dur="2.08">And then when you say,
+I need one of those,</text>
+   <text start="3491.23" dur="2.19">it&amp;#39;s super easy for us
+to just make a copy.</text>
+   <text start="3493.42" dur="2.28">Literally just go over
+property by property,</text>
+   <text start="3495.7" dur="1.15">and we just copy it over.</text>
+   <text start="3496.85" dur="1.26">And it&amp;#39;s very efficient.</text>
+   <text start="3498.11" dur="4.802">And those are the two big kind
+of tricks for us up our sleeves</text>
+   <text start="3502.912" dur="1.708">that will give us this
+performance boost.</text>
+   <text start="3504.62" dur="1.93">But in order to
+get that, we need</text>
+   <text start="3506.55" dur="3.562">to be able to reason
+about the template, kind</text>
+   <text start="3510.112" dur="0.958">of a compiled template.</text>
+   <text start="3511.07" dur="2.6">The compiler needs to know
+where all the expressions are,</text>
+   <text start="3513.67" dur="1.81">where are all the
+variables, where</text>
+   <text start="3515.48" dur="2.24">are all the sub templates.</text>
+   <text start="3517.72" dur="3.72">And this is part of the reason
+why the syntax have to change.</text>
+   <text start="3521.44" dur="2.756">So that we could communicate
+this to the compiler.</text>
+   <text start="3524.196" dur="2.124">Also it turns out, it&amp;#39;s
+beneficial to the developer</text>
+   <text start="3526.32" dur="1.44">because you can reason about it.</text>
+   <text start="3527.76" dur="1.583">And it&amp;#39;s the same
+set of things that&amp;#39;s</text>
+   <text start="3529.343" dur="1.717">also beneficial to your tools.</text>
+   <text start="3531.06" dur="2.669">Like your ID could
+easily color code things,</text>
+   <text start="3533.729" dur="2.041">can give you hints about
+what is and isn&amp;#39;t valid,</text>
+   <text start="3535.77" dur="1.35">where you mistyped something.</text>
+   <text start="3537.12" dur="1.95">So this is a kind of
+an all around benefit</text>
+   <text start="3539.07" dur="2.98">that you can get by
+kind of rearranging when</text>
+   <text start="3542.05" dur="1.68">in the lifetime
+of an application</text>
+   <text start="3543.73" dur="2.497">you&amp;#39;re doing things.</text>
+   <text start="3546.227" dur="1.333">BRAD GREEN: Questions over here?</text>
+   <text start="3547.56" dur="3.11">IGOR: There is one more
+organization that is actually</text>
+   <text start="3550.67" dur="3.18">quite hard to notice until
+you look under the hood.</text>
+   <text start="3553.85" dur="2.76">In Angular 1 one of the
+performance optimizations</text>
+   <text start="3556.61" dur="1.68">is the compile phase.</text>
+   <text start="3558.29" dur="2.95">If you&amp;#39;re building directive you
+have access to compile phase.</text>
+   <text start="3561.24" dur="2.91">And when compile
+phase is invoked</text>
+   <text start="3564.15" dur="1.65">is when you&amp;#39;re using a repeater.</text>
+   <text start="3565.8" dur="3.39">Usually when you have a
+element, or a component inside</text>
+   <text start="3569.19" dur="3.68">of a repeater, we&amp;#39;ll call the
+compile function only once</text>
+   <text start="3572.87" dur="1.55">for each repeater.</text>
+   <text start="3574.42" dur="3.2">What Misko talked about, these
+kind of static optimizations</text>
+   <text start="3577.62" dur="1.96">that we are doing,
+they happen once</text>
+   <text start="3579.58" dur="2.51">per component in
+the application.</text>
+   <text start="3582.09" dur="2.37">So even if you have
+two repeaters right now</text>
+   <text start="3584.46" dur="2.21">side by side, they&amp;#39;re
+using the same component,</text>
+   <text start="3586.67" dur="3.98">we call the compile phase,
+or compile function once</text>
+   <text start="3590.65" dur="1.11">for each repeater.</text>
+   <text start="3591.76" dur="2.16">With all these optimizations
+we can do just once</text>
+   <text start="3593.92" dur="1.35">for application.</text>
+   <text start="3595.27" dur="2.62">Even if you destroy the
+view and recreate it,</text>
+   <text start="3597.89" dur="1.7">we don&amp;#39;t need to rerun it again.</text>
+   <text start="3599.59" dur="3.7">So this is where a lot of
+the performance comes also.</text>
+   <text start="3603.29" dur="2.69">BRAD GREEN: Was there a
+question over here somewhere?</text>
+   <text start="3605.98" dur="0.778">There?</text>
+   <text start="3606.758" dur="0.5">Yeah.</text>
+   <text start="3607.258" dur="5.111"/>
+   <text start="3612.369" dur="1.791">AUDIENCE: This is sort
+of answered already,</text>
+   <text start="3614.16" dur="3.5">but we&amp;#39;re talking about
+Angular 1 applications</text>
+   <text start="3617.66" dur="2.36">that need to be
+migrated at some point,</text>
+   <text start="3620.02" dur="3.32">but if I&amp;#39;m planning to
+start a new product today,</text>
+   <text start="3623.34" dur="2.36">is there something
+you would recommend?</text>
+   <text start="3625.7" dur="1.71">And because we are
+kind of lost between,</text>
+   <text start="3627.41" dur="1.624">should we start with
+Angular 1 and then</text>
+   <text start="3629.034" dur="1.926">think about migrating
+to Angular2,</text>
+   <text start="3630.96" dur="1.76">because Angular2
+is not yet ready.</text>
+   <text start="3632.72" dur="3.66">Is there any
+implementation techniques</text>
+   <text start="3636.38" dur="2.5">you would recommend
+that we can prepare also</text>
+   <text start="3638.88" dur="3.9">to migrate to Angular2
+when it&amp;#39;s ready?</text>
+   <text start="3642.78" dur="2.24">MISKO: When you&amp;#39;re starting
+a new project today,</text>
+   <text start="3645.02" dur="2.97">Angular 1x is what you&amp;#39;re
+going to start with.</text>
+   <text start="3647.99" dur="2">If you just want to
+play with Angular2,</text>
+   <text start="3649.99" dur="3.8">kind of see where it&amp;#39;s heading,
+whatever, for playing purposes,</text>
+   <text start="3653.79" dur="2.44">by all means, you
+can try the Todo app.</text>
+   <text start="3656.23" dur="3.22">But understand that
+everything&amp;#39;s in flux still.</text>
+   <text start="3659.45" dur="3.13">We could decide tomorrow that
+bang forEach is a bad idea.</text>
+   <text start="3662.58" dur="1.5">And it&amp;#39;s going to
+be something else.</text>
+   <text start="3664.08" dur="2.734">And tough luck.</text>
+   <text start="3666.814" dur="1.416">BRAD GREEN: By the
+way, that would</text>
+   <text start="3668.23" dur="3.11">be based on your input,
+not just arbitrary whim.</text>
+   <text start="3671.34" dur="1.96">That&amp;#39;s why we&amp;#39;re
+doing these events.</text>
+   <text start="3673.3" dur="3.421">MISKO: It would be based on
+somebody basically coming to us</text>
+   <text start="3676.721" dur="2.499">and telling us, oh, by the way,
+this is the kind of problems</text>
+   <text start="3679.22" dur="1.03">that it creates.</text>
+   <text start="3680.25" dur="1.55">And then we would have to
+go back to the drawing board</text>
+   <text start="3681.8" dur="1.74">and say, OK, we didn&amp;#39;t
+think about that.</text>
+   <text start="3683.54" dur="4.3">So let&amp;#39;s rethink
+this kind of a thing.</text>
+   <text start="3687.84" dur="0.69">[INAUDIBLE]</text>
+   <text start="3688.53" dur="2.33">IGOR: So when it comes
+to particular techniques,</text>
+   <text start="3690.86" dur="8.36">one thing that is probably going
+to get you the furthest is just</text>
+   <text start="3699.22" dur="1.79">think of your application
+as components.</text>
+   <text start="3701.01" dur="3.71">This was not as
+important in Angular 1,</text>
+   <text start="3704.72" dur="2.23">where we had controllers
+and templates,</text>
+   <text start="3706.95" dur="2.09">and the router would
+combine them together.</text>
+   <text start="3709.04" dur="2.67">In Angular2 everything
+is a component.</text>
+   <text start="3711.71" dur="2.53">And the router just
+swaps around components,</text>
+   <text start="3714.24" dur="2.09">instantiates components.</text>
+   <text start="3716.33" dur="4.9">This is one of the things that
+you can do today in Angular 1</text>
+   <text start="3721.23" dur="4.75">to make the architecture
+closer to Angular2.</text>
+   <text start="3725.98" dur="3.8">The other thing you can start
+doing is start using ES6.</text>
+   <text start="3729.78" dur="1.62">There are many
+transpilers out there.</text>
+   <text start="3731.4" dur="2.78">We like Traceur, but you
+can use whatever you want.</text>
+   <text start="3734.18" dur="3.49">There&amp;#39;s 6to5 and others.</text>
+   <text start="3737.67" dur="4.97">I think you&amp;#39;ll find ES6
+very pleasant to use</text>
+   <text start="3742.64" dur="2.23">and it will make
+you more productive.</text>
+   <text start="3744.87" dur="3.33">So why not start there?</text>
+   <text start="3748.2" dur="1.679">Other suggestions?</text>
+   <text start="3749.879" dur="0.541">I don&amp;#39;t know.</text>
+   <text start="3750.42" dur="2.61">We&amp;#39;re going to talk more about
+this stuff at the ng-conf.</text>
+   <text start="3753.03" dur="2.52">We&amp;#39;re going to make a
+list of recommendations.</text>
+   <text start="3755.55" dur="2.55">I haven&amp;#39;t really
+thought much about this.</text>
+   <text start="3758.1" dur="4.22">MISKO: I would just say
+stick to good old practices.</text>
+   <text start="3762.32" dur="1.78">Don&amp;#39;t write messy code.</text>
+   <text start="3764.1" dur="1.53">That makes it easy to re-factor.</text>
+   <text start="3765.63" dur="1.36">BRAD GREEN: Write your tests.</text>
+   <text start="3766.99" dur="1.208">MISKO: Write your tests, yes.</text>
+   <text start="3768.198" dur="2.39"/>
+   <text start="3770.588" dur="0.625">BRAD GREEN: OK.</text>
+   <text start="3771.213" dur="0.958">Back here.</text>
+   <text start="3772.171" dur="5.269"/>
+   <text start="3777.44" dur="2.17">AUDIENCE: When you
+guys introduced track</text>
+   <text start="3779.61" dur="3.83">by into ng-repeat I noticed that
+it got a lot smarter obviously</text>
+   <text start="3783.44" dur="2.39">about knowing when
+to repaint what,</text>
+   <text start="3785.83" dur="3.82">but ng-repeat is almost
+always the bottleneck</text>
+   <text start="3789.65" dur="2.12">in terms of performance
+in the DOM, in my opinion.</text>
+   <text start="3791.77" dur="3.71">Have you guys noticed
+that by implementing Zones</text>
+   <text start="3795.48" dur="2.3">that you&amp;#39;ve gotten
+better performance,</text>
+   <text start="3797.78" dur="2.68">it&amp;#39;s a lot smarter about
+knowing when to repaint things?</text>
+   <text start="3800.46" dur="2.32">And can we expect to be
+able to draw potentially</text>
+   <text start="3802.78" dur="5.5">hundreds or thousands of things
+on the screen using ng-repeat?</text>
+   <text start="3808.28" dur="5.57">MISKO: So the
+ng-repeat, the rendering</text>
+   <text start="3813.85" dur="0.92">is not the bottleneck.</text>
+   <text start="3814.77" dur="3.887">What it is is detecting
+the changes, right?</text>
+   <text start="3818.657" dur="0.75">IGOR: [INAUDIBLE].</text>
+   <text start="3819.407" dur="2.893"/>
+   <text start="3822.3" dur="1.26">MISKO: Well,</text>
+   <text start="3823.56" dur="1.27">IGOR: In Angular 1 though.</text>
+   <text start="3824.83" dur="2.469">MISKO: Depends how
+you look at it, right?</text>
+   <text start="3827.299" dur="1.361">Do you want to answer?</text>
+   <text start="3828.66" dur="3.17">IGOR: Yeah, so I think your
+question slightly unclear</text>
+   <text start="3831.83" dur="2.06">because you are
+assuming that Zones</text>
+   <text start="3833.89" dur="3.55">is some kind of replacement
+for track by in Angular 1.</text>
+   <text start="3837.44" dur="2.25">Is that not the case or can
+you clarify your question?</text>
+   <text start="3839.69" dur="6.03"/>
+   <text start="3845.72" dur="2.49">AUDIENCE: I assume,
+yeah, by identifying</text>
+   <text start="3848.21" dur="2.93">what has changed you guys are
+able to accurately determine</text>
+   <text start="3851.14" dur="2.41">what you need to
+redraw using ng-repeat.</text>
+   <text start="3853.55" dur="3.6">And via Zones you have
+more fine tuned control</text>
+   <text start="3857.15" dur="1.81">of determining what&amp;#39;s changed.</text>
+   <text start="3858.96" dur="1.81">So if you can identify
+which element,</text>
+   <text start="3860.77" dur="2.9">what single element has
+changed then you could.</text>
+   <text start="3863.67" dur="3.16">IGOR: So Zones actually
+don&amp;#39;t tell us what changed.</text>
+   <text start="3866.83" dur="2.64">Zones only tell us
+that something changed.</text>
+   <text start="3869.47" dur="3.56">It&amp;#39;s kind of a general
+purpose trigger</text>
+   <text start="3873.03" dur="3.02">to tell us about events that
+are happening in the browser.</text>
+   <text start="3876.05" dur="2.62">It&amp;#39;s still up to us to
+figure out what changed.</text>
+   <text start="3878.67" dur="2.45">And this is where
+new change detection</text>
+   <text start="3881.12" dur="4.72">comes into play, where we can
+scan a large amount of objects</text>
+   <text start="3885.84" dur="1.35">and figure out what changed.</text>
+   <text start="3887.19" dur="1.94">And David mentioned
+some of the strategies</text>
+   <text start="3889.13" dur="3.54">we are using, where we
+can do kind of a tree</text>
+   <text start="3892.67" dur="4.06">shaking, and just looking only
+in certain parts of the graph</text>
+   <text start="3896.73" dur="1.33">to determine what changed.</text>
+   <text start="3898.06" dur="4.16">But I think if we are talking
+about ng-repeat, specifically</text>
+   <text start="3902.22" dur="3.15">in Angular 1x, I would bet that
+the performance problems are</text>
+   <text start="3905.37" dur="5.39">coming from the DOM render, from
+creation of DOM, appending DOM</text>
+   <text start="3910.76" dur="2.29">to the document.</text>
+   <text start="3913.05" dur="2.01">And then having the
+browser render it.</text>
+   <text start="3915.06" dur="3.62">And those issues
+are being addressed</text>
+   <text start="3918.68" dur="2.45">by the view caching, and
+all these smart things</text>
+   <text start="3921.13" dur="2.46">we are doing with the compiler.</text>
+   <text start="3923.59" dur="1.13">So we are addressing that.</text>
+   <text start="3924.72" dur="3.36"/>
+   <text start="3928.08" dur="2.967">BRAD GREEN: Question here, yeah?</text>
+   <text start="3931.047" dur="1.833">AUDIENCE: There was
+that one time discussion</text>
+   <text start="3932.88" dur="4.23">of a long form versus
+a short form syntax.</text>
+   <text start="3937.11" dur="4.95">So instead of the square
+brackets and curve braces,</text>
+   <text start="3942.06" dur="2.59">or whatever that you would
+also have a longer form.</text>
+   <text start="3944.65" dur="3.14">So if people aren&amp;#39;t
+really into looking</text>
+   <text start="3947.79" dur="2.652">at all of the syntax-y
+looking things,</text>
+   <text start="3950.442" dur="1.458">that there would
+be an alternative.</text>
+   <text start="3951.9" dur="1.45">Are you still thinking about?</text>
+   <text start="3953.35" dur="1.395">MISKO: It&amp;#39;s in there already.</text>
+   <text start="3954.745" dur="3.565"/>
+   <text start="3958.31" dur="2.74">BRAD GREEN: That part actually
+has a doc somebody could read.</text>
+   <text start="3961.05" dur="1.083">MISKO: I believe so, yeah.</text>
+   <text start="3962.133" dur="2.597">That&amp;#39;s actually described
+in a templating doc.</text>
+   <text start="3964.73" dur="2.545">Yes, go find the template dot
+[? md, ?] something or other.</text>
+   <text start="3967.275" dur="1.125">BRAD GREEN: Misko wrote it.</text>
+   <text start="3968.4" dur="0.499">He forgot.</text>
+   <text start="3968.899" dur="1.041">MISKO: It&amp;#39;s horrible.</text>
+   <text start="3969.94" dur="3.865">Is just a brain dump, so it&amp;#39;s
+not well-formatted or anything.</text>
+   <text start="3973.805" dur="1.125">BRAD GREEN: More questions.</text>
+   <text start="3974.93" dur="0.35">Back here.</text>
+   <text start="3975.28" dur="0.5">OK.</text>
+   <text start="3975.78" dur="3.77"/>
+   <text start="3979.55" dur="3.514">AUDIENCE: Can you talk something
+about Angular [INAUDIBLE] 2.x</text>
+   <text start="3983.064" dur="1.416">being mobile for
+us because that&amp;#39;s</text>
+   <text start="3984.48" dur="3.39">what a I heard couple
+of months back.</text>
+   <text start="3987.87" dur="2.42">And about testing
+and finally when</text>
+   <text start="3990.29" dur="5.35">can we get our hands onto
+the final version of 2.x?</text>
+   <text start="3995.64" dur="0.98">[LAUGHTER]</text>
+   <text start="3996.62" dur="4.114">BRAD GREEN: I&amp;#39;ll take that last
+question, but go ahead, Misko.</text>
+   <text start="4000.734" dur="2.166">MISKO: Mobile, there&amp;#39;s a
+couple things about mobile.</text>
+   <text start="4002.9" dur="2.42">First of all, you want
+to not drain the battery.</text>
+   <text start="4005.32" dur="2">So you want to be the
+most efficient possible,</text>
+   <text start="4007.32" dur="3.39">both in terms of CPU usage
+and memory usage, so you don&amp;#39;t</text>
+   <text start="4010.71" dur="3.19">force the app to stop out of
+memory or something like that.</text>
+   <text start="4013.9" dur="5.63">And the other part to the mobile
+story is to have gestures.</text>
+   <text start="4019.53" dur="2.01">So let&amp;#39;s take each
+one separately.</text>
+   <text start="4021.54" dur="3.187">So for speed we have this,
+what we call ultra fast change</text>
+   <text start="4024.727" dur="2.683">detection, which I guess
+wasn&amp;#39;t covered in here, was it?</text>
+   <text start="4027.41" dur="0.5">No.</text>
+   <text start="4027.91" dur="0.63">OK.</text>
+   <text start="4028.54" dur="3.316">So it turns out the way
+the change detection does,</text>
+   <text start="4031.856" dur="1.874">when we originally wrote
+it, I kind of didn&amp;#39;t</text>
+   <text start="4033.73" dur="1.71">know much about how VMs work.</text>
+   <text start="4035.44" dur="1.95">But it turns out we left
+whole bunch of what&amp;#39;s</text>
+   <text start="4037.39" dur="2.45">known as polymorphic
+calls inside of it.</text>
+   <text start="4039.84" dur="1">BRAD GREEN: Megamorphic.</text>
+   <text start="4040.84" dur="0.24">MISKO: Sorry.</text>
+   <text start="4041.08" dur="0.71">Megamorphic.</text>
+   <text start="4041.79" dur="0.5">Megamorphic.</text>
+   <text start="4042.29" dur="0.7">Thank you.</text>
+   <text start="4042.99" dur="1.52">And these megamorphic
+calls are the worst thing</text>
+   <text start="4044.51" dur="0.96">you can do to a VM.</text>
+   <text start="4045.47" dur="2.37">And the VM really
+does not like them.</text>
+   <text start="4047.84" dur="2.442">So we re-factored, rebuild
+the change detection.</text>
+   <text start="4050.282" dur="0.958">We scratched our heads.</text>
+   <text start="4051.24" dur="1.97">And we got this new
+thing, which leaves</text>
+   <text start="4053.21" dur="3.5">behind nothing but
+monomorphic calls, sites.</text>
+   <text start="4056.71" dur="1.55">And those are awesome
+because the VM</text>
+   <text start="4058.26" dur="1.61">knows how to inline them.</text>
+   <text start="4059.87" dur="2.53">And so they make them
+go really, really fast.</text>
+   <text start="4062.4" dur="2.041">And fast on mobile means
+don&amp;#39;t kill the battery</text>
+   <text start="4064.441" dur="1.499">while you&amp;#39;re doing
+change detection.</text>
+   <text start="4065.94" dur="1.71">So that&amp;#39;s step one.</text>
+   <text start="4067.65" dur="4.77">Step two is we can actually,
+if a component is well behaved,</text>
+   <text start="4072.42" dur="1.687">and it makes certain
+guarantees to us,</text>
+   <text start="4074.107" dur="1.583">it&amp;#39;s a little extra
+work on your part,</text>
+   <text start="4075.69" dur="1.55">but if you do those
+guarantees to us,</text>
+   <text start="4077.24" dur="2.62">then we can actually skip the
+change detection altogether</text>
+   <text start="4079.86" dur="1.25">for that particular component.</text>
+   <text start="4081.11" dur="1.25">So we can kind of
+do branch pruning,</text>
+   <text start="4082.36" dur="2.041">the amount of stuff we
+have to change detect just</text>
+   <text start="4084.401" dur="0.909">gets shorter.</text>
+   <text start="4085.31" dur="1.58">Saves the battery more.</text>
+   <text start="4086.89" dur="2.68">And the next part is memory.</text>
+   <text start="4089.57" dur="6.26">And so the change detection,
+because of the way we do it,</text>
+   <text start="4095.83" dur="3.34">we actually are also not
+only efficient in CPU space,</text>
+   <text start="4099.17" dur="2.17">but also in memory space.</text>
+   <text start="4101.34" dur="3.12">And so the change
+detection for 2.x</text>
+   <text start="4104.46" dur="2.78">is a lot more efficient in
+that department as well.</text>
+   <text start="4107.24" dur="2.98">And finally, the event system,
+when you do parentheses</text>
+   <text start="4110.22" dur="3.127">and you put an event
+name, it turns out</text>
+   <text start="4113.347" dur="1.583">that that actually
+doesn&amp;#39;t go directly</text>
+   <text start="4114.93" dur="1.99">to the element for the
+add event listener.</text>
+   <text start="4116.92" dur="2.438">Instead it goes to
+a set of plug-ins</text>
+   <text start="4119.358" dur="1.541">that can all vote
+whether or not they</text>
+   <text start="4120.899" dur="2.591">know how to intercept
+a particular event.</text>
+   <text start="4123.49" dur="3.079">And the last one in the
+list is just going to DOM.</text>
+   <text start="4126.569" dur="2.301">And the one in front
+of that is something</text>
+   <text start="4128.87" dur="2.18">that, for now, we&amp;#39;re
+just using Hammer.js.</text>
+   <text start="4131.05" dur="5.04">And so you can say
+parentheses, left swipe.</text>
+   <text start="4136.09" dur="2.689">Or you can say parentheses,
+pinch, or something like that.</text>
+   <text start="4138.779" dur="1.992">And it just
+understands, oh, I know</text>
+   <text start="4140.771" dur="1.458">that DOM doesn&amp;#39;t
+know how to do it,</text>
+   <text start="4142.229" dur="1.781">but I know because
+there&amp;#39;s Hammer.js,</text>
+   <text start="4144.01" dur="1.389">it knows how to handle that.</text>
+   <text start="4145.399" dur="1.351">And then properly set the event.</text>
+   <text start="4146.75" dur="3.87">So those are the areas where
+we make it nice for mobile.</text>
+   <text start="4150.62" dur="2.089">IGOR: Lazy code loading?</text>
+   <text start="4152.709" dur="0.791">There&amp;#39;s more stuff.</text>
+   <text start="4153.5" dur="2.31">Lazy code loading,
+which is new for mobile.</text>
+   <text start="4155.81" dur="1.06">We support that.</text>
+   <text start="4156.87" dur="1.48">But also components.</text>
+   <text start="4158.35" dur="1.92">And this is what Angular
+material is about.</text>
+   <text start="4160.27" dur="3.98"/>
+   <text start="4164.25" dur="2.79">Within Angular 1 we kind
+of started with this late</text>
+   <text start="4167.04" dur="2.27">in the life cycle
+of the framework,</text>
+   <text start="4169.31" dur="3.29">but we want to provide a set
+of components out of the box,</text>
+   <text start="4172.6" dur="2.679">so that you can just use
+those components to build</text>
+   <text start="4175.279" dur="0.62">applications.</text>
+   <text start="4175.899" dur="1.708">And these components
+are mobile friendly.</text>
+   <text start="4177.607" dur="1.553">They&amp;#39;re mobile first.</text>
+   <text start="4179.16" dur="2.35">The next thing is offline.</text>
+   <text start="4181.51" dur="2.46">So with the data
+layer that I mentioned</text>
+   <text start="4183.97" dur="4.52">we are looking into offline
+first as one of the-- like</text>
+   <text start="4188.49" dur="0.98">making it smooth.</text>
+   <text start="4189.47" dur="2.54">And just easy for
+people to do that.</text>
+   <text start="4192.01" dur="3.68"/>
+   <text start="4195.69" dur="2.67">The new router is
+mobile friendly.</text>
+   <text start="4198.36" dur="1.75">And we&amp;#39;re looking at
+some other stuff that</text>
+   <text start="4200.11" dur="3.342">would help navigation
+on mobile, so.</text>
+   <text start="4203.452" dur="0.708">BRAD GREEN: Wait.</text>
+   <text start="4204.16" dur="2.087">He also asked about testing.</text>
+   <text start="4206.247" dur="0.583">IGOR: Testing.</text>
+   <text start="4206.83" dur="1.11">BRAD GREEN: I don&amp;#39;t know why
+that was glommed in there,</text>
+   <text start="4207.94" dur="1.3">but we all love
+testing so please.</text>
+   <text start="4209.24" dur="0.63">IGOR: We love testing.</text>
+   <text start="4209.87" dur="1.96">We&amp;#39;re going to just
+keep on doing testing.</text>
+   <text start="4211.83" dur="1.44">We&amp;#39;re adding more stuff.</text>
+   <text start="4213.27" dur="4.59">At ng-conf they&amp;#39;re going to talk
+about accessibility testing.</text>
+   <text start="4217.86" dur="1.96">David didn&amp;#39;t mention,
+but the graphs actually</text>
+   <text start="4219.82" dur="4.46">come from-- the performance
+numbers and graphs come</text>
+   <text start="4224.28" dur="2.58">from a new tool that we
+built for Angular that we</text>
+   <text start="4226.86" dur="1.79">called Bench Press.</text>
+   <text start="4228.65" dur="2.29">Then we are also going
+to make something</text>
+   <text start="4230.94" dur="2.85">that is available to you that
+you can use for performance</text>
+   <text start="4233.79" dur="1.49">testing in your application.</text>
+   <text start="4235.28" dur="1.94">So not only are we
+building it for Angular,</text>
+   <text start="4237.22" dur="1.44">but also any
+Angular application,</text>
+   <text start="4238.66" dur="2.083">or even non-Angular
+application-- because it&amp;#39;s not</text>
+   <text start="4240.743" dur="1.737">tied to Angular--
+can use the same tool</text>
+   <text start="4242.48" dur="2.16">for performance testing.</text>
+   <text start="4244.64" dur="1.049">So we love testing.</text>
+   <text start="4245.689" dur="1.291">We&amp;#39;re going to do more testing.</text>
+   <text start="4246.98" dur="4.724">We are exploring new
+areas to do testing in.</text>
+   <text start="4251.704" dur="1.166">AUDIENCE: So quick question.</text>
+   <text start="4252.87" dur="4.01">Will there ever be
+an Angular native?</text>
+   <text start="4256.88" dur="2.205">Which compiles down to native?</text>
+   <text start="4259.085" dur="0.5">IGOR: Maybe.</text>
+   <text start="4259.585" dur="5.77"/>
+   <text start="4265.355" dur="1.125">MISKO: Anything&amp;#39;s possible.</text>
+   <text start="4266.48" dur="2.73"/>
+   <text start="4269.21" dur="3.41">BRAD GREEN: Do you want
+to come do it with us?</text>
+   <text start="4272.62" dur="2.48">So, Misko, talk a little
+bit about the structure</text>
+   <text start="4275.1" dur="1.63">and why this might be possible.</text>
+   <text start="4276.73" dur="4.26">Really it&amp;#39;s not in 1.x, but
+it could be possible in 2.</text>
+   <text start="4280.99" dur="2.789">MISKO: How deep should I go?</text>
+   <text start="4283.779" dur="1.541">BRAD GREEN: You&amp;#39;ve
+got three minutes.</text>
+   <text start="4285.32" dur="0.499">MISKO: OK.</text>
+   <text start="4285.819" dur="1.981">So one of the things
+that I said earlier</text>
+   <text start="4287.8" dur="2.65">is that in Angular2,
+we work really</text>
+   <text start="4290.45" dur="2.77">hard to make sure you
+don&amp;#39;t have to actually</text>
+   <text start="4293.22" dur="2.18">ever get a hold of the DOM.</text>
+   <text start="4295.4" dur="2.54">And so your whole application
+can be written without DOM.</text>
+   <text start="4297.94" dur="2.19">And because it can be
+written without DOM,</text>
+   <text start="4300.13" dur="3.51">you can run it
+essentially anywhere.</text>
+   <text start="4303.64" dur="1.19">Maybe a web worker.</text>
+   <text start="4304.83" dur="2.13">Well, we&amp;#39;re not sure
+what that exactly means.</text>
+   <text start="4306.96" dur="1.67">We&amp;#39;re kind of toying
+with this idea.</text>
+   <text start="4308.63" dur="2.6">But if you have a web worker,
+the other thing we have is</text>
+   <text start="4311.23" dur="2.29">that all the DOM
+updates happen through--</text>
+   <text start="4313.52" dur="1.56">instead of dealing
+with DOM, which</text>
+   <text start="4315.08" dur="2.125">is kind of very low level,
+we have this other thing</text>
+   <text start="4317.205" dur="0.795">called the view.</text>
+   <text start="4318" dur="2.78">And view is kind of the
+structural, or logical way</text>
+   <text start="4320.78" dur="1.35">of thinking about the app.</text>
+   <text start="4322.13" dur="2.41">Views can be added or
+removed, and so on.</text>
+   <text start="4324.54" dur="3.81">And because it&amp;#39;s view, it
+creates a very nice interface</text>
+   <text start="4328.35" dur="3.17">for serialization.</text>
+   <text start="4331.52" dur="2.73">So if your application
+runs on web worker,</text>
+   <text start="4334.25" dur="3.427">it becomes really easy to
+serialize all the deltas for it</text>
+   <text start="4337.677" dur="1.583">across the wire, and
+then send it over</text>
+   <text start="4339.26" dur="3.742">to the UI thread, which then
+can update all the operations.</text>
+   <text start="4343.002" dur="2.208">But once you have that you
+kind of squint and you go,</text>
+   <text start="4345.21" dur="0.4">well, wait a minute.</text>
+   <text start="4345.61" dur="1.999">Why does it have to be a
+UI thread on a browser?</text>
+   <text start="4347.609" dur="2.511">It could really be
+just about anything</text>
+   <text start="4350.12" dur="4.27">that gets these updates,
+including maybe native.</text>
+   <text start="4354.39" dur="4.27">That&amp;#39;s as far as we got,
+but if you have some ideas</text>
+   <text start="4358.66" dur="2.5">we&amp;#39;re kind of making sure we&amp;#39;re
+kind of designing this stuff</text>
+   <text start="4361.16" dur="1.04">to keep the doors open.</text>
+   <text start="4362.2" dur="1.01">BRAD GREEN: So no plans.</text>
+   <text start="4363.21" dur="1.8">I know Facebook
+has an announcement</text>
+   <text start="4365.01" dur="1.882">of this native thing.</text>
+   <text start="4366.892" dur="1.458">We would love to
+partner with them.</text>
+   <text start="4368.35" dur="1.166">We should go say hi to them.</text>
+   <text start="4369.516" dur="1.284">That might be a thing.</text>
+   <text start="4370.8" dur="0.5">OK.</text>
+   <text start="4371.3" dur="0.499">Over here.</text>
+   <text start="4371.799" dur="4.283"/>
+   <text start="4376.082" dur="2.038">AUDIENCE: In
+Angular 2.0, will it</text>
+   <text start="4378.12" dur="5.79">be possible to append components
+to other components at runtime?</text>
+   <text start="4383.91" dur="0.685">MISKO: Yes.</text>
+   <text start="4384.595" dur="1.615">AUDIENCE: Not from the start?</text>
+   <text start="4386.21" dur="1.02">MISKO: Yes.</text>
+   <text start="4387.23" dur="2.84">So getting a hold of other
+components is one of the things</text>
+   <text start="4390.07" dur="2.31">that you&amp;#39;re going to
+love in Angular 2.0.</text>
+   <text start="4392.38" dur="4.985">The dependency injection system
+in Angular 2.0 is amazing.</text>
+   <text start="4397.365" dur="1.875">I don&amp;#39;t know what else
+I can say to you guys.</text>
+   <text start="4399.24" dur="0.812">IGOR: [INAUDIBLE].</text>
+   <text start="4400.052" dur="1.708">MISKO: No, he says,
+how to get components</text>
+   <text start="4401.76" dur="1">get a hold of other, no?</text>
+   <text start="4402.76" dur="1.66">IGOR: [INAUDIBLE].</text>
+   <text start="4404.42" dur="2.21">MISKO: Oh. append new
+components at runtime.</text>
+   <text start="4406.63" dur="2.96"/>
+   <text start="4409.59" dur="2.229">I heard the question
+I wanted to hear.</text>
+   <text start="4411.819" dur="0.833">[INTERPOSING VOICES]</text>
+   <text start="4412.652" dur="2.598"/>
+   <text start="4415.25" dur="2.394">MISKO: And so that would
+be through lazy loading.</text>
+   <text start="4417.644" dur="1.166">So that&amp;#39;s how you can do it.</text>
+   <text start="4418.81" dur="3.09"/>
+   <text start="4421.9" dur="3.24">The other question was
+a lot more interesting.</text>
+   <text start="4425.14" dur="3.7">AUDIENCE: Will it be something
+like you are using now?</text>
+   <text start="4428.84" dur="2.259">$compile?</text>
+   <text start="4431.099" dur="1.541">MISKO: All the dollar
+signs are gone,</text>
+   <text start="4432.64" dur="2.07">but yes, there is
+a compile service.</text>
+   <text start="4434.71" dur="4.28">It&amp;#39;s something like that, yes.</text>
+   <text start="4438.99" dur="0.95">I&amp;#39;m not sure.</text>
+   <text start="4439.94" dur="1.525">It&amp;#39;s not actually
+clear to me how.</text>
+   <text start="4441.465" dur="1.625">IGOR: It&amp;#39;s like
+creating dynamic views.</text>
+   <text start="4443.09" dur="0.583">MISKO: I know.</text>
+   <text start="4443.673" dur="4.267">But a lot of things are
+kind of moved around</text>
+   <text start="4447.94" dur="3.436">and you have to--
+it gets complicated.</text>
+   <text start="4451.376" dur="1.874">Yes, but the short answer
+is there definitely</text>
+   <text start="4453.25" dur="1.38">will be something like that.</text>
+   <text start="4454.63" dur="3.94">And we need it for
+lazy loading of views.</text>
+   <text start="4458.57" dur="2.86">So this is going to happen.</text>
+   <text start="4461.43" dur="3.15">The details are not kind
+of figured out just yet,</text>
+   <text start="4464.58" dur="2.48">but it&amp;#39;s a requirement.</text>
+   <text start="4467.06" dur="1.115">It&amp;#39;s a hard requirement.</text>
+   <text start="4468.175" dur="1.375">We&amp;#39;re not going
+to miss that one.</text>
+   <text start="4469.55" dur="1.79">AUDIENCE: Just to know.</text>
+   <text start="4471.34" dur="0.5">Thank you.</text>
+   <text start="4471.84" dur="2.98"/>
+   <text start="4474.82" dur="3.02">AUDIENCE: Do you have any plans
+for sever side [? handering, ?]</text>
+   <text start="4477.84" dur="1.79">especially because
+of external crawling?</text>
+   <text start="4479.63" dur="5.79"/>
+   <text start="4485.42" dur="2.27">IGOR: Maybe.</text>
+   <text start="4487.69" dur="2.44">So just like we
+mentioned the native,</text>
+   <text start="4490.13" dur="4.04">the architecture we have allows
+us to do this kind of stuff.</text>
+   <text start="4494.17" dur="1.91">One thing that we
+already want to do</text>
+   <text start="4496.08" dur="3.84">is do a template
+precompilation, where</text>
+   <text start="4499.92" dur="3.98">we will just-- just like
+you minify your JavaScript,</text>
+   <text start="4503.9" dur="1.84">we&amp;#39;ll be able to
+pre-compile templates.</text>
+   <text start="4505.74" dur="3.18">And basically work
+that is usually</text>
+   <text start="4508.92" dur="2.85">done by the compiler
+on the client side</text>
+   <text start="4511.77" dur="2.05">during the startup
+of the application</text>
+   <text start="4513.82" dur="3.9">would be done during the
+build step of the application.</text>
+   <text start="4517.72" dur="3.73">And while we are at that we can
+also extract all the metadata</text>
+   <text start="4521.45" dur="4.17">we need to actually do service
+side interpolation, which</text>
+   <text start="4525.62" dur="3.46">would allow us to create a
+system where you can pre-render</text>
+   <text start="4529.08" dur="1.9">stuff on the server.</text>
+   <text start="4530.98" dur="2.67">It&amp;#39;s not something we are
+actively working on right now,</text>
+   <text start="4533.65" dur="1.87">but the architecture
+we are building</text>
+   <text start="4535.52" dur="3.892">takes this into account and
+leaves it as a possibility.</text>
+   <text start="4539.412" dur="0.708">AUDIENCE: Thanks.</text>
+   <text start="4540.12" dur="6.28"/>
+   <text start="4546.4" dur="1.4">AUDIENCE: Hello.</text>
+   <text start="4547.8" dur="4.31">So one question that I have
+also to the lazy loading</text>
+   <text start="4552.11" dur="2.83">is more about, maybe
+I remember wrong,</text>
+   <text start="4554.94" dur="2.86">but someone during
+ng-europe said</text>
+   <text start="4557.8" dur="6.11">that the lazy loading will
+be also available in 1.x.</text>
+   <text start="4563.91" dur="2.4">Maybe I remember wrong?</text>
+   <text start="4566.31" dur="0.749">The question is--</text>
+   <text start="4567.059" dur="0.791">IGOR: I don&amp;#39;t know.</text>
+   <text start="4567.85" dur="3.76">I don&amp;#39;t remember what exactly
+was said at ng-europe.</text>
+   <text start="4571.61" dur="2.66">Well, I remember many
+things from ng-europe.</text>
+   <text start="4574.27" dur="2.2">I don&amp;#39;t remember
+this particular one.</text>
+   <text start="4576.47" dur="3.17">So I don&amp;#39;t know how
+it was formulated,</text>
+   <text start="4579.64" dur="5.01">but what I can tell you is
+that the lazy holding in 1x</text>
+   <text start="4584.65" dur="3.22">is much more
+complicated because we</text>
+   <text start="4587.87" dur="1.62">don&amp;#39;t have a hierarchical DI.</text>
+   <text start="4589.49" dur="3.3">And the reason why, this
+is kind of hard to explain,</text>
+   <text start="4592.79" dur="2.84">but the reason why we don&amp;#39;t
+want to do lazy loading in 1x</text>
+   <text start="4595.63" dur="1.71">is not because it&amp;#39;s impossible.</text>
+   <text start="4597.34" dur="2.71">It just would make the
+application unstable.</text>
+   <text start="4600.05" dur="4.77">And I think it would be very
+easy to introduce bugs that&amp;#39;ll</text>
+   <text start="4604.82" dur="3.53">be very hard to debug,
+and then the application</text>
+   <text start="4608.35" dur="2.41">would just not work
+in certain scenarios.</text>
+   <text start="4610.76" dur="2.19">And this is what
+we want to avoid.</text>
+   <text start="4612.95" dur="5.94">We discussed how we could
+and hierarchical injector</text>
+   <text start="4618.89" dur="1.719">solves this problem.</text>
+   <text start="4620.609" dur="1.791">So we don&amp;#39;t have that
+problem with Angular2</text>
+   <text start="4622.4" dur="2.27">and we can just do lazy
+loading without any issues.</text>
+   <text start="4624.67" dur="1.97">In Angular 1x, however,
+we are thinking</text>
+   <text start="4626.64" dur="3.48">of some workarounds that
+would allow us to provide you</text>
+   <text start="4630.12" dur="5.95">this guarantees and
+also do lazy loading.</text>
+   <text start="4636.07" dur="5.75">The new router that we&amp;#39;re
+back-porting from 2.0 to 1x</text>
+   <text start="4641.82" dur="2.2">makes it possible
+to do lazy loading.</text>
+   <text start="4644.02" dur="2.72">There is still some pieces that
+need to be done in the core.</text>
+   <text start="4646.74" dur="3.06">I don&amp;#39;t think we&amp;#39;ll have
+enough time to do it in 1.4,</text>
+   <text start="4649.8" dur="1.47">but it&amp;#39;s on the table for 1.5.</text>
+   <text start="4651.27" dur="0.916">AUDIENCE: Thanks.</text>
+   <text start="4652.186" dur="1.219">Thank you.</text>
+   <text start="4653.405" dur="1.125">BRAD GREEN: More questions?</text>
+   <text start="4654.53" dur="2.551"/>
+   <text start="4657.081" dur="1.249">Or if we&amp;#39;re out, that&amp;#39;s great.</text>
+   <text start="4658.33" dur="1.731">That&amp;#39;s a lot of questions.</text>
+   <text start="4660.061" dur="0.499">OK.</text>
+   <text start="4660.56" dur="0.28">Great.</text>
+   <text start="4660.84" dur="0.88">Thank you, everybody.</text>
+   <text start="4661.72" dur="1.37">It was wonderful to have you.</text>
+   <text start="4663.09" dur="1.69">[APPLAUSE]</text>
+   <text start="4664.78" dur="3.2">Come join us on one
+of the live viewing</text>
+   <text start="4667.98" dur="2.11">streams at ng-conf
+unless you&amp;#39;re coming</text>
+   <text start="4670.09" dur="2.39">in person, which is awesome
+too, where you&amp;#39;ll hear more</text>
+   <text start="4672.48" dur="3.44">about material design, the new
+router, internationalization,</text>
+   <text start="4675.92" dur="3.494">accessibility, more on testing,
+all kinds of other good stuff.</text>
+   <text start="4679.414" dur="1.166">We&amp;#39;ll hope to see you there.</text>
+   <text start="4680.58" dur="0.6">Thanks.</text>
+   <text start="4681.18" dur="1.55">Bye.</text>
+</transcript>

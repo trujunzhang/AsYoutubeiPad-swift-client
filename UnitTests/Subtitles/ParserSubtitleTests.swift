@@ -24,7 +24,7 @@ class ParserSubtitleTests: XCTestCase {
         super.tearDown()
     }
     
-    func _testParseSubtitle() {
+    func testParseSubtitle() {
         let expect  = 1923
         
         let fileName = "An_Angular2_Todo_App-First_look_at_App_Development_in_Angular2"
@@ -35,29 +35,11 @@ class ParserSubtitleTests: XCTestCase {
     
     // MARK : check parse result
     func checkParseSRTFromFile(fileName: String,expect:Int){
-        let subtitleString : String = readFile(fileName)
+        let subtitleString : String = Tools.readFile(fileName)
         
-        checkParseSRTFromString(subtitleString, expect: expect)
-    }
-    
-    func checkParseSRTFromString(subtitleString: String,expect:Int){
-        
-        let soSubtitle:SOSubtitle = SOSubtitle()
-        let task:BFTask = soSubtitle.subtitleWithString(subtitleString, error: nil)
-        
-        let resultSubtitle:SOSubtitle = task.result as SOSubtitle
-        let array : NSMutableArray = resultSubtitle.subtitleItems
-        
+        let  array : NSMutableArray = Tools.checkParseSRTFromString(subtitleString, expect: expect)
         XCTAssertEqual(array.count, expect, "the same length")
     }
-    
-    // MARK : Utils for parsing subtitle
-    func readFile(fileName: String) -> String {
-        let path = NSBundle.mainBundle().pathForResource(fileName, ofType: "srt")
-        var data = String(contentsOfFile:path!, encoding: NSUTF8StringEncoding, error: nil)
-        
-        return data!
-    }
-    
+
     
 }

@@ -1,0 +1,94 @@
+<transcript_list docid="-5170538564076740035">
+   <track id="0" name="" lang_code="en" lang_original="English" lang_translated="English" lang_default="true" cantran="true"/>
+   <target id="77" lang_code="af" lang_original="Afrikaans" lang_translated="Afrikaans"/>
+   <target id="43" lang_code="sq" lang_original="Shqip" lang_translated="Albanian"/>
+   <target id="50" lang_code="ar" lang_original="العربية" lang_translated="Arabic"/>
+   <target id="75" lang_code="hy" lang_original="Հայերեն" lang_translated="Armenian"/>
+   <target id="65" lang_code="az" lang_original="Azərbaycan" lang_translated="Azerbaijani"/>
+   <target id="53" lang_code="eu" lang_original="Euskara" lang_translated="Basque"/>
+   <target id="45" lang_code="be" lang_original="Беларуская" lang_translated="Belarusian"/>
+   <target id="35" lang_code="bn" lang_original="বাংলা" lang_translated="Bengali"/>
+   <target id="68" lang_code="bs" lang_original="Bosanski" lang_translated="Bosnian"/>
+   <target id="25" lang_code="bg" lang_original="Български" lang_translated="Bulgarian"/>
+   <target id="78" lang_code="my" lang_original="ဗမာ" lang_translated="Burmese"/>
+   <target id="51" lang_code="ca" lang_original="Català" lang_translated="Catalan"/>
+   <target id="88" lang_code="ceb" lang_original="Cebuano" lang_translated="Cebuano"/>
+   <target id="16" lang_code="zh-Hans" lang_original="中文（简体中文）" lang_translated="Chinese (Simplified)"/>
+   <target id="62" lang_code="zh-Hant" lang_original="中文（繁體）" lang_translated="Chinese (Traditional)"/>
+   <target id="26" lang_code="hr" lang_original="Hrvatski" lang_translated="Croatian"/>
+   <target id="17" lang_code="cs" lang_original="Čeština" lang_translated="Czech"/>
+   <target id="1" lang_code="da" lang_original="Dansk" lang_translated="Danish"/>
+   <target id="2" lang_code="nl" lang_original="Nederlands" lang_translated="Dutch"/>
+   <target id="0" lang_code="en" lang_original="English" lang_translated="English" lang_default="true"/>
+   <target id="52" lang_code="eo" lang_original="Esperanto" lang_translated="Esperanto"/>
+   <target id="24" lang_code="et" lang_original="Eesti" lang_translated="Estonian"/>
+   <target id="30" lang_code="fil" lang_original="Filipino" lang_translated="Filipino"/>
+   <target id="3" lang_code="fi" lang_original="Suomi" lang_translated="Finnish"/>
+   <target id="4" lang_code="fr" lang_original="Français" lang_translated="French"/>
+   <target id="29" lang_code="gl" lang_original="Galego" lang_translated="Galician"/>
+   <target id="66" lang_code="ka" lang_original="ქართული" lang_translated="Georgian"/>
+   <target id="5" lang_code="de" lang_original="Deutsch" lang_translated="German"/>
+   <target id="18" lang_code="el" lang_original="Ελληνικά" lang_translated="Greek"/>
+   <target id="48" lang_code="gu" lang_original="ગુજરાતી" lang_translated="Gujarati"/>
+   <target id="85" lang_code="ht" lang_original="Haitian" lang_translated="Haitian"/>
+   <target id="84" lang_code="ha" lang_original="Hausa" lang_translated="Hausa"/>
+   <target id="6" lang_code="iw" lang_original="עברית" lang_translated="Hebrew"/>
+   <target id="33" lang_code="hi" lang_original="हिन्दी" lang_translated="Hindi"/>
+   <target id="89" lang_code="hmn" lang_original="Hmong" lang_translated="Hmong"/>
+   <target id="23" lang_code="hu" lang_original="Magyar" lang_translated="Hungarian"/>
+   <target id="19" lang_code="is" lang_original="Íslenska" lang_translated="Icelandic"/>
+   <target id="87" lang_code="ig" lang_original="Igbo" lang_translated="Igbo"/>
+   <target id="36" lang_code="id" lang_original="Bahasa Indonesia" lang_translated="Indonesian"/>
+   <target id="28" lang_code="ga" lang_original="Gaeilge" lang_translated="Irish"/>
+   <target id="7" lang_code="it" lang_original="Italiano" lang_translated="Italian"/>
+   <target id="8" lang_code="ja" lang_original="日本語" lang_translated="Japanese"/>
+   <target id="46" lang_code="jv" lang_original="Javanese" lang_translated="Javanese"/>
+   <target id="54" lang_code="kn" lang_original="ಕನ್ನಡ" lang_translated="Kannada"/>
+   <target id="80" lang_code="kk" lang_original="Қазақ Тілі" lang_translated="Kazakh"/>
+   <target id="79" lang_code="km" lang_original="ខ្មែរ" lang_translated="Khmer"/>
+   <target id="9" lang_code="ko" lang_original="한국어" lang_translated="Korean"/>
+   <target id="76" lang_code="lo" lang_original="ລາວ" lang_translated="Lao"/>
+   <target id="37" lang_code="la" lang_original="Latin" lang_translated="Latin"/>
+   <target id="20" lang_code="lv" lang_original="Latviešu" lang_translated="Latvian"/>
+   <target id="21" lang_code="lt" lang_original="Lietuvių" lang_translated="Lithuanian"/>
+   <target id="34" lang_code="mk" lang_original="Македонски" lang_translated="Macedonian"/>
+   <target id="86" lang_code="mg" lang_original="Malagasy" lang_translated="Malagasy"/>
+   <target id="38" lang_code="ms" lang_original="Bahasa Melayu" lang_translated="Malay"/>
+   <target id="39" lang_code="ml" lang_original="മലയാളം" lang_translated="Malayalam"/>
+   <target id="59" lang_code="mt" lang_original="Malti" lang_translated="Maltese"/>
+   <target id="83" lang_code="mi" lang_original="Maori" lang_translated="Maori"/>
+   <target id="58" lang_code="mr" lang_original="मराठी" lang_translated="Marathi"/>
+   <target id="74" lang_code="mn" lang_original="Монгол" lang_translated="Mongolian"/>
+   <target id="41" lang_code="ne" lang_original="नेपाली" lang_translated="Nepali"/>
+   <target id="10" lang_code="no" lang_original="Norsk" lang_translated="Norwegian"/>
+   <target id="90" lang_code="ny" lang_original="Nyanja" lang_translated="Nyanja"/>
+   <target id="67" lang_code="fa" lang_original="فارسی" lang_translated="Persian"/>
+   <target id="11" lang_code="pl" lang_original="Polski" lang_translated="Polish"/>
+   <target id="12" lang_code="pt" lang_original="Português" lang_translated="Portuguese"/>
+   <target id="55" lang_code="pa" lang_original="ਪੰਜਾਬੀ" lang_translated="Punjabi"/>
+   <target id="22" lang_code="ro" lang_original="Română" lang_translated="Romanian"/>
+   <target id="13" lang_code="ru" lang_original="Русский" lang_translated="Russian"/>
+   <target id="27" lang_code="sr" lang_original="Српски" lang_translated="Serbian"/>
+   <target id="69" lang_code="si" lang_original="සිංහල" lang_translated="Sinhala"/>
+   <target id="61" lang_code="sk" lang_original="Slovenčina" lang_translated="Slovak"/>
+   <target id="57" lang_code="sl" lang_original="Slovenščina" lang_translated="Slovenian"/>
+   <target id="73" lang_code="so" lang_original="Soomaali" lang_translated="Somali"/>
+   <target id="71" lang_code="st" lang_original="Southern Sotho" lang_translated="Southern Sotho"/>
+   <target id="14" lang_code="es" lang_original="Español" lang_translated="Spanish"/>
+   <target id="63" lang_code="su" lang_original="Sundanese" lang_translated="Sundanese"/>
+   <target id="56" lang_code="sw" lang_original="Kiswahili" lang_translated="Swahili"/>
+   <target id="15" lang_code="sv" lang_original="Svenska" lang_translated="Swedish"/>
+   <target id="81" lang_code="tg" lang_original="Tajik" lang_translated="Tajik"/>
+   <target id="44" lang_code="ta" lang_original="தமிழ்" lang_translated="Tamil"/>
+   <target id="42" lang_code="te" lang_original="తెలుగు" lang_translated="Telugu"/>
+   <target id="49" lang_code="th" lang_original="ไทย" lang_translated="Thai"/>
+   <target id="31" lang_code="tr" lang_original="Türkçe" lang_translated="Turkish"/>
+   <target id="32" lang_code="uk" lang_original="Українська" lang_translated="Ukrainian"/>
+   <target id="47" lang_code="ur" lang_original="اردو" lang_translated="Urdu"/>
+   <target id="64" lang_code="uz" lang_original="Oʻzbekcha" lang_translated="Uzbek"/>
+   <target id="60" lang_code="vi" lang_original="Tiếng Việt" lang_translated="Vietnamese"/>
+   <target id="40" lang_code="cy" lang_original="Cymraeg" lang_translated="Welsh"/>
+   <target id="72" lang_code="yi" lang_original="ייִדיש" lang_translated="Yiddish"/>
+   <target id="82" lang_code="yo" lang_original="Èdè Yorùbá" lang_translated="Yoruba"/>
+   <target id="70" lang_code="zu" lang_original="Isizulu" lang_translated="Zulu"/>
+</transcript_list>

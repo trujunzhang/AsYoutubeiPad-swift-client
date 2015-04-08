@@ -1,0 +1,9050 @@
+1
+00:00:00,000 --> 00:00:02,617
+(null)
+
+2
+00:00:02,617 --> 00:00:03,450
+BRAD GREEN: Welcome.
+
+3
+00:00:03,450 --> 00:00:04,530
+Hey, I'm Brad Green.
+
+4
+00:00:04,530 --> 00:00:06,630
+I run the Angular
+project at Google.
+
+5
+00:00:06,629 --> 00:00:08,359
+I'm excited you
+guys could join us.
+
+6
+00:00:08,359 --> 00:00:12,285
+We're all pretty excited
+on the Angular team.
+
+7
+00:00:12,285 --> 00:00:14,160
+And we're not good at
+ceremony, so we're just
+
+8
+00:00:14,160 --> 00:00:16,780
+kind of announcing, we're
+calling Angular2 in alpha,
+
+9
+00:00:16,780 --> 00:00:19,120
+meaning there are some
+bits out there on GitHub,
+
+10
+00:00:19,120 --> 00:00:21,700
+and we'll show you later
+how to get to them.
+
+11
+00:00:21,699 --> 00:00:23,910
+But there are some bits
+that you can go play with.
+
+12
+00:00:23,910 --> 00:00:26,519
+And tonight David East
+of the Firebase team
+
+13
+00:00:26,519 --> 00:00:33,460
+is going to come and show us
+the fantastic TodoMVC app done
+
+14
+00:00:33,460 --> 00:00:35,030
+in Angular2.
+
+15
+00:00:35,030 --> 00:00:37,700
+The presentation is maybe
+only about 20 minutes.
+
+16
+00:00:37,700 --> 00:00:40,880
+We will be up here,
+Misko, and Igor,
+
+17
+00:00:40,880 --> 00:00:42,770
+and Naomi and some
+other folks in the team
+
+18
+00:00:42,770 --> 00:00:46,720
+will be taking questions that
+you might have about Angular2.
+
+19
+00:00:46,719 --> 00:00:50,009
+And we'll skirt issues when
+you asked about the timeline,
+
+20
+00:00:50,009 --> 00:00:53,349
+but you can ask us real
+questions about Angular2.
+
+21
+00:00:53,350 --> 00:00:55,420
+And we can really answer
+them because things
+
+22
+00:00:55,420 --> 00:00:57,320
+are fairly real now.
+
+23
+00:00:57,320 --> 00:01:02,009
+So as always when
+you ask questions
+
+24
+00:01:02,009 --> 00:01:04,179
+we're going to have
+you sign a form that
+
+25
+00:01:04,180 --> 00:01:06,540
+says it's OK to release
+them to YouTube.
+
+26
+00:01:06,540 --> 00:01:08,540
+So please only
+ask stuff that you
+
+27
+00:01:08,540 --> 00:01:10,236
+want to have on live stream.
+
+28
+00:01:10,236 --> 00:01:11,609
+We're excited to
+be here tonight.
+
+29
+00:01:11,609 --> 00:01:13,890
+I'll have David come
+up and we'll get going.
+
+30
+00:01:13,890 --> 00:01:15,019
+David, where'd you go?
+
+31
+00:01:15,019 --> 00:01:15,769
+Oh, there you are.
+
+32
+00:01:15,769 --> 00:01:16,739
+OK.
+
+33
+00:01:16,739 --> 00:01:17,239
+Thanks.
+
+34
+00:01:17,239 --> 00:01:23,544
+(null)
+
+35
+00:01:23,545 --> 00:01:24,920
+DAVID EAST: How's
+everyone doing?
+
+36
+00:01:24,920 --> 00:01:25,710
+Is this good?
+
+37
+00:01:25,709 --> 00:01:26,959
+All right.
+
+38
+00:01:26,959 --> 00:01:29,589
+This kind of gets
+away from me at times.
+
+39
+00:01:29,590 --> 00:01:32,150
+And then I'll talk over
+here and you can't hear me.
+
+40
+00:01:32,150 --> 00:01:33,810
+Just keep me in check.
+
+41
+00:01:33,810 --> 00:01:34,310
+All right.
+
+42
+00:01:34,310 --> 00:01:37,715
+So I'm really excited to talk
+to you guys here tonight.
+
+43
+00:01:37,715 --> 00:01:40,284
+I think we have a little
+bit of an interesting topic
+
+44
+00:01:40,284 --> 00:01:41,700
+that you might
+want to hear about.
+
+45
+00:01:41,700 --> 00:01:45,587
+So we're going to be
+talking about Angular2.
+
+46
+00:01:45,587 --> 00:01:47,170
+So for those of you
+who don't know me,
+
+47
+00:01:47,170 --> 00:01:48,189
+my name is [INAUDIBLE].
+
+48
+00:01:48,189 --> 00:01:50,390
+I am a developer program
+engineer at Google
+
+49
+00:01:50,390 --> 00:01:52,721
+where I work on Firebase.
+
+50
+00:01:52,721 --> 00:01:54,781
+I actually only work
+on Angular part time
+
+51
+00:01:54,781 --> 00:01:56,739
+where I work on the
+developer experience, which
+
+52
+00:01:56,739 --> 00:01:59,659
+is essentially like creating
+great documentation, code
+
+53
+00:01:59,659 --> 00:02:02,090
+samples, and all the things
+that are going to make all
+
+54
+00:02:02,090 --> 00:02:04,500
+of your lives
+hopefully a lot easier.
+
+55
+00:02:04,500 --> 00:02:07,250
+So this time around if you have
+any problems of documentation
+
+56
+00:02:07,250 --> 00:02:09,340
+you know who to throw things at.
+
+57
+00:02:09,340 --> 00:02:11,830
+So I've actually only
+been working on a Angular2
+
+58
+00:02:11,830 --> 00:02:13,219
+for about a month now.
+
+59
+00:02:13,219 --> 00:02:16,109
+So I kind of find it
+kind of surreal and crazy
+
+60
+00:02:16,110 --> 00:02:18,675
+that within a month time
+frame of saying, sure,
+
+61
+00:02:18,675 --> 00:02:20,080
+I can help [INAUDIBLE].
+
+62
+00:02:20,080 --> 00:02:22,140
+Here I am talking to
+you all about something
+
+63
+00:02:22,139 --> 00:02:23,913
+that's in an alpha stage.
+
+64
+00:02:23,913 --> 00:02:26,329
+So for the past month I've
+just been bugging the core team
+
+65
+00:02:26,330 --> 00:02:27,913
+with all these
+questions while they've
+
+66
+00:02:27,913 --> 00:02:30,170
+been coding away like crazy.
+
+67
+00:02:30,169 --> 00:02:33,369
+And just sort of every day I
+get a fresh new copy of Angular2
+
+68
+00:02:33,370 --> 00:02:34,700
+and make new stuff with it.
+
+69
+00:02:34,699 --> 00:02:37,209
+So this presentation
+is sort of what
+
+70
+00:02:37,210 --> 00:02:41,120
+I've been able to
+pull away from that.
+
+71
+00:02:41,120 --> 00:02:44,194
+So like always in something
+in alpha this is a disclaimer.
+
+72
+00:02:44,194 --> 00:02:46,569
+It's kind of like what you
+see at the bottom of the email
+
+73
+00:02:46,569 --> 00:02:49,019
+when someone says, don't talk
+about this if you received
+
+74
+00:02:49,020 --> 00:02:50,300
+it or something.
+
+75
+00:02:50,300 --> 00:02:51,950
+Angular2 is a work in progress.
+
+76
+00:02:51,949 --> 00:02:54,709
+Things might slash will
+probably, definitely
+
+77
+00:02:54,710 --> 00:02:55,240
+will change.
+
+78
+00:02:55,240 --> 00:02:58,170
+So everything you see in here,
+don't hold me accountable
+
+79
+00:02:58,169 --> 00:03:00,339
+if you see this later and
+you built an app on this.
+
+80
+00:03:00,340 --> 00:03:02,381
+I'm sorry.
+
+81
+00:03:02,381 --> 00:03:02,879
+All right.
+
+82
+00:03:02,879 --> 00:03:06,079
+Before we get talking about a
+lot of the concepts of Angular2
+
+83
+00:03:06,080 --> 00:03:07,580
+I want to talk about
+the motivation.
+
+84
+00:03:07,580 --> 00:03:08,450
+Why are we building Angular2?
+
+85
+00:03:08,449 --> 00:03:10,250
+What are the things
+that are different?
+
+86
+00:03:10,250 --> 00:03:11,667
+And what we're
+looking to address?
+
+87
+00:03:11,667 --> 00:03:13,250
+And then once that's
+done, we're going
+
+88
+00:03:13,250 --> 00:03:15,759
+to talk about concepts, like
+all the new stuff in Angular2
+
+89
+00:03:15,759 --> 00:03:18,340
+that's really cool, the
+building blocks, and all that.
+
+90
+00:03:18,340 --> 00:03:21,370
+And like Brad said it's only
+about 20 minutes so there's not
+
+91
+00:03:21,370 --> 00:03:23,080
+enough time for me
+to cover everything.
+
+92
+00:03:23,080 --> 00:03:26,600
+There is a lot more than what's
+on here, but if I went more
+
+93
+00:03:26,599 --> 00:03:29,530
+it would be just
+total mind blown,
+
+94
+00:03:29,530 --> 00:03:31,770
+like how do I learn
+all these things.
+
+95
+00:03:31,770 --> 00:03:34,920
+So we're just going to
+focus on the very basics.
+
+96
+00:03:34,919 --> 00:03:36,869
+And after that I'm going
+to show the Todo app
+
+97
+00:03:36,870 --> 00:03:39,099
+I created, which is
+also very simple.
+
+98
+00:03:39,098 --> 00:03:41,139
+And that's up on GitHub,
+so you guys will be able
+
+99
+00:03:41,139 --> 00:03:43,789
+check it out afterwards, too.
+
+100
+00:03:43,789 --> 00:03:44,289
+All right.
+
+101
+00:03:44,289 --> 00:03:46,370
+So motivation behind Angular 1.
+
+102
+00:03:46,370 --> 00:03:48,250
+Well, it's an aging framework.
+
+103
+00:03:48,250 --> 00:03:50,669
+It dates back all
+the way to 2009.
+
+104
+00:03:50,669 --> 00:03:54,789
+So a lot of things in
+2009 didn't really exist.
+
+105
+00:03:54,789 --> 00:03:57,689
+Right now we are looking
+into the Shadow DOM, and ES6
+
+106
+00:03:57,689 --> 00:04:01,219
+modules, and ES6 in general, and
+that wasn't really around then.
+
+107
+00:04:01,219 --> 00:04:03,569
+So Angular kind of
+created its own things
+
+108
+00:04:03,569 --> 00:04:05,359
+that helped out there.
+
+109
+00:04:05,360 --> 00:04:09,049
+So now with Angular2 we don't
+need things like transclusion
+
+110
+00:04:09,049 --> 00:04:11,090
+anymore, because that's
+what the Shadow DOM does.
+
+111
+00:04:11,090 --> 00:04:13,259
+It provides that
+for us natively.
+
+112
+00:04:13,259 --> 00:04:17,000
+And then also with ES6 modules,
+they replace Angular Modules.
+
+113
+00:04:17,000 --> 00:04:19,879
+Angular wants to be able to
+sit on top of web standards.
+
+114
+00:04:19,879 --> 00:04:22,779
+It's not the point of
+creating a web standard,
+
+115
+00:04:22,779 --> 00:04:24,579
+or creating a
+standard of your own,
+
+116
+00:04:24,579 --> 00:04:27,734
+and then using that, we want to
+play nice as the web evolves.
+
+117
+00:04:27,735 --> 00:04:30,270
+(null)
+
+118
+00:04:30,269 --> 00:04:32,349
+Another thing is performance.
+
+119
+00:04:32,350 --> 00:04:34,160
+So speed is obviously
+very important.
+
+120
+00:04:34,160 --> 00:04:37,070
+And I have a quote
+from Misko, which was,
+
+121
+00:04:37,069 --> 00:04:41,990
+I'm quoting him from
+tomorrow, and it's he said,
+
+122
+00:04:41,990 --> 00:04:45,310
+"today Angular2 is 5x
+faster than Angular 1."
+
+123
+00:04:45,310 --> 00:04:48,790
+So after that hopefully
+it will be faster,
+
+124
+00:04:48,790 --> 00:04:51,540
+but tomorrow it is
+five times faster.
+
+125
+00:04:51,540 --> 00:04:54,490
+And if you don't believe me
+I have a chart to prove it,
+
+126
+00:04:54,490 --> 00:04:57,490
+because charts mean
+it's legitimate.
+
+127
+00:04:57,490 --> 00:05:01,530
+So to the very right over here,
+or I guess my left, your right,
+
+128
+00:05:01,529 --> 00:05:02,899
+we have Angular 1.
+
+129
+00:05:02,899 --> 00:05:04,601
+And so this is a
+deep tree benchmark,
+
+130
+00:05:04,601 --> 00:05:05,560
+which I should mention.
+
+131
+00:05:05,560 --> 00:05:08,899
+So this essentially represents
+a very complex Angular
+
+132
+00:05:08,899 --> 00:05:11,519
+application, very
+deep rooted, nested
+
+133
+00:05:11,519 --> 00:05:13,810
+components, which we'll talk
+about what components are,
+
+134
+00:05:13,810 --> 00:05:16,199
+but just think about
+very heavily nested DOM,
+
+135
+00:05:16,199 --> 00:05:18,899
+which essentially makes
+up an application.
+
+136
+00:05:18,899 --> 00:05:20,689
+So that's all the way
+out here to the left.
+
+137
+00:05:20,689 --> 00:05:22,660
+And this is with Angular 1.
+
+138
+00:05:22,660 --> 00:05:25,480
+And this is how fast
+Angular 1 is with that.
+
+139
+00:05:25,480 --> 00:05:27,060
+And then this is the baseline.
+
+140
+00:05:27,060 --> 00:05:28,680
+And this is a fixed cost.
+
+141
+00:05:28,680 --> 00:05:32,199
+So this is essentially
+its hard coded way
+
+142
+00:05:32,199 --> 00:05:33,909
+of building this
+type of application.
+
+143
+00:05:33,910 --> 00:05:35,830
+So it's going to be really
+fast because everything's hard
+
+144
+00:05:35,829 --> 00:05:36,189
+coded.
+
+145
+00:05:36,189 --> 00:05:37,839
+You would never do
+this in real life,
+
+146
+00:05:37,839 --> 00:05:39,519
+but this is how we
+can say, OK, this
+
+147
+00:05:39,519 --> 00:05:43,879
+is as fast-- this is a
+bottom level of speed.
+
+148
+00:05:43,879 --> 00:05:45,889
+And then this over
+here is Angular2
+
+149
+00:05:45,889 --> 00:05:48,053
+with two different
+types of optimizations,
+
+150
+00:05:48,053 --> 00:05:49,469
+or, I guess, with
+one optimization
+
+151
+00:05:49,470 --> 00:05:51,160
+and one not optimized.
+
+152
+00:05:51,160 --> 00:05:53,670
+So Angular2, obviously lower
+in this case is better.
+
+153
+00:05:53,670 --> 00:05:56,120
+And Angular2, without a view
+cache, which is essentially
+
+154
+00:05:56,120 --> 00:05:58,328
+without a way of being smart
+about how we're managing
+
+155
+00:05:58,327 --> 00:06:02,629
+our views, is three times
+slower than the baseline.
+
+156
+00:06:02,629 --> 00:06:05,899
+And the Angular2
+with the view cache,
+
+157
+00:06:05,899 --> 00:06:09,019
+which is being smart about
+keeping around our elements
+
+158
+00:06:09,019 --> 00:06:12,629
+is only 1.4 times slower
+than the baseline.
+
+159
+00:06:12,629 --> 00:06:14,930
+And as you can see this
+is very, very close.
+
+160
+00:06:14,930 --> 00:06:17,975
+And this is just today or
+tomorrow as Misko told me.
+
+161
+00:06:17,975 --> 00:06:20,629
+(null)
+
+162
+00:06:20,629 --> 00:06:23,279
+Another thing is the
+simple cognitive model.
+
+163
+00:06:23,279 --> 00:06:25,719
+So when you're first
+learning Angular,
+
+164
+00:06:25,720 --> 00:06:26,904
+it has a lot of concepts.
+
+165
+00:06:26,903 --> 00:06:29,319
+And each one of these concepts
+has its own learning curve.
+
+166
+00:06:29,319 --> 00:06:30,903
+You could spend an
+entire day learning
+
+167
+00:06:30,903 --> 00:06:33,020
+about all of the different
+things of a controller.
+
+168
+00:06:33,019 --> 00:06:34,195
+And you could start
+learning about all
+
+169
+00:06:34,196 --> 00:06:35,696
+of the different
+things that you can
+
+170
+00:06:35,696 --> 00:06:38,060
+use transclusion
+and directives for.
+
+171
+00:06:38,060 --> 00:06:40,879
+So this is just a list
+of all the concepts
+
+172
+00:06:40,879 --> 00:06:42,851
+that we first start
+learning out in Angular 1.
+
+173
+00:06:42,851 --> 00:06:44,560
+And what's kind of
+funny about the slide,
+
+174
+00:06:44,560 --> 00:06:47,579
+too, is there's actually more
+and the screen clipped the rest
+
+175
+00:06:47,579 --> 00:06:48,609
+off.
+
+176
+00:06:48,610 --> 00:06:51,500
+So we kind of start out
+learning these things
+
+177
+00:06:51,500 --> 00:06:53,132
+and these are all
+great concepts.
+
+178
+00:06:53,132 --> 00:06:54,590
+And once we learn
+them, you kind of
+
+179
+00:06:54,589 --> 00:06:56,659
+feel like an advanced
+Angular user.
+
+180
+00:06:56,660 --> 00:06:59,707
+And you can know well how
+to use your controller.
+
+181
+00:06:59,706 --> 00:07:02,040
+You know the difference between
+factory service provider
+
+182
+00:07:02,040 --> 00:07:04,330
+and you're able to have
+all this flexibility.
+
+183
+00:07:04,329 --> 00:07:06,909
+Well, with Angular we want
+to provide this flexibility.
+
+184
+00:07:06,910 --> 00:07:10,090
+With Angular2 we want to provide
+this flexibility for you guys,
+
+185
+00:07:10,089 --> 00:07:13,329
+but maybe do away with a lot
+of these conceptual models
+
+186
+00:07:13,329 --> 00:07:16,589
+and still have the same power
+and flexibility as before.
+
+187
+00:07:16,589 --> 00:07:19,619
+So later I'm going to
+show you how we take away
+
+188
+00:07:19,620 --> 00:07:22,352
+some of these concepts.
+
+189
+00:07:22,351 --> 00:07:24,589
+Now the motivation
+is web standards.
+
+190
+00:07:24,589 --> 00:07:27,859
+We want to sit on top of web
+standards, not create our own.
+
+191
+00:07:27,860 --> 00:07:31,009
+And performance, so
+being as fast as possible
+
+192
+00:07:31,009 --> 00:07:33,310
+while still introducing
+less concepts for you
+
+193
+00:07:33,310 --> 00:07:35,189
+guys to learn about.
+
+194
+00:07:35,189 --> 00:07:37,189
+So a lot of you
+have seen Angular2,
+
+195
+00:07:37,189 --> 00:07:39,850
+but for those who haven't
+this is sort of your not
+
+196
+00:07:39,850 --> 00:07:43,410
+so first, maybe kind of
+first look at Angular2.
+
+197
+00:07:43,410 --> 00:07:45,640
+And I'll just let it
+sink in for a second.
+
+198
+00:07:45,639 --> 00:07:48,649
+You guys kind of
+take a look at it.
+
+199
+00:07:48,649 --> 00:07:49,149
+All right.
+
+200
+00:07:49,149 --> 00:07:52,169
+Now before we say what
+this actually does,
+
+201
+00:07:52,170 --> 00:07:54,860
+let's talk about the syntax
+because that's important.
+
+202
+00:07:54,860 --> 00:07:55,977
+What's happening?
+
+203
+00:07:55,976 --> 00:07:57,810
+Some of you might be
+looking at this saying,
+
+204
+00:07:57,810 --> 00:07:58,939
+is the Dart version?
+
+205
+00:07:58,939 --> 00:07:59,699
+Is this Java?
+
+206
+00:07:59,699 --> 00:08:00,988
+Is this GWT back?
+
+207
+00:08:00,988 --> 00:08:02,529
+I'm not really sure
+what's happening.
+
+208
+00:08:02,529 --> 00:08:04,589
+So trust me, GWT is not back.
+
+209
+00:08:04,589 --> 00:08:06,399
+This is AtScript.
+
+210
+00:08:06,399 --> 00:08:10,799
+And AtScript is
+really not too much.
+
+211
+00:08:10,800 --> 00:08:13,770
+It provides syntactical sugar
+for metadata annotations,
+
+212
+00:08:13,769 --> 00:08:16,949
+which is this @ sign right
+here, that @ component,
+
+213
+00:08:16,949 --> 00:08:17,762
+that's AtScript.
+
+214
+00:08:17,762 --> 00:08:19,470
+If you wondered what
+AtScript stands for,
+
+215
+00:08:19,470 --> 00:08:23,260
+it's literally just @
+script, AtScript, so nothing
+
+216
+00:08:23,259 --> 00:08:25,279
+too special.
+
+217
+00:08:25,279 --> 00:08:26,759
+So something to
+know about AtScript
+
+218
+00:08:26,759 --> 00:08:28,819
+is it's not here to
+replace JavaScript.
+
+219
+00:08:28,819 --> 00:08:30,219
+It's not the intention.
+
+220
+00:08:30,220 --> 00:08:33,370
+It's merely syntactical
+sugar on top of ES6.
+
+221
+00:08:33,370 --> 00:08:35,210
+It also does types,
+but we're not even
+
+222
+00:08:35,210 --> 00:08:38,150
+going to talk about
+types because it's not
+
+223
+00:08:38,149 --> 00:08:39,579
+required with AtScript.
+
+224
+00:08:39,580 --> 00:08:40,960
+Another cool thing
+about AtScript
+
+225
+00:08:40,960 --> 00:08:45,590
+is the Angular team is
+working with TypeScript, V8,
+
+226
+00:08:45,590 --> 00:08:48,530
+and a bunch of other people
+to get this actually worked
+
+227
+00:08:48,529 --> 00:08:50,899
+into a proposal for
+the TC39 committee.
+
+228
+00:08:50,899 --> 00:08:53,220
+So putting this towards
+the future of JavaScript.
+
+229
+00:08:53,220 --> 00:08:56,120
+(null)
+
+230
+00:08:56,120 --> 00:08:57,995
+Another thing about
+AtScript is you may say,
+
+231
+00:08:57,995 --> 00:08:59,370
+that's cool and
+all, but I really
+
+232
+00:08:59,370 --> 00:09:01,470
+don't want to write
+any of this new stuff.
+
+233
+00:09:01,470 --> 00:09:04,460
+Well, AtScript compiles
+to ES5, so you can still
+
+234
+00:09:04,460 --> 00:09:06,850
+write all the JavaScript
+code that you know today.
+
+235
+00:09:06,850 --> 00:09:08,129
+It's not required at all.
+
+236
+00:09:08,129 --> 00:09:12,120
+And like I said, types are
+completely optional as well.
+
+237
+00:09:12,120 --> 00:09:12,620
+All right.
+
+238
+00:09:12,620 --> 00:09:14,058
+So back to the component.
+
+239
+00:09:14,058 --> 00:09:16,350
+So we're going to focus on
+what this actually does now.
+
+240
+00:09:16,350 --> 00:09:18,470
+And now that we know the
+TypeScript's not scary,
+
+241
+00:09:18,470 --> 00:09:22,129
+syntactical sugar on top of ES6.
+
+242
+00:09:22,129 --> 00:09:25,090
+So this whole thing
+is called a component.
+
+243
+00:09:25,090 --> 00:09:27,139
+And a component is
+how we structure
+
+244
+00:09:27,139 --> 00:09:28,669
+and reason about our UI.
+
+245
+00:09:28,669 --> 00:09:32,969
+An entire Angular application
+is just a tree of components.
+
+246
+00:09:32,970 --> 00:09:35,509
+And as you can see we
+have the first part
+
+247
+00:09:35,509 --> 00:09:38,939
+of the component, which is
+the metadata annotation @
+
+248
+00:09:38,940 --> 00:09:40,270
+component.
+
+249
+00:09:40,269 --> 00:09:42,779
+And this describes
+what our component is.
+
+250
+00:09:42,779 --> 00:09:45,990
+So we have the selector,
+which is the actual HTML
+
+251
+00:09:45,990 --> 00:09:49,019
+tag that will be this component.
+
+252
+00:09:49,019 --> 00:09:51,129
+And then we have
+the template, which
+
+253
+00:09:51,129 --> 00:09:53,509
+excuse the template config,
+this is some of the stuff
+
+254
+00:09:53,509 --> 00:09:55,059
+that you'll see changing.
+
+255
+00:09:55,059 --> 00:09:56,669
+And then within
+there is the URL,
+
+256
+00:09:56,669 --> 00:09:58,519
+so where my template
+actually lives.
+
+257
+00:09:58,519 --> 00:10:00,289
+So within this
+Component annotation
+
+258
+00:10:00,289 --> 00:10:04,929
+I can say simply, all
+right, this is the selector,
+
+259
+00:10:04,929 --> 00:10:06,263
+this is where my template lives.
+
+260
+00:10:06,264 --> 00:10:07,971
+There's a lot more
+that can be done here,
+
+261
+00:10:07,971 --> 00:10:09,960
+but this is pretty
+much the bare minimum
+
+262
+00:10:09,960 --> 00:10:12,850
+you can get going for
+creating a component.
+
+263
+00:10:12,850 --> 00:10:14,730
+And the second
+part is the class.
+
+264
+00:10:14,730 --> 00:10:16,830
+Now a class, this
+is not AtScript.
+
+265
+00:10:16,830 --> 00:10:18,340
+This is ES6.
+
+266
+00:10:18,340 --> 00:10:22,740
+And within the class we call
+this the Component controller.
+
+267
+00:10:22,740 --> 00:10:25,320
+So we have a component and you
+have a Component controller,
+
+268
+00:10:25,320 --> 00:10:27,560
+or a Component annotation
+and a Component controller.
+
+269
+00:10:27,559 --> 00:10:29,229
+Component annotation,
+like I said,
+
+270
+00:10:29,230 --> 00:10:32,950
+tells you everything about how
+your component gets wired up.
+
+271
+00:10:32,950 --> 00:10:35,680
+The controller is what
+your template reads from.
+
+272
+00:10:35,679 --> 00:10:38,359
+So how we used to attach things
+to scope or use controller
+
+273
+00:10:38,360 --> 00:10:42,700
+as syntax, we don't have to
+attach any of these things
+
+274
+00:10:42,700 --> 00:10:43,200
+anymore.
+
+275
+00:10:43,200 --> 00:10:44,509
+It just automatically happens.
+
+276
+00:10:44,509 --> 00:10:47,879
+The templates are self reading
+from this Component controller.
+
+277
+00:10:47,879 --> 00:10:50,879
+So within a template
+I can say todos
+
+278
+00:10:50,879 --> 00:10:52,759
+and I know that it's
+my components todos.
+
+279
+00:10:52,759 --> 00:10:54,330
+And it's the two items.
+
+280
+00:10:54,330 --> 00:10:59,040
+So I could say todos that
+length and I could bind to that.
+
+281
+00:10:59,039 --> 00:11:01,099
+So one more time
+and all together.
+
+282
+00:11:01,100 --> 00:11:05,470
+We have Component annotation and
+we have a Component controller.
+
+283
+00:11:05,470 --> 00:11:07,884
+And together this
+makes one component.
+
+284
+00:11:07,884 --> 00:11:08,884
+Those are the two parts.
+
+285
+00:11:08,884 --> 00:11:11,759
+(null)
+
+286
+00:11:11,759 --> 00:11:15,850
+So now we understand briefly
+how we create components.
+
+287
+00:11:15,850 --> 00:11:17,257
+It's two simple steps.
+
+288
+00:11:17,256 --> 00:11:19,589
+But we need to understand how
+do we get this on the page
+
+289
+00:11:19,590 --> 00:11:22,090
+because that's the end goal
+of all of what development is,
+
+290
+00:11:22,090 --> 00:11:24,716
+get something to
+appear on the page.
+
+291
+00:11:24,716 --> 00:11:26,799
+So the current bootstrapping
+process in Angular 1.
+
+292
+00:11:26,799 --> 00:11:31,509
+We have Angular dot module
+and we specifier our app name.
+
+293
+00:11:31,509 --> 00:11:35,600
+Then we have to wire up
+ng-app and specify that also
+
+294
+00:11:35,600 --> 00:11:36,700
+with the app name.
+
+295
+00:11:36,700 --> 00:11:39,980
+And then we create a controller,
+attach things to $scope.
+
+296
+00:11:39,980 --> 00:11:42,542
+And then we have to
+say the ng-controller.
+
+297
+00:11:42,542 --> 00:11:44,000
+And you can do
+ng-view, but this is
+
+298
+00:11:44,000 --> 00:11:46,470
+just one of the simpler
+ways of getting it set up.
+
+299
+00:11:46,470 --> 00:11:49,529
+And specify the template.
+
+300
+00:11:49,529 --> 00:11:52,209
+And this is roughly six steps.
+
+301
+00:11:52,210 --> 00:11:54,590
+Like we said, Create
+Module, ng-app,
+
+302
+00:11:54,590 --> 00:11:57,930
+create controller, attach items
+to $scope, Declare Controller,
+
+303
+00:11:57,929 --> 00:11:58,906
+Create Template.
+
+304
+00:11:58,907 --> 00:12:01,490
+And each one of these things is
+probably only one to two lines
+
+305
+00:12:01,490 --> 00:12:03,649
+of code each, but they're
+very dependent on each other.
+
+306
+00:12:03,649 --> 00:12:05,389
+If you misspell the
+app name, it blows up.
+
+307
+00:12:05,389 --> 00:12:06,689
+If you get forget
+ng-app, you kind of
+
+308
+00:12:06,690 --> 00:12:08,920
+refresh the page over and
+over again asking yourself,
+
+309
+00:12:08,919 --> 00:12:10,209
+why is this happening.
+
+310
+00:12:10,210 --> 00:12:13,540
+And then you realize you
+forgot the directive.
+
+311
+00:12:13,539 --> 00:12:18,159
+In Angular2 this is
+a lot more simple.
+
+312
+00:12:18,159 --> 00:12:20,569
+This essentially is your
+bootstrapping process.
+
+313
+00:12:20,570 --> 00:12:22,810
+We already know how
+we create component.
+
+314
+00:12:22,809 --> 00:12:25,934
+So @Component, and then we can
+say export class component,
+
+315
+00:12:25,934 --> 00:12:28,059
+which essentially means
+give this out to the world.
+
+316
+00:12:28,059 --> 00:12:30,769
+This is ES6 syntax as well.
+
+317
+00:12:30,769 --> 00:12:35,629
+And then down here we have more
+ES6 syntax where we bootstrap.
+
+318
+00:12:35,629 --> 00:12:37,590
+So we import Bootstrap
+from angular,
+
+319
+00:12:37,590 --> 00:12:39,820
+because Bootstrap is a
+function provided by Angular,
+
+320
+00:12:39,820 --> 00:12:41,760
+so it's a manual
+bootstrapping process.
+
+321
+00:12:41,759 --> 00:12:44,819
+And then we import the Todo app
+that we exported out from here.
+
+322
+00:12:44,820 --> 00:12:47,930
+And then we say,
+Bootstrap, this Todo app.
+
+323
+00:12:47,929 --> 00:12:50,949
+And that essentially
+is your process.
+
+324
+00:12:50,950 --> 00:12:53,730
+The only other thing that I
+have sneakily not included
+
+325
+00:12:53,730 --> 00:12:54,800
+is the template.
+
+326
+00:12:54,799 --> 00:12:58,240
+So you'll need a template, which
+is URL slash Todo slash html,
+
+327
+00:12:58,240 --> 00:13:00,379
+but we're going to get into
+template syntax in just
+
+328
+00:13:00,379 --> 00:13:02,755
+a second.
+
+329
+00:13:02,755 --> 00:13:05,129
+So there is one little piece
+that I didn't mention though
+
+330
+00:13:05,129 --> 00:13:07,325
+and that is the ES6 to
+AtScript compilation.
+
+331
+00:13:07,325 --> 00:13:08,950
+If you're using ES6
+or AtScript, that's
+
+332
+00:13:08,950 --> 00:13:11,290
+going to run in any
+modern browser right now.
+
+333
+00:13:11,289 --> 00:13:15,039
+So you'll have to use your
+favorite ES6 compiler.
+
+334
+00:13:15,039 --> 00:13:17,259
+Traceur works very
+well with AtScript.
+
+335
+00:13:17,259 --> 00:13:21,049
+It has experimental options
+that allow you to specify that.
+
+336
+00:13:21,049 --> 00:13:23,219
+And it actually
+works in the browser,
+
+337
+00:13:23,220 --> 00:13:26,129
+which the TodoMVC
+app uses no CLI.
+
+338
+00:13:26,129 --> 00:13:28,379
+It all works in browser.
+
+339
+00:13:28,379 --> 00:13:30,730
+And right now you
+have to use systemjs
+
+340
+00:13:30,730 --> 00:13:35,779
+to import these modules as
+sort of a module loading shim,
+
+341
+00:13:35,779 --> 00:13:38,730
+but right now we're working
+on sort of a key turn solution
+
+342
+00:13:38,730 --> 00:13:42,430
+where you don't have to worry
+about the crazy ES6 module
+
+343
+00:13:42,429 --> 00:13:45,539
+loading world.
+
+344
+00:13:45,539 --> 00:13:48,419
+So we saw the six steps
+before, but now it's just four.
+
+345
+00:13:48,419 --> 00:13:51,035
+And hopefully number
+four goes away one day
+
+346
+00:13:51,035 --> 00:13:52,659
+because it's just
+the bridge to writing
+
+347
+00:13:52,659 --> 00:13:54,730
+the code we want to
+write for tomorrow.
+
+348
+00:13:54,730 --> 00:13:58,600
+So we create a component,
+give it a template, bootstrap.
+
+349
+00:13:58,600 --> 00:14:01,180
+And sadly, transpile
+until that goes away.
+
+350
+00:14:01,179 --> 00:14:05,459
+And if you write ES5 code you
+don't have to transpile at all.
+
+351
+00:14:05,460 --> 00:14:08,100
+So it's a much more
+simple model for getting
+
+352
+00:14:08,100 --> 00:14:11,271
+started with your Angular app.
+
+353
+00:14:11,270 --> 00:14:11,769
+All right.
+
+354
+00:14:11,769 --> 00:14:14,740
+So we've talked about
+creating a component and how
+
+355
+00:14:14,740 --> 00:14:17,019
+we get it to appear on a page.
+
+356
+00:14:17,019 --> 00:14:20,139
+But now we have new
+templates syntax.
+
+357
+00:14:20,139 --> 00:14:22,350
+Now, I threw a lot of
+new code at you again.
+
+358
+00:14:22,350 --> 00:14:26,100
+So I'm going to give you all
+a second to let this sink in.
+
+359
+00:14:26,100 --> 00:14:28,259
+Where we were creating
+the component,
+
+360
+00:14:28,259 --> 00:14:30,944
+the code block below
+is its templates.
+
+361
+00:14:30,945 --> 00:14:35,891
+(null)
+
+362
+00:14:35,890 --> 00:14:36,389
+All right.
+
+363
+00:14:36,389 --> 00:14:40,789
+So now that I think you guys
+have looked at it a little bit,
+
+364
+00:14:40,789 --> 00:14:42,569
+we have this
+template right here.
+
+365
+00:14:42,570 --> 00:14:45,780
+And essentially this component
+is called name-change.
+
+366
+00:14:45,779 --> 00:14:48,500
+All it does is just
+changes a name.
+
+367
+00:14:48,500 --> 00:14:51,409
+We type into a text box,
+we click Enter, and then
+
+368
+00:14:51,409 --> 00:14:52,669
+that updates.
+
+369
+00:14:52,669 --> 00:14:55,620
+And as you can see right
+here we have the div
+
+370
+00:14:55,620 --> 00:14:58,399
+that displays the name, the
+text box, and the button.
+
+371
+00:14:58,399 --> 00:15:00,480
+You recognize the curlies,
+but what you probably
+
+372
+00:15:00,480 --> 00:15:05,070
+don't recognize is the
+pound sign, the brackets,
+
+373
+00:15:05,070 --> 00:15:06,560
+and the parentheses.
+
+374
+00:15:06,559 --> 00:15:09,799
+So I'm going to go through
+each one of these one by one.
+
+375
+00:15:09,799 --> 00:15:13,939
+So sort of a new concept in
+Angular2 is Local Variables.
+
+376
+00:15:13,940 --> 00:15:16,409
+And this is something that
+I was kind of geeking out
+
+377
+00:15:16,408 --> 00:15:17,700
+when I first starting using it.
+
+378
+00:15:17,700 --> 00:15:18,920
+I was like, oh my gosh.
+
+379
+00:15:18,919 --> 00:15:21,009
+I can't believe this
+actually exists.
+
+380
+00:15:21,009 --> 00:15:23,250
+And what you can do
+here is by you saying,
+
+381
+00:15:23,250 --> 00:15:26,009
+pound sign on this text
+box, it gives me a handle.
+
+382
+00:15:26,009 --> 00:15:29,545
+So it's now Local Variable
+to just the template.
+
+383
+00:15:29,546 --> 00:15:31,670
+It doesn't bleed out into
+the $scope anywhere else.
+
+384
+00:15:31,669 --> 00:15:33,365
+It just lives inside
+your template.
+
+385
+00:15:33,365 --> 00:15:34,990
+And I can actually
+bind it to the page.
+
+386
+00:15:34,990 --> 00:15:36,919
+So I say, newname.value
+and that's
+
+387
+00:15:36,919 --> 00:15:39,149
+the property of that input.
+
+388
+00:15:39,149 --> 00:15:43,275
+So if I change the value,
+it changes on the page.
+
+389
+00:15:43,275 --> 00:15:46,529
+And where this comes in
+handy is with Event Handlers.
+
+390
+00:15:46,529 --> 00:15:48,429
+And that's where we
+saw the parentheses.
+
+391
+00:15:48,429 --> 00:15:50,259
+So you see parentheses click.
+
+392
+00:15:50,259 --> 00:15:52,259
+And we say click
+equals changeName
+
+393
+00:15:52,259 --> 00:15:55,850
+and that is a function on
+my Component controller.
+
+394
+00:15:55,850 --> 00:15:58,899
+And from there I can pass in
+the event that was clicked on.
+
+395
+00:15:58,899 --> 00:16:02,779
+And then I also can say
+newname.value and that
+
+396
+00:16:02,779 --> 00:16:07,209
+passes that back into my
+Component controller method.
+
+397
+00:16:07,210 --> 00:16:11,070
+So in just two lines of HTML
+I've created a Local Variable
+
+398
+00:16:11,070 --> 00:16:12,500
+and I've passed its value.
+
+399
+00:16:12,500 --> 00:16:13,529
+It's very declarative.
+
+400
+00:16:13,529 --> 00:16:16,360
+I don't have to say
+[INAUDIBLE], getElementById.
+
+401
+00:16:16,360 --> 00:16:19,039
+I don't have to do
+anything to find it.
+
+402
+00:16:19,039 --> 00:16:20,949
+It's very easy to look
+at this and reason
+
+403
+00:16:20,950 --> 00:16:24,930
+that I am grabbing the
+value when I click a button.
+
+404
+00:16:24,929 --> 00:16:27,109
+And lastly with the
+array bracket syntax
+
+405
+00:16:27,110 --> 00:16:28,659
+is Property Bindings.
+
+406
+00:16:28,659 --> 00:16:32,870
+Now we're used to binding
+to attributes in Angular 1.
+
+407
+00:16:32,870 --> 00:16:34,769
+But in Angular2, this
+is a bit different.
+
+408
+00:16:34,769 --> 00:16:37,100
+Rather than binding
+to attributes
+
+409
+00:16:37,100 --> 00:16:40,120
+we're binding to actual
+properties of a DOM element.
+
+410
+00:16:40,120 --> 00:16:43,190
+So if you were to write
+document.getElementByID
+
+411
+00:16:43,190 --> 00:16:47,059
+for a span you could say
+whatever the span handle
+
+412
+00:16:47,058 --> 00:16:49,600
+is dot text content, and that
+will tell you whatever the text
+
+413
+00:16:49,600 --> 00:16:50,340
+[INAUDIBLE] time.
+
+414
+00:16:50,340 --> 00:16:53,560
+There's no such thing as
+a text content attribute.
+
+415
+00:16:53,559 --> 00:16:57,769
+So from here I'm binding to
+properties, not attributes.
+
+416
+00:16:57,769 --> 00:16:59,740
+So now when I update
+this text box,
+
+417
+00:16:59,740 --> 00:17:02,840
+I can say whenever the
+newname.value changes
+
+418
+00:17:02,840 --> 00:17:05,259
+I'm going to update it to
+the text content of the span.
+
+419
+00:17:05,259 --> 00:17:07,842
+(null)
+
+420
+00:17:07,842 --> 00:17:09,300
+So we'll look at
+this one more time
+
+421
+00:17:09,299 --> 00:17:11,596
+and so we can reason
+about what's going on.
+
+422
+00:17:11,596 --> 00:17:13,970
+We know that we're displaying
+the name from the Component
+
+423
+00:17:13,970 --> 00:17:16,440
+controller because we
+have our name property.
+
+424
+00:17:16,440 --> 00:17:18,349
+And then down here
+we have a text box,
+
+425
+00:17:18,348 --> 00:17:21,059
+which we gave the Local
+Variable of newname.
+
+426
+00:17:21,059 --> 00:17:22,649
+When this button
+is clicked, which
+
+427
+00:17:22,650 --> 00:17:24,430
+we know because of
+the parentheses,
+
+428
+00:17:24,430 --> 00:17:26,560
+we call the function
+changeName, which
+
+429
+00:17:26,559 --> 00:17:28,409
+is inside of our
+Component controller.
+
+430
+00:17:28,410 --> 00:17:31,180
+And we pass that
+the newname.value,
+
+431
+00:17:31,180 --> 00:17:32,490
+which our changeName does.
+
+432
+00:17:32,490 --> 00:17:33,980
+It expects a new name.
+
+433
+00:17:33,980 --> 00:17:37,089
+And then we just simply say
+this dot name equals new name
+
+434
+00:17:37,089 --> 00:17:38,329
+and our name gets updated.
+
+435
+00:17:38,329 --> 00:17:42,809
+(null)
+
+436
+00:17:42,809 --> 00:17:44,579
+And one of the
+really great benefits
+
+437
+00:17:44,579 --> 00:17:47,009
+of using this new
+syntax is uniformity.
+
+438
+00:17:47,009 --> 00:17:49,359
+Whenever I'm declaring
+an Event Handler
+
+439
+00:17:49,359 --> 00:17:51,349
+I know I just need to
+use the parentheses.
+
+440
+00:17:51,349 --> 00:17:53,349
+And any type of event
+can fit in there.
+
+441
+00:17:53,349 --> 00:17:56,869
+So if we want to do a
+mouseover, a double-click,
+
+442
+00:17:56,869 --> 00:17:58,619
+I can use this
+front end developer
+
+443
+00:17:58,619 --> 00:18:00,979
+knowledge I know about,
+all these DOM events,
+
+444
+00:18:00,980 --> 00:18:03,460
+and I just need to know
+the syntax for Angular2.
+
+445
+00:18:03,460 --> 00:18:06,549
+I don't have to worry about
+knowing about the ng click
+
+446
+00:18:06,549 --> 00:18:09,799
+directive, or the ng
+model, or ng double-click.
+
+447
+00:18:09,799 --> 00:18:14,309
+There's no one-to-one directive
+to event ratio anymore.
+
+448
+00:18:14,309 --> 00:18:15,980
+This works for all
+events, including
+
+449
+00:18:15,980 --> 00:18:18,852
+custom events on Web Components.
+
+450
+00:18:18,852 --> 00:18:20,310
+And then we also
+know that whenever
+
+451
+00:18:20,309 --> 00:18:23,683
+we want to bind to a property we
+just use array bracket syntax.
+
+452
+00:18:23,683 --> 00:18:25,099
+So [INAUDIBLE] I
+was saying, there
+
+453
+00:18:25,099 --> 00:18:28,250
+was always the difference
+between ng model, ng click.
+
+454
+00:18:28,250 --> 00:18:31,569
+You had to really know what
+that directive did to use it.
+
+455
+00:18:31,569 --> 00:18:33,539
+And then now I know
+what a property is.
+
+456
+00:18:33,539 --> 00:18:34,579
+I know this syntax.
+
+457
+00:18:34,579 --> 00:18:36,519
+I know I'm binding to
+that syntax right away.
+
+458
+00:18:36,519 --> 00:18:39,099
+There's no just diving
+into the documentation,
+
+459
+00:18:39,099 --> 00:18:41,419
+seeing what are the
+side effects of this.
+
+460
+00:18:41,420 --> 00:18:46,340
+Just by knowing the syntax,
+it's easy to reason about.
+
+461
+00:18:46,339 --> 00:18:48,759
+But what this also does,
+it provides us flexibility.
+
+462
+00:18:48,759 --> 00:18:51,289
+So when we create Web Components
+one of the great new things
+
+463
+00:18:51,289 --> 00:18:53,200
+about that is you can
+create custom events.
+
+464
+00:18:53,200 --> 00:18:55,490
+So I could create a Web
+Component that fires out a name
+
+465
+00:18:55,490 --> 00:18:57,849
+change event, but
+the problem with that
+
+466
+00:18:57,849 --> 00:19:01,583
+is that I now have to create
+an ng-name-change event.
+
+467
+00:19:01,584 --> 00:19:03,250
+And that's what this
+top thing is doing.
+
+468
+00:19:03,250 --> 00:19:04,730
+It's from Angular 1.
+
+469
+00:19:04,730 --> 00:19:06,960
+So now I've got to say
+ng-name-change and write
+
+470
+00:19:06,960 --> 00:19:08,269
+the directive for that.
+
+471
+00:19:08,269 --> 00:19:09,940
+But in Angular2 I
+won't have to do that.
+
+472
+00:19:09,940 --> 00:19:12,395
+I know I have a brand
+new name change event.
+
+473
+00:19:12,395 --> 00:19:14,019
+So I just pass it
+into the parentheses.
+
+474
+00:19:14,019 --> 00:19:15,170
+I don't create a directive.
+
+475
+00:19:15,170 --> 00:19:16,310
+I don't do anything at all.
+
+476
+00:19:16,309 --> 00:19:17,393
+It's completely supported.
+
+477
+00:19:17,393 --> 00:19:20,829
+(null)
+
+478
+00:19:20,829 --> 00:19:24,240
+So we know how to
+create components.
+
+479
+00:19:24,240 --> 00:19:26,299
+We can bootstrap them up.
+
+480
+00:19:26,299 --> 00:19:28,500
+And we see the new
+template syntax.
+
+481
+00:19:28,500 --> 00:19:31,049
+But what happens
+when things change?
+
+482
+00:19:31,049 --> 00:19:32,442
+How does that actually happen?
+
+483
+00:19:32,442 --> 00:19:34,900
+Well, the great news is that
+you don't really have to care.
+
+484
+00:19:34,900 --> 00:19:36,280
+It kind of works magically.
+
+485
+00:19:36,279 --> 00:19:38,195
+But if you want to know
+what's under the hood,
+
+486
+00:19:38,195 --> 00:19:39,469
+and I apologize for this.
+
+487
+00:19:39,470 --> 00:19:41,690
+This doesn't come out too
+well in the resolution.
+
+488
+00:19:41,690 --> 00:19:44,382
+But this is how Angular2
+change detection works.
+
+489
+00:19:44,382 --> 00:19:46,590
+And this is, in my opinion,
+one of the coolest things
+
+490
+00:19:46,589 --> 00:19:48,699
+that I've seen while
+working with it.
+
+491
+00:19:48,700 --> 00:19:51,340
+So an Angular2 application
+is just a tree of components.
+
+492
+00:19:51,339 --> 00:19:52,929
+And this component,
+and by the way,
+
+493
+00:19:52,930 --> 00:19:57,049
+this is taken from Angular core
+teamer Vic Savkin's blog post,
+
+494
+00:19:57,049 --> 00:19:58,250
+which is really awesome.
+
+495
+00:19:58,250 --> 00:20:01,730
+So I recommend doing the
+read for more information.
+
+496
+00:20:01,730 --> 00:20:04,960
+But in this case we have an
+app component at the top.
+
+497
+00:20:04,960 --> 00:20:07,120
+And then an app
+component has a child,
+
+498
+00:20:07,119 --> 00:20:10,349
+which is a Todos component,
+which has a child of a Todo.
+
+499
+00:20:10,349 --> 00:20:15,209
+Now whenever a change
+happens it goes down one way.
+
+500
+00:20:15,210 --> 00:20:17,970
+And it starts at
+the app component,
+
+501
+00:20:17,970 --> 00:20:19,589
+and it runs change
+detection, and then
+
+502
+00:20:19,589 --> 00:20:23,259
+it can go down to each one
+of the child components.
+
+503
+00:20:23,259 --> 00:20:24,900
+And change detection
+is really smart.
+
+504
+00:20:24,900 --> 00:20:26,830
+So it works at a module level.
+
+505
+00:20:26,829 --> 00:20:31,099
+So each component only has to
+update its individual updates.
+
+506
+00:20:31,099 --> 00:20:34,199
+And also, if we do more
+advanced things, such as using
+
+507
+00:20:34,200 --> 00:20:38,430
+immutable data or observables,
+this component tree
+
+508
+00:20:38,430 --> 00:20:39,920
+can be very smart
+and say, well I'm
+
+509
+00:20:39,920 --> 00:20:42,211
+not going to update this
+because I know it's immutable.
+
+510
+00:20:42,211 --> 00:20:45,319
+So it gives you
+faster performance.
+
+511
+00:20:45,319 --> 00:20:47,730
+But you could do a
+really big talk on this.
+
+512
+00:20:47,730 --> 00:20:49,370
+And I know that Vic will be.
+
+513
+00:20:49,369 --> 00:20:53,319
+So there will be more
+information about this later.
+
+514
+00:20:53,319 --> 00:20:56,609
+So the change detection runs,
+but how does change detection
+
+515
+00:20:56,609 --> 00:20:57,659
+know to run?
+
+516
+00:20:57,660 --> 00:20:59,759
+And this is one of
+the new libraries
+
+517
+00:20:59,759 --> 00:21:01,690
+used in Angular called Zone.
+
+518
+00:21:01,690 --> 00:21:04,509
+And so Zone is kind of like
+the Professor X of Angular,
+
+519
+00:21:04,509 --> 00:21:06,410
+Professor X of JavaScript.
+
+520
+00:21:06,410 --> 00:21:08,730
+Whenever an asynchronous
+event happens
+
+521
+00:21:08,730 --> 00:21:12,120
+it just lets Angular know,
+hey, something has happened.
+
+522
+00:21:12,119 --> 00:21:13,219
+Run change detection.
+
+523
+00:21:13,220 --> 00:21:15,220
+And then so change detection
+runs and everything
+
+524
+00:21:15,220 --> 00:21:16,374
+gets updated.
+
+525
+00:21:16,374 --> 00:21:18,789
+And a good example of this,
+for those of you who have ever
+
+526
+00:21:18,789 --> 00:21:20,579
+dealt with asynchronous
+events in Angular
+
+527
+00:21:20,579 --> 00:21:23,389
+is when you have to use
+$timeout, so dollar timeout.
+
+528
+00:21:23,390 --> 00:21:25,290
+In this case this is
+some Firebase code.
+
+529
+00:21:25,289 --> 00:21:28,415
+And what I'm doing is I'm
+attaching a callback function
+
+530
+00:21:28,415 --> 00:21:30,039
+whenever something
+updates in Firebase.
+
+531
+00:21:30,039 --> 00:21:32,649
+And Angular does not know
+anything about Firebase.
+
+532
+00:21:32,650 --> 00:21:36,269
+So if I want this to be updated
+in my view I call $timeout
+
+533
+00:21:36,269 --> 00:21:39,049
+and I said, scope that user
+to snap that [? valve. ?]
+
+534
+00:21:39,049 --> 00:21:42,509
+So this is what we
+currently do in Angular 1.
+
+535
+00:21:42,509 --> 00:21:45,460
+And this isn't terribly a
+performant way of doing it
+
+536
+00:21:45,460 --> 00:21:47,250
+or an easy way to do it.
+
+537
+00:21:47,250 --> 00:21:48,809
+I pretty much spend
+most of my days
+
+538
+00:21:48,809 --> 00:21:52,009
+answering Stack Overflow
+questions about this.
+
+539
+00:21:52,009 --> 00:21:54,920
+So what's great
+about Angular2 is
+
+540
+00:21:54,920 --> 00:21:56,660
+that we don't have
+to do this anymore.
+
+541
+00:21:56,660 --> 00:21:59,009
+Change detection in
+Angular2 is much smarter.
+
+542
+00:21:59,009 --> 00:22:01,589
+Whenever this callback
+function fires off
+
+543
+00:22:01,589 --> 00:22:05,001
+Zone says, hey, by the way, this
+callback function fired off.
+
+544
+00:22:05,001 --> 00:22:07,085
+Angular says, thanks for
+letting me know about it.
+
+545
+00:22:07,085 --> 00:22:08,340
+I'm going to run
+change detection.
+
+546
+00:22:08,339 --> 00:22:10,089
+And then everything
+just sort of happens.
+
+547
+00:22:10,089 --> 00:22:12,220
+So now when we're
+writing our code that
+
+548
+00:22:12,220 --> 00:22:14,079
+lives outside of
+Angular we don't
+
+549
+00:22:14,079 --> 00:22:17,599
+have to know about digest,
+apply, timeouts, or anything
+
+550
+00:22:17,599 --> 00:22:18,289
+like that.
+
+551
+00:22:18,289 --> 00:22:19,259
+That just happens.
+
+552
+00:22:19,259 --> 00:22:21,701
+And we can go about
+writing the code,
+
+553
+00:22:21,701 --> 00:22:23,160
+writing JavaScript
+that we know how
+
+554
+00:22:23,160 --> 00:22:27,580
+to write without worrying
+about how Angular works.
+
+555
+00:22:27,579 --> 00:22:28,079
+All right.
+
+556
+00:22:28,079 --> 00:22:32,179
+So that is pretty much the
+core basic concepts of Angular.
+
+557
+00:22:32,180 --> 00:22:35,110
+So we'll take a
+look at the code.
+
+558
+00:22:35,109 --> 00:22:37,481
+All right.
+
+559
+00:22:37,481 --> 00:22:39,440
+Well, first I'm going to
+show you how it works.
+
+560
+00:22:39,440 --> 00:22:42,900
+So this is an Angular2 Todo app.
+
+561
+00:22:42,900 --> 00:22:45,300
+And like I said, this is
+pretty washed out on this one,
+
+562
+00:22:45,299 --> 00:22:48,809
+but what I can do is I can
+say, OK, what do I need to do?
+
+563
+00:22:48,809 --> 00:22:50,086
+I need to give a talk.
+
+564
+00:22:50,086 --> 00:22:51,420
+And this is written in Firebase.
+
+565
+00:22:51,420 --> 00:22:54,759
+So if I refresh the
+page, give a talk.
+
+566
+00:22:54,759 --> 00:22:56,690
+So it persists.
+
+567
+00:22:56,690 --> 00:22:59,259
+So I can do things
+like check off a list,
+
+568
+00:22:59,259 --> 00:23:02,259
+and then I can say,
+OK, clear completed.
+
+569
+00:23:02,259 --> 00:23:03,619
+And that works.
+
+570
+00:23:03,619 --> 00:23:04,949
+So it all works.
+
+571
+00:23:04,950 --> 00:23:06,985
+And when I wrote the
+Firebase piece of this,
+
+572
+00:23:06,984 --> 00:23:08,359
+I didn't write a
+single $timeout,
+
+573
+00:23:08,359 --> 00:23:09,759
+a single anything like that.
+
+574
+00:23:09,759 --> 00:23:12,269
+It was just all regular code.
+
+575
+00:23:12,269 --> 00:23:15,000
+And when we actually need to
+port the AngularFire library
+
+576
+00:23:15,000 --> 00:23:18,609
+over, it'll actually
+involve a lot less code
+
+577
+00:23:18,609 --> 00:23:22,949
+than what we need to do to
+get it to work in Angular 1.
+
+578
+00:23:22,950 --> 00:23:25,180
+So this is the source code.
+
+579
+00:23:25,180 --> 00:23:30,539
+And essentially each part--
+this Todo app is three parts.
+
+580
+00:23:30,539 --> 00:23:32,849
+We have this header,
+where the text box lives.
+
+581
+00:23:32,849 --> 00:23:36,389
+We have the main, which is
+where we render our Todos.
+
+582
+00:23:36,390 --> 00:23:38,310
+And then we have this
+footer, which gives us
+
+583
+00:23:38,309 --> 00:23:39,995
+all of these action
+items down here.
+
+584
+00:23:39,996 --> 00:23:41,370
+So we're going to
+do a little bit
+
+585
+00:23:41,369 --> 00:23:42,709
+of switching back and forth.
+
+586
+00:23:42,710 --> 00:23:45,079
+So it's easy for you guys
+to see what's going on.
+
+587
+00:23:45,079 --> 00:23:46,730
+So we'll open up the header.
+
+588
+00:23:46,730 --> 00:23:49,289
+And the way this header works
+is is the ID of new-todo
+
+589
+00:23:49,289 --> 00:23:50,629
+is just for styling.
+
+590
+00:23:50,630 --> 00:23:53,760
+And then placeholder and
+autofocus, just regular
+
+591
+00:23:53,759 --> 00:23:54,890
+attributes.
+
+592
+00:23:54,890 --> 00:23:57,960
+And with newtodo I've given
+it the local variable.
+
+593
+00:23:57,960 --> 00:24:01,480
+I say on keyup call my
+Component Controller method,
+
+594
+00:24:01,480 --> 00:24:05,160
+enterTodo with the
+event given and newtodo.
+
+595
+00:24:05,160 --> 00:24:07,500
+So now I'm going to go into
+my Component controller.
+
+596
+00:24:07,500 --> 00:24:10,099
+(null)
+
+597
+00:24:10,099 --> 00:24:13,404
+And right here we have-- where
+would I have entered todo.
+
+598
+00:24:13,404 --> 00:24:18,105
+(null)
+
+599
+00:24:18,105 --> 00:24:18,980
+AUDIENCE: [INAUDIBLE]
+
+600
+00:24:18,980 --> 00:24:19,920
+DAVID EAST: Thank you.
+
+601
+00:24:19,920 --> 00:24:20,420
+See?
+
+602
+00:24:20,420 --> 00:24:21,721
+I need you guys.
+
+603
+00:24:21,721 --> 00:24:22,220
+All right.
+
+604
+00:24:22,220 --> 00:24:24,240
+So what I do in here
+is I get that event.
+
+605
+00:24:24,240 --> 00:24:26,250
+I can say, hey, which
+key was pressed?
+
+606
+00:24:26,250 --> 00:24:29,099
+If so, call this.addTodo,
+which is another method.
+
+607
+00:24:29,099 --> 00:24:31,279
+And then I pass in
+the newTodo.value,
+
+608
+00:24:31,279 --> 00:24:32,690
+clear out the Todo.
+
+609
+00:24:32,690 --> 00:24:36,059
+And if we see addTodo
+all addTodo is calls
+
+610
+00:24:36,059 --> 00:24:40,690
+this.todoService, which is
+my AngularFire service .add
+
+611
+00:24:40,690 --> 00:24:43,650
+and sends that data
+out to Firebase.
+
+612
+00:24:43,650 --> 00:24:46,980
+So that's pretty simple.
+
+613
+00:24:46,980 --> 00:24:49,519
+So we'll go and look
+at the body now.
+
+614
+00:24:49,519 --> 00:24:51,479
+So look at the main piece.
+
+615
+00:24:51,479 --> 00:24:53,269
+And we have right here,
+we have the ability
+
+616
+00:24:53,269 --> 00:24:54,970
+to say click toggleAll.
+
+617
+00:24:54,970 --> 00:24:57,539
+So when I say toggleAll
+I check to see
+
+618
+00:24:57,539 --> 00:24:59,059
+if the checkbox is checked.
+
+619
+00:24:59,059 --> 00:25:02,971
+If it's not, toggle all
+of them, untoggle them.
+
+620
+00:25:02,971 --> 00:25:04,930
+And then inside here we
+have a new little piece
+
+621
+00:25:04,930 --> 00:25:06,840
+that I didn't have
+any slides on,
+
+622
+00:25:06,839 --> 00:25:08,699
+but it's definitely
+worth talking about.
+
+623
+00:25:08,700 --> 00:25:11,630
+We have this bang forEach.
+
+624
+00:25:11,630 --> 00:25:15,160
+And this is the replacement
+syntax for ng repeat.
+
+625
+00:25:15,160 --> 00:25:19,050
+So now we can say bang
+forEach, local Variable Todo,
+
+626
+00:25:19,049 --> 00:25:21,930
+in the list of Todos.
+
+627
+00:25:21,930 --> 00:25:27,281
+Inside of here is what will be
+repeated, so each list item.
+
+628
+00:25:27,280 --> 00:25:29,029
+And then from in here
+you can see actually
+
+629
+00:25:29,029 --> 00:25:31,139
+where we're binding to class.
+
+630
+00:25:31,140 --> 00:25:33,222
+We can get even more
+specific to that.
+
+631
+00:25:33,221 --> 00:25:34,680
+Rather than just
+binding to a class
+
+632
+00:25:34,680 --> 00:25:36,519
+we can bind to a specific class.
+
+633
+00:25:36,519 --> 00:25:41,289
+So class.hidden is equal
+if the current Todo that's
+
+634
+00:25:41,289 --> 00:25:45,359
+being rendered is the Todo
+that's also being edited.
+
+635
+00:25:45,359 --> 00:25:48,359
+And just like as you
+see in the slides
+
+636
+00:25:48,359 --> 00:25:51,039
+we can bind to the click,
+or binding to check.
+
+637
+00:25:51,039 --> 00:25:53,690
+And then we're also
+binding to double-click.
+
+638
+00:25:53,690 --> 00:25:55,410
+So this all is very
+uniform syntax.
+
+639
+00:25:55,410 --> 00:25:59,470
+(null)
+
+640
+00:25:59,470 --> 00:26:01,910
+And then down here I
+actually completed this code.
+
+641
+00:26:01,910 --> 00:26:03,670
+I didn't actually
+want this to be done.
+
+642
+00:26:03,670 --> 00:26:06,410
+So we'll pretend like
+that's not there.
+
+643
+00:26:06,410 --> 00:26:08,641
+And now that that
+was never there,
+
+644
+00:26:08,641 --> 00:26:10,390
+if we wanted to add a
+click event to clear
+
+645
+00:26:10,390 --> 00:26:12,098
+all of the completed
+ones, we say, click.
+
+646
+00:26:12,097 --> 00:26:15,470
+(null)
+
+647
+00:26:15,470 --> 00:26:18,250
+We say that it's
+clear completed.
+
+648
+00:26:18,250 --> 00:26:21,299
+Now we go into our Todo
+Component controller.
+
+649
+00:26:21,299 --> 00:26:23,680
+This method down here at the
+bottom is clear completed.
+
+650
+00:26:23,680 --> 00:26:25,230
+It just gathers
+all the Todos that
+
+651
+00:26:25,230 --> 00:26:26,769
+have been marked as completed.
+
+652
+00:26:26,769 --> 00:26:28,609
+And then it sends it
+off to the Todo servers
+
+653
+00:26:28,609 --> 00:26:30,399
+to clear all of them.
+
+654
+00:26:30,400 --> 00:26:38,060
+And so from there when I check
+things off, clear completed,
+
+655
+00:26:38,059 --> 00:26:38,559
+it works.
+
+656
+00:26:38,559 --> 00:26:41,089
+So it's very simple
+to reason about
+
+657
+00:26:41,089 --> 00:26:43,139
+what's an event, what's
+being clicked on,
+
+658
+00:26:43,140 --> 00:26:45,290
+and how I can actually
+get the values to pass
+
+659
+00:26:45,289 --> 00:26:48,481
+into these events.
+
+660
+00:26:48,481 --> 00:26:48,981
+All right.
+
+661
+00:26:48,981 --> 00:26:53,240
+(null)
+
+662
+00:26:53,240 --> 00:26:55,079
+So that's what we
+have for you today.
+
+663
+00:26:55,079 --> 00:26:57,329
+We are going to be able to
+answer a lot more questions
+
+664
+00:26:57,329 --> 00:26:59,269
+because I'm sure you have a few.
+
+665
+00:26:59,269 --> 00:27:00,779
+There is no documentation yet.
+
+666
+00:27:00,779 --> 00:27:02,149
+And so you can throw that at me.
+
+667
+00:27:02,150 --> 00:27:04,110
+I just said, I'm responsible
+for documentation.
+
+668
+00:27:04,109 --> 00:27:06,549
+I tell you there's
+no documentation.
+
+669
+00:27:06,549 --> 00:27:08,000
+I actually have
+something planned
+
+670
+00:27:08,000 --> 00:27:11,029
+that'll be out probably
+within a week or two
+
+671
+00:27:11,029 --> 00:27:12,589
+that will be pretty cool.
+
+672
+00:27:12,589 --> 00:27:16,049
+And it'll cover pretty
+much this information
+
+673
+00:27:16,049 --> 00:27:20,509
+in an interactive
+tutorial format.
+
+674
+00:27:20,509 --> 00:27:22,609
+If you want to check
+out the code for this
+
+675
+00:27:22,609 --> 00:27:23,539
+that will be posted.
+
+676
+00:27:23,539 --> 00:27:25,730
+There's a GitHub repo for that.
+
+677
+00:27:25,730 --> 00:27:29,779
+And ng-conf is going to be
+very much Angular2 centric.
+
+678
+00:27:29,779 --> 00:27:31,875
+So all of these advanced
+things, all of the stuff
+
+679
+00:27:31,875 --> 00:27:34,000
+that I wasn't even able to
+talk to you about today,
+
+680
+00:27:34,000 --> 00:27:36,400
+like routing and
+dependency injection,
+
+681
+00:27:36,400 --> 00:27:39,160
+that stuff's going to be
+talked a lot more at ng-conf.
+
+682
+00:27:39,160 --> 00:27:41,019
+So there's a lot more
+to be excited about.
+
+683
+00:27:41,019 --> 00:27:45,019
+And we'll be at [? NPM ?] soon.
+
+684
+00:27:45,019 --> 00:27:46,609
+So that'll be cool, too.
+
+685
+00:27:46,609 --> 00:27:47,899
+So all right.
+
+686
+00:27:47,900 --> 00:27:48,680
+That's what I got.
+
+687
+00:27:48,680 --> 00:27:50,782
+If you've got any questions.
+
+688
+00:27:50,781 --> 00:27:53,758
+[APPLAUSE]
+
+689
+00:27:53,758 --> 00:27:54,614
+(null)
+
+690
+00:27:54,614 --> 00:27:56,779
+BRAD GREEN: David, why don't
+you just stay up there.
+
+691
+00:27:56,779 --> 00:28:00,539
+Misko, can you come up?
+
+692
+00:28:00,539 --> 00:28:04,170
+And I will run the
+microphone around.
+
+693
+00:28:04,170 --> 00:28:06,596
+And yeah, why don't
+you come up too, Naomi,
+
+694
+00:28:06,596 --> 00:28:07,430
+if you would please?
+
+695
+00:28:07,430 --> 00:28:11,380
+(null)
+
+696
+00:28:11,380 --> 00:28:12,720
+Questions.
+
+697
+00:28:12,720 --> 00:28:14,700
+Everybody's flabbergasted
+at the new syntax.
+
+698
+00:28:14,700 --> 00:28:15,240
+I understand.
+
+699
+00:28:15,240 --> 00:28:21,509
+(null)
+
+700
+00:28:21,509 --> 00:28:22,009
+Yes?
+
+701
+00:28:22,009 --> 00:28:24,175
+Question here.
+
+702
+00:28:24,175 --> 00:28:26,049
+AUDIENCE: What are the
+functional differences
+
+703
+00:28:26,049 --> 00:28:28,460
+between Local
+Variables and ng model?
+
+704
+00:28:28,460 --> 00:28:31,840
+So is a Local Variable available
+from the actual business logic?
+
+705
+00:28:31,839 --> 00:28:38,299
+(null)
+
+706
+00:28:38,299 --> 00:28:39,674
+MISKO: So the
+question is what is
+
+707
+00:28:39,674 --> 00:28:44,109
+the difference between a
+Local Variable and ng model.
+
+708
+00:28:44,109 --> 00:28:46,539
+So unfortunately what
+this demo did not show
+
+709
+00:28:46,539 --> 00:28:49,250
+is there's going to
+be support for forms.
+
+710
+00:28:49,250 --> 00:28:52,069
+And so David
+cheated a little bit
+
+711
+00:28:52,069 --> 00:28:55,000
+by simply binding to events,
+and getting the data out
+
+712
+00:28:55,000 --> 00:28:56,710
+of the input elements that way.
+
+713
+00:28:56,710 --> 00:28:59,410
+So the forms are the
+replacement for ng model.
+
+714
+00:28:59,410 --> 00:29:01,930
+And at the end of
+the day, really it
+
+715
+00:29:01,930 --> 00:29:05,000
+should be as simple as changing
+the syntax from ng model
+
+716
+00:29:05,000 --> 00:29:05,809
+to something else.
+
+717
+00:29:05,809 --> 00:29:07,269
+It's going to be some
+semantic changes.
+
+718
+00:29:07,269 --> 00:29:09,289
+But fundamentally it's going
+to work very similarly.
+
+719
+00:29:09,289 --> 00:29:10,413
+You're not going to see it.
+
+720
+00:29:10,413 --> 00:29:12,059
+The reason for the
+change is because we
+
+721
+00:29:12,059 --> 00:29:14,039
+want to make sure
+that we can retain
+
+722
+00:29:14,039 --> 00:29:15,789
+this directed acyclic graph.
+
+723
+00:29:15,789 --> 00:29:18,559
+And we have to make sure that
+any reverse bindings, in order
+
+724
+00:29:18,559 --> 00:29:20,369
+to get the full
+circle going, has
+
+725
+00:29:20,369 --> 00:29:22,449
+to execute before
+the change detection.
+
+726
+00:29:22,450 --> 00:29:23,840
+And so this is
+kind of the reason
+
+727
+00:29:23,839 --> 00:29:27,595
+we have to move things around,
+but at the end of the day
+
+728
+00:29:27,595 --> 00:29:29,720
+what you're going to get
+is going to very much feel
+
+729
+00:29:29,720 --> 00:29:31,928
+like two-way data binding,
+even though under the hood
+
+730
+00:29:31,928 --> 00:29:35,410
+we're going to have to do
+some tricks to make it happen
+
+731
+00:29:35,410 --> 00:29:37,285
+in the proper order so
+it's very predictable.
+
+732
+00:29:37,285 --> 00:29:45,311
+(null)
+
+733
+00:29:45,310 --> 00:29:45,809
+Right.
+
+734
+00:29:45,809 --> 00:29:46,839
+So two-way data binding.
+
+735
+00:29:46,839 --> 00:29:50,841
+That's kind of a love
+hate relationship.
+
+736
+00:29:50,842 --> 00:29:52,450
+IGOR: [INAUDIBLE]
+
+737
+00:29:52,450 --> 00:29:54,670
+MISKO: So there is
+this thing in Angular 1
+
+738
+00:29:54,670 --> 00:29:55,779
+[INAUDIBLE] if you
+have two components
+
+739
+00:29:55,779 --> 00:29:57,278
+and they're bound
+to each other, you
+
+740
+00:29:57,278 --> 00:29:59,200
+can actually set the
+directionality of it
+
+741
+00:29:59,200 --> 00:30:01,039
+to be two-way data-binding.
+
+742
+00:30:01,039 --> 00:30:03,740
+And that actually seems
+like a good idea at first
+
+743
+00:30:03,740 --> 00:30:05,480
+until you have a large
+scale application.
+
+744
+00:30:05,480 --> 00:30:08,049
+And then it turns out that you
+have no idea what's going on,
+
+745
+00:30:08,049 --> 00:30:10,009
+who's binding to what,
+who's updating what.
+
+746
+00:30:10,009 --> 00:30:14,879
+And it turns out to be kind of
+an anti-pattern for large apps.
+
+747
+00:30:14,880 --> 00:30:17,200
+So to make the large
+apps more predictable,
+
+748
+00:30:17,200 --> 00:30:18,880
+and easier to
+understand, and debug,
+
+749
+00:30:18,880 --> 00:30:23,050
+and so on we opted for this
+idea of directed acyclic graph,
+
+750
+00:30:23,049 --> 00:30:25,220
+which means that you cannot
+have any pointers going
+
+751
+00:30:25,220 --> 00:30:26,470
+in the reverse direction.
+
+752
+00:30:26,470 --> 00:30:28,385
+And it turns out all
+kinds of wonderful things
+
+753
+00:30:28,385 --> 00:30:29,779
+happen if you do that.
+
+754
+00:30:29,779 --> 00:30:31,960
+But it makes certain
+things not possible,
+
+755
+00:30:31,960 --> 00:30:33,700
+which is mainly
+two-way data-binding.
+
+756
+00:30:33,700 --> 00:30:35,325
+And so what we do,
+again, we go back
+
+757
+00:30:35,325 --> 00:30:37,325
+to this form which says
+that we want to give you
+
+758
+00:30:37,325 --> 00:30:40,711
+a syntax that's going to look
+like two-way data-binding,
+
+759
+00:30:40,711 --> 00:30:42,920
+but actually it's going to
+be a very clear state when
+
+760
+00:30:42,920 --> 00:30:45,615
+a reverse direction happens and
+a forward direction happens.
+
+761
+00:30:45,615 --> 00:30:48,599
+(null)
+
+762
+00:30:48,599 --> 00:30:49,939
+BRAD GREEN: Over there.
+
+763
+00:30:49,940 --> 00:30:52,065
+I'll go back here and then
+I'll come up front here.
+
+764
+00:30:52,065 --> 00:30:54,549
+(null)
+
+765
+00:30:54,549 --> 00:30:57,099
+AUDIENCE: What about cross
+controller communication,
+
+766
+00:30:57,099 --> 00:30:59,359
+like in [INAUDIBLE] broadcast
+and stuff like that?
+
+767
+00:30:59,359 --> 00:31:02,709
+I mean, they're not great but
+sometimes they're [INAUDIBLE].
+
+768
+00:31:02,710 --> 00:31:05,440
+MISKO: So how do you do cross
+controller communication?
+
+769
+00:31:05,440 --> 00:31:06,410
+That's a good question.
+
+770
+00:31:06,410 --> 00:31:08,160
+We're also changing
+that one a little bit.
+
+771
+00:31:08,160 --> 00:31:11,340
+So it turns out there's actually
+two different kinds of events
+
+772
+00:31:11,339 --> 00:31:16,279
+you can do in two
+components communicating.
+
+773
+00:31:16,279 --> 00:31:19,039
+The two components that don't
+actually know about each other.
+
+774
+00:31:19,039 --> 00:31:23,519
+So, for example, person
+A implements a fancy text
+
+775
+00:31:23,519 --> 00:31:25,099
+in a calendar widget.
+
+776
+00:31:25,099 --> 00:31:27,719
+And person B wants
+to go and consume it.
+
+777
+00:31:27,720 --> 00:31:30,569
+In this case because they
+don't know about each other,
+
+778
+00:31:30,569 --> 00:31:34,279
+kind of the DOM event model kind
+of broadcasting and emitting
+
+779
+00:31:34,279 --> 00:31:36,039
+is kind of the way
+you want to do this.
+
+780
+00:31:36,039 --> 00:31:38,970
+But we do that on a DOM level,
+so that the component emitting
+
+781
+00:31:38,970 --> 00:31:41,110
+it says, I'm emitting
+event foo And then you
+
+782
+00:31:41,109 --> 00:31:45,029
+do parentheses foo in
+order to listen to it.
+
+783
+00:31:45,029 --> 00:31:46,799
+The other mode of
+communication is
+
+784
+00:31:46,799 --> 00:31:48,480
+that within a single
+application when
+
+785
+00:31:48,480 --> 00:31:50,870
+you have two components that
+have very tight coupling.
+
+786
+00:31:50,869 --> 00:31:54,849
+So, for example, you have
+a tic-tack-toe application
+
+787
+00:31:54,849 --> 00:31:58,099
+and it has components that
+is an individual cell.
+
+788
+00:31:58,099 --> 00:32:00,969
+In that case the better way to
+do it instead of doing events--
+
+789
+00:32:00,970 --> 00:32:03,160
+you can certainly do
+events-- but a better way
+
+790
+00:32:03,160 --> 00:32:06,230
+to do it is to simply inject
+the app into the child,
+
+791
+00:32:06,230 --> 00:32:08,029
+and simply call methods on it.
+
+792
+00:32:08,029 --> 00:32:11,059
+And the benefits of that
+is that while it gives you
+
+793
+00:32:11,059 --> 00:32:13,049
+a tight coupling, presumably
+the two components
+
+794
+00:32:13,049 --> 00:32:14,840
+are already tightly
+coupled because they're
+
+795
+00:32:14,840 --> 00:32:17,329
+part of the same app,
+and you can do things
+
+796
+00:32:17,329 --> 00:32:18,794
+like navigating
+inside of the IDs.
+
+797
+00:32:18,795 --> 00:32:20,170
+So you just have
+a function call.
+
+798
+00:32:20,170 --> 00:32:22,529
+And you can click
+through the function call
+
+799
+00:32:22,529 --> 00:32:24,480
+and get to the destination.
+
+800
+00:32:24,480 --> 00:32:26,900
+So we give you these
+two different modes
+
+801
+00:32:26,900 --> 00:32:28,300
+that you can do.
+
+802
+00:32:28,299 --> 00:32:31,339
+And hopefully that
+solves your problem.
+
+803
+00:32:31,339 --> 00:32:32,849
+BRAD GREEN: Up front here.
+
+804
+00:32:32,849 --> 00:32:35,299
+AUDIENCE: So going back
+to your previous comment
+
+805
+00:32:35,299 --> 00:32:39,129
+you were making, so the example
+David showed, if I recall,
+
+806
+00:32:39,130 --> 00:32:43,930
+he basically had the events
+and he passed a Local Variable
+
+807
+00:32:43,930 --> 00:32:46,360
+that went to the function.
+
+808
+00:32:46,359 --> 00:32:48,838
+And presumably
+the value changed.
+
+809
+00:32:48,838 --> 00:32:51,129
+Doesn't it kind of conflict
+with what you were stating?
+
+810
+00:32:51,130 --> 00:32:53,200
+Because then you
+have no idea what's
+
+811
+00:32:53,200 --> 00:32:56,799
+changing the value to
+the local parameter.
+
+812
+00:32:56,799 --> 00:33:00,289
+MISKO: So there's the kind
+of digest phase, which
+
+813
+00:33:00,289 --> 00:33:03,279
+updates the data binding.
+
+814
+00:33:03,279 --> 00:33:05,806
+But there's also what I
+don't have a good name for,
+
+815
+00:33:05,806 --> 00:33:07,430
+but I just call it
+the reverse binding,
+
+816
+00:33:07,430 --> 00:33:09,870
+which is what gets
+the data from the UI
+
+817
+00:33:09,869 --> 00:33:12,119
+and kind of gets it to the
+application, which then you
+
+818
+00:33:12,119 --> 00:33:13,189
+can do data binding on.
+
+819
+00:33:13,190 --> 00:33:16,890
+So what you see
+in the parentheses
+
+820
+00:33:16,890 --> 00:33:19,120
+is really the reverse
+mode data binding.
+
+821
+00:33:19,119 --> 00:33:22,738
+What you see inside of brackets
+is the forward data binding.
+
+822
+00:33:22,739 --> 00:33:24,029
+That's kind of the distinction.
+
+823
+00:33:24,029 --> 00:33:26,720
+There's a couple other
+distinctions in there,
+
+824
+00:33:26,720 --> 00:33:31,079
+but those are fundamentally
+what's going on.
+
+825
+00:33:31,079 --> 00:33:34,059
+BRAD GREEN: Back
+in the back there.
+
+826
+00:33:34,059 --> 00:33:36,419
+I'm coming around.
+
+827
+00:33:36,420 --> 00:33:36,920
+Don't move.
+
+828
+00:33:36,920 --> 00:33:39,890
+(null)
+
+829
+00:33:39,890 --> 00:33:41,740
+AUDIENCE: What about
+$scope inheritance?
+
+830
+00:33:41,740 --> 00:33:43,480
+Is it going to be
+like class inheritance
+
+831
+00:33:43,480 --> 00:33:46,529
+because I see here often
+when we refer to a template,
+
+832
+00:33:46,529 --> 00:33:49,190
+there's a possibility
+that the template in turn
+
+833
+00:33:49,190 --> 00:33:54,615
+refers to another widget,
+I mean, [INAUDIBLE]
+
+834
+00:33:54,615 --> 00:33:55,490
+into a sub-directive.
+
+835
+00:33:55,490 --> 00:34:00,382
+And how was data going to
+flow through that chain?
+
+836
+00:34:00,382 --> 00:34:02,090
+MISKO: Is this about
+$scoping inheritance
+
+837
+00:34:02,089 --> 00:34:04,118
+or referring to directives?
+
+838
+00:34:04,118 --> 00:34:05,659
+AUDIENCE: $scoping
+inheritance, but I
+
+839
+00:34:05,660 --> 00:34:08,460
+can see even the
+sub-directives, they
+
+840
+00:34:08,460 --> 00:34:10,500
+most likely share
+inherit from the parent.
+
+841
+00:34:10,500 --> 00:34:12,260
+MISKO: Yeah.
+
+842
+00:34:12,260 --> 00:34:13,889
+I think I understand
+your question.
+
+843
+00:34:13,889 --> 00:34:17,172
+So I think what you're asking
+is that in Angular 1x, $scopes
+
+844
+00:34:17,172 --> 00:34:18,380
+inherited it from each other.
+
+845
+00:34:18,380 --> 00:34:19,289
+And so if you have
+a component, you
+
+846
+00:34:19,289 --> 00:34:20,849
+would automatically
+get the parents.
+
+847
+00:34:20,849 --> 00:34:23,630
+So in Anugular2, because
+of the components,
+
+848
+00:34:23,630 --> 00:34:27,130
+you can think of Angular2
+component as a Angular 1x
+
+849
+00:34:27,130 --> 00:34:29,590
+$scope that has private state.
+
+850
+00:34:29,590 --> 00:34:30,340
+What is it called?
+
+851
+00:34:30,340 --> 00:34:31,173
+IGOR: Isolate scope.
+
+852
+00:34:31,172 --> 00:34:32,619
+MISKO: Isolate $scope.
+
+853
+00:34:32,619 --> 00:34:35,190
+AUDIENCE: OK.
+
+854
+00:34:35,190 --> 00:34:38,190
+So we can choose to pass
+whatever information
+
+855
+00:34:38,190 --> 00:34:39,231
+from the parent's $scope.
+
+856
+00:34:39,231 --> 00:34:39,730
+MISKO: Yeah.
+
+857
+00:34:39,731 --> 00:34:40,770
+So you use data binding.
+
+858
+00:34:40,769 --> 00:34:42,250
+So there's two modes you can do.
+
+859
+00:34:42,250 --> 00:34:45,429
+Actually, there's three.
+
+860
+00:34:45,429 --> 00:34:50,449
+You can data bind it through
+the bracket notation.
+
+861
+00:34:50,449 --> 00:34:53,048
+You can dependency inject
+it and you can dependency
+
+862
+00:34:53,048 --> 00:34:55,340
+inject the parent controller
+into the child controller,
+
+863
+00:34:55,340 --> 00:34:57,142
+which is something that
+was not shown here.
+
+864
+00:34:57,141 --> 00:34:58,849
+And you can actually
+do the reverse thing
+
+865
+00:34:58,849 --> 00:35:01,210
+where you could actually
+query your children.
+
+866
+00:35:01,210 --> 00:35:03,240
+So there's kind of
+three modes of which you
+
+867
+00:35:03,239 --> 00:35:04,639
+can get a hold of these things.
+
+868
+00:35:04,639 --> 00:35:06,960
+And they actually play
+to different strengths
+
+869
+00:35:06,960 --> 00:35:07,659
+and weaknesses.
+
+870
+00:35:07,659 --> 00:35:09,170
+Depending on the
+situation you are
+
+871
+00:35:09,170 --> 00:35:11,039
+in you might want to
+use one or the other.
+
+872
+00:35:11,039 --> 00:35:12,579
+And by giving you
+these choices this
+
+873
+00:35:12,579 --> 00:35:14,163
+actually becomes a
+lot more expressive
+
+874
+00:35:14,163 --> 00:35:15,920
+in what you're trying to do.
+
+875
+00:35:15,920 --> 00:35:17,690
+AUDIENCE: But then
+when you have templates
+
+876
+00:35:17,690 --> 00:35:20,170
+and you said that the
+$scope of a variable
+
+877
+00:35:20,170 --> 00:35:23,635
+is within that template, say,
+for example, when we declared
+
+878
+00:35:23,635 --> 00:35:26,190
+a new name and the
+newname.value was
+
+879
+00:35:26,190 --> 00:35:27,929
+available throughout
+the template.
+
+880
+00:35:27,929 --> 00:35:30,929
+So it seems like to
+me when a template
+
+881
+00:35:30,929 --> 00:35:32,659
+is embedded inside
+another template,
+
+882
+00:35:32,659 --> 00:35:38,109
+so everyone gets to share
+all the values, right?
+
+883
+00:35:38,110 --> 00:35:40,675
+MISKO: So what's
+different in Angular2
+
+884
+00:35:40,675 --> 00:35:42,550
+is that we're built on
+top of Web Components.
+
+885
+00:35:42,550 --> 00:35:45,140
+And Web Components have this
+thing called a shadow DOM.
+
+886
+00:35:45,139 --> 00:35:47,349
+And even if your browser
+doesn't have shadow DOM
+
+887
+00:35:47,349 --> 00:35:49,360
+we're going to
+pretend as if it did,
+
+888
+00:35:49,360 --> 00:35:51,860
+and we're going to
+kind of emulate it.
+
+889
+00:35:51,860 --> 00:35:53,514
+So the new terminology,
+rather than
+
+890
+00:35:53,514 --> 00:35:55,430
+inventing our own
+terminology of transclusion,
+
+891
+00:35:55,429 --> 00:36:00,141
+and isolated $scopes, and who
+gets what, we're simply saying,
+
+892
+00:36:00,141 --> 00:36:02,099
+look, there is already
+a terminology out there.
+
+893
+00:36:02,099 --> 00:36:03,319
+It's called Web Components.
+
+894
+00:36:03,320 --> 00:36:04,320
+And we just follow that.
+
+895
+00:36:04,320 --> 00:36:06,360
+Now what the Web
+Components gives you is it
+
+896
+00:36:06,360 --> 00:36:07,626
+gives you isolations.
+
+897
+00:36:07,626 --> 00:36:09,960
+Good programming principles
+says if you have a function,
+
+898
+00:36:09,960 --> 00:36:12,139
+it should be isolated from
+another function, right?
+
+899
+00:36:12,139 --> 00:36:15,799
+And because of these isolations
+the variables actually
+
+900
+00:36:15,800 --> 00:36:17,590
+don't flow very far.
+
+901
+00:36:17,590 --> 00:36:20,450
+They only stay within a
+particular component's view.
+
+902
+00:36:20,449 --> 00:36:22,849
+And they're not visible
+inside of child views,
+
+903
+00:36:22,849 --> 00:36:23,969
+or parent views.
+
+904
+00:36:23,969 --> 00:36:27,109
+So there's actually pretty
+strong isolation guarantees
+
+905
+00:36:27,110 --> 00:36:27,800
+in there.
+
+906
+00:36:27,800 --> 00:36:29,341
+It's actually a good
+thing because it
+
+907
+00:36:29,340 --> 00:36:31,202
+allows you to build
+large apps and you
+
+908
+00:36:31,202 --> 00:36:32,786
+don't have worry
+that you accidentally
+
+909
+00:36:32,786 --> 00:36:34,539
+clobber each other,
+that they have
+
+910
+00:36:34,539 --> 00:36:38,619
+the same name, or the
+importing of things.
+
+911
+00:36:38,619 --> 00:36:41,313
+It's really properly
+isolated this time.
+
+912
+00:36:41,313 --> 00:36:43,382
+AUDIENCE: Thanks.
+
+913
+00:36:43,382 --> 00:36:44,090
+BRAD GREEN: Cool.
+
+914
+00:36:44,090 --> 00:36:44,673
+Next question.
+
+915
+00:36:44,672 --> 00:36:48,559
+(null)
+
+916
+00:36:48,559 --> 00:36:51,172
+Yes, back row.
+
+917
+00:36:51,172 --> 00:36:52,130
+I'm getting over there.
+
+918
+00:36:52,130 --> 00:36:55,992
+(null)
+
+919
+00:36:55,992 --> 00:36:57,450
+AUDIENCE: Will the
+templates end up
+
+920
+00:36:57,449 --> 00:37:00,069
+taking advantage of some of the
+web components in shadow DOM
+
+921
+00:37:00,070 --> 00:37:03,450
+stuff for styling, so
+encapsulated CSS instead
+
+922
+00:37:03,449 --> 00:37:05,619
+of having to do
+ID everywhere to--
+
+923
+00:37:05,619 --> 00:37:08,549
+(null)
+
+924
+00:37:08,550 --> 00:37:10,500
+MISKO: The short answer is yes.
+
+925
+00:37:10,500 --> 00:37:11,929
+We'll take advantage of this.
+
+926
+00:37:11,929 --> 00:37:15,079
+So Web Components,
+rather, shadow DOM
+
+927
+00:37:15,079 --> 00:37:17,960
+is available in Chrome and--
+
+928
+00:37:17,960 --> 00:37:18,749
+IGOR: Chrome.
+
+929
+00:37:18,748 --> 00:37:19,789
+MISKO: Chrome and Chrome.
+
+930
+00:37:19,789 --> 00:37:20,563
+OK.
+
+931
+00:37:20,563 --> 00:37:22,880
+[LAUGHTER]
+
+932
+00:37:22,880 --> 00:37:25,640
+Now it will be sad if
+Angular only ran on Chrome.
+
+933
+00:37:25,639 --> 00:37:28,119
+So what we do is
+we say, OK, well,
+
+934
+00:37:28,119 --> 00:37:30,769
+we think the future is shadow
+DOM and Web Components.
+
+935
+00:37:30,769 --> 00:37:34,119
+And therefore, we're going
+just take the vocabulary
+
+936
+00:37:34,119 --> 00:37:35,835
+that Web Components provides.
+
+937
+00:37:35,835 --> 00:37:37,710
+So you're going to have
+to learn about shadow
+
+938
+00:37:37,710 --> 00:37:40,396
+DOM, the light DOM, the
+[? group ?] projection, and all
+
+939
+00:37:40,396 --> 00:37:42,019
+this stuff that Web
+Components provide.
+
+940
+00:37:42,019 --> 00:37:43,679
+The nice thing is,
+any framework that's
+
+941
+00:37:43,679 --> 00:37:44,539
+going to be on top
+of web components
+
+942
+00:37:44,539 --> 00:37:46,619
+will have the same
+exact vocabulary.
+
+943
+00:37:46,619 --> 00:37:48,139
+And what we're
+going to do then is
+
+944
+00:37:48,139 --> 00:37:52,039
+we're going to actually run the
+Angular in one of, I believe,
+
+945
+00:37:52,039 --> 00:37:52,619
+four modes.
+
+946
+00:37:52,619 --> 00:37:54,869
+You can either use shadow
+DOM where it's required.
+
+947
+00:37:54,869 --> 00:37:57,246
+And so obviously would
+only run on Chrome.
+
+948
+00:37:57,246 --> 00:37:59,329
+Or we're going to enter
+emulated mode, where we're
+
+949
+00:37:59,329 --> 00:38:01,101
+going to pretend
+we have shadow DOM.
+
+950
+00:38:01,101 --> 00:38:02,849
+So we're going to have
+the same semantics,
+
+951
+00:38:02,849 --> 00:38:04,699
+but obviously there
+is no shadow DOM.
+
+952
+00:38:04,699 --> 00:38:08,009
+Now in that mode we can actually
+subdivide in two different sub
+
+953
+00:38:08,010 --> 00:38:10,340
+modes when it comes to styling.
+
+954
+00:38:10,340 --> 00:38:16,920
+We can either properly
+isolate the CSS styles
+
+955
+00:38:16,920 --> 00:38:21,460
+by reading the CSS and
+then prefixing everything
+
+956
+00:38:21,460 --> 00:38:23,000
+with a component name.
+
+957
+00:38:23,000 --> 00:38:24,369
+And then writing it back out.
+
+958
+00:38:24,369 --> 00:38:27,190
+And so that's going
+to give you isolation.
+
+959
+00:38:27,190 --> 00:38:31,869
+But for people who have never
+done Web Components or shadow
+
+960
+00:38:31,869 --> 00:38:33,799
+roots, it's going to
+be like, surprise.
+
+961
+00:38:33,800 --> 00:38:34,910
+Why does it work this way?
+
+962
+00:38:34,909 --> 00:38:36,759
+Why is the styling [INAUDIBLE]?
+
+963
+00:38:36,760 --> 00:38:39,650
+So we actually have a different
+mode, which doesn't do this.
+
+964
+00:38:39,650 --> 00:38:42,470
+So by default we're going to
+pretend we have Web Components,
+
+965
+00:38:42,469 --> 00:38:44,039
+but we're not
+going to do styling
+
+966
+00:38:44,039 --> 00:38:45,902
+unless you actually opt into it.
+
+967
+00:38:45,902 --> 00:38:48,110
+Then there's going to be a
+couple of learnings to do.
+
+968
+00:38:48,110 --> 00:38:49,651
+These are actually
+not our learnings.
+
+969
+00:38:49,650 --> 00:38:51,869
+This is just the standard
+of Web Components, right?
+
+970
+00:38:51,869 --> 00:38:53,329
+So if you opt into
+this and you're
+
+971
+00:38:53,329 --> 00:38:54,769
+willing to do all this
+extra work that the Web
+
+972
+00:38:54,769 --> 00:38:56,728
+Components will kind of
+require of you in order
+
+973
+00:38:56,728 --> 00:38:59,960
+to get proper isolation,
+we're going to support it.
+
+974
+00:38:59,960 --> 00:39:01,599
+So that's going to be nice.
+
+975
+00:39:01,599 --> 00:39:04,630
+(null)
+
+976
+00:39:04,630 --> 00:39:05,490
+BRAD GREEN: Cool.
+
+977
+00:39:05,489 --> 00:39:06,519
+More questions?
+
+978
+00:39:06,519 --> 00:39:07,380
+Oh, in front here.
+
+979
+00:39:07,380 --> 00:39:12,320
+(null)
+
+980
+00:39:12,320 --> 00:39:15,120
+AUDIENCE: So my question
+is, in Angular 1
+
+981
+00:39:15,119 --> 00:39:17,589
+we use services a lot.
+
+982
+00:39:17,590 --> 00:39:19,940
+So service kind
+of a [INAUDIBLE],
+
+983
+00:39:19,940 --> 00:39:25,019
+which is a way to share the
+data in different components.
+
+984
+00:39:25,019 --> 00:39:28,860
+I saw in the example
+you also used a service.
+
+985
+00:39:28,860 --> 00:39:32,099
+So my question, are
+they still the same
+
+986
+00:39:32,099 --> 00:39:36,150
+or is there any difference
+between 1 and 2?
+
+987
+00:39:36,150 --> 00:39:36,650
+MISKO: Yeah.
+
+988
+00:39:36,650 --> 00:39:39,280
+So the question
+is about services.
+
+989
+00:39:39,280 --> 00:39:41,044
+The short answer is,
+yes, it's the same,
+
+990
+00:39:41,043 --> 00:39:42,460
+but it's a little
+more complicated
+
+991
+00:39:42,460 --> 00:39:44,019
+because in Angular2
+we actually have
+
+992
+00:39:44,019 --> 00:39:45,829
+a hierarchical
+dependency injector.
+
+993
+00:39:45,829 --> 00:39:47,759
+So in Angular 1
+everything's a singleton.
+
+994
+00:39:47,760 --> 00:39:51,520
+In Angular2 things are
+a singleton with respect
+
+995
+00:39:51,519 --> 00:39:53,862
+to their injector,
+but because you
+
+996
+00:39:53,862 --> 00:39:55,320
+can have multiple
+injectors you can
+
+997
+00:39:55,320 --> 00:39:56,736
+create injectors
+and destroy them,
+
+998
+00:39:56,735 --> 00:40:00,049
+you can actually control
+the lifetime of objects.
+
+999
+00:40:00,050 --> 00:40:04,930
+And this is done by
+component in the annotation.
+
+1000
+00:40:04,929 --> 00:40:06,559
+Not only does a
+component declare
+
+1001
+00:40:06,559 --> 00:40:08,489
+what template it wants
+to use in a selector,
+
+1002
+00:40:08,489 --> 00:40:10,539
+it can also
+configurator an injector
+
+1003
+00:40:10,539 --> 00:40:13,570
+for itself, for its shadow
+root, and for its children.
+
+1004
+00:40:13,570 --> 00:40:17,097
+And by configuring
+and then bringing
+
+1005
+00:40:17,097 --> 00:40:19,180
+the components on the page
+through either [? ng ?]
+
+1006
+00:40:19,179 --> 00:40:22,396
+or ng-repeat, or taking them
+out by navigator or router,
+
+1007
+00:40:22,396 --> 00:40:23,980
+you can actually
+control the life time
+
+1008
+00:40:23,980 --> 00:40:26,789
+of the services and
+things that go with it.
+
+1009
+00:40:26,789 --> 00:40:29,320
+So it's the same concepts
+we're familiar with.
+
+1010
+00:40:29,320 --> 00:40:31,317
+We made certain
+vocabulary better
+
+1011
+00:40:31,317 --> 00:40:33,400
+so you don't have to have
+a confusion about what's
+
+1012
+00:40:33,400 --> 00:40:37,019
+a service and what's
+a factory and so on.
+
+1013
+00:40:37,019 --> 00:40:38,534
+And we actually
+gave it more power
+
+1014
+00:40:38,534 --> 00:40:40,450
+so that you can have
+this hierarchical things.
+
+1015
+00:40:40,449 --> 00:40:42,829
+And you can lazy load
+into your application
+
+1016
+00:40:42,829 --> 00:40:46,429
+and unload modules and so on.
+
+1017
+00:40:46,429 --> 00:40:49,210
+IGOR: I'll just try to
+refactor what Misko said.
+
+1018
+00:40:49,210 --> 00:40:51,130
+If you don't care about
+having more power,
+
+1019
+00:40:51,130 --> 00:40:53,619
+it's going to be the
+same with better syntax.
+
+1020
+00:40:53,619 --> 00:40:56,319
+If you want more features the
+features will be available,
+
+1021
+00:40:56,320 --> 00:41:00,080
+but you have to understand
+how the hierarchical DI works.
+
+1022
+00:41:00,079 --> 00:41:03,449
+But if you don't care,
+don't worry about it.
+
+1023
+00:41:03,449 --> 00:41:05,369
+BRAD GREEN: Thanks, Igor.
+
+1024
+00:41:05,369 --> 00:41:07,449
+Another question.
+
+1025
+00:41:07,449 --> 00:41:08,355
+Yeah?
+
+1026
+00:41:08,355 --> 00:41:09,465
+Back there, then there.
+
+1027
+00:41:09,465 --> 00:41:13,279
+(null)
+
+1028
+00:41:13,280 --> 00:41:16,370
+AUDIENCE: So you talked a
+lot about the templates,
+
+1029
+00:41:16,369 --> 00:41:19,519
+but I remember at the time
+there was a design doc about how
+
+1030
+00:41:19,519 --> 00:41:25,150
+Angular supports data and the
+synchronizing with the server,
+
+1031
+00:41:25,150 --> 00:41:28,309
+maybe replacing the dollar HTTP
+services, and stuff like that.
+
+1032
+00:41:28,309 --> 00:41:31,119
+And now there's also David
+here with the Firebase.
+
+1033
+00:41:31,119 --> 00:41:34,769
+(null)
+
+1034
+00:41:34,769 --> 00:41:37,269
+In Angular2 it will
+be different for you
+
+1035
+00:41:37,269 --> 00:41:38,889
+to write an AngularFire?
+
+1036
+00:41:38,889 --> 00:41:41,474
+There will be different
+stuff about that?
+
+1037
+00:41:41,474 --> 00:41:43,349
+MISKO: So I'm going to
+just mention something
+
+1038
+00:41:43,349 --> 00:41:44,849
+and I'm going have both
+of you guys answer it.
+
+1039
+00:41:44,849 --> 00:41:47,440
+I think both Igor has something
+to say because he's working
+
+1040
+00:41:47,440 --> 00:41:50,039
+on the data services, and
+obviously the Firebase--
+
+1041
+00:41:50,039 --> 00:41:51,733
+David-- guy will have
+something to say.
+
+1042
+00:41:51,733 --> 00:41:53,150
+The first thing I
+want to just say
+
+1043
+00:41:53,150 --> 00:41:55,539
+is that because of
+the Zones many things
+
+1044
+00:41:55,539 --> 00:41:57,179
+will just magically work.
+
+1045
+00:41:57,179 --> 00:42:00,629
+I cannot express to you just
+how excited I am about Zones.
+
+1046
+00:42:00,630 --> 00:42:03,119
+It is the bee's knees.
+
+1047
+00:42:03,119 --> 00:42:04,579
+DAVID EAST: This is true.
+
+1048
+00:42:04,579 --> 00:42:06,719
+MISKO: So David got
+his Firebase thing
+
+1049
+00:42:06,719 --> 00:42:08,309
+that was not meant
+for Angular, just
+
+1050
+00:42:08,309 --> 00:42:10,190
+a regular plain old Firebase.
+
+1051
+00:42:10,190 --> 00:42:12,050
+And he pulled it in
+into the Todo app,
+
+1052
+00:42:12,050 --> 00:42:13,690
+and it just worked
+out of the box
+
+1053
+00:42:13,690 --> 00:42:17,336
+with not any kind of
+apply, $scope.dollar apply,
+
+1054
+00:42:17,335 --> 00:42:18,209
+or any of that stuff.
+
+1055
+00:42:18,210 --> 00:42:20,369
+It's just all gone.
+
+1056
+00:42:20,369 --> 00:42:23,623
+Having said that you can talk
+more about the [INAUDIBLE].
+
+1057
+00:42:23,623 --> 00:42:26,236
+(null)
+
+1058
+00:42:26,237 --> 00:42:27,070
+[INTERPOSING VOICES]
+
+1059
+00:42:27,070 --> 00:42:29,370
+MISKO: He was asking
+about [INAUDIBLE].
+
+1060
+00:42:29,369 --> 00:42:30,980
+DAVID EAST: You
+would answer that.
+
+1061
+00:42:30,980 --> 00:42:32,780
+IGOR: So this is one
+of the things that
+
+1062
+00:42:32,780 --> 00:42:36,160
+is-- can you hear me?
+
+1063
+00:42:36,159 --> 00:42:36,759
+OK.
+
+1064
+00:42:36,760 --> 00:42:38,135
+So this is one of
+the things that
+
+1065
+00:42:38,135 --> 00:42:41,490
+is not as developed as
+the templating part yet.
+
+1066
+00:42:41,489 --> 00:42:46,389
+We're looking at different
+solutions for the data layer,
+
+1067
+00:42:46,389 --> 00:42:50,569
+including looking at observables
+that are coming in ES7.
+
+1068
+00:42:50,570 --> 00:42:52,510
+I think this is something
+that could solve
+
+1069
+00:42:52,510 --> 00:42:54,426
+many of the hard problems
+that we're currently
+
+1070
+00:42:54,425 --> 00:42:57,519
+having with the current
+data approaches in Angular
+
+1071
+00:42:57,519 --> 00:42:59,250
+or even outside of Angular.
+
+1072
+00:42:59,250 --> 00:43:01,940
+And there are some other very
+interesting things coming.
+
+1073
+00:43:01,940 --> 00:43:03,856
+And we're going to talk
+about that at ng-conf.
+
+1074
+00:43:03,856 --> 00:43:07,925
+(null)
+
+1075
+00:43:07,925 --> 00:43:08,800
+DAVID EAST: Is it on?
+
+1076
+00:43:08,800 --> 00:43:10,840
+Oh, it's on.
+
+1077
+00:43:10,840 --> 00:43:14,606
+Yeah. s far as the AngularFire
+went, like Misko said,
+
+1078
+00:43:14,606 --> 00:43:17,150
+the easiest part was the fact
+that I started writing it
+
+1079
+00:43:17,150 --> 00:43:17,941
+and it just worked.
+
+1080
+00:43:17,940 --> 00:43:22,967
+There's was no-- when we write
+it, the hardest part's keeping
+
+1081
+00:43:22,967 --> 00:43:25,175
+everything synchronized,
+but as far as [INAUDIBLE] as
+
+1082
+00:43:25,175 --> 00:43:28,469
+far as Angular goes, is knowing
+when to apply these things
+
+1083
+00:43:28,469 --> 00:43:30,039
+and to do it in a
+more efficient way.
+
+1084
+00:43:30,039 --> 00:43:32,630
+And a lot of that Angular
+internal knowledge
+
+1085
+00:43:32,630 --> 00:43:35,599
+that we are constantly
+refactoring and learning
+
+1086
+00:43:35,599 --> 00:43:38,059
+more about, kind of
+just disappeared.
+
+1087
+00:43:38,059 --> 00:43:40,400
+And so when I wrote
+it I was realizing
+
+1088
+00:43:40,400 --> 00:43:44,250
+I wasn't writing any
+Angular code at all.
+
+1089
+00:43:44,250 --> 00:43:45,400
+It was all just JavaScript.
+
+1090
+00:43:45,400 --> 00:43:48,750
+And all of that was because
+of Zones, like you said.
+
+1091
+00:43:48,750 --> 00:43:51,612
+So it was pretty magical.
+
+1092
+00:43:51,612 --> 00:43:52,320
+BRAD GREEN: Cool.
+
+1093
+00:43:52,320 --> 00:43:53,380
+Over here.
+
+1094
+00:43:53,380 --> 00:43:56,099
+IGOR: I'll just add one
+more thing to data layer.
+
+1095
+00:43:56,099 --> 00:43:57,625
+The direction where
+we're going, we
+
+1096
+00:43:57,625 --> 00:43:59,250
+definitely don't want
+to couple Angular
+
+1097
+00:43:59,250 --> 00:44:03,199
+with a particular database
+solution, or backend solution.
+
+1098
+00:44:03,199 --> 00:44:05,339
+We want to be backend agnostic.
+
+1099
+00:44:05,340 --> 00:44:09,230
+But we do want to provide some
+of the options out of the box.
+
+1100
+00:44:09,230 --> 00:44:11,219
+So that if you
+want something, it
+
+1101
+00:44:11,219 --> 00:44:13,449
+will be something supported
+by the Angular team.
+
+1102
+00:44:13,449 --> 00:44:16,268
+(null)
+
+1103
+00:44:16,268 --> 00:44:16,809
+AUDIENCE: Hi.
+
+1104
+00:44:16,809 --> 00:44:21,769
+Can you talk more about lazy
+loading and loading on demand?
+
+1105
+00:44:21,769 --> 00:44:24,867
+How it's going to be implemented
+for complex applications?
+
+1106
+00:44:24,867 --> 00:44:25,700
+MISKO: Lazy loading.
+
+1107
+00:44:25,699 --> 00:44:26,899
+OK.
+
+1108
+00:44:26,900 --> 00:44:30,119
+So you can have a
+dependency injector
+
+1109
+00:44:30,119 --> 00:44:32,170
+that is for your application.
+
+1110
+00:44:32,170 --> 00:44:36,659
+And the router will navigate
+to some sub-view, right?
+
+1111
+00:44:36,659 --> 00:44:38,519
+And when you navigate
+to the sub-view
+
+1112
+00:44:38,519 --> 00:44:41,449
+the router can create
+a new child injector.
+
+1113
+00:44:41,449 --> 00:44:43,529
+And the child injector
+requires a set of modules
+
+1114
+00:44:43,530 --> 00:44:45,330
+to be configured with.
+
+1115
+00:44:45,329 --> 00:44:50,980
+And those can be lazy loaded
+from-- lazy loading script
+
+1116
+00:44:50,980 --> 00:44:53,230
+code, that's not
+difficult in itself.
+
+1117
+00:44:53,230 --> 00:44:56,375
+What is difficult is to be
+able to configure the injector.
+
+1118
+00:44:56,375 --> 00:44:57,750
+And because of
+the way components
+
+1119
+00:44:57,750 --> 00:44:59,166
+are set up and
+because even if you
+
+1120
+00:44:59,166 --> 00:45:02,980
+noticed top level application
+is just a component.
+
+1121
+00:45:02,980 --> 00:45:06,396
+It's just components
+all the way down.
+
+1122
+00:45:06,396 --> 00:45:08,230
+There's really no
+difference between saying,
+
+1123
+00:45:08,230 --> 00:45:11,480
+oh, I'm loading a new child
+component, which is lazily,
+
+1124
+00:45:11,480 --> 00:45:14,740
+or I'm actually bootstrapping
+a whole new child application.
+
+1125
+00:45:14,739 --> 00:45:18,369
+The two are essentially
+mentally equivalent.
+
+1126
+00:45:18,369 --> 00:45:20,529
+And so the router is
+going to be the key
+
+1127
+00:45:20,530 --> 00:45:24,021
+to allow us to do lazy loading
+of both the code and everything
+
+1128
+00:45:24,021 --> 00:45:25,019
+else that comes with it.
+
+1129
+00:45:25,019 --> 00:45:29,958
+(null)
+
+1130
+00:45:29,958 --> 00:45:31,750
+AUDIENCE: They're going
+to be configuration
+
+1131
+00:45:31,750 --> 00:45:34,010
+where you say the logic
+of lazy loading, right?
+
+1132
+00:45:34,010 --> 00:45:34,510
+MISKO: Yeah.
+
+1133
+00:45:34,510 --> 00:45:36,343
+So the router, when you
+configure the router
+
+1134
+00:45:36,342 --> 00:45:39,500
+you will specify what's the URL,
+what's the component that you
+
+1135
+00:45:39,500 --> 00:45:41,489
+get loaded for
+that URL, and then
+
+1136
+00:45:41,489 --> 00:45:44,699
+the component itself
+will have instructions
+
+1137
+00:45:44,699 --> 00:45:46,119
+on how to configure
+the injector.
+
+1138
+00:45:46,119 --> 00:45:49,494
+(null)
+
+1139
+00:45:49,494 --> 00:45:50,869
+BRAD GREEN: Some
+example to come.
+
+1140
+00:45:50,869 --> 00:45:51,130
+OK.
+
+1141
+00:45:51,130 --> 00:45:53,309
+Back here, and then up
+there, and then back there.
+
+1142
+00:45:53,309 --> 00:45:53,849
+OK.
+
+1143
+00:45:53,849 --> 00:45:56,086
+Lots of questions.
+
+1144
+00:45:56,086 --> 00:45:58,170
+AUDIENCE: Hey, I actually
+have a simpler question.
+
+1145
+00:45:58,170 --> 00:46:00,409
+I'm just curious
+about your reasoning
+
+1146
+00:46:00,409 --> 00:46:02,219
+for adding all of
+those weird brackets
+
+1147
+00:46:02,219 --> 00:46:04,773
+and all sort of
+symbols in your DOM.
+
+1148
+00:46:04,773 --> 00:46:06,440
+You're in the process
+of simplifying it.
+
+1149
+00:46:06,440 --> 00:46:08,550
+Might as well make it simpler.
+
+1150
+00:46:08,550 --> 00:46:10,164
+MISKO: This is a simpler.
+
+1151
+00:46:10,164 --> 00:46:11,580
+AUDIENCE: I mean,
+I'm just curious
+
+1152
+00:46:11,579 --> 00:46:13,806
+behind your reasoning
+for all those weird--
+
+1153
+00:46:13,806 --> 00:46:15,429
+IGOR: So the biggest
+reason is removing
+
+1154
+00:46:15,429 --> 00:46:19,349
+the ambiguity for
+both humans and tools.
+
+1155
+00:46:19,349 --> 00:46:21,259
+If you look at the
+Angular 1 template,
+
+1156
+00:46:21,260 --> 00:46:25,150
+it's very hard to reason about
+which part of the template
+
+1157
+00:46:25,150 --> 00:46:28,730
+is an Angular expression, which
+part is a literal string, what
+
+1158
+00:46:28,730 --> 00:46:32,179
+is a class name, or
+any kind of value.
+
+1159
+00:46:32,179 --> 00:46:35,500
+It's very hard to know this
+except at run time when
+
+1160
+00:46:35,500 --> 00:46:38,300
+the directive runs, or
+Angular Compiler runs, that's
+
+1161
+00:46:38,300 --> 00:46:39,880
+when we have the information.
+
+1162
+00:46:39,880 --> 00:46:42,090
+And often the
+information is only
+
+1163
+00:46:42,090 --> 00:46:44,380
+available to the
+directive itself.
+
+1164
+00:46:44,380 --> 00:46:46,650
+The compiler often
+doesn't even know
+
+1165
+00:46:46,650 --> 00:46:48,389
+what's a value,
+what's an expression.
+
+1166
+00:46:48,389 --> 00:46:54,659
+So what we are trying to do is
+make the syntax less ambiguous,
+
+1167
+00:46:54,659 --> 00:46:57,009
+so that we can statically
+analyze templates
+
+1168
+00:46:57,010 --> 00:46:59,790
+without even knowing what
+the directive is going to do.
+
+1169
+00:46:59,789 --> 00:47:03,199
+This will enable us
+to do two things.
+
+1170
+00:47:03,199 --> 00:47:06,579
+People are going to be
+able to easily reason
+
+1171
+00:47:06,579 --> 00:47:07,389
+about the template.
+
+1172
+00:47:07,389 --> 00:47:10,059
+They're going to understand,
+OK, there is a binding here.
+
+1173
+00:47:10,059 --> 00:47:12,380
+And the binding is
+to this expression,
+
+1174
+00:47:12,380 --> 00:47:15,150
+from this expression
+to this property.
+
+1175
+00:47:15,150 --> 00:47:17,680
+Or there's this Event
+Handler, and it's
+
+1176
+00:47:17,679 --> 00:47:20,109
+obvious from the syntax.
+
+1177
+00:47:20,110 --> 00:47:22,690
+The other thing
+is tools will also
+
+1178
+00:47:22,690 --> 00:47:26,500
+be able to analyze templates
+without understanding how
+
+1179
+00:47:26,500 --> 00:47:29,179
+Angular and each directive
+in Angular works.
+
+1180
+00:47:29,179 --> 00:47:32,329
+So we'll be able to do things
+like template transformations,
+
+1181
+00:47:32,329 --> 00:47:34,569
+where we can minify
+the template.
+
+1182
+00:47:34,570 --> 00:47:36,990
+We'll be able to verify
+the template and tell you,
+
+1183
+00:47:36,989 --> 00:47:38,969
+hey, you made a typo
+in this expression
+
+1184
+00:47:38,969 --> 00:47:46,349
+because we know that the
+component has only property
+
+1185
+00:47:46,349 --> 00:47:51,019
+username and a user email,
+and you typed, whatever,
+
+1186
+00:47:51,019 --> 00:47:52,436
+gender or something else.
+
+1187
+00:47:52,436 --> 00:47:54,019
+And we know that
+gender doesn't exist,
+
+1188
+00:47:54,019 --> 00:47:58,519
+or you made a typo in user
+email and you misspelled it.
+
+1189
+00:47:58,519 --> 00:48:00,690
+We're going to have that
+information now available
+
+1190
+00:48:00,690 --> 00:48:01,318
+to us.
+
+1191
+00:48:01,318 --> 00:48:03,360
+So we can tell you, hey,
+there's actually a typo.
+
+1192
+00:48:03,360 --> 00:48:05,329
+Please go fix it.
+
+1193
+00:48:05,329 --> 00:48:09,779
+And David already
+mentioned that we're
+
+1194
+00:48:09,780 --> 00:48:12,190
+trying to unify this
+so that we don't need
+
+1195
+00:48:12,190 --> 00:48:15,971
+to create new directives for
+every event that is out there.
+
+1196
+00:48:15,971 --> 00:48:17,719
+This is very important
+for Web Components.
+
+1197
+00:48:17,719 --> 00:48:21,049
+We need generic
+syntax that just works
+
+1198
+00:48:21,050 --> 00:48:23,990
+for Web Components,
+or any custom events,
+
+1199
+00:48:23,989 --> 00:48:28,189
+so that we don't need to
+be extending the directive
+
+1200
+00:48:28,190 --> 00:48:31,914
+library with every event
+that people come up with.
+
+1201
+00:48:31,914 --> 00:48:33,830
+MISKO: I want to actually
+add something to it.
+
+1202
+00:48:33,829 --> 00:48:37,059
+(null)
+
+1203
+00:48:37,059 --> 00:48:39,960
+When you say, can we make it
+simpler, and I kind of jokingly
+
+1204
+00:48:39,960 --> 00:48:42,500
+said that we actually
+did make it simpler,
+
+1205
+00:48:42,500 --> 00:48:44,269
+the thing is when
+you have something
+
+1206
+00:48:44,269 --> 00:48:46,259
+that's different it
+obviously kind of feels
+
+1207
+00:48:46,260 --> 00:48:47,572
+like, well it's different.
+
+1208
+00:48:47,572 --> 00:48:48,780
+You made it more complicated.
+
+1209
+00:48:48,780 --> 00:48:51,725
+But let me give you
+empirical data that shows you
+
+1210
+00:48:51,724 --> 00:48:53,405
+that actually we made a simple.
+
+1211
+00:48:53,405 --> 00:48:55,529
+You guys are familiar with
+ng-click, ng-doublclick,
+
+1212
+00:48:55,530 --> 00:48:58,250
+ng-mousemove, and
+all the ng events
+
+1213
+00:48:58,250 --> 00:49:02,820
+names, ng-show, ng-hide,
+ng-storage, ng-disabled,
+
+1214
+00:49:02,820 --> 00:49:04,410
+ng-enabled.
+
+1215
+00:49:04,409 --> 00:49:06,119
+and probably I'm
+missing somebody.
+
+1216
+00:49:06,119 --> 00:49:08,634
+All those directives
+I just named, gone.
+
+1217
+00:49:08,634 --> 00:49:09,425
+They don't have to.
+
+1218
+00:49:09,425 --> 00:49:12,140
+We don't need them
+in the new syntax.
+
+1219
+00:49:12,139 --> 00:49:14,329
+So we are actually
+simplifying the whole thing.
+
+1220
+00:49:14,329 --> 00:49:16,769
+Turns out, for example,
+ng-show and ng-hide,
+
+1221
+00:49:16,769 --> 00:49:20,179
+there's a property called
+hidden on a DOM element.
+
+1222
+00:49:20,179 --> 00:49:24,149
+And if you set it to
+true, the DOM hides.
+
+1223
+00:49:24,150 --> 00:49:26,500
+So all we have to do in
+the new syntax is just say,
+
+1224
+00:49:26,500 --> 00:49:29,699
+bracket, hidden, end
+bracket equals true.
+
+1225
+00:49:29,699 --> 00:49:32,279
+And this isn't some kind of
+special directive like ng-show
+
+1226
+00:49:32,280 --> 00:49:34,995
+that wakes up and does magical
+things to the compiler.
+
+1227
+00:49:34,994 --> 00:49:36,369
+We're just setting
+up properties.
+
+1228
+00:49:36,369 --> 00:49:38,509
+It's really as simple as that.
+
+1229
+00:49:38,510 --> 00:49:40,430
+All of the events
+systems are gone.
+
+1230
+00:49:40,429 --> 00:49:42,429
+All the strings we had
+to do with a image source
+
+1231
+00:49:42,429 --> 00:49:45,529
+where we had to say, ng-source
+because if you did source,
+
+1232
+00:49:45,530 --> 00:49:47,890
+magical things would happen
+and the browser would
+
+1233
+00:49:47,889 --> 00:49:51,420
+try to pre-fetch
+templates, double curlies.
+
+1234
+00:49:51,420 --> 00:49:54,630
+For example ng-enabled
+and ng-disabled
+
+1235
+00:49:54,630 --> 00:49:59,079
+are there because enabled and
+disabled property is special
+
+1236
+00:49:59,079 --> 00:50:01,539
+and it has to be removed.
+
+1237
+00:50:01,539 --> 00:50:03,550
+Binding the attribute
+value to false,
+
+1238
+00:50:03,550 --> 00:50:06,110
+will still make it disabled
+because the disabled actually,
+
+1239
+00:50:06,110 --> 00:50:07,539
+physically have to get removed.
+
+1240
+00:50:07,539 --> 00:50:11,440
+So all these are examples
+which simply disappear
+
+1241
+00:50:11,440 --> 00:50:13,990
+in the new binding syntax
+because when you say bracket
+
+1242
+00:50:13,989 --> 00:50:16,539
+disable, you're actually
+writing to the property, not
+
+1243
+00:50:16,539 --> 00:50:17,539
+the attribute.
+
+1244
+00:50:17,539 --> 00:50:21,000
+And so a lot of things
+actually does get simplified.
+
+1245
+00:50:21,000 --> 00:50:24,320
+So I just want to kind
+of ask for your patience
+
+1246
+00:50:24,320 --> 00:50:26,990
+and kind of realize that
+just because it's different,
+
+1247
+00:50:26,989 --> 00:50:28,489
+it doesn't make it
+more complicated.
+
+1248
+00:50:28,489 --> 00:50:31,759
+We really, really tried to go
+back to the very basics of it.
+
+1249
+00:50:31,760 --> 00:50:34,440
+And rethink why are we
+doing all of these things.
+
+1250
+00:50:34,440 --> 00:50:35,700
+And it will be different.
+
+1251
+00:50:35,699 --> 00:50:37,049
+I totally understand that.
+
+1252
+00:50:37,050 --> 00:50:39,062
+But there are good
+fundamental reasons
+
+1253
+00:50:39,061 --> 00:50:40,269
+why we did all these changes.
+
+1254
+00:50:40,269 --> 00:50:43,150
+And they will be giving
+you benefits long term.
+
+1255
+00:50:43,150 --> 00:50:44,909
+AUDIENCE: Thanks.
+
+1256
+00:50:44,909 --> 00:50:47,200
+BRAD GREEN: And believe it
+or not, nobody mentioned it.
+
+1257
+00:50:47,199 --> 00:50:49,480
+It's actually all
+valid HTML, even
+
+1258
+00:50:49,480 --> 00:50:52,070
+the bang side in front
+of forEach somehow.
+
+1259
+00:50:52,070 --> 00:50:52,760
+OK.
+
+1260
+00:50:52,760 --> 00:50:55,099
+Another question here.
+
+1261
+00:50:55,099 --> 00:50:55,640
+AUDIENCE: OK.
+
+1262
+00:50:55,639 --> 00:50:58,129
+This one is a bit
+specific, but what
+
+1263
+00:50:58,130 --> 00:51:01,150
+happens if you have a
+component, and let's say
+
+1264
+00:51:01,150 --> 00:51:04,079
+you create another class
+that inherits from that,
+
+1265
+00:51:04,079 --> 00:51:05,579
+so extends that component.
+
+1266
+00:51:05,579 --> 00:51:08,329
+And then use another
+component annotation on that?
+
+1267
+00:51:08,329 --> 00:51:11,230
+(null)
+
+1268
+00:51:11,230 --> 00:51:14,070
+MISKO: The annotations
+themselves do not inherit.
+
+1269
+00:51:14,070 --> 00:51:17,687
+So if you subclass a component
+and you don't give it
+
+1270
+00:51:17,686 --> 00:51:21,449
+annotation it's as if
+you don't know about it.
+
+1271
+00:51:21,449 --> 00:51:23,839
+So you actually have to give
+it a brand new annotation.
+
+1272
+00:51:23,840 --> 00:51:25,760
+Actually if you start
+playing with it,
+
+1273
+00:51:25,760 --> 00:51:27,980
+it actually is the
+proper behavior.
+
+1274
+00:51:27,980 --> 00:51:29,550
+Now there's more
+to it than that.
+
+1275
+00:51:29,550 --> 00:51:31,269
+Just because you
+annotate something,
+
+1276
+00:51:31,269 --> 00:51:32,509
+it doesn't mean it's enabled.
+
+1277
+00:51:32,510 --> 00:51:37,260
+So in Angular 1x once
+you register directive,
+
+1278
+00:51:37,260 --> 00:51:39,630
+that directive is
+available everywhere.
+
+1279
+00:51:39,630 --> 00:51:42,680
+And it makes code
+reuse difficult
+
+1280
+00:51:42,679 --> 00:51:46,980
+because if I register
+a table directive
+
+1281
+00:51:46,980 --> 00:51:49,230
+it's very likely, because
+table is such a common word,
+
+1282
+00:51:49,230 --> 00:51:51,045
+that somebody else will create
+a different directive that
+
+1283
+00:51:51,045 --> 00:51:52,010
+has the same name.
+
+1284
+00:51:52,010 --> 00:51:54,330
+And they'll collide and
+there will be problems.
+
+1285
+00:51:54,329 --> 00:51:59,909
+With Angular 2x you import
+the individual directives just
+
+1286
+00:51:59,909 --> 00:52:02,099
+for your template.
+
+1287
+00:52:02,099 --> 00:52:04,589
+And so different components
+can have a different set
+
+1288
+00:52:04,590 --> 00:52:06,019
+of directives that are imported.
+
+1289
+00:52:06,019 --> 00:52:07,900
+And as a result, they
+can have the same names
+
+1290
+00:52:07,900 --> 00:52:09,349
+and it will not collide.
+
+1291
+00:52:09,349 --> 00:52:11,360
+And which will further
+aid reusability.
+
+1292
+00:52:11,360 --> 00:52:13,742
+(null)
+
+1293
+00:52:13,742 --> 00:52:14,450
+BRAD GREEN: Cool.
+
+1294
+00:52:14,449 --> 00:52:15,399
+And was there one over here?
+
+1295
+00:52:15,400 --> 00:52:16,150
+Yeah, there we go.
+
+1296
+00:52:16,150 --> 00:52:19,470
+(null)
+
+1297
+00:52:19,469 --> 00:52:21,829
+AUDIENCE: So in Angular
+dot 1 dot whatever,
+
+1298
+00:52:21,829 --> 00:52:23,789
+we had the config
+and the run phases.
+
+1299
+00:52:23,789 --> 00:52:26,050
+So what's happening with
+the config and providers?
+
+1300
+00:52:26,050 --> 00:52:29,360
+(null)
+
+1301
+00:52:29,360 --> 00:52:33,220
+MISKO: So the config
+phase is gone.
+
+1302
+00:52:33,219 --> 00:52:36,299
+The dependency injection
+system has a vocabulary
+
+1303
+00:52:36,300 --> 00:52:39,090
+for-- it's kind of
+closer to Guice,
+
+1304
+00:52:39,090 --> 00:52:41,610
+if you're familiar with
+that, where you say bind
+
+1305
+00:52:41,610 --> 00:52:45,950
+something to either a
+value or to a factory,
+
+1306
+00:52:45,949 --> 00:52:48,629
+or we kind of specified
+instructions on how
+
+1307
+00:52:48,630 --> 00:52:49,860
+to make one of these things.
+
+1308
+00:52:49,860 --> 00:52:53,710
+(null)
+
+1309
+00:52:53,710 --> 00:52:55,065
+IGOR: Objects for configuration?
+
+1310
+00:52:55,065 --> 00:52:57,599
+(null)
+
+1311
+00:52:57,599 --> 00:52:59,869
+BRAD GREEN: You have
+to mumble louder.
+
+1312
+00:52:59,869 --> 00:53:01,460
+IGOR: So one of
+the reasons why you
+
+1313
+00:53:01,460 --> 00:53:03,710
+needed the provider
+was to customize
+
+1314
+00:53:03,710 --> 00:53:06,110
+how an object is instantiated.
+
+1315
+00:53:06,110 --> 00:53:10,200
+And what we do now instead
+of having this special phase,
+
+1316
+00:53:10,199 --> 00:53:12,659
+we have config objects
+that are injected
+
+1317
+00:53:12,659 --> 00:53:16,029
+into the constructor
+of each service
+
+1318
+00:53:16,030 --> 00:53:18,890
+or each object that has
+been instantiated by DI.
+
+1319
+00:53:18,889 --> 00:53:21,869
+And using that config object
+you can achieve the same thing
+
+1320
+00:53:21,869 --> 00:53:23,710
+that you did with the
+provider in the past.
+
+1321
+00:53:23,710 --> 00:53:26,324
+(null)
+
+1322
+00:53:26,324 --> 00:53:26,949
+BRAD GREEN: OK.
+
+1323
+00:53:26,949 --> 00:53:28,573
+I know I have more
+questions over here.
+
+1324
+00:53:28,574 --> 00:53:29,079
+Back there?
+
+1325
+00:53:29,079 --> 00:53:29,579
+Is there?
+
+1326
+00:53:29,579 --> 00:53:38,429
+(null)
+
+1327
+00:53:38,429 --> 00:53:41,759
+AUDIENCE: What is the
+future of Angular 1.x?
+
+1328
+00:53:41,760 --> 00:53:45,930
+I am mainly asking because
+if we have a large project
+
+1329
+00:53:45,929 --> 00:53:49,949
+and how soon we should
+be targeting to upgrade,
+
+1330
+00:53:49,949 --> 00:53:54,439
+or will there be a
+possibility of a project
+
+1331
+00:53:54,440 --> 00:53:59,909
+can partiality upgraded
+to 2.0 and partially can
+
+1332
+00:53:59,909 --> 00:54:03,549
+we use 1.3, or 1.4?
+
+1333
+00:54:03,550 --> 00:54:06,610
+So that way we don't have
+to migrate entire project,
+
+1334
+00:54:06,610 --> 00:54:08,900
+but we can go phase by phase.
+
+1335
+00:54:08,900 --> 00:54:09,400
+IGOR: Yeah.
+
+1336
+00:54:09,400 --> 00:54:09,920
+Absolutely.
+
+1337
+00:54:09,920 --> 00:54:12,119
+This is one of things we
+are actually discussing.
+
+1338
+00:54:12,119 --> 00:54:17,329
+How could we make it possible
+to run Angular2 application
+
+1339
+00:54:17,329 --> 00:54:19,659
+in an Angular2 application.
+
+1340
+00:54:19,659 --> 00:54:21,409
+And in addition
+to that, also how
+
+1341
+00:54:21,409 --> 00:54:25,139
+could we run Angular2
+application inside of Angular 1
+
+1342
+00:54:25,139 --> 00:54:27,599
+application, or run
+Angular 1 application
+
+1343
+00:54:27,599 --> 00:54:31,980
+and Angular2 application
+side by side in the same VM.
+
+1344
+00:54:31,980 --> 00:54:34,070
+We don't have all
+the answers yet.
+
+1345
+00:54:34,070 --> 00:54:36,059
+It's something that is
+totally on our mind.
+
+1346
+00:54:36,059 --> 00:54:38,279
+And I think we'll
+definitely need it
+
+1347
+00:54:38,280 --> 00:54:43,880
+for any kind of large scale
+migration of big applications.
+
+1348
+00:54:43,880 --> 00:54:47,440
+So we're working on that.
+
+1349
+00:54:47,440 --> 00:54:50,099
+Please don't upgrade to
+Angular2 until it's ready.
+
+1350
+00:54:50,099 --> 00:54:52,049
+It's not ready yet.
+
+1351
+00:54:52,050 --> 00:54:55,310
+We are showing you this stuff
+just to keep you in the loop
+
+1352
+00:54:55,309 --> 00:54:59,329
+as to what's going on and get
+your feedback because we still
+
+1353
+00:54:59,329 --> 00:55:02,639
+can change things,
+and sometimes we
+
+1354
+00:55:02,639 --> 00:55:04,829
+just miss stuff or use cases.
+
+1355
+00:55:04,829 --> 00:55:07,119
+And it's good to have
+discussion about stuff that
+
+1356
+00:55:07,119 --> 00:55:08,719
+is in progress.
+
+1357
+00:55:08,719 --> 00:55:12,439
+So we are definitely
+committed to 1x.
+
+1358
+00:55:12,440 --> 00:55:16,269
+1.4 is launching around
+the ng-conf timeframe.
+
+1359
+00:55:16,269 --> 00:55:18,119
+We are already planning 1.5.
+
+1360
+00:55:18,119 --> 00:55:22,349
+So 1x is nowhere to be dead,
+even though the code base
+
+1361
+00:55:22,349 --> 00:55:25,969
+is aging as David said.
+
+1362
+00:55:25,969 --> 00:55:26,949
+That's just a fact.
+
+1363
+00:55:26,949 --> 00:55:29,549
+(null)
+
+1364
+00:55:29,550 --> 00:55:31,470
+The work we're
+doing for Angular2
+
+1365
+00:55:31,469 --> 00:55:34,159
+is because we know that
+at one point in the future
+
+1366
+00:55:34,159 --> 00:55:36,199
+Angular 1 is going
+to be obsolete.
+
+1367
+00:55:36,199 --> 00:55:38,739
+And we want to be
+ready for that.
+
+1368
+00:55:38,739 --> 00:55:40,476
+So we're committed
+to supporting 1x.
+
+1369
+00:55:40,476 --> 00:55:42,309
+We're going to talk
+more about the migration
+
+1370
+00:55:42,309 --> 00:55:45,250
+story and the support
+story at ng-conf.
+
+1371
+00:55:45,250 --> 00:55:46,125
+AUDIENCE: [INAUDIBLE]
+
+1372
+00:55:46,125 --> 00:55:49,590
+(null)
+
+1373
+00:55:49,590 --> 00:55:54,700
+IGOR: Does the story include
+[INAUDIBLE] from 1 to 2?
+
+1374
+00:55:54,699 --> 00:55:57,589
+We'll talk about it at ng-conf.
+
+1375
+00:55:57,590 --> 00:55:59,590
+We'll see.
+
+1376
+00:55:59,590 --> 00:56:01,390
+As I said, Angular2's
+not finished yet.
+
+1377
+00:56:01,389 --> 00:56:04,239
+So we don't really know
+what the options are.
+
+1378
+00:56:04,239 --> 00:56:07,459
+Some kind of tooling that
+would help the migration
+
+1379
+00:56:07,460 --> 00:56:09,494
+is a possibility, but
+we don't know yet.
+
+1380
+00:56:09,494 --> 00:56:11,819
+(null)
+
+1381
+00:56:11,820 --> 00:56:13,570
+AUDIENCE: Could you
+talk a little bit more
+
+1382
+00:56:13,570 --> 00:56:16,269
+about how you achieved
+those performance numbers
+
+1383
+00:56:16,269 --> 00:56:18,369
+that David was showing up there?
+
+1384
+00:56:18,369 --> 00:56:20,559
+It was pretty impressive.
+
+1385
+00:56:20,559 --> 00:56:21,909
+IGOR: We made them up.
+
+1386
+00:56:21,909 --> 00:56:22,809
+[LAUGHTER]
+
+1387
+00:56:22,809 --> 00:56:23,049
+MISKO: I wish it
+was that simple.
+
+1388
+00:56:23,050 --> 00:56:24,966
+AUDIENCE: No, I thought
+Brad was the marketing
+
+1389
+00:56:24,965 --> 00:56:28,819
+and you guys were in
+engineering-- oh, never mind.
+
+1390
+00:56:28,820 --> 00:56:32,300
+MISKO: So a lot of that is
+actually, believe it or not,
+
+1391
+00:56:32,300 --> 00:56:32,810
+documented.
+
+1392
+00:56:32,809 --> 00:56:35,739
+So I'm trying to do a brain
+dump of all this stuff.
+
+1393
+00:56:35,739 --> 00:56:37,529
+And somewhere in
+the Angular Repo
+
+1394
+00:56:37,530 --> 00:56:39,519
+there is a folder called Docs.
+
+1395
+00:56:39,519 --> 00:56:44,059
+And it talks about
+how views work.
+
+1396
+00:56:44,059 --> 00:56:45,549
+One of the things
+we do in Angular2
+
+1397
+00:56:45,550 --> 00:56:50,269
+is we're trying to
+remove the need for you
+
+1398
+00:56:50,269 --> 00:56:52,009
+to ever get a hold
+of a DOM element.
+
+1399
+00:56:52,010 --> 00:56:53,760
+So a link function is kind
+of a common place where
+
+1400
+00:56:53,760 --> 00:56:54,910
+you get a hold of
+the DOM element,
+
+1401
+00:56:54,909 --> 00:56:57,119
+and then you do all kinds of
+magical things inside of there,
+
+1402
+00:56:57,119 --> 00:56:57,389
+right?
+
+1403
+00:56:57,389 --> 00:56:58,349
+So we removed that.
+
+1404
+00:56:58,349 --> 00:57:01,150
+And because we removed
+that we can really
+
+1405
+00:57:01,150 --> 00:57:03,110
+reason about a
+template statically.
+
+1406
+00:57:03,110 --> 00:57:05,519
+So one of the things we can
+do is we can reuse the views.
+
+1407
+00:57:05,519 --> 00:57:08,449
+In the Angular 1x we can't
+do it because once we
+
+1408
+00:57:08,449 --> 00:57:09,964
+give the element
+to a directive we
+
+1409
+00:57:09,965 --> 00:57:11,840
+have no idea what you're
+going to do with it.
+
+1410
+00:57:11,840 --> 00:57:12,700
+You might destroy it.
+
+1411
+00:57:12,699 --> 00:57:13,532
+You might remove it.
+
+1412
+00:57:13,532 --> 00:57:14,619
+You might rearrange it.
+
+1413
+00:57:14,619 --> 00:57:17,150
+And therefore we can
+no longer reuse it.
+
+1414
+00:57:17,150 --> 00:57:19,510
+As far as we're concerned
+it's been mutilated
+
+1415
+00:57:19,510 --> 00:57:21,720
+and it's no good for us.
+
+1416
+00:57:21,719 --> 00:57:24,589
+Maybe a strong word.
+
+1417
+00:57:24,590 --> 00:57:27,970
+So in Angular 2x,
+because we don't actually
+
+1418
+00:57:27,969 --> 00:57:30,230
+give you the element
+we know exactly what
+
+1419
+00:57:30,230 --> 00:57:32,199
+we have done to
+the DOM structure.
+
+1420
+00:57:32,199 --> 00:57:33,616
+And we know how to undo it.
+
+1421
+00:57:33,617 --> 00:57:35,950
+And it turns out that this
+is what allows a view caching
+
+1422
+00:57:35,949 --> 00:57:38,649
+and that's a huge
+performance improvement.
+
+1423
+00:57:38,650 --> 00:57:42,769
+The other place is in Angular
+1x you can kind of at any point
+
+1424
+00:57:42,769 --> 00:57:46,159
+just say $scope.$watch and start
+watching anything you want.
+
+1425
+00:57:46,159 --> 00:57:47,940
+We made this all
+declarative so then we
+
+1426
+00:57:47,940 --> 00:57:52,289
+can pre-allocate all of the
+data structures ahead of time
+
+1427
+00:57:52,289 --> 00:57:55,009
+and figure out, OK, when
+somebody instantiates
+
+1428
+00:57:55,010 --> 00:57:56,625
+this particular
+component, these are
+
+1429
+00:57:56,625 --> 00:57:58,820
+all the watches that
+they're going to have.
+
+1430
+00:57:58,820 --> 00:58:02,580
+And what we do is we lay out
+a prototypical component.
+
+1431
+00:58:02,579 --> 00:58:05,119
+We lay out all of its
+supporting data structures,
+
+1432
+00:58:05,119 --> 00:58:08,089
+it's injectors, everything
+you can possibly imagine.
+
+1433
+00:58:08,090 --> 00:58:09,150
+We lay it all out.
+
+1434
+00:58:09,150 --> 00:58:11,230
+And then when you say,
+I need one of those,
+
+1435
+00:58:11,230 --> 00:58:13,420
+it's super easy for us
+to just make a copy.
+
+1436
+00:58:13,420 --> 00:58:15,700
+Literally just go over
+property by property,
+
+1437
+00:58:15,699 --> 00:58:16,849
+and we just copy it over.
+
+1438
+00:58:16,849 --> 00:58:18,110
+And it's very efficient.
+
+1439
+00:58:18,110 --> 00:58:22,912
+And those are the two big kind
+of tricks for us up our sleeves
+
+1440
+00:58:22,911 --> 00:58:24,619
+that will give us this
+performance boost.
+
+1441
+00:58:24,619 --> 00:58:26,549
+But in order to
+get that, we need
+
+1442
+00:58:26,550 --> 00:58:30,112
+to be able to reason
+about the template, kind
+
+1443
+00:58:30,112 --> 00:58:31,070
+of a compiled template.
+
+1444
+00:58:31,070 --> 00:58:33,670
+The compiler needs to know
+where all the expressions are,
+
+1445
+00:58:33,670 --> 00:58:35,480
+where are all the
+variables, where
+
+1446
+00:58:35,480 --> 00:58:37,719
+are all the sub templates.
+
+1447
+00:58:37,719 --> 00:58:41,439
+And this is part of the reason
+why the syntax have to change.
+
+1448
+00:58:41,440 --> 00:58:44,195
+So that we could communicate
+this to the compiler.
+
+1449
+00:58:44,195 --> 00:58:46,319
+Also it turns out, it's
+beneficial to the developer
+
+1450
+00:58:46,320 --> 00:58:47,760
+because you can reason about it.
+
+1451
+00:58:47,760 --> 00:58:49,343
+And it's the same
+set of things that's
+
+1452
+00:58:49,342 --> 00:58:51,059
+also beneficial to your tools.
+
+1453
+00:58:51,059 --> 00:58:53,728
+Like your ID could
+easily color code things,
+
+1454
+00:58:53,728 --> 00:58:55,769
+can give you hints about
+what is and isn't valid,
+
+1455
+00:58:55,769 --> 00:58:57,119
+where you mistyped something.
+
+1456
+00:58:57,119 --> 00:58:59,069
+So this is a kind of
+an all around benefit
+
+1457
+00:58:59,070 --> 00:59:02,050
+that you can get by
+kind of rearranging when
+
+1458
+00:59:02,050 --> 00:59:03,730
+in the lifetime
+of an application
+
+1459
+00:59:03,730 --> 00:59:06,226
+you're doing things.
+
+1460
+00:59:06,226 --> 00:59:07,559
+BRAD GREEN: Questions over here?
+
+1461
+00:59:07,559 --> 00:59:10,670
+IGOR: There is one more
+organization that is actually
+
+1462
+00:59:10,670 --> 00:59:13,849
+quite hard to notice until
+you look under the hood.
+
+1463
+00:59:13,849 --> 00:59:16,610
+In Angular 1 one of the
+performance optimizations
+
+1464
+00:59:16,610 --> 00:59:18,289
+is the compile phase.
+
+1465
+00:59:18,289 --> 00:59:21,239
+If you're building directive you
+have access to compile phase.
+
+1466
+00:59:21,239 --> 00:59:24,149
+And when compile
+phase is invoked
+
+1467
+00:59:24,150 --> 00:59:25,800
+is when you're using a repeater.
+
+1468
+00:59:25,800 --> 00:59:29,190
+Usually when you have a
+element, or a component inside
+
+1469
+00:59:29,190 --> 00:59:32,869
+of a repeater, we'll call the
+compile function only once
+
+1470
+00:59:32,869 --> 00:59:34,420
+for each repeater.
+
+1471
+00:59:34,420 --> 00:59:37,619
+What Misko talked about, these
+kind of static optimizations
+
+1472
+00:59:37,619 --> 00:59:39,579
+that we are doing,
+they happen once
+
+1473
+00:59:39,579 --> 00:59:42,090
+per component in
+the application.
+
+1474
+00:59:42,090 --> 00:59:44,460
+So even if you have
+two repeaters right now
+
+1475
+00:59:44,460 --> 00:59:46,670
+side by side, they're
+using the same component,
+
+1476
+00:59:46,670 --> 00:59:50,650
+we call the compile phase,
+or compile function once
+
+1477
+00:59:50,650 --> 00:59:51,760
+for each repeater.
+
+1478
+00:59:51,760 --> 00:59:53,920
+With all these optimizations
+we can do just once
+
+1479
+00:59:53,920 --> 00:59:55,269
+for application.
+
+1480
+00:59:55,269 --> 00:59:57,889
+Even if you destroy the
+view and recreate it,
+
+1481
+00:59:57,889 --> 00:59:59,589
+we don't need to rerun it again.
+
+1482
+00:59:59,590 --> 01:00:03,289
+So this is where a lot of
+the performance comes also.
+
+1483
+01:00:03,289 --> 01:00:05,980
+BRAD GREEN: Was there a
+question over here somewhere?
+
+1484
+01:00:05,980 --> 01:00:06,757
+There?
+
+1485
+01:00:06,757 --> 01:00:07,257
+Yeah.
+
+1486
+01:00:07,257 --> 01:00:12,368
+(null)
+
+1487
+01:00:12,369 --> 01:00:14,160
+AUDIENCE: This is sort
+of answered already,
+
+1488
+01:00:14,159 --> 01:00:17,659
+but we're talking about
+Angular 1 applications
+
+1489
+01:00:17,659 --> 01:00:20,019
+that need to be
+migrated at some point,
+
+1490
+01:00:20,019 --> 01:00:23,340
+but if I'm planning to
+start a new product today,
+
+1491
+01:00:23,340 --> 01:00:25,700
+is there something
+you would recommend?
+
+1492
+01:00:25,699 --> 01:00:27,409
+And because we are
+kind of lost between,
+
+1493
+01:00:27,409 --> 01:00:29,033
+should we start with
+Angular 1 and then
+
+1494
+01:00:29,034 --> 01:00:30,960
+think about migrating
+to Angular2,
+
+1495
+01:00:30,960 --> 01:00:32,720
+because Angular2
+is not yet ready.
+
+1496
+01:00:32,719 --> 01:00:36,379
+Is there any
+implementation techniques
+
+1497
+01:00:36,380 --> 01:00:38,880
+you would recommend
+that we can prepare also
+
+1498
+01:00:38,880 --> 01:00:42,780
+to migrate to Angular2
+when it's ready?
+
+1499
+01:00:42,780 --> 01:00:45,019
+MISKO: When you're starting
+a new project today,
+
+1500
+01:00:45,019 --> 01:00:47,989
+Angular 1x is what you're
+going to start with.
+
+1501
+01:00:47,989 --> 01:00:49,989
+If you just want to
+play with Angular2,
+
+1502
+01:00:49,989 --> 01:00:53,789
+kind of see where it's heading,
+whatever, for playing purposes,
+
+1503
+01:00:53,789 --> 01:00:56,230
+by all means, you
+can try the Todo app.
+
+1504
+01:00:56,230 --> 01:00:59,449
+But understand that
+everything's in flux still.
+
+1505
+01:00:59,449 --> 01:01:02,579
+We could decide tomorrow that
+bang forEach is a bad idea.
+
+1506
+01:01:02,579 --> 01:01:04,079
+And it's going to
+be something else.
+
+1507
+01:01:04,079 --> 01:01:06,813
+And tough luck.
+
+1508
+01:01:06,813 --> 01:01:08,230
+BRAD GREEN: By the
+way, that would
+
+1509
+01:01:08,230 --> 01:01:11,340
+be based on your input,
+not just arbitrary whim.
+
+1510
+01:01:11,340 --> 01:01:13,300
+That's why we're
+doing these events.
+
+1511
+01:01:13,300 --> 01:01:16,721
+MISKO: It would be based on
+somebody basically coming to us
+
+1512
+01:01:16,721 --> 01:01:19,219
+and telling us, oh, by the way,
+this is the kind of problems
+
+1513
+01:01:19,219 --> 01:01:20,250
+that it creates.
+
+1514
+01:01:20,250 --> 01:01:21,800
+And then we would have to
+go back to the drawing board
+
+1515
+01:01:21,800 --> 01:01:23,539
+and say, OK, we didn't
+think about that.
+
+1516
+01:01:23,539 --> 01:01:27,840
+So let's rethink
+this kind of a thing.
+
+1517
+01:01:27,840 --> 01:01:28,530
+[INAUDIBLE]
+
+1518
+01:01:28,530 --> 01:01:30,860
+IGOR: So when it comes
+to particular techniques,
+
+1519
+01:01:30,860 --> 01:01:39,220
+one thing that is probably going
+to get you the furthest is just
+
+1520
+01:01:39,219 --> 01:01:41,009
+think of your application
+as components.
+
+1521
+01:01:41,010 --> 01:01:44,720
+This was not as
+important in Angular 1,
+
+1522
+01:01:44,719 --> 01:01:46,949
+where we had controllers
+and templates,
+
+1523
+01:01:46,949 --> 01:01:49,039
+and the router would
+combine them together.
+
+1524
+01:01:49,039 --> 01:01:51,710
+In Angular2 everything
+is a component.
+
+1525
+01:01:51,710 --> 01:01:54,240
+And the router just
+swaps around components,
+
+1526
+01:01:54,239 --> 01:01:56,329
+instantiates components.
+
+1527
+01:01:56,329 --> 01:02:01,230
+This is one of the things that
+you can do today in Angular 1
+
+1528
+01:02:01,230 --> 01:02:05,980
+to make the architecture
+closer to Angular2.
+
+1529
+01:02:05,980 --> 01:02:09,780
+The other thing you can start
+doing is start using ES6.
+
+1530
+01:02:09,780 --> 01:02:11,400
+There are many
+transpilers out there.
+
+1531
+01:02:11,400 --> 01:02:14,180
+We like Traceur, but you
+can use whatever you want.
+
+1532
+01:02:14,179 --> 01:02:17,669
+There's 6to5 and others.
+
+1533
+01:02:17,670 --> 01:02:22,639
+I think you'll find ES6
+very pleasant to use
+
+1534
+01:02:22,639 --> 01:02:24,869
+and it will make
+you more productive.
+
+1535
+01:02:24,869 --> 01:02:28,199
+So why not start there?
+
+1536
+01:02:28,199 --> 01:02:29,878
+Other suggestions?
+
+1537
+01:02:29,878 --> 01:02:30,420
+I don't know.
+
+1538
+01:02:30,420 --> 01:02:33,030
+We're going to talk more about
+this stuff at the ng-conf.
+
+1539
+01:02:33,030 --> 01:02:35,550
+We're going to make a
+list of recommendations.
+
+1540
+01:02:35,550 --> 01:02:38,100
+I haven't really
+thought much about this.
+
+1541
+01:02:38,099 --> 01:02:42,319
+MISKO: I would just say
+stick to good old practices.
+
+1542
+01:02:42,320 --> 01:02:44,100
+Don't write messy code.
+
+1543
+01:02:44,099 --> 01:02:45,630
+That makes it easy to re-factor.
+
+1544
+01:02:45,630 --> 01:02:46,990
+BRAD GREEN: Write your tests.
+
+1545
+01:02:46,989 --> 01:02:48,197
+MISKO: Write your tests, yes.
+
+1546
+01:02:48,197 --> 01:02:50,587
+(null)
+
+1547
+01:02:50,588 --> 01:02:51,213
+BRAD GREEN: OK.
+
+1548
+01:02:51,213 --> 01:02:52,171
+Back here.
+
+1549
+01:02:52,170 --> 01:02:57,439
+(null)
+
+1550
+01:02:57,440 --> 01:02:59,610
+AUDIENCE: When you
+guys introduced track
+
+1551
+01:02:59,610 --> 01:03:03,440
+by into ng-repeat I noticed that
+it got a lot smarter obviously
+
+1552
+01:03:03,440 --> 01:03:05,829
+about knowing when
+to repaint what,
+
+1553
+01:03:05,829 --> 01:03:09,650
+but ng-repeat is almost
+always the bottleneck
+
+1554
+01:03:09,650 --> 01:03:11,769
+in terms of performance
+in the DOM, in my opinion.
+
+1555
+01:03:11,769 --> 01:03:15,480
+Have you guys noticed
+that by implementing Zones
+
+1556
+01:03:15,480 --> 01:03:17,780
+that you've gotten
+better performance,
+
+1557
+01:03:17,780 --> 01:03:20,460
+it's a lot smarter about
+knowing when to repaint things?
+
+1558
+01:03:20,460 --> 01:03:22,780
+And can we expect to be
+able to draw potentially
+
+1559
+01:03:22,780 --> 01:03:28,280
+hundreds or thousands of things
+on the screen using ng-repeat?
+
+1560
+01:03:28,280 --> 01:03:33,850
+MISKO: So the
+ng-repeat, the rendering
+
+1561
+01:03:33,849 --> 01:03:34,769
+is not the bottleneck.
+
+1562
+01:03:34,769 --> 01:03:38,657
+What it is is detecting
+the changes, right?
+
+1563
+01:03:38,657 --> 01:03:39,407
+IGOR: [INAUDIBLE].
+
+1564
+01:03:39,407 --> 01:03:42,300
+(null)
+
+1565
+01:03:42,300 --> 01:03:43,560
+MISKO: Well,
+
+1566
+01:03:43,559 --> 01:03:44,829
+IGOR: In Angular 1 though.
+
+1567
+01:03:44,829 --> 01:03:47,298
+MISKO: Depends how
+you look at it, right?
+
+1568
+01:03:47,298 --> 01:03:48,659
+Do you want to answer?
+
+1569
+01:03:48,659 --> 01:03:51,829
+IGOR: Yeah, so I think your
+question slightly unclear
+
+1570
+01:03:51,829 --> 01:03:53,889
+because you are
+assuming that Zones
+
+1571
+01:03:53,889 --> 01:03:57,440
+is some kind of replacement
+for track by in Angular 1.
+
+1572
+01:03:57,440 --> 01:03:59,690
+Is that not the case or can
+you clarify your question?
+
+1573
+01:03:59,690 --> 01:04:05,720
+(null)
+
+1574
+01:04:05,719 --> 01:04:08,209
+AUDIENCE: I assume,
+yeah, by identifying
+
+1575
+01:04:08,210 --> 01:04:11,139
+what has changed you guys are
+able to accurately determine
+
+1576
+01:04:11,139 --> 01:04:13,549
+what you need to
+redraw using ng-repeat.
+
+1577
+01:04:13,550 --> 01:04:17,150
+And via Zones you have
+more fine tuned control
+
+1578
+01:04:17,150 --> 01:04:18,960
+of determining what's changed.
+
+1579
+01:04:18,960 --> 01:04:20,769
+So if you can identify
+which element,
+
+1580
+01:04:20,769 --> 01:04:23,670
+what single element has
+changed then you could.
+
+1581
+01:04:23,670 --> 01:04:26,829
+IGOR: So Zones actually
+don't tell us what changed.
+
+1582
+01:04:26,829 --> 01:04:29,469
+Zones only tell us
+that something changed.
+
+1583
+01:04:29,469 --> 01:04:33,029
+It's kind of a general
+purpose trigger
+
+1584
+01:04:33,030 --> 01:04:36,050
+to tell us about events that
+are happening in the browser.
+
+1585
+01:04:36,050 --> 01:04:38,670
+It's still up to us to
+figure out what changed.
+
+1586
+01:04:38,670 --> 01:04:41,119
+And this is where
+new change detection
+
+1587
+01:04:41,119 --> 01:04:45,839
+comes into play, where we can
+scan a large amount of objects
+
+1588
+01:04:45,840 --> 01:04:47,190
+and figure out what changed.
+
+1589
+01:04:47,190 --> 01:04:49,130
+And David mentioned
+some of the strategies
+
+1590
+01:04:49,130 --> 01:04:52,670
+we are using, where we
+can do kind of a tree
+
+1591
+01:04:52,670 --> 01:04:56,730
+shaking, and just looking only
+in certain parts of the graph
+
+1592
+01:04:56,730 --> 01:04:58,059
+to determine what changed.
+
+1593
+01:04:58,059 --> 01:05:02,219
+But I think if we are talking
+about ng-repeat, specifically
+
+1594
+01:05:02,219 --> 01:05:05,369
+in Angular 1x, I would bet that
+the performance problems are
+
+1595
+01:05:05,369 --> 01:05:10,759
+coming from the DOM render, from
+creation of DOM, appending DOM
+
+1596
+01:05:10,760 --> 01:05:13,050
+to the document.
+
+1597
+01:05:13,050 --> 01:05:15,060
+And then having the
+browser render it.
+
+1598
+01:05:15,059 --> 01:05:18,679
+And those issues
+are being addressed
+
+1599
+01:05:18,679 --> 01:05:21,129
+by the view caching, and
+all these smart things
+
+1600
+01:05:21,130 --> 01:05:23,590
+we are doing with the compiler.
+
+1601
+01:05:23,590 --> 01:05:24,720
+So we are addressing that.
+
+1602
+01:05:24,719 --> 01:05:28,079
+(null)
+
+1603
+01:05:28,079 --> 01:05:31,047
+BRAD GREEN: Question here, yeah?
+
+1604
+01:05:31,047 --> 01:05:32,880
+AUDIENCE: There was
+that one time discussion
+
+1605
+01:05:32,880 --> 01:05:37,110
+of a long form versus
+a short form syntax.
+
+1606
+01:05:37,110 --> 01:05:42,059
+So instead of the square
+brackets and curve braces,
+
+1607
+01:05:42,059 --> 01:05:44,650
+or whatever that you would
+also have a longer form.
+
+1608
+01:05:44,650 --> 01:05:47,789
+So if people aren't
+really into looking
+
+1609
+01:05:47,789 --> 01:05:50,442
+at all of the syntax-y
+looking things,
+
+1610
+01:05:50,442 --> 01:05:51,900
+that there would
+be an alternative.
+
+1611
+01:05:51,900 --> 01:05:53,349
+Are you still thinking about?
+
+1612
+01:05:53,349 --> 01:05:54,744
+MISKO: It's in there already.
+
+1613
+01:05:54,744 --> 01:05:58,309
+(null)
+
+1614
+01:05:58,309 --> 01:06:01,049
+BRAD GREEN: That part actually
+has a doc somebody could read.
+
+1615
+01:06:01,050 --> 01:06:02,133
+MISKO: I believe so, yeah.
+
+1616
+01:06:02,132 --> 01:06:04,730
+That's actually described
+in a templating doc.
+
+1617
+01:06:04,730 --> 01:06:07,275
+Yes, go find the template dot
+[? md, ?] something or other.
+
+1618
+01:06:07,275 --> 01:06:08,400
+BRAD GREEN: Misko wrote it.
+
+1619
+01:06:08,400 --> 01:06:08,898
+He forgot.
+
+1620
+01:06:08,898 --> 01:06:09,940
+MISKO: It's horrible.
+
+1621
+01:06:09,940 --> 01:06:13,804
+Is just a brain dump, so it's
+not well-formatted or anything.
+
+1622
+01:06:13,804 --> 01:06:14,929
+BRAD GREEN: More questions.
+
+1623
+01:06:14,929 --> 01:06:15,279
+Back here.
+
+1624
+01:06:15,280 --> 01:06:15,780
+OK.
+
+1625
+01:06:15,780 --> 01:06:19,550
+(null)
+
+1626
+01:06:19,550 --> 01:06:23,064
+AUDIENCE: Can you talk something
+about Angular [INAUDIBLE] 2.x
+
+1627
+01:06:23,063 --> 01:06:24,480
+being mobile for
+us because that's
+
+1628
+01:06:24,480 --> 01:06:27,869
+what a I heard couple
+of months back.
+
+1629
+01:06:27,869 --> 01:06:30,289
+And about testing
+and finally when
+
+1630
+01:06:30,289 --> 01:06:35,639
+can we get our hands onto
+the final version of 2.x?
+
+1631
+01:06:35,639 --> 01:06:36,619
+[LAUGHTER]
+
+1632
+01:06:36,619 --> 01:06:40,733
+BRAD GREEN: I'll take that last
+question, but go ahead, Misko.
+
+1633
+01:06:40,733 --> 01:06:42,900
+MISKO: Mobile, there's a
+couple things about mobile.
+
+1634
+01:06:42,900 --> 01:06:45,320
+First of all, you want
+to not drain the battery.
+
+1635
+01:06:45,320 --> 01:06:47,320
+So you want to be the
+most efficient possible,
+
+1636
+01:06:47,320 --> 01:06:50,710
+both in terms of CPU usage
+and memory usage, so you don't
+
+1637
+01:06:50,710 --> 01:06:53,900
+force the app to stop out of
+memory or something like that.
+
+1638
+01:06:53,900 --> 01:06:59,530
+And the other part to the mobile
+story is to have gestures.
+
+1639
+01:06:59,530 --> 01:07:01,540
+So let's take each
+one separately.
+
+1640
+01:07:01,539 --> 01:07:04,726
+So for speed we have this,
+what we call ultra fast change
+
+1641
+01:07:04,726 --> 01:07:07,409
+detection, which I guess
+wasn't covered in here, was it?
+
+1642
+01:07:07,409 --> 01:07:07,909
+No.
+
+1643
+01:07:07,909 --> 01:07:08,539
+OK.
+
+1644
+01:07:08,539 --> 01:07:11,855
+So it turns out the way
+the change detection does,
+
+1645
+01:07:11,856 --> 01:07:13,730
+when we originally wrote
+it, I kind of didn't
+
+1646
+01:07:13,730 --> 01:07:15,440
+know much about how VMs work.
+
+1647
+01:07:15,440 --> 01:07:17,389
+But it turns out we left
+whole bunch of what's
+
+1648
+01:07:17,389 --> 01:07:19,839
+known as polymorphic
+calls inside of it.
+
+1649
+01:07:19,840 --> 01:07:20,840
+BRAD GREEN: Megamorphic.
+
+1650
+01:07:20,840 --> 01:07:21,079
+MISKO: Sorry.
+
+1651
+01:07:21,079 --> 01:07:21,789
+Megamorphic.
+
+1652
+01:07:21,789 --> 01:07:22,289
+Megamorphic.
+
+1653
+01:07:22,289 --> 01:07:22,989
+Thank you.
+
+1654
+01:07:22,989 --> 01:07:24,509
+And these megamorphic
+calls are the worst thing
+
+1655
+01:07:24,510 --> 01:07:25,470
+you can do to a VM.
+
+1656
+01:07:25,469 --> 01:07:27,839
+And the VM really
+does not like them.
+
+1657
+01:07:27,840 --> 01:07:30,282
+So we re-factored, rebuild
+the change detection.
+
+1658
+01:07:30,282 --> 01:07:31,240
+We scratched our heads.
+
+1659
+01:07:31,239 --> 01:07:33,209
+And we got this new
+thing, which leaves
+
+1660
+01:07:33,210 --> 01:07:36,710
+behind nothing but
+monomorphic calls, sites.
+
+1661
+01:07:36,710 --> 01:07:38,260
+And those are awesome
+because the VM
+
+1662
+01:07:38,260 --> 01:07:39,870
+knows how to inline them.
+
+1663
+01:07:39,869 --> 01:07:42,400
+And so they make them
+go really, really fast.
+
+1664
+01:07:42,400 --> 01:07:44,441
+And fast on mobile means
+don't kill the battery
+
+1665
+01:07:44,440 --> 01:07:45,939
+while you're doing
+change detection.
+
+1666
+01:07:45,940 --> 01:07:47,650
+So that's step one.
+
+1667
+01:07:47,650 --> 01:07:52,420
+Step two is we can actually,
+if a component is well behaved,
+
+1668
+01:07:52,420 --> 01:07:54,106
+and it makes certain
+guarantees to us,
+
+1669
+01:07:54,106 --> 01:07:55,690
+it's a little extra
+work on your part,
+
+1670
+01:07:55,690 --> 01:07:57,240
+but if you do those
+guarantees to us,
+
+1671
+01:07:57,239 --> 01:07:59,859
+then we can actually skip the
+change detection altogether
+
+1672
+01:07:59,860 --> 01:08:01,110
+for that particular component.
+
+1673
+01:08:01,110 --> 01:08:02,360
+So we can kind of
+do branch pruning,
+
+1674
+01:08:02,360 --> 01:08:04,401
+the amount of stuff we
+have to change detect just
+
+1675
+01:08:04,400 --> 01:08:05,309
+gets shorter.
+
+1676
+01:08:05,309 --> 01:08:06,889
+Saves the battery more.
+
+1677
+01:08:06,889 --> 01:08:09,569
+And the next part is memory.
+
+1678
+01:08:09,570 --> 01:08:15,830
+And so the change detection,
+because of the way we do it,
+
+1679
+01:08:15,829 --> 01:08:19,170
+we actually are also not
+only efficient in CPU space,
+
+1680
+01:08:19,170 --> 01:08:21,340
+but also in memory space.
+
+1681
+01:08:21,340 --> 01:08:24,460
+And so the change
+detection for 2.x
+
+1682
+01:08:24,460 --> 01:08:27,239
+is a lot more efficient in
+that department as well.
+
+1683
+01:08:27,239 --> 01:08:30,219
+And finally, the event system,
+when you do parentheses
+
+1684
+01:08:30,220 --> 01:08:33,347
+and you put an event
+name, it turns out
+
+1685
+01:08:33,346 --> 01:08:34,929
+that that actually
+doesn't go directly
+
+1686
+01:08:34,930 --> 01:08:36,920
+to the element for the
+add event listener.
+
+1687
+01:08:36,920 --> 01:08:39,358
+Instead it goes to
+a set of plug-ins
+
+1688
+01:08:39,358 --> 01:08:40,899
+that can all vote
+whether or not they
+
+1689
+01:08:40,899 --> 01:08:43,490
+know how to intercept
+a particular event.
+
+1690
+01:08:43,489 --> 01:08:46,568
+And the last one in the
+list is just going to DOM.
+
+1691
+01:08:46,569 --> 01:08:48,870
+And the one in front
+of that is something
+
+1692
+01:08:48,869 --> 01:08:51,050
+that, for now, we're
+just using Hammer.js.
+
+1693
+01:08:51,050 --> 01:08:56,090
+And so you can say
+parentheses, left swipe.
+
+1694
+01:08:56,090 --> 01:08:58,779
+Or you can say parentheses,
+pinch, or something like that.
+
+1695
+01:08:58,779 --> 01:09:00,771
+And it just
+understands, oh, I know
+
+1696
+01:09:00,770 --> 01:09:02,228
+that DOM doesn't
+know how to do it,
+
+1697
+01:09:02,229 --> 01:09:04,010
+but I know because
+there's Hammer.js,
+
+1698
+01:09:04,010 --> 01:09:05,399
+it knows how to handle that.
+
+1699
+01:09:05,399 --> 01:09:06,750
+And then properly set the event.
+
+1700
+01:09:06,750 --> 01:09:10,619
+So those are the areas where
+we make it nice for mobile.
+
+1701
+01:09:10,619 --> 01:09:12,708
+IGOR: Lazy code loading?
+
+1702
+01:09:12,708 --> 01:09:13,500
+There's more stuff.
+
+1703
+01:09:13,500 --> 01:09:15,810
+Lazy code loading,
+which is new for mobile.
+
+1704
+01:09:15,810 --> 01:09:16,870
+We support that.
+
+1705
+01:09:16,869 --> 01:09:18,349
+But also components.
+
+1706
+01:09:18,350 --> 01:09:20,270
+And this is what Angular
+material is about.
+
+1707
+01:09:20,270 --> 01:09:24,250
+(null)
+
+1708
+01:09:24,250 --> 01:09:27,039
+Within Angular 1 we kind
+of started with this late
+
+1709
+01:09:27,039 --> 01:09:29,310
+in the life cycle
+of the framework,
+
+1710
+01:09:29,310 --> 01:09:32,600
+but we want to provide a set
+of components out of the box,
+
+1711
+01:09:32,600 --> 01:09:35,279
+so that you can just use
+those components to build
+
+1712
+01:09:35,279 --> 01:09:35,899
+applications.
+
+1713
+01:09:35,899 --> 01:09:37,606
+And these components
+are mobile friendly.
+
+1714
+01:09:37,606 --> 01:09:39,159
+They're mobile first.
+
+1715
+01:09:39,159 --> 01:09:41,510
+The next thing is offline.
+
+1716
+01:09:41,510 --> 01:09:43,970
+So with the data
+layer that I mentioned
+
+1717
+01:09:43,970 --> 01:09:48,490
+we are looking into offline
+first as one of the-- like
+
+1718
+01:09:48,489 --> 01:09:49,469
+making it smooth.
+
+1719
+01:09:49,470 --> 01:09:52,010
+And just easy for
+people to do that.
+
+1720
+01:09:52,010 --> 01:09:55,690
+(null)
+
+1721
+01:09:55,689 --> 01:09:58,359
+The new router is
+mobile friendly.
+
+1722
+01:09:58,359 --> 01:10:00,109
+And we're looking at
+some other stuff that
+
+1723
+01:10:00,109 --> 01:10:03,451
+would help navigation
+on mobile, so.
+
+1724
+01:10:03,452 --> 01:10:04,159
+BRAD GREEN: Wait.
+
+1725
+01:10:04,159 --> 01:10:06,247
+He also asked about testing.
+
+1726
+01:10:06,247 --> 01:10:06,829
+IGOR: Testing.
+
+1727
+01:10:06,829 --> 01:10:07,939
+BRAD GREEN: I don't know why
+that was glommed in there,
+
+1728
+01:10:07,939 --> 01:10:09,239
+but we all love
+testing so please.
+
+1729
+01:10:09,239 --> 01:10:09,869
+IGOR: We love testing.
+
+1730
+01:10:09,869 --> 01:10:11,829
+We're going to just
+keep on doing testing.
+
+1731
+01:10:11,829 --> 01:10:13,269
+We're adding more stuff.
+
+1732
+01:10:13,270 --> 01:10:17,860
+At ng-conf they're going to talk
+about accessibility testing.
+
+1733
+01:10:17,859 --> 01:10:19,819
+David didn't mention,
+but the graphs actually
+
+1734
+01:10:19,819 --> 01:10:24,279
+come from-- the performance
+numbers and graphs come
+
+1735
+01:10:24,279 --> 01:10:26,859
+from a new tool that we
+built for Angular that we
+
+1736
+01:10:26,859 --> 01:10:28,649
+called Bench Press.
+
+1737
+01:10:28,649 --> 01:10:30,939
+Then we are also going
+to make something
+
+1738
+01:10:30,939 --> 01:10:33,789
+that is available to you that
+you can use for performance
+
+1739
+01:10:33,789 --> 01:10:35,279
+testing in your application.
+
+1740
+01:10:35,279 --> 01:10:37,219
+So not only are we
+building it for Angular,
+
+1741
+01:10:37,220 --> 01:10:38,659
+but also any
+Angular application,
+
+1742
+01:10:38,659 --> 01:10:40,742
+or even non-Angular
+application-- because it's not
+
+1743
+01:10:40,743 --> 01:10:42,480
+tied to Angular--
+can use the same tool
+
+1744
+01:10:42,479 --> 01:10:44,639
+for performance testing.
+
+1745
+01:10:44,640 --> 01:10:45,689
+So we love testing.
+
+1746
+01:10:45,689 --> 01:10:46,980
+We're going to do more testing.
+
+1747
+01:10:46,979 --> 01:10:51,703
+We are exploring new
+areas to do testing in.
+
+1748
+01:10:51,703 --> 01:10:52,869
+AUDIENCE: So quick question.
+
+1749
+01:10:52,869 --> 01:10:56,880
+Will there ever be
+an Angular native?
+
+1750
+01:10:56,880 --> 01:10:59,085
+Which compiles down to native?
+
+1751
+01:10:59,085 --> 01:10:59,585
+IGOR: Maybe.
+
+1752
+01:10:59,585 --> 01:11:05,355
+(null)
+
+1753
+01:11:05,354 --> 01:11:06,479
+MISKO: Anything's possible.
+
+1754
+01:11:06,479 --> 01:11:09,209
+(null)
+
+1755
+01:11:09,210 --> 01:11:12,619
+BRAD GREEN: Do you want
+to come do it with us?
+
+1756
+01:11:12,619 --> 01:11:15,099
+So, Misko, talk a little
+bit about the structure
+
+1757
+01:11:15,100 --> 01:11:16,730
+and why this might be possible.
+
+1758
+01:11:16,729 --> 01:11:20,989
+Really it's not in 1.x, but
+it could be possible in 2.
+
+1759
+01:11:20,989 --> 01:11:23,778
+MISKO: How deep should I go?
+
+1760
+01:11:23,779 --> 01:11:25,320
+BRAD GREEN: You've
+got three minutes.
+
+1761
+01:11:25,319 --> 01:11:25,818
+MISKO: OK.
+
+1762
+01:11:25,819 --> 01:11:27,800
+So one of the things
+that I said earlier
+
+1763
+01:11:27,800 --> 01:11:30,449
+is that in Angular2,
+we work really
+
+1764
+01:11:30,449 --> 01:11:33,220
+hard to make sure you
+don't have to actually
+
+1765
+01:11:33,220 --> 01:11:35,400
+ever get a hold of the DOM.
+
+1766
+01:11:35,399 --> 01:11:37,939
+And so your whole application
+can be written without DOM.
+
+1767
+01:11:37,939 --> 01:11:40,129
+And because it can be
+written without DOM,
+
+1768
+01:11:40,130 --> 01:11:43,640
+you can run it
+essentially anywhere.
+
+1769
+01:11:43,640 --> 01:11:44,829
+Maybe a web worker.
+
+1770
+01:11:44,829 --> 01:11:46,960
+Well, we're not sure
+what that exactly means.
+
+1771
+01:11:46,960 --> 01:11:48,630
+We're kind of toying
+with this idea.
+
+1772
+01:11:48,630 --> 01:11:51,230
+But if you have a web worker,
+the other thing we have is
+
+1773
+01:11:51,229 --> 01:11:53,519
+that all the DOM
+updates happen through--
+
+1774
+01:11:53,520 --> 01:11:55,080
+instead of dealing
+with DOM, which
+
+1775
+01:11:55,079 --> 01:11:57,204
+is kind of very low level,
+we have this other thing
+
+1776
+01:11:57,204 --> 01:11:58,000
+called the view.
+
+1777
+01:11:58,000 --> 01:12:00,779
+And view is kind of the
+structural, or logical way
+
+1778
+01:12:00,779 --> 01:12:02,130
+of thinking about the app.
+
+1779
+01:12:02,130 --> 01:12:04,539
+Views can be added or
+removed, and so on.
+
+1780
+01:12:04,539 --> 01:12:08,350
+And because it's view, it
+creates a very nice interface
+
+1781
+01:12:08,350 --> 01:12:11,520
+for serialization.
+
+1782
+01:12:11,520 --> 01:12:14,250
+So if your application
+runs on web worker,
+
+1783
+01:12:14,250 --> 01:12:17,676
+it becomes really easy to
+serialize all the deltas for it
+
+1784
+01:12:17,676 --> 01:12:19,259
+across the wire, and
+then send it over
+
+1785
+01:12:19,260 --> 01:12:23,002
+to the UI thread, which then
+can update all the operations.
+
+1786
+01:12:23,002 --> 01:12:25,210
+But once you have that you
+kind of squint and you go,
+
+1787
+01:12:25,210 --> 01:12:25,609
+well, wait a minute.
+
+1788
+01:12:25,609 --> 01:12:27,608
+Why does it have to be a
+UI thread on a browser?
+
+1789
+01:12:27,609 --> 01:12:30,120
+It could really be
+just about anything
+
+1790
+01:12:30,119 --> 01:12:34,390
+that gets these updates,
+including maybe native.
+
+1791
+01:12:34,390 --> 01:12:38,660
+That's as far as we got,
+but if you have some ideas
+
+1792
+01:12:38,659 --> 01:12:41,159
+we're kind of making sure we're
+kind of designing this stuff
+
+1793
+01:12:41,159 --> 01:12:42,199
+to keep the doors open.
+
+1794
+01:12:42,199 --> 01:12:43,210
+BRAD GREEN: So no plans.
+
+1795
+01:12:43,210 --> 01:12:45,010
+I know Facebook
+has an announcement
+
+1796
+01:12:45,010 --> 01:12:46,891
+of this native thing.
+
+1797
+01:12:46,891 --> 01:12:48,349
+We would love to
+partner with them.
+
+1798
+01:12:48,350 --> 01:12:49,516
+We should go say hi to them.
+
+1799
+01:12:49,515 --> 01:12:50,799
+That might be a thing.
+
+1800
+01:12:50,800 --> 01:12:51,300
+OK.
+
+1801
+01:12:51,300 --> 01:12:51,798
+Over here.
+
+1802
+01:12:51,798 --> 01:12:56,082
+(null)
+
+1803
+01:12:56,082 --> 01:12:58,119
+AUDIENCE: In
+Angular 2.0, will it
+
+1804
+01:12:58,119 --> 01:13:03,909
+be possible to append components
+to other components at runtime?
+
+1805
+01:13:03,909 --> 01:13:04,595
+MISKO: Yes.
+
+1806
+01:13:04,595 --> 01:13:06,210
+AUDIENCE: Not from the start?
+
+1807
+01:13:06,210 --> 01:13:07,230
+MISKO: Yes.
+
+1808
+01:13:07,229 --> 01:13:10,069
+So getting a hold of other
+components is one of the things
+
+1809
+01:13:10,069 --> 01:13:12,380
+that you're going to
+love in Angular 2.0.
+
+1810
+01:13:12,380 --> 01:13:17,364
+The dependency injection system
+in Angular 2.0 is amazing.
+
+1811
+01:13:17,364 --> 01:13:19,239
+I don't know what else
+I can say to you guys.
+
+1812
+01:13:19,239 --> 01:13:20,051
+IGOR: [INAUDIBLE].
+
+1813
+01:13:20,051 --> 01:13:21,759
+MISKO: No, he says,
+how to get components
+
+1814
+01:13:21,760 --> 01:13:22,760
+get a hold of other, no?
+
+1815
+01:13:22,760 --> 01:13:24,420
+IGOR: [INAUDIBLE].
+
+1816
+01:13:24,420 --> 01:13:26,630
+MISKO: Oh. append new
+components at runtime.
+
+1817
+01:13:26,630 --> 01:13:29,590
+(null)
+
+1818
+01:13:29,590 --> 01:13:31,819
+I heard the question
+I wanted to hear.
+
+1819
+01:13:31,819 --> 01:13:32,652
+[INTERPOSING VOICES]
+
+1820
+01:13:32,652 --> 01:13:35,250
+(null)
+
+1821
+01:13:35,250 --> 01:13:37,644
+MISKO: And so that would
+be through lazy loading.
+
+1822
+01:13:37,644 --> 01:13:38,810
+So that's how you can do it.
+
+1823
+01:13:38,810 --> 01:13:41,900
+(null)
+
+1824
+01:13:41,899 --> 01:13:45,139
+The other question was
+a lot more interesting.
+
+1825
+01:13:45,140 --> 01:13:48,840
+AUDIENCE: Will it be something
+like you are using now?
+
+1826
+01:13:48,840 --> 01:13:51,099
+$compile?
+
+1827
+01:13:51,099 --> 01:13:52,640
+MISKO: All the dollar
+signs are gone,
+
+1828
+01:13:52,640 --> 01:13:54,710
+but yes, there is
+a compile service.
+
+1829
+01:13:54,710 --> 01:13:58,989
+It's something like that, yes.
+
+1830
+01:13:58,989 --> 01:13:59,939
+I'm not sure.
+
+1831
+01:13:59,939 --> 01:14:01,464
+It's not actually
+clear to me how.
+
+1832
+01:14:01,465 --> 01:14:03,090
+IGOR: It's like
+creating dynamic views.
+
+1833
+01:14:03,090 --> 01:14:03,672
+MISKO: I know.
+
+1834
+01:14:03,672 --> 01:14:07,939
+But a lot of things are
+kind of moved around
+
+1835
+01:14:07,939 --> 01:14:11,375
+and you have to--
+it gets complicated.
+
+1836
+01:14:11,376 --> 01:14:13,250
+Yes, but the short answer
+is there definitely
+
+1837
+01:14:13,250 --> 01:14:14,630
+will be something like that.
+
+1838
+01:14:14,630 --> 01:14:18,569
+And we need it for
+lazy loading of views.
+
+1839
+01:14:18,569 --> 01:14:21,429
+So this is going to happen.
+
+1840
+01:14:21,430 --> 01:14:24,579
+The details are not kind
+of figured out just yet,
+
+1841
+01:14:24,579 --> 01:14:27,059
+but it's a requirement.
+
+1842
+01:14:27,060 --> 01:14:28,175
+It's a hard requirement.
+
+1843
+01:14:28,175 --> 01:14:29,550
+We're not going
+to miss that one.
+
+1844
+01:14:29,550 --> 01:14:31,340
+AUDIENCE: Just to know.
+
+1845
+01:14:31,340 --> 01:14:31,840
+Thank you.
+
+1846
+01:14:31,840 --> 01:14:34,819
+(null)
+
+1847
+01:14:34,819 --> 01:14:37,840
+AUDIENCE: Do you have any plans
+for sever side [? handering, ?]
+
+1848
+01:14:37,840 --> 01:14:39,630
+especially because
+of external crawling?
+
+1849
+01:14:39,630 --> 01:14:45,420
+(null)
+
+1850
+01:14:45,420 --> 01:14:47,690
+IGOR: Maybe.
+
+1851
+01:14:47,689 --> 01:14:50,129
+So just like we
+mentioned the native,
+
+1852
+01:14:50,130 --> 01:14:54,170
+the architecture we have allows
+us to do this kind of stuff.
+
+1853
+01:14:54,170 --> 01:14:56,079
+One thing that we
+already want to do
+
+1854
+01:14:56,079 --> 01:14:59,920
+is do a template
+precompilation, where
+
+1855
+01:14:59,920 --> 01:15:03,899
+we will just-- just like
+you minify your JavaScript,
+
+1856
+01:15:03,899 --> 01:15:05,739
+we'll be able to
+pre-compile templates.
+
+1857
+01:15:05,739 --> 01:15:08,920
+And basically work
+that is usually
+
+1858
+01:15:08,920 --> 01:15:11,770
+done by the compiler
+on the client side
+
+1859
+01:15:11,770 --> 01:15:13,820
+during the startup
+of the application
+
+1860
+01:15:13,819 --> 01:15:17,719
+would be done during the
+build step of the application.
+
+1861
+01:15:17,720 --> 01:15:21,449
+And while we are at that we can
+also extract all the metadata
+
+1862
+01:15:21,449 --> 01:15:25,619
+we need to actually do service
+side interpolation, which
+
+1863
+01:15:25,619 --> 01:15:29,079
+would allow us to create a
+system where you can pre-render
+
+1864
+01:15:29,079 --> 01:15:30,979
+stuff on the server.
+
+1865
+01:15:30,979 --> 01:15:33,649
+It's not something we are
+actively working on right now,
+
+1866
+01:15:33,649 --> 01:15:35,519
+but the architecture
+we are building
+
+1867
+01:15:35,520 --> 01:15:39,412
+takes this into account and
+leaves it as a possibility.
+
+1868
+01:15:39,412 --> 01:15:40,119
+AUDIENCE: Thanks.
+
+1869
+01:15:40,119 --> 01:15:46,399
+(null)
+
+1870
+01:15:46,399 --> 01:15:47,799
+AUDIENCE: Hello.
+
+1871
+01:15:47,800 --> 01:15:52,110
+So one question that I have
+also to the lazy loading
+
+1872
+01:15:52,109 --> 01:15:54,939
+is more about, maybe
+I remember wrong,
+
+1873
+01:15:54,939 --> 01:15:57,799
+but someone during
+ng-europe said
+
+1874
+01:15:57,800 --> 01:16:03,909
+that the lazy loading will
+be also available in 1.x.
+
+1875
+01:16:03,909 --> 01:16:06,309
+Maybe I remember wrong?
+
+1876
+01:16:06,310 --> 01:16:07,059
+The question is--
+
+1877
+01:16:07,059 --> 01:16:07,850
+IGOR: I don't know.
+
+1878
+01:16:07,850 --> 01:16:11,610
+I don't remember what exactly
+was said at ng-europe.
+
+1879
+01:16:11,609 --> 01:16:14,269
+Well, I remember many
+things from ng-europe.
+
+1880
+01:16:14,270 --> 01:16:16,470
+I don't remember
+this particular one.
+
+1881
+01:16:16,470 --> 01:16:19,640
+So I don't know how
+it was formulated,
+
+1882
+01:16:19,640 --> 01:16:24,650
+but what I can tell you is
+that the lazy holding in 1x
+
+1883
+01:16:24,649 --> 01:16:27,869
+is much more
+complicated because we
+
+1884
+01:16:27,869 --> 01:16:29,489
+don't have a hierarchical DI.
+
+1885
+01:16:29,489 --> 01:16:32,789
+And the reason why, this
+is kind of hard to explain,
+
+1886
+01:16:32,789 --> 01:16:35,630
+but the reason why we don't
+want to do lazy loading in 1x
+
+1887
+01:16:35,630 --> 01:16:37,340
+is not because it's impossible.
+
+1888
+01:16:37,340 --> 01:16:40,050
+It just would make the
+application unstable.
+
+1889
+01:16:40,050 --> 01:16:44,820
+And I think it would be very
+easy to introduce bugs that'll
+
+1890
+01:16:44,819 --> 01:16:48,349
+be very hard to debug,
+and then the application
+
+1891
+01:16:48,350 --> 01:16:50,760
+would just not work
+in certain scenarios.
+
+1892
+01:16:50,760 --> 01:16:52,949
+And this is what
+we want to avoid.
+
+1893
+01:16:52,949 --> 01:16:58,889
+We discussed how we could
+and hierarchical injector
+
+1894
+01:16:58,890 --> 01:17:00,609
+solves this problem.
+
+1895
+01:17:00,609 --> 01:17:02,400
+So we don't have that
+problem with Angular2
+
+1896
+01:17:02,399 --> 01:17:04,670
+and we can just do lazy
+loading without any issues.
+
+1897
+01:17:04,670 --> 01:17:06,640
+In Angular 1x, however,
+we are thinking
+
+1898
+01:17:06,640 --> 01:17:10,119
+of some workarounds that
+would allow us to provide you
+
+1899
+01:17:10,119 --> 01:17:16,069
+this guarantees and
+also do lazy loading.
+
+1900
+01:17:16,069 --> 01:17:21,819
+The new router that we're
+back-porting from 2.0 to 1x
+
+1901
+01:17:21,819 --> 01:17:24,019
+makes it possible
+to do lazy loading.
+
+1902
+01:17:24,020 --> 01:17:26,740
+There is still some pieces that
+need to be done in the core.
+
+1903
+01:17:26,739 --> 01:17:29,800
+I don't think we'll have
+enough time to do it in 1.4,
+
+1904
+01:17:29,800 --> 01:17:31,270
+but it's on the table for 1.5.
+
+1905
+01:17:31,270 --> 01:17:32,186
+AUDIENCE: Thanks.
+
+1906
+01:17:32,185 --> 01:17:33,404
+Thank you.
+
+1907
+01:17:33,404 --> 01:17:34,529
+BRAD GREEN: More questions?
+
+1908
+01:17:34,529 --> 01:17:37,081
+(null)
+
+1909
+01:17:37,081 --> 01:17:38,329
+Or if we're out, that's great.
+
+1910
+01:17:38,329 --> 01:17:40,060
+That's a lot of questions.
+
+1911
+01:17:40,060 --> 01:17:40,559
+OK.
+
+1912
+01:17:40,560 --> 01:17:40,840
+Great.
+
+1913
+01:17:40,840 --> 01:17:41,720
+Thank you, everybody.
+
+1914
+01:17:41,720 --> 01:17:43,090
+It was wonderful to have you.
+
+1915
+01:17:43,090 --> 01:17:44,779
+[APPLAUSE]
+
+1916
+01:17:44,779 --> 01:17:47,979
+Come join us on one
+of the live viewing
+
+1917
+01:17:47,979 --> 01:17:50,089
+streams at ng-conf
+unless you're coming
+
+1918
+01:17:50,090 --> 01:17:52,480
+in person, which is awesome
+too, where you'll hear more
+
+1919
+01:17:52,479 --> 01:17:55,919
+about material design, the new
+router, internationalization,
+
+1920
+01:17:55,920 --> 01:17:59,413
+accessibility, more on testing,
+all kinds of other good stuff.
+
+1921
+01:17:59,413 --> 01:18:00,579
+We'll hope to see you there.
+
+1922
+01:18:00,579 --> 01:18:01,180
+Thanks.
+
+1923
+01:18:01,180 --> 01:18:02,730
+Bye.
+
