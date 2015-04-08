@@ -32,6 +32,25 @@ class MovieEmbeddedViewController: UIViewController {
         
     }
     
+    
+    func playVideo()  {
+        
+        let path = NSBundle.mainBundle().pathForResource("example", ofType:"mp4")
+        let url = NSURL.fileURLWithPath(path!)
+        
+        let videoURL = url
+        moviePlayer = MPMoviePlayerViewController(contentURL: videoURL )
+        
+        if let player = moviePlayer {
+            self.view.addSubview(player.view)
+            LayoutUtils.LayoutFullView(player.view!)
+        }
+        else {
+            NSLog("no player")
+        }
+    }
+
+    
     func test02(){
         // Video file
         let filePathStr:NSString = NSBundle.mainBundle().pathForResource("example", ofType: "mp4")!
