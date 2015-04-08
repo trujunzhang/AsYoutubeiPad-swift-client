@@ -89,6 +89,8 @@ class YoutubeDataFetcherForCaptionTests: XCTestCase {
         let expectation = expectationWithDescription("fetchCaptainForVideo")
         
         var track :MABYT3_Track = MABYT3_Track()
+        track.name  = ""
+        track.lang_code = "en"
         
         YoutubeDataFetcher.sharedInstance.fetchCaptainForVideo(videoID, defaultTrack: track, completeHandler: { (subtitleString, sucess) -> Void in
             

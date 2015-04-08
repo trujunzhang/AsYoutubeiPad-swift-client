@@ -23,6 +23,7 @@
 #import "MABYT3_PlayList.h"
 #import "MABYT3_VideoCategory.h"
 #import "MABYT3_TranscriptList.h"
+#import "MABYT3_Track.h"
 
 
 @implementation MABYT3_YoutubeRequest
@@ -126,13 +127,17 @@
 
 
 //http://video.google.com/timedtext?type=track&v=boBex_v3_eA&name=&lang=en
-- (NSURLSessionDataTask *)fetchVideoTranscript:(NSString *)videoId  withTrack:(id)track  completion:(MABYoutubeResponseBlock)completion {
+- (NSURLSessionDataTask *)fetchVideoTranscript:(NSString *)videoId  withTrack:(MABYT3_Track*)track  completion:(MABYoutubeResponseBlock)completion {
     NSMutableDictionary *dictionary = [[NSMutableDictionary alloc] init];
 
     [dictionary setObject:videoId forKey:@"v"];
     [dictionary setObject:@"track" forKey:@"type"];
-    [dictionary setObject:@"" forKey:@"name"];
-    [dictionary setObject:@"en" forKey:@"lang"];
+    
+    [dictionary setObject:track.name forKey:@"name"];
+//    [dictionary setObject:@"" forKey:@"name"];
+    
+    [dictionary setObject:track.lang_code forKey:@"lang"];
+//    [dictionary setObject:@"en" forKey:@"lang"];
 
     NSURLSessionDataTask *task = [self GET:@"/timedtext"
                                 parameters:dictionary
