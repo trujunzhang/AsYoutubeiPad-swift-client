@@ -126,7 +126,7 @@
 
 
 //http://video.google.com/timedtext?type=track&v=boBex_v3_eA&name=&lang=en
-- (NSURLSessionDataTask *)fetchVideoTranscript:(NSString *)videoId completion:(MABYoutubeResponseBlock)completion {
+- (NSURLSessionDataTask *)fetchVideoTranscript:(NSString *)videoId  withTrack:(id)track  completion:(MABYoutubeResponseBlock)completion {
     NSMutableDictionary *dictionary = [[NSMutableDictionary alloc] init];
 
     [dictionary setObject:videoId forKey:@"v"];

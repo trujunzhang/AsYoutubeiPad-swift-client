@@ -36,7 +36,7 @@ static NSUInteger search_maxResults = 20;
 
 - (NSURLSessionDataTask *)fetchCaptainTracks:(NSString *)videoId completion:(MABYoutubeResponseBlock)completion;
 
-- (NSURLSessionDataTask *)fetchVideoTranscript:(NSString *)videoId completion:(MABYoutubeResponseBlock)completion;
+- (NSURLSessionDataTask *)fetchVideoTranscript:(NSString *)videoId  withTrack:(id)track completion:(MABYoutubeResponseBlock)completion;
 @end
 
 

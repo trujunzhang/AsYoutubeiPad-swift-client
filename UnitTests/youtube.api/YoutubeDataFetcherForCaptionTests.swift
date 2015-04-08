@@ -49,7 +49,7 @@ class YoutubeDataFetcherForCaptionTests: XCTestCase {
         }
     }
     
-    func _testFetchCaptainTracks() {
+    func testFetchCaptainTracks() {
         let expectation = expectationWithDescription("fetchCaptainTracks")
         
         YoutubeDataFetcher.sharedInstance.fetchCaptainTracks(videoID, completeHandler: { (object, sucess) -> Void in
@@ -74,7 +74,7 @@ class YoutubeDataFetcherForCaptionTests: XCTestCase {
             
         })
         
-        waitForExpectationsWithTimeout(10) { (error) in
+        waitForExpectationsWithTimeout(20) { (error) in
             XCTAssertNil(error, "\(error)")
         }
     }
