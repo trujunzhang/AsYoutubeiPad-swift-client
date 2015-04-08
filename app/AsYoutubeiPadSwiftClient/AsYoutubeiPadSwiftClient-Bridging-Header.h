@@ -41,6 +41,7 @@
 
 // Library: MPMoviePlayerController-Subtitles
 #import "MPMoviePlayerController+Subtitles.h"
+#import "SOSubtitle.h"
 
 // Library: facebook/Pop
 #import <pop/POP.h>
