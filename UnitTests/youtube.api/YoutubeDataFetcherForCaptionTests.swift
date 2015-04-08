@@ -31,14 +31,14 @@ class YoutubeDataFetcherForCaptionTests: XCTestCase {
     func _testFetchCaptainEmptyTracks() {
         let expectation = expectationWithDescription("fetchCaptainEmptyTracks")
         
-        YoutubeDataFetcher.sharedInstance.fetchCaptainTracks(videoEmptyID, completeHandler: { (object, sucess) -> Void in
+        YoutubeDataFetcher.sharedInstance.fetchCaptainTracks(videoEmptyID, completeHandler: { (tracksArray, sucess) -> Void in
             
-            XCTAssertNotNil(object, "object not nil")
+            XCTAssertNotNil(tracksArray, "object not nil")
             
             self.isSucess = sucess
             
             if(sucess == true){
-                var array:NSArray = object as NSArray
+                var array:NSArray = tracksArray as NSArray
                 
                 XCTAssertTrue(array.count == 0, "Array length must be empty") // Returned empty array
             }
@@ -56,14 +56,14 @@ class YoutubeDataFetcherForCaptionTests: XCTestCase {
     func testFetchCaptainTracks() {
         let expectation = expectationWithDescription("fetchCaptainTracks")
         
-        YoutubeDataFetcher.sharedInstance.fetchCaptainTracks(videoID, completeHandler: { (object, sucess) -> Void in
+        YoutubeDataFetcher.sharedInstance.fetchCaptainTracks(videoID, completeHandler: { (tracksArray, sucess) -> Void in
             
-            XCTAssertNotNil(object, "object not nil")
+            XCTAssertNotNil(tracksArray, "object not nil")
             
             self.isSucess = sucess
             
             if(sucess == true){
-                var array:NSArray = object as NSArray
+                var array:NSArray = tracksArray as NSArray
                 
                 XCTAssertTrue(array.count > 1, "Array length must great than one")
                 
@@ -83,6 +83,34 @@ class YoutubeDataFetcherForCaptionTests: XCTestCase {
         }
     }
     
+    // MARK : Test fetching subtitle.
+    
+    func testFetchCaptainForVideo() {
+        let expectation = expectationWithDescription("fetchCaptainForVideo")
+        
+        var track :MABYT3_Track = MABYT3_Track()
+        
+        YoutubeDataFetcher.sharedInstance.fetchCaptainForVideo(videoID, defaultTrack: track, completeHandler: { (subtitleString, sucess) -> Void in
+            
+            XCTAssertNotNil(subtitleString, "object not nil")
+            
+            self.isSucess = sucess
+            
+            if(sucess == true){
+                XCTAssertTrue(subtitleString is NSString, "Array object must be NSString")
+                
+                var subtitle:NSString = subtitleString as NSString
+                XCTAssertFalse(subtitle.isEqualToString(""), "Array object must be NSString")
+                
+            }
+            expectation.fulfill()
+            
+        })
+        
+        waitForExpectationsWithTimeout(40) { (error) in
+            XCTAssertNil(error, "\(error)")
+        }
+    }
     
     
 }
