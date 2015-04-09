@@ -36,7 +36,7 @@
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KUp-9A-Qg8" customClass="AVPlayerView" customModule="AsYoutubeiPadSwiftClient" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="576" height="600"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vAr-va-7DJ" userLabel="Top Bar">
                                 <rect key="frame" x="0.0" y="0.0" width="576" height="43"/>
@@ -131,18 +131,15 @@
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sch-h9-rOL">
-                                <rect key="frame" x="38" y="431" width="500" height="138"/>
-                                <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <rect key="frame" x="38" y="418" width="500" height="138"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <string key="text">Who wish to live?
 I'm mad. I'm stark, raving mad.Who wish to live?
 </string>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
-                                <string key="userLabel">Who wish to live?
-I'm mad. I'm stark, raving mad.Who wish to live?
-I'm mad. I'm stark, raving mad.Who wish to live?
-I'm mad. I'm stark, raving mad.</string>
+                                <string key="userLabel">Who wish to live? I'm mad. I'm stark, raving mad.Who wish to live? I'm mad. I'm stark, raving mad.Who wish to live? I'm mad. I'm stark, raving mad.</string>
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -155,7 +152,7 @@ I'm mad. I'm stark, raving mad.</string>
                             <constraint firstAttribute="centerX" secondItem="KUp-9A-Qg8" secondAttribute="centerX" id="Idh-Fw-Llk"/>
                             <constraint firstAttribute="bottom" secondItem="Gto-aw-vLc" secondAttribute="bottom" id="NN7-fB-AMO"/>
                             <constraint firstAttribute="centerY" secondItem="KUp-9A-Qg8" secondAttribute="centerY" id="P0x-BS-NPD"/>
-                            <constraint firstAttribute="bottom" secondItem="sch-h9-rOL" secondAttribute="bottom" constant="31" id="TVc-l6-0Cy"/>
+                            <constraint firstAttribute="bottom" secondItem="sch-h9-rOL" secondAttribute="bottom" constant="44" id="TVc-l6-0Cy"/>
                             <constraint firstItem="KUp-9A-Qg8" firstAttribute="leading" secondItem="vAr-va-7DJ" secondAttribute="leading" id="VtX-3g-tAe"/>
                             <constraint firstAttribute="trailing" secondItem="sch-h9-rOL" secondAttribute="trailing" constant="38" id="YCl-zq-cvT"/>
                             <constraint firstAttribute="trailing" secondItem="vAr-va-7DJ" secondAttribute="trailing" id="hls-cN-op1"/>
