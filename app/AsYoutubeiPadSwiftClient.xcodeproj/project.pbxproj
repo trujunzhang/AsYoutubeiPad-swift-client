@@ -10,8 +10,6 @@
 		5E138D001AD3F222007363C8 /* LayoutUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E138CFF1AD3F222007363C8 /* LayoutUtils.swift */; };
 		5E39F8871AB91E5C00A285AE /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E39F8861AB91E5C00A285AE /* Alamofire.framework */; };
 		5E39F88A1AB91EF000A285AE /* Haneke.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E39F8891AB91EF000A285AE /* Haneke.framework */; };
-		5E3D9D9E1AD4CD69006C725E /* example.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 5E3D9D9C1AD4CD69006C725E /* example.mp4 */; };
-		5E3D9D9F1AD4CD69006C725E /* example.srt in Resources */ = {isa = PBXBuildFile; fileRef = 5E3D9D9D1AD4CD69006C725E /* example.srt */; };
 		5E3F679B1ACEBE2F006850CE /* VideoWatchStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5E3F67991ACEBE2F006850CE /* VideoWatchStoryboard.storyboard */; };
 		5E429BBB1AD60DBB00E8C6F3 /* MoviePlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E429BBA1AD60DBB00E8C6F3 /* MoviePlayerViewController.swift */; };
 		5E429BBD1AD60EBE00E8C6F3 /* AVPlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E429BBC1AD60EBE00E8C6F3 /* AVPlayerView.swift */; };
@@ -119,8 +117,6 @@
 		5E138CFF1AD3F222007363C8 /* LayoutUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LayoutUtils.swift; path = Utils/LayoutUtils.swift; sourceTree = "<group>"; };
 		5E39F8861AB91E5C00A285AE /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
 		5E39F8891AB91EF000A285AE /* Haneke.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Haneke.framework; path = Carthage/Build/iOS/Haneke.framework; sourceTree = "<group>"; };
-		5E3D9D9C1AD4CD69006C725E /* example.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = example.mp4; sourceTree = "<group>"; };
-		5E3D9D9D1AD4CD69006C725E /* example.srt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = example.srt; sourceTree = "<group>"; };
 		5E3F679A1ACEBE2F006850CE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/VideoWatchStoryboard.storyboard; sourceTree = "<group>"; };
 		5E429BBA1AD60DBB00E8C6F3 /* MoviePlayerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MoviePlayerViewController.swift; path = WatchView/Player/MoviePlayerViewController.swift; sourceTree = "<group>"; };
 		5E429BBC1AD60EBE00E8C6F3 /* AVPlayerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AVPlayerView.swift; path = WatchView/Player/AVPlayerView.swift; sourceTree = "<group>"; };
@@ -407,8 +403,6 @@
 		5EBCDCF21AB5C22C0023F037 /* AsYoutubeiPadSwiftClient */ = {
 			isa = PBXGroup;
 			children = (
-				5E3D9D9C1AD4CD69006C725E /* example.mp4 */,
-				5E3D9D9D1AD4CD69006C725E /* example.srt */,
 				5E85EDDB1ACEC2AB009170D8 /* WatchView */,
 				5EAFEFF81ACD4B6F000C2E74 /* Common */,
 				5EB01F001ACC24DD00C00AFE /* CollectionView */,
@@ -691,12 +685,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				5EBCDCFB1AB5C22C0023F037 /* Main.storyboard in Resources */,
-				5E3D9D9E1AD4CD69006C725E /* example.mp4 in Resources */,
 				5EBCDD001AB5C22C0023F037 /* LaunchScreen.xib in Resources */,
 				5EB01F051ACC25AC00C00AFE /* ReusedViewControllers.storyboard in Resources */,
 				5E3F679B1ACEBE2F006850CE /* VideoWatchStoryboard.storyboard in Resources */,
 				5EBCDCFD1AB5C22C0023F037 /* Images.xcassets in Resources */,
-				5E3D9D9F1AD4CD69006C725E /* example.srt in Resources */,
 				5E8923721AC6DF7700FCD444 /* Autolayout.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

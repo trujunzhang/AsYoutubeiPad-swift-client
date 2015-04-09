@@ -90,7 +90,7 @@
                                 <rect key="frame" x="0.0" y="557" width="576" height="43"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mp_fullscreen.png" translatesAutoresizingMaskIntoConstraints="NO" id="YpZ-S9-al8">
-                                        <rect key="frame" x="541" y="9" width="20" height="26"/>
+                                        <rect key="frame" x="546" y="9" width="20" height="26"/>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uaS-nr-2PJ">
                                         <rect key="frame" x="49" y="11" width="42" height="21"/>
@@ -119,7 +119,7 @@
                                     <constraint firstItem="Q1k-RO-0e8" firstAttribute="leading" secondItem="Gto-aw-vLc" secondAttribute="leading" constant="14" id="56e-Iy-DRV"/>
                                     <constraint firstAttribute="trailing" secondItem="CgD-Y5-OOM" secondAttribute="trailing" constant="45" id="8aQ-C8-Eut"/>
                                     <constraint firstAttribute="centerY" secondItem="YpZ-S9-al8" secondAttribute="centerY" id="BS8-GJ-5nt"/>
-                                    <constraint firstAttribute="trailing" secondItem="YpZ-S9-al8" secondAttribute="trailing" constant="15" id="KGA-ss-1mg"/>
+                                    <constraint firstAttribute="trailing" secondItem="YpZ-S9-al8" secondAttribute="trailing" constant="10" id="KGA-ss-1mg"/>
                                     <constraint firstAttribute="height" constant="43" id="TT2-sF-h4C"/>
                                     <constraint firstItem="uaS-nr-2PJ" firstAttribute="leading" secondItem="Gto-aw-vLc" secondAttribute="leading" constant="49" id="TnF-LX-BXG"/>
                                     <constraint firstItem="9Ay-Bn-2T7" firstAttribute="leading" secondItem="Gto-aw-vLc" secondAttribute="leading" constant="112" id="XWg-8c-5Pj"/>
@@ -130,8 +130,8 @@
                                     <constraint firstAttribute="trailing" secondItem="9Ay-Bn-2T7" secondAttribute="trailing" constant="98" id="r0V-Xd-qZb"/>
                                 </constraints>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sch-h9-rOL">
-                                <rect key="frame" x="38" y="418" width="500" height="138"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sch-h9-rOL">
+                                <rect key="frame" x="38" y="496" width="500" height="60"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <string key="text">Who wish to live?
 I'm mad. I'm stark, raving mad.Who wish to live?
