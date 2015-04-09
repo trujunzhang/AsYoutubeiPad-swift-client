@@ -48,13 +48,16 @@ class MovieEmbeddedNormalBarViewController: MovieEmbeddedBasedBarViewController 
     
     @IBOutlet var containerHeightConstraint: NSLayoutConstraint!
     
-    
+    // MARK : private variables
     var videoURL: NSURL?
+    var moviePlayerViewController :MoviePlayerViewController?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         setBarsConstraint(topBarTopConstraint, bottomBarTopConstraint: bottomBarTopConstraint)
+        
+        setVideoURL(videoURL!)
     }
     
     // MARK : Events for Top buttons
@@ -71,7 +74,11 @@ class MovieEmbeddedNormalBarViewController: MovieEmbeddedBasedBarViewController 
     }
     
     func setVideoURL(url: NSURL){
+        moviePlayerViewController = MoviePlayerViewController()
         
+        moviePlayerViewController?.prepareUI(durationSlider, _playPauseButton: playPauseButton, _elapsedTimeLabel: timeElapsedLabel, _remainingTimeLabel: timeRemainingLabel, _videoPlayerView: videoPlayerView)
+        
+        moviePlayerViewController!.initAVPlayer(url)
     }
     
     

@@ -43,7 +43,7 @@ class MovieEmbeddedViewController: UIViewController {
         
         let videoURL = url
         
-        normalBarViewController!.setVideoURL(videoURL!)
+        normalBarViewController?.videoURL = videoURL
     }
     
     
