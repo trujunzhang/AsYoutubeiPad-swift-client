@@ -49,6 +49,7 @@ class YoutubeDataFetcher : NSObject  {
         if(track.lang_default == true){
             // 2
             self.fetchCaptainForVideo(videoID, defaultTrack: track, completeHandler: { (subtitleString, sucess) -> Void in
+                
                 if(sucess == true){
                     completeHandler(subtitleString, true)
                 }else{

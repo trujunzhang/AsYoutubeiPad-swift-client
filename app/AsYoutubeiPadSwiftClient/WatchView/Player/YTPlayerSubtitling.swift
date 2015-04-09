@@ -15,6 +15,7 @@ class YTPlayerSubtitling :PeriodicTimeProtocol {
     
     var player: AVPlayer? = nil
     var moviePlayerViewController :MoviePlayerViewController? = nil
+    
     var subtitlesParts:NSMutableDictionary? = NSMutableDictionary()
     
     var subtitleLabel : UILabel?
@@ -27,15 +28,14 @@ class YTPlayerSubtitling :PeriodicTimeProtocol {
     
     func fetchTracksAndCaptainForVideo(_videoID: String) {
         
-        let videoString:NSString = _videoID
-        
-        YoutubeDataFetcher.sharedInstance.fetchCaptainTracksAndCaption(videoString,completeHandler: { (subtitleString, sucess) -> Void in
+
+        YoutubeDataFetcher.sharedInstance.fetchCaptainTracksAndCaption(_videoID,completeHandler: { (subtitleString, sucess) -> Void in
             
             if(sucess == true){
                 
                 var subtitle:NSString = subtitleString as NSString
                 
-                
+                self.prepareSubtitle(subtitle)
             }
             
         })
