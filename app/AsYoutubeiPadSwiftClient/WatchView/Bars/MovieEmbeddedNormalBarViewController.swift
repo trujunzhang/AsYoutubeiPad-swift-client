@@ -18,6 +18,13 @@ class MovieEmbeddedNormalBarViewController: MovieEmbeddedBasedBarViewController 
     @IBOutlet var bottomBarPanel: UIView!
     //    normalBottomBarView?.frame = CGRectMake(0, 0, 576, 43)
     
+    // MARK : videoPlayerView That contains avplayer
+    
+    @IBOutlet var videoPlayerView: AVPlayerView!
+
+    
+    // MARK : videoPlayerView th
+    
     // MARK : Bottom bar items
     
     
