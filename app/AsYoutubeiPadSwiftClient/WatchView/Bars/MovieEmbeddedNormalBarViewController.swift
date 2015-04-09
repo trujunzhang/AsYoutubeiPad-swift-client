@@ -68,10 +68,7 @@ class MovieEmbeddedNormalBarViewController: MovieEmbeddedBasedBarViewController 
         var x = 0
     }
     
-    //
-    //    func setPlayerBars(moviePlayer : ALMoviePlayerControls){
-    //        moviePlayer.setTwoBars(topBarPanel, withBottomBar: bottomBarPanel, withDurationSlider: durationSlider, withTimeElapsedLabel: timeElapsedLabel, withTimeRemainingLabel: timeRemainingLabel, withPlayPauseButton: playPauseButton, moviePause: "mp_embedded_pause", moviePlay: "mp_embedded_play")
-    //    }
+
     
     
     

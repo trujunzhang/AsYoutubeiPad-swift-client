@@ -26,6 +26,9 @@ class YTVideoWatchViewController: UIViewController {
         movieEmbeddedViewController?.videoID = videoID
         
         movieEmbeddedView = movieEmbeddedViewController?.view
+        
+        movieEmbeddedView?.backgroundColor = UIColor.redColor() // test
+        
         self.view.addSubview(movieEmbeddedView!)
         self.addChildViewController(movieEmbeddedViewController!)
 

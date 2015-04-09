@@ -13,12 +13,13 @@ import AVFoundation
 class SubscriptionsViewController: FrontBaseViewController {
     
     @IBOutlet var container: UIView!
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        //        showChannelPage()
-        self.showMovie()
+        showChannelPage()
+        
+        //        self.showMovie()
         
     }
     

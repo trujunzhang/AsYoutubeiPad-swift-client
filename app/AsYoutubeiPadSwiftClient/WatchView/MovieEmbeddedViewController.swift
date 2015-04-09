@@ -16,13 +16,14 @@ class MovieEmbeddedViewController: UIViewController {
     
     var playerView: UIView?
     
-    
     var normalBarViewController : MovieEmbeddedNormalBarViewController?
     var normalBarRootView : UIView?
-
+    
     // MARK : Life-Cycle
     override func viewDidLoad() {
-                playVideo()
+        
+        test01()
+        playVideo()
     }
     
     
@@ -32,7 +33,7 @@ class MovieEmbeddedViewController: UIViewController {
         
     }
     
-
+    
     
     func playVideo()  {
         
@@ -40,7 +41,7 @@ class MovieEmbeddedViewController: UIViewController {
         let url = NSURL.fileURLWithPath(path!)
         
         let videoURL = url
-
+        
     }
     
     
@@ -53,7 +54,7 @@ class MovieEmbeddedViewController: UIViewController {
         let subtitlesPathStr :NSString = NSBundle.mainBundle().pathForResource("example", ofType: "srt")!
         
         // Create MoviePlayer
-//        let player: MPMoviePlayerViewController = MPMoviePlayerViewController(contentURL: fileURL)
+        //        let player: MPMoviePlayerViewController = MPMoviePlayerViewController(contentURL: fileURL)
         //        player.moviePlayer.openSRTFileAtPath(subtitlesPathStr, completion: { (finished) -> Void in
         //
         //            // Activate subtitles
@@ -81,8 +82,8 @@ class MovieEmbeddedViewController: UIViewController {
         setupEmbeddedBars()
         
         // add movie player to your view
-        self.view.addSubview(playerView!)
-        LayoutUtils.LayoutFullView(playerView!)
+//        self.view.addSubview(playerView!)
+//        LayoutUtils.LayoutFullView(playerView!)
         
     }
     
@@ -110,7 +111,7 @@ class MovieEmbeddedViewController: UIViewController {
     }
     
     override func viewDidLayoutSubviews() {
-        
+        view01()
     }
     
     
