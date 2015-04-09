@@ -10,7 +10,7 @@ import Foundation
 import AVFoundation
 import UIKit
 
-class MoviePlayerViewController : NSObject {
+class MoviePlayerViewController : PeriodicTimeProtocol {
     
     //    @IBOutlet weak var seekber: UISlider!
     //    @IBOutlet weak var playPauseButton: UIButton!
@@ -35,8 +35,17 @@ class MoviePlayerViewController : NSObject {
     var videoTimeObserver: AnyObject? = nil
     var playingRateAfterScrub: Float = 0
     
+    // MARK : array of PeriodicTimeProtocol
+    var periodicTimeProtocols:[PeriodicTimeProtocol] = [PeriodicTimeProtocol]()
+    //    let periodicTimeProtocols: NSMutableArray = NSMutableArray()
+    
+    
     
     // MARK: - View Lifecycle
+    
+    init(){
+        
+    }
     
     func prepareUI(_seekber: UISlider,_playPauseButton: UIButton, _elapsedTimeLabel: UILabel, _remainingTimeLabel: UILabel, _videoPlayerView: AVPlayerView){
         seekber = _seekber;
@@ -62,8 +71,9 @@ class MoviePlayerViewController : NSObject {
         self.videoTimeObserver = self.videoPlayer!.addPeriodicTimeObserverForInterval(CMTimeMake(150, 600),
             queue: dispatch_get_main_queue(),
             usingBlock: {[unowned self](CMTime) in
-                self.syncSeekber()
-                self.updateTimeLabel()
+                
+                self.runPeriodicTimes()
+                
         })
         
         self.seekber.minimumTrackTintColor = UIColor.whiteColor()
@@ -72,8 +82,12 @@ class MoviePlayerViewController : NSObject {
         self.syncPlayPauseButtonImage()
         self.updateTimeLabel()
         
+        self.addPeriodicTimeProtocol(self)
+        
         //        self.singleTap.requireGestureRecognizerToFail(self.doubleTap)
     }
+    
+    
     
     
     // MARK: - Player Notifications
@@ -250,6 +264,28 @@ class MoviePlayerViewController : NSObject {
         }
     }
     
+    // MARK :
+    func playerTimeChanged(){
+        self.syncSeekber()
+        self.updateTimeLabel()
+    }
     
+    func runPeriodicTimes(){
+        
+         let _periodicTimeProtocols: [PeriodicTimeProtocol] = self.periodicTimeProtocols
+            
+            for periodicTimeProtocol in _periodicTimeProtocols{
+                
+                let _periodicTimeProtocol: PeriodicTimeProtocol = periodicTimeProtocol as PeriodicTimeProtocol
+                _periodicTimeProtocol.playerTimeChanged()
+                
+            }
+
+        
+    }
+    
+    func addPeriodicTimeProtocol(periodicTimeProtocol:PeriodicTimeProtocol){
+        periodicTimeProtocols.append(periodicTimeProtocol)
+    }
     
 }
