@@ -24,9 +24,9 @@ class MovieEmbeddedViewController: UIViewController {
         
         test01()
         
-//        let path = NSBundle.mainBundle().pathForResource("example", ofType:"mp4")
-//        let videoURL :NSURL = NSURL.fileURLWithPath(path!)!
-//        playVideo(videoURL)
+        //        let path = NSBundle.mainBundle().pathForResource("example", ofType:"mp4")
+        //        let videoURL :NSURL = NSURL.fileURLWithPath(path!)!
+        //        playVideo(videoURL)
         
         layoutEmbeddedBar()
     }
@@ -45,12 +45,12 @@ class MovieEmbeddedViewController: UIViewController {
             viewController.setVideoURL(videoURL)
         }
     }
-
+    
     
     // MARK : TEST 01
     func test01(){
         YoutubeExtractor()
-
+        
         setupEmbeddedBars()
         
         // add movie player to your view
@@ -59,7 +59,7 @@ class MovieEmbeddedViewController: UIViewController {
         
     }
     
-
+    
     
     func YoutubeExtractor(){
         YouTubeExtractorUtils.YoutubeExtractor(videoID, completeHandler: { (object, sucess) -> Void in
@@ -72,7 +72,8 @@ class MovieEmbeddedViewController: UIViewController {
                 let videoURL:NSURL = gVideo.videoURL
                 
                 // 2.1
-                //                self.moviePlayer?.contentURL = videoURL
+                self.playVideo(videoURL)
+                
             }
             
         })
@@ -82,7 +83,7 @@ class MovieEmbeddedViewController: UIViewController {
         
     }
     
-
+    
     
     func setupEmbeddedBars() {
         // normal bar
