@@ -67,7 +67,7 @@ class MovieEmbeddedNormalBarViewController: MovieEmbeddedBasedBarViewController 
         playerSubtitling = YTPlayerSubtitling()
         
         if let url:NSURL = videoURL {
-            setVideoURL(url)
+            setVideoURL(url,videoID: videoID)
         }
         
     }
@@ -85,7 +85,7 @@ class MovieEmbeddedNormalBarViewController: MovieEmbeddedBasedBarViewController 
         var x = 0
     }
     
-    func setVideoURL(url: NSURL){
+    func setVideoURL(url: NSURL,videoID:String){
         
         if let viewController : MoviePlayerViewController =  moviePlayerViewController {
             if let subtitling : YTPlayerSubtitling =  playerSubtitling {

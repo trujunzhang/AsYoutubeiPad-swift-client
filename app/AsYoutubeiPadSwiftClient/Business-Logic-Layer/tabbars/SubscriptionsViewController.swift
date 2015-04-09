@@ -50,7 +50,7 @@ class SubscriptionsViewController: FrontBaseViewController {
         //        let channelPageViewController: ChannelPageViewController = ChannelPageViewController() // used
         
         let channelPageViewController: YTVideoWatchViewController = YTVideoWatchViewController()
-        channelPageViewController.videoID = "eoXneK3WIgQ"
+        channelPageViewController.videoID = "uD6Okha_Yj0"
         
         channelPageViewController.view.frame = container.bounds
         

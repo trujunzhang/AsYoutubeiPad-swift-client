@@ -25,15 +25,34 @@ class YTPlayerSubtitling :PeriodicTimeProtocol {
         
     }
     
+    func fetchTracksAndCaptainForVideo(_videoID: String) {
+        
+        let videoString:NSString = _videoID
+        
+        YoutubeDataFetcher.sharedInstance.fetchCaptainTracksAndCaption(videoString,completeHandler: { (subtitleString, sucess) -> Void in
+            
+            if(sucess == true){
+                
+                var subtitle:NSString = subtitleString as NSString
+                
+                
+            }
+            
+        })
+        
+    }
+    
     func setPlayer(_videoID: String,_subtitleLabel : UILabel ,_moviePlayerViewController: MoviePlayerViewController ){
+        fetchTracksAndCaptainForVideo(_videoID)
+        
         videoID = _videoID
         subtitleLabel = _subtitleLabel
         moviePlayerViewController = _moviePlayerViewController
         
         player = moviePlayerViewController?.videoPlayer
         
-        let subtitleString : String = Tools.readFile("example")
-        prepareSubtitle(subtitleString)
+//        let subtitleString : String = Tools.readFile("example")
+//        prepareSubtitle(subtitleString)
     }
     
     func prepareSubtitle(subtitleString : String){
@@ -71,10 +90,10 @@ class YTPlayerSubtitling :PeriodicTimeProtocol {
                     self.updateLabel()
                 })
                 
-                                println("player time changed : \(currentText)")
+                println("player time changed : \(currentText)")
             }
         }
-                
+        
         
     }
     
@@ -82,7 +101,7 @@ class YTPlayerSubtitling :PeriodicTimeProtocol {
         
         subtitleLabel?.text = currentText
         
-//        subtitleLabel?.text = "wanghao"
+        //        subtitleLabel?.text = "wanghao"
         
         subtitleLabel?.hidden = currentText.length != 0
     }

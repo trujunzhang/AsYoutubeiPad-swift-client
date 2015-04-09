@@ -42,7 +42,7 @@ class MovieEmbeddedViewController: UIViewController {
     
     func playVideo(videoURL :NSURL)  {
         if let viewController : MovieEmbeddedNormalBarViewController =  normalBarViewController {
-            viewController.setVideoURL(videoURL)
+            viewController.setVideoURL(videoURL,videoID: videoID)
         }
     }
     
