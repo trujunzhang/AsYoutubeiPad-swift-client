@@ -10,7 +10,7 @@ import UIKit
 import XCTest
 
 
-class YouTubeExtractorUtilsTests: YoutubeFetcherBaseTests {
+class YouTubeExtractorUtilsTests: YoutubeFetcherBase {
     
     override func setUp() {
         super.setUp()

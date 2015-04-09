@@ -16,11 +16,12 @@
 		5E429BBB1AD60DBB00E8C6F3 /* MoviePlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E429BBA1AD60DBB00E8C6F3 /* MoviePlayerViewController.swift */; };
 		5E429BBD1AD60EBE00E8C6F3 /* AVPlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E429BBC1AD60EBE00E8C6F3 /* AVPlayerView.swift */; };
 		5E429BBF1AD60F7900E8C6F3 /* CMTime+Validation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E429BBE1AD60F7900E8C6F3 /* CMTime+Validation.swift */; };
+		5E4F74431AD6469900D90063 /* Tools.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E4F74421AD6469900D90063 /* Tools.swift */; };
+		5E4F74441AD6469F00D90063 /* Tools.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E4F74421AD6469900D90063 /* Tools.swift */; };
 		5E4FF35D1AD638CE00D84FA4 /* PeriodicTimeProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E4FF35C1AD638CE00D84FA4 /* PeriodicTimeProtocol.swift */; };
-		5E4FF3601AD645C200D84FA4 /* Tools.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E4FF35F1AD645C200D84FA4 /* Tools.swift */; };
 		5E4FF3671AD645CF00D84FA4 /* YoutubeDataFetcherForCaptionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E4FF3621AD645CF00D84FA4 /* YoutubeDataFetcherForCaptionTests.swift */; };
 		5E4FF3681AD645CF00D84FA4 /* YouTubeExtractorUtilsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E4FF3631AD645CF00D84FA4 /* YouTubeExtractorUtilsTests.swift */; };
-		5E4FF3691AD645CF00D84FA4 /* YoutubeFetcherBaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E4FF3641AD645CF00D84FA4 /* YoutubeFetcherBaseTests.swift */; };
+		5E4FF3691AD645CF00D84FA4 /* YoutubeFetcherBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E4FF3641AD645CF00D84FA4 /* YoutubeFetcherBase.swift */; };
 		5E4FF36A1AD645CF00D84FA4 /* YoutubeFetcherForChannelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E4FF3651AD645CF00D84FA4 /* YoutubeFetcherForChannelTests.swift */; };
 		5E4FF36B1AD645CF00D84FA4 /* YoutubeFetcherForVideosTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E4FF3661AD645CF00D84FA4 /* YoutubeFetcherForVideosTests.swift */; };
 		5E4FF36E1AD645D600D84FA4 /* ParserSubtitleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E4FF36D1AD645D600D84FA4 /* ParserSubtitleTests.swift */; };
@@ -124,11 +125,11 @@
 		5E429BBA1AD60DBB00E8C6F3 /* MoviePlayerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MoviePlayerViewController.swift; path = WatchView/Player/MoviePlayerViewController.swift; sourceTree = "<group>"; };
 		5E429BBC1AD60EBE00E8C6F3 /* AVPlayerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AVPlayerView.swift; path = WatchView/Player/AVPlayerView.swift; sourceTree = "<group>"; };
 		5E429BBE1AD60F7900E8C6F3 /* CMTime+Validation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "CMTime+Validation.swift"; path = "WatchView/Player/CMTime+Validation.swift"; sourceTree = "<group>"; };
+		5E4F74421AD6469900D90063 /* Tools.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tools.swift; sourceTree = "<group>"; };
 		5E4FF35C1AD638CE00D84FA4 /* PeriodicTimeProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PeriodicTimeProtocol.swift; path = WatchView/Player/PeriodicTimeProtocol.swift; sourceTree = "<group>"; };
-		5E4FF35F1AD645C200D84FA4 /* Tools.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tools.swift; sourceTree = "<group>"; };
 		5E4FF3621AD645CF00D84FA4 /* YoutubeDataFetcherForCaptionTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YoutubeDataFetcherForCaptionTests.swift; sourceTree = "<group>"; };
 		5E4FF3631AD645CF00D84FA4 /* YouTubeExtractorUtilsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YouTubeExtractorUtilsTests.swift; sourceTree = "<group>"; };
-		5E4FF3641AD645CF00D84FA4 /* YoutubeFetcherBaseTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YoutubeFetcherBaseTests.swift; sourceTree = "<group>"; };
+		5E4FF3641AD645CF00D84FA4 /* YoutubeFetcherBase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YoutubeFetcherBase.swift; sourceTree = "<group>"; };
 		5E4FF3651AD645CF00D84FA4 /* YoutubeFetcherForChannelTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YoutubeFetcherForChannelTests.swift; sourceTree = "<group>"; };
 		5E4FF3661AD645CF00D84FA4 /* YoutubeFetcherForVideosTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YoutubeFetcherForVideosTests.swift; sourceTree = "<group>"; };
 		5E4FF36D1AD645D600D84FA4 /* ParserSubtitleTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParserSubtitleTests.swift; sourceTree = "<group>"; };
@@ -290,13 +291,12 @@
 			name = Player;
 			sourceTree = "<group>";
 		};
-		5E4FF35E1AD645C200D84FA4 /* Tools */ = {
+		5E4F74411AD6469900D90063 /* Tools */ = {
 			isa = PBXGroup;
 			children = (
-				5E4FF35F1AD645C200D84FA4 /* Tools.swift */,
+				5E4F74421AD6469900D90063 /* Tools.swift */,
 			);
-			name = Tools;
-			path = ../../UnitTests/Tools;
+			path = Tools;
 			sourceTree = "<group>";
 		};
 		5E4FF3611AD645CF00D84FA4 /* youtube.api */ = {
@@ -304,7 +304,7 @@
 			children = (
 				5E4FF3621AD645CF00D84FA4 /* YoutubeDataFetcherForCaptionTests.swift */,
 				5E4FF3631AD645CF00D84FA4 /* YouTubeExtractorUtilsTests.swift */,
-				5E4FF3641AD645CF00D84FA4 /* YoutubeFetcherBaseTests.swift */,
+				5E4FF3641AD645CF00D84FA4 /* YoutubeFetcherBase.swift */,
 				5E4FF3651AD645CF00D84FA4 /* YoutubeFetcherForChannelTests.swift */,
 				5E4FF3661AD645CF00D84FA4 /* YoutubeFetcherForVideosTests.swift */,
 			);
@@ -444,7 +444,6 @@
 			children = (
 				5E4FF36C1AD645D600D84FA4 /* Subtitles */,
 				5E4FF3611AD645CF00D84FA4 /* youtube.api */,
-				5E4FF35E1AD645C200D84FA4 /* Tools */,
 				5EBCDD0B1AB5C22C0023F037 /* AsYoutubeiPadSwiftClientTests.swift */,
 				5EBCDD091AB5C22C0023F037 /* Supporting Files */,
 			);
@@ -510,6 +509,7 @@
 		5EC94FE51AC82E9300844E61 /* Business-Logic-Layer */ = {
 			isa = PBXGroup;
 			children = (
+				5E4F74411AD6469900D90063 /* Tools */,
 				5EE804071AD2403700175DF3 /* SDWebImage */,
 				5E53AF881AD14B9C00D03F83 /* SwiftyUserDefaults */,
 				5EC89F9F1ACABFFC003E3920 /* Utils */,
@@ -832,6 +832,7 @@
 				5EC6F7321AD4FE5C008B4F14 /* NSString+HTML.m in Sources */,
 				5EC6F7341AD4FE5C008B4F14 /* SOSubtitleItem+SubtitlePosition.m in Sources */,
 				5EC950001AC82E9300844E61 /* LeftMenuViewController.swift in Sources */,
+				5E4F74431AD6469900D90063 /* Tools.swift in Sources */,
 				5E85EDE11ACEC34F009170D8 /* YTVideoWatchInfoViewController.swift in Sources */,
 				5E429BBF1AD60F7900E8C6F3 /* CMTime+Validation.swift in Sources */,
 				5E85EDDD1ACEC2CF009170D8 /* YTVideoWatchViewController.swift in Sources */,
@@ -861,13 +862,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5E4FF3601AD645C200D84FA4 /* Tools.swift in Sources */,
+				5E4F74441AD6469F00D90063 /* Tools.swift in Sources */,
 				5E4FF36B1AD645CF00D84FA4 /* YoutubeFetcherForVideosTests.swift in Sources */,
 				5EB57D5F1ACFB7920060036F /* YouTubeExtractorUtils.swift in Sources */,
 				5EC950211AC8300100844E61 /* YoutubeUserProfile.swift in Sources */,
 				5E4FF36A1AD645CF00D84FA4 /* YoutubeFetcherForChannelTests.swift in Sources */,
 				5E4FF3681AD645CF00D84FA4 /* YouTubeExtractorUtilsTests.swift in Sources */,
-				5E4FF3691AD645CF00D84FA4 /* YoutubeFetcherBaseTests.swift in Sources */,
+				5E4FF3691AD645CF00D84FA4 /* YoutubeFetcherBase.swift in Sources */,
 				5EC950201AC82FE300844E61 /* YoutubeApi.swift in Sources */,
 				5EC9501E1AC82FC000844E61 /* YoutubeFetcher.swift in Sources */,
 				5EAFF0001ACD4BA3000C2E74 /* GYoutubeRequestInfo.m in Sources */,
