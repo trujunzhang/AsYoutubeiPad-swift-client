@@ -5,6 +5,30 @@
 
 }
 
++ (NSString*)searchAndShowSubtitle:(NSMutableDictionary*)subtitlesParts inTime:(NSTimeInterval) currentPlaybackTime{
+    
+    // Search for timeInterval
+    NSPredicate *initialPredicate = [NSPredicate predicateWithFormat:@"(%@ >= %K) AND (%@ <= %K)",
+                                     @(currentPlaybackTime),
+                                     kStart,
+                                     @(currentPlaybackTime),
+                                     kEnd];
+    NSArray *objectsFound = [[subtitlesParts allValues] filteredArrayUsingPredicate:initialPredicate];
+    NSDictionary *lastFounded = (NSDictionary *)[objectsFound lastObject];
+    
+    // Show text
+    if(lastFounded) {
+        
+        // Get text
+        NSString* lastText = [lastFounded objectForKey:kText];
+
+        return lastText;
+    }
+    
+    return  @"";
+    
+}
+
 + (void)searchAndShowSubtitle:(NSMutableDictionary*)subtitlesParts withLabel:(UILabel*)subtitleLabel inTime:(NSTimeInterval) currentPlaybackTime{
     
     // Search for timeInterval
@@ -20,7 +44,8 @@
     if(lastFounded) {
         
         // Get text
-        subtitleLabel.text = [lastFounded objectForKey:kText];
+        NSString* lastText = [lastFounded objectForKey:kText];
+        subtitleLabel.text = lastText;
         
         
         // Label position

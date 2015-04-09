@@ -19,6 +19,7 @@ static NSString *const kText = @"kText";
 
 - (void)parseSRTString:(NSString *)string toDictionary:(NSMutableDictionary *)subtitlesParts parsed:(void (^)(BOOL parsed, NSError *error))completion;
 
++ (NSString*)searchAndShowSubtitle:(NSMutableDictionary*)subtitlesParts inTime:(NSTimeInterval) currentPlaybackTime;
 + (void)searchAndShowSubtitle:(NSMutableDictionary*)subtitlesParts withLabel:(UILabel*)subtitleLabel inTime:(NSTimeInterval) currentPlaybackTime;
 
 @end
