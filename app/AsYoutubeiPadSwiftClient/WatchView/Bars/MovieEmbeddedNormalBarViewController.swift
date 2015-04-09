@@ -24,6 +24,7 @@ class MovieEmbeddedNormalBarViewController: MovieEmbeddedBasedBarViewController 
     // MARK : videoPlayerView That contains avplayer
     
     @IBOutlet var videoPlayerView: AVPlayerView!
+    @IBOutlet var subtitleLabel: UILabel!
     
     
     // MARK : Bottom bar items
