@@ -64,6 +64,8 @@ class YTPlayerSubtitling :PeriodicTimeProtocol {
                     return
                 }
                 currentText = subtitle
+                
+//                println("player time changed : \(currentText)")
             }
         }
         
