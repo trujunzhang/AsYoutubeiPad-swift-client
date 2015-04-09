@@ -63,9 +63,11 @@ class MovieEmbeddedNormalBarViewController: MovieEmbeddedBasedBarViewController 
         
         setBarsConstraint(topBarTopConstraint, bottomBarTopConstraint: bottomBarTopConstraint)
         
-        setVideoURL(videoURL!)
+        if let url:NSURL = videoURL {
+            setVideoURL(url)
+        }
         
-        setupPlayerSubtitling()
+        
     }
     
     // MARK : Events for Top buttons
@@ -88,11 +90,14 @@ class MovieEmbeddedNormalBarViewController: MovieEmbeddedBasedBarViewController 
         
         moviePlayerViewController!.initAVPlayer(url)
         moviePlayerViewController?.play()
+        
+        
+        setupPlayerSubtitling()
     }
     
     func setupPlayerSubtitling(){
         playerSubtitling = YTPlayerSubtitling()
-
+        
         playerSubtitling?.setPlayer(videoID, _subtitleLabel: subtitleLabel, _moviePlayerViewController: moviePlayerViewController!)
     }
     

@@ -23,8 +23,12 @@ class MovieEmbeddedViewController: UIViewController {
     override func viewDidLoad() {
         
         test01()
-        playVideo()
-        view01()
+        
+//        let path = NSBundle.mainBundle().pathForResource("example", ofType:"mp4")
+//        let videoURL :NSURL = NSURL.fileURLWithPath(path!)!
+//        playVideo(videoURL)
+        
+        layoutEmbeddedBar()
     }
     
     
@@ -36,51 +40,17 @@ class MovieEmbeddedViewController: UIViewController {
     
     
     
-    func playVideo()  {
-        
-        let path = NSBundle.mainBundle().pathForResource("example", ofType:"mp4")
-        let url = NSURL.fileURLWithPath(path!)
-        
-        let videoURL = url
-        
-        normalBarViewController?.videoURL = videoURL
+    func playVideo(videoURL :NSURL)  {
+        if let viewController : MovieEmbeddedNormalBarViewController =  normalBarViewController {
+            viewController.setVideoURL(videoURL)
+        }
     }
-    
-    
-    func test02(){
-        // Video file
-        let filePathStr:NSString = NSBundle.mainBundle().pathForResource("example", ofType: "mp4")!
-        let fileURL :NSURL = NSURL(fileURLWithPath: filePathStr)!
-        
-        // Subtitles file
-        let subtitlesPathStr :NSString = NSBundle.mainBundle().pathForResource("example", ofType: "srt")!
-        
-        // Create MoviePlayer
-        //        let player: MPMoviePlayerViewController = MPMoviePlayerViewController(contentURL: fileURL)
-        //        player.moviePlayer.openSRTFileAtPath(subtitlesPathStr, completion: { (finished) -> Void in
-        //
-        //            // Activate subtitles
-        //            player.moviePlayer.showSubtitles()
-        //
-        //            // Show video
-        //            self.playerView = player.view
-        //            // add movie player to your view
-        //            self.view.addSubview(self.playerView!)
-        //            LayoutUtils.LayoutFullView(self.playerView!)
-        //
-        //        }) { (error) -> Void in
-        //            var x = 0
-        //        }
-        
-        
-    }
+
     
     // MARK : TEST 01
     func test01(){
-        //        YoutubeExtractor()
-        
-        setupMoviePlayer()
-        
+        YoutubeExtractor()
+
         setupEmbeddedBars()
         
         // add movie player to your view
@@ -89,11 +59,7 @@ class MovieEmbeddedViewController: UIViewController {
         
     }
     
-    
-    func view01(){
-        layoutEmbeddedBar()
-        
-    }
+
     
     func YoutubeExtractor(){
         YouTubeExtractorUtils.YoutubeExtractor(videoID, completeHandler: { (object, sucess) -> Void in
@@ -116,10 +82,7 @@ class MovieEmbeddedViewController: UIViewController {
         
     }
     
-    
-    func setupMoviePlayer(){
-        
-    }
+
     
     func setupEmbeddedBars() {
         // normal bar
