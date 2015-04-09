@@ -63,10 +63,12 @@ class MovieEmbeddedNormalBarViewController: MovieEmbeddedBasedBarViewController 
         
         setBarsConstraint(topBarTopConstraint, bottomBarTopConstraint: bottomBarTopConstraint)
         
+        moviePlayerViewController = MoviePlayerViewController()
+        playerSubtitling = YTPlayerSubtitling()
+        
         if let url:NSURL = videoURL {
             setVideoURL(url)
         }
-        
         
     }
     
@@ -84,22 +86,20 @@ class MovieEmbeddedNormalBarViewController: MovieEmbeddedBasedBarViewController 
     }
     
     func setVideoURL(url: NSURL){
-        moviePlayerViewController = MoviePlayerViewController()
         
-        moviePlayerViewController?.prepareUI(durationSlider, _playPauseButton: playPauseButton, _elapsedTimeLabel: timeElapsedLabel, _remainingTimeLabel: timeRemainingLabel, _videoPlayerView: videoPlayerView)
-        
-        moviePlayerViewController!.initAVPlayer(url)
-        moviePlayerViewController?.play()
-        
-        
-        setupPlayerSubtitling()
+        if let viewController : MoviePlayerViewController =  moviePlayerViewController {
+            if let subtitling : YTPlayerSubtitling =  playerSubtitling {
+                subtitling.setPlayer(videoID, _subtitleLabel: subtitleLabel, _moviePlayerViewController: viewController)
+            }
+            
+            viewController.prepareUI(durationSlider, _playPauseButton: playPauseButton, _elapsedTimeLabel: timeElapsedLabel, _remainingTimeLabel: timeRemainingLabel, _videoPlayerView: videoPlayerView)
+            
+            viewController.initAVPlayer(url)
+            viewController.play()
+        }
     }
     
-    func setupPlayerSubtitling(){
-        playerSubtitling = YTPlayerSubtitling()
-        
-        playerSubtitling?.setPlayer(videoID, _subtitleLabel: subtitleLabel, _moviePlayerViewController: moviePlayerViewController!)
-    }
+    
     
     
     override func viewDidLayoutSubviews() {
