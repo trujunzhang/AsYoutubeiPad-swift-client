@@ -11,24 +11,13 @@ import AVFoundation
 import UIKit
 
 class MoviePlayerViewController : PeriodicTimeProtocol {
-    
-    //    @IBOutlet weak var seekber: UISlider!
-    //    @IBOutlet weak var playPauseButton: UIButton!
-    //    @IBOutlet weak var elapsedTimeLabel: UILabel!
-    //    @IBOutlet weak var remainingTimeLabel: UILabel!
-    
+
     var seekber: UISlider!
     var playPauseButton: UIButton!
     var elapsedTimeLabel: UILabel!
     var remainingTimeLabel: UILabel!
     var videoPlayerView: AVPlayerView!
-    
-    //    @IBOutlet weak var playerMenu: UIView!
-    
-    //    @IBOutlet weak var singleTap: UITapGestureRecognizer!
-    //    @IBOutlet weak var doubleTap: UITapGestureRecognizer!
-    
-    //    @IBOutlet weak
+
     
     var playerItem: AVPlayerItem? = nil
     var videoPlayer: AVPlayer? = nil
@@ -37,8 +26,6 @@ class MoviePlayerViewController : PeriodicTimeProtocol {
     
     // MARK : array of PeriodicTimeProtocol
     var periodicTimeProtocols:[PeriodicTimeProtocol] = [PeriodicTimeProtocol]()
-    //    let periodicTimeProtocols: NSMutableArray = NSMutableArray()
-    
     
     
     // MARK: - View Lifecycle
