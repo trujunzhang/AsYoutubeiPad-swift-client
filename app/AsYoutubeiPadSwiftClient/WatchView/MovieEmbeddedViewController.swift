@@ -52,11 +52,6 @@ class MovieEmbeddedViewController: UIViewController {
         YoutubeExtractor()
         
         setupEmbeddedBars()
-        
-        // add movie player to your view
-        //        self.view.addSubview(playerView!)
-        //        LayoutUtils.LayoutFullView(playerView!)
-        
     }
     
     
