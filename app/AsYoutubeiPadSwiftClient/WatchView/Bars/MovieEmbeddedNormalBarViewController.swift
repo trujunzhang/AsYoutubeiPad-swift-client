@@ -79,6 +79,7 @@ class MovieEmbeddedNormalBarViewController: MovieEmbeddedBasedBarViewController 
         moviePlayerViewController?.prepareUI(durationSlider, _playPauseButton: playPauseButton, _elapsedTimeLabel: timeElapsedLabel, _remainingTimeLabel: timeRemainingLabel, _videoPlayerView: videoPlayerView)
         
         moviePlayerViewController!.initAVPlayer(url)
+        moviePlayerViewController?.play()
     }
     
     
