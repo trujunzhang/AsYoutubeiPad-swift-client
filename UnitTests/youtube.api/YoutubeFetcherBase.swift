@@ -10,7 +10,7 @@
 import XCTest
 
 
-class YoutubeFetcherBaseTests: XCTestCase {
+class YoutubeFetcherBase: XCTestCase {
     
     var requestInfo = YTYoutubeRequestInfo()
     var isSucess = false
