@@ -13,11 +13,16 @@ import UIKit
 class YTPlayerSubtitling :PeriodicTimeProtocol {
     var videoID = ""
     var player: AVPlayer? = nil
+    var moviePlayerViewController :MoviePlayerViewController? = nil
     
-    
-    func setPlayer(_player: AVPlayer, _videoID: String){
-        player = _player
+    func setPlayer(_moviePlayerViewController: MoviePlayerViewController, _videoID: String){
+        moviePlayerViewController = _moviePlayerViewController
         videoID = _videoID
+        
+        prepareSubtitle()
+    }
+    
+    func prepareSubtitle(){
         
     }
     

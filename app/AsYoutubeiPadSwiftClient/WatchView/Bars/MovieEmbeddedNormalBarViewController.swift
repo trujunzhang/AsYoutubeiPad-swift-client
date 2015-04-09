@@ -7,6 +7,9 @@
 //
 
 import Foundation
+import AVFoundation
+import UIKit
+
 
 //    normalBottomBarView?.frame = CGRectMake(0, 0, 576, 43)
 class MovieEmbeddedNormalBarViewController: MovieEmbeddedBasedBarViewController {
@@ -51,6 +54,8 @@ class MovieEmbeddedNormalBarViewController: MovieEmbeddedBasedBarViewController 
     // MARK : private variables
     var videoURL: NSURL?
     var moviePlayerViewController :MoviePlayerViewController?
+    var playerSubtitling : YTPlayerSubtitling?
+    var videoID = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -58,6 +63,8 @@ class MovieEmbeddedNormalBarViewController: MovieEmbeddedBasedBarViewController 
         setBarsConstraint(topBarTopConstraint, bottomBarTopConstraint: bottomBarTopConstraint)
         
         setVideoURL(videoURL!)
+        
+        setupPlayerSubtitling()
     }
     
     // MARK : Events for Top buttons
@@ -82,6 +89,10 @@ class MovieEmbeddedNormalBarViewController: MovieEmbeddedBasedBarViewController 
         moviePlayerViewController?.play()
     }
     
+    func setupPlayerSubtitling(){
+        playerSubtitling = YTPlayerSubtitling()
+        playerSubtitling?.setPlayer(moviePlayerViewController!, _videoID: videoID)
+    }
     
     
     override func viewDidLayoutSubviews() {

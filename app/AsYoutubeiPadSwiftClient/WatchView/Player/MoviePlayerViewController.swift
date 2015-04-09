@@ -86,9 +86,7 @@ class MoviePlayerViewController : PeriodicTimeProtocol {
         
         //        self.singleTap.requireGestureRecognizerToFail(self.doubleTap)
     }
-    
-    
-    
+
     
     // MARK: - Player Notifications
     
@@ -287,5 +285,7 @@ class MoviePlayerViewController : PeriodicTimeProtocol {
     func addPeriodicTimeProtocol(periodicTimeProtocol:PeriodicTimeProtocol){
         periodicTimeProtocols.append(periodicTimeProtocol)
     }
+    
+    
     
 }
