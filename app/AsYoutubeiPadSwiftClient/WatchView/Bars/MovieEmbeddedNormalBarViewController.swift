@@ -8,7 +8,7 @@
 
 import Foundation
 
-
+//    normalBottomBarView?.frame = CGRectMake(0, 0, 576, 43)
 class MovieEmbeddedNormalBarViewController: MovieEmbeddedBasedBarViewController {
     
     // MARK : top bar views
@@ -16,17 +16,14 @@ class MovieEmbeddedNormalBarViewController: MovieEmbeddedBasedBarViewController 
     
     // MARK : bottom bar views
     @IBOutlet var bottomBarPanel: UIView!
-    //    normalBottomBarView?.frame = CGRectMake(0, 0, 576, 43)
+    
     
     // MARK : videoPlayerView That contains avplayer
     
     @IBOutlet var videoPlayerView: AVPlayerView!
-
     
-    // MARK : videoPlayerView th
     
     // MARK : Bottom bar items
-    
     
     @IBOutlet var bottomBarTopConstraint: NSLayoutConstraint!
     
@@ -34,7 +31,7 @@ class MovieEmbeddedNormalBarViewController: MovieEmbeddedBasedBarViewController 
     @IBOutlet var durationSlider: UISlider!
     @IBOutlet var timeElapsedLabel: UILabel!
     @IBOutlet var timeRemainingLabel: UILabel!
-
+    
     @IBOutlet var fullscreenButton: UIImageView!
     
     // MARK : Top bar items
@@ -71,10 +68,10 @@ class MovieEmbeddedNormalBarViewController: MovieEmbeddedBasedBarViewController 
         var x = 0
     }
     
-//    
-//    func setPlayerBars(moviePlayer : ALMoviePlayerControls){
-//        moviePlayer.setTwoBars(topBarPanel, withBottomBar: bottomBarPanel, withDurationSlider: durationSlider, withTimeElapsedLabel: timeElapsedLabel, withTimeRemainingLabel: timeRemainingLabel, withPlayPauseButton: playPauseButton, moviePause: "mp_embedded_pause", moviePlay: "mp_embedded_play")
-//    }
+    //
+    //    func setPlayerBars(moviePlayer : ALMoviePlayerControls){
+    //        moviePlayer.setTwoBars(topBarPanel, withBottomBar: bottomBarPanel, withDurationSlider: durationSlider, withTimeElapsedLabel: timeElapsedLabel, withTimeRemainingLabel: timeRemainingLabel, withPlayPauseButton: playPauseButton, moviePause: "mp_embedded_pause", moviePlay: "mp_embedded_play")
+    //    }
     
     
     

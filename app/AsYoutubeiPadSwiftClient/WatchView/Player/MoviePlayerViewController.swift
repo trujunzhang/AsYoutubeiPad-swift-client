@@ -10,18 +10,26 @@ import Foundation
 import AVFoundation
 import UIKit
 
-class MoviePlayerViewController : UIViewController {
+class MoviePlayerViewController : NSObject {
     
-    @IBOutlet weak var seekber: UISlider!
-    @IBOutlet weak var playPauseButton: UIButton!
-    @IBOutlet weak var elapsedTimeLabel: UILabel!
-    @IBOutlet weak var remainingTimeLabel: UILabel!
-    @IBOutlet weak var playerMenu: UIView!
+    //    @IBOutlet weak var seekber: UISlider!
+    //    @IBOutlet weak var playPauseButton: UIButton!
+    //    @IBOutlet weak var elapsedTimeLabel: UILabel!
+    //    @IBOutlet weak var remainingTimeLabel: UILabel!
     
-    @IBOutlet weak var singleTap: UITapGestureRecognizer!
-    @IBOutlet weak var doubleTap: UITapGestureRecognizer!
+    var seekber: UISlider!
+    var playPauseButton: UIButton!
+    var elapsedTimeLabel: UILabel!
+    var remainingTimeLabel: UILabel!
+    var videoPlayerView: AVPlayerView!
     
-    @IBOutlet weak var videoPlayerView: AVPlayerView!
+    //    @IBOutlet weak var playerMenu: UIView!
+    
+    //    @IBOutlet weak var singleTap: UITapGestureRecognizer!
+    //    @IBOutlet weak var doubleTap: UITapGestureRecognizer!
+    
+    //    @IBOutlet weak
+    
     var playerItem: AVPlayerItem? = nil
     var videoPlayer: AVPlayer? = nil
     var videoTimeObserver: AnyObject? = nil
@@ -30,11 +38,16 @@ class MoviePlayerViewController : UIViewController {
     
     // MARK: - View Lifecycle
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    func prepareUI(_seekber: UISlider,_playPauseButton: UIButton, _elapsedTimeLabel: UILabel, _remainingTimeLabel: UILabel, _videoPlayerView: AVPlayerView){
+        seekber = _seekber;
+        playPauseButton = _playPauseButton;
+        elapsedTimeLabel = _elapsedTimeLabel;
+        remainingTimeLabel = _remainingTimeLabel;
         
-        let bundle = NSBundle.mainBundle()
-        let url: NSURL = NSBundle.mainBundle().URLForResource("sample", withExtension: "mp4")!
+        videoPlayerView = _videoPlayerView;
+    }
+    
+    func initAVPlayer(url: NSURL){
         
         self.playerItem = AVPlayerItem(URL: url)
         
@@ -59,11 +72,7 @@ class MoviePlayerViewController : UIViewController {
         self.syncPlayPauseButtonImage()
         self.updateTimeLabel()
         
-        self.singleTap.requireGestureRecognizerToFail(self.doubleTap)
-    }
-    
-    override func viewWillAppear(animated: Bool) {
-        super.viewWillAppear(animated)
+        //        self.singleTap.requireGestureRecognizerToFail(self.doubleTap)
     }
     
     
@@ -139,7 +148,7 @@ class MoviePlayerViewController : UIViewController {
         self.videoPlayer!.pause()
     }
     
-//    @IBAction
+    //    @IBAction
     func playOrPause(sender: AnyObject) {
         if self.isPlaying() {
             self.pause()
@@ -161,13 +170,13 @@ class MoviePlayerViewController : UIViewController {
     
     // MARK: - Seek
     
-//    @IBAction
+    //    @IBAction
     func beginScrubbing(slider: UISlider) {
         self.playingRateAfterScrub = self.videoPlayer!.rate
         self.pause()
     }
     
-//    @IBAction
+    //    @IBAction
     func endScrubbing(slider: UISlider) {
         if self.playingRateAfterScrub != 0 {
             self.play()
@@ -175,7 +184,7 @@ class MoviePlayerViewController : UIViewController {
         }
     }
     
-//    @IBAction
+    //    @IBAction
     func scrub(slider: UISlider) {
         self.seekToTime(Double(slider.value))
     }
@@ -185,12 +194,12 @@ class MoviePlayerViewController : UIViewController {
     }
     
     
-//    @IBAction
+    //    @IBAction
     func back() {
         self.seekToTime(0)
     }
     
-//    @IBAction
+    //    @IBAction
     func next() {
         self.seekToTime(1)
     }
@@ -215,24 +224,24 @@ class MoviePlayerViewController : UIViewController {
     }
     
     // MARK: - Tap Gesture
-//    @IBAction
+    //    @IBAction
     func hideMenu() {
-        if self.playerMenu.hidden {
-            self.playerMenu.hidden = false
-            UIView.animateWithDuration(0.25, animations: {
-                self.playerMenu.alpha = 1
-            })
-            
-        } else {
-            UIView.animateWithDuration(0.25, animations: {
-                self.playerMenu.alpha = 0
-                }, completion: { (value: Bool) in
-                    self.playerMenu.hidden = true
-            })
-        }
+        //        if self.playerMenu.hidden {
+        //            self.playerMenu.hidden = false
+        //            UIView.animateWithDuration(0.25, animations: {
+        //                self.playerMenu.alpha = 1
+        //            })
+        //
+        //        } else {
+        //            UIView.animateWithDuration(0.25, animations: {
+        //                self.playerMenu.alpha = 0
+        //                }, completion: { (value: Bool) in
+        //                    self.playerMenu.hidden = true
+        //            })
+        //        }
     }
     
-//    @IBAction
+    //    @IBAction
     func zoomPlayer() {
         if self.videoPlayerView.videoFillMode() == AVLayerVideoGravityResizeAspect {
             self.videoPlayerView.setVideoFillMode(AVLayerVideoGravityResizeAspectFill)
