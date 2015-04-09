@@ -24,6 +24,7 @@ class MovieEmbeddedViewController: UIViewController {
         
         test01()
         playVideo()
+        view01()
     }
     
     
@@ -42,6 +43,7 @@ class MovieEmbeddedViewController: UIViewController {
         
         let videoURL = url
         
+        normalBarViewController!.setVideoURL(videoURL!)
     }
     
     
@@ -82,8 +84,8 @@ class MovieEmbeddedViewController: UIViewController {
         setupEmbeddedBars()
         
         // add movie player to your view
-//        self.view.addSubview(playerView!)
-//        LayoutUtils.LayoutFullView(playerView!)
+        //        self.view.addSubview(playerView!)
+        //        LayoutUtils.LayoutFullView(playerView!)
         
     }
     
@@ -111,7 +113,7 @@ class MovieEmbeddedViewController: UIViewController {
     }
     
     override func viewDidLayoutSubviews() {
-        view01()
+        
     }
     
     

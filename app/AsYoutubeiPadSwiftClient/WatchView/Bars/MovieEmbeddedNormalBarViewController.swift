@@ -49,10 +49,12 @@ class MovieEmbeddedNormalBarViewController: MovieEmbeddedBasedBarViewController 
     @IBOutlet var containerHeightConstraint: NSLayoutConstraint!
     
     
+    var videoURL: NSURL?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        setBarsConstraint(topBarTopConstraint,bottomBarTopConstraint: bottomBarTopConstraint)
+        setBarsConstraint(topBarTopConstraint, bottomBarTopConstraint: bottomBarTopConstraint)
     }
     
     // MARK : Events for Top buttons
@@ -68,7 +70,9 @@ class MovieEmbeddedNormalBarViewController: MovieEmbeddedBasedBarViewController 
         var x = 0
     }
     
-
+    func setVideoURL(url: NSURL){
+        
+    }
     
     
     
