@@ -65,6 +65,11 @@ class YTPlayerSubtitling :PeriodicTimeProtocol {
                 }
                 currentText = subtitle
                 
+                dispatch_async(dispatch_get_main_queue(), { () -> Void in
+                    // updateLabel
+                    
+                })
+                
 //                println("player time changed : \(currentText)")
             }
         }
