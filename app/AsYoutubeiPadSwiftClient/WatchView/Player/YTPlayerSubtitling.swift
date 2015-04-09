@@ -25,8 +25,9 @@ class YTPlayerSubtitling :PeriodicTimeProtocol {
         
     }
     
-    func setPlayer(_moviePlayerViewController: MoviePlayerViewController, _videoID: String){
+    func setPlayer(_videoID: String,_subtitleLabel : UILabel ,_moviePlayerViewController: MoviePlayerViewController ){
         videoID = _videoID
+        subtitleLabel = _subtitleLabel
         moviePlayerViewController = _moviePlayerViewController
         
         player = moviePlayerViewController?.videoPlayer
@@ -67,15 +68,23 @@ class YTPlayerSubtitling :PeriodicTimeProtocol {
                 
                 dispatch_async(dispatch_get_main_queue(), { () -> Void in
                     // updateLabel
-                    
+                    self.updateLabel()
                 })
                 
-//                println("player time changed : \(currentText)")
+                //                println("player time changed : \(currentText)")
             }
         }
+                
         
+    }
+    
+    func updateLabel(){
         
+//        subtitleLabel?.text = currentText
         
+        subtitleLabel?.text = "wanghao"
+        
+        subtitleLabel?.hidden = currentText.length != 0
     }
     
 }

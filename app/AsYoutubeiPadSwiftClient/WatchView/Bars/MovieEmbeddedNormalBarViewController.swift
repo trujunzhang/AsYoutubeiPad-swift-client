@@ -92,7 +92,8 @@ class MovieEmbeddedNormalBarViewController: MovieEmbeddedBasedBarViewController 
     
     func setupPlayerSubtitling(){
         playerSubtitling = YTPlayerSubtitling()
-        playerSubtitling?.setPlayer(moviePlayerViewController!, _videoID: videoID)
+
+        playerSubtitling?.setPlayer(videoID, _subtitleLabel: subtitleLabel, _moviePlayerViewController: moviePlayerViewController!)
     }
     
     
