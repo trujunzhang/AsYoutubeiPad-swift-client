@@ -71,7 +71,7 @@ class YTPlayerSubtitling :PeriodicTimeProtocol {
                     self.updateLabel()
                 })
                 
-                //                println("player time changed : \(currentText)")
+                                println("player time changed : \(currentText)")
             }
         }
                 
@@ -80,9 +80,9 @@ class YTPlayerSubtitling :PeriodicTimeProtocol {
     
     func updateLabel(){
         
-//        subtitleLabel?.text = currentText
+        subtitleLabel?.text = currentText
         
-        subtitleLabel?.text = "wanghao"
+//        subtitleLabel?.text = "wanghao"
         
         subtitleLabel?.hidden = currentText.length != 0
     }
