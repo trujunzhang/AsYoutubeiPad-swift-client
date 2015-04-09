@@ -40,7 +40,7 @@
 //#import "YKDirectVideo.h"
 
 // Library: MPMoviePlayerController-Subtitles
-#import "MPMoviePlayerController+Subtitles.h"
+//#import "MPMoviePlayerController+Subtitles.h"
 #import "SOSubtitle.h"
 #import "SOSRTParserHelper.h"
 #import "SRTParserInterface.h"

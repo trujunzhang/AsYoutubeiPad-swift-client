@@ -1,5 +1,5 @@
 #import <Foundation/Foundation.h>
-
+#import <UIKit/UIKit.h>
 
 typedef NS_ENUM(NSInteger, SDSRTParserError) {
     SDSRTMissingIndexError,
@@ -18,5 +18,7 @@ static NSString *const kText = @"kText";
 @interface SRTParserInterface : NSObject
 
 - (void)parseSRTString:(NSString *)string toDictionary:(NSMutableDictionary *)subtitlesParts parsed:(void (^)(BOOL parsed, NSError *error))completion;
+
++ (void)searchAndShowSubtitle:(NSMutableDictionary*)subtitlesParts withLabel:(UILabel*)subtitleLabel inTime:(NSTimeInterval) currentPlaybackTime;
 
 @end

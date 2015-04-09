@@ -13,16 +13,16 @@ class MovieEmbeddedViewController: UIViewController {
     
     var videoID = ""
     var dict:[String:IGYouTubeVideo] = [:]
-
+    
     var playerView: UIView?
     
     
     var normalBarViewController : MovieEmbeddedNormalBarViewController?
     var normalBarRootView : UIView?
-    
+
     // MARK : Life-Cycle
     override func viewDidLoad() {
-//        test02()
+                playVideo()
     }
     
     
@@ -32,6 +32,7 @@ class MovieEmbeddedViewController: UIViewController {
         
     }
     
+
     
     func playVideo()  {
         
@@ -39,17 +40,9 @@ class MovieEmbeddedViewController: UIViewController {
         let url = NSURL.fileURLWithPath(path!)
         
         let videoURL = url
-        moviePlayer = MPMoviePlayerViewController(contentURL: videoURL )
-        
-        if let player = moviePlayer {
-            self.view.addSubview(player.view)
-            LayoutUtils.LayoutFullView(player.view!)
-        }
-        else {
-            NSLog("no player")
-        }
-    }
 
+    }
+    
     
     func test02(){
         // Video file
@@ -58,23 +51,23 @@ class MovieEmbeddedViewController: UIViewController {
         
         // Subtitles file
         let subtitlesPathStr :NSString = NSBundle.mainBundle().pathForResource("example", ofType: "srt")!
-
+        
         // Create MoviePlayer
-        let player: MPMoviePlayerViewController = MPMoviePlayerViewController(contentURL: fileURL)
-//        player.moviePlayer.openSRTFileAtPath(subtitlesPathStr, completion: { (finished) -> Void in
-//            
-//            // Activate subtitles
-//            player.moviePlayer.showSubtitles()
-//            
-//            // Show video
-//            self.playerView = player.view
-//            // add movie player to your view
-//            self.view.addSubview(self.playerView!)
-//            LayoutUtils.LayoutFullView(self.playerView!)
-//            
-//        }) { (error) -> Void in
-//            var x = 0
-//        }
+//        let player: MPMoviePlayerViewController = MPMoviePlayerViewController(contentURL: fileURL)
+        //        player.moviePlayer.openSRTFileAtPath(subtitlesPathStr, completion: { (finished) -> Void in
+        //
+        //            // Activate subtitles
+        //            player.moviePlayer.showSubtitles()
+        //
+        //            // Show video
+        //            self.playerView = player.view
+        //            // add movie player to your view
+        //            self.view.addSubview(self.playerView!)
+        //            LayoutUtils.LayoutFullView(self.playerView!)
+        //
+        //        }) { (error) -> Void in
+        //            var x = 0
+        //        }
         
         
     }
@@ -92,11 +85,11 @@ class MovieEmbeddedViewController: UIViewController {
         LayoutUtils.LayoutFullView(playerView!)
         
     }
-
+    
     
     func view01(){
         layoutEmbeddedBar()
-
+        
     }
     
     func YoutubeExtractor(){
@@ -110,7 +103,7 @@ class MovieEmbeddedViewController: UIViewController {
                 let videoURL:NSURL = gVideo.videoURL
                 
                 // 2.1
-//                self.moviePlayer?.contentURL = videoURL
+                //                self.moviePlayer?.contentURL = videoURL
             }
             
         })
@@ -122,7 +115,7 @@ class MovieEmbeddedViewController: UIViewController {
     
     
     func setupMoviePlayer(){
-
+        
     }
     
     func setupEmbeddedBars() {
@@ -136,7 +129,7 @@ class MovieEmbeddedViewController: UIViewController {
         
         self.view.addSubview(normalBarRootView!)
         LayoutUtils.LayoutFullView(normalBarRootView!)
-
+        
     }
     
     
