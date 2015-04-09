@@ -63,7 +63,7 @@ class YTPlayerSubtitling :PeriodicTimeProtocol {
                 if (subtitle.isEqualToString(currentText) || subtitle == currentText){
                     return
                 }
-                currentText = subtitle                
+                currentText = subtitle
             }
         }
         
