@@ -40,9 +40,9 @@ class AsCacheDownloader:NSObject ,ASImageDownloaderProtocol{
 //            
 //            dispatch_async(callbackQueue){
 //                
-//                let image:UIImage = UIImage(data: data! as NSData)!
+//                let image:UIImage = UIImage(data: data! as! NSData)!
 //                
-//                cache.set(value: image as UIImage, key: URL.URLString)
+//                cache.set(value: image as! UIImage, key: URL.URLString)
 //                
 //                completion(image.CGImage, nil)
 //            }
@@ -52,7 +52,7 @@ class AsCacheDownloader:NSObject ,ASImageDownloaderProtocol{
     }
     
     func cancelImageDownloadForIdentifier(downloadIdentifier: AnyObject!) {
-//        var fetch: Fetch = downloadIdentifier! as Fetch
+//        var fetch: Fetch = downloadIdentifier! as! Fetch
         
     }
     

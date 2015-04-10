@@ -20,22 +20,22 @@ enum YTPlayListItemsType: Int {
 }
 
 
- let myChannelId = "UC0wObT_HayGfWLdRAnFyPwA"
- let baseURLString = "https://www.googleapis.com/youtube/v3"
+let myChannelId = "UC0wObT_HayGfWLdRAnFyPwA"
+let baseURLString = "https://www.googleapis.com/youtube/v3"
 
- let apiKey            = "AIzaSyBd9kf5LB41bYWnxI3pfoxHJ2njRvmAA90"
- let kMyClientID       = "632947002586-hsu569tme6lt8635vvoofi5mnkqfkqus.apps.googleusercontent.com"
- let kMyClientSecret   = "dHWxjaetid5ckoVMzp0LmzJt"
+let apiKey            = "AIzaSyBd9kf5LB41bYWnxI3pfoxHJ2njRvmAA90"
+let kMyClientID       = "632947002586-hsu569tme6lt8635vvoofi5mnkqfkqus.apps.googleusercontent.com"
+let kMyClientSecret   = "dHWxjaetid5ckoVMzp0LmzJt"
 // let scope             = "https://www.googleapis.com/auth/youtube https://www.googleapis.com/auth/youtube.readonly https://www.googleapis.com/auth/youtubepartner https://www.googleapis.com/auth/youtubepartner-channel-audit https://www.googleapis.com/auth/youtube.upload"
 
- let scope             = "https://www.googleapis.com/auth/youtube https://www.googleapis.com/auth/youtube.readonly"
+let scope             = "https://www.googleapis.com/auth/youtube https://www.googleapis.com/auth/youtube.readonly"
 
-  typealias ObjectHandler = (AnyObject!, Bool!) -> Void
+typealias ObjectHandler = (AnyObject!, Bool!) -> Void
 
 struct YoutubeApi {
     
     enum Router: URLRequestConvertible {
-
+        
         case channels(Int)
         case subscriptions(String,String,String)
         
@@ -67,7 +67,7 @@ struct YoutubeApi {
         }
     }
     
-
+    
 }
 
 

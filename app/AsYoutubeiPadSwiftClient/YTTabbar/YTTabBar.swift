@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 protocol YTTabBarDelegate  {
     func tabBar(tabBar: YTTabBar, didPressButton button: UIButton, atIndex tabIndex:NSInteger)
@@ -30,7 +31,7 @@ class YTTabBar:UIView {
     }
     
     required init(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+        fatalError("init(coder:) has! not been implemented")
     }
     
     
@@ -40,20 +41,20 @@ class YTTabBar:UIView {
     }
     
     // Mark :
-    func setSelectedButton(_selectedButton:UIButton){
-        //        var oldButtonIndex = buttons?.indexOfObject(selectedButton!)
-        //        var newButtonIndex = buttons?.indexOfObject(_selectedButton)
-        //
-        //        if (oldButtonIndex != NSNotFound) {
-        //            selectedButton?.setImage(nil, forState: .Normal)
-        //        }
-        //
-        //        if (newButtonIndex != NSNotFound) {
-        //            selectedButton?.setImage(nil, forState: .Normal)
-        //        }
-        
-        selectedButton = _selectedButton
-    }
+//    func setSelectedButton(_selectedButton:UIButton){
+//        //        var oldButtonIndex = buttons?.indexOfObject(selectedButton!)
+//        //        var newButtonIndex = buttons?.indexOfObject(_selectedButton)
+//        //
+//        //        if (oldButtonIndex != NSNotFound) {
+//        //            selectedButton?.setImage(nil, forState: .Normal)
+//        //        }
+//        //
+//        //        if (newButtonIndex != NSNotFound) {
+//        //            selectedButton?.setImage(nil, forState: .Normal)
+//        //        }
+//        
+//        selectedButton = _selectedButton
+//    }
     
     
     

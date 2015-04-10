@@ -27,7 +27,7 @@ class AsImageCacher:NSObject, ASImageCacheProtocol {
                 let cache :Cache<UIImage> = WebImageCache.SharedLeftMenuImageCache()
                 cache.fetch(key: URL.URLString).onSuccess { data in
                     // Do something with data
-                    let image:UIImage = data as UIImage
+                    let image:UIImage = data as! UIImage
                     completion(image.CGImage)
                 }
                 

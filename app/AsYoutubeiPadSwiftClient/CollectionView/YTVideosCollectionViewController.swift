@@ -13,16 +13,12 @@ class YTVideosCollectionViewController: UIViewController, UICollectionViewDataSo
     @IBOutlet var collectionView: UICollectionView!
     
     var requestInfo = YTYoutubeRequestInfo()
-    
-    override init() {
-        super.init()
 
-    }
     
     func makeRequestTask(){
         requestInfo = YoutubeFetcher.sharedInstance.prepareRequestSearch("Sketch 3", completeHandler: { (object, sucess) -> Void in
             if(sucess == true){
-                var array:NSArray = object as NSArray
+                var array:NSArray = object as! NSArray
                 
                 var length = array.count
                 
@@ -66,9 +62,9 @@ class YTVideosCollectionViewController: UIViewController, UICollectionViewDataSo
     
     // The cell that is returned must be retrieved from a call to -dequeueReusableCellWithReuseIdentifier:forIndexPath:
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
-        let cell:YTVideoCollectionViewCell = collectionView.dequeueReusableCellWithReuseIdentifier("YTVideoCollectionViewCell", forIndexPath: indexPath) as YTVideoCollectionViewCell
+        let cell:YTVideoCollectionViewCell = collectionView.dequeueReusableCellWithReuseIdentifier("YTVideoCollectionViewCell", forIndexPath: indexPath)as! YTVideoCollectionViewCell
         
-        let videoCache:YoutubeVideoCache = self.requestInfo.videoList[indexPath.row] as YoutubeVideoCache
+        let videoCache:YoutubeVideoCache = self.requestInfo.videoList[indexPath.row] as! YoutubeVideoCache
         cell.setupCell(videoCache)
         
         return cell

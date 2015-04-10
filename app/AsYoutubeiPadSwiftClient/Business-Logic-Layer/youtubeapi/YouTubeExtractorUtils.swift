@@ -20,7 +20,7 @@ let YTVideoQualityStringUnknown    = "Unknown"
 class YouTubeExtractorUtils  {
     
     class func YoutubeExtractor(videoID: NSString, completeHandler: ObjectHandler){
-        IGYouTubeExtractor.sharedInstance().extractVideoForIdentifier(videoID) { (array, error) -> Void in
+        IGYouTubeExtractor.sharedInstance().extractVideoForIdentifier(videoID as String) { (array, error) -> Void in
             if(error == nil){
                 
                 let convert:Dictionary<String,IGYouTubeVideo> = self.resolveVideoQuality(array)
@@ -36,10 +36,10 @@ class YouTubeExtractorUtils  {
         var convert:[String:IGYouTubeVideo] = [:]
         
         for model in array {
-            let last:IGYouTubeVideo = model as IGYouTubeVideo
+            let last:IGYouTubeVideo = model as! IGYouTubeVideo
             let qualityString = qualityStringForQuality(last.quality)
 
-            convert[qualityString] = last
+            convert[qualityString as String] = last
         }
         
         return convert

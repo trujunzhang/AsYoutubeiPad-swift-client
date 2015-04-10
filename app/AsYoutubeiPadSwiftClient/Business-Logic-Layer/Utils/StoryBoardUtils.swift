@@ -32,20 +32,20 @@ class StoryBoardUtils:NSObject {
     // MARK : getReusedStoryBoard
     
     class func getChannelBannerViewController() -> ChannelBannerViewController {
-        var viewController: ChannelBannerViewController = getReusedStoryBoard().instantiateViewControllerWithIdentifier("ChannelBannerViewController") as ChannelBannerViewController
+        var viewController: ChannelBannerViewController = getReusedStoryBoard().instantiateViewControllerWithIdentifier("ChannelBannerViewController") as! ChannelBannerViewController
         
         return viewController
     }
     
     class func getYTTabBarItemsViewController() -> YTTabBarItemsViewController {
-        var viewController: YTTabBarItemsViewController = getReusedStoryBoard().instantiateViewControllerWithIdentifier("YTTabBarItemsViewController") as YTTabBarItemsViewController
+        var viewController: YTTabBarItemsViewController = getReusedStoryBoard().instantiateViewControllerWithIdentifier("YTTabBarItemsViewController") as! YTTabBarItemsViewController
         
         return viewController
     }
     
     
     class func getYTVideosCollectionViewController() -> YTVideosCollectionViewController {
-        var viewController: YTVideosCollectionViewController = getReusedStoryBoard().instantiateViewControllerWithIdentifier("YTVideosCollectionViewController") as YTVideosCollectionViewController
+        var viewController: YTVideosCollectionViewController = getReusedStoryBoard().instantiateViewControllerWithIdentifier("YTVideosCollectionViewController") as! YTVideosCollectionViewController
         
         return viewController
     }
@@ -53,44 +53,44 @@ class StoryBoardUtils:NSObject {
     
     // MARK : WatchView
     class func getMovieEmbeddedViewController() -> MovieEmbeddedViewController {
-        var viewController: MovieEmbeddedViewController = getVideoWatchStoryboard().instantiateViewControllerWithIdentifier("MovieEmbeddedViewController") as MovieEmbeddedViewController
+        var viewController: MovieEmbeddedViewController = getVideoWatchStoryboard().instantiateViewControllerWithIdentifier("MovieEmbeddedViewController") as! MovieEmbeddedViewController
         
         return viewController
     }
     
     class func getYTVideoWatchInfoViewController() -> YTVideoWatchInfoViewController {
-        var viewController: YTVideoWatchInfoViewController = getVideoWatchStoryboard().instantiateViewControllerWithIdentifier("YTVideoWatchInfoViewController") as YTVideoWatchInfoViewController
+        var viewController: YTVideoWatchInfoViewController = getVideoWatchStoryboard().instantiateViewControllerWithIdentifier("YTVideoWatchInfoViewController") as! YTVideoWatchInfoViewController
         
         return viewController
     }
     
     class func getYTVideoWatchSideViewController() -> YTVideoWatchSideViewController {
-        var viewController: YTVideoWatchSideViewController = getVideoWatchStoryboard().instantiateViewControllerWithIdentifier("YTVideoWatchSideViewController") as YTVideoWatchSideViewController
+        var viewController: YTVideoWatchSideViewController = getVideoWatchStoryboard().instantiateViewControllerWithIdentifier("YTVideoWatchSideViewController") as! YTVideoWatchSideViewController
         
         return viewController
     }
     
     class func getYTVideoWatchPlaylistHeaderViewController() -> YTVideoWatchPlaylistHeaderViewController {
-        var viewController: YTVideoWatchPlaylistHeaderViewController = getVideoWatchStoryboard().instantiateViewControllerWithIdentifier("YTVideoWatchPlaylistHeaderViewController") as YTVideoWatchPlaylistHeaderViewController
+        var viewController: YTVideoWatchPlaylistHeaderViewController = getVideoWatchStoryboard().instantiateViewControllerWithIdentifier("YTVideoWatchPlaylistHeaderViewController") as! YTVideoWatchPlaylistHeaderViewController
         
         return viewController
     }
     
     class func getYTVideoWatchPlaylistViewController() -> YTVideoWatchPlaylistViewController {
-        var viewController: YTVideoWatchPlaylistViewController = getVideoWatchStoryboard().instantiateViewControllerWithIdentifier("YTVideoWatchPlaylistViewController") as YTVideoWatchPlaylistViewController
+        var viewController: YTVideoWatchPlaylistViewController = getVideoWatchStoryboard().instantiateViewControllerWithIdentifier("YTVideoWatchPlaylistViewController") as! YTVideoWatchPlaylistViewController
         
         return viewController
     }
     
     // MARK: MovieEmbedded Bars
     class func getMovieEmbeddedNormalBarViewController() -> MovieEmbeddedNormalBarViewController {
-        var viewController: MovieEmbeddedNormalBarViewController = getVideoWatchStoryboard().instantiateViewControllerWithIdentifier("MovieEmbeddedNormalBarViewController") as MovieEmbeddedNormalBarViewController
+        var viewController: MovieEmbeddedNormalBarViewController = getVideoWatchStoryboard().instantiateViewControllerWithIdentifier("MovieEmbeddedNormalBarViewController") as! MovieEmbeddedNormalBarViewController
         
         return viewController
     }
     
     class func getMovieEmbeddedFullscreenBarViewController() -> MovieEmbeddedFullscreenBarViewController {
-        var viewController: MovieEmbeddedFullscreenBarViewController = getVideoWatchStoryboard().instantiateViewControllerWithIdentifier("MovieEmbeddedFullscreenBarViewController") as MovieEmbeddedFullscreenBarViewController
+        var viewController: MovieEmbeddedFullscreenBarViewController = getVideoWatchStoryboard().instantiateViewControllerWithIdentifier("MovieEmbeddedFullscreenBarViewController") as! MovieEmbeddedFullscreenBarViewController
         
         return viewController
     }

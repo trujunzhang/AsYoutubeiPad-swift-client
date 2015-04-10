@@ -132,8 +132,10 @@ class MoviePlayerViewController : PeriodicTimeProtocol {
         let remainingTimeMin: Int = Int((duration - currentTime)/60)
         let remainingTimeSec: Int = Int(duration - currentTime) - remainingTimeMin*60
         
-        self.elapsedTimeLabel.text = NSString(format:"%02d",elapsedTimeMin) + ":" + NSString(format:"%02d",elapsedTimeSec)
-        self.remainingTimeLabel.text = "-" + NSString(format:"%02d",remainingTimeMin) + ":" + NSString(format:"%02d",remainingTimeSec)
+//        self.elapsedTimeLabel.text = NSString(format:"%02d",elapsedTimeMin) + ":" + NSString(format:"%02d",elapsedTimeSec)// TODO djzhang(swift 1.2)
+//        self.remainingTimeLabel.text = "-" + NSString(format:"%02d",remainingTimeMin) + ":" + NSString(format:"%02d",remainingTimeSec)
+        
+        
     }
     
     

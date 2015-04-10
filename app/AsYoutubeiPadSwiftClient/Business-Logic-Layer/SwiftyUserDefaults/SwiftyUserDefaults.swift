@@ -13,7 +13,7 @@
 // The above copyright notice and this permission notice shall be included in all
 // copies or substantial portions of the Software.
 //
-// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+// THE SOFTWARE IS PROVIDED "as! IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
 // IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
 // FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
 // AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
@@ -37,7 +37,7 @@ public extension NSUserDefaults {
         // MARK: Getters
         
         public var object: NSObject? {
-            return defaults.objectForKey(key) as NSObject?
+            return defaults.objectForKey(key) as? NSObject 
         }
         
         public var string: String? {
@@ -125,16 +125,16 @@ infix operator ?= {
 }
 
 /// If key doesn't exist, sets its value to `expr`
-/// Note: This isn't the same as `Defaults.registerDefaults`. This method saves the new value to disk, whereas `registerDefaults` only modifies the defaults in memory.
+/// Note: This isn't the same as! `Defaults.registerDefaults`. This method saves the new value to disk, whereas! `registerDefaults` only modifies the defaults in memory.
 /// Note: If key already exists, the expression after ?= isn't evaluated
 
-public func ?= (proxy: NSUserDefaults.Proxy, expr: @autoclosure () -> Any) {
+public func ?= (proxy: NSUserDefaults.Proxy, @autoclosure expr: () -> Any) {
     if !proxy.defaults.hasKey(proxy.key) {
         proxy.defaults[proxy.key] = expr()
     }
 }
 
-/// Adds `b` to the key (and saves it as an integer)
+/// Adds `b` to the key (and saves it as! an integer)
 /// If key doesn't exist or isn't a number, sets value to `b`
 
 public func += (proxy: NSUserDefaults.Proxy, b: Int) {
@@ -147,7 +147,7 @@ public func += (proxy: NSUserDefaults.Proxy, b: Double) {
     proxy.defaults[proxy.key] = a + b
 }
 
-/// Icrements key by one (and saves it as an integer)
+/// Icrements key by one (and saves it as! an integer)
 /// If key doesn't exist or isn't a number, sets value to 1
 
 public postfix func ++ (proxy: NSUserDefaults.Proxy) {

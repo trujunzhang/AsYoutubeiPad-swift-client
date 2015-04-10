@@ -7,7 +7,7 @@
 //
 
 import Foundation
-import Haneke
+
 
 class WebImageCache: NSObject {
     

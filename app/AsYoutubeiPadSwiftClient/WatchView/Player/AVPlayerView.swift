@@ -17,22 +17,22 @@ class AVPlayerView : UIView {
     }
     
     func player() -> AVPlayer {
-        let layer: AVPlayerLayer = self.layer as AVPlayerLayer
+        let layer: AVPlayerLayer = self.layer as! AVPlayerLayer
         return layer.player!
     }
     
     func setPlayer(player: AVPlayer) {
-        let layer: AVPlayerLayer = self.layer as AVPlayerLayer
+        let layer: AVPlayerLayer = self.layer as! AVPlayerLayer
         layer.player = player
     }
     
     func setVideoFillMode(fillMode: NSString) {
-        let layer: AVPlayerLayer = self.layer as AVPlayerLayer
-        layer.videoGravity = fillMode
+        let layer: AVPlayerLayer = self.layer as! AVPlayerLayer
+        layer.videoGravity = fillMode as! String
     }
     
     func videoFillMode() -> NSString {
-        let layer: AVPlayerLayer = self.layer as AVPlayerLayer
+        let layer: AVPlayerLayer = self.layer as! AVPlayerLayer
         return layer.videoGravity
     }
 }

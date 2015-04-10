@@ -51,7 +51,7 @@ class YoutubeFetcher: NSObject {
     func fetchingLoggedUserChannelInfo() {
         let service: GTLService = self.youTubeService!
         
-        var query: GTLQueryYouTube = GTLQueryYouTube.queryForChannelsListWithPart("snippet") as GTLQueryYouTube
+        var query: GTLQueryYouTube = GTLQueryYouTube.queryForChannelsListWithPart("snippet") as! GTLQueryYouTube
         query.mine = true
         
         service.executeQuery(query, completionHandler: {
@@ -59,10 +59,10 @@ class YoutubeFetcher: NSObject {
             (ticket, resultList, error) -> Void in
             
             if (error == nil) {
-                let result = resultList as GTLYouTubeChannelListResponse
-                let array = result.items() as NSArray
+                let result = resultList as! GTLYouTubeChannelListResponse
+                let array = result.items()
                 if (array.count >= 1) {
-                    let channel: GTLYouTubeChannel = array[0] as GTLYouTubeChannel
+                    let channel: GTLYouTubeChannel = array[0] as! GTLYouTubeChannel
                     
                     var channelID: NSString = YoutubeModelParser.getAuthChannelID(channel)
                     var title: NSString = YoutubeModelParser.getAuthChannelTitle(channel)
@@ -85,19 +85,19 @@ class YoutubeFetcher: NSObject {
     func fetchingChannelList(channelID: NSString, completeHandler: ObjectHandler) {
         let service: GTLService = self.youTubeService!
         
-        var query: GTLQueryYouTube = GTLQueryYouTube.queryForChannelsListWithPart("snippet") as GTLQueryYouTube
+        var query: GTLQueryYouTube = GTLQueryYouTube.queryForChannelsListWithPart("snippet") as! GTLQueryYouTube
         query.fields = "items/snippet(thumbnails)"
-        query.identifier = channelID
+        query.identifier = channelID as String
         
         service.executeQuery(query, completionHandler: {
             //GTLYouTubeChannel array
             (ticket, resultList, error) -> Void in
             
             if (error == nil) {
-                let result = resultList as GTLYouTubeChannelListResponse
-                let array = result.items() as NSArray
+                let result = resultList as! GTLYouTubeChannelListResponse
+                let array = result.items()
                 if (array.count >= 1) {
-                    let channel = array[0] as GTLYouTubeChannel
+                    let channel = array[0] as! GTLYouTubeChannel
                     completeHandler(channel, true)
                 }
             } else {
@@ -110,7 +110,7 @@ class YoutubeFetcher: NSObject {
     func fetchingLoggedUserSubscriptions(channel: GTLYouTubeChannel) {
         let service: GTLService = self.youTubeService!
         
-        var query: GTLQueryYouTube = GTLQueryYouTube.queryForSubscriptionsListWithPart("id,snippet") as GTLQueryYouTube
+        var query: GTLQueryYouTube = GTLQueryYouTube.queryForSubscriptionsListWithPart("id,snippet") as! GTLQueryYouTube
         query.maxResults = 50 // used (important)
         query.channelId = channel.identifier
         query.fields = "items/snippet(title,resourceId,thumbnails),nextPageToken"
@@ -120,8 +120,8 @@ class YoutubeFetcher: NSObject {
             (ticket, resultList, error) -> Void in
             
             if (error == nil) {
-                let result = resultList as GTLYouTubeSubscriptionListResponse
-                let array = result.items() as NSArray
+                let result = resultList as! GTLYouTubeSubscriptionListResponse
+                let array = result.items()
                 if (self._delegate != nil) {
                     self._delegate?.endFetchingUserSubscriptions(array)
                 }

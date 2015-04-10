@@ -60,7 +60,7 @@ class MovieEmbeddedViewController: UIViewController {
         YouTubeExtractorUtils.YoutubeExtractor(videoID, completeHandler: { (object, sucess) -> Void in
             
             if(sucess == true){
-                self.dict = object as Dictionary
+                self.dict = object as! Dictionary
                 
                 // 1
                 let gVideo:IGYouTubeVideo = self.dict[YTVideoQualityStringMedium360]!

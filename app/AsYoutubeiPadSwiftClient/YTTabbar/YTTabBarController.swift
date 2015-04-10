@@ -95,11 +95,11 @@ class YTTabBarController: UIViewController {
             
             var dic:NSMutableDictionary = dictionary!
             
-            let controller : UIViewController = dic.objectForKey("Activity") as UIViewController
+            let controller : UIViewController = dic.objectForKey("Activity") as! UIViewController
             
             var bDictionary = tabBarItemsDictionary?.buttons
             
-            let button : UIButton = bDictionary?.objectForKey("Activity") as UIButton
+            let button : UIButton = bDictionary?.objectForKey("Activity") as! UIButton
             
             self.selectViewController(controller, withButton: button)
         }
@@ -114,7 +114,7 @@ class YTTabBarController: UIViewController {
     func selectViewController(viewController:UIViewController){
         let subviews = presentationView?.subviews
         if(subviews?.count > 0){
-            let presentedView:UIView = subviews?.first! as UIView
+            let presentedView:UIView = subviews?.first! as! UIView
             presentedView.removeFromSuperview()
         }
         

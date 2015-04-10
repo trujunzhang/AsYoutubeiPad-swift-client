@@ -29,9 +29,9 @@ class SubscriptionsViewController: FrontBaseViewController {
         //        let videoURL = NSURL(string: videoURLWithPath)
         
         let filePathStr:NSString = NSBundle.mainBundle().pathForResource("example", ofType: "mp4")!
-        let videoURL :NSURL = NSURL(fileURLWithPath: filePathStr)!
+        let videoURL :NSURL = NSURL(fileURLWithPath: filePathStr as! String)!
         
-        let  asset:AVAsset = AVAsset.assetWithURL(videoURL) as AVAsset
+        let  asset:AVAsset = AVAsset.assetWithURL(videoURL) as! AVAsset
         let playerItem:AVPlayerItem = AVPlayerItem(asset: asset)
         
         let  player:AVPlayer = AVPlayer(playerItem: playerItem)
@@ -64,7 +64,7 @@ class SubscriptionsViewController: FrontBaseViewController {
         
         
         var tabBarItemsController: UIViewController =
-        self.storyboard!.instantiateViewControllerWithIdentifier("YTTabBarItemsViewController") as UIViewController
+        self.storyboard!.instantiateViewControllerWithIdentifier("YTTabBarItemsViewController") as! UIViewController
         
         
         let headerView:UIView = UIView()

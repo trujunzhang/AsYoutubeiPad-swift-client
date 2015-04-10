@@ -112,7 +112,7 @@ class MovieEmbeddedBasedBarViewController :UIViewController {
             }
             
             prop.writeBlock = {(object,values) -> Void in
-                let constraint:NSLayoutConstraint = object as NSLayoutConstraint
+                let constraint:NSLayoutConstraint = object as! NSLayoutConstraint
                 constraint.constant = values[0]
             }
             
@@ -120,7 +120,7 @@ class MovieEmbeddedBasedBarViewController :UIViewController {
             prop.threshold = 0.01
             
             
-        }) as POPAnimatableProperty
+        }) as! POPAnimatableProperty
         
         spring.property = property
         spring.toValue = destY

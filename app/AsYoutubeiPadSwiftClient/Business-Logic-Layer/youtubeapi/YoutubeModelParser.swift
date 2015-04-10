@@ -13,7 +13,7 @@ class YoutubeModelParser {
     
     // MARK: Parse for MABYT3_Channel
     class func getMABChannelThumbnalUrl(channel: MABYT3_Channel) -> NSString {
-        var thumbnail:MABYT3_Thumbnail =  channel.snippet.thumbnails["default"] as MABYT3_Thumbnail
+        var thumbnail:MABYT3_Thumbnail =  channel.snippet.thumbnails["default"] as! MABYT3_Thumbnail
         return thumbnail.url!
     }
     
@@ -65,8 +65,8 @@ class YoutubeModelParser {
     
     class func getSubscriptionUrl(subscription: GTLYouTubeSubscription) -> NSString {
         var thumbnails: GTLYouTubeThumbnailDetails = subscription.snippet.thumbnails
-        var dictionary: NSMutableDictionary = thumbnails.JSON["default"] as NSMutableDictionary
-        var defaultValue: NSString = dictionary["url"] as NSString
+        var dictionary: NSMutableDictionary = thumbnails.JSON["default"] as! NSMutableDictionary
+        var defaultValue: NSString = dictionary["url"] as! NSString
         
         return defaultValue
     }
@@ -76,10 +76,10 @@ class YoutubeModelParser {
         var rows = [MenuRowItemInfo]()
         
         for subscription in subscriptions {
-            var title = self.getSubscriptionTitle(subscription as GTLYouTubeSubscription)
-            var url = self.getSubscriptionUrl(subscription as GTLYouTubeSubscription)
+            var title = self.getSubscriptionTitle(subscription as! GTLYouTubeSubscription)
+            var url = self.getSubscriptionUrl(subscription as! GTLYouTubeSubscription)
             var rowItem: MenuRowItemInfo =
-            MenuRowItemInfo(title: title, imageUrl: url, rowHParas: YTPlayListItemsType.kUploadsTag.rawValue)
+            MenuRowItemInfo(title: title as String, imageUrl: url as String, rowHParas: YTPlayListItemsType.kUploadsTag.rawValue)
             rows.append(rowItem)
         }
         return rows

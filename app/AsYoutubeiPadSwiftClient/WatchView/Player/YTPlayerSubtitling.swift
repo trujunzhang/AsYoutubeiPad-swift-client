@@ -33,9 +33,9 @@ class YTPlayerSubtitling :PeriodicTimeProtocol {
             
             if(sucess == true){
                 
-                var subtitle:NSString = subtitleString as NSString
+                var subtitle:NSString = subtitleString as! NSString
                 
-                self.prepareSubtitle(subtitle)
+                self.prepareSubtitle(subtitle as! String)
             }
             
         })
@@ -80,9 +80,9 @@ class YTPlayerSubtitling :PeriodicTimeProtocol {
                 
                 let subtitle:NSString = SRTParserInterface.searchAndShowSubtitle(subtitlesParts, inTime: nbSecondsElapsed)
                 
-                if (subtitle.isEqualToString(currentText) || subtitle == currentText){
-                    return
-                }
+//                if (subtitle.isEqualToString(currentText) || subtitle == currentText){
+//                    return
+//                }
                 currentText = subtitle
                 
                 dispatch_async(dispatch_get_main_queue(), { () -> Void in
@@ -99,7 +99,7 @@ class YTPlayerSubtitling :PeriodicTimeProtocol {
     
     func updateLabel(){
         
-        subtitleLabel?.text = currentText
+        subtitleLabel?.text = currentText as? String
         
         //        subtitleLabel?.text = "wanghao"
         

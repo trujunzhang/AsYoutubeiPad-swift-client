@@ -62,7 +62,7 @@ class YTYoutubeRequestInfo: NSObject {
     }
     
     func appendArray(array:NSArray){
-        videoList.addObjectsFromArray(array)
+        videoList.addObjectsFromArray(array as [AnyObject])
     }
     
     func putNextPageToken(pageToken:NSString){
@@ -83,7 +83,7 @@ class YTYoutubeRequestInfo: NSObject {
     }
     
     func getPageToken() -> NSString{
-        return self.parameters.objectForKey("pageToken") as NSString
+        return self.parameters.objectForKey("pageToken") as! NSString
     }
     
 }

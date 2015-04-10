@@ -15,7 +15,7 @@ struct TabBarItemsDictionary {
 
 
 
-class YTTabBarItemsViewController:UIViewController {
+class YTTabBarItemsViewController: UIViewController {
     
     @IBOutlet var buttonGroupPanel: UIView!
     
@@ -30,8 +30,7 @@ class YTTabBarItemsViewController:UIViewController {
     
     @IBOutlet var separator2: UIImageView!
     
-    let tabBarItemsDictionary:TabBarItemsDictionary?
-    
+
     override func viewDidLoad() {
         
     }

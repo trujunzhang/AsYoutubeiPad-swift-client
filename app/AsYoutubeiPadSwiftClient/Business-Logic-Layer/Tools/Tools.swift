@@ -23,7 +23,7 @@ class Tools: NSObject {
         let soSubtitle:SOSubtitle = SOSubtitle()
         let task:BFTask = soSubtitle.subtitleWithString(subtitleString, error: nil)
         
-        let resultSubtitle:SOSubtitle = task.result as SOSubtitle
+        let resultSubtitle:SOSubtitle = task.result as! SOSubtitle
         let array : NSMutableArray = resultSubtitle.subtitleItems
         
         return array

@@ -23,7 +23,7 @@ class YoutubeDataFetcher : NSObject  {
         
         fetchCaptainTracks(videoID, completeHandler: { (tracksArray, tracksSucess) -> Void in
             if(tracksSucess == true){
-                self.fetchNextCaptainForVideo(videoID, tracksArray: tracksArray as NSArray, completeHandler)
+                self.fetchNextCaptainForVideo(videoID, tracksArray: tracksArray as! NSArray, completeHandler: completeHandler)
             }else{
                 completeHandler(nil, false)
             }
@@ -33,7 +33,7 @@ class YoutubeDataFetcher : NSObject  {
     
     
     func fetchCaptainTracks(videoID: NSString, completeHandler: ObjectHandler){
-        MABYT3_VideoGoogleRequest.sharedInstance().fetchCaptainTracks(videoID, completion: { (responseInfo, error) -> Void in
+        MABYT3_VideoGoogleRequest.sharedInstance().fetchCaptainTracks(videoID as String, completion: { (responseInfo, error) -> Void in
             
             if (error == nil) {
                 var array:NSArray = responseInfo.array as NSArray
@@ -45,7 +45,7 @@ class YoutubeDataFetcher : NSObject  {
     }
     
      func fetchNextCaptainForVideo(videoID: NSString, tracksArray :NSArray, completeHandler: ObjectHandler){
-        var track :MABYT3_Track = tracksArray[0] as MABYT3_Track
+        var track :MABYT3_Track = tracksArray[0] as! MABYT3_Track
         if(track.lang_default == true){
             // 2
             self.fetchCaptainForVideo(videoID, defaultTrack: track, completeHandler: { (subtitleString, sucess) -> Void in
@@ -61,7 +61,7 @@ class YoutubeDataFetcher : NSObject  {
     }
     
     func fetchCaptainForVideo(videoID: NSString, defaultTrack: MABYT3_Track, completeHandler: ObjectHandler){
-        MABYT3_VideoGoogleRequest.sharedInstance().fetchVideoTranscript(videoID, withTrack: defaultTrack, completion: { (responseInfo, error) -> Void in
+        MABYT3_VideoGoogleRequest.sharedInstance().fetchVideoTranscript(videoID as String, withTrack: defaultTrack, completion: { (responseInfo, error) -> Void in
             
             if (error == nil) {
                 // 2

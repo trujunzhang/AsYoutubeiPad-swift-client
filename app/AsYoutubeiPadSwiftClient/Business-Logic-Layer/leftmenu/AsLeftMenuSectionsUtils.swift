@@ -7,7 +7,7 @@
 //
 
 import Foundation
-import UIKit
+
 
 
 public enum CellIdentifier {
@@ -20,7 +20,7 @@ public enum CellIdentifier {
 public struct MenuRowItemInfo {
     var title :       String
     var imageUrl :    String
-    var rowHParas :   Int
+    var rowHParas! :   Int
 }
 
 public struct MenuSectionItemInfo {
