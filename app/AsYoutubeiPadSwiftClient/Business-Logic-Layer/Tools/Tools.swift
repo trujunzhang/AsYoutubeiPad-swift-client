@@ -10,24 +10,24 @@ import Foundation
 
 class Tools: NSObject {
     
-    class func checkParseSRTFromFile(fileName: String,expect:Int) -> NSMutableArray{
-        let subtitleString : String = readFile(fileName)
-        
-        let  array : NSMutableArray = checkParseSRTFromString(subtitleString, expect: expect)
-        
-        return array
-    }
-    
-    class  func checkParseSRTFromString(subtitleString: String,expect:Int) ->NSMutableArray {
-        
-        let soSubtitle:SOSubtitle = SOSubtitle()
-        let task:BFTask = soSubtitle.subtitleWithString(subtitleString, error: nil)
-        
-        let resultSubtitle:SOSubtitle = task.result as! SOSubtitle
-        let array : NSMutableArray = resultSubtitle.subtitleItems
-        
-        return array
-    }
+//    class func checkParseSRTFromFile(fileName: String,expect:Int) -> NSMutableArray{
+//        let subtitleString : String = readFile(fileName)
+//        
+//        let  array : NSMutableArray = checkParseSRTFromString(subtitleString, expect: expect)
+//        
+//        return array
+//    }
+//    
+//    class  func checkParseSRTFromString(subtitleString: String,expect:Int) ->NSMutableArray {
+//        
+//        let soSubtitle:SOSubtitle = SOSubtitle()
+//        let task:BFTask = soSubtitle.subtitleWithString(subtitleString, error: nil)
+//        
+//        let resultSubtitle:SOSubtitle = task.result as! SOSubtitle
+//        let array : NSMutableArray = resultSubtitle.subtitleItems
+//        
+//        return array
+//    }
     
     // MARK : Utils for parsing subtitle
     class  func readFile(fileName: String) -> String {

@@ -57,13 +57,13 @@ class YTPlayerSubtitling :PeriodicTimeProtocol {
     
     func prepareSubtitle(subtitleString : String){
         
-        let srtParser:SOSRTParserHelper = SOSRTParserHelper()
-        
-        srtParser.parseSRTString(subtitleString, toDictionary: subtitlesParts) { (parsed, error) -> Void in
-            if(parsed == true){
-                self.addToPeriodicTimeProtocol()
-            }
-        }
+//        let srtParser:SOSRTParserHelper = SOSRTParserHelper()
+//        
+//        srtParser.parseSRTString(subtitleString, toDictionary: subtitlesParts) { (parsed, error) -> Void in
+//            if(parsed == true){
+//                self.addToPeriodicTimeProtocol()
+//            }
+//        }
         
     }
     
@@ -78,12 +78,12 @@ class YTPlayerSubtitling :PeriodicTimeProtocol {
                 let nbSecondsElapsed: NSTimeInterval = CMTimeGetSeconds(time)
                 
                 
-                let subtitle:NSString = SRTParserInterface.searchAndShowSubtitle(subtitlesParts, inTime: nbSecondsElapsed)
+//                let subtitle:NSString = SRTParserInterface.searchAndShowSubtitle(subtitlesParts, inTime: nbSecondsElapsed)
                 
 //                if (subtitle.isEqualToString(currentText) || subtitle == currentText){
 //                    return
 //                }
-                currentText = subtitle
+//                currentText = subtitle
                 
                 dispatch_async(dispatch_get_main_queue(), { () -> Void in
                     // updateLabel
