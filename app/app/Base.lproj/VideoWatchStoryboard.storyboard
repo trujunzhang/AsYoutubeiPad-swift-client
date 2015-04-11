@@ -115,6 +115,9 @@
                                         <state key="normal" image="mp_embedded_pause.png">
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <action selector="onClickPlayPauseButton:" destination="4Mb-8q-N4Z" eventType="touchUpInside" id="Qhh-mK-gba"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.19215686274509805" green="0.19215686274509805" blue="0.19215686274509805" alpha="0.64000000000000001" colorSpace="calibratedRGB"/>

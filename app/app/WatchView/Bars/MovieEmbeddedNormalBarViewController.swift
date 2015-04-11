@@ -102,11 +102,17 @@ class MovieEmbeddedNormalBarViewController: MovieEmbeddedBasedBarViewController 
     
     @IBAction func sliderValueChanged(sender: AnyObject) {
         if let viewController : MoviePlayerViewController =  moviePlayerViewController {
-
+            
             viewController.scrub(sender as! UISlider)
         }
     }
     
+    @IBAction func onClickPlayPauseButton(sender: AnyObject) {
+        if let viewController : MoviePlayerViewController =  moviePlayerViewController {
+            
+            viewController.playOrPause(sender)
+        }
+    }
     
     override func viewDidLayoutSubviews() {
         
