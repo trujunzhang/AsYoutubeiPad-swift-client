@@ -67,8 +67,7 @@ class YTPlayerSubtitling :PeriodicTimeProtocol {
                     let nbSecondsElapsed: NSTimeInterval = CMTimeGetSeconds(time)
                     
                     let subtitle:NSString = SRTParserInterface.searchAndShowSubtitle(subtitlesParts, inTime: nbSecondsElapsed)
-                    
-                    
+
                     self.updateLabel(subtitle as String)
                     
                     

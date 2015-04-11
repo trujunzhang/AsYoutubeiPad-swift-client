@@ -2,7 +2,7 @@
 
 
 @implementation SRTParserInterface {
-
+    
 }
 
 + (NSString*)searchAndShowSubtitle:(NSMutableDictionary*)subtitlesParts inTime:(NSTimeInterval) currentPlaybackTime{
@@ -21,7 +21,11 @@
         
         // Get text
         NSString* lastText = [lastFounded objectForKey:kText];
-
+        
+        if(lastText == NULL){
+            return  @"";
+        }
+        
         return lastText;
     }
     
@@ -50,19 +54,19 @@
         
         // Label position
         CGSize size = [subtitleLabel.text sizeWithFont:subtitleLabel.font
-                                          constrainedToSize:CGSizeMake(CGRectGetWidth(subtitleLabel.bounds), CGFLOAT_MAX)];
+                                     constrainedToSize:CGSizeMake(CGRectGetWidth(subtitleLabel.bounds), CGFLOAT_MAX)];
         subtitleLabel.frame = ({
             CGRect frame = subtitleLabel.frame;
             frame.size.height = size.height;
             frame;
         });
-//        subtitleLabel.center = CGPointMake(CGRectGetWidth(view.bounds) / 2.0, CGRectGetHeight(view.bounds) - (CGRectGetHeight(subtitleLabel.bounds) / 2.0) - 15.0);
+        //        subtitleLabel.center = CGPointMake(CGRectGetWidth(view.bounds) / 2.0, CGRectGetHeight(view.bounds) - (CGRectGetHeight(subtitleLabel.bounds) / 2.0) - 15.0);
         
     } else {
         
         subtitleLabel.text = @"";
         
     }
-
+    
 }
 @end
