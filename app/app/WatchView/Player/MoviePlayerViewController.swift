@@ -66,7 +66,7 @@ class MoviePlayerViewController : PeriodicTimeProtocol {
         self.seekber.minimumTrackTintColor = UIColor.whiteColor()
         self.seekber.maximumTrackTintColor = UIColor.blackColor()
         self.seekber.setValue(0, animated: false)
-        self.syncPlayPauseButtonImage()
+//        self.syncPlayPauseButtonImage()
         self.updateTimeLabel()
         
         self.addPeriodicTimeProtocol(self)

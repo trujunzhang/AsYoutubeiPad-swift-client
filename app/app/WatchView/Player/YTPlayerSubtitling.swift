@@ -21,7 +21,7 @@ class YTPlayerSubtitling :PeriodicTimeProtocol {
     
     var currentText = ""
     
-
+    
     
     func fetchTracksAndCaptainForVideo(_videoID: String) {
         YoutubeDataFetcher.sharedInstance.fetchCaptainTracksAndCaption(_videoID,completeHandler: { (subtitleString, sucess) -> Void in
@@ -60,7 +60,7 @@ class YTPlayerSubtitling :PeriodicTimeProtocol {
     }
     
     func playerTimeChanged(){
-         if let viewController : MoviePlayerViewController =  moviePlayerViewController {
+        if let viewController : MoviePlayerViewController =  moviePlayerViewController {
             if let videoPlayer: AVPlayer = viewController.videoPlayer {
                 if let playerItem: AVPlayerItem = videoPlayer.currentItem {
                     let time : CMTime =  playerItem.currentTime()
@@ -68,29 +68,35 @@ class YTPlayerSubtitling :PeriodicTimeProtocol {
                     
                     let subtitle:NSString = SRTParserInterface.searchAndShowSubtitle(subtitlesParts, inTime: nbSecondsElapsed)
                     
-                    if (subtitle.isEqualToString(currentText) || subtitle == currentText){
-                        return
-                    }
-                    currentText = subtitle as String
-
-                    self.updateLabel()
                     
-//                    println("player time changed : \(currentText)")
+                    self.updateLabel(subtitle as String)
+                    
+                    
                 }
             }
         }
-
+        
         
         
     }
     
-    func updateLabel(){
+    func updateLabel(subtitle: String){
+//        if(subtitle == null){
+//            
+//        }
+        if(subtitle.isEmpty == true || subtitle == currentText){
+            return
+        }
+        
+        currentText = subtitle
         
         subtitleLabel?.text = currentText
         
         //        subtitleLabel?.text = "wanghao"
         
-        subtitleLabel?.hidden = currentText.isEmpty == false
+        subtitleLabel?.hidden = (currentText.isEmpty == true)
+        
+        println("player time changed : \(currentText)")
     }
     
 }

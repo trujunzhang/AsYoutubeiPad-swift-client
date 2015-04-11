@@ -137,10 +137,10 @@
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sch-h9-rOL">
-                                <rect key="frame" x="38" y="496" width="500" height="60"/>
+                                <rect key="frame" x="38" y="516" width="500" height="40"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                <string key="text">Who wish to live?
-I'm mad. I'm stark, raving mad.Who wish to live?
+                                <string key="text" base64-UTF8="YES">
+Cg
 </string>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
