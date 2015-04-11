@@ -167,9 +167,9 @@ class MoviePlayerViewController : PeriodicTimeProtocol {
     
     func syncPlayPauseButtonImage() {
         if self.isPlaying() {
-            self.playPauseButton.setImage(UIImage(named:"pause.png"), forState: .Normal)
+            self.playPauseButton.setImage(UIImage(named:"mp_embedded_pause"), forState: .Normal)
         } else {
-            self.playPauseButton.setImage(UIImage(named:"play.png"), forState: .Normal)
+            self.playPauseButton.setImage(UIImage(named:"mp_embedded_play"), forState: .Normal)
         }
     }
     
