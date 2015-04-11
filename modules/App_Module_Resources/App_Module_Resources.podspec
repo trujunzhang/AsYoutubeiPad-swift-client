@@ -53,6 +53,10 @@ Pod::Spec.new do |s|
 
   s.subspec 'RDVTabBarController' do |sub|
     sub.source_files = 'Pod/Classes/RDVTabBarController/*.{h,m}'
-  end  
+  end 
+
+  s.subspec 'YoutubeParser' do |sub|
+    sub.source_files = 'Pod/Classes/YoutubeParser/*.{h,m}'
+  end     
   
 end
