@@ -22,11 +22,9 @@ class MovieEmbeddedViewController: UIViewController {
     // MARK : Life-Cycle
     override func viewDidLoad() {
         
-        test01()
+        YoutubeExtractor()
         
-        //        let path = NSBundle.mainBundle().pathForResource("example", ofType:"mp4")
-        //        let videoURL :NSURL = NSURL.fileURLWithPath(path!)!
-        //        playVideo(videoURL)
+        setupEmbeddedBars()
         
         layoutEmbeddedBar()
     }
@@ -34,7 +32,6 @@ class MovieEmbeddedViewController: UIViewController {
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
-        
         
     }
     
@@ -46,15 +43,7 @@ class MovieEmbeddedViewController: UIViewController {
         }
     }
     
-    
-    // MARK : TEST 01
-    func test01(){
-        YoutubeExtractor()
-        
-        setupEmbeddedBars()
-    }
-    
-    
+
     
     func YoutubeExtractor(){
         YouTubeExtractorUtils.YoutubeExtractor(videoID, completeHandler: { (object, sucess) -> Void in

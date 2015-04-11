@@ -58,5 +58,9 @@ Pod::Spec.new do |s|
   s.subspec 'YoutubeParser' do |sub|
     sub.source_files = 'Pod/Classes/YoutubeParser/*.{h,m}'
   end     
+
+  s.subspec 'Subtitles' do |sub|
+    sub.source_files = 'Pod/Classes/Subtitles/*/*.{h,m}'
+  end      
   
 end

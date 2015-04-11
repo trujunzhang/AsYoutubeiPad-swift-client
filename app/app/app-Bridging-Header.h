@@ -48,10 +48,10 @@
 #import <pop/POP.h>
 
 // Library: SDWebImage
-#import "WebImage.h"
+//#import "WebImage.h"
 
 // Library: Bolts-iOS
-#import <Bolts/Bolts.h>
+//#import <Bolts/Bolts.h>
 
 //#import "ImageCacheInterface.h"
 

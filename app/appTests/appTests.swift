@@ -1,15 +1,15 @@
 //
-//  AsYoutubeiPadSwiftClientTests.swift
-//  AsYoutubeiPadSwiftClientTests
+//  appTests.swift
+//  appTests
 //
-//  Created by djzhang on 4/10/15.
+//  Created by djzhang on 4/11/15.
 //  Copyright (c) 2015 djzhang. All rights reserved.
 //
 
 import UIKit
 import XCTest
 
-class AsYoutubeiPadSwiftClientTests: XCTestCase {
+class appTests: XCTestCase {
     
     override func setUp() {
         super.setUp()

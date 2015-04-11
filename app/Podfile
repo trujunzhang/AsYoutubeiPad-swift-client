@@ -4,12 +4,12 @@ platform :ios, '8.0'
 
 inhibit_all_warnings!
 
-link_with 'AsYoutubeiPadSwiftClient', 'AsYoutubeiPadSwiftClientTests'
+link_with 'app', 'appTests'
 
 def import_pods
     pod 'XMLDictionary'
     pod 'Regexer'
-    # pod 'Bolts'
+    pod 'Bolts'
 
 
 
@@ -45,7 +45,7 @@ def import_pods
 
 end
 
-target 'AsYoutubeiPadSwiftClient', :exclusive => true do
+target 'app', :exclusive => true do
   # ________________common tools library___________________
   import_pods
 
@@ -54,7 +54,7 @@ target 'AsYoutubeiPadSwiftClient', :exclusive => true do
 end
 
 
-target 'AsYoutubeiPadSwiftClientTests', :exclusive => true do
+target 'appTests', :exclusive => true do
   import_pods
 
     #pod 'Expecta'
