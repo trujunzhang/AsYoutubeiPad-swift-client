@@ -22,7 +22,7 @@
         // Get text
         NSString* lastText = [lastFounded objectForKey:kText];
         
-        if(lastText == NULL){
+        if(lastText == NULL || [lastText isEqualToString:@"(null)"] ){
             return  @"";
         }
         
