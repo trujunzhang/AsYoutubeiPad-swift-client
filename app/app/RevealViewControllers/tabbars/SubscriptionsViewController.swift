@@ -18,32 +18,9 @@ class SubscriptionsViewController: FrontBaseViewController {
         super.viewDidLoad()
         
         showChannelPage()
-        
-        //        self.showMovie()
-        
     }
     
-    
-    func showMovie(){
-        //        let videoURLWithPath = "http://devimages.apple.com/iphone/samples/bipbop/bipbopall.m3u8"
-        //        let videoURL = NSURL(string: videoURLWithPath)
-        
-        let filePathStr:NSString = NSBundle.mainBundle().pathForResource("example", ofType: "mp4")!
-        let videoURL :NSURL = NSURL(fileURLWithPath: filePathStr as! String)!
-        
-        let  asset:AVAsset = AVAsset.assetWithURL(videoURL) as! AVAsset
-        let playerItem:AVPlayerItem = AVPlayerItem(asset: asset)
-        
-        let  player:AVPlayer = AVPlayer(playerItem: playerItem)
-        
-        let playerLayer:AVPlayerLayer = AVPlayerLayer(player: player)
-        playerLayer.frame = self.view.frame
-        self.view.layer.addSublayer(playerLayer)
-        
-        player.play()
-        
-        //player.currentTime()
-    }
+
     
     func showChannelPage(){
         
@@ -60,8 +37,6 @@ class SubscriptionsViewController: FrontBaseViewController {
     }
     
     func test(){
-        
-        
         
         var tabBarItemsController: UIViewController =
         self.storyboard!.instantiateViewControllerWithIdentifier("YTTabBarItemsViewController") as! UIViewController

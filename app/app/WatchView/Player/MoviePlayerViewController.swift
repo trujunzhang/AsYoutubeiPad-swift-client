@@ -11,13 +11,13 @@ import AVFoundation
 import UIKit
 
 class MoviePlayerViewController : PeriodicTimeProtocol {
-
+    
     var seekber: UISlider!
     var playPauseButton: UIButton!
     var elapsedTimeLabel: UILabel!
     var remainingTimeLabel: UILabel!
     var videoPlayerView: AVPlayerView!
-
+    
     
     var playerItem: AVPlayerItem? = nil
     var videoPlayer: AVPlayer? = nil
@@ -61,7 +61,7 @@ class MoviePlayerViewController : PeriodicTimeProtocol {
                 
                 self.runPeriodicTimes()
                 
-        })
+            })
         
         self.seekber.minimumTrackTintColor = UIColor.whiteColor()
         self.seekber.maximumTrackTintColor = UIColor.blackColor()
@@ -73,7 +73,7 @@ class MoviePlayerViewController : PeriodicTimeProtocol {
         
         //        self.singleTap.requireGestureRecognizerToFail(self.doubleTap)
     }
-
+    
     
     // MARK: - Player Notifications
     
@@ -132,8 +132,13 @@ class MoviePlayerViewController : PeriodicTimeProtocol {
         let remainingTimeMin: Int = Int((duration - currentTime)/60)
         let remainingTimeSec: Int = Int(duration - currentTime) - remainingTimeMin*60
         
-//        self.elapsedTimeLabel.text = NSString(format:"%02d",elapsedTimeMin) + ":" + NSString(format:"%02d",elapsedTimeSec)// TODO djzhang(swift 1.2)
-//        self.remainingTimeLabel.text = "-" + NSString(format:"%02d",remainingTimeMin) + ":" + NSString(format:"%02d",remainingTimeSec)
+        let min_p:String = String(format: "%02d", elapsedTimeMin);
+        let sec_p:String = String(format: "%02d", elapsedTimeSec);
+        
+        self.elapsedTimeLabel.text = "\(min_p):\(sec_p)"
+        
+        //        self.elapsedTimeLabel.text = NSString(format:"%02d",elapsedTimeMin) + ":" + NSString(format:"%02d",elapsedTimeSec)// TODO djzhang(swift 1.2)
+        //        self.remainingTimeLabel.text = "-" + NSString(format:"%02d",remainingTimeMin) + ":" + NSString(format:"%02d",remainingTimeSec)
         
         
     }
@@ -259,15 +264,15 @@ class MoviePlayerViewController : PeriodicTimeProtocol {
     
     func runPeriodicTimes(){
         
-         let _periodicTimeProtocols: [PeriodicTimeProtocol] = self.periodicTimeProtocols
+        let _periodicTimeProtocols: [PeriodicTimeProtocol] = self.periodicTimeProtocols
+        
+        for periodicTimeProtocol in _periodicTimeProtocols{
             
-            for periodicTimeProtocol in _periodicTimeProtocols{
-                
-                let _periodicTimeProtocol: PeriodicTimeProtocol = periodicTimeProtocol as PeriodicTimeProtocol
-                _periodicTimeProtocol.playerTimeChanged()
-                
-            }
-
+            let _periodicTimeProtocol: PeriodicTimeProtocol = periodicTimeProtocol as PeriodicTimeProtocol
+            _periodicTimeProtocol.playerTimeChanged()
+            
+        }
+        
         
     }
     

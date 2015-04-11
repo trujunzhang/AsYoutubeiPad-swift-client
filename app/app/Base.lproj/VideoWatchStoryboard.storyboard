@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7531" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7520"/>
     </dependencies>
     <scenes>
         <!--Video Watch Side View Controller-->
         <scene sceneID="YZp-zI-BLo">
             <objects>
-                <viewController storyboardIdentifier="YTVideoWatchSideViewController" id="WeF-cF-Aol" customClass="YTVideoWatchSideViewController" customModule="AsYoutubeiPadSwiftClient" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="YTVideoWatchSideViewController" id="WeF-cF-Aol" customClass="YTVideoWatchSideViewController" customModule="app" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Ldx-r0-W9n"/>
                         <viewControllerLayoutGuide type="bottom" id="mFo-E1-hxt"/>
@@ -25,7 +25,7 @@
         <!--Movie Embedded Normal Bar View Controller-->
         <scene sceneID="tTj-Ge-q3A">
             <objects>
-                <viewController storyboardIdentifier="MovieEmbeddedNormalBarViewController" id="4Mb-8q-N4Z" customClass="MovieEmbeddedNormalBarViewController" customModule="AsYoutubeiPadSwiftClient" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MovieEmbeddedNormalBarViewController" id="4Mb-8q-N4Z" customClass="MovieEmbeddedNormalBarViewController" customModule="app" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="foo-ms-G2J"/>
                         <viewControllerLayoutGuide type="bottom" id="Fyp-Kh-GwY"/>
@@ -34,7 +34,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="576" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KUp-9A-Qg8" customClass="AVPlayerView" customModule="AsYoutubeiPadSwiftClient" customModuleProvider="target">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KUp-9A-Qg8" customClass="AVPlayerView" customModule="app" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="576" height="600"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
@@ -92,14 +92,14 @@
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mp_fullscreen.png" translatesAutoresizingMaskIntoConstraints="NO" id="YpZ-S9-al8">
                                         <rect key="frame" x="546" y="9" width="20" height="26"/>
                                     </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uaS-nr-2PJ">
-                                        <rect key="frame" x="49" y="11" width="42" height="21"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uaS-nr-2PJ">
+                                        <rect key="frame" x="49" y="11" width="43" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CgD-Y5-OOM">
-                                        <rect key="frame" x="489" y="11" width="42" height="21"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CgD-Y5-OOM">
+                                        <rect key="frame" x="488" y="11" width="43" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
@@ -187,7 +187,7 @@ I'm mad. I'm stark, raving mad.Who wish to live?
         <!--Movie Embedded View Controller-->
         <scene sceneID="Gyq-VS-Hhm">
             <objects>
-                <viewController storyboardIdentifier="MovieEmbeddedViewController" id="vw9-6M-iCp" customClass="MovieEmbeddedViewController" customModule="AsYoutubeiPadSwiftClient" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MovieEmbeddedViewController" id="vw9-6M-iCp" customClass="MovieEmbeddedViewController" customModule="app" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="zPC-4y-9LX"/>
                         <viewControllerLayoutGuide type="bottom" id="RIl-ey-aw2"/>
@@ -205,7 +205,7 @@ I'm mad. I'm stark, raving mad.Who wish to live?
         <!--Video Watch Info View Controller-->
         <scene sceneID="RuG-mH-dim">
             <objects>
-                <viewController storyboardIdentifier="YTVideoWatchInfoViewController" id="g9e-mD-rzC" customClass="YTVideoWatchInfoViewController" customModule="AsYoutubeiPadSwiftClient" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="YTVideoWatchInfoViewController" id="g9e-mD-rzC" customClass="YTVideoWatchInfoViewController" customModule="app" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="vpF-YX-VYP"/>
                         <viewControllerLayoutGuide type="bottom" id="kwS-W3-YNl"/>
@@ -223,7 +223,7 @@ I'm mad. I'm stark, raving mad.Who wish to live?
         <!--Video Watch Playlist Header View Controller-->
         <scene sceneID="WpG-sG-VBY">
             <objects>
-                <viewController storyboardIdentifier="YTVideoWatchPlaylistHeaderViewController" id="ME0-kX-hue" customClass="YTVideoWatchPlaylistHeaderViewController" customModule="AsYoutubeiPadSwiftClient" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="YTVideoWatchPlaylistHeaderViewController" id="ME0-kX-hue" customClass="YTVideoWatchPlaylistHeaderViewController" customModule="app" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="qLi-iI-5WK"/>
                         <viewControllerLayoutGuide type="bottom" id="eC3-wJ-aE1"/>
@@ -241,7 +241,7 @@ I'm mad. I'm stark, raving mad.Who wish to live?
         <!--Video Watch Playlist View Controller-->
         <scene sceneID="sY5-hL-4ML">
             <objects>
-                <viewController storyboardIdentifier="YTVideoWatchPlaylistViewController" id="P1R-FV-dgv" customClass="YTVideoWatchPlaylistViewController" customModule="AsYoutubeiPadSwiftClient" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="YTVideoWatchPlaylistViewController" id="P1R-FV-dgv" customClass="YTVideoWatchPlaylistViewController" customModule="app" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="weN-x1-Mz1"/>
                         <viewControllerLayoutGuide type="bottom" id="xrZ-TR-BIX"/>

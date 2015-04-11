@@ -43,16 +43,13 @@ class YTPlayerSubtitling :PeriodicTimeProtocol {
     }
     
     func setPlayer(_videoID: String,_subtitleLabel : UILabel ,_moviePlayerViewController: MoviePlayerViewController ){
-        fetchTracksAndCaptainForVideo(_videoID)
+//        fetchTracksAndCaptainForVideo(_videoID)
         
         videoID = _videoID
         subtitleLabel = _subtitleLabel
         moviePlayerViewController = _moviePlayerViewController
         
         player = moviePlayerViewController?.videoPlayer
-        
-//        let subtitleString : String = Tools.readFile("example")
-//        prepareSubtitle(subtitleString)
     }
     
     func prepareSubtitle(subtitleString : String){

@@ -89,11 +89,11 @@ class StoryBoardUtils:NSObject {
         return viewController
     }
     
-    class func getMovieEmbeddedFullscreenBarViewController() -> MovieEmbeddedFullscreenBarViewController {
-        var viewController: MovieEmbeddedFullscreenBarViewController = getVideoWatchStoryboard().instantiateViewControllerWithIdentifier("MovieEmbeddedFullscreenBarViewController") as! MovieEmbeddedFullscreenBarViewController
-        
-        return viewController
-    }
+//    class func getMovieEmbeddedFullscreenBarViewController() -> MovieEmbeddedFullscreenBarViewController {
+//        var viewController: MovieEmbeddedFullscreenBarViewController = getVideoWatchStoryboard().instantiateViewControllerWithIdentifier("MovieEmbeddedFullscreenBarViewController") as! MovieEmbeddedFullscreenBarViewController
+//        
+//        return viewController
+//    }
     
     
     

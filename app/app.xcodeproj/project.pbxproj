@@ -27,7 +27,6 @@
 		5E1514261AD8CDF800E5AF44 /* MenuTableSignInHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E1514201AD8CDF800E5AF44 /* MenuTableSignInHeaderView.swift */; };
 		5E1514271AD8CDF800E5AF44 /* TableCellProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E1514211AD8CDF800E5AF44 /* TableCellProtocols.swift */; };
 		5E1514411AD8CE0200E5AF44 /* MovieEmbeddedBasedBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E15142A1AD8CE0200E5AF44 /* MovieEmbeddedBasedBarViewController.swift */; };
-		5E1514421AD8CE0200E5AF44 /* MovieEmbeddedFullscreenBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E15142B1AD8CE0200E5AF44 /* MovieEmbeddedFullscreenBarViewController.swift */; };
 		5E1514431AD8CE0200E5AF44 /* MovieEmbeddedNormalBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E15142C1AD8CE0200E5AF44 /* MovieEmbeddedNormalBarViewController.swift */; };
 		5E1514441AD8CE0200E5AF44 /* MovieEmbeddedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E15142D1AD8CE0200E5AF44 /* MovieEmbeddedViewController.swift */; };
 		5E1514451AD8CE0200E5AF44 /* AVPlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E15142F1AD8CE0200E5AF44 /* AVPlayerView.swift */; };
@@ -101,7 +100,6 @@
 		5E1514201AD8CDF800E5AF44 /* MenuTableSignInHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuTableSignInHeaderView.swift; sourceTree = "<group>"; };
 		5E1514211AD8CDF800E5AF44 /* TableCellProtocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableCellProtocols.swift; sourceTree = "<group>"; };
 		5E15142A1AD8CE0200E5AF44 /* MovieEmbeddedBasedBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieEmbeddedBasedBarViewController.swift; sourceTree = "<group>"; };
-		5E15142B1AD8CE0200E5AF44 /* MovieEmbeddedFullscreenBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieEmbeddedFullscreenBarViewController.swift; sourceTree = "<group>"; };
 		5E15142C1AD8CE0200E5AF44 /* MovieEmbeddedNormalBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieEmbeddedNormalBarViewController.swift; sourceTree = "<group>"; };
 		5E15142D1AD8CE0200E5AF44 /* MovieEmbeddedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieEmbeddedViewController.swift; sourceTree = "<group>"; };
 		5E15142F1AD8CE0200E5AF44 /* AVPlayerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AVPlayerView.swift; sourceTree = "<group>"; };
@@ -268,9 +266,8 @@
 		5E1514291AD8CE0200E5AF44 /* Bars */ = {
 			isa = PBXGroup;
 			children = (
-				5E15142A1AD8CE0200E5AF44 /* MovieEmbeddedBasedBarViewController.swift */,
-				5E15142B1AD8CE0200E5AF44 /* MovieEmbeddedFullscreenBarViewController.swift */,
 				5E15142C1AD8CE0200E5AF44 /* MovieEmbeddedNormalBarViewController.swift */,
+				5E15142A1AD8CE0200E5AF44 /* MovieEmbeddedBasedBarViewController.swift */,
 			);
 			path = Bars;
 			sourceTree = "<group>";
@@ -624,7 +621,6 @@
 				5E1514251AD8CDF800E5AF44 /* MenuTableLoggedHeaderView.swift in Sources */,
 				5E1514111AD8CDD000E5AF44 /* YoutubeFetcher.swift in Sources */,
 				5E1E2CED1AD8B898004CC05B /* ViewController.swift in Sources */,
-				5E1514421AD8CE0200E5AF44 /* MovieEmbeddedFullscreenBarViewController.swift in Sources */,
 				5E1514221AD8CDF800E5AF44 /* MenuCollapseTableCell.swift in Sources */,
 				5E2209BD1AD8CD0700DD748D /* LeftMenuViewController.swift in Sources */,
 				5E1514031AD8CDBB00E5AF44 /* StoryBoardUtils.swift in Sources */,
@@ -807,9 +803,11 @@
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
 				INFOPLIST_FILE = app/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "app/app-Bridging-Header.h";
+				TARGETED_DEVICE_FAMILY = 2;
 			};
 			name = Debug;
 		};
@@ -824,9 +822,11 @@
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
 				INFOPLIST_FILE = app/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "app/app-Bridging-Header.h";
+				TARGETED_DEVICE_FAMILY = 2;
 			};
 			name = Release;
 		};

@@ -30,19 +30,10 @@
 // Library: IGYouTubeExtractor
 #import "IGYouTubeExtractor.h"
 
-// Library: ALMoviePlayerController
-//#import "ALMoviePlayerController.h"
-
-// Library: YKMediaPlayerKit
-//#import "YKMediaPlayerKit.h"
-//#import "YKVimeoVideo.h"
-//#import "YKYouTubeVideo.h"
-//#import "YKDirectVideo.h"
-
 // Library: Subtitles
-//#import "SOSubtitle.h"
-//#import "SOSRTParserHelper.h"
-//#import "SRTParserInterface.h"
+#import "SOSubtitle.h"
+#import "SOSRTParserHelper.h"
+#import "SRTParserInterface.h"
 
 // Library: facebook/Pop
 #import <pop/POP.h>
