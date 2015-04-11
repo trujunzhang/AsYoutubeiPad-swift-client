@@ -21,9 +21,7 @@ class YTPlayerSubtitling :PeriodicTimeProtocol {
     
     var currentText = ""
     
-    init(){
-        
-    }
+
     
     func fetchTracksAndCaptainForVideo(_videoID: String) {
         YoutubeDataFetcher.sharedInstance.fetchCaptainTracksAndCaption(_videoID,completeHandler: { (subtitleString, sucess) -> Void in
@@ -68,22 +66,16 @@ class YTPlayerSubtitling :PeriodicTimeProtocol {
                     let time : CMTime =  playerItem.currentTime()
                     let nbSecondsElapsed: NSTimeInterval = CMTimeGetSeconds(time)
                     
-                    
                     let subtitle:NSString = SRTParserInterface.searchAndShowSubtitle(subtitlesParts, inTime: nbSecondsElapsed)
                     
                     if (subtitle.isEqualToString(currentText) || subtitle == currentText){
                         return
                     }
                     currentText = subtitle as String
-                    
-                    //                dispatch_async(dispatch_get_main_queue(), { () -> Void in
-                    //                    // updateLabel
-                    //                    self.updateLabel()
-                    //                })
-                    
+
                     self.updateLabel()
                     
-                    println("player time changed : \(currentText)")
+//                    println("player time changed : \(currentText)")
                 }
             }
         }
