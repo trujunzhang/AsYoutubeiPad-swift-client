@@ -35,12 +35,12 @@ class MoviePlayerViewController : PeriodicTimeProtocol {
     }
     
     func prepareUI(_seekber: UISlider,_playPauseButton: UIButton, _elapsedTimeLabel: UILabel, _remainingTimeLabel: UILabel, _videoPlayerView: AVPlayerView){
-        seekber = _seekber;
-        playPauseButton = _playPauseButton;
-        elapsedTimeLabel = _elapsedTimeLabel;
-        remainingTimeLabel = _remainingTimeLabel;
+        seekber = _seekber
+        playPauseButton = _playPauseButton
+        elapsedTimeLabel = _elapsedTimeLabel
+        remainingTimeLabel = _remainingTimeLabel
         
-        videoPlayerView = _videoPlayerView;
+        videoPlayerView = _videoPlayerView
     }
     
     func initAVPlayer(url: NSURL){
@@ -137,8 +137,8 @@ class MoviePlayerViewController : PeriodicTimeProtocol {
     }
     
     func getTimeString(timeMin: Int,timeSec: Int) -> String {
-        let min_p:String = String(format: "%02d", timeMin);
-        let sec_p:String = String(format: "%02d", timeSec);
+        let min_p:String = String(format: "%02d", timeMin)
+        let sec_p:String = String(format: "%02d", timeSec)
         
         return "\(min_p):\(sec_p)"
     }
@@ -196,7 +196,7 @@ class MoviePlayerViewController : PeriodicTimeProtocol {
     }
     
     func isScrubbing() -> Bool {
-        return playingRateAfterScrub != 0;
+        return playingRateAfterScrub != 0
     }
     
     
@@ -218,11 +218,11 @@ class MoviePlayerViewController : PeriodicTimeProtocol {
             return
         }
         
-        let duration: Double  = CMTimeGetSeconds(playerDuration);
+        let duration: Double  = CMTimeGetSeconds(playerDuration)
         
         let currentTime: Double = CMTimeGetSeconds(videoPlayer!.currentTime())
         if (currentTime <= 0 && position == 0) || (currentTime >= duration && position == 1) {
-            return;
+            return
         }
         
         let time: Double = duration * position
