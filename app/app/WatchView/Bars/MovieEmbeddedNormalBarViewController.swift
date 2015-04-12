@@ -67,9 +67,8 @@ class MovieEmbeddedNormalBarViewController: MoviePlayerViewHelper {
         
         setBarsConstraint(topBarTopConstraint, bottomBarTopConstraint: bottomBarTopConstraint)
         
-        moviePlayerViewController = MoviePlayerViewHelper()
+        moviePlayerViewController = self
         playerSubtitling = YTPlayerSubtitling()
-        
         
         
         if let url:NSURL = videoURL {
@@ -105,17 +104,28 @@ class MovieEmbeddedNormalBarViewController: MoviePlayerViewHelper {
         }
     }
     
-    
+    // MARK : Events for slider
     @IBAction func sliderValueChanged(sender: AnyObject) {
         if let viewController : MoviePlayerViewHelper =  moviePlayerViewController {
-            
             viewController.scrub(sender as! UISlider)
         }
     }
     
+    @IBAction func sliderBeginScrubbing(sender: AnyObject) {
+        if let viewController : MoviePlayerViewHelper =  moviePlayerViewController {
+            viewController.beginScrubbing(sender as! UISlider)
+        }
+    }
+
+    @IBAction func sliderEndScrubbing(sender: AnyObject) {
+        if let viewController : MoviePlayerViewHelper =  moviePlayerViewController {
+            viewController.endScrubbing(sender as! UISlider)
+        }
+    }
+    
+    
     @IBAction func onClickPlayPauseButton(sender: AnyObject) {
         if let viewController : MoviePlayerViewHelper =  moviePlayerViewController {
-            
             viewController.playOrPause(sender)
         }
     }

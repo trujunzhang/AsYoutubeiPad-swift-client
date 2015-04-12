@@ -113,6 +113,8 @@
                                     <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="9Ay-Bn-2T7">
                                         <rect key="frame" x="110" y="7" width="370" height="31"/>
                                         <connections>
+                                            <action selector="sliderBeginScrubbing:" destination="4Mb-8q-N4Z" eventType="editingDidBegin" id="cPb-sl-evI"/>
+                                            <action selector="sliderEndScrubbing:" destination="4Mb-8q-N4Z" eventType="editingDidEnd" id="MTb-5u-zUe"/>
                                             <action selector="sliderValueChanged:" destination="4Mb-8q-N4Z" eventType="valueChanged" id="KsB-Fp-Lz8"/>
                                         </connections>
                                     </slider>

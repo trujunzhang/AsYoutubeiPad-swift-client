@@ -21,13 +21,18 @@ class YoutubeDataFetcher : NSObject  {
     
     func fetchCaptainTracksAndCaption(videoID: NSString, completeHandler: ObjectHandler){
         
-        fetchCaptainTracks(videoID, completeHandler: { (tracksArray, tracksSucess) -> Void in
+        fetchCaptainTracks(videoID, completeHandler: { (array, tracksSucess) -> Void in
             if(tracksSucess == true){
-                self.fetchNextCaptainForVideo(videoID, tracksArray: tracksArray as! NSArray, completeHandler: completeHandler)
+                let tracksArray:NSArray = array  as! NSArray
+                if(tracksArray.count == 0){
+                     completeHandler(nil, false)
+                }else{
+                    self.fetchNextCaptainForVideo(videoID, tracksArray: tracksArray, completeHandler: completeHandler)
+                }
             }else{
                 completeHandler(nil, false)
             }
-
+            
         })
     }
     
@@ -44,7 +49,7 @@ class YoutubeDataFetcher : NSObject  {
         })
     }
     
-     func fetchNextCaptainForVideo(videoID: NSString, tracksArray :NSArray, completeHandler: ObjectHandler){
+    func fetchNextCaptainForVideo(videoID: NSString, tracksArray :NSArray, completeHandler: ObjectHandler){
         var track :MABYT3_Track = tracksArray[0] as! MABYT3_Track
         if(track.lang_default == true){
             // 2
