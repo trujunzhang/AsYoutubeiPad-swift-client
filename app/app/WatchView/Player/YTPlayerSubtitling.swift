@@ -13,7 +13,7 @@ import UIKit
 class YTPlayerSubtitling :PeriodicTimeProtocol {
     var videoID = ""
     
-    var moviePlayerViewController :MoviePlayerViewController? = nil
+    var moviePlayerViewController :MoviePlayerViewHelper? = nil
     
     var subtitlesParts:NSMutableDictionary? = NSMutableDictionary()
     
@@ -35,7 +35,7 @@ class YTPlayerSubtitling :PeriodicTimeProtocol {
         
     }
     
-    func setPlayer(_videoID: String,_subtitleLabel : UILabel ,_moviePlayerViewController: MoviePlayerViewController ){
+    func setPlayer(_videoID: String,_subtitleLabel : UILabel ,_moviePlayerViewController: MoviePlayerViewHelper ){
         fetchTracksAndCaptainForVideo(_videoID)
         
         videoID = _videoID
@@ -60,7 +60,7 @@ class YTPlayerSubtitling :PeriodicTimeProtocol {
     }
     
     func playerTimeChanged(){
-        if let viewController : MoviePlayerViewController =  moviePlayerViewController {
+        if let viewController : MoviePlayerViewHelper =  moviePlayerViewController {
             if let videoPlayer: AVPlayer = viewController.videoPlayer {
                 if let playerItem: AVPlayerItem = videoPlayer.currentItem {
                     let time : CMTime =  playerItem.currentTime()

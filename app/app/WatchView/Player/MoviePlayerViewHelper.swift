@@ -10,7 +10,7 @@ import Foundation
 import AVFoundation
 import UIKit
 
-class MoviePlayerViewController : PeriodicTimeProtocol {
+class MoviePlayerViewHelper : PeriodicTimeProtocol {
     
     var seekber: UISlider!
     var playPauseButton: UIButton!

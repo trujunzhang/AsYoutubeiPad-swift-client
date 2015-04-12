@@ -55,17 +55,21 @@ class MovieEmbeddedNormalBarViewController: MovieEmbeddedBasedBarViewController 
     
     // MARK : private variables
     var videoURL: NSURL?
-    var moviePlayerViewController :MoviePlayerViewController?
+    var moviePlayerViewController :MoviePlayerViewHelper?
     var playerSubtitling : YTPlayerSubtitling?
     var videoID = ""
+    
+    var videoWatchInfoViewController: VideoWatchInfoViewController?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         setBarsConstraint(topBarTopConstraint, bottomBarTopConstraint: bottomBarTopConstraint)
         
-        moviePlayerViewController = MoviePlayerViewController()
+        moviePlayerViewController = MoviePlayerViewHelper()
         playerSubtitling = YTPlayerSubtitling()
+        
+        videoWatchInfoViewController = VideoWatchInfoViewController()
         
         if let url:NSURL = videoURL {
             setVideoURL(url,videoID: videoID)
@@ -88,7 +92,7 @@ class MovieEmbeddedNormalBarViewController: MovieEmbeddedBasedBarViewController 
     
     func setVideoURL(url: NSURL,videoID:String){
         
-        if let viewController : MoviePlayerViewController =  moviePlayerViewController {
+        if let viewController : MoviePlayerViewHelper =  moviePlayerViewController {
             if let subtitling : YTPlayerSubtitling =  playerSubtitling {
                 subtitling.setPlayer(videoID, _subtitleLabel: subtitleLabel, _moviePlayerViewController: viewController)
             }
@@ -102,14 +106,14 @@ class MovieEmbeddedNormalBarViewController: MovieEmbeddedBasedBarViewController 
     
     
     @IBAction func sliderValueChanged(sender: AnyObject) {
-        if let viewController : MoviePlayerViewController =  moviePlayerViewController {
+        if let viewController : MoviePlayerViewHelper =  moviePlayerViewController {
             
             viewController.scrub(sender as! UISlider)
         }
     }
     
     @IBAction func onClickPlayPauseButton(sender: AnyObject) {
-        if let viewController : MoviePlayerViewController =  moviePlayerViewController {
+        if let viewController : MoviePlayerViewHelper =  moviePlayerViewController {
             
             viewController.playOrPause(sender)
         }

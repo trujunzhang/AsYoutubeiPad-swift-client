@@ -31,7 +31,7 @@
 		5E1514441AD8CE0200E5AF44 /* MovieEmbeddedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E15142D1AD8CE0200E5AF44 /* MovieEmbeddedViewController.swift */; };
 		5E1514451AD8CE0200E5AF44 /* AVPlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E15142F1AD8CE0200E5AF44 /* AVPlayerView.swift */; };
 		5E1514461AD8CE0200E5AF44 /* CMTime+Validation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E1514301AD8CE0200E5AF44 /* CMTime+Validation.swift */; };
-		5E1514471AD8CE0200E5AF44 /* MoviePlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E1514311AD8CE0200E5AF44 /* MoviePlayerViewController.swift */; };
+		5E1514471AD8CE0200E5AF44 /* MoviePlayerViewHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E1514311AD8CE0200E5AF44 /* MoviePlayerViewHelper.swift */; };
 		5E1514481AD8CE0200E5AF44 /* PeriodicTimeProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E1514321AD8CE0200E5AF44 /* PeriodicTimeProtocol.swift */; };
 		5E1514491AD8CE0200E5AF44 /* YTPlayerSubtitling.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E1514331AD8CE0200E5AF44 /* YTPlayerSubtitling.swift */; };
 		5E15144A1AD8CE0200E5AF44 /* YTVideoWatchInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E1514341AD8CE0200E5AF44 /* YTVideoWatchInfoViewController.swift */; };
@@ -106,7 +106,7 @@
 		5E15142D1AD8CE0200E5AF44 /* MovieEmbeddedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieEmbeddedViewController.swift; sourceTree = "<group>"; };
 		5E15142F1AD8CE0200E5AF44 /* AVPlayerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AVPlayerView.swift; sourceTree = "<group>"; };
 		5E1514301AD8CE0200E5AF44 /* CMTime+Validation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CMTime+Validation.swift"; sourceTree = "<group>"; };
-		5E1514311AD8CE0200E5AF44 /* MoviePlayerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoviePlayerViewController.swift; sourceTree = "<group>"; };
+		5E1514311AD8CE0200E5AF44 /* MoviePlayerViewHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoviePlayerViewHelper.swift; sourceTree = "<group>"; };
 		5E1514321AD8CE0200E5AF44 /* PeriodicTimeProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PeriodicTimeProtocol.swift; sourceTree = "<group>"; };
 		5E1514331AD8CE0200E5AF44 /* YTPlayerSubtitling.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YTPlayerSubtitling.swift; sourceTree = "<group>"; };
 		5E1514341AD8CE0200E5AF44 /* YTVideoWatchInfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YTVideoWatchInfoViewController.swift; sourceTree = "<group>"; };
@@ -283,7 +283,7 @@
 			children = (
 				5E15142F1AD8CE0200E5AF44 /* AVPlayerView.swift */,
 				5E1514301AD8CE0200E5AF44 /* CMTime+Validation.swift */,
-				5E1514311AD8CE0200E5AF44 /* MoviePlayerViewController.swift */,
+				5E1514311AD8CE0200E5AF44 /* MoviePlayerViewHelper.swift */,
 				5E1514321AD8CE0200E5AF44 /* PeriodicTimeProtocol.swift */,
 				5E1514331AD8CE0200E5AF44 /* YTPlayerSubtitling.swift */,
 			);
@@ -616,7 +616,7 @@
 				5E1514411AD8CE0200E5AF44 /* MovieEmbeddedBasedBarViewController.swift in Sources */,
 				5E15144F1AD8CE0200E5AF44 /* ChannelBannerViewController.swift in Sources */,
 				5E1514261AD8CDF800E5AF44 /* MenuTableSignInHeaderView.swift in Sources */,
-				5E1514471AD8CE0200E5AF44 /* MoviePlayerViewController.swift in Sources */,
+				5E1514471AD8CE0200E5AF44 /* MoviePlayerViewHelper.swift in Sources */,
 				5E1514101AD8CDD000E5AF44 /* YouTubeExtractorUtils.swift in Sources */,
 				5E1514021AD8CDBB00E5AF44 /* NSObject_BlockBasedSelector.swift in Sources */,
 				5E15140F1AD8CDD000E5AF44 /* YoutubeDataFetcher.swift in Sources */,
