@@ -11,6 +11,7 @@ import AVFoundation
 import UIKit
 
 class MoviePlayerViewHelper : MovieEmbeddedBasedBarViewController, PeriodicTimeProtocol,ObservingPlayerItemDelegate {
+    var videoWatchInfoViewController: VideoWatchInfoViewController?
     
     var mSeekber: UISlider!
     var mPlayPauseButton: UIButton!
@@ -289,6 +290,26 @@ class MoviePlayerViewHelper : MovieEmbeddedBasedBarViewController, PeriodicTimeP
         periodicTimeProtocols.append(periodicTimeProtocol)
     }
     
+    // MARK :
+    func showLoadingPanel(){
+        videoWatchInfoViewController = StoryBoardUtils.getVideoWatchInfoViewController()
+        if let viewController: VideoWatchInfoViewController = videoWatchInfoViewController {
+            self.view.addSubview(viewController.view)
+            LayoutUtils.LayoutFullView(viewController.view)
+            
+            self.addChildViewController(viewController)
+        }
+    }
+    
+    func hideLoadingPanel(){
+        if let viewController: VideoWatchInfoViewController = self.videoWatchInfoViewController {
+            viewController.view.removeFromSuperview()
+            viewController.removeFromParentViewController()
+            
+//            viewController = nil
+        }
+    }
+    
     
     // MARK :
     func playerItemReachedEnd(){
@@ -300,7 +321,7 @@ class MoviePlayerViewHelper : MovieEmbeddedBasedBarViewController, PeriodicTimeP
     }
     
     func playerItemReadyToPlay(){
-        var x = 0
+        hideLoadingPanel()
     }
     
     func playerItemPlayFailed(){

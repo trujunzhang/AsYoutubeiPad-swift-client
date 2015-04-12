@@ -59,7 +59,7 @@ class MovieEmbeddedNormalBarViewController: MoviePlayerViewHelper {
     var playerSubtitling : YTPlayerSubtitling?
     var videoID = ""
     
-    var videoWatchInfoViewController: VideoWatchInfoViewController?
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -69,13 +69,8 @@ class MovieEmbeddedNormalBarViewController: MoviePlayerViewHelper {
         moviePlayerViewController = MoviePlayerViewHelper()
         playerSubtitling = YTPlayerSubtitling()
         
-        videoWatchInfoViewController = StoryBoardUtils.getVideoWatchInfoViewController()
-        if let viewController: VideoWatchInfoViewController = videoWatchInfoViewController {
-            self.view.addSubview(viewController.view)
-            LayoutUtils.LayoutFullView(viewController.view)
-            
-            self.addChildViewController(viewController)
-        }
+
+        showLoadingPanel()
         
         
         if let url:NSURL = videoURL {
