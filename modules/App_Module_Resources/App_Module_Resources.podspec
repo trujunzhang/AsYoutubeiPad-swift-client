@@ -61,6 +61,11 @@ Pod::Spec.new do |s|
 
   s.subspec 'Subtitles' do |sub|
     sub.source_files = 'Pod/Classes/Subtitles/*/*.{h,m}'
-  end      
+  end   
+
+  s.subspec 'ObservingPlayerItem' do |sub|
+    sub.source_files = 'Pod/Classes/ObservingPlayerItem/*.{h,m}'
+  end  
+  
   
 end

@@ -10,7 +10,7 @@ import Foundation
 import AVFoundation
 import UIKit
 
-class MoviePlayerViewHelper : MovieEmbeddedBasedBarViewController, PeriodicTimeProtocol {
+class MoviePlayerViewHelper : MovieEmbeddedBasedBarViewController, PeriodicTimeProtocol,ObservingPlayerItemDelegate {
     
     var mSeekber: UISlider!
     var mPlayPauseButton: UIButton!
@@ -19,7 +19,7 @@ class MoviePlayerViewHelper : MovieEmbeddedBasedBarViewController, PeriodicTimeP
     var mVideoPlayerView: AVPlayerView!
     
     
-    var playerItem: AVPlayerItem? = nil
+    var playerItem: ObservingPlayerItem? = nil
     var videoPlayer: AVPlayer? = nil
     var videoTimeObserver: AnyObject? = nil
     var playingRateAfterScrub: Float = 0
@@ -41,16 +41,13 @@ class MoviePlayerViewHelper : MovieEmbeddedBasedBarViewController, PeriodicTimeP
     
     func initAVPlayer(url: NSURL){
         
-        self.playerItem = AVPlayerItem(URL: url)
+        self.playerItem = ObservingPlayerItem(URL: url)
+        self.playerItem!.delegate = self;
         
         self.videoPlayer = AVPlayer(playerItem: self.playerItem)
         
         self.mVideoPlayerView.setPlayer(self.videoPlayer!)
         self.mVideoPlayerView.setVideoFillMode(AVLayerVideoGravityResizeAspect)
-        
-
-        
-        self.playerItem?.addObserver(self, forKeyPath:"readyForDisplay", options:nil, context:nil)
         
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "playerItemDidReachEnd:", name: AVPlayerItemDidPlayToEndTimeNotification, object: self.videoPlayer?.currentItem)
         
@@ -83,6 +80,7 @@ class MoviePlayerViewHelper : MovieEmbeddedBasedBarViewController, PeriodicTimeP
             })
         }
     }
+    
     
     
     // MARK: - Player Notifications
@@ -291,6 +289,27 @@ class MoviePlayerViewHelper : MovieEmbeddedBasedBarViewController, PeriodicTimeP
         periodicTimeProtocols.append(periodicTimeProtocol)
     }
     
+    
+    // MARK :
+    func playerItemReachedEnd(){
+        var x = 0
+    }
+    
+    func playerItemStalled(){
+        var x = 0
+    }
+    
+    func playerItemReadyToPlay(){
+        var x = 0
+    }
+    
+    func playerItemPlayFailed(){
+        var x = 0
+    }
+    
+    func playerItemRemovedObservation(){
+        var x = 0
+    }
     
     
 }

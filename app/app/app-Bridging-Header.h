@@ -38,6 +38,10 @@
 // Library: facebook/Pop
 #import <pop/POP.h>
 
+// Library: ObservingPlayerItem
+// url: https://github.com/acrookston/ObservingPlayerItem
+#import "ObservingPlayerItem.h"
+
 // Library: SDWebImage
 //#import "WebImage.h"
 
