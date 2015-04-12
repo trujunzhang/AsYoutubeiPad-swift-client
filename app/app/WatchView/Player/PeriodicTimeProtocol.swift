@@ -9,6 +9,6 @@
 import Foundation
 
 
-protocol PeriodicTimeProtocol {
+protocol PeriodicTimeProtocol  {
   func  playerTimeChanged()
 }

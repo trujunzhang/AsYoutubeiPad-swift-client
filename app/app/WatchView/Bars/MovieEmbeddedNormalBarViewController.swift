@@ -12,7 +12,7 @@ import UIKit
 
 
 //    normalBottomBarView?.frame = CGRectMake(0, 0, 576, 43)
-class MovieEmbeddedNormalBarViewController: MovieEmbeddedBasedBarViewController {
+class MovieEmbeddedNormalBarViewController: MoviePlayerViewHelper {
     
     // MARK : top bar views
     @IBOutlet var topBarPanel: UIView!

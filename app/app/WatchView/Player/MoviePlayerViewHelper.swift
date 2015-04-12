@@ -10,13 +10,13 @@ import Foundation
 import AVFoundation
 import UIKit
 
-class MoviePlayerViewHelper : PeriodicTimeProtocol {
+class MoviePlayerViewHelper : MovieEmbeddedBasedBarViewController, PeriodicTimeProtocol {
     
-    var seekber: UISlider!
-    var playPauseButton: UIButton!
-    var elapsedTimeLabel: UILabel!
-    var remainingTimeLabel: UILabel!
-    var videoPlayerView: AVPlayerView!
+    var mSeekber: UISlider!
+    var mPlayPauseButton: UIButton!
+    var mElapsedTimeLabel: UILabel!
+    var mRemainingTimeLabel: UILabel!
+    var mVideoPlayerView: AVPlayerView!
     
     
     var playerItem: AVPlayerItem? = nil
@@ -30,17 +30,13 @@ class MoviePlayerViewHelper : PeriodicTimeProtocol {
     
     // MARK: - View Lifecycle
     
-    init(){
-        
-    }
-    
     func prepareUI(_seekber: UISlider,_playPauseButton: UIButton, _elapsedTimeLabel: UILabel, _remainingTimeLabel: UILabel, _videoPlayerView: AVPlayerView){
-        seekber = _seekber
-        playPauseButton = _playPauseButton
-        elapsedTimeLabel = _elapsedTimeLabel
-        remainingTimeLabel = _remainingTimeLabel
+        mSeekber = _seekber
+        mPlayPauseButton = _playPauseButton
+        mElapsedTimeLabel = _elapsedTimeLabel
+        mRemainingTimeLabel = _remainingTimeLabel
         
-        videoPlayerView = _videoPlayerView
+        mVideoPlayerView = _videoPlayerView
     }
     
     func initAVPlayer(url: NSURL){
@@ -49,10 +45,14 @@ class MoviePlayerViewHelper : PeriodicTimeProtocol {
         
         self.videoPlayer = AVPlayer(playerItem: self.playerItem)
         
-        self.videoPlayerView.setPlayer(self.videoPlayer!)
-        self.videoPlayerView.setVideoFillMode(AVLayerVideoGravityResizeAspect)
+        self.mVideoPlayerView.setPlayer(self.videoPlayer!)
+        self.mVideoPlayerView.setVideoFillMode(AVLayerVideoGravityResizeAspect)
         
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "playerItemDidReachEnd:", name: AVPlayerItemDidPlayToEndTimeNotification, object: self.playerItem)
+
+        
+        self.playerItem?.addObserver(self, forKeyPath:"readyForDisplay", options:nil, context:nil)
+        
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "playerItemDidReachEnd:", name: AVPlayerItemDidPlayToEndTimeNotification, object: self.videoPlayer?.currentItem)
         
         
         self.videoTimeObserver = self.videoPlayer!.addPeriodicTimeObserverForInterval(CMTimeMake(150, 600),
@@ -63,15 +63,25 @@ class MoviePlayerViewHelper : PeriodicTimeProtocol {
                 
             })
         
-        self.seekber.minimumTrackTintColor = UIColor.whiteColor()
-        self.seekber.maximumTrackTintColor = UIColor.blackColor()
-        self.seekber.setValue(0, animated: false)
-//        self.syncPlayPauseButtonImage()
+        
+        
+        self.mSeekber.minimumTrackTintColor = UIColor.whiteColor()
+        self.mSeekber.maximumTrackTintColor = UIColor.blackColor()
+        self.mSeekber.setValue(0, animated: false)
+        //        self.syncPlayPauseButtonImage()
         self.updateTimeLabel()
         
         self.addPeriodicTimeProtocol(self)
         
         //        self.singleTap.requireGestureRecognizerToFail(self.doubleTap)
+    }
+    
+    override func observeValueForKeyPath(keyPath: String, ofObject object: AnyObject, change: [NSObject : AnyObject], context: UnsafeMutablePointer<()>) {
+        if keyPath == "readyForDisplay" {
+            dispatch_async(dispatch_get_main_queue(), {
+                var x = 0
+            })
+        }
     }
     
     
@@ -82,6 +92,7 @@ class MoviePlayerViewHelper : PeriodicTimeProtocol {
         self.seekToTime(0)
     }
     
+    //    func
     
     // MARK: - Player Item
     
@@ -105,7 +116,7 @@ class MoviePlayerViewHelper : PeriodicTimeProtocol {
         let playerDuration: CMTime = self.playerItemDuration()
         
         if !playerDuration.isValid {
-            self.seekber.minimumValue = 0
+            self.mSeekber.minimumValue = 0
             return
         }
         
@@ -113,7 +124,7 @@ class MoviePlayerViewHelper : PeriodicTimeProtocol {
         let currentTime: Double = CMTimeGetSeconds(self.videoPlayer!.currentTime())
         
         let progress: Float = Float(currentTime/duration)
-        self.seekber.setValue(progress, animated: true)
+        self.mSeekber.setValue(progress, animated: true)
     }
     
     func updateTimeLabel() {
@@ -132,8 +143,8 @@ class MoviePlayerViewHelper : PeriodicTimeProtocol {
         let remainingTimeMin: Int = Int((duration - currentTime)/60)
         let remainingTimeSec: Int = Int(duration - currentTime) - remainingTimeMin*60
         
-        self.elapsedTimeLabel.text = getTimeString(elapsedTimeMin,timeSec: elapsedTimeSec)
-        self.self.remainingTimeLabel.text = getTimeString(remainingTimeMin,timeSec: remainingTimeSec)
+        self.mElapsedTimeLabel.text = getTimeString(elapsedTimeMin,timeSec: elapsedTimeSec)
+        self.mRemainingTimeLabel.text = getTimeString(remainingTimeMin,timeSec: remainingTimeSec)
     }
     
     func getTimeString(timeMin: Int,timeSec: Int) -> String {
@@ -167,9 +178,9 @@ class MoviePlayerViewHelper : PeriodicTimeProtocol {
     
     func syncPlayPauseButtonImage() {
         if self.isPlaying() {
-            self.playPauseButton.setImage(UIImage(named:"mp_embedded_pause"), forState: .Normal)
+            self.mPlayPauseButton.setImage(UIImage(named:"mp_embedded_pause"), forState: .Normal)
         } else {
-            self.playPauseButton.setImage(UIImage(named:"mp_embedded_play"), forState: .Normal)
+            self.mPlayPauseButton.setImage(UIImage(named:"mp_embedded_play"), forState: .Normal)
         }
     }
     
@@ -214,7 +225,7 @@ class MoviePlayerViewHelper : PeriodicTimeProtocol {
         let playerDuration: CMTime = self.playerItemDuration()
         
         if !playerDuration.isValid {
-            self.seekber.minimumValue = 0
+            self.mSeekber.minimumValue = 0
             return
         }
         
@@ -249,10 +260,10 @@ class MoviePlayerViewHelper : PeriodicTimeProtocol {
     
     //    @IBAction
     func zoomPlayer() {
-        if self.videoPlayerView.videoFillMode() == AVLayerVideoGravityResizeAspect {
-            self.videoPlayerView.setVideoFillMode(AVLayerVideoGravityResizeAspectFill)
+        if self.mVideoPlayerView.videoFillMode() == AVLayerVideoGravityResizeAspect {
+            self.mVideoPlayerView.setVideoFillMode(AVLayerVideoGravityResizeAspectFill)
         } else {
-            self.videoPlayerView.setVideoFillMode(AVLayerVideoGravityResizeAspect)
+            self.mVideoPlayerView.setVideoFillMode(AVLayerVideoGravityResizeAspect)
         }
     }
     

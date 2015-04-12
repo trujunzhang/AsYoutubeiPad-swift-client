@@ -268,8 +268,8 @@ Cg
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="centerX" secondItem="ZJt-nC-Dqc" secondAttribute="centerX" id="1T7-Zd-Mtc"/>
-                            <constraint firstAttribute="centerY" secondItem="ZJt-nC-Dqc" secondAttribute="centerY" id="Niv-Ud-lb0"/>
+                            <constraint firstAttribute="centerY" secondItem="ZJt-nC-Dqc" secondAttribute="centerY" id="j4y-Zx-QHU"/>
+                            <constraint firstAttribute="centerX" secondItem="ZJt-nC-Dqc" secondAttribute="centerX" id="s5K-RZ-vkb"/>
                         </constraints>
                     </view>
                     <connections>
