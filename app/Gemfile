@@ -1,0 +1,22 @@
+source 'https://rubygems.org'
+
+
+# ...............  1 .......................
+# https://github.com/taichino/xcodeproj_utils
+gem 'xcodeproj_utils'
+
+# $ xcp_utils lines app.xcworkspace app
+# $ xcp_utils lines --header_only app.xcworkspace app
+# $ xcp_utils lines --source_only app.xcworkspace app
+# $ xcp_utils unused_images app.xcworkspace app
+
+# ...............  2 .......................
+# https://github.com/j-mutter/travis-xcodebuild
+
+# bundle exec travis-xcodebuild (with Gemfile) or,
+# travis-xcodebuild (with normal gem installation)
+
+# ...............  3 .......................
+#  https://github.com/supermarin/xcpretty
+
+# ...............  4 .......................

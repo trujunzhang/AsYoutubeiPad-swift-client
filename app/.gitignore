@@ -88,3 +88,6 @@ Cartfile.resolved
 #/Volumes/Home/Developing/SketchProjects/AsYoutubeiPad-swift-client/app/Carthage/Checkouts
 
 Carthage/
+
+Gemfile.lock
+output.txt

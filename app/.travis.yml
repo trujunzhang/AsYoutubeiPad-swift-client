@@ -1,0 +1,9 @@
+xcode_workspace: app.xcworkspace
+xcode_scheme: app
+xcode_sdk: iphonesimulator8.3
+env:
+  global:
+    - CONFIGURATION_BUILD_DIR=build
+    - CLANG_STATIC_ANALYZER_MODE=deep
+    - IOS_PLATFORM_NAME='iPhone Retina (4-inch)'
+script: bundle exec travis-xcodebuild
