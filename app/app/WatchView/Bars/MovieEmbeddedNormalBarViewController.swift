@@ -36,7 +36,8 @@ class MovieEmbeddedNormalBarViewController: MovieEmbeddedBasedBarViewController 
     @IBOutlet var timeElapsedLabel: UILabel!
     @IBOutlet var timeRemainingLabel: UILabel!
     
-    @IBOutlet var fullscreenButton: UIImageView!
+
+    @IBOutlet weak var fullscreenButton: UIButton!
     
     // MARK : Top bar items
     
@@ -113,6 +114,11 @@ class MovieEmbeddedNormalBarViewController: MovieEmbeddedBasedBarViewController 
             viewController.playOrPause(sender)
         }
     }
+    
+    @IBAction func onClickFullscreenButton(sender: AnyObject) {
+        
+    }
+    
     
     override func viewDidLayoutSubviews() {
         
