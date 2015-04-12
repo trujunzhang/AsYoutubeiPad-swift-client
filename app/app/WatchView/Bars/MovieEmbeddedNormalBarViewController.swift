@@ -36,7 +36,7 @@ class MovieEmbeddedNormalBarViewController: MovieEmbeddedBasedBarViewController 
     @IBOutlet var timeElapsedLabel: UILabel!
     @IBOutlet var timeRemainingLabel: UILabel!
     
-
+    
     @IBOutlet weak var fullscreenButton: UIButton!
     
     // MARK : Top bar items
@@ -69,7 +69,14 @@ class MovieEmbeddedNormalBarViewController: MovieEmbeddedBasedBarViewController 
         moviePlayerViewController = MoviePlayerViewHelper()
         playerSubtitling = YTPlayerSubtitling()
         
-        videoWatchInfoViewController = VideoWatchInfoViewController()
+        videoWatchInfoViewController = StoryBoardUtils.getVideoWatchInfoViewController()
+        if let viewController: VideoWatchInfoViewController = videoWatchInfoViewController {
+            self.view.addSubview(viewController.view)
+            LayoutUtils.LayoutFullView(viewController.view)
+            
+            self.addChildViewController(viewController)
+        }
+        
         
         if let url:NSURL = videoURL {
             setVideoURL(url,videoID: videoID)

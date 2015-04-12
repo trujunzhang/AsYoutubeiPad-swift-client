@@ -262,11 +262,15 @@ Cg
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="ZJt-nC-Dqc">
-                                <rect key="frame" x="127" y="417" width="20" height="20"/>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="ZJt-nC-Dqc">
+                                <rect key="frame" x="290" y="290" width="20" height="20"/>
                             </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="centerX" secondItem="ZJt-nC-Dqc" secondAttribute="centerX" id="1T7-Zd-Mtc"/>
+                            <constraint firstAttribute="centerY" secondItem="ZJt-nC-Dqc" secondAttribute="centerY" id="Niv-Ud-lb0"/>
+                        </constraints>
                     </view>
                     <connections>
                         <outlet property="loadingIndicator" destination="ZJt-nC-Dqc" id="OhZ-1B-3PU"/>

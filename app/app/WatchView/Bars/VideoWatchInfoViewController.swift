@@ -15,10 +15,12 @@ class VideoWatchInfoViewController: UIViewController {
     @IBOutlet weak var loadingIndicator: UIActivityIndicatorView!
 
     override func viewDidLoad() {
-        LayoutUtils.LayoutFullView(loadingIndicator!)
+        
     }
     
-    
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)        
+    }
     
     
 
