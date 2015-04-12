@@ -10,9 +10,14 @@ import Foundation
 
 
 class VideoWatchInfoViewController: UIViewController {
+    
+    
+    @IBOutlet weak var loadingIndicator: UIActivityIndicatorView!
 
     override func viewDidLoad() {
         
     }
+    
+    
     
 }
