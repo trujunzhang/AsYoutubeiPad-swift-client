@@ -32,7 +32,7 @@ class YTVideoWatchViewController: UIViewController {
         self.view.addSubview(movieEmbeddedView!)
         self.addChildViewController(movieEmbeddedViewController!)
 
-//         setupViewHorizontalLayout()
+         setupViewHorizontalLayout()
     }
     
     override func viewDidLayoutSubviews() {
@@ -62,7 +62,7 @@ class YTVideoWatchViewController: UIViewController {
             view1.top == view1.superview!.top
             
             
-            view1.width   == view1.superview!.width
+            view1.width   == 576
             view1.height  == 324
         }
     }

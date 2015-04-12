@@ -43,8 +43,7 @@ class MoviePlayerViewHelper : MovieEmbeddedBasedBarViewController, PeriodicTimeP
     }
     
     func initAVPlayer(url: NSURL){
-        
-        showLoadingPanel()
+
         
         self.playerItem = ObservingPlayerItem(URL: url)
         self.playerItem!.delegate = self;
@@ -57,13 +56,7 @@ class MoviePlayerViewHelper : MovieEmbeddedBasedBarViewController, PeriodicTimeP
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "playerItemDidReachEnd:", name: AVPlayerItemDidPlayToEndTimeNotification, object: self.videoPlayer?.currentItem)
         
         
-        self.videoTimeObserver = self.videoPlayer!.addPeriodicTimeObserverForInterval(CMTimeMake(150, 600),
-            queue: dispatch_get_main_queue(),
-            usingBlock: {[unowned self](CMTime) in
-                
-                self.runPeriodicTimes()
-                
-            })
+        addPlayerTimeObserver()
         
         
         
@@ -162,10 +155,15 @@ class MoviePlayerViewHelper : MovieEmbeddedBasedBarViewController, PeriodicTimeP
     
     func play() {
         self.videoPlayer!.play()
+        
+        //        self.setPlayPauseButtonImage(true)
+        
     }
     
     func pause() {
         self.videoPlayer!.pause()
+        
+        //        self.setPlayPauseButtonImage(false)
     }
     
     //    @IBAction
@@ -180,10 +178,39 @@ class MoviePlayerViewHelper : MovieEmbeddedBasedBarViewController, PeriodicTimeP
     }
     
     func syncPlayPauseButtonImage() {
-        if self.isPlaying() {
+        setPlayPauseButtonImage(self.isPlaying())
+    }
+    
+    
+    func setPlayPauseButtonImage(isPlaying:Bool) {
+        if isPlaying == true {
             self.mPlayPauseButton.setImage(UIImage(named:"mp_embedded_pause"), forState: .Normal)
         } else {
             self.mPlayPauseButton.setImage(UIImage(named:"mp_embedded_play"), forState: .Normal)
+        }
+    }
+    
+    func removePlayerTimeObserver(){
+        if(self.videoTimeObserver != nil){
+            
+            self.videoPlayer!.removeTimeObserver(self.videoTimeObserver)
+            
+            self.videoTimeObserver = nil
+        }
+    }
+    
+    func addPlayerTimeObserver(){
+        if(self.videoTimeObserver == nil){
+            
+            self.videoTimeObserver = self.videoPlayer!.addPeriodicTimeObserverForInterval(CMTimeMake(150, 600),
+                queue: dispatch_get_main_queue(),
+                usingBlock: {[unowned self](CMTime) in
+                    
+                    self.runPeriodicTimes()
+                    
+                })
+            
+            
         }
     }
     
@@ -193,15 +220,18 @@ class MoviePlayerViewHelper : MovieEmbeddedBasedBarViewController, PeriodicTimeP
     //    @IBAction
     func beginScrubbing(slider: UISlider) {
         self.playingRateAfterScrub = self.videoPlayer!.rate
+        self.removePlayerTimeObserver()
         self.pause()
     }
     
     //    @IBAction
     func endScrubbing(slider: UISlider) {
-        if self.playingRateAfterScrub != 0 {
-            self.play()
-            self.playingRateAfterScrub = 0
-        }
+        //        if self.playingRateAfterScrub != 0 {
+        
+        self.play()
+        addPlayerTimeObserver()
+        self.playingRateAfterScrub = 0
+        //        }
     }
     
     //    @IBAction
