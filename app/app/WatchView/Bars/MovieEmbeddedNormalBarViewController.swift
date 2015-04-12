@@ -26,6 +26,7 @@ class MovieEmbeddedNormalBarViewController: MoviePlayerViewHelper {
     @IBOutlet var videoPlayerView: AVPlayerView!
     @IBOutlet var subtitleLabel: UILabel!
     
+    @IBOutlet weak var loadingIndicator: UIActivityIndicatorView!
     
     // MARK : Bottom bar items
     
@@ -69,8 +70,6 @@ class MovieEmbeddedNormalBarViewController: MoviePlayerViewHelper {
         moviePlayerViewController = MoviePlayerViewHelper()
         playerSubtitling = YTPlayerSubtitling()
         
-
-        showLoadingPanel()
         
         
         if let url:NSURL = videoURL {
@@ -99,7 +98,7 @@ class MovieEmbeddedNormalBarViewController: MoviePlayerViewHelper {
                 subtitling.setPlayer(videoID, _subtitleLabel: subtitleLabel, _moviePlayerViewController: viewController)
             }
             
-            viewController.prepareUI(durationSlider, _playPauseButton: playPauseButton, _elapsedTimeLabel: timeElapsedLabel, _remainingTimeLabel: timeRemainingLabel, _videoPlayerView: videoPlayerView)
+            viewController.prepareUI(durationSlider, _playPauseButton: playPauseButton, _elapsedTimeLabel: timeElapsedLabel, _remainingTimeLabel: timeRemainingLabel, _videoPlayerView: videoPlayerView,_loadingIndicator:loadingIndicator)
             
             viewController.initAVPlayer(url)
             viewController.play()

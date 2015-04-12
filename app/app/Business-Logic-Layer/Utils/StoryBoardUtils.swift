@@ -89,12 +89,6 @@ class StoryBoardUtils:NSObject {
         return viewController
     }
     
-    class func getVideoWatchInfoViewController() -> VideoWatchInfoViewController {
-        var viewController: VideoWatchInfoViewController = getVideoWatchStoryboard().instantiateViewControllerWithIdentifier("VideoWatchInfoViewController") as! VideoWatchInfoViewController
-        
-        return viewController
-    }
-    
     
     
 //    class func getMovieEmbeddedFullscreenBarViewController() -> MovieEmbeddedFullscreenBarViewController {

@@ -11,7 +11,7 @@ import AVFoundation
 import UIKit
 
 class MoviePlayerViewHelper : MovieEmbeddedBasedBarViewController, PeriodicTimeProtocol,ObservingPlayerItemDelegate {
-    var videoWatchInfoViewController: VideoWatchInfoViewController?
+    var mLoadingIndicator: UIActivityIndicatorView!
     
     var mSeekber: UISlider!
     var mPlayPauseButton: UIButton!
@@ -31,16 +31,20 @@ class MoviePlayerViewHelper : MovieEmbeddedBasedBarViewController, PeriodicTimeP
     
     // MARK: - View Lifecycle
     
-    func prepareUI(_seekber: UISlider,_playPauseButton: UIButton, _elapsedTimeLabel: UILabel, _remainingTimeLabel: UILabel, _videoPlayerView: AVPlayerView){
+    func prepareUI(_seekber: UISlider,_playPauseButton: UIButton, _elapsedTimeLabel: UILabel, _remainingTimeLabel: UILabel, _videoPlayerView: AVPlayerView, _loadingIndicator: UIActivityIndicatorView){
         mSeekber = _seekber
         mPlayPauseButton = _playPauseButton
         mElapsedTimeLabel = _elapsedTimeLabel
         mRemainingTimeLabel = _remainingTimeLabel
         
         mVideoPlayerView = _videoPlayerView
+        
+        mLoadingIndicator = _loadingIndicator
     }
     
     func initAVPlayer(url: NSURL){
+        
+        showLoadingPanel()
         
         self.playerItem = ObservingPlayerItem(URL: url)
         self.playerItem!.delegate = self;
@@ -292,22 +296,12 @@ class MoviePlayerViewHelper : MovieEmbeddedBasedBarViewController, PeriodicTimeP
     
     // MARK :
     func showLoadingPanel(){
-        videoWatchInfoViewController = StoryBoardUtils.getVideoWatchInfoViewController()
-        if let viewController: VideoWatchInfoViewController = videoWatchInfoViewController {
-            self.view.addSubview(viewController.view)
-            LayoutUtils.LayoutFullView(viewController.view)
-            
-            self.addChildViewController(viewController)
-        }
+        mLoadingIndicator.startAnimating()
+        mLoadingIndicator.hidesWhenStopped = true
     }
     
     func hideLoadingPanel(){
-        if let viewController: VideoWatchInfoViewController = self.videoWatchInfoViewController {
-            viewController.view.removeFromSuperview()
-            viewController.removeFromParentViewController()
-            
-//            viewController = nil
-        }
+        mLoadingIndicator.stopAnimating()
     }
     
     

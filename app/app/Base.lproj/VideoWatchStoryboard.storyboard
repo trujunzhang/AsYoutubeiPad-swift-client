@@ -153,6 +153,9 @@ Cg
                                 <nil key="highlightedColor"/>
                                 <string key="userLabel">Who wish to live? I'm mad. I'm stark, raving mad.Who wish to live? I'm mad. I'm stark, raving mad.Who wish to live? I'm mad. I'm stark, raving mad.</string>
                             </label>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="ZC2-lY-A1O">
+                                <rect key="frame" x="278" y="290" width="20" height="20"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -160,9 +163,11 @@ Cg
                             <constraint firstItem="Gto-aw-vLc" firstAttribute="leading" secondItem="Bf1-yC-8Oc" secondAttribute="leading" id="1BQ-C5-P8F"/>
                             <constraint firstItem="vAr-va-7DJ" firstAttribute="top" secondItem="Bf1-yC-8Oc" secondAttribute="top" id="7rX-Oe-B6g"/>
                             <constraint firstItem="sch-h9-rOL" firstAttribute="leading" secondItem="Bf1-yC-8Oc" secondAttribute="leading" constant="38" id="B3n-ll-a99"/>
+                            <constraint firstAttribute="centerY" secondItem="ZC2-lY-A1O" secondAttribute="centerY" id="EeH-M4-eK7"/>
                             <constraint firstAttribute="trailing" secondItem="Gto-aw-vLc" secondAttribute="trailing" id="Hb4-5C-VQy"/>
                             <constraint firstAttribute="centerX" secondItem="KUp-9A-Qg8" secondAttribute="centerX" id="Idh-Fw-Llk"/>
                             <constraint firstAttribute="bottom" secondItem="Gto-aw-vLc" secondAttribute="bottom" id="NN7-fB-AMO"/>
+                            <constraint firstAttribute="centerX" secondItem="ZC2-lY-A1O" secondAttribute="centerX" id="OoJ-7y-YhO"/>
                             <constraint firstAttribute="centerY" secondItem="KUp-9A-Qg8" secondAttribute="centerY" id="P0x-BS-NPD"/>
                             <constraint firstAttribute="bottom" secondItem="sch-h9-rOL" secondAttribute="bottom" constant="44" id="TVc-l6-0Cy"/>
                             <constraint firstItem="KUp-9A-Qg8" firstAttribute="leading" secondItem="vAr-va-7DJ" secondAttribute="leading" id="VtX-3g-tAe"/>
@@ -181,6 +186,7 @@ Cg
                         <outlet property="ccButton" destination="mFe-nt-cvs" id="B54-n7-aCc"/>
                         <outlet property="durationSlider" destination="9Ay-Bn-2T7" id="5Yw-4N-ZAi"/>
                         <outlet property="fullscreenButton" destination="LZT-u1-GNR" id="ySe-NA-k7y"/>
+                        <outlet property="loadingIndicator" destination="ZC2-lY-A1O" id="fJ6-RA-gy6"/>
                         <outlet property="playPauseButton" destination="Q1k-RO-0e8" id="2jx-bY-qk9"/>
                         <outlet property="repeatButton" destination="NCl-6J-gVz" id="Ubw-tb-7EX"/>
                         <outlet property="subtitleLabel" destination="sch-h9-rOL" id="tcP-hG-7me"/>

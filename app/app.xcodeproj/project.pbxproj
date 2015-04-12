@@ -63,7 +63,6 @@
 		5EA6F25E1AD8C9930017493D /* Cartography.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5EA6F25C1AD8C9930017493D /* Cartography.framework */; };
 		5EA6F25F1AD8C9930017493D /* WebImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5EA6F25D1AD8C9930017493D /* WebImage.framework */; };
 		5EC260511ADA0B6C00A1B2A7 /* VideoWatchProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EC260501ADA0B6C00A1B2A7 /* VideoWatchProtocol.swift */; };
-		5EC260531ADA0B9000A1B2A7 /* VideoWatchInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EC260521ADA0B9000A1B2A7 /* VideoWatchInfoViewController.swift */; };
 		CB32D06F89412E5AAD9F456C /* libPods-appTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6F41558897D0187FFE158F21 /* libPods-appTests.a */; };
 		FE4BD745914619899B4CFFE4 /* libPods-app.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EC98874876136DD34019F3EC /* libPods-app.a */; };
 /* End PBXBuildFile section */
@@ -144,7 +143,6 @@
 		5EA6F25D1AD8C9930017493D /* WebImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebImage.framework; path = Carthage/Build/iOS/WebImage.framework; sourceTree = "<group>"; };
 		5EA6F2601AD8CA020017493D /* app-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "app-Bridging-Header.h"; sourceTree = "<group>"; };
 		5EC260501ADA0B6C00A1B2A7 /* VideoWatchProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoWatchProtocol.swift; sourceTree = "<group>"; };
-		5EC260521ADA0B9000A1B2A7 /* VideoWatchInfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoWatchInfoViewController.swift; sourceTree = "<group>"; };
 		6F41558897D0187FFE158F21 /* libPods-appTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-appTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EC98874876136DD34019F3EC /* libPods-app.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-app.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F56A9DEB18C78036C526EAC9 /* Pods-app.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-app.debug.xcconfig"; path = "Pods/Target Support Files/Pods-app/Pods-app.debug.xcconfig"; sourceTree = "<group>"; };
@@ -273,7 +271,6 @@
 			children = (
 				5E15142C1AD8CE0200E5AF44 /* MovieEmbeddedNormalBarViewController.swift */,
 				5E15142A1AD8CE0200E5AF44 /* MovieEmbeddedBasedBarViewController.swift */,
-				5EC260521ADA0B9000A1B2A7 /* VideoWatchInfoViewController.swift */,
 			);
 			path = Bars;
 			sourceTree = "<group>";
@@ -620,7 +617,6 @@
 				5E1514101AD8CDD000E5AF44 /* YouTubeExtractorUtils.swift in Sources */,
 				5E1514021AD8CDBB00E5AF44 /* NSObject_BlockBasedSelector.swift in Sources */,
 				5E15140F1AD8CDD000E5AF44 /* YoutubeDataFetcher.swift in Sources */,
-				5EC260531ADA0B9000A1B2A7 /* VideoWatchInfoViewController.swift in Sources */,
 				5E1514241AD8CDF800E5AF44 /* MenuSectionHeaderView.swift in Sources */,
 				5E1514121AD8CDD000E5AF44 /* YoutubeModelParser.swift in Sources */,
 				5E1514141AD8CDD000E5AF44 /* YTYoutubeRequestInfo.swift in Sources */,
