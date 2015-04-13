@@ -11,7 +11,7 @@ import AVFoundation
 import UIKit
 
 
-//    normalBottomBarView?.frame = CGRectMake(0, 0, 576, 43)
+//    normalBottomBarView?.frame = CGRectMake(0, 0, 576, 43) // 1.7
 class MovieEmbeddedNormalBarViewController: MoviePlayerViewHelper {
     
     // MARK : top bar views
