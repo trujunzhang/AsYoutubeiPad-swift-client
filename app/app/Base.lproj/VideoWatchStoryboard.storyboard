@@ -239,7 +239,7 @@ Cg
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="g3Q-pW-H0a" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1392" y="1279"/>
+            <point key="canvasLocation" x="1568" y="1007"/>
         </scene>
         <!--Video Watch Playlist Header View Controller-->
         <scene sceneID="WpG-sG-VBY">

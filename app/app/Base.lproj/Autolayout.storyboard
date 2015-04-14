@@ -106,20 +106,6 @@
                     <view key="view" contentMode="scaleToFill" id="xTm-iG-CgQ">
                         <rect key="frame" x="0.0" y="64" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hth-Ux-Nem" userLabel="moviePlayContainer">
-                                <rect key="frame" x="49" y="48" width="200" height="200"/>
-                                <color key="backgroundColor" red="0.0" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                            </view>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="oIB-NR-7od" userLabel="videoInfoContainer">
-                                <rect key="frame" x="49" y="263" width="200" height="200"/>
-                                <color key="backgroundColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                            </view>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Jha-MB-pPs" userLabel="videoOtherContainer">
-                                <rect key="frame" x="282" y="48" width="200" height="415"/>
-                                <color key="backgroundColor" red="1" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                            </view>
-                        </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <extendedEdge key="edgesForExtendedLayout"/>
@@ -130,11 +116,6 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
-                    <connections>
-                        <outlet property="moviePlayContainer" destination="hth-Ux-Nem" id="SNj-8w-aXZ"/>
-                        <outlet property="videoInfoContainer" destination="oIB-NR-7od" id="7TT-3j-ewG"/>
-                        <outlet property="videoOtherContainer" destination="Jha-MB-pPs" id="Naf-9I-Qkn"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MJG-p0-cYL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

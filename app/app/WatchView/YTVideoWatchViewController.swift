@@ -11,6 +11,11 @@ import Cartography
 
 class YTVideoWatchViewController: UIViewController {
     
+    // MARK : All containers
+    var _moviePlayContainer: UIView?
+    var _videoInfoContainer: UIView?
+    var _videoOtherContainer: UIView?
+    
     var group:Cartography.ConstraintGroup =  Cartography.ConstraintGroup()
     
     var videoID = ""
@@ -18,30 +23,50 @@ class YTVideoWatchViewController: UIViewController {
     
     var movieEmbeddedViewController:MovieEmbeddedViewController?
     var movieEmbeddedView: UIView?
-
+    
     
     override func viewDidLoad() {
+        // initialize all containers
+        makeAllContainers()
+        
+        
         
         // 1
-        movieEmbeddedViewController    = StoryBoardUtils.getMovieEmbeddedViewController()
-        movieEmbeddedViewController?.videoID = videoID
+        //        movieEmbeddedViewController    = StoryBoardUtils.getMovieEmbeddedViewController()
+        //        movieEmbeddedViewController?.videoID = videoID
+        //
+        //        movieEmbeddedView = movieEmbeddedViewController?.view
+        //
+        //        movieEmbeddedView?.backgroundColor = UIColor.redColor() // test
         
-        movieEmbeddedView = movieEmbeddedViewController?.view
+        //        self.view.addSubview(movieEmbeddedView!)
+        //        self.addChildViewController(movieEmbeddedViewController!)
         
-        movieEmbeddedView?.backgroundColor = UIColor.redColor() // test
+        //         setupViewHorizontalLayout()
+    }
+    
+    func makeAllContainers(){
+        _moviePlayContainer = UIView()
+        _moviePlayContainer?.backgroundColor = UIColor.redColor()
+        self.view.addSubview(_moviePlayContainer!)
         
-        self.view.addSubview(movieEmbeddedView!)
-        self.addChildViewController(movieEmbeddedViewController!)
-
-//         setupViewHorizontalLayout()
+        _videoInfoContainer = UIView()
+        _videoInfoContainer?.backgroundColor = UIColor.greenColor()
+        self.view.addSubview(_videoInfoContainer!)
+        
+        _videoOtherContainer = UIView()
+        _videoOtherContainer?.backgroundColor = UIColor.blueColor()
+        self.view.addSubview(_videoOtherContainer!)
     }
     
     override func viewDidLayoutSubviews() {
-        if UIDevice.currentDevice().orientation.isLandscape.boolValue { //landscape
-            setupViewHorizontalLayout()
-        } else {// portraight
-            setupViewVerticalLayout()
-        }
+        //        if UIDevice.currentDevice().orientation.isLandscape.boolValue { //landscape
+        //            setupViewHorizontalLayout()
+        //        } else {// portraight
+        //            setupViewVerticalLayout()
+        //        }
+        
+        setupViewHorizontalLayout()
     }
     
     func setupViewVerticalLayout(){
@@ -49,14 +74,8 @@ class YTVideoWatchViewController: UIViewController {
     }
     
     func setupViewHorizontalLayout(){
-        layout(movieEmbeddedView!) { view1 in
-            
-            //            view1.centerX == view1.superview!.centerX
-            //            view1.centerY == view1.superview!.centerY
-            
-            //            view1.width   == view1.superview!.width
-            //            view1.height  == view1.superview!.height
-            
+        
+        layout(_moviePlayContainer!,_videoInfoContainer!,_videoOtherContainer!, replace: group) { view1,view2,view3 in
             view1.leading == view1.superview!.leading
             view1.top == view1.superview!.top
             
@@ -65,7 +84,7 @@ class YTVideoWatchViewController: UIViewController {
             view1.height  == 324
         }
     }
-
+    
     
     
 }
