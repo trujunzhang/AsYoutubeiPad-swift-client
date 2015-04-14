@@ -71,8 +71,6 @@ class YTVideoWatchViewController: UIViewController {
         } else {// portraight
             setupViewVerticalLayout()
         }
-        
-        
     }
     
     func setupViewVerticalLayout(){
