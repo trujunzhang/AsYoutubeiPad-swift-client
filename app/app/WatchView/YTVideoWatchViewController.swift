@@ -29,10 +29,7 @@ class YTVideoWatchViewController: UIViewController {
         // initialize all containers
         makeAllContainers()
         
-        
         makeMovieEmbeddedViewController()
-        
-        
     }
     
     func makeMovieEmbeddedViewController(){
@@ -46,7 +43,7 @@ class YTVideoWatchViewController: UIViewController {
             
             if let view : UIView = movieEmbeddedView{
                 container.addSubview(view)
-            }            
+            }
         }
         
         if let controller : UIViewController = movieEmbeddedViewController{
