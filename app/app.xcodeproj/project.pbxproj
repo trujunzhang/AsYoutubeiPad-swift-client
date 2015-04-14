@@ -59,6 +59,7 @@
 		5E2209BC1AD8CD0700DD748D /* LeftMenuSectionsUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E2209BA1AD8CD0700DD748D /* LeftMenuSectionsUtils.swift */; };
 		5E2209BD1AD8CD0700DD748D /* LeftMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E2209BB1AD8CD0700DD748D /* LeftMenuViewController.swift */; };
 		5E52BAC41AD8C449007C3F32 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E52BAC31AD8C449007C3F32 /* Alamofire.framework */; settings = {ATTRIBUTES = (Required, ); }; };
+		5E755D351ADCF65B00939CFC /* VideoInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E755D341ADCF65B00939CFC /* VideoInfoViewController.swift */; };
 		5EA6F25B1AD8C9930017493D /* pop.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E87FD951AD8C2500021E80C /* pop.framework */; };
 		5EA6F25E1AD8C9930017493D /* Cartography.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5EA6F25C1AD8C9930017493D /* Cartography.framework */; };
 		5EA6F25F1AD8C9930017493D /* WebImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5EA6F25D1AD8C9930017493D /* WebImage.framework */; };
@@ -138,6 +139,7 @@
 		5E2209BA1AD8CD0700DD748D /* LeftMenuSectionsUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LeftMenuSectionsUtils.swift; path = RevealViewControllers/leftmenu/LeftMenuSectionsUtils.swift; sourceTree = "<group>"; };
 		5E2209BB1AD8CD0700DD748D /* LeftMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LeftMenuViewController.swift; path = RevealViewControllers/leftmenu/LeftMenuViewController.swift; sourceTree = "<group>"; };
 		5E52BAC31AD8C449007C3F32 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
+		5E755D341ADCF65B00939CFC /* VideoInfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = VideoInfoViewController.swift; path = VideoInfo/VideoInfoViewController.swift; sourceTree = "<group>"; };
 		5E87FD931AD8C24B0021E80C /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Bolts.framework; path = Carthage/Build/iOS/Bolts.framework; sourceTree = "<group>"; };
 		5E87FD951AD8C2500021E80C /* pop.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = pop.framework; path = Carthage/Build/iOS/pop.framework; sourceTree = "<group>"; };
 		5EA6F25C1AD8C9930017493D /* Cartography.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cartography.framework; path = Carthage/Build/iOS/Cartography.framework; sourceTree = "<group>"; };
@@ -255,6 +257,7 @@
 		5E1514281AD8CE0200E5AF44 /* WatchView */ = {
 			isa = PBXGroup;
 			children = (
+				5E755D331ADCF64700939CFC /* VideoInfo */,
 				5E1514381AD8CE0200E5AF44 /* YTVideoWatchViewController.swift */,
 				5E1514291AD8CE0200E5AF44 /* Bars */,
 				5E15142E1AD8CE0200E5AF44 /* Player */,
@@ -404,6 +407,14 @@
 				5E2209B71AD8CCFE00DD748D /* SubscriptionsViewController.swift */,
 			);
 			name = tabbars;
+			sourceTree = "<group>";
+		};
+		5E755D331ADCF64700939CFC /* VideoInfo */ = {
+			isa = PBXGroup;
+			children = (
+				5E755D341ADCF65B00939CFC /* VideoInfoViewController.swift */,
+			);
+			name = VideoInfo;
 			sourceTree = "<group>";
 		};
 		5EC282D61ADCEA9F007CB736 /* Cartography */ = {
@@ -647,6 +658,7 @@
 				5E2209B91AD8CCFE00DD748D /* SubscriptionsViewController.swift in Sources */,
 				5E1514231AD8CDF800E5AF44 /* MenuCollapseTableViewController.swift in Sources */,
 				5E2209B81AD8CCFE00DD748D /* FrontBaseViewController.swift in Sources */,
+				5E755D351ADCF65B00939CFC /* VideoInfoViewController.swift in Sources */,
 				5E15144B1AD8CE0200E5AF44 /* YTVideoWatchPlaylistHeaderViewController.swift in Sources */,
 				5E1514541AD8CE0200E5AF44 /* YTTabBarItemsViewController.swift in Sources */,
 				5E1514191AD8CDE200E5AF44 /* YTVideosCollectionViewController.swift in Sources */,

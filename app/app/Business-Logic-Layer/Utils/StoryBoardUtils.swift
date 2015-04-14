@@ -28,7 +28,7 @@ class StoryBoardUtils:NSObject {
         
         return storyboard
     }
-
+    
     // MARK : getReusedStoryBoard
     
     class func getChannelBannerViewController() -> ChannelBannerViewController {
@@ -91,11 +91,18 @@ class StoryBoardUtils:NSObject {
     
     
     
-//    class func getMovieEmbeddedFullscreenBarViewController() -> MovieEmbeddedFullscreenBarViewController {
-//        var viewController: MovieEmbeddedFullscreenBarViewController = getVideoWatchStoryboard().instantiateViewControllerWithIdentifier("MovieEmbeddedFullscreenBarViewController") as! MovieEmbeddedFullscreenBarViewController
-//        
-//        return viewController
-//    }
+    class func getVideoInfoViewController() -> VideoInfoViewController {
+        var viewController: VideoInfoViewController = getVideoWatchStoryboard().instantiateViewControllerWithIdentifier("VideoInfoViewController") as! VideoInfoViewController
+        
+        return viewController
+    }
+    
+    
+    //    class func getMovieEmbeddedFullscreenBarViewController() -> MovieEmbeddedFullscreenBarViewController {
+    //        var viewController: MovieEmbeddedFullscreenBarViewController = getVideoWatchStoryboard().instantiateViewControllerWithIdentifier("MovieEmbeddedFullscreenBarViewController") as! MovieEmbeddedFullscreenBarViewController
+    //
+    //        return viewController
+    //    }
     
     
     

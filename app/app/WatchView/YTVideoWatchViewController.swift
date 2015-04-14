@@ -11,6 +11,7 @@ import Cartography
 
 class YTVideoWatchViewController: UIViewController {
     
+    var group:Cartography.ConstraintGroup =  Cartography.ConstraintGroup()
     
     var videoID = ""
     
@@ -41,8 +42,6 @@ class YTVideoWatchViewController: UIViewController {
         } else {// portraight
             setupViewVerticalLayout()
         }
-
-
     }
     
     func setupViewVerticalLayout(){
