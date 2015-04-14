@@ -32,17 +32,17 @@ class YTVideoWatchViewController: UIViewController {
         self.view.addSubview(movieEmbeddedView!)
         self.addChildViewController(movieEmbeddedViewController!)
 
-         setupViewHorizontalLayout()
+//         setupViewHorizontalLayout()
     }
     
     override func viewDidLayoutSubviews() {
-//        if UIDevice.currentDevice().orientation.isLandscape.boolValue { //landscape
-//            setupViewHorizontalLayout()
-//        } else {// portraight
-//            setupViewVerticalLayout()
-//        }
-//        
-//        movieEmbeddedView?.setNeedsLayout()
+        if UIDevice.currentDevice().orientation.isLandscape.boolValue { //landscape
+            setupViewHorizontalLayout()
+        } else {// portraight
+            setupViewVerticalLayout()
+        }
+
+
     }
     
     func setupViewVerticalLayout(){
