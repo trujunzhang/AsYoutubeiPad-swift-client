@@ -22,7 +22,7 @@ class YTVideoWatchViewController: UIViewController {
     override func viewDidLoad() {
         
         // 1
-        movieEmbeddedViewController                    = StoryBoardUtils.getMovieEmbeddedViewController()
+        movieEmbeddedViewController    = StoryBoardUtils.getMovieEmbeddedViewController()
         movieEmbeddedViewController?.videoID = videoID
         
         movieEmbeddedView = movieEmbeddedViewController?.view

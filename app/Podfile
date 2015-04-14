@@ -11,6 +11,7 @@ def import_pods
     pod 'Regexer'
     pod 'Bolts'
 
+#    pod 'Nimbus'
 
 
     pod 'SDWebImage'
