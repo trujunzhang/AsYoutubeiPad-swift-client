@@ -23,12 +23,11 @@ class MovieEmbeddedViewController: UIViewController {
     
     // MARK : Life-Cycle
     override func viewDidLoad() {
+        super.viewDidLoad()
         
         YoutubeExtractor()
         
-        setupEmbeddedBars()
-        
-        
+        makeEmbeddedBars()
     }
     
     
@@ -39,6 +38,14 @@ class MovieEmbeddedViewController: UIViewController {
         layoutEmbeddedBar()
     }
     
+    func makeEmbeddedBars() {
+        // normal bar
+        normalBarViewController = StoryBoardUtils.getMovieEmbeddedNormalBarViewController()
+        
+        if let controller : UIViewController = normalBarViewController{
+            self.addChildViewController(controller)
+        }
+    }
     
     
     func playVideo(videoURL :NSURL)  {
@@ -46,7 +53,6 @@ class MovieEmbeddedViewController: UIViewController {
             viewController.setVideoURL(videoURL,videoID: videoID)
         }
     }
-    
     
     
     func YoutubeExtractor(){
@@ -61,7 +67,6 @@ class MovieEmbeddedViewController: UIViewController {
                 
                 // 2.1
                 self.playVideo(videoURL)
-                
             }
             
         })
@@ -70,14 +75,7 @@ class MovieEmbeddedViewController: UIViewController {
     override func viewDidLayoutSubviews() {
         
     }
-    
-    
-    
-    func setupEmbeddedBars() {
-        // normal bar
-        normalBarViewController = StoryBoardUtils.getMovieEmbeddedNormalBarViewController()
-        self.addChildViewController(normalBarViewController!)
-    }
+            
     
     func layoutEmbeddedBar(){
         normalBarRootView = normalBarViewController?.view
@@ -85,7 +83,7 @@ class MovieEmbeddedViewController: UIViewController {
         self.view.addSubview(normalBarRootView!)
         LayoutUtils.LayoutFullView(normalBarRootView!)
     }
-
+    
     
     
 }
