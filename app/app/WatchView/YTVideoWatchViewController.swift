@@ -44,11 +44,13 @@ class YTVideoWatchViewController: UIViewController {
             
             movieEmbeddedView?.backgroundColor = UIColor.yellowColor() // test
             
-            container.addSubview(movieEmbeddedView!)
+            if let view : UIView = movieEmbeddedView{
+                container.addSubview(view)
+            }            
         }
         
         if let controller : UIViewController = movieEmbeddedViewController{
-             self.addChildViewController(controller)
+            self.addChildViewController(controller)
         }
     }
     
