@@ -48,7 +48,7 @@ class YTVideoWatchViewController: UIViewController {
         }
         
         if let controller : UIViewController = movieEmbeddedViewController{
-             self.addChildViewController(controller!)
+             self.addChildViewController(controller)
         }
     }
     

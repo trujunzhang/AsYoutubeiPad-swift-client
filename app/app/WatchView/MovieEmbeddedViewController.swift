@@ -75,7 +75,7 @@ class MovieEmbeddedViewController: UIViewController {
     override func viewDidLayoutSubviews() {
         
     }
-            
+    
     
     func layoutEmbeddedBar(){
         normalBarRootView = normalBarViewController?.view
