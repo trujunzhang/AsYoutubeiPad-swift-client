@@ -76,6 +76,14 @@ class CartoWatchViewController : UIViewController {
             
             view2.top      == view1.bottom
             view2.width    == view1.width
+            
+            // _videoOtherContainer
+            view3.top       == view3.superview!.top
+            view3.trailing  == view2.superview!.trailing
+            view3.bottom    == view3.superview!.bottom
+            
+            view3.leading == view1.trailing
+            
         }
     }
     
