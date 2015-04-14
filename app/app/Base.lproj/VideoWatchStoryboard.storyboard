@@ -259,36 +259,6 @@ Cg
             </objects>
             <point key="canvasLocation" x="1036" y="2403"/>
         </scene>
-        <!--Video Watch Info View Controller-->
-        <scene sceneID="2a6-j1-c71">
-            <objects>
-                <viewController storyboardIdentifier="VideoWatchInfoViewController" id="bFU-2U-b1Q" customClass="VideoWatchInfoViewController" customModule="app" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="dJx-Xa-TjM"/>
-                        <viewControllerLayoutGuide type="bottom" id="NVX-Py-WCA"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="ORb-74-q8m">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="ZJt-nC-Dqc">
-                                <rect key="frame" x="290" y="290" width="20" height="20"/>
-                            </activityIndicatorView>
-                        </subviews>
-                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstAttribute="centerY" secondItem="ZJt-nC-Dqc" secondAttribute="centerY" id="j4y-Zx-QHU"/>
-                            <constraint firstAttribute="centerX" secondItem="ZJt-nC-Dqc" secondAttribute="centerX" id="s5K-RZ-vkb"/>
-                        </constraints>
-                    </view>
-                    <connections>
-                        <outlet property="loadingIndicator" destination="ZJt-nC-Dqc" id="OhZ-1B-3PU"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="WiC-mu-p0G" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1151" y="3513"/>
-        </scene>
         <!--Video Watch Playlist View Controller-->
         <scene sceneID="sY5-hL-4ML">
             <objects>
