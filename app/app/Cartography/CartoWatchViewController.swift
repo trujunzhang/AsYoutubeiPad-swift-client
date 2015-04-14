@@ -10,6 +10,14 @@ import Foundation
 
 class CartoWatchViewController : UIViewController {
     
+    @IBOutlet weak var moviePlayContainer: UIView!
+   
+    @IBOutlet weak var videoInfoContainer: UIView!
+    
+    @IBOutlet weak var videoOtherContainer: UIView!
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
