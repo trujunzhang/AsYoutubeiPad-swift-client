@@ -7,7 +7,7 @@
 //
 
 import Foundation
-
+import Cartography
 
 class MovieEmbeddedViewController: UIViewController {
     
@@ -19,6 +19,8 @@ class MovieEmbeddedViewController: UIViewController {
     var normalBarViewController : MovieEmbeddedNormalBarViewController?
     var normalBarRootView : UIView?
     
+    var group:Cartography.ConstraintGroup?
+    
     // MARK : Life-Cycle
     override func viewDidLoad() {
         
@@ -26,13 +28,15 @@ class MovieEmbeddedViewController: UIViewController {
         
         setupEmbeddedBars()
         
-        layoutEmbeddedBar()
+        
     }
     
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
         
+        LayoutUtils.LayoutFullView(self.view)
+        layoutEmbeddedBar()
     }
     
     
@@ -43,7 +47,7 @@ class MovieEmbeddedViewController: UIViewController {
         }
     }
     
-
+    
     
     func YoutubeExtractor(){
         YouTubeExtractorUtils.YoutubeExtractor(videoID, completeHandler: { (object, sucess) -> Void in
@@ -80,14 +84,8 @@ class MovieEmbeddedViewController: UIViewController {
         
         self.view.addSubview(normalBarRootView!)
         LayoutUtils.LayoutFullView(normalBarRootView!)
-        
     }
-    
-    
-    // MARK : protocol for ALMoviePlayerControllerDelegate
-    func moviePlayerWillMoveFromWindow(){
-        
-    }
+
     
     
 }

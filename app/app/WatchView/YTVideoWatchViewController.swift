@@ -30,19 +30,26 @@ class YTVideoWatchViewController: UIViewController {
         makeAllContainers()
         
         
+        makeMovieEmbeddedViewController()
         
-        // 1
-        //        movieEmbeddedViewController    = StoryBoardUtils.getMovieEmbeddedViewController()
-        //        movieEmbeddedViewController?.videoID = videoID
-        //
-        //        movieEmbeddedView = movieEmbeddedViewController?.view
-        //
-        //        movieEmbeddedView?.backgroundColor = UIColor.redColor() // test
         
-        //        self.view.addSubview(movieEmbeddedView!)
-        //        self.addChildViewController(movieEmbeddedViewController!)
+    }
+    
+    func makeMovieEmbeddedViewController(){
+        if let container : UIView = _moviePlayContainer{
+            movieEmbeddedViewController    = StoryBoardUtils.getMovieEmbeddedViewController()
+            movieEmbeddedViewController?.videoID = videoID
+            
+            movieEmbeddedView = movieEmbeddedViewController?.view
+            
+            movieEmbeddedView?.backgroundColor = UIColor.yellowColor() // test
+            
+            container.addSubview(movieEmbeddedView!)
+        }
         
-        //         setupViewHorizontalLayout()
+        if let controller : UIViewController = movieEmbeddedViewController{
+             self.addChildViewController(movieEmbeddedViewController!)
+        }
     }
     
     func makeAllContainers(){
