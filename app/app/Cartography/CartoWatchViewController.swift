@@ -45,12 +45,12 @@ class CartoWatchViewController : UIViewController {
             setupViewVerticalLayout()
         }
         
-//        setupViewHorizontalLayout()
+        //        setupViewHorizontalLayout()
     }
     
     func setupViewVerticalLayout(){
         
-      group =   constrain(_moviePlayContainer!,_videoInfoContainer!,_videoOtherContainer!, replace: group) { view1,view2,view3 in
+        group = constrain(_moviePlayContainer!,_videoInfoContainer!,_videoOtherContainer!, replace: group) { view1,view2,view3 in
             view1.leading == view1.superview!.leading
             view1.top == view1.superview!.top
             
@@ -62,16 +62,23 @@ class CartoWatchViewController : UIViewController {
     
     func setupViewHorizontalLayout(){
         
-      group =   constrain(_moviePlayContainer!,_videoInfoContainer!,_videoOtherContainer!, replace: group) { view1,view2,view3 in
+        group = constrain(_moviePlayContainer!,_videoInfoContainer!,_videoOtherContainer!, replace: group) { view1,view2,view3 in
+            // _moviePlayContainer
             view1.leading == view1.superview!.leading
-            view1.top == view1.superview!.top
+            view1.top     == view1.superview!.top
             
+            view1.width   == (view1.superview!.width/3)*2
+            view1.height  == (view1.width * 324) / 576
             
-            view1.width   == 576
-            view1.height  == 324
+            // _videoInfoContainer
+            view2.leading  == view2.superview!.leading
+            view2.bottom   == view2.superview!.bottom
+            
+            view2.top      == view1.bottom
+            view2.width    == view1.width
         }
     }
     
-
+    
     
 }
