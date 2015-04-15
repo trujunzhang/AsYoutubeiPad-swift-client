@@ -37,7 +37,7 @@ class CartoVideoInfoViewController: UIViewController {
         //        myscr!.frame = CGRectMake(0,0,300,300)
         //        myscr!.contentSize = CGSizeMake(300,300)
         myscr!.scrollEnabled = true
-        myscr!.backgroundColor = UIColor.whiteColor()
+        myscr!.backgroundColor = UIColor.blueColor()
         
         if let subView : UIScrollView = myscr{
             videoInfoContainer.addSubview(subView)
@@ -62,7 +62,8 @@ class CartoVideoInfoViewController: UIViewController {
     
     override func viewDidLayoutSubviews() {
         if let subView : UIScrollView = myscr{
-            subView.contentSize = videoInfoRootView!.frame.size
+            subView.contentSize = CGSizeMake(videoInfoRootView!.frame.size.width,300)
+//                videoInfoRootView!.frame.size
         }
     }
     
