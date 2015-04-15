@@ -266,10 +266,10 @@ Cg
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstItem="J9Y-GU-aZM" firstAttribute="top" secondItem="YjW-kN-FEm" secondAttribute="top" id="00g-kf-fuZ"/>
-                                    <constraint firstAttribute="centerX" secondItem="J9Y-GU-aZM" secondAttribute="centerX" id="cca-Fb-9op"/>
-                                    <constraint firstAttribute="centerY" secondItem="J9Y-GU-aZM" secondAttribute="centerY" id="drp-Zf-czj"/>
-                                    <constraint firstItem="J9Y-GU-aZM" firstAttribute="leading" secondItem="YjW-kN-FEm" secondAttribute="leading" id="obb-aa-mdv"/>
+                                    <constraint firstItem="J9Y-GU-aZM" firstAttribute="top" secondItem="YjW-kN-FEm" secondAttribute="top" id="6Lz-o1-iqo"/>
+                                    <constraint firstAttribute="bottom" secondItem="J9Y-GU-aZM" secondAttribute="bottom" id="7ZE-qS-n9P"/>
+                                    <constraint firstItem="J9Y-GU-aZM" firstAttribute="leading" secondItem="YjW-kN-FEm" secondAttribute="leading" id="EiQ-S8-VG1"/>
+                                    <constraint firstAttribute="trailing" secondItem="J9Y-GU-aZM" secondAttribute="trailing" id="eiH-Zc-GeE"/>
                                 </constraints>
                             </view>
                         </subviews>
