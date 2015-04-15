@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7531" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7520"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Video Watch Side View Controller-->
@@ -235,11 +236,11 @@ Cg
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="IHA-s5-Ps5" userLabel="Content View">
-                                <rect key="frame" x="12" y="30" width="576" height="540"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IHA-s5-Ps5" userLabel="Content View">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jVe-gv-viM" userLabel="topContainer">
-                                        <rect key="frame" x="0.0" y="0.0" width="536" height="59"/>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jVe-gv-viM" userLabel="topContainer">
+                                        <rect key="frame" x="0.0" y="0.0" width="600" height="59"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="WebStorm 10 - New features" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CdY-eu-XvG">
                                                 <rect key="frame" x="22" y="16" width="501" height="21"/>
@@ -255,30 +256,68 @@ Cg
                                             </label>
                                         </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="59" id="dw9-hB-yGP"/>
+                                        </constraints>
                                     </view>
-                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Shs-Sc-5ea" userLabel="Top Divide">
-                                        <rect key="frame" x="0.0" y="59" width="536" height="1"/>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Shs-Sc-5ea" userLabel="Top Divide">
+                                        <rect key="frame" x="0.0" y="59" width="600" height="1"/>
                                         <color key="backgroundColor" red="0.85882352939999995" green="0.85882352939999995" blue="0.85882352939999995" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="1" id="hwZ-CA-gtU"/>
+                                        </constraints>
                                     </view>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aeh-V9-kQm" userLabel="Description Label">
-                                        <rect key="frame" x="20" y="82" width="452" height="361"/>
+                                        <rect key="frame" x="0.0" y="60" width="600" height="361"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="XV4-Gl-9JR" userLabel="Bottom Divide">
-                                        <rect key="frame" x="0.0" y="479" width="536" height="1"/>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XV4-Gl-9JR" userLabel="Bottom Divide">
+                                        <rect key="frame" x="0.0" y="540" width="600" height="1"/>
                                         <color key="backgroundColor" red="0.85882352941176465" green="0.85882352941176465" blue="0.85882352941176465" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="1" id="j6L-Tt-DNu"/>
+                                        </constraints>
                                     </view>
-                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Sdm-aF-XwF" userLabel="bottomContainer">
-                                        <rect key="frame" x="0.0" y="480" width="536" height="60"/>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Sdm-aF-XwF" userLabel="bottomContainer">
+                                        <rect key="frame" x="0.0" y="541" width="600" height="59"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="59" id="HKV-y1-ibD"/>
+                                        </constraints>
                                     </view>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="Sdm-aF-XwF" secondAttribute="bottom" id="0t9-kL-hmT"/>
+                                    <constraint firstItem="Shs-Sc-5ea" firstAttribute="leading" secondItem="IHA-s5-Ps5" secondAttribute="leading" id="1mH-Vr-lkv"/>
+                                    <constraint firstAttribute="trailing" secondItem="Shs-Sc-5ea" secondAttribute="trailing" id="Jxt-Kp-KXN"/>
+                                    <constraint firstItem="Shs-Sc-5ea" firstAttribute="top" secondItem="jVe-gv-viM" secondAttribute="bottom" id="Mix-BU-Fck"/>
+                                    <constraint firstAttribute="trailing" secondItem="jVe-gv-viM" secondAttribute="trailing" id="PA4-4y-SMB"/>
+                                    <constraint firstItem="XV4-Gl-9JR" firstAttribute="leading" secondItem="IHA-s5-Ps5" secondAttribute="leading" id="WnT-Ty-rHu"/>
+                                    <constraint firstItem="jVe-gv-viM" firstAttribute="top" secondItem="IHA-s5-Ps5" secondAttribute="top" id="ZtK-yS-DOI"/>
+                                    <constraint firstAttribute="trailing" secondItem="Sdm-aF-XwF" secondAttribute="trailing" id="cY5-hi-ayv"/>
+                                    <constraint firstItem="jVe-gv-viM" firstAttribute="leading" secondItem="IHA-s5-Ps5" secondAttribute="leading" id="cYv-c0-Sox"/>
+                                    <constraint firstItem="Sdm-aF-XwF" firstAttribute="top" secondItem="XV4-Gl-9JR" secondAttribute="bottom" id="h6k-Yo-Q3F"/>
+                                    <constraint firstItem="Sdm-aF-XwF" firstAttribute="leading" secondItem="IHA-s5-Ps5" secondAttribute="leading" id="nzd-cC-wym"/>
+                                    <constraint firstAttribute="trailing" secondItem="XV4-Gl-9JR" secondAttribute="trailing" id="zz8-js-YrB"/>
+                                </constraints>
                             </view>
                         </subviews>
                         <color key="backgroundColor" red="0.93333333333333335" green="0.93333333333333335" blue="0.93333333333333335" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="IHA-s5-Ps5" firstAttribute="leading" secondItem="eyp-Dj-2jW" secondAttribute="leadingMargin" constant="-16" id="LEb-JZ-ajV"/>
+                            <constraint firstItem="kwS-W3-YNl" firstAttribute="top" secondItem="IHA-s5-Ps5" secondAttribute="bottom" id="WfU-86-NIA"/>
+                            <constraint firstItem="IHA-s5-Ps5" firstAttribute="top" secondItem="vpF-YX-VYP" secondAttribute="bottom" constant="-20" id="ZXK-JS-80z"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="IHA-s5-Ps5" secondAttribute="trailing" constant="-16" id="pTf-Ua-YqO"/>
+                            <constraint firstItem="IHA-s5-Ps5" firstAttribute="top" secondItem="vpF-YX-VYP" secondAttribute="bottom" constant="-20" id="zP5-iX-rKE"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="ZXK-JS-80z"/>
+                            </mask>
+                        </variation>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="g3Q-pW-H0a" userLabel="First Responder" sceneMemberID="firstResponder"/>
