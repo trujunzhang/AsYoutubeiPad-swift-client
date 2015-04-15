@@ -238,10 +238,22 @@ Cg
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YjW-kN-FEm">
                                 <rect key="frame" x="32" y="40" width="536" height="540"/>
-                                <color key="backgroundColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <subviews>
+                                    <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="J9Y-GU-aZM">
+                                        <rect key="frame" x="0.0" y="0.0" width="536" height="540"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                    </scrollView>
+                                </subviews>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstItem="J9Y-GU-aZM" firstAttribute="top" secondItem="YjW-kN-FEm" secondAttribute="top" id="00g-kf-fuZ"/>
+                                    <constraint firstAttribute="centerX" secondItem="J9Y-GU-aZM" secondAttribute="centerX" id="cca-Fb-9op"/>
+                                    <constraint firstAttribute="centerY" secondItem="J9Y-GU-aZM" secondAttribute="centerY" id="drp-Zf-czj"/>
+                                    <constraint firstItem="J9Y-GU-aZM" firstAttribute="leading" secondItem="YjW-kN-FEm" secondAttribute="leading" id="obb-aa-mdv"/>
+                                </constraints>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.93333333333333335" green="0.93333333333333335" blue="0.93333333333333335" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstAttribute="trailingMargin" secondItem="YjW-kN-FEm" secondAttribute="trailing" constant="16" id="7BE-08-TFj"/>
                             <constraint firstItem="YjW-kN-FEm" firstAttribute="top" secondItem="vpF-YX-VYP" secondAttribute="bottom" constant="20" id="DBD-CT-4St"/>
