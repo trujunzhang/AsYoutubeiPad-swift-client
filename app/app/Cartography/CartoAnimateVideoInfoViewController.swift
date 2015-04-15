@@ -9,7 +9,24 @@
 import Foundation
 
 class CartoAnimateVideoInfoViewController: UIViewController {
+    var videoInfoViewController:YTVideoWatchInfoViewController?
     
+    override func viewDidLoad() {
+        
+        videoInfoViewController = StoryBoardUtils.getYTVideoWatchInfoViewController()
+        
+        if let controller : UIViewController = videoInfoViewController{
+            self.addChildViewController(controller)
+            
+        }
+    }
     
+    override func viewDidAppear(animated: Bool) {
+        if let controller : UIViewController = videoInfoViewController{
+            self.view.addSubview(controller.view!)
+            LayoutUtils.LayoutFullView(controller.view!)
+        }
+        
+    }
     
 }
