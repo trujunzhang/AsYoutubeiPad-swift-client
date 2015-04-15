@@ -267,8 +267,8 @@ Cg
                                             <constraint firstAttribute="height" constant="1" id="hwZ-CA-gtU"/>
                                         </constraints>
                                     </view>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aeh-V9-kQm" userLabel="Description Label">
-                                        <rect key="frame" x="0.0" y="60" width="600" height="361"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aeh-V9-kQm" userLabel="Description Label">
+                                        <rect key="frame" x="0.0" y="60" width="600" height="480"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
@@ -292,15 +292,19 @@ Cg
                                 <constraints>
                                     <constraint firstAttribute="bottom" secondItem="Sdm-aF-XwF" secondAttribute="bottom" id="0t9-kL-hmT"/>
                                     <constraint firstItem="Shs-Sc-5ea" firstAttribute="leading" secondItem="IHA-s5-Ps5" secondAttribute="leading" id="1mH-Vr-lkv"/>
+                                    <constraint firstItem="aeh-V9-kQm" firstAttribute="top" secondItem="Shs-Sc-5ea" secondAttribute="bottom" id="3pa-xg-YUZ"/>
                                     <constraint firstAttribute="trailing" secondItem="Shs-Sc-5ea" secondAttribute="trailing" id="Jxt-Kp-KXN"/>
                                     <constraint firstItem="Shs-Sc-5ea" firstAttribute="top" secondItem="jVe-gv-viM" secondAttribute="bottom" id="Mix-BU-Fck"/>
                                     <constraint firstAttribute="trailing" secondItem="jVe-gv-viM" secondAttribute="trailing" id="PA4-4y-SMB"/>
+                                    <constraint firstItem="XV4-Gl-9JR" firstAttribute="top" secondItem="aeh-V9-kQm" secondAttribute="bottom" id="Qgg-IK-HCp"/>
                                     <constraint firstItem="XV4-Gl-9JR" firstAttribute="leading" secondItem="IHA-s5-Ps5" secondAttribute="leading" id="WnT-Ty-rHu"/>
                                     <constraint firstItem="jVe-gv-viM" firstAttribute="top" secondItem="IHA-s5-Ps5" secondAttribute="top" id="ZtK-yS-DOI"/>
                                     <constraint firstAttribute="trailing" secondItem="Sdm-aF-XwF" secondAttribute="trailing" id="cY5-hi-ayv"/>
                                     <constraint firstItem="jVe-gv-viM" firstAttribute="leading" secondItem="IHA-s5-Ps5" secondAttribute="leading" id="cYv-c0-Sox"/>
                                     <constraint firstItem="Sdm-aF-XwF" firstAttribute="top" secondItem="XV4-Gl-9JR" secondAttribute="bottom" id="h6k-Yo-Q3F"/>
                                     <constraint firstItem="Sdm-aF-XwF" firstAttribute="leading" secondItem="IHA-s5-Ps5" secondAttribute="leading" id="nzd-cC-wym"/>
+                                    <constraint firstItem="aeh-V9-kQm" firstAttribute="leading" secondItem="IHA-s5-Ps5" secondAttribute="leading" id="pfd-h0-Iay"/>
+                                    <constraint firstAttribute="trailing" secondItem="aeh-V9-kQm" secondAttribute="trailing" id="tfE-Qt-dC7"/>
                                     <constraint firstAttribute="trailing" secondItem="XV4-Gl-9JR" secondAttribute="trailing" id="zz8-js-YrB"/>
                                 </constraints>
                             </view>
