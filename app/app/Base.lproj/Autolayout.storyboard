@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7531" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="1Xm-Xb-5Zt">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7531" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="c4a-el-66g">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7520"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
@@ -133,35 +134,16 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wa4-UK-Fch">
-                                <rect key="frame" x="16" y="119" width="568" height="20"/>
-                                <color key="backgroundColor" red="1" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <attributedString key="attributedText">
-                                    <fragment>
-                                        <string key="content">A query string to be set as! or appended to any existing URL query for `GET`, `HEAD`, and `DELETE` requests, or set as! the body for requests with any other HTTP method. The `Content-Type` HTTP header field of an encoded request with HTTP </string>
-                                        <attributes>
-                                            <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                            <font key="NSFont" size="17" name="HelveticaNeue"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
-                                        </attributes>
-                                    </fragment>
-                                </attributedString>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <visualEffectView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DdI-JF-WXE">
-                                <rect key="frame" x="52" y="368" width="142" height="90"/>
-                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="lmk-ke-NFh">
-                                    <rect key="frame" x="0.0" y="0.0" width="142" height="90"/>
-                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                </view>
-                                <blurEffect style="light"/>
-                            </visualEffectView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="player_details_shadow_2x.png" translatesAutoresizingMaskIntoConstraints="NO" id="AMl-an-gos">
+                                <rect key="frame" x="32" y="40" width="536" height="540"/>
+                            </imageView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.8784313725490196" green="0.8784313725490196" blue="0.8784313725490196" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="wa4-UK-Fch" firstAttribute="leading" secondItem="dnb-ue-Rab" secondAttribute="leading" constant="16" id="Hfb-yW-L3T"/>
-                            <constraint firstItem="wa4-UK-Fch" firstAttribute="top" secondItem="dnb-ue-Rab" secondAttribute="top" constant="119" id="aA7-P0-CVp"/>
-                            <constraint firstAttribute="trailing" secondItem="wa4-UK-Fch" secondAttribute="trailing" constant="16" id="b3F-dT-qnQ"/>
+                            <constraint firstItem="AMl-an-gos" firstAttribute="leading" secondItem="dnb-ue-Rab" secondAttribute="leadingMargin" constant="16" id="5I6-0K-ueH"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="AMl-an-gos" secondAttribute="trailing" constant="16" id="7rC-Th-83r"/>
+                            <constraint firstItem="k3x-se-Hl4" firstAttribute="top" secondItem="AMl-an-gos" secondAttribute="bottom" constant="20" id="Eck-vL-oYG"/>
+                            <constraint firstItem="AMl-an-gos" firstAttribute="top" secondItem="QPj-zP-NaF" secondAttribute="bottom" constant="20" id="e7S-p1-brP"/>
                         </constraints>
                     </view>
                 </viewController>
@@ -172,5 +154,6 @@
     </scenes>
     <resources>
         <image name="container_background.png" width="320" height="568"/>
+        <image name="player_details_shadow_2x.png" width="1" height="4"/>
     </resources>
 </document>

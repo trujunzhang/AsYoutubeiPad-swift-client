@@ -11,7 +11,7 @@ def import_pods
     pod 'Regexer'
     pod 'Bolts'
 
-#    pod 'Nimbus'
+#   pod 'Nimbus'
 
 
     pod 'SDWebImage'
@@ -35,6 +35,10 @@ def import_pods
   # ________________project library___________________
   pod "App_Module_Resources", :path => "../modules/App_Module_Resources"
   pod "YouTubeAPI3-Objective-C-wrapper", :path => "../modules/YouTubeAPI3-Objective-C-wrapper"
+  pod "Nimbus", :path => "../dependencies/Nimbus"
+
+  
+  
 
   #pod "WPMoviePlayerController", :path => "../dependencies/WPMoviePlayerController"
 
