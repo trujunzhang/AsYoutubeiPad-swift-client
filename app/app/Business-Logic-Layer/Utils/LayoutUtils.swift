@@ -32,7 +32,7 @@ class LayoutUtils : NSObject {
             
             view1.width   == view1.superview!.width
             
-            view1.height  == 180
+//            view1.height  == 180
         }
     }
     
