@@ -14,13 +14,18 @@ class YTVideoWatchInfoViewController: UIViewController {
 
     
     @IBOutlet weak var contentView: UIView!
-    
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
       
     }
+    
+    
+    @IBAction func onClickExpand(sender: AnyObject) {
+    }
+    
+    
     
 
     

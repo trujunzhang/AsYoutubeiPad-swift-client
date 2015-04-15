@@ -237,15 +237,15 @@ Cg
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IHA-s5-Ps5" userLabel="Content View">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <rect key="frame" x="0.0" y="-20" width="600" height="620"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jVe-gv-viM" userLabel="topContainer">
                                         <rect key="frame" x="0.0" y="0.0" width="600" height="59"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="WebStorm 10 - New features" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CdY-eu-XvG">
-                                                <rect key="frame" x="22" y="16" width="556" height="21"/>
+                                                <rect key="frame" x="22" y="20" width="556" height="18"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="21" id="Qek-0n-Nvd"/>
+                                                    <constraint firstAttribute="height" constant="18" id="Qek-0n-Nvd"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
@@ -260,22 +260,28 @@ Cg
                                                 <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="expand_guide.png" highlightedImage="collapse_guide.png" translatesAutoresizingMaskIntoConstraints="NO" id="ZfX-TD-nGk">
-                                                <rect key="frame" x="545" y="8" width="39" height="39"/>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JIP-Ug-Gxj">
+                                                <rect key="frame" x="545" y="16" width="39" height="39"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="39" id="9K1-f1-kil"/>
-                                                    <constraint firstAttribute="width" constant="39" id="UwF-Ym-sBn"/>
+                                                    <constraint firstAttribute="width" constant="39" id="7G6-An-Jn8"/>
+                                                    <constraint firstAttribute="height" constant="39" id="DTc-6a-c00"/>
                                                 </constraints>
-                                            </imageView>
+                                                <state key="normal" image="expand_guide.png">
+                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="onClickExpand:" destination="g9e-mD-rzC" eventType="touchUpInside" id="4Q9-3r-0KR"/>
+                                                </connections>
+                                            </button>
                                         </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <constraints>
-                                            <constraint firstAttribute="trailing" secondItem="ZfX-TD-nGk" secondAttribute="trailing" constant="16" id="85O-tq-Osy"/>
-                                            <constraint firstItem="ZfX-TD-nGk" firstAttribute="top" secondItem="jVe-gv-viM" secondAttribute="top" constant="8" id="BC5-0k-ua6"/>
                                             <constraint firstAttribute="trailing" secondItem="CdY-eu-XvG" secondAttribute="trailing" constant="22" id="NTI-xE-qs0"/>
                                             <constraint firstAttribute="height" constant="59" id="dw9-hB-yGP"/>
                                             <constraint firstItem="CdY-eu-XvG" firstAttribute="leading" secondItem="jVe-gv-viM" secondAttribute="leading" constant="22" id="eZr-Ry-coM"/>
-                                            <constraint firstItem="CdY-eu-XvG" firstAttribute="top" secondItem="jVe-gv-viM" secondAttribute="top" constant="16" id="fnA-eb-Jmo"/>
+                                            <constraint firstAttribute="trailing" secondItem="JIP-Ug-Gxj" secondAttribute="trailing" constant="16" id="f2c-cd-t2O"/>
+                                            <constraint firstItem="CdY-eu-XvG" firstAttribute="top" secondItem="jVe-gv-viM" secondAttribute="top" constant="20" id="fnA-eb-Jmo"/>
+                                            <constraint firstItem="JIP-Ug-Gxj" firstAttribute="top" secondItem="jVe-gv-viM" secondAttribute="top" constant="16" id="hU5-ox-ONK"/>
                                             <constraint firstItem="uve-to-7wM" firstAttribute="leading" secondItem="jVe-gv-viM" secondAttribute="leading" constant="22" id="lbI-II-ahe"/>
                                             <constraint firstAttribute="trailing" secondItem="uve-to-7wM" secondAttribute="trailing" constant="22" id="r4K-YO-939"/>
                                             <constraint firstAttribute="bottom" secondItem="uve-to-7wM" secondAttribute="bottom" constant="4" id="z2x-la-OvK"/>
@@ -289,7 +295,7 @@ Cg
                                         </constraints>
                                     </view>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aeh-V9-kQm" userLabel="Description Label">
-                                        <rect key="frame" x="40" y="80" width="520" height="440"/>
+                                        <rect key="frame" x="40" y="80" width="520" height="460"/>
                                         <attributedString key="attributedText">
                                             <fragment>
                                                 <string key="content">Trisha Gee, JetBrains Developer Advocate talks about new features in WebStorm 10. 
@@ -307,14 +313,14 @@ When you want to align multiple elements, say three button in one vertical line,
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XV4-Gl-9JR" userLabel="Bottom Divide">
-                                        <rect key="frame" x="14" y="540" width="572" height="1"/>
+                                        <rect key="frame" x="14" y="560" width="572" height="1"/>
                                         <color key="backgroundColor" red="0.85882352941176465" green="0.85882352941176465" blue="0.85882352941176465" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="1" id="j6L-Tt-DNu"/>
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Sdm-aF-XwF" userLabel="bottomContainer">
-                                        <rect key="frame" x="0.0" y="541" width="600" height="59"/>
+                                        <rect key="frame" x="0.0" y="561" width="600" height="59"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="like.png" highlightedImage="like_selected.png" translatesAutoresizingMaskIntoConstraints="NO" id="ob8-Ov-TEq">
                                                 <rect key="frame" x="16" y="19" width="22" height="22"/>
@@ -378,6 +384,8 @@ When you want to align multiple elements, say three button in one vertical line,
                     </view>
                     <nil key="simulatedStatusBarMetrics"/>
                     <nil key="simulatedTopBarMetrics"/>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="600" height="600"/>
                     <connections>
                         <outlet property="contentView" destination="IHA-s5-Ps5" id="xJE-Ew-lhN"/>
                     </connections>
@@ -443,7 +451,6 @@ When you want to align multiple elements, say three button in one vertical line,
     </scenes>
     <resources>
         <image name="cc.png" width="24" height="22"/>
-        <image name="collapse_guide.png" width="39" height="39"/>
         <image name="dislike.png" width="32" height="32"/>
         <image name="dislike_selected.png" width="32" height="32"/>
         <image name="expand_guide.png" width="39" height="39"/>
