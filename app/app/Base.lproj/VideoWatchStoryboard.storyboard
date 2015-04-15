@@ -2,7 +2,6 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7531" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7520"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Video Watch Side View Controller-->
@@ -236,36 +235,26 @@ Cg
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IHA-s5-Ps5" userLabel="Content View">
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="IHA-s5-Ps5" userLabel="Content View">
                                 <rect key="frame" x="32" y="36" width="536" height="548"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jVe-gv-viM" userLabel="topContainer">
-                                        <rect key="frame" x="0.0" y="0.0" width="536" height="60"/>
+                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jVe-gv-viM" userLabel="topContainer">
+                                        <rect key="frame" x="0.0" y="-20" width="536" height="60"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="WebStorm 10 - New features" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CdY-eu-XvG">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="WebStorm 10 - New features" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CdY-eu-XvG">
                                                 <rect key="frame" x="22" y="20" width="492" height="18"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="18" id="Qek-0n-Nvd"/>
-                                                </constraints>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2,222 views" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uve-to-7wM">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="2,222 views" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uve-to-7wM">
                                                 <rect key="frame" x="22" y="35" width="492" height="21"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="21" id="2zF-bZ-cyy"/>
-                                                </constraints>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JIP-Ug-Gxj">
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JIP-Ug-Gxj">
                                                 <rect key="frame" x="481" y="16" width="39" height="39"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" constant="39" id="7G6-An-Jn8"/>
-                                                    <constraint firstAttribute="height" constant="39" id="DTc-6a-c00"/>
-                                                </constraints>
                                                 <state key="normal" image="expand_guide.png">
                                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
@@ -275,109 +264,40 @@ Cg
                                             </button>
                                         </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                        <constraints>
-                                            <constraint firstAttribute="trailing" secondItem="CdY-eu-XvG" secondAttribute="trailing" constant="22" id="NTI-xE-qs0"/>
-                                            <constraint firstAttribute="height" constant="60" id="dw9-hB-yGP"/>
-                                            <constraint firstItem="CdY-eu-XvG" firstAttribute="leading" secondItem="jVe-gv-viM" secondAttribute="leading" constant="22" id="eZr-Ry-coM"/>
-                                            <constraint firstAttribute="trailing" secondItem="JIP-Ug-Gxj" secondAttribute="trailing" constant="16" id="f2c-cd-t2O"/>
-                                            <constraint firstItem="CdY-eu-XvG" firstAttribute="top" secondItem="jVe-gv-viM" secondAttribute="top" constant="20" id="fnA-eb-Jmo"/>
-                                            <constraint firstItem="JIP-Ug-Gxj" firstAttribute="top" secondItem="jVe-gv-viM" secondAttribute="top" constant="16" id="hU5-ox-ONK"/>
-                                            <constraint firstItem="uve-to-7wM" firstAttribute="leading" secondItem="jVe-gv-viM" secondAttribute="leading" constant="22" id="lbI-II-ahe"/>
-                                            <constraint firstAttribute="trailing" secondItem="uve-to-7wM" secondAttribute="trailing" constant="22" id="r4K-YO-939"/>
-                                            <constraint firstAttribute="bottom" secondItem="uve-to-7wM" secondAttribute="bottom" constant="4" id="z2x-la-OvK"/>
-                                        </constraints>
                                     </view>
-                                    <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aeh-V9-kQm" userLabel="Description Label">
-                                        <rect key="frame" x="21" y="60" width="501" height="428"/>
-                                        <attributedString key="attributedText">
-                                            <fragment>
-                                                <mutableString key="content">Trisha Gee, JetBrains Developer Advocate talks about new features in WebStorm 10. 
-
-I don't know why it works and how Xcode detect which constraint is more prioritised (because I'm not set priority for these constraints explicity), but I'll be thankful if someone explain, why it works.
-
-When you want to align multiple elements, say three button in one vertical line, you'll have to set the above said additional constraints to the bottom most element. (example included)
-
-
-I've got a scrollview and inside it, an imageview in storyboard. I have iboutlets to the file this code is in with references to those views. They are called scrollView and graph respectively. I am trying to programmatically add a lot of UILabels below the graph inside the scrollview, but I can't even get one to show up.
-
-The width constraint I added doesn't cause any problems, but the other three constraints get runtime errors saying The view hierarchy is not prepared for the constraint. I want to constrain the top of the label to the bottom of the graph, the left of the label to the left of the scrollview, and the bottom of the label to the bottom of the scrollview. What am I doing wrong?
-
-I see different examples where constraints are set. Some set them in viewDidLoad / loadView (after the subview was added). Others set them in the method updateViewConstraints, which gets called by viewDidAppear.
-
-When I try setting constraints in updateViewContraints there can be a jumpiness to the layout, e.g. slight delay before the view appears. Also, if I use this method, should I clear out existing constraints first i.e. [self.view [removeConstraints:self.view.constraints]?
-
-Both -updateConstraints and -updateViewConstraints may be called multiple times during a view's lifetime. (Calling setNeedsUpdateConstraints on a view will trigger this to happen, for example.) As a result, you need to make sure to prevent creating and activating duplicate constraints -- either using a BOOL to only perform certain constraint setup only once, or by making sure to deactivate/remove existing constraints before creating &amp; activating new ones.</mutableString>
-                                                <attributes>
-                                                    <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <font key="NSFont" size="17" name="HelveticaNeue"/>
-                                                    <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
-                                                </attributes>
-                                            </fragment>
-                                        </attributedString>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XV4-Gl-9JR" userLabel="Bottom Divide">
+                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Te7-2m-atw" userLabel="Empty">
+                                        <rect key="frame" x="0.0" y="478" width="536" height="10"/>
+                                        <color key="backgroundColor" red="1" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    </view>
+                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="XV4-Gl-9JR" userLabel="Bottom Divide">
                                         <rect key="frame" x="14" y="488" width="508" height="1"/>
                                         <color key="backgroundColor" red="0.85882352941176465" green="0.85882352941176465" blue="0.85882352941176465" alpha="1" colorSpace="calibratedRGB"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="1" id="j6L-Tt-DNu"/>
-                                        </constraints>
                                     </view>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Sdm-aF-XwF" userLabel="bottomContainer">
+                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Sdm-aF-XwF" userLabel="bottomContainer">
                                         <rect key="frame" x="0.0" y="489" width="536" height="59"/>
                                         <subviews>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="like.png" highlightedImage="like_selected.png" translatesAutoresizingMaskIntoConstraints="NO" id="ob8-Ov-TEq">
-                                                <rect key="frame" x="16" y="19" width="22" height="22"/>
-                                            </imageView>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="114" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pc8-dO-yZf">
-                                                <rect key="frame" x="46" y="19" width="42" height="21"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="dislike.png" highlightedImage="dislike_selected.png" translatesAutoresizingMaskIntoConstraints="NO" id="eLq-I0-qVe">
-                                                <rect key="frame" x="93" y="19" width="22" height="22"/>
-                                            </imageView>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="4" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B2R-zf-D4A">
-                                                <rect key="frame" x="123" y="19" width="42" height="21"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yqw-TT-j5H">
+                                                <rect key="frame" x="34" y="14" width="65" height="28"/>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
+                                                <state key="normal" title="114" image="like.png">
+                                                    <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fnD-n7-d8c">
+                                                <rect key="frame" x="101" y="16" width="65" height="28"/>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
+                                                <state key="normal" title="4" image="dislike.png">
+                                                    <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                            </button>
                                         </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="59" id="HKV-y1-ibD"/>
-                                        </constraints>
                                     </view>
                                 </subviews>
                                 <color key="backgroundColor" red="1" green="0.99997437000274658" blue="0.99999129772186279" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="bottom" secondItem="Sdm-aF-XwF" secondAttribute="bottom" id="0t9-kL-hmT"/>
-                                    <constraint firstAttribute="trailing" secondItem="jVe-gv-viM" secondAttribute="trailing" id="PA4-4y-SMB"/>
-                                    <constraint firstItem="XV4-Gl-9JR" firstAttribute="leading" secondItem="IHA-s5-Ps5" secondAttribute="leading" constant="14" id="WnT-Ty-rHu"/>
-                                    <constraint firstItem="jVe-gv-viM" firstAttribute="top" secondItem="IHA-s5-Ps5" secondAttribute="top" id="ZtK-yS-DOI"/>
-                                    <constraint firstAttribute="trailing" secondItem="Sdm-aF-XwF" secondAttribute="trailing" id="cY5-hi-ayv"/>
-                                    <constraint firstItem="jVe-gv-viM" firstAttribute="leading" secondItem="IHA-s5-Ps5" secondAttribute="leading" id="cYv-c0-Sox"/>
-                                    <constraint firstItem="Sdm-aF-XwF" firstAttribute="top" secondItem="XV4-Gl-9JR" secondAttribute="bottom" id="h6k-Yo-Q3F"/>
-                                    <constraint firstItem="Sdm-aF-XwF" firstAttribute="leading" secondItem="IHA-s5-Ps5" secondAttribute="leading" id="nzd-cC-wym"/>
-                                    <constraint firstAttribute="trailing" secondItem="XV4-Gl-9JR" secondAttribute="trailing" constant="14" id="zz8-js-YrB"/>
-                                </constraints>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="IHA-s5-Ps5" firstAttribute="leading" secondItem="eyp-Dj-2jW" secondAttribute="leadingMargin" constant="16" id="LEb-JZ-ajV"/>
-                            <constraint firstItem="kwS-W3-YNl" firstAttribute="top" secondItem="IHA-s5-Ps5" secondAttribute="bottom" constant="16" id="WfU-86-NIA"/>
-                            <constraint firstItem="IHA-s5-Ps5" firstAttribute="top" secondItem="vpF-YX-VYP" secondAttribute="bottom" constant="-20" id="ZXK-JS-80z"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="IHA-s5-Ps5" secondAttribute="trailing" constant="16" id="pTf-Ua-YqO"/>
-                            <constraint firstItem="IHA-s5-Ps5" firstAttribute="top" secondItem="vpF-YX-VYP" secondAttribute="bottom" constant="16" id="zP5-iX-rKE"/>
-                        </constraints>
-                        <variation key="default">
-                            <mask key="constraints">
-                                <exclude reference="ZXK-JS-80z"/>
-                            </mask>
-                        </variation>
+                        <color key="backgroundColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <connections>
                         <outlet property="contentView" destination="IHA-s5-Ps5" id="xJE-Ew-lhN"/>
@@ -445,10 +365,8 @@ Both -updateConstraints and -updateViewConstraints may be called multiple times 
     <resources>
         <image name="cc.png" width="24" height="22"/>
         <image name="dislike.png" width="32" height="32"/>
-        <image name="dislike_selected.png" width="32" height="32"/>
         <image name="expand_guide.png" width="39" height="39"/>
         <image name="like.png" width="32" height="32"/>
-        <image name="like_selected.png" width="32" height="32"/>
         <image name="mp_embedded_pause.png" width="18" height="18"/>
         <image name="mp_fullscreen.png" width="20" height="26"/>
         <image name="repeat.png" width="22" height="22"/>
