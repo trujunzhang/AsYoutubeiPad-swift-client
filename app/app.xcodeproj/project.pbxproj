@@ -60,6 +60,7 @@
 		5E2209BD1AD8CD0700DD748D /* LeftMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E2209BB1AD8CD0700DD748D /* LeftMenuViewController.swift */; };
 		5E52BAC41AD8C449007C3F32 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E52BAC31AD8C449007C3F32 /* Alamofire.framework */; settings = {ATTRIBUTES = (Required, ); }; };
 		5E755D351ADCF65B00939CFC /* VideoInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E755D341ADCF65B00939CFC /* VideoInfoViewController.swift */; };
+		5E8353E21ADE0AFC008AEB2C /* CartoVideoInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E8353E11ADE0AFC008AEB2C /* CartoVideoInfoViewController.swift */; };
 		5EA6F25B1AD8C9930017493D /* pop.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E87FD951AD8C2500021E80C /* pop.framework */; };
 		5EA6F25E1AD8C9930017493D /* Cartography.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5EA6F25C1AD8C9930017493D /* Cartography.framework */; };
 		5EA6F25F1AD8C9930017493D /* WebImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5EA6F25D1AD8C9930017493D /* WebImage.framework */; };
@@ -140,6 +141,7 @@
 		5E2209BB1AD8CD0700DD748D /* LeftMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LeftMenuViewController.swift; path = RevealViewControllers/leftmenu/LeftMenuViewController.swift; sourceTree = "<group>"; };
 		5E52BAC31AD8C449007C3F32 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
 		5E755D341ADCF65B00939CFC /* VideoInfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = VideoInfoViewController.swift; path = VideoInfo/VideoInfoViewController.swift; sourceTree = "<group>"; };
+		5E8353E11ADE0AFC008AEB2C /* CartoVideoInfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CartoVideoInfoViewController.swift; path = Cartography/CartoVideoInfoViewController.swift; sourceTree = "<group>"; };
 		5E87FD931AD8C24B0021E80C /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Bolts.framework; path = Carthage/Build/iOS/Bolts.framework; sourceTree = "<group>"; };
 		5E87FD951AD8C2500021E80C /* pop.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = pop.framework; path = Carthage/Build/iOS/pop.framework; sourceTree = "<group>"; };
 		5EA6F25C1AD8C9930017493D /* Cartography.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cartography.framework; path = Carthage/Build/iOS/Cartography.framework; sourceTree = "<group>"; };
@@ -421,6 +423,7 @@
 			isa = PBXGroup;
 			children = (
 				5EC282D71ADCEADD007CB736 /* CartoWatchViewController.swift */,
+				5E8353E11ADE0AFC008AEB2C /* CartoVideoInfoViewController.swift */,
 			);
 			name = Cartography;
 			sourceTree = "<group>";
@@ -649,6 +652,7 @@
 				5E1E2CED1AD8B898004CC05B /* ViewController.swift in Sources */,
 				5E1514221AD8CDF800E5AF44 /* MenuCollapseTableCell.swift in Sources */,
 				5E2209BD1AD8CD0700DD748D /* LeftMenuViewController.swift in Sources */,
+				5E8353E21ADE0AFC008AEB2C /* CartoVideoInfoViewController.swift in Sources */,
 				5E1514031AD8CDBB00E5AF44 /* StoryBoardUtils.swift in Sources */,
 				5E1514491AD8CE0200E5AF44 /* YTPlayerSubtitling.swift in Sources */,
 				5E15140D1AD8CDD000E5AF44 /* YoutubeApi.swift in Sources */,
