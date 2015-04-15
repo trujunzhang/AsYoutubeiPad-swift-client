@@ -261,7 +261,7 @@ Cg
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="expand_guide.png" highlightedImage="collapse_guide.png" translatesAutoresizingMaskIntoConstraints="NO" id="ZfX-TD-nGk">
-                                                <rect key="frame" x="521" y="12" width="39" height="39"/>
+                                                <rect key="frame" x="545" y="8" width="39" height="39"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="39" id="9K1-f1-kil"/>
                                                     <constraint firstAttribute="width" constant="39" id="UwF-Ym-sBn"/>
@@ -270,8 +270,8 @@ Cg
                                         </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <constraints>
-                                            <constraint firstAttribute="trailing" secondItem="ZfX-TD-nGk" secondAttribute="trailing" constant="40" id="85O-tq-Osy"/>
-                                            <constraint firstItem="ZfX-TD-nGk" firstAttribute="top" secondItem="jVe-gv-viM" secondAttribute="top" constant="12" id="BC5-0k-ua6"/>
+                                            <constraint firstAttribute="trailing" secondItem="ZfX-TD-nGk" secondAttribute="trailing" constant="16" id="85O-tq-Osy"/>
+                                            <constraint firstItem="ZfX-TD-nGk" firstAttribute="top" secondItem="jVe-gv-viM" secondAttribute="top" constant="8" id="BC5-0k-ua6"/>
                                             <constraint firstAttribute="trailing" secondItem="CdY-eu-XvG" secondAttribute="trailing" constant="22" id="NTI-xE-qs0"/>
                                             <constraint firstAttribute="height" constant="59" id="dw9-hB-yGP"/>
                                             <constraint firstItem="CdY-eu-XvG" firstAttribute="leading" secondItem="jVe-gv-viM" secondAttribute="leading" constant="22" id="eZr-Ry-coM"/>
@@ -376,6 +376,8 @@ When you want to align multiple elements, say three button in one vertical line,
                             </mask>
                         </variation>
                     </view>
+                    <nil key="simulatedStatusBarMetrics"/>
+                    <nil key="simulatedTopBarMetrics"/>
                     <connections>
                         <outlet property="contentView" destination="IHA-s5-Ps5" id="xJE-Ew-lhN"/>
                     </connections>
