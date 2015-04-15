@@ -45,6 +45,7 @@
 		5E1514521AD8CE0200E5AF44 /* YTTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E15143E1AD8CE0200E5AF44 /* YTTabBarController.swift */; };
 		5E1514531AD8CE0200E5AF44 /* YTTabBarItemsUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E15143F1AD8CE0200E5AF44 /* YTTabBarItemsUtils.swift */; };
 		5E1514541AD8CE0200E5AF44 /* YTTabBarItemsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E1514401AD8CE0200E5AF44 /* YTTabBarItemsViewController.swift */; };
+		5E1A12B81ADE416F006E91BC /* CartoAnimateVideoInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E1A12B71ADE416F006E91BC /* CartoAnimateVideoInfoViewController.swift */; };
 		5E1E2CEB1AD8B898004CC05B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E1E2CEA1AD8B898004CC05B /* AppDelegate.swift */; };
 		5E1E2CED1AD8B898004CC05B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E1E2CEC1AD8B898004CC05B /* ViewController.swift */; };
 		5E1E2CF01AD8B898004CC05B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5E1E2CEE1AD8B898004CC05B /* Main.storyboard */; };
@@ -122,6 +123,7 @@
 		5E15143E1AD8CE0200E5AF44 /* YTTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YTTabBarController.swift; sourceTree = "<group>"; };
 		5E15143F1AD8CE0200E5AF44 /* YTTabBarItemsUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YTTabBarItemsUtils.swift; sourceTree = "<group>"; };
 		5E1514401AD8CE0200E5AF44 /* YTTabBarItemsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YTTabBarItemsViewController.swift; sourceTree = "<group>"; };
+		5E1A12B71ADE416F006E91BC /* CartoAnimateVideoInfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CartoAnimateVideoInfoViewController.swift; path = Cartography/CartoAnimateVideoInfoViewController.swift; sourceTree = "<group>"; };
 		5E1E2CE51AD8B898004CC05B /* app.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = app.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5E1E2CE91AD8B898004CC05B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5E1E2CEA1AD8B898004CC05B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -424,6 +426,7 @@
 			children = (
 				5EC282D71ADCEADD007CB736 /* CartoWatchViewController.swift */,
 				5E8353E11ADE0AFC008AEB2C /* CartoVideoInfoViewController.swift */,
+				5E1A12B71ADE416F006E91BC /* CartoAnimateVideoInfoViewController.swift */,
 			);
 			name = Cartography;
 			sourceTree = "<group>";
@@ -669,6 +672,7 @@
 				5E15144E1AD8CE0200E5AF44 /* YTVideoWatchViewController.swift in Sources */,
 				5E1514451AD8CE0200E5AF44 /* AVPlayerView.swift in Sources */,
 				5E1E2CEB1AD8B898004CC05B /* AppDelegate.swift in Sources */,
+				5E1A12B81ADE416F006E91BC /* CartoAnimateVideoInfoViewController.swift in Sources */,
 				5E1514431AD8CE0200E5AF44 /* MovieEmbeddedNormalBarViewController.swift in Sources */,
 				5E15144C1AD8CE0200E5AF44 /* YTVideoWatchPlaylistViewController.swift in Sources */,
 				5E15144A1AD8CE0200E5AF44 /* YTVideoWatchInfoViewController.swift in Sources */,

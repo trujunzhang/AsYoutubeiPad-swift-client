@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import Cartography
 
 class CartoVideoInfoViewController: UIViewController {
     
@@ -37,7 +38,7 @@ class CartoVideoInfoViewController: UIViewController {
         //        myscr!.frame = CGRectMake(0,0,300,300)
         //        myscr!.contentSize = CGSizeMake(300,300)
         myscr!.scrollEnabled = true
-        myscr!.backgroundColor = UIColor.blueColor()
+        myscr!.backgroundColor = UIColor.whiteColor()
         
         if let subView : UIScrollView = myscr{
             videoInfoContainer.addSubview(subView)
@@ -56,14 +57,24 @@ class CartoVideoInfoViewController: UIViewController {
                 subView.addSubview(videoInfoRootView!)
             }
             
-            LayoutUtils.LayoutDynamicHeight(videoInfoRootView!)
+            LayoutDynamicHeight(videoInfoRootView!)
+        }
+    }
+    
+     func LayoutDynamicHeight(view : UIView){
+        layout(view) { view1 in
+            
+            view1.top == view1.superview!.top
+            view1.leading == view1.superview!.leading
+            view1.trailing  == view1.superview!.trailing
+            
+                        //            view1.height  == 180
         }
     }
     
     override func viewDidLayoutSubviews() {
         if let subView : UIScrollView = myscr{
-            subView.contentSize = CGSizeMake(videoInfoRootView!.frame.size.width,300)
-//                videoInfoRootView!.frame.size
+            subView.contentSize = videoInfoRootView!.frame.size
         }
     }
     

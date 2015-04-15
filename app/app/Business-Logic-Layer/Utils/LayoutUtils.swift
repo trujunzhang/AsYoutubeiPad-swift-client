@@ -23,18 +23,7 @@ class LayoutUtils : NSObject {
         }
     }
     
-    class func LayoutDynamicHeight(view : UIView){
-        layout(view) { view1 in
-            
-            view1.top == view1.superview!.top
-            view1.leading == view1.superview!.leading
-            view1.trailing  == view1.superview!.trailing
-            
-            view1.width   == view1.superview!.width
-            
-//            view1.height  == 180
-        }
-    }
+
     
     
 }
