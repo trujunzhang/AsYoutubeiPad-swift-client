@@ -280,9 +280,14 @@ Cg
                                         </constraints>
                                     </view>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aeh-V9-kQm" userLabel="Description Label">
-                                        <rect key="frame" x="0.0" y="60" width="600" height="480"/>
+                                        <rect key="frame" x="40" y="80" width="520" height="440"/>
                                         <attributedString key="attributedText">
-                                            <fragment content="Trisha Gee, JetBrains Developer Advocate talks about new features in WebStorm 10.">
+                                            <fragment>
+                                                <string key="content">Trisha Gee, JetBrains Developer Advocate talks about new features in WebStorm 10. 
+
+I don't know why it works and how Xcode detect which constraint is more prioritised (because I'm not set priority for these constraints explicity), but I'll be thankful if someone explain, why it works.
+
+When you want to align multiple elements, say three button in one vertical line, you'll have to set the above said additional constraints to the bottom most element. (example included)</string>
                                                 <attributes>
                                                     <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <font key="NSFont" size="17" name="HelveticaNeue"/>
@@ -331,19 +336,19 @@ Cg
                                 <constraints>
                                     <constraint firstAttribute="bottom" secondItem="Sdm-aF-XwF" secondAttribute="bottom" id="0t9-kL-hmT"/>
                                     <constraint firstItem="Shs-Sc-5ea" firstAttribute="leading" secondItem="IHA-s5-Ps5" secondAttribute="leading" constant="14" id="1mH-Vr-lkv"/>
-                                    <constraint firstItem="aeh-V9-kQm" firstAttribute="top" secondItem="Shs-Sc-5ea" secondAttribute="bottom" id="3pa-xg-YUZ"/>
+                                    <constraint firstItem="aeh-V9-kQm" firstAttribute="top" secondItem="Shs-Sc-5ea" secondAttribute="bottom" constant="20" id="3pa-xg-YUZ"/>
                                     <constraint firstAttribute="trailing" secondItem="Shs-Sc-5ea" secondAttribute="trailing" constant="14" id="Jxt-Kp-KXN"/>
                                     <constraint firstItem="Shs-Sc-5ea" firstAttribute="top" secondItem="jVe-gv-viM" secondAttribute="bottom" id="Mix-BU-Fck"/>
                                     <constraint firstAttribute="trailing" secondItem="jVe-gv-viM" secondAttribute="trailing" id="PA4-4y-SMB"/>
-                                    <constraint firstItem="XV4-Gl-9JR" firstAttribute="top" secondItem="aeh-V9-kQm" secondAttribute="bottom" id="Qgg-IK-HCp"/>
+                                    <constraint firstItem="XV4-Gl-9JR" firstAttribute="top" secondItem="aeh-V9-kQm" secondAttribute="bottom" constant="20" id="Qgg-IK-HCp"/>
                                     <constraint firstItem="XV4-Gl-9JR" firstAttribute="leading" secondItem="IHA-s5-Ps5" secondAttribute="leading" constant="14" id="WnT-Ty-rHu"/>
                                     <constraint firstItem="jVe-gv-viM" firstAttribute="top" secondItem="IHA-s5-Ps5" secondAttribute="top" id="ZtK-yS-DOI"/>
                                     <constraint firstAttribute="trailing" secondItem="Sdm-aF-XwF" secondAttribute="trailing" id="cY5-hi-ayv"/>
                                     <constraint firstItem="jVe-gv-viM" firstAttribute="leading" secondItem="IHA-s5-Ps5" secondAttribute="leading" id="cYv-c0-Sox"/>
                                     <constraint firstItem="Sdm-aF-XwF" firstAttribute="top" secondItem="XV4-Gl-9JR" secondAttribute="bottom" id="h6k-Yo-Q3F"/>
                                     <constraint firstItem="Sdm-aF-XwF" firstAttribute="leading" secondItem="IHA-s5-Ps5" secondAttribute="leading" id="nzd-cC-wym"/>
-                                    <constraint firstItem="aeh-V9-kQm" firstAttribute="leading" secondItem="IHA-s5-Ps5" secondAttribute="leading" id="pfd-h0-Iay"/>
-                                    <constraint firstAttribute="trailing" secondItem="aeh-V9-kQm" secondAttribute="trailing" id="tfE-Qt-dC7"/>
+                                    <constraint firstItem="aeh-V9-kQm" firstAttribute="leading" secondItem="IHA-s5-Ps5" secondAttribute="leading" constant="40" id="pfd-h0-Iay"/>
+                                    <constraint firstAttribute="trailing" secondItem="aeh-V9-kQm" secondAttribute="trailing" constant="40" id="tfE-Qt-dC7"/>
                                     <constraint firstAttribute="trailing" secondItem="XV4-Gl-9JR" secondAttribute="trailing" constant="14" id="zz8-js-YrB"/>
                                 </constraints>
                             </view>
@@ -362,6 +367,9 @@ Cg
                             </mask>
                         </variation>
                     </view>
+                    <connections>
+                        <outlet property="contentView" destination="IHA-s5-Ps5" id="xJE-Ew-lhN"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="g3Q-pW-H0a" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

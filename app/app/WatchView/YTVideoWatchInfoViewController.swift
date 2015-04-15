@@ -13,8 +13,15 @@ class YTVideoWatchInfoViewController: UIViewController {
     var videoID = ""
 
     
+    @IBOutlet weak var contentView: UIView!
+    
+    
     override func viewDidLoad() {
+        super.viewDidLoad()
         
+      
     }
+    
+
     
 }

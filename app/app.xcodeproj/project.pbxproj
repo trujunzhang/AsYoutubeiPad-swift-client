@@ -264,7 +264,6 @@
 				5E1514291AD8CE0200E5AF44 /* Bars */,
 				5E15142E1AD8CE0200E5AF44 /* Player */,
 				5E15142D1AD8CE0200E5AF44 /* MovieEmbeddedViewController.swift */,
-				5E1514341AD8CE0200E5AF44 /* YTVideoWatchInfoViewController.swift */,
 				5E1514351AD8CE0200E5AF44 /* YTVideoWatchPlaylistHeaderViewController.swift */,
 				5E1514361AD8CE0200E5AF44 /* YTVideoWatchPlaylistViewController.swift */,
 				5E1514371AD8CE0200E5AF44 /* YTVideoWatchSideViewController.swift */,
@@ -414,6 +413,7 @@
 		5E755D331ADCF64700939CFC /* VideoInfo */ = {
 			isa = PBXGroup;
 			children = (
+				5E1514341AD8CE0200E5AF44 /* YTVideoWatchInfoViewController.swift */,
 				5E755D341ADCF65B00939CFC /* VideoInfoViewController.swift */,
 			);
 			name = VideoInfo;
