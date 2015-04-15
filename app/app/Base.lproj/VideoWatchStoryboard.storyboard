@@ -242,14 +242,20 @@ Cg
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jVe-gv-viM" userLabel="topContainer">
                                         <rect key="frame" x="0.0" y="0.0" width="600" height="59"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="WebStorm 10 - New features" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CdY-eu-XvG">
-                                                <rect key="frame" x="22" y="16" width="501" height="21"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="WebStorm 10 - New features" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CdY-eu-XvG">
+                                                <rect key="frame" x="22" y="16" width="556" height="21"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="21" id="Qek-0n-Nvd"/>
+                                                </constraints>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="2,222 views" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uve-to-7wM">
-                                                <rect key="frame" x="22" y="34" width="501" height="21"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2,222 views" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uve-to-7wM">
+                                                <rect key="frame" x="22" y="34" width="556" height="21"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="21" id="2zF-bZ-cyy"/>
+                                                </constraints>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
@@ -257,7 +263,13 @@ Cg
                                         </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="CdY-eu-XvG" secondAttribute="trailing" constant="22" id="NTI-xE-qs0"/>
                                             <constraint firstAttribute="height" constant="59" id="dw9-hB-yGP"/>
+                                            <constraint firstItem="CdY-eu-XvG" firstAttribute="leading" secondItem="jVe-gv-viM" secondAttribute="leading" constant="22" id="eZr-Ry-coM"/>
+                                            <constraint firstItem="CdY-eu-XvG" firstAttribute="top" secondItem="jVe-gv-viM" secondAttribute="top" constant="16" id="fnA-eb-Jmo"/>
+                                            <constraint firstItem="uve-to-7wM" firstAttribute="leading" secondItem="jVe-gv-viM" secondAttribute="leading" constant="22" id="lbI-II-ahe"/>
+                                            <constraint firstAttribute="trailing" secondItem="uve-to-7wM" secondAttribute="trailing" constant="22" id="r4K-YO-939"/>
+                                            <constraint firstAttribute="bottom" secondItem="uve-to-7wM" secondAttribute="bottom" constant="4" id="z2x-la-OvK"/>
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Shs-Sc-5ea" userLabel="Top Divide">
