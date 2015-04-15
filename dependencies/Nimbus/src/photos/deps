@@ -1,0 +1,6 @@
+core
+pagingscrollview
+
+[Frameworks]
+Foundation.framework
+UIKit.framework
