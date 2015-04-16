@@ -42,6 +42,10 @@
 // url: https://github.com/acrookston/ObservingPlayerItem
 #import "ObservingPlayerItem.h"
 
+// Library: Nimbus(object-c)
+#import "NimbusCore.h"
+#import "NimbusWebController.h"
+
 // Library: SDWebImage
 //#import "WebImage.h"
 
