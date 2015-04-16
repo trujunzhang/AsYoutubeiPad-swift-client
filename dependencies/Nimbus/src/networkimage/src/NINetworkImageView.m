@@ -357,11 +357,11 @@
          [self _didFailToLoadWithError:error];
       }];
 
-//      [requestOperation setDownloadProgressBlock:^(NSUInteger bytesRead, NSInteger totalBytesRead, NSInteger totalBytesExpectedToRead) {// TODO djzhang (2015-04-15) 
-//          if ([self.delegate respondsToSelector:@selector(networkImageView:readBytes:totalBytes:)]) {
-//              [self.delegate networkImageView:self readBytes:totalBytesRead totalBytes:totalBytesExpectedToRead];
-//          }
-//      }];
+      [requestOperation setDownloadProgressBlock:^(NSUInteger bytesRead, NSInteger totalBytesRead, NSInteger totalBytesExpectedToRead) {// TODO djzhang (2015-04-15) 
+          if ([self.delegate respondsToSelector:@selector(networkImageView:readBytes:totalBytes:)]) {
+              [self.delegate networkImageView:self readBytes:totalBytesRead totalBytes:totalBytesExpectedToRead];
+          }
+      }];
 
       self.operation = requestOperation;
 

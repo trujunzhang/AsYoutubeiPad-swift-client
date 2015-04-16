@@ -15,7 +15,7 @@ def import_pods
 
 
     pod 'SDWebImage'
-    pod 'AFNetworking'    
+#    pod 'AFNetworking'    
 
 #    pod 'SWRevealViewController'
 #    pod 'ISMemoryCache'
@@ -36,7 +36,7 @@ def import_pods
   pod "App_Module_Resources", :path => "../modules/App_Module_Resources"
   pod "YouTubeAPI3-Objective-C-wrapper", :path => "../modules/YouTubeAPI3-Objective-C-wrapper"
   pod "Nimbus", :path => "../dependencies/Nimbus"
-
+  pod "AFNetworking", :path => "../dependencies/AFNetworking"
   
   
 

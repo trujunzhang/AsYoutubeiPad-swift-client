@@ -46,6 +46,7 @@ Pod::Spec.new do |s|
     css.dependency 'Nimbus/Core'
     css.dependency 'Nimbus/Textfield'
     css.dependency 'AFNetworking'
+    css.frameworks    = 'CoreGraphics'
   end
 
   s.subspec 'AttributedLabel' do |label|
@@ -57,11 +58,13 @@ Pod::Spec.new do |s|
   s.subspec 'Interapp' do |interapp|
     interapp.source_files = 'src/interapp/src'
     interapp.dependency 'Nimbus/Core'
+    interapp.frameworks    = 'CoreLocation'
   end
 
   s.subspec 'Launcher' do |launcher|
     launcher.source_files = 'src/launcher/src'
     launcher.dependency 'Nimbus/Core'
+    launcher.dependency 'Nimbus/PagingScrollView'
   end
 
   s.subspec 'Models' do |models|
@@ -77,13 +80,14 @@ Pod::Spec.new do |s|
   s.subspec 'NetworkImage' do |image|
     image.source_files = 'src/networkimage/src'
     image.dependency 'Nimbus/Core'
-
+    image.dependency 'AFNetworking'
   end
 
   s.subspec 'Overview' do |overview|
     overview.source_files = 'src/overview/src'
     overview.resource     = 'src/overview/resources/NimbusOverviewer.bundle'
     overview.dependency 'Nimbus/Core'
+    overview.dependency 'Nimbus/Models'
   end
 
   s.subspec 'PagingScrollView' do |psv|
@@ -98,15 +102,7 @@ Pod::Spec.new do |s|
     photos.dependency 'Nimbus/PagingScrollView'
   end
 
-  s.subspec 'Operations' do |operations|
-    operations.source_files = 'src/operations/src'
-    operations.dependency 'Nimbus/Core'
 
-    operations.subspec 'JSON' do |json|
-      json.source_files = 'src/operations/src_JSONKit'
-      json.dependency 'JSONKit'
-    end
-  end
 
   s.subspec 'WebController' do |web_controller|
     web_controller.source_files = 'src/webcontroller/src'
