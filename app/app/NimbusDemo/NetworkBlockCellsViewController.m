@@ -8,7 +8,6 @@
 
 #import "NetworkBlockCellsViewController.h"
 #import "NITableViewModel.h"
-#import "VideoInfoTitleTableViewCell.h"
 #import "NetworkDrawRectBlockCell.h"
 #import "VideoInfoBlockUtils.h"
 

@@ -14,6 +14,7 @@
 		5E1E2CF51AD8B898004CC05B /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5E1E2CF31AD8B898004CC05B /* LaunchScreen.xib */; };
 		5E1E2D011AD8B898004CC05B /* appTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E1E2D001AD8B898004CC05B /* appTests.swift */; };
 		5E2209A81AD8CBE300DD748D /* Autolayout.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5E2209A61AD8CBE300DD748D /* Autolayout.storyboard */; };
+		5E39CFAE1AE10BE5001032E6 /* VideoInfoObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E39CFAD1AE10BE5001032E6 /* VideoInfoObject.m */; };
 		5E43A6C11AE10AFF00BB915E /* VideoInfoBlockUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E43A6C01AE10AFF00BB915E /* VideoInfoBlockUtils.m */; };
 		5E9973541AE0FFB200692398 /* NetworkBlockCellsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E9973531AE0FFB200692398 /* NetworkBlockCellsViewController.m */; };
 		5EA6F25E1AD8C9930017493D /* Cartography.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5EA6F25C1AD8C9930017493D /* Cartography.framework */; };
@@ -47,6 +48,8 @@
 		5E1E2CFF1AD8B898004CC05B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5E1E2D001AD8B898004CC05B /* appTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = appTests.swift; sourceTree = "<group>"; };
 		5E2209A71AD8CBE300DD748D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Autolayout.storyboard; sourceTree = "<group>"; };
+		5E39CFAC1AE10BE5001032E6 /* VideoInfoObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VideoInfoObject.h; path = NimbusDemo/VideoInfoObject.h; sourceTree = "<group>"; };
+		5E39CFAD1AE10BE5001032E6 /* VideoInfoObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VideoInfoObject.m; path = NimbusDemo/VideoInfoObject.m; sourceTree = "<group>"; };
 		5E43A6BF1AE10AFF00BB915E /* VideoInfoBlockUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VideoInfoBlockUtils.h; path = NimbusDemo/VideoInfoBlockUtils.h; sourceTree = "<group>"; };
 		5E43A6C01AE10AFF00BB915E /* VideoInfoBlockUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VideoInfoBlockUtils.m; path = NimbusDemo/VideoInfoBlockUtils.m; sourceTree = "<group>"; };
 		5E52BAC31AD8C449007C3F32 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
@@ -184,6 +187,8 @@
 				5E99735B1AE1005C00692398 /* YTNimbusTableView.h */,
 				5E43A6BF1AE10AFF00BB915E /* VideoInfoBlockUtils.h */,
 				5E43A6C01AE10AFF00BB915E /* VideoInfoBlockUtils.m */,
+				5E39CFAC1AE10BE5001032E6 /* VideoInfoObject.h */,
+				5E39CFAD1AE10BE5001032E6 /* VideoInfoObject.m */,
 			);
 			name = NimbusDemo;
 			sourceTree = "<group>";
@@ -384,6 +389,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5E1E2CEB1AD8B898004CC05B /* AppDelegate.swift in Sources */,
+				5E39CFAE1AE10BE5001032E6 /* VideoInfoObject.m in Sources */,
 				5E9973541AE0FFB200692398 /* NetworkBlockCellsViewController.m in Sources */,
 				5E1D62AA1AE0BBFA00D65370 /* NetworkDrawRectBlockCell.m in Sources */,
 				5E43A6C11AE10AFF00BB915E /* VideoInfoBlockUtils.m in Sources */,
