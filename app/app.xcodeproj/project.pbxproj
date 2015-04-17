@@ -14,6 +14,8 @@
 		5E1E2CF51AD8B898004CC05B /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5E1E2CF31AD8B898004CC05B /* LaunchScreen.xib */; };
 		5E1E2D011AD8B898004CC05B /* appTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E1E2D001AD8B898004CC05B /* appTests.swift */; };
 		5E2209A81AD8CBE300DD748D /* Autolayout.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5E2209A61AD8CBE300DD748D /* Autolayout.storyboard */; };
+		5E27422F1AE0F4C2005D44E1 /* VideoInfoTitleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E27422D1AE0F4C2005D44E1 /* VideoInfoTitleTableViewCell.swift */; };
+		5E2742301AE0F4C2005D44E1 /* VideoInfoTitleTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5E27422E1AE0F4C2005D44E1 /* VideoInfoTitleTableViewCell.xib */; };
 		5EA3885A1ADFC17A006D59E9 /* NetworkBlockCellsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EA388591ADFC17A006D59E9 /* NetworkBlockCellsViewController.swift */; };
 		5EA6F25E1AD8C9930017493D /* Cartography.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5EA6F25C1AD8C9930017493D /* Cartography.framework */; };
 		CB32D06F89412E5AAD9F456C /* libPods-appTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6F41558897D0187FFE158F21 /* libPods-appTests.a */; };
@@ -46,6 +48,8 @@
 		5E1E2CFF1AD8B898004CC05B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5E1E2D001AD8B898004CC05B /* appTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = appTests.swift; sourceTree = "<group>"; };
 		5E2209A71AD8CBE300DD748D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Autolayout.storyboard; sourceTree = "<group>"; };
+		5E27422D1AE0F4C2005D44E1 /* VideoInfoTitleTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = VideoInfoTitleTableViewCell.swift; path = NimbusDemo/TableCells/VideoInfoTitleTableViewCell.swift; sourceTree = "<group>"; };
+		5E27422E1AE0F4C2005D44E1 /* VideoInfoTitleTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = VideoInfoTitleTableViewCell.xib; path = NimbusDemo/TableCells/VideoInfoTitleTableViewCell.xib; sourceTree = "<group>"; };
 		5E52BAC31AD8C449007C3F32 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
 		5E87FD931AD8C24B0021E80C /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Bolts.framework; path = Carthage/Build/iOS/Bolts.framework; sourceTree = "<group>"; };
 		5E87FD951AD8C2500021E80C /* pop.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = pop.framework; path = Carthage/Build/iOS/pop.framework; sourceTree = "<group>"; };
@@ -164,6 +168,15 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		5E27422C1AE0F45C005D44E1 /* TableCells */ = {
+			isa = PBXGroup;
+			children = (
+				5E27422D1AE0F4C2005D44E1 /* VideoInfoTitleTableViewCell.swift */,
+				5E27422E1AE0F4C2005D44E1 /* VideoInfoTitleTableViewCell.xib */,
+			);
+			name = TableCells;
+			sourceTree = "<group>";
+		};
 		5EC282D61ADCEA9F007CB736 /* Cartography */ = {
 			isa = PBXGroup;
 			children = (
@@ -174,17 +187,10 @@
 		5ED52E531ADFB84000AF409B /* NimbusDemo */ = {
 			isa = PBXGroup;
 			children = (
-				5ED52E541ADFB9DC00AF409B /* Table Models */,
-			);
-			name = NimbusDemo;
-			sourceTree = "<group>";
-		};
-		5ED52E541ADFB9DC00AF409B /* Table Models */ = {
-			isa = PBXGroup;
-			children = (
+				5E27422C1AE0F45C005D44E1 /* TableCells */,
 				5EA388591ADFC17A006D59E9 /* NetworkBlockCellsViewController.swift */,
 			);
-			name = "Table Models";
+			name = NimbusDemo;
 			sourceTree = "<group>";
 		};
 		AA4B77283D03A4084AB3C91E /* Pods */ = {
@@ -286,6 +292,7 @@
 			files = (
 				5E1E2CF01AD8B898004CC05B /* Main.storyboard in Resources */,
 				5E1E2CF51AD8B898004CC05B /* LaunchScreen.xib in Resources */,
+				5E2742301AE0F4C2005D44E1 /* VideoInfoTitleTableViewCell.xib in Resources */,
 				5E1E2CF21AD8B898004CC05B /* Images.xcassets in Resources */,
 				5E2209A81AD8CBE300DD748D /* Autolayout.storyboard in Resources */,
 			);
@@ -382,6 +389,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5E27422F1AE0F4C2005D44E1 /* VideoInfoTitleTableViewCell.swift in Sources */,
 				5EA3885A1ADFC17A006D59E9 /* NetworkBlockCellsViewController.swift in Sources */,
 				5E1E2CEB1AD8B898004CC05B /* AppDelegate.swift in Sources */,
 				5E1D62AA1AE0BBFA00D65370 /* NetworkDrawRectBlockCell.m in Sources */,
