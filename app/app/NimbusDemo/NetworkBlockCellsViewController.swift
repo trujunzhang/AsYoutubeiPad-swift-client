@@ -8,10 +8,23 @@
 
 import Foundation
 
-class NetworkBlockCellsViewController : UIViewController {
+class NetworkBlockCellsViewController : UIViewController,UITableViewDelegate {
     
     @IBOutlet weak var tableView: UITableView!
 
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+    }
     
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+    }
+    
+    // MARK : UITableViewDelegate
+    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        
+        return 0
+    }
     
 }
