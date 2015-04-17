@@ -40,7 +40,7 @@ class MovieEmbeddedViewController: UIViewController {
     
     func makeEmbeddedBars() {
         // normal bar
-        normalBarViewController = StoryBoardUtils.getMovieEmbeddedNormalBarViewController()
+        normalBarViewController = WatchViewStoryboardUtils.getMovieEmbeddedNormalBarViewController()
         
         if let controller : UIViewController = normalBarViewController{
             self.addChildViewController(controller)

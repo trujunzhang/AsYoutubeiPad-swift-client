@@ -23,7 +23,7 @@ class CartoVideoInfoViewController: UIViewController {
         
         createview()
         
-        videoInfoViewController = StoryBoardUtils.getYTVideoWatchInfoViewController()
+        videoInfoViewController = WatchViewStoryboardUtils.getYTVideoWatchInfoViewController()
         
         if let controller : UIViewController = videoInfoViewController{
             self.addChildViewController(controller)

@@ -13,7 +13,7 @@ class CartoAnimateVideoInfoViewController: UIViewController {
     
     override func viewDidLoad() {
         
-        videoInfoViewController = StoryBoardUtils.getYTVideoWatchInfoViewController()
+        videoInfoViewController = WatchViewStoryboardUtils.getYTVideoWatchInfoViewController()
         
         if let controller : UIViewController = videoInfoViewController{
             self.addChildViewController(controller)

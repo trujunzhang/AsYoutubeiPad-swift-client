@@ -11,20 +11,7 @@ def import_pods
     pod 'Regexer'
     pod 'Bolts'
 
-#   pod 'Nimbus'
-
-
     pod 'SDWebImage'
-#    pod 'AFNetworking'    
-
-#    pod 'SWRevealViewController'
-#    pod 'ISMemoryCache'
-#    pod 'EGOCache'
-
-    # pod 'SQPersist'
-
-    # pod 'pop'
-    # pod 'AsyncDisplayKit'
 
     pod 'Google-API-Client/YouTube'
 
@@ -46,6 +33,16 @@ def import_pods
   #pod "MPMoviePlayerController-Subtitles", :path => "../dependencies/MPMoviePlayerController-Subtitles"
 
   
+#    pod 'AFNetworking'    
+
+#    pod 'SWRevealViewController'
+#    pod 'ISMemoryCache'
+#    pod 'EGOCache'
+
+    # pod 'SQPersist'
+
+    # pod 'pop'
+    # pod 'AsyncDisplayKit'  
   
 
 end

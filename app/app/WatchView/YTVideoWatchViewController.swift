@@ -34,7 +34,7 @@ class YTVideoWatchViewController: UIViewController {
     
     func makeMovieEmbeddedViewController(){
         if let container : UIView = _moviePlayContainer{
-            movieEmbeddedViewController    = StoryBoardUtils.getMovieEmbeddedViewController()
+            movieEmbeddedViewController    = WatchViewStoryboardUtils.getMovieEmbeddedViewController()
             movieEmbeddedViewController?.videoID = videoID
             
             movieEmbeddedView = movieEmbeddedViewController?.view
