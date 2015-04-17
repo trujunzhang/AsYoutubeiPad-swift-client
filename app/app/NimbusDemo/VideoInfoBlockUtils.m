@@ -81,6 +81,10 @@ CGFloat DESCRIPTION_MARGIN_TOP_BOTTOM = 60.0;
     if(nil != cell) {
         [likeCount drawInRect:CGRectMake(10, 5 + titleSize.height + 5, likeCountSize.width, likeCountSize.height) withFont:likeCountFont lineBreakMode:NSLineBreakByWordWrapping];
     }
+
+    // 3 right toggle button
+
+
 }
 
 

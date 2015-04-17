@@ -17,6 +17,8 @@
 
 @property (nonatomic, retain) NITableViewModel *model;
 @property (nonatomic, retain) NICellFactory *cellFactory;
+
+@property (nonatomic, retain) NITableViewActions* actions;
 @end
 
 @implementation NetworkBlockCellsViewController
