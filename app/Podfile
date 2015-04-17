@@ -12,7 +12,7 @@ def import_pods
 
     pod 'SDWebImage'
 
-    pod 'Google-API-Client/YouTube'
+#    pod 'Google-API-Client/YouTube'
 
 
     pod 'IGYouTubeExtractor'
@@ -30,13 +30,12 @@ def import_pods
   #pod "YKMediaPlayerKit", :path => "../dependencies/YKMediaPlayerKit"
   #pod "MPMoviePlayerController-Subtitles", :path => "../dependencies/MPMoviePlayerController-Subtitles"
 
-    #pod 'CHTCollectionViewWaterfallLayout'
-   
 
+   
 #    pod 'SWRevealViewController'
 #    pod 'ISMemoryCache'
 #    pod 'EGOCache'
-
+    #pod 'CHTCollectionViewWaterfallLayout'
     # pod 'SQPersist'
 
     # pod 'pop'

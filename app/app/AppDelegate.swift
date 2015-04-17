@@ -17,19 +17,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
         
-        let rootViewController = self.window?.rootViewController
-        
-        if(rootViewController is SWRevealViewController){
-            let revealViewController:SWRevealViewController = rootViewController  as! SWRevealViewController
-            
-            revealViewController.toggleAnimationDuration = 0.4
-            revealViewController.rearViewRevealWidth = REAR_VIEW_WIDTH
-            revealViewController.rearViewRevealOverdraw = 0
-            
-//                        revealViewController.revealToggleAnimated(true)
-            
-            YoutubeFetcher.sharedInstance.initLoggedUser()
-        }
+//        let rootViewController = self.window?.rootViewController
+//        
+//        if(rootViewController is SWRevealViewController){
+//            let revealViewController:SWRevealViewController = rootViewController  as! SWRevealViewController
+//            
+//            revealViewController.toggleAnimationDuration = 0.4
+//            revealViewController.rearViewRevealWidth = REAR_VIEW_WIDTH
+//            revealViewController.rearViewRevealOverdraw = 0
+//            
+////                        revealViewController.revealToggleAnimated(true)
+//            
+//            YoutubeFetcher.sharedInstance.initLoggedUser()
+//        }
         return true
     }
     

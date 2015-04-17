@@ -37,19 +37,19 @@ class SubscriptionsViewController: FrontBaseViewController {
 //        self.addChildViewController(channelPageViewController)
     }
     
-    func test(){
-        
-        var tabBarItemsController: UIViewController =
-        self.storyboard!.instantiateViewControllerWithIdentifier("YTTabBarItemsViewController") as! UIViewController
-        
-        
-        let headerView:UIView = UIView()
-        headerView.frame = CGRectMake(0, 100, self.view.frame.size.width, 44)
-        headerView.addSubview(tabBarItemsController.view)
-        
-        
-        //        self.view.addSubview(headerView)
-    }
+//    func test(){
+//        
+//        var tabBarItemsController: UIViewController =
+//        self.storyboard!.instantiateViewControllerWithIdentifier("YTTabBarItemsViewController") as! UIViewController
+//        
+//        
+//        let headerView:UIView = UIView()
+//        headerView.frame = CGRectMake(0, 100, self.view.frame.size.width, 44)
+//        headerView.addSubview(tabBarItemsController.view)
+//        
+//        
+//        //        self.view.addSubview(headerView)
+//    }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

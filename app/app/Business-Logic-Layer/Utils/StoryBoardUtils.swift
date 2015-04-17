@@ -25,24 +25,24 @@ class StoryBoardUtils:NSObject {
 
     // MARK : getReusedStoryBoard
     
-    class func getChannelBannerViewController() -> ChannelBannerViewController {
-        var viewController: ChannelBannerViewController = getReusedStoryBoard().instantiateViewControllerWithIdentifier("ChannelBannerViewController") as! ChannelBannerViewController
-        
-        return viewController
-    }
+//    class func getChannelBannerViewController() -> ChannelBannerViewController {
+//        var viewController: ChannelBannerViewController = getReusedStoryBoard().instantiateViewControllerWithIdentifier("ChannelBannerViewController") as! ChannelBannerViewController
+//        
+//        return viewController
+//    }
+//    
+//    class func getYTTabBarItemsViewController() -> YTTabBarItemsViewController {
+//        var viewController: YTTabBarItemsViewController = getReusedStoryBoard().instantiateViewControllerWithIdentifier("YTTabBarItemsViewController") as! YTTabBarItemsViewController
+//        
+//        return viewController
+//    }
     
-    class func getYTTabBarItemsViewController() -> YTTabBarItemsViewController {
-        var viewController: YTTabBarItemsViewController = getReusedStoryBoard().instantiateViewControllerWithIdentifier("YTTabBarItemsViewController") as! YTTabBarItemsViewController
-        
-        return viewController
-    }
     
-    
-    class func getYTVideosCollectionViewController() -> YTVideosCollectionViewController {
-        var viewController: YTVideosCollectionViewController = getReusedStoryBoard().instantiateViewControllerWithIdentifier("YTVideosCollectionViewController") as! YTVideosCollectionViewController
-        
-        return viewController
-    }
+//    class func getYTVideosCollectionViewController() -> YTVideosCollectionViewController {// TODO djzhang (2015-04-17) [used]
+//        var viewController: YTVideosCollectionViewController = getReusedStoryBoard().instantiateViewControllerWithIdentifier("YTVideosCollectionViewController") as! YTVideosCollectionViewController
+//        
+//        return viewController
+//    }
     
        
     

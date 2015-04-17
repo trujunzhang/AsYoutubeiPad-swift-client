@@ -10,14 +10,6 @@ import Foundation
 import Alamofire
 
 
-enum YTPlayListItemsType: Int {
-    // Playlist pop-up menu item tags.
-    case    kUploadsTag = 0
-    case    kLikesTag = 1
-    case    kFavoritesTag = 2
-    case    kWatchHistoryTag = 3
-    case    kWatchLaterTag = 4
-}
 
 
 let myChannelId = "UC0wObT_HayGfWLdRAnFyPwA"

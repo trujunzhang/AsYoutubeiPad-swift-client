@@ -14,8 +14,8 @@
 #import "GTMOAuth2ViewControllerTouch.h"
 
 // Library : google-api-client[Youtube]
-#import "GTLYouTube.h"
-#import "GTLService.h"
+//#import "GTLYouTube.h"
+//#import "GTLService.h"
 
 // Library: YouTubeAPI3-Objective-C-wrapper
 #import "MABYouTube_Sources.h"
