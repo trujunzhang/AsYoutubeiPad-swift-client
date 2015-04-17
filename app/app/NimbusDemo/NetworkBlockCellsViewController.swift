@@ -11,12 +11,12 @@ import Foundation
 class NetworkBlockCellsViewController : UIViewController,UITableViewDelegate {
     
     @IBOutlet weak var tableView: UITableView!
-
+    
     var drawTextBlock:NICellDrawRectBlock?
-    var tableContents:[NIDrawRectBlockCellObject] = [NIDrawRectBlockCellObject]()
+    var tableContents:[AnyObject] = [AnyObject]()
     var cellFactory:NICellFactory?
     var model:NITableViewModel?
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -24,8 +24,20 @@ class NetworkBlockCellsViewController : UIViewController,UITableViewDelegate {
         
         tableView.dataSource = model
     }
-
+    
     func makeModel(){
+        var drawTextBlock:NICellDrawRectBlock = { (rect, object, cell) -> CGFloat in
+            
+            let ret:CGFloat = 1.0
+            return ret
+            
+        }
+        
+        
+        var tableContents:[AnyObject]  = [
+            NIDrawRectBlockCellObject.objectWithBlock(drawTextBlock, object: "wanghao")
+        ]
+        
         cellFactory = NICellFactory()
         if let factory : NICellFactory = cellFactory{
             factory.mapObjectClass(NIDrawRectBlockCellObject.self, toCellClass: NetworkDrawRectBlockCell.self)
