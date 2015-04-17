@@ -10,6 +10,7 @@
 #import "NITableViewModel.h"
 #import "NetworkDrawRectBlockCell.h"
 #import "VideoInfoBlockUtils.h"
+#import "VideoInfoObject.h"
 
 @interface NetworkBlockCellsViewController ()<UITableViewDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
@@ -70,14 +71,8 @@
 
     NSMutableArray *tableContents =
             [NSMutableArray arrayWithObjects:
-                    [NIDrawRectBlockCellObject objectWithBlock:drawTextBlock object:@"f3c8603c353afa79b9f1c77f35efd566f3c8603c353afa79b9f1c77f35efd566f3c8603c353afa79b9f1c77f35efd566f3c8603c353afa79b9f1c77f35efd566f3c8603c353afa79b9f1c77f35efd56f3c8603c353afa79b9f1c77f35efd566f3c8603c353afa79b9f1c77f35efd566f3c8603c353afa79b9f1c77f35efd566f3c8603c353afa79b9f1c77f35efd566f3c8603c353afa79b9f1c77f35efd566f3c8603c353afa79b9f1c77f35efd566f3c8603c353afa79b9f1c77f35efd566f3c8603c353afa79b9f1c77f35efd566f3c8603c353afa79b9f1c77f3c8603c353afa79b9f1c77f35efd566f3c8603c353afa79b9f1c77f35efd566f3c8603c353afa79b9f1c77f35efd566f3c8603c353afa79b9f1c77f35efd566f3c8603c353afa79b9f1c77f35efd566f3c8603c353afa79b9f1c77f35efd566f3c8603c353afa79b9f1c77f35efd566f3c8603c353afa79b9f1c77f35efd566f3c8603c353afa79b9f1c77f35efd566f3c8603c353afa79b9f1c77f35efd566f35efd566f3c8603c353afa79b9f1c77f35efd5666"],
-                    [NIDrawRectBlockCellObject objectWithBlock:drawTextBlock object:@"c28f6b282ad61bff6aa9aba06c62ad66"],
-                    [NIDrawRectBlockCellObject objectWithBlock:drawTextBlock object:@"22f25c7b3f0f15a6854fae62bbd3482f"],
-                    [NIDrawRectBlockCellObject objectWithBlock:drawTextBlock object:@"ec5d7ba9c004f79817c76146247e787e"],
-                    [NIDrawRectBlockCellObject objectWithBlock:drawTextBlock object:@"832ece085bfe2c7c5b0ed6be62d7e675"],
-                    [NIDrawRectBlockCellObject objectWithBlock:drawTextBlock object:@"2ea33a461b2c20894f62958bcd9a4fb2"],
-                    [NIDrawRectBlockCellObject objectWithBlock:drawTextBlock object:@"430e340a391ff510825c61fb0f6ffeca"],
-                    [NIDrawRectBlockCellObject objectWithBlock:drawTextBlock object:@"875412d23685f3a6f49fff1b927512cb"],
+                    [NIDrawRectBlockCellObject objectWithBlock:videoTitleDrawRectBlock object:[VideoInfoObject makeVideoInfoObject]],
+//                    [NIDrawRectBlockCellObject objectWithBlock:drawTextBlock object:@"c28f6b282ad61bff6aa9aba06c62ad66"],
                             nil];
 
     // Set up our explicit mapping of NIDrawRectBlockCellObject -> NetworkDrawRectBlockCell.

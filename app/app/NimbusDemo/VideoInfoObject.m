@@ -10,12 +10,19 @@
 
 @implementation VideoInfoObject
 
++ (instancetype)makeVideoInfoObject{
+    VideoInfoObject* object = [[VideoInfoObject alloc] init];
+    return object;
+}
+
+
+
 - (instancetype)init {
     self = [super init];
     if(self) {
         self.title = @"WebStorm 10 - New features";
         self.likeCount = @"2,222 views";
-        self.description = @"Trisha Gee, JetBrains Developer Advocate talks about new features in WebStorm 10. \n"
+        self.descriptionString = @"Trisha Gee, JetBrains Developer Advocate talks about new features in WebStorm 10. \n"
                 "\n"
                 "I don't know why it works and how Xcode detect which constraint is more prioritised (because I'm not set priority for these constraints explicity), but I'll be thankful if someone explain, why it works.\n"
                 "\n"

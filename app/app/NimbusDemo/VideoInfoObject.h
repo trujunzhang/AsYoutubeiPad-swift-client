@@ -9,7 +9,10 @@
 #import <Foundation/Foundation.h>
 
 @interface VideoInfoObject : NSObject
+
++ (instancetype)makeVideoInfoObject;
+
 @property (nonatomic, copy) NSString* title;
 @property (nonatomic, copy) NSString* likeCount;
-@property (nonatomic, copy) NSString* description;
+@property (nonatomic, copy) NSString* descriptionString;
 @end
