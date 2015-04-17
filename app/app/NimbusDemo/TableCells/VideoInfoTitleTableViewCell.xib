@@ -12,6 +12,20 @@
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
                 <rect key="frame" x="0.0" y="0.0" width="768" height="43"/>
                 <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8ot-Nw-QvL" userLabel="topContainer">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="60"/>
+                        <color key="backgroundColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="60" id="n9U-76-qed"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="trailing" secondItem="8ot-Nw-QvL" secondAttribute="trailing" id="1PP-D8-fCn"/>
+                    <constraint firstItem="8ot-Nw-QvL" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="AF9-lE-YbI"/>
+                    <constraint firstItem="8ot-Nw-QvL" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="xaq-sN-mwW"/>
+                </constraints>
             </tableViewCellContentView>
             <point key="canvasLocation" x="145" y="331.5"/>
         </tableViewCell>
