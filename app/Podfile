@@ -9,13 +9,11 @@ link_with 'app', 'appTests'
 def import_pods
     pod 'XMLDictionary'
     pod 'Regexer'
-    pod 'Bolts'
 
     pod 'SDWebImage'
 
     pod 'Google-API-Client/YouTube'
 
-    pod 'CHTCollectionViewWaterfallLayout'
 
     pod 'IGYouTubeExtractor'
 
@@ -32,8 +30,8 @@ def import_pods
   #pod "YKMediaPlayerKit", :path => "../dependencies/YKMediaPlayerKit"
   #pod "MPMoviePlayerController-Subtitles", :path => "../dependencies/MPMoviePlayerController-Subtitles"
 
-  
-#    pod 'AFNetworking'    
+    #pod 'CHTCollectionViewWaterfallLayout'
+   
 
 #    pod 'SWRevealViewController'
 #    pod 'ISMemoryCache'

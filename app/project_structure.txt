@@ -1,4 +1,8 @@
+*WatchView(all)
+dependency: pop,App_Module_Resources/Subtitles
 
+*App_Module_Resources/Subtitles
+dependency: Bolts
 
 *Business-Logic-Layer(2)
 **youtubeapi(8)

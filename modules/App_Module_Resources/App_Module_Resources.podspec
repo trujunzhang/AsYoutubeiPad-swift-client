@@ -43,9 +43,9 @@ Pod::Spec.new do |s|
   #  sub.source_files = 'Pod/Classes/ImageEffects/*.{h,m}'
   #end
 
-  s.subspec 'STCollapseTableView' do |sub|
-    sub.source_files = 'Pod/Classes/STCollapseTableView/*.{h,m}'
-  end  
+  #s.subspec 'STCollapseTableView' do |sub|
+  #  sub.source_files = 'Pod/Classes/STCollapseTableView/*.{h,m}'
+  #end  
 
   s.subspec 'SWRevealViewController' do |sub|
     sub.source_files = 'Pod/Classes/SWRevealViewController/*.{h,m}'
@@ -59,9 +59,11 @@ Pod::Spec.new do |s|
     sub.source_files = 'Pod/Classes/YoutubeParser/*.{h,m}'
   end     
 
-  s.subspec 'Subtitles' do |sub|
-    sub.source_files = 'Pod/Classes/Subtitles/*/*.{h,m}'
-  end   
+  # for WatchView
+  #s.subspec 'Subtitles' do |sub|
+  #  sub.source_files = 'Pod/Classes/Subtitles/*/*.{h,m}'
+  #  sub.dependency 'Bolts'
+  #end   
 
   s.subspec 'ObservingPlayerItem' do |sub|
     sub.source_files = 'Pod/Classes/ObservingPlayerItem/*.{h,m}'

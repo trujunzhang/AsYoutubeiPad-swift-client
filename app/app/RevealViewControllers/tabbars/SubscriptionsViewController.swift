@@ -26,15 +26,15 @@ class SubscriptionsViewController: FrontBaseViewController {
         
         //        let channelPageViewController: ChannelPageViewController = ChannelPageViewController() // used
         
-        let channelPageViewController: YTVideoWatchViewController = YTVideoWatchViewController()
-//        channelPageViewController.videoID = "uD6Okha_Yj0"// has subtitle
-        channelPageViewController.videoID = "eoXneK3WIgQ"  // no  subtitle
-        
-        channelPageViewController.view.frame = container.bounds
-        
-        container.addSubview(channelPageViewController.view)
-        
-        self.addChildViewController(channelPageViewController)
+//        let channelPageViewController: YTVideoWatchViewController = YTVideoWatchViewController()
+////        channelPageViewController.videoID = "uD6Okha_Yj0"// has subtitle
+//        channelPageViewController.videoID = "eoXneK3WIgQ"  // no  subtitle
+//        
+//        channelPageViewController.view.frame = container.bounds
+//        
+//        container.addSubview(channelPageViewController.view)
+//        
+//        self.addChildViewController(channelPageViewController)
     }
     
     func test(){
