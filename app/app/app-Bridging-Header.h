@@ -47,6 +47,8 @@
 // Library: Nimbus(object-c)
 #import "NimbusCore.h"
 #import "NimbusWebController.h"
+#import "NimbusModels.h"
+#import "NetworkDrawRectBlockCell.h"
 
 // Library: SDWebImage
 //#import "WebImage.h"

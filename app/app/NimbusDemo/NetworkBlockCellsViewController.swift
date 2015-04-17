@@ -12,6 +12,7 @@ class NetworkBlockCellsViewController : UIViewController,UITableViewDelegate {
     
     @IBOutlet weak var tableView: UITableView!
 
+    var drawTextBlock:NICellDrawRectBlock?
 
     override func viewDidLoad() {
         super.viewDidLoad()
