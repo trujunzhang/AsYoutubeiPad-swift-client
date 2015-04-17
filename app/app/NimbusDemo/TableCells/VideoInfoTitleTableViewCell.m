@@ -38,6 +38,12 @@
     // Configure the view for the selected state
 }
 
+- (void)layoutSubviews {
+    [super layoutSubviews];
+
+}
+
+
 #pragma mark - NICell
 
 - (BOOL)shouldUpdateCellWithObject:(id)object{
