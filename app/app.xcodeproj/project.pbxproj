@@ -13,12 +13,6 @@
 		5E1E2CF51AD8B898004CC05B /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5E1E2CF31AD8B898004CC05B /* LaunchScreen.xib */; };
 		5E1E2D011AD8B898004CC05B /* appTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E1E2D001AD8B898004CC05B /* appTests.swift */; };
 		5E2209A81AD8CBE300DD748D /* Autolayout.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5E2209A61AD8CBE300DD748D /* Autolayout.storyboard */; };
-		5E2209AD1AD8CBEE00DD748D /* ReusedViewControllers.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5E2209A91AD8CBEE00DD748D /* ReusedViewControllers.storyboard */; };
-		5E2209AE1AD8CBEE00DD748D /* VideoWatchStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5E2209AB1AD8CBEE00DD748D /* VideoWatchStoryboard.storyboard */; };
-		5E2209B81AD8CCFE00DD748D /* FrontBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E2209B61AD8CCFE00DD748D /* FrontBaseViewController.swift */; };
-		5E2209B91AD8CCFE00DD748D /* SubscriptionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E2209B71AD8CCFE00DD748D /* SubscriptionsViewController.swift */; };
-		5E2209BC1AD8CD0700DD748D /* LeftMenuSectionsUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E2209BA1AD8CD0700DD748D /* LeftMenuSectionsUtils.swift */; };
-		5E2209BD1AD8CD0700DD748D /* LeftMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E2209BB1AD8CD0700DD748D /* LeftMenuViewController.swift */; };
 		5EA3885A1ADFC17A006D59E9 /* NetworkBlockCellsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EA388591ADFC17A006D59E9 /* NetworkBlockCellsViewController.swift */; };
 		5EA6F25E1AD8C9930017493D /* Cartography.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5EA6F25C1AD8C9930017493D /* Cartography.framework */; };
 		CB32D06F89412E5AAD9F456C /* libPods-appTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6F41558897D0187FFE158F21 /* libPods-appTests.a */; };
@@ -49,12 +43,6 @@
 		5E1E2CFF1AD8B898004CC05B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5E1E2D001AD8B898004CC05B /* appTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = appTests.swift; sourceTree = "<group>"; };
 		5E2209A71AD8CBE300DD748D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Autolayout.storyboard; sourceTree = "<group>"; };
-		5E2209AA1AD8CBEE00DD748D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/ReusedViewControllers.storyboard; sourceTree = "<group>"; };
-		5E2209AC1AD8CBEE00DD748D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/VideoWatchStoryboard.storyboard; sourceTree = "<group>"; };
-		5E2209B61AD8CCFE00DD748D /* FrontBaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FrontBaseViewController.swift; path = RevealViewControllers/tabbars/FrontBaseViewController.swift; sourceTree = "<group>"; };
-		5E2209B71AD8CCFE00DD748D /* SubscriptionsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SubscriptionsViewController.swift; path = RevealViewControllers/tabbars/SubscriptionsViewController.swift; sourceTree = "<group>"; };
-		5E2209BA1AD8CD0700DD748D /* LeftMenuSectionsUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LeftMenuSectionsUtils.swift; path = RevealViewControllers/leftmenu/LeftMenuSectionsUtils.swift; sourceTree = "<group>"; };
-		5E2209BB1AD8CD0700DD748D /* LeftMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LeftMenuViewController.swift; path = RevealViewControllers/leftmenu/LeftMenuViewController.swift; sourceTree = "<group>"; };
 		5E52BAC31AD8C449007C3F32 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
 		5E87FD931AD8C24B0021E80C /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Bolts.framework; path = Carthage/Build/iOS/Bolts.framework; sourceTree = "<group>"; };
 		5E87FD951AD8C2500021E80C /* pop.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = pop.framework; path = Carthage/Build/iOS/pop.framework; sourceTree = "<group>"; };
@@ -127,14 +115,11 @@
 			children = (
 				5ED52E531ADFB84000AF409B /* NimbusDemo */,
 				5EC282D61ADCEA9F007CB736 /* Cartography */,
-				5E2209AF1AD8CC1800DD748D /* RevealViewControllers */,
 				5E1E2CEA1AD8B898004CC05B /* AppDelegate.swift */,
 				5E1E2CEE1AD8B898004CC05B /* Main.storyboard */,
 				5E1E2CF11AD8B898004CC05B /* Images.xcassets */,
 				5E1E2CF31AD8B898004CC05B /* LaunchScreen.xib */,
 				5E2209A61AD8CBE300DD748D /* Autolayout.storyboard */,
-				5E2209A91AD8CBEE00DD748D /* ReusedViewControllers.storyboard */,
-				5E2209AB1AD8CBEE00DD748D /* VideoWatchStoryboard.storyboard */,
 				5E1E2CE81AD8B898004CC05B /* Supporting Files */,
 			);
 			path = app;
@@ -164,33 +149,6 @@
 				5E1E2CFF1AD8B898004CC05B /* Info.plist */,
 			);
 			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		5E2209AF1AD8CC1800DD748D /* RevealViewControllers */ = {
-			isa = PBXGroup;
-			children = (
-				5E2209B51AD8CCEF00DD748D /* tabbars */,
-				5E2209B41AD8CCE100DD748D /* leftmenu */,
-			);
-			name = RevealViewControllers;
-			sourceTree = "<group>";
-		};
-		5E2209B41AD8CCE100DD748D /* leftmenu */ = {
-			isa = PBXGroup;
-			children = (
-				5E2209BA1AD8CD0700DD748D /* LeftMenuSectionsUtils.swift */,
-				5E2209BB1AD8CD0700DD748D /* LeftMenuViewController.swift */,
-			);
-			name = leftmenu;
-			sourceTree = "<group>";
-		};
-		5E2209B51AD8CCEF00DD748D /* tabbars */ = {
-			isa = PBXGroup;
-			children = (
-				5E2209B61AD8CCFE00DD748D /* FrontBaseViewController.swift */,
-				5E2209B71AD8CCFE00DD748D /* SubscriptionsViewController.swift */,
-			);
-			name = tabbars;
 			sourceTree = "<group>";
 		};
 		5EC282D61ADCEA9F007CB736 /* Cartography */ = {
@@ -315,8 +273,6 @@
 			files = (
 				5E1E2CF01AD8B898004CC05B /* Main.storyboard in Resources */,
 				5E1E2CF51AD8B898004CC05B /* LaunchScreen.xib in Resources */,
-				5E2209AD1AD8CBEE00DD748D /* ReusedViewControllers.storyboard in Resources */,
-				5E2209AE1AD8CBEE00DD748D /* VideoWatchStoryboard.storyboard in Resources */,
 				5E1E2CF21AD8B898004CC05B /* Images.xcassets in Resources */,
 				5E2209A81AD8CBE300DD748D /* Autolayout.storyboard in Resources */,
 			);
@@ -413,11 +369,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5E2209BC1AD8CD0700DD748D /* LeftMenuSectionsUtils.swift in Sources */,
-				5E2209BD1AD8CD0700DD748D /* LeftMenuViewController.swift in Sources */,
 				5EA3885A1ADFC17A006D59E9 /* NetworkBlockCellsViewController.swift in Sources */,
-				5E2209B91AD8CCFE00DD748D /* SubscriptionsViewController.swift in Sources */,
-				5E2209B81AD8CCFE00DD748D /* FrontBaseViewController.swift in Sources */,
 				5E1E2CEB1AD8B898004CC05B /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -463,22 +415,6 @@
 				5E2209A71AD8CBE300DD748D /* Base */,
 			);
 			name = Autolayout.storyboard;
-			sourceTree = "<group>";
-		};
-		5E2209A91AD8CBEE00DD748D /* ReusedViewControllers.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				5E2209AA1AD8CBEE00DD748D /* Base */,
-			);
-			name = ReusedViewControllers.storyboard;
-			sourceTree = "<group>";
-		};
-		5E2209AB1AD8CBEE00DD748D /* VideoWatchStoryboard.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				5E2209AC1AD8CBEE00DD748D /* Base */,
-			);
-			name = VideoWatchStoryboard.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

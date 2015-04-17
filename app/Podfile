@@ -55,7 +55,7 @@ end
 
 
 target 'appTests', :exclusive => true do
-  import_pods
+    #  import_pods
 
     #pod 'Expecta'
     #pod 'OCMock'
