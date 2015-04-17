@@ -13,9 +13,25 @@ class NetworkBlockCellsViewController : UIViewController,UITableViewDelegate {
     @IBOutlet weak var tableView: UITableView!
 
     var drawTextBlock:NICellDrawRectBlock?
+    var tableContents:[NIDrawRectBlockCellObject] = [NIDrawRectBlockCellObject]()
+    var cellFactory:NICellFactory?
+    var model:NITableViewModel?
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        makeModel()
+        
+        tableView.dataSource = model
+    }
+
+    func makeModel(){
+        cellFactory = NICellFactory()
+        if let factory : NICellFactory = cellFactory{
+            factory.mapObjectClass(NIDrawRectBlockCellObject.self, toCellClass: NetworkDrawRectBlockCell.self)
+            
+            model = NITableViewModel(listArray: tableContents, delegate: factory)
+        }
     }
     
     override func viewDidAppear(animated: Bool) {
