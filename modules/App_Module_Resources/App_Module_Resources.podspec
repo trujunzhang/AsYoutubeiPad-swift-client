@@ -55,9 +55,9 @@ Pod::Spec.new do |s|
     sub.source_files = 'Pod/Classes/RDVTabBarController/*.{h,m}'
   end 
 
-  s.subspec 'YoutubeParser' do |sub|
-    sub.source_files = 'Pod/Classes/YoutubeParser/*.{h,m}'
-  end     
+  #s.subspec 'YoutubeParser' do |sub|
+  #  sub.source_files = 'Pod/Classes/YoutubeParser/*.{h,m}'
+  #end     
 
   # for WatchView
   #s.subspec 'Subtitles' do |sub|

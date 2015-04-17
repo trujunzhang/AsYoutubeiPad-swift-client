@@ -7,19 +7,19 @@ inhibit_all_warnings!
 link_with 'app', 'appTests'
 
 def import_pods
-    pod 'XMLDictionary'
-    pod 'Regexer'
+#    pod 'XMLDictionary'
+#    pod 'Regexer'
 
-    pod 'SDWebImage'
+
 
 #    pod 'Google-API-Client/YouTube'
 
 
-    pod 'IGYouTubeExtractor'
+#    pod 'IGYouTubeExtractor'
 
   # ________________project library___________________
   pod "App_Module_Resources", :path => "../modules/App_Module_Resources"
-  pod "YouTubeAPI3-Objective-C-wrapper", :path => "../modules/YouTubeAPI3-Objective-C-wrapper"
+#  pod "YouTubeAPI3-Objective-C-wrapper", :path => "../modules/YouTubeAPI3-Objective-C-wrapper"
   pod "Nimbus", :path => "../dependencies/Nimbus"
   pod "AFNetworking", :path => "../dependencies/AFNetworking"
   
@@ -35,6 +35,7 @@ def import_pods
 #    pod 'SWRevealViewController'
 #    pod 'ISMemoryCache'
 #    pod 'EGOCache'
+#    pod 'SDWebImage'
     #pod 'CHTCollectionViewWaterfallLayout'
     # pod 'SQPersist'
 

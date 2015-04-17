@@ -23,10 +23,8 @@
 		5E2209B91AD8CCFE00DD748D /* SubscriptionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E2209B71AD8CCFE00DD748D /* SubscriptionsViewController.swift */; };
 		5E2209BC1AD8CD0700DD748D /* LeftMenuSectionsUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E2209BA1AD8CD0700DD748D /* LeftMenuSectionsUtils.swift */; };
 		5E2209BD1AD8CD0700DD748D /* LeftMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E2209BB1AD8CD0700DD748D /* LeftMenuViewController.swift */; };
-		5E52BAC41AD8C449007C3F32 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E52BAC31AD8C449007C3F32 /* Alamofire.framework */; settings = {ATTRIBUTES = (Required, ); }; };
 		5EA3885A1ADFC17A006D59E9 /* NetworkBlockCellsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EA388591ADFC17A006D59E9 /* NetworkBlockCellsViewController.swift */; };
 		5EA6F25E1AD8C9930017493D /* Cartography.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5EA6F25C1AD8C9930017493D /* Cartography.framework */; };
-		5EA6F25F1AD8C9930017493D /* WebImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5EA6F25D1AD8C9930017493D /* WebImage.framework */; };
 		CB32D06F89412E5AAD9F456C /* libPods-appTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6F41558897D0187FFE158F21 /* libPods-appTests.a */; };
 		FE4BD745914619899B4CFFE4 /* libPods-app.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EC98874876136DD34019F3EC /* libPods-app.a */; };
 /* End PBXBuildFile section */
@@ -83,9 +81,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FE4BD745914619899B4CFFE4 /* libPods-app.a in Frameworks */,
-				5E52BAC41AD8C449007C3F32 /* Alamofire.framework in Frameworks */,
 				5EA6F25E1AD8C9930017493D /* Cartography.framework in Frameworks */,
-				5EA6F25F1AD8C9930017493D /* WebImage.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -385,9 +381,7 @@
 			files = (
 			);
 			inputPaths = (
-				"$(SRCROOT)/Carthage/Build/iOS/Alamofire.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/Cartography.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/WebImage.framework",
 			);
 			outputPaths = (
 			);
