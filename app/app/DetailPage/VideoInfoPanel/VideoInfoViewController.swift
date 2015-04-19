@@ -18,13 +18,15 @@ class VideoInfoViewController: UIViewController, UITableViewDelegate {
 
     var videoInfoObject: VideoInfoObject?
     var obj: NIDrawRectBlockCellObject?
+    var animateObject: TableAnimateObject?
+
     var tableContents: [AnyObject] = [AnyObject]()
 
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        self.view.backgroundColor = UIColor(rgba:VIDEO_INFO_BACKGROUND_COLOR)
+        self.view.backgroundColor = UIColor(rgba: VIDEO_INFO_BACKGROUND_COLOR)
 
         makeModel()
         tableView = UITableView()
@@ -44,10 +46,22 @@ class VideoInfoViewController: UIViewController, UITableViewDelegate {
         tableView?.dataSource = model
         tableView?.delegate = self
 
-        tableView?.rowHeight = 140
+        tableView?.rowHeight = 100
 
         isOpen = true
 
+    }
+
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+
+        if let infoObject: VideoInfoObject = videoInfoObject {
+            let specialRowHeight = VideoInfoDrawRectBlockCell.getBlockCellHeight(infoObject, width: 123)
+
+            infoObject.currentRowHeight = specialRowHeight
+
+            animateObject = TableAnimateObject(_maxValue: maxValue)
+        }
     }
 
     override func viewDidAppear(animated: Bool) {
@@ -78,5 +92,15 @@ class VideoInfoViewController: UIViewController, UITableViewDelegate {
 
     }
 
+    // MARK: UITableViewDelegate
+    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        if (indexPath.section == 0 && indexPath.row == 0) {
+            if let infoObject: VideoInfoObject = videoInfoObject {
+                return infoObject.currentRowHeight
+            }
+        }
+
+        return 200
+    }
 
 }

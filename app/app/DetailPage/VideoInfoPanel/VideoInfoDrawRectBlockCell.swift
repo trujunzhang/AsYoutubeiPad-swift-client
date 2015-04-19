@@ -18,6 +18,8 @@ class VideoInfoDrawRectBlockCell: NIDrawRectBlockCell {
     var likeCountLabel: UILabel?
     var toggleButton: UIButton?
 
+    var group: Cartography.ConstraintGroup = Cartography.ConstraintGroup()
+
     var _font: UIFont?
 
     // MARK : static functions
@@ -31,7 +33,8 @@ class VideoInfoDrawRectBlockCell: NIDrawRectBlockCell {
                 attributes: [NSFontAttributeName: VideoInfoDrawRectBlockCell.getDescriptionBlockCellFont()],
                 context: nil)
 
-        return boundingRect.size.height
+        let cellHeight = boundingRect.size.height
+        return  cellHeight
     }
 
     // MARK : Life Cycle
@@ -62,8 +65,8 @@ class VideoInfoDrawRectBlockCell: NIDrawRectBlockCell {
         }
 
         if let _titleContainer: UIView = titleContainer, _descriptionLabel: NIAttributedLabel = descriptionLabel {
-            layout(_titleContainer, _descriptionLabel) {
-                view1, view2 in
+            layout(_titleContainer) {
+                view1 in
 
                 view1.leading == view1.superview!.leading
                 view1.trailing == view1.superview!.trailing
@@ -71,13 +74,17 @@ class VideoInfoDrawRectBlockCell: NIDrawRectBlockCell {
                 view1.top == view1.superview!.top
                 view1.height == VIDEO_INFO_TITLE_PANEL_HEIGHT
 
+            }
+            group = layout(_descriptionLabel) {
+                view2 in
+
                 view2.leading == view2.superview!.leading + 20
                 view2.trailing == view2.superview!.trailing - 20
 
-                view2.top == view1.superview!.leading + VIDEO_INFO_TITLE_PANEL_HEIGHT
+                view2.top == view2.superview!.leading + VIDEO_INFO_TITLE_PANEL_HEIGHT
 //                view2.topMargin ==  VIDEO_INFO_TITLE_PANEL_HEIGHT
 //                view2.bottom == view2.superview!.bottom
-                view2.height == 200
+                view2.height == 100
             }
         }
 

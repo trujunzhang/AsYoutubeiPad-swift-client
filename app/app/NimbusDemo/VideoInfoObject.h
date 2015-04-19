@@ -16,6 +16,7 @@
 @property (nonatomic, copy) NSString* title;
 @property (nonatomic, copy) NSString* likeCount;
 @property (nonatomic, copy) NSString* descriptionString;
+
 @property (nonatomic) CGFloat currentRowHeight;
 @property (nonatomic) CGFloat position;
 @property (nonatomic) BOOL isPortrait;
