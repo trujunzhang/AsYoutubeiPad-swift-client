@@ -8,7 +8,7 @@
 
 import Foundation
 import UIKit
-
+import Cartography
 
 class VideoInfoDrawRectBlockCell: NIDrawRectBlockCell {
 
@@ -43,26 +43,45 @@ class VideoInfoDrawRectBlockCell: NIDrawRectBlockCell {
         titleLabel = UILabel()
         likeCountLabel = UILabel()
         toggleButton = UIButton()
-        if let _titleContainer: UIView = titleContainer, _titleLabel: UILabel = titleLabel, _likeCountLabel: UILabel = likeCountLabel {
+        if let _titleContainer: UIView = titleContainer, _titleLabel: UILabel = titleLabel, _likeCountLabel: UILabel = likeCountLabel, _toggleButton: UIButton = toggleButton {
             makeTitlePanel()
 
             // 1
             self.blockView.addSubview(_titleContainer)
-            LayoutUtils.LayoutFullView(_titleContainer)
             // 2
             _titleContainer.addSubview(_titleLabel)
             _titleContainer.addSubview(_likeCountLabel)
-
-            LayoutTitlePanel()
+            _titleContainer.addSubview(_toggleButton)
         }
 
         // line02
         descriptionLabel = NIAttributedLabel()
-        if let subView: NIAttributedLabel = descriptionLabel {
-            makeDescriptionLabel(subView)
-            self.blockView.addSubview(subView)
-            LayoutUtils.LayoutTopMargin(subView, topMargin: VIDEO_INFO_TITLE_PANEL_HEIGHT)
+        if let _descriptionLabel: NIAttributedLabel = descriptionLabel {
+            makeDescriptionLabel(_descriptionLabel)
+            self.blockView.addSubview(_descriptionLabel)
         }
+
+        if let _titleContainer: UIView = titleContainer, _descriptionLabel: NIAttributedLabel = descriptionLabel {
+            layout(_titleContainer, _descriptionLabel) {
+                view1, view2 in
+
+                view1.leading == view1.superview!.leading
+                view1.trailing == view1.superview!.trailing
+
+                view1.top == view1.superview!.top
+                view1.height == VIDEO_INFO_TITLE_PANEL_HEIGHT
+
+                view2.leading == view2.superview!.leading + 20
+                view2.trailing == view2.superview!.trailing - 20
+
+                view2.top == view1.bottom
+//                view2.bottom == view2.superview!.bottom
+                view2.height == 200
+            }
+        }
+
+
+        LayoutTitlePanel()
     }
 
     required init(coder aDecoder: NSCoder) {
@@ -78,11 +97,11 @@ class VideoInfoDrawRectBlockCell: NIDrawRectBlockCell {
 
         let infoObject: VideoInfoObject = object.object as! VideoInfoObject
 
-        if let subView: NIAttributedLabel = descriptionLabel {
-            subView.text = infoObject.descriptionString
+        if let _descriptionLabel: NIAttributedLabel = descriptionLabel, _titleLabel: UILabel = titleLabel, _likeCountLabel: UILabel = likeCountLabel, _toggleButton: UIButton = toggleButton {
+            _descriptionLabel.text = infoObject.descriptionString
+            _titleLabel.text = infoObject.title
+            _likeCountLabel.text = infoObject.likeCount
         }
-//        titleLabel.text = infoObject.title
-//        likeCountLabel.text = infoObject.likeCount
 
         return true
     }
@@ -119,7 +138,23 @@ class VideoInfoDrawRectBlockCell: NIDrawRectBlockCell {
     }
 
     func LayoutTitlePanel() {
+        if let _titleLabel: UILabel = titleLabel, _likeCountLabel: UILabel = likeCountLabel, _toggleButton: UIButton = toggleButton {
+            layout(_titleLabel, _likeCountLabel, _toggleButton) {
+                view1, view2, view3 in
 
+                view1.leading == view1.superview!.leading + 20
+                view1.trailing == view1.superview!.trailing - 60
+
+                view1.top == view1.superview!.top + 10
+                view1.height == 14
+
+                view2.leading == view2.superview!.leading + 20
+                view2.trailing == view2.superview!.trailing - 60
+
+                view2.top == view1.bottom + 4
+                view2.height == 14
+            }
+        }
     }
 
 
