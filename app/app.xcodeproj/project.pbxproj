@@ -16,6 +16,7 @@
 		5E2209A81AD8CBE300DD748D /* Autolayout.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5E2209A61AD8CBE300DD748D /* Autolayout.storyboard */; };
 		5E39CFAE1AE10BE5001032E6 /* VideoInfoObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E39CFAD1AE10BE5001032E6 /* VideoInfoObject.m */; };
 		5E43A6C11AE10AFF00BB915E /* VideoInfoBlockUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E43A6C01AE10AFF00BB915E /* VideoInfoBlockUtils.m */; };
+		5E4BFB8D1AE3214100BC7A33 /* pop.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E87FD951AD8C2500021E80C /* pop.framework */; };
 		5E9973541AE0FFB200692398 /* NetworkBlockCellsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E9973531AE0FFB200692398 /* NetworkBlockCellsViewController.m */; };
 		5EA6F25E1AD8C9930017493D /* Cartography.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5EA6F25C1AD8C9930017493D /* Cartography.framework */; };
 		CB32D06F89412E5AAD9F456C /* libPods-appTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6F41558897D0187FFE158F21 /* libPods-appTests.a */; };
@@ -73,6 +74,7 @@
 			files = (
 				FE4BD745914619899B4CFFE4 /* libPods-app.a in Frameworks */,
 				5EA6F25E1AD8C9930017493D /* Cartography.framework in Frameworks */,
+				5E4BFB8D1AE3214100BC7A33 /* pop.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -182,6 +184,7 @@
 		5ED52E531ADFB84000AF409B /* NimbusDemo */ = {
 			isa = PBXGroup;
 			children = (
+				5EED963D1AE1BE2200C7F73E /* TableCells */,
 				5E9973521AE0FFB200692398 /* NetworkBlockCellsViewController.h */,
 				5E9973531AE0FFB200692398 /* NetworkBlockCellsViewController.m */,
 				5E99735B1AE1005C00692398 /* YTNimbusTableView.h */,
@@ -191,6 +194,14 @@
 				5E39CFAD1AE10BE5001032E6 /* VideoInfoObject.m */,
 			);
 			name = NimbusDemo;
+			sourceTree = "<group>";
+		};
+		5EED963D1AE1BE2200C7F73E /* TableCells */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = TableCells;
+			path = NimbusDemo/TableCells;
 			sourceTree = "<group>";
 		};
 		AA4B77283D03A4084AB3C91E /* Pods */ = {
@@ -329,6 +340,7 @@
 			);
 			inputPaths = (
 				"$(SRCROOT)/Carthage/Build/iOS/Cartography.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/pop.framework",
 			);
 			outputPaths = (
 			);

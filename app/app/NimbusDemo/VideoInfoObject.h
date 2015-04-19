@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 
 @interface VideoInfoObject : NSObject
 
@@ -15,4 +16,9 @@
 @property (nonatomic, copy) NSString* title;
 @property (nonatomic, copy) NSString* likeCount;
 @property (nonatomic, copy) NSString* descriptionString;
+@property (nonatomic) CGFloat currentRowHeight;
+@property (nonatomic) BOOL isPortrait;
+@property (nonatomic) CGRect showRect;
+
+
 @end

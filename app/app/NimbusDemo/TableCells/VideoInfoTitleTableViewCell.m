@@ -26,10 +26,22 @@
 
 @end
 
+@interface VideoInfoTitleTableViewCell () {
+
+    __weak IBOutlet UILabel *descriptionLabel;
+}
+@end
+
+
 @implementation VideoInfoTitleTableViewCell
 
 - (void)awakeFromNib {
     // Initialization code
+    UIFont *font = descriptionLabel.font;
+    NSString *string = descriptionLabel.text;
+    CGFloat aFloat = self.frame.size.width;
+    NSString *debug = @"debug";
+//    CGSize size = [string sizeWithFont:font constrainedToSize:CGSizeMake(titleWidth, CGFLOAT_MAX) lineBreakMode:NSLineBreakByWordWrapping];
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
@@ -41,6 +53,8 @@
 - (void)layoutSubviews {
     [super layoutSubviews];
 
+    CGFloat aFloat = self.frame.size.width;
+    NSString *debug = @"debug";
 }
 
 

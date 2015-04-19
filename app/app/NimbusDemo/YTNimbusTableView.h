@@ -8,5 +8,5 @@
 
 
 #import "NetworkBlockCellsViewController.h"
-#import "VideoInfoTitleTableViewCell.h"
+#import "NetworkDrawRectBlockCell.h"
 

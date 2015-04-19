@@ -25,7 +25,7 @@
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9N4-zB-vgC">
                                 <rect key="frame" x="0.0" y="60" width="600" height="240"/>
-                                <mutableString key="text">Trisha Gee, JetBrains Developer Advocate talks about new features in WebStorm 10. 
+                                <string key="text">Trisha Gee, JetBrains Developer Advocate talks about new features in WebStorm 10. 
 
 I don't know why it works and how Xcode detect which constraint is more prioritised (because I'm not set priority for these constraints explicity), but I'll be thankful if someone explain, why it works.
 
@@ -34,7 +34,7 @@ When you want to align multiple elements, say three button in one vertical line,
 
 I've got a scrollview and inside it, an imageview in storyboard. I have iboutlets to the file this code is in with references to those views. They are called scrollView and graph respectively. I am trying to programmatically add a lot of UILabels below the graph inside the scrollview, but I can't even get one to show up.
 
-</mutableString>
+</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -56,6 +56,9 @@ I've got a scrollview and inside it, an imageview in storyboard. I have iboutlet
                     <constraint firstAttribute="centerY" secondItem="5QY-X8-IKZ" secondAttribute="centerY" id="yxP-7Y-ibb"/>
                 </constraints>
             </tableViewCellContentView>
+            <connections>
+                <outlet property="descriptionLabel" destination="9N4-zB-vgC" id="tCq-sl-ZvP"/>
+            </connections>
             <point key="canvasLocation" x="145" y="331.5"/>
         </tableViewCell>
     </objects>
