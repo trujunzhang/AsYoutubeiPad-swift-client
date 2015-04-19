@@ -8,13 +8,15 @@
 
 import Foundation
 
+let VIDEO_INFO_TITLE_PANEL_HEIGHT: CGFloat = 60
+
 class TableAnimateObject {
     var maxValue: CGFloat?
     var minValue: CGFloat?
     var fromValue: CGFloat?
-    
-    init(_maxValue : CGFloat){
+
+    init(_maxValue: CGFloat) {
         maxValue = _maxValue
     }
-    
+
 }
