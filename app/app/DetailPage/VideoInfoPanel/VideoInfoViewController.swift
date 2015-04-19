@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 import Cartography
 
 class VideoInfoViewController: UIViewController, UITableViewDelegate {
@@ -56,6 +57,9 @@ class VideoInfoViewController: UIViewController, UITableViewDelegate {
         super.viewWillAppear(animated)
 
         if let infoObject: VideoInfoObject = videoInfoObject {
+            let viewWidth = self.view.frame.size.width
+            println("viewWidth : \(viewWidth)")
+
             let specialRowHeight = VideoInfoDrawRectBlockCell.getBlockCellHeight(infoObject, width: 123)
 
             infoObject.currentRowHeight = specialRowHeight
@@ -89,7 +93,6 @@ class VideoInfoViewController: UIViewController, UITableViewDelegate {
         cellFactory?.mapObjectClass(NIDrawRectBlockCellObject.self, toCellClass: VideoInfoDrawRectBlockCell.self)
 
         model = NITableViewModel(listArray: tableContents, delegate: cellFactory)
-
     }
 
     // MARK: UITableViewDelegate
@@ -108,7 +111,7 @@ class VideoInfoViewController: UIViewController, UITableViewDelegate {
             _tableView.beginUpdates()
             let indexPath: NSIndexPath = NSIndexPath(forRow: 0, inSection: 0)
             let reloadIndexPath = [indexPath]
-            _tableView.reloadSections(reloadIndexPath, withRowAnimation: none)
+            _tableView.reloadSections(reloadIndexPath, withRowAnimation: .None)
             _tableView.endUpdates()
         }
     }
