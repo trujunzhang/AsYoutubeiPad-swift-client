@@ -120,8 +120,8 @@ CGFloat DEFAULT_ROW_HEIGHT = 60.0;
 
                     self.obj,
                     [NITitleCellObject objectWithTitle:@"This section has no header"],
-             [NITitleCellObject objectWithTitle:@"This section has no header"],
-             [NITitleCellObject objectWithTitle:@"This section has no header"],
+                    [NITitleCellObject objectWithTitle:@"This section has no header"],
+                    [NITitleCellObject objectWithTitle:@"This section has no header"],
 
                             nil];
 
@@ -189,17 +189,17 @@ CGFloat DEFAULT_ROW_HEIGHT = 60.0;
 
 - (void)viewWillLayoutSubviews {
     [super viewWillLayoutSubviews];
-    
-      _videoInfoObject.showRect = CGRectMake(20, 20, self.tableView.frame.size.width, _videoInfoObject.currentRowHeight );
+
+    _videoInfoObject.showRect = CGRectMake(20, 20, self.tableView.frame.size.width, _videoInfoObject.currentRowHeight);
 
     NSString *debug = @"debug";
 }
 
 - (void)viewDidLayoutSubviews {
     [super viewDidLayoutSubviews];
-    
-    _videoInfoObject.showRect = CGRectMake(20, 20, self.tableView.frame.size.width-40, _videoInfoObject.currentRowHeight );
-    
+
+    _videoInfoObject.showRect = CGRectMake(20, 20, self.tableView.frame.size.width - 40, _videoInfoObject.currentRowHeight);
+
     NSString *debug = @"debug";
 }
 

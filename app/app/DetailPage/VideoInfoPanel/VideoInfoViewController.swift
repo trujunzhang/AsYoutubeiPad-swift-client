@@ -113,11 +113,5 @@ class VideoInfoViewController: UIViewController, UITableViewDelegate {
         }
     }
 
-//- (void)updateAnimatedTableCell {
-//[self.tableView beginUpdates];
-//NSArray *reloadIndexPath = [NSArray arrayWithObject:[NSIndexPath indexPathForRow:0 inSection:0]];
-//[self.tableView reloadRowsAtIndexPaths:reloadIndexPath withRowAnimation:UITableViewRowAnimationNone];
-//[self.tableView endUpdates];
-//}
 
 }
