@@ -34,7 +34,7 @@ class VideoInfoViewController :UIViewController,UITableViewDelegate {
         tableView?.dataSource = model
         tableView?.delegate = self
         
-        tableView?.rowHeight = 40
+        tableView?.rowHeight = 140
         
         isOpen = true
         
@@ -50,12 +50,14 @@ class VideoInfoViewController :UIViewController,UITableViewDelegate {
             rect,  object,  cell in
             
             
-            return 0
+            return 100
         }
         
         videoInfoObject = VideoInfoObject()
         obj = NIDrawRectBlockCellObject(block: drawTextBlock, object: videoInfoObject)
         tableContents = [
+             NIDrawRectBlockCellObject(block: drawTextBlock, object: videoInfoObject),
+            NITitleCellObject(title: "xcode"),
             NITitleCellObject(title: "wanghao")
         ]
         

@@ -16,7 +16,7 @@ class VideoInfoDrawRectBlockCell : NIDrawRectBlockCell {
     
     // MARK : static functions
     class func getDescriptionBlockCellFont() -> UIFont {
-        return UIFont(name: "", size: 12)!
+        return UIFont(name: "AmericanTypewriter", size: 12)!
     }
     
     class func getBlockCellHeight(object:VideoInfoObject, width:CGFloat) ->CGFloat {
@@ -50,15 +50,16 @@ class VideoInfoDrawRectBlockCell : NIDrawRectBlockCell {
         let infoObject : VideoInfoObject = object.object as! VideoInfoObject
         
         if let subView:NIAttributedLabel = descriptionLabel {
-          subView.text = infoObject.descriptionString
+            subView.text = infoObject.descriptionString
+            LayoutUtils.LayoutFullView(subView)
         }
-
+        
         return true
     }
     
     func makeLabel(label:NIAttributedLabel){
         label.numberOfLines = 0
-//        label.lineBreakMode = NSLineBreakByWordWrapping
+        //        label.lineBreakMode = NSLineBreakByWordWrapping
         label.font = VideoInfoDrawRectBlockCell.getDescriptionBlockCellFont()
         
         // When the user taps a link we can change the way the link text looks.
@@ -77,6 +78,6 @@ class VideoInfoDrawRectBlockCell : NIDrawRectBlockCell {
         label.linksHaveUnderlines = true
     }
     
-
+    
     
 }
