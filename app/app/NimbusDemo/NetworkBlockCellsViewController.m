@@ -49,6 +49,31 @@
 
 CGFloat DEFAULT_ROW_HEIGHT = 60.0;
 
+@interface TableAnimateObject : NSObject
+
+@property (nonatomic) CGFloat fromValue;
+@property (nonatomic) CGFloat toValue;
+
+- (instancetype)initWithPosition:(CGFloat)position toValue:(CGFloat)toValue;
+
+
+@end
+
+@implementation TableAnimateObject {
+}
+- (instancetype)initWithPosition:(CGFloat)position toValue:(CGFloat)toValue {
+    self = [super init];
+    if(self) {
+        self.fromValue = position;
+        self.toValue = toValue;
+    }
+
+    return self;
+}
+
+
+@end
+
 @interface NetworkBlockCellsViewController ()<UITableViewDelegate>
 @property (nonatomic, retain) NITableViewModel *model;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
@@ -64,6 +89,7 @@ CGFloat DEFAULT_ROW_HEIGHT = 60.0;
 
 @implementation NetworkBlockCellsViewController {
     VideoInfoObject *_videoInfoObject;
+    TableAnimateObject *_animateObject;
 }
 
 
@@ -116,14 +142,18 @@ CGFloat DEFAULT_ROW_HEIGHT = 60.0;
 - (void)didTapAddButton:(UIBarButtonItem *)buttonItem {
 //    self.currentRowHeight -= 20;//self.specialRowHeight;
 //
-//    [self.tableView beginUpdates];
-//    NSArray *reloadIndexPath = [NSArray arrayWithObject:[NSIndexPath indexPathForRow:0 inSection:0]];
-//    [self.tableView reloadRowsAtIndexPaths:reloadIndexPath withRowAnimation:UITableViewRowAnimationNone];
-//    [self.tableView endUpdates];
+//    [self updateAnimatedTableCell];
 
     NSString *debug = @"debug";
 
-//    [self performAnimation];
+    [self performAnimation];
+}
+
+- (void)updateAnimatedTableCell {
+    [self.tableView beginUpdates];
+    NSArray *reloadIndexPath = [NSArray arrayWithObject:[NSIndexPath indexPathForRow:0 inSection:0]];
+    [self.tableView reloadRowsAtIndexPaths:reloadIndexPath withRowAnimation:UITableViewRowAnimationNone];
+    [self.tableView endUpdates];
 }
 
 - (void)viewDidLoad {
@@ -137,7 +167,6 @@ CGFloat DEFAULT_ROW_HEIGHT = 60.0;
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
 
-    //    self.specialRowHeight = [NetworkDrawRectBlockCell heightForObject:self.obj atIndexPath:0 tableView:self.tableView];
     UITableViewCell *cell = [self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0]];
     CGFloat blockCellHeight = [NetworkDrawRectBlockCell getBlockCellHeight:_videoInfoObject withWidth:self.tableView.frame.size.width];
     self.specialRowHeight = blockCellHeight;
@@ -163,10 +192,6 @@ CGFloat DEFAULT_ROW_HEIGHT = 60.0;
 }
 
 
-- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation {
-    return NIIsSupportedOrientation(toInterfaceOrientation);
-}
-
 #pragma mark - UITableViewDelegate
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -177,30 +202,46 @@ CGFloat DEFAULT_ROW_HEIGHT = 60.0;
     return 200;
 }
 
-
 - (void)performAnimation {
+    _animateObject = [[TableAnimateObject alloc] initWithPosition:_videoInfoObject.currentRowHeight toValue:60.0];
 
-//    [self.popCircle pop_removeAllAnimations];
-    POPBasicAnimation *anim = [POPBasicAnimation animationWithPropertyNamed:kPOPLayerPositionY];
+    POPSpringAnimation *spring = [POPSpringAnimation animationWithPropertyNamed:kPOPViewCenter];
+    spring.springBounciness = 10;
+    spring.springSpeed = 10;
 
-    if(self.animated) {
-        anim.toValue = @(20);
-    } else {
-        anim.toValue = @(20);
-    }
-
-    self.animated = !self.animated;
-
-    anim.completionBlock = ^(POPAnimation *anim, BOOL finished) {
+    spring.completionBlock = ^(POPAnimation *anim, BOOL finished) {
         if(finished) {
-
-//            [self performAnimation];
+            NSString *debug = @"debug";
         }
     };
 
-    [_videoInfoObject pop_addAnimation:anim forKey:@"Animation"];
+    POPAnimatableProperty *property = [POPAnimatableProperty propertyWithName:@"curtainOpenPoint" initializer:^(POPMutableAnimatableProperty *prop) {
+        prop.readBlock = ^(TableAnimateObject *vc, CGFloat values[]) {
+            NSString *debug = @"debug";
+            values[0] = vc.fromValue;
+        };
 
+        prop.writeBlock = ^(TableAnimateObject *vc, const CGFloat values[]) {
+            NSString *debug = @"debug";
+            vc.fromValue = values[0];
+
+            _videoInfoObject.currentRowHeight = values[0];
+
+            NSLog(@"_videoInfoObject.currentRowHeight = %f", _videoInfoObject.currentRowHeight);
+//            [self updateAnimatedTableCell];
+
+//            NSLog(@"values[0] = %f", values[0]);
+        };
+
+        prop.threshold = 0.01;
+    }];
+
+    spring.property = property;
+
+    spring.fromValue = @(_animateObject.fromValue);
+    spring.toValue = @(_animateObject.toValue);
+
+    [_animateObject pop_addAnimation:spring forKey:@"spring"];
 }
-
 
 @end
