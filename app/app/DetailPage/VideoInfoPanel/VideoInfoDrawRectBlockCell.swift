@@ -74,7 +74,8 @@ class VideoInfoDrawRectBlockCell: NIDrawRectBlockCell {
                 view2.leading == view2.superview!.leading + 20
                 view2.trailing == view2.superview!.trailing - 20
 
-                view2.top == view1.bottom
+                view2.top == view1.superview!.leading + VIDEO_INFO_TITLE_PANEL_HEIGHT
+//                view2.topMargin ==  VIDEO_INFO_TITLE_PANEL_HEIGHT
 //                view2.bottom == view2.superview!.bottom
                 view2.height == 200
             }
