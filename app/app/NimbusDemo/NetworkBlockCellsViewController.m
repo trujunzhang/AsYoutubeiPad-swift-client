@@ -205,9 +205,8 @@ CGFloat DEFAULT_ROW_HEIGHT = 60.0;
 - (void)performAnimation {
     _animateObject = [[TableAnimateObject alloc] initWithPosition:_videoInfoObject.currentRowHeight toValue:60.0];
 
-    POPSpringAnimation *spring = [POPSpringAnimation animationWithPropertyNamed:kPOPViewCenter];
-    spring.springBounciness = 10;
-    spring.springSpeed = 10;
+    POPBasicAnimation *spring = [POPBasicAnimation animation];
+    spring.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionLinear];
 
     spring.completionBlock = ^(POPAnimation *anim, BOOL finished) {
         if(finished) {
@@ -228,7 +227,8 @@ CGFloat DEFAULT_ROW_HEIGHT = 60.0;
             _videoInfoObject.currentRowHeight = values[0];
 
             NSLog(@"_videoInfoObject.currentRowHeight = %f", _videoInfoObject.currentRowHeight);
-//            [self updateAnimatedTableCell];
+
+            [self updateAnimatedTableCell];
 
 //            NSLog(@"values[0] = %f", values[0]);
         };
