@@ -227,11 +227,9 @@ CGFloat DEFAULT_ROW_HEIGHT = 60.0;
 
     if(self.isOpen) {
         _animateObject.fromValue = _animateObject.maxValue;
-        spring.fromValue = @(_animateObject.maxValue);
         spring.toValue = @(_animateObject.minValue);
     } else {
         _animateObject.fromValue = _animateObject.minValue;
-        spring.fromValue = @(_animateObject.minValue);
         spring.toValue = @(_animateObject.maxValue);
     }
 
