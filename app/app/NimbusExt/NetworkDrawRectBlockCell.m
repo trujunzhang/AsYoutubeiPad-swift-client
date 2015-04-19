@@ -109,7 +109,7 @@
                                              context:nil];
     
 
-    return textRect1.size.height + 40;
+    return textRect1.size.height;
 }
 
 @end
