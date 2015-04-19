@@ -204,7 +204,11 @@ CGFloat DEFAULT_ROW_HEIGHT = 60.0;
 
 - (void)performAnimation {
     POPBasicAnimation *spring = [POPBasicAnimation animation];
-    spring.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionLinear];
+    NSString *name = kCAMediaTimingFunctionEaseOut;
+    if(self.isOpen) {
+        name = kCAMediaTimingFunctionEaseIn;
+    }
+    spring.timingFunction = [CAMediaTimingFunction functionWithName:name];
 
     POPAnimatableProperty *property = [POPAnimatableProperty propertyWithName:@"curtainOpenPoint" initializer:^(POPMutableAnimatableProperty *prop) {
         prop.readBlock = ^(TableAnimateObject *vc, CGFloat values[]) {
