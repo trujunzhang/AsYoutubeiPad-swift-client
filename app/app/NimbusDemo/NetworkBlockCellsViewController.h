@@ -21,9 +21,7 @@
 
 // All docs are in the .m.
 @interface NetworkBlockCellsViewController : UIViewController
+
 @property (nonatomic, strong) NIDrawRectBlockCellObject *obj;
-@property (nonatomic) CGFloat specialRowHeight;
-//@property (nonatomic) CGFloat currentRowHeight;
-//@property (nonatomic) CGFloat specialRowHeight;
-@property (nonatomic) BOOL animated;
+
 @end

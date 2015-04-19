@@ -51,8 +51,9 @@ CGFloat DEFAULT_ROW_HEIGHT = 60.0;
 
 @interface TableAnimateObject : NSObject
 
+@property (nonatomic) CGFloat maxValue;
+@property (nonatomic) CGFloat minValue;
 @property (nonatomic) CGFloat fromValue;
-@property (nonatomic) CGFloat toValue;
 
 - (instancetype)initWithPosition:(CGFloat)position toValue:(CGFloat)toValue;
 
@@ -64,8 +65,8 @@ CGFloat DEFAULT_ROW_HEIGHT = 60.0;
 - (instancetype)initWithPosition:(CGFloat)position toValue:(CGFloat)toValue {
     self = [super init];
     if(self) {
-        self.fromValue = position;
-        self.toValue = toValue;
+        self.maxValue = position;
+        self.minValue = toValue;
     }
 
     return self;
@@ -77,7 +78,7 @@ CGFloat DEFAULT_ROW_HEIGHT = 60.0;
 @interface NetworkBlockCellsViewController ()<UITableViewDelegate>
 @property (nonatomic, retain) NITableViewModel *model;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
-
+@property (nonatomic, assign, getter = isOpen) BOOL open;
 
 // We're going to override the default mapping of NIDrawRectBlockCellObject -> NIDrawRectBlockCell
 // so that we can display our subclassed version of NIDrawRectBlockCell with network images.
@@ -162,20 +163,19 @@ CGFloat DEFAULT_ROW_HEIGHT = 60.0;
     [self makeModel];
     self.tableView.dataSource = _model;
     self.tableView.delegate = self;
+
+    self.open = YES;
 }
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
 
-    UITableViewCell *cell = [self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0]];
-    CGFloat blockCellHeight = [NetworkDrawRectBlockCell getBlockCellHeight:_videoInfoObject withWidth:self.tableView.frame.size.width];
-    self.specialRowHeight = blockCellHeight;
-    _videoInfoObject.currentRowHeight = self.specialRowHeight;
+    CGFloat specialRowHeight = [NetworkDrawRectBlockCell getBlockCellHeight:_videoInfoObject withWidth:self.tableView.frame.size.width];
 
-    CGRect rect = CGRectMake(20, 20, self.tableView.frame.size.width, self.specialRowHeight);
-    _videoInfoObject.showRect = rect;
+    _videoInfoObject.currentRowHeight = specialRowHeight;
+    _videoInfoObject.showRect = CGRectMake(20, 20, self.tableView.frame.size.width, specialRowHeight);
 
-    NSString *debug = @"debug";
+    _animateObject = [[TableAnimateObject alloc] initWithPosition:specialRowHeight toValue:60.0];
 }
 
 
@@ -203,34 +203,21 @@ CGFloat DEFAULT_ROW_HEIGHT = 60.0;
 }
 
 - (void)performAnimation {
-    _animateObject = [[TableAnimateObject alloc] initWithPosition:_videoInfoObject.currentRowHeight toValue:60.0];
-
     POPBasicAnimation *spring = [POPBasicAnimation animation];
     spring.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionLinear];
 
-    spring.completionBlock = ^(POPAnimation *anim, BOOL finished) {
-        if(finished) {
-            NSString *debug = @"debug";
-        }
-    };
-
     POPAnimatableProperty *property = [POPAnimatableProperty propertyWithName:@"curtainOpenPoint" initializer:^(POPMutableAnimatableProperty *prop) {
         prop.readBlock = ^(TableAnimateObject *vc, CGFloat values[]) {
-            NSString *debug = @"debug";
             values[0] = vc.fromValue;
         };
 
         prop.writeBlock = ^(TableAnimateObject *vc, const CGFloat values[]) {
-            NSString *debug = @"debug";
             vc.fromValue = values[0];
-
             _videoInfoObject.currentRowHeight = values[0];
 
             NSLog(@"_videoInfoObject.currentRowHeight = %f", _videoInfoObject.currentRowHeight);
 
             [self updateAnimatedTableCell];
-
-//            NSLog(@"values[0] = %f", values[0]);
         };
 
         prop.threshold = 0.01;
@@ -238,8 +225,18 @@ CGFloat DEFAULT_ROW_HEIGHT = 60.0;
 
     spring.property = property;
 
-    spring.fromValue = @(_animateObject.fromValue);
-    spring.toValue = @(_animateObject.toValue);
+    if(self.isOpen) {
+        _animateObject.fromValue = _animateObject.maxValue;
+        spring.fromValue = @(_animateObject.maxValue);
+        spring.toValue = @(_animateObject.minValue);
+    } else {
+        _animateObject.fromValue = _animateObject.minValue;
+        spring.fromValue = @(_animateObject.minValue);
+        spring.toValue = @(_animateObject.maxValue);
+    }
+
+
+    self.open = !self.isOpen;
 
     [_animateObject pop_addAnimation:spring forKey:@"spring"];
 }
