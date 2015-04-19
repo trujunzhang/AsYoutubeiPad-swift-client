@@ -24,6 +24,7 @@ class VideoInfoViewController: UIViewController, UITableViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        self.view.backgroundColor = UIColor(rgba:VIDEO_INFO_BACKGROUND_COLOR)
 
         makeModel()
         tableView = UITableView()
@@ -34,10 +35,10 @@ class VideoInfoViewController: UIViewController, UITableViewDelegate {
             view1 in
 
             view1.leading == view1.superview!.leading + 20
-            view1.trailing == view1.superview!.trailing + 20
+            view1.trailing == view1.superview!.trailing - 20
 
             view1.top == view1.superview!.top + 20
-            view1.bottom == view1.superview!.bottom + 20
+            view1.bottom == view1.superview!.bottom - 20
         }
 
         tableView?.dataSource = model
