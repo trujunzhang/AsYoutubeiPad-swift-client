@@ -37,8 +37,8 @@ class VideoInfoViewController: UIViewController, UITableViewDelegate {
         layout(tableView!) {
             view1 in
 
-            view1.leading == view1.superview!.leading + 20
-            view1.trailing == view1.superview!.trailing - 20
+            view1.leading == view1.superview!.leading + VIDEO_INFO_TABLEVIEW_MARGIN_LEFT_RIGHT
+            view1.trailing == view1.superview!.trailing - VIDEO_INFO_TABLEVIEW_MARGIN_LEFT_RIGHT
 
             view1.top == view1.superview!.top + 20
             view1.bottom == view1.superview!.bottom - 20
@@ -57,10 +57,11 @@ class VideoInfoViewController: UIViewController, UITableViewDelegate {
         super.viewWillAppear(animated)
 
         if let infoObject: VideoInfoObject = videoInfoObject {
-            let viewWidth = self.view.frame.size.width
+            let viewWidth = self.view.frame.size.width  - (VIDEO_INFO_TABLEVIEW_MARGIN_LEFT_RIGHT * 2)
             println("viewWidth : \(viewWidth)")
 
-            let specialRowHeight = VideoInfoDrawRectBlockCell.getBlockCellHeight(infoObject, width: 123)
+            let specialRowHeight = VideoInfoDrawRectBlockCell.getBlockCellHeight(infoObject, width: viewWidth)
+            println("specialRowHeight : \(specialRowHeight)")
 
             infoObject.currentRowHeight = specialRowHeight
 
@@ -99,7 +100,7 @@ class VideoInfoViewController: UIViewController, UITableViewDelegate {
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         if (indexPath.section == 0 && indexPath.row == 0) {
             if let infoObject: VideoInfoObject = videoInfoObject {
-                return infoObject.currentRowHeight
+                return infoObject.currentRowHeight + VIDEO_INFO_TITLE_PANEL_HEIGHT
             }
         }
 
@@ -111,7 +112,7 @@ class VideoInfoViewController: UIViewController, UITableViewDelegate {
             _tableView.beginUpdates()
             let indexPath: NSIndexPath = NSIndexPath(forRow: 0, inSection: 0)
             let reloadIndexPath = [indexPath]
-            _tableView.reloadSections(reloadIndexPath, withRowAnimation: .None)
+            _tableView.reloadRowsAtIndexPaths(reloadIndexPath, withRowAnimation: .None)
             _tableView.endUpdates()
         }
     }

@@ -11,6 +11,8 @@ import Foundation
 let VIDEO_INFO_TITLE_PANEL_HEIGHT: CGFloat = 60
 let VIDEO_INFO_BACKGROUND_COLOR = "#fff1f1f1"
 
+let VIDEO_INFO_TABLEVIEW_MARGIN_LEFT_RIGHT: CGFloat = 20
+
 class TableAnimateObject {
     var maxValue: CGFloat?
     var minValue: CGFloat = VIDEO_INFO_TITLE_PANEL_HEIGHT

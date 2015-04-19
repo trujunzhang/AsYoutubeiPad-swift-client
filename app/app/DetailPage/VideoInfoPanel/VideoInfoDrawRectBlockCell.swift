@@ -28,13 +28,13 @@ class VideoInfoDrawRectBlockCell: NIDrawRectBlockCell {
     }
 
     class func getBlockCellHeight(object: VideoInfoObject, width: CGFloat) -> CGFloat {
-        let boundingRect = object.descriptionString.boundingRectWithSize(CGSizeMake(width - 40, CGFloat.max),
+        let boundingRect = object.descriptionString.boundingRectWithSize(CGSizeMake(width, CGFloat.max),
                 options: .UsesLineFragmentOrigin | .UsesFontLeading,
                 attributes: [NSFontAttributeName: VideoInfoDrawRectBlockCell.getDescriptionBlockCellFont()],
                 context: nil)
 
-        let cellHeight = boundingRect.size.height
-        return  cellHeight
+        let cellHeight = boundingRect.size.height + 20
+        return cellHeight
     }
 
     // MARK : Life Cycle
@@ -82,8 +82,6 @@ class VideoInfoDrawRectBlockCell: NIDrawRectBlockCell {
                 view2.trailing == view2.superview!.trailing - 20
 
                 view2.top == view2.superview!.leading + VIDEO_INFO_TITLE_PANEL_HEIGHT
-//                view2.topMargin ==  VIDEO_INFO_TITLE_PANEL_HEIGHT
-//                view2.bottom == view2.superview!.bottom
                 view2.height == 100
             }
         }
@@ -104,11 +102,22 @@ class VideoInfoDrawRectBlockCell: NIDrawRectBlockCell {
         super.shouldUpdateCellWithObject(object)
 
         let infoObject: VideoInfoObject = object.object as! VideoInfoObject
+        let currentRowHeight:CGFloat = infoObject.currentRowHeight
 
         if let _descriptionLabel: NIAttributedLabel = descriptionLabel, _titleLabel: UILabel = titleLabel, _likeCountLabel: UILabel = likeCountLabel, _toggleButton: UIButton = toggleButton {
             _descriptionLabel.text = infoObject.descriptionString
             _titleLabel.text = infoObject.title
             _likeCountLabel.text = infoObject.likeCount
+
+            group = layout(_descriptionLabel,replace: group) {
+                view2 in
+
+                view2.leading == view2.superview!.leading + 20
+                view2.trailing == view2.superview!.trailing - 20
+
+                view2.top == view2.superview!.leading + VIDEO_INFO_TITLE_PANEL_HEIGHT
+                view2.height == currentRowHeight
+            }
         }
 
         return true
