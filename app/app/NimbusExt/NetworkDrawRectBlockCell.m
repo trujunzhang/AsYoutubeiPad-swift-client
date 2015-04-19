@@ -103,9 +103,16 @@
 }
 
 + (CGFloat)getBlockCellHeight:(VideoInfoObject *)object withWidth:(CGFloat)width {
+    CGRect textRect1 = [object.descriptionString boundingRectWithSize:CGSizeMake(width - 40, CGFLOAT_MAX)
+                                             options:(NSStringDrawingUsesLineFragmentOrigin|NSStringDrawingUsesFontLeading)
+                                          attributes:@{NSFontAttributeName:[NetworkDrawRectBlockCell getRectBlockCellFont]}
+                                             context:nil];
+    
 
-    CGSize size1 = [object.descriptionString sizeWithFont:[NetworkDrawRectBlockCell getRectBlockCellFont] constrainedToSize:CGSizeMake(width - 40, CGFLOAT_MAX)];
-
-    return size1.height + 40;
+    return textRect1.size.height + 40;
 }
+
 @end
+
+
+
