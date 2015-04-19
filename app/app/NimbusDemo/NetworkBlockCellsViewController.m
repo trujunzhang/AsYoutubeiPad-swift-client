@@ -120,6 +120,8 @@ CGFloat DEFAULT_ROW_HEIGHT = 60.0;
 
                     self.obj,
                     [NITitleCellObject objectWithTitle:@"This section has no header"],
+             [NITitleCellObject objectWithTitle:@"This section has no header"],
+             [NITitleCellObject objectWithTitle:@"This section has no header"],
 
                             nil];
 
@@ -199,7 +201,7 @@ CGFloat DEFAULT_ROW_HEIGHT = 60.0;
         return _videoInfoObject.currentRowHeight;
     }
     // We ask each block to calculate its size in order to create variable-height block cells.
-    return 200;
+    return 400;
 }
 
 - (void)performAnimation {
