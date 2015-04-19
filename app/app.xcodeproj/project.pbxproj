@@ -21,6 +21,8 @@
 		5EA6F25E1AD8C9930017493D /* Cartography.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5EA6F25C1AD8C9930017493D /* Cartography.framework */; };
 		5EFED9A61AE3AB3F00EEB23E /* VideoInfoDrawRectBlockCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EFED9A51AE3AB3F00EEB23E /* VideoInfoDrawRectBlockCell.swift */; };
 		5EFED9A81AE3AC6700EEB23E /* VideoInfoObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EFED9A71AE3AC6700EEB23E /* VideoInfoObject.swift */; };
+		5EFED9AA1AE3B17400EEB23E /* VideoInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EFED9A91AE3B17400EEB23E /* VideoInfoViewController.swift */; };
+		5EFED9AC1AE3B1E700EEB23E /* VideoInfoConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EFED9AB1AE3B1E700EEB23E /* VideoInfoConstant.swift */; };
 		CB32D06F89412E5AAD9F456C /* libPods-appTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6F41558897D0187FFE158F21 /* libPods-appTests.a */; };
 		FE4BD745914619899B4CFFE4 /* libPods-app.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EC98874876136DD34019F3EC /* libPods-app.a */; };
 /* End PBXBuildFile section */
@@ -66,6 +68,8 @@
 		5EA6F2601AD8CA020017493D /* app-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "app-Bridging-Header.h"; sourceTree = "<group>"; };
 		5EFED9A51AE3AB3F00EEB23E /* VideoInfoDrawRectBlockCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoInfoDrawRectBlockCell.swift; sourceTree = "<group>"; };
 		5EFED9A71AE3AC6700EEB23E /* VideoInfoObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoInfoObject.swift; sourceTree = "<group>"; };
+		5EFED9A91AE3B17400EEB23E /* VideoInfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoInfoViewController.swift; sourceTree = "<group>"; };
+		5EFED9AB1AE3B1E700EEB23E /* VideoInfoConstant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoInfoConstant.swift; sourceTree = "<group>"; };
 		6F41558897D0187FFE158F21 /* libPods-appTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-appTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EC98874876136DD34019F3EC /* libPods-app.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-app.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F56A9DEB18C78036C526EAC9 /* Pods-app.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-app.debug.xcconfig"; path = "Pods/Target Support Files/Pods-app/Pods-app.debug.xcconfig"; sourceTree = "<group>"; };
@@ -230,6 +234,8 @@
 			children = (
 				5EFED9A51AE3AB3F00EEB23E /* VideoInfoDrawRectBlockCell.swift */,
 				5EFED9A71AE3AC6700EEB23E /* VideoInfoObject.swift */,
+				5EFED9A91AE3B17400EEB23E /* VideoInfoViewController.swift */,
+				5EFED9AB1AE3B1E700EEB23E /* VideoInfoConstant.swift */,
 			);
 			path = VideoInfoPanel;
 			sourceTree = "<group>";
@@ -431,7 +437,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				5EFED9A61AE3AB3F00EEB23E /* VideoInfoDrawRectBlockCell.swift in Sources */,
+				5EFED9AC1AE3B1E700EEB23E /* VideoInfoConstant.swift in Sources */,
 				5E1E2CEB1AD8B898004CC05B /* AppDelegate.swift in Sources */,
+				5EFED9AA1AE3B17400EEB23E /* VideoInfoViewController.swift in Sources */,
 				5E39CFAE1AE10BE5001032E6 /* VideoInfoObject.m in Sources */,
 				5E9973541AE0FFB200692398 /* NetworkBlockCellsViewController.m in Sources */,
 				5E1D62AA1AE0BBFA00D65370 /* NetworkDrawRectBlockCell.m in Sources */,
