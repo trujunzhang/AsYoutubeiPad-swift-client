@@ -45,11 +45,15 @@ class VideoInfoDrawRectBlockCell: NIDrawRectBlockCell {
         toggleButton = UIButton()
         if let _titleContainer: UIView = titleContainer, _titleLabel: UILabel = titleLabel, _likeCountLabel: UILabel = likeCountLabel {
             makeTitlePanel()
+
             // 1
             self.blockView.addSubview(_titleContainer)
+            LayoutUtils.LayoutFullView(_titleContainer)
             // 2
             _titleContainer.addSubview(_titleLabel)
             _titleContainer.addSubview(_likeCountLabel)
+
+            LayoutTitlePanel()
         }
 
         // line02
@@ -57,7 +61,7 @@ class VideoInfoDrawRectBlockCell: NIDrawRectBlockCell {
         if let subView: NIAttributedLabel = descriptionLabel {
             makeDescriptionLabel(subView)
             self.blockView.addSubview(subView)
-            LayoutUtils.LayoutFullView(subView)
+            LayoutUtils.LayoutTopMargin(subView, topMargin: VIDEO_INFO_TITLE_PANEL_HEIGHT)
         }
     }
 
@@ -111,6 +115,10 @@ class VideoInfoDrawRectBlockCell: NIDrawRectBlockCell {
 //        likeCountLabel = UILabel()
 //        toggleButton = UIButton()
 
+
+    }
+
+    func LayoutTitlePanel() {
 
     }
 

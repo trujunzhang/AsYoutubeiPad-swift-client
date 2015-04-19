@@ -15,6 +15,11 @@
 		5E1E2D011AD8B898004CC05B /* appTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E1E2D001AD8B898004CC05B /* appTests.swift */; };
 		5E2209A81AD8CBE300DD748D /* Autolayout.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5E2209A61AD8CBE300DD748D /* Autolayout.storyboard */; };
 		5E39CFAE1AE10BE5001032E6 /* VideoInfoObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E39CFAD1AE10BE5001032E6 /* VideoInfoObject.m */; };
+		5E3AB3C81AE3D7DC00BB0944 /* Path.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E3AB3C21AE3D7DC00BB0944 /* Path.swift */; };
+		5E3AB3C91AE3D7DC00BB0944 /* PathExtensionDir.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E3AB3C31AE3D7DC00BB0944 /* PathExtensionDir.swift */; };
+		5E3AB3CA1AE3D7DC00BB0944 /* PathExtensionFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E3AB3C41AE3D7DC00BB0944 /* PathExtensionFile.swift */; };
+		5E3AB3CB1AE3D7DC00BB0944 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E3AB3C51AE3D7DC00BB0944 /* Result.swift */; };
+		5E3AB3CC1AE3D7DC00BB0944 /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E3AB3C71AE3D7DC00BB0944 /* UIColorExtension.swift */; };
 		5E43A6C11AE10AFF00BB915E /* VideoInfoBlockUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E43A6C01AE10AFF00BB915E /* VideoInfoBlockUtils.m */; };
 		5E4BFB8D1AE3214100BC7A33 /* pop.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E87FD951AD8C2500021E80C /* pop.framework */; };
 		5E9973541AE0FFB200692398 /* NetworkBlockCellsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E9973531AE0FFB200692398 /* NetworkBlockCellsViewController.m */; };
@@ -58,6 +63,11 @@
 		5E2209A71AD8CBE300DD748D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Autolayout.storyboard; sourceTree = "<group>"; };
 		5E39CFAC1AE10BE5001032E6 /* VideoInfoObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VideoInfoObject.h; path = NimbusDemo/VideoInfoObject.h; sourceTree = "<group>"; };
 		5E39CFAD1AE10BE5001032E6 /* VideoInfoObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VideoInfoObject.m; path = NimbusDemo/VideoInfoObject.m; sourceTree = "<group>"; };
+		5E3AB3C21AE3D7DC00BB0944 /* Path.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Path.swift; sourceTree = "<group>"; };
+		5E3AB3C31AE3D7DC00BB0944 /* PathExtensionDir.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PathExtensionDir.swift; sourceTree = "<group>"; };
+		5E3AB3C41AE3D7DC00BB0944 /* PathExtensionFile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PathExtensionFile.swift; sourceTree = "<group>"; };
+		5E3AB3C51AE3D7DC00BB0944 /* Result.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
+		5E3AB3C71AE3D7DC00BB0944 /* UIColorExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
 		5E43A6BF1AE10AFF00BB915E /* VideoInfoBlockUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VideoInfoBlockUtils.h; path = NimbusDemo/VideoInfoBlockUtils.h; sourceTree = "<group>"; };
 		5E43A6C01AE10AFF00BB915E /* VideoInfoBlockUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VideoInfoBlockUtils.m; path = NimbusDemo/VideoInfoBlockUtils.m; sourceTree = "<group>"; };
 		5E52BAC31AD8C449007C3F32 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
@@ -149,6 +159,7 @@
 		5E1E2CE71AD8B898004CC05B /* app */ = {
 			isa = PBXGroup;
 			children = (
+				5E3AB3C01AE3D7DC00BB0944 /* Common */,
 				5EFED9AD1AE3B67500EEB23E /* Business-Logic-Layer */,
 				5EFED9A21AE3AB1A00EEB23E /* DetailPage */,
 				5E1D62A71AE0BBFA00D65370 /* NimbusExt */,
@@ -188,6 +199,34 @@
 				5E1E2CFF1AD8B898004CC05B /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		5E3AB3C01AE3D7DC00BB0944 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				5E3AB3C11AE3D7DC00BB0944 /* SwiftFilePath */,
+				5E3AB3C61AE3D7DC00BB0944 /* UIColor-Hex-Swift-master */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		5E3AB3C11AE3D7DC00BB0944 /* SwiftFilePath */ = {
+			isa = PBXGroup;
+			children = (
+				5E3AB3C21AE3D7DC00BB0944 /* Path.swift */,
+				5E3AB3C31AE3D7DC00BB0944 /* PathExtensionDir.swift */,
+				5E3AB3C41AE3D7DC00BB0944 /* PathExtensionFile.swift */,
+				5E3AB3C51AE3D7DC00BB0944 /* Result.swift */,
+			);
+			path = SwiftFilePath;
+			sourceTree = "<group>";
+		};
+		5E3AB3C61AE3D7DC00BB0944 /* UIColor-Hex-Swift-master */ = {
+			isa = PBXGroup;
+			children = (
+				5E3AB3C71AE3D7DC00BB0944 /* UIColorExtension.swift */,
+			);
+			path = "UIColor-Hex-Swift-master";
 			sourceTree = "<group>";
 		};
 		5EC282D61ADCEA9F007CB736 /* Cartography */ = {
@@ -462,17 +501,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5E3AB3CC1AE3D7DC00BB0944 /* UIColorExtension.swift in Sources */,
 				5EFED9B31AE3B67F00EEB23E /* NSObject_BlockBasedSelector.swift in Sources */,
 				5EFED9A61AE3AB3F00EEB23E /* VideoInfoDrawRectBlockCell.swift in Sources */,
 				5EFED9B41AE3B67F00EEB23E /* StoryBoardUtils.swift in Sources */,
 				5EFED9AC1AE3B1E700EEB23E /* VideoInfoConstant.swift in Sources */,
 				5E1E2CEB1AD8B898004CC05B /* AppDelegate.swift in Sources */,
 				5EFED9AA1AE3B17400EEB23E /* VideoInfoViewController.swift in Sources */,
+				5E3AB3CB1AE3D7DC00BB0944 /* Result.swift in Sources */,
 				5E39CFAE1AE10BE5001032E6 /* VideoInfoObject.m in Sources */,
 				5E9973541AE0FFB200692398 /* NetworkBlockCellsViewController.m in Sources */,
 				5E1D62AA1AE0BBFA00D65370 /* NetworkDrawRectBlockCell.m in Sources */,
 				5EFED9B21AE3B67F00EEB23E /* LayoutUtils.swift in Sources */,
+				5E3AB3CA1AE3D7DC00BB0944 /* PathExtensionFile.swift in Sources */,
+				5E3AB3C81AE3D7DC00BB0944 /* Path.swift in Sources */,
 				5E43A6C11AE10AFF00BB915E /* VideoInfoBlockUtils.m in Sources */,
+				5E3AB3C91AE3D7DC00BB0944 /* PathExtensionDir.swift in Sources */,
 				5EFED9A81AE3AC6700EEB23E /* VideoInfoObject.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

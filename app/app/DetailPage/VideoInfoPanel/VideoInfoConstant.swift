@@ -9,6 +9,7 @@
 import Foundation
 
 let VIDEO_INFO_TITLE_PANEL_HEIGHT: CGFloat = 60
+let VIDEO_INFO_BACKGROUND_COLOR = "f1f1f1"
 
 class TableAnimateObject {
     var maxValue: CGFloat?

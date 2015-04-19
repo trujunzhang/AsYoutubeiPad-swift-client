@@ -7,66 +7,75 @@
 //
 
 import Foundation
+import Cartography
 
-class VideoInfoViewController :UIViewController,UITableViewDelegate {
-    
+class VideoInfoViewController: UIViewController, UITableViewDelegate {
+
     var model: NITableViewModel?
-    var tableView : UITableView?
-    var isOpen:Bool = false
-    var cellFactory : NICellFactory?
-    
-    var videoInfoObject:VideoInfoObject?
-    var obj:NIDrawRectBlockCellObject?
-    var tableContents:[AnyObject] = [AnyObject]()
-    
-    
+    var tableView: UITableView?
+    var isOpen: Bool = false
+    var cellFactory: NICellFactory?
+
+    var videoInfoObject: VideoInfoObject?
+    var obj: NIDrawRectBlockCellObject?
+    var tableContents: [AnyObject] = [AnyObject]()
+
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        
+
         makeModel()
         tableView = UITableView()
-        
+
         self.view.addSubview(tableView!)
-        
-        LayoutUtils.LayoutFullView(tableView!)
-        
+
+        layout(tableView!) {
+            view1 in
+
+            view1.leading == view1.superview!.leading + 20
+            view1.trailing == view1.superview!.trailing + 20
+
+            view1.top == view1.superview!.top + 20
+            view1.bottom == view1.superview!.bottom + 20
+        }
+
         tableView?.dataSource = model
         tableView?.delegate = self
-        
+
         tableView?.rowHeight = 140
-        
+
         isOpen = true
-        
+
     }
-    
+
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
     }
-    
+
     // MARK : model
-    func makeModel(){
-        let  drawTextBlock:NICellDrawRectBlock = {
-            rect,  object,  cell in
-            
-            
+    func makeModel() {
+        let drawTextBlock: NICellDrawRectBlock = {
+            rect, object, cell in
+
+
             return 100
         }
-        
+
         videoInfoObject = VideoInfoObject()
         obj = NIDrawRectBlockCellObject(block: drawTextBlock, object: videoInfoObject)
         tableContents = [
-             NIDrawRectBlockCellObject(block: drawTextBlock, object: videoInfoObject),
-            NITitleCellObject(title: "xcode"),
-            NITitleCellObject(title: "wanghao")
+                NIDrawRectBlockCellObject(block: drawTextBlock, object: videoInfoObject),
+                NITitleCellObject(title: "xcode"),
+                NITitleCellObject(title: "wanghao")
         ]
-        
+
         cellFactory = NICellFactory()
         cellFactory?.mapObjectClass(NIDrawRectBlockCellObject.self, toCellClass: VideoInfoDrawRectBlockCell.self)
-        
+
         model = NITableViewModel(listArray: tableContents, delegate: cellFactory)
-        
+
     }
-    
-    
+
+
 }
