@@ -237,10 +237,9 @@ CGFloat DEFAULT_ROW_HEIGHT = 60.0;
         spring.toValue = @(_animateObject.maxValue);
     }
 
-
     self.open = !self.isOpen;
 
-    [_animateObject pop_addAnimation:spring forKey:@"spring"];
+    [_animateObject pop_addAnimation:spring forKey:@"TableRowAnimate"];
 }
 
 @end
