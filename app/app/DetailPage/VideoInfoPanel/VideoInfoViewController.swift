@@ -8,16 +8,34 @@
 
 import Foundation
 
-class VideoInfoViewController :UIViewController {
-
+class VideoInfoViewController :UIViewController,UITableViewDelegate {
+    
     var model: NITableViewModel?
     var tableView : UITableView?
-    var open:Bool = false
+    var isOpen:Bool = false
     var cellFactory : NICellFactory?
+    
+    var videoInfoObject:VideoInfoObject?
+    var obj:NIDrawRectBlockCellObject?
+    var tableContents:[AnyObject] = [AnyObject]()
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        
+        makeModel()
+        tableView = UITableView()
+        
+        self.view.addSubview(tableView!)
+        
+        tableView?.dataSource = model
+        tableView?.delegate = self
+        
+        tableView?.rowHeight = 40
+        
+        isOpen = true
+        
     }
     
     override func viewDidAppear(animated: Bool) {
@@ -27,12 +45,22 @@ class VideoInfoViewController :UIViewController {
     // MARK : model
     func makeModel(){
         let  drawTextBlock:NICellDrawRectBlock = {
-             rect,  object,  cell in
+            rect,  object,  cell in
             
             
             return 0
         }
         
+        videoInfoObject = VideoInfoObject()
+        obj = NIDrawRectBlockCellObject(block: drawTextBlock, object: videoInfoObject)
+        tableContents = [
+            NITitleCellObject(title: "wanghao")
+        ]
+        
+        cellFactory = NICellFactory()
+        cellFactory?.mapObjectClass(NIDrawRectBlockCellObject.self, toCellClass: VideoInfoDrawRectBlockCell.self)
+        
+        model = NITableViewModel(listArray: tableContents, delegate: cellFactory)
         
     }
     
