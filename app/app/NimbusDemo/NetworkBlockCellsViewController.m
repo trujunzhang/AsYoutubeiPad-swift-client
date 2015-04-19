@@ -215,7 +215,7 @@ CGFloat DEFAULT_ROW_HEIGHT = 60.0;
             vc.fromValue = values[0];
             _videoInfoObject.currentRowHeight = values[0];
 
-            NSLog(@"_videoInfoObject.currentRowHeight = %f", _videoInfoObject.currentRowHeight);
+//            NSLog(@"_videoInfoObject.currentRowHeight = %f", _videoInfoObject.currentRowHeight);
 
             [self updateAnimatedTableCell];
         };
