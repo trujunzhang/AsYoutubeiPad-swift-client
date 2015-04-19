@@ -60,7 +60,7 @@ class VideoInfoViewController: UIViewController, UITableViewDelegate {
 
             infoObject.currentRowHeight = specialRowHeight
 
-            animateObject = TableAnimateObject(_maxValue: maxValue)
+            animateObject = TableAnimateObject(_maxValue: specialRowHeight)
         }
     }
 
@@ -102,5 +102,22 @@ class VideoInfoViewController: UIViewController, UITableViewDelegate {
 
         return 200
     }
+
+    func updateAnimatedTableCell() {
+        if let _tableView: UITableView = tableView {
+            _tableView.beginUpdates()
+            let indexPath: NSIndexPath = NSIndexPath(forRow: 0, inSection: 0)
+            let reloadIndexPath = [indexPath]
+            _tableView.reloadSections(reloadIndexPath, withRowAnimation: none)
+            _tableView.endUpdates()
+        }
+    }
+
+//- (void)updateAnimatedTableCell {
+//[self.tableView beginUpdates];
+//NSArray *reloadIndexPath = [NSArray arrayWithObject:[NSIndexPath indexPathForRow:0 inSection:0]];
+//[self.tableView reloadRowsAtIndexPaths:reloadIndexPath withRowAnimation:UITableViewRowAnimationNone];
+//[self.tableView endUpdates];
+//}
 
 }
