@@ -29,6 +29,8 @@ class VideoInfoViewController :UIViewController,UITableViewDelegate {
         
         self.view.addSubview(tableView!)
         
+        LayoutUtils.LayoutFullView(tableView!)
+        
         tableView?.dataSource = model
         tableView?.delegate = self
         
