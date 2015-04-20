@@ -51,6 +51,13 @@ class VideoInfoDrawRectBlockCell: NIDrawRectBlockCell {
         likeCountLabel = UILabel()
         makeButton()
         if let _toggleContainer:UIView = toggleContainer, _titleLabel: UILabel = titleLabel, _likeCountLabel: UILabel = likeCountLabel, _toggleButton: UIButton = toggleButton {
+            
+            let playTap = UITapGestureRecognizer(target: self, action: "playTapped")
+            playTap.numberOfTouchesRequired = 1
+            playTap.numberOfTapsRequired = 1
+            _toggleContainer.userInteractionEnabled = true
+            _toggleContainer.addGestureRecognizer(playTap)
+            
             self.blockView.addSubview(_toggleContainer)
             
             _toggleContainer.addSubview(_titleLabel)
@@ -154,7 +161,8 @@ class VideoInfoDrawRectBlockCell: NIDrawRectBlockCell {
 ////            toggleButton!.setImage(_collapse_guide, forState: UIControlState.Selected)
 //        }
         toggleButton!.setImage(UIImage(named: "expand_guide"), forState: UIControlState.Normal)
-        toggleButton!.addTarget(self, action: "btnTouched:", forControlEvents: .TouchUpInside)
+//        toggleButton!.addTarget(self, action: "btnTouched:", forControlEvents: .TouchUpInside)
+        
     }
     
     func LayoutTitlePanel() {
@@ -199,6 +207,10 @@ class VideoInfoDrawRectBlockCell: NIDrawRectBlockCell {
                 }
             })
         }
+    }
+    
+    func playTapped(){
+        let x = 0
     }
     
 }
