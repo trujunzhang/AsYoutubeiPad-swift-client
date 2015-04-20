@@ -11,6 +11,7 @@ import UIKit
 import Cartography
 
 class VideoInfoDrawRectBlockCell: NIDrawRectBlockCell {
+    var videoInfoObject: VideoInfoObject?
 
     var descriptionLabel: NIAttributedLabel?
     var titleContainer: UIView?
@@ -104,6 +105,11 @@ class VideoInfoDrawRectBlockCell: NIDrawRectBlockCell {
 
         let infoObject: VideoInfoObject = object.object as! VideoInfoObject
         let maxHeight: CGFloat = infoObject.maxHeightValue
+
+        if let infoObject: VideoInfoObject = videoInfoObject {
+        } else {
+            videoInfoObject = infoObject
+        }
 
         if let _descriptionLabel: NIAttributedLabel = descriptionLabel, _titleLabel: UILabel = titleLabel, _likeCountLabel: UILabel = likeCountLabel, _toggleButton: UIButton = toggleButton {
             _descriptionLabel.text = infoObject.descriptionString

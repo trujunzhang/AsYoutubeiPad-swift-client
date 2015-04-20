@@ -9,6 +9,7 @@
 import Foundation
 
 class VideoInfoObject: NSObject {
+    var videoInfoToggleProtocol: VideoInfoToggleProtocol?
 
     var maxHeightValue: CGFloat = 0
     var minHeightValue: CGFloat = VIDEO_INFO_TITLE_PANEL_HEIGHT

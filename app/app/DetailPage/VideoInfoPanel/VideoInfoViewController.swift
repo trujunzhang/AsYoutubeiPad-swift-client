@@ -10,8 +10,8 @@ import Foundation
 import UIKit
 import Cartography
 
-class VideoInfoViewController: UIViewController, UITableViewDelegate {
-    
+class VideoInfoViewController: UIViewController, UITableViewDelegate, VideoInfoToggleProtocol {
+
     var model: NITableViewModel?
     var tableView: UITableView?
     var isOpen: Bool = false
@@ -29,7 +29,7 @@ class VideoInfoViewController: UIViewController, UITableViewDelegate {
         self.view.backgroundColor = UIColor(rgba: VIDEO_INFO_BACKGROUND_COLOR)
 
         makeModel()
-        
+
         tableView = UITableView()
 
         self.view.addSubview(tableView!)
@@ -57,6 +57,7 @@ class VideoInfoViewController: UIViewController, UITableViewDelegate {
         super.viewWillAppear(animated)
 
         if let infoObject: VideoInfoObject = videoInfoObject {
+            infoObject.videoInfoToggleProtocol = self
             let viewWidth = self.view.frame.size.width - (VIDEO_INFO_TABLEVIEW_MARGIN_LEFT_RIGHT * 2)
             //            println("viewWidth : \(viewWidth)")
 
@@ -126,9 +127,9 @@ class VideoInfoViewController: UIViewController, UITableViewDelegate {
     }
 
     @IBAction func xxx(sender: AnyObject) {
-          performAnimation()
+        performAnimation()
     }
-    
+
     // MARK: Video Info tableview cell's animate
     func performAnimation() {
         videoInfoObject?.prepareAnimate(isOpen)
@@ -198,8 +199,11 @@ class VideoInfoViewController: UIViewController, UITableViewDelegate {
         videoInfoObject!.pop_addAnimation(spring, forKey: "TableRowAnimate")
 
     }
-    
-    
+
+    // MARK : VideoInfoToggleProtocol
+    func toggleVideoInfoPanel() -> Void {
+
+    }
 
 
 }
