@@ -15,7 +15,8 @@ let VIDEO_INFO_TABLEVIEW_MARGIN_LEFT_RIGHT: CGFloat = 20
 
 let VIDEO_INFO_TOGGLE_WIDTH_HEIGHT: CGFloat = 39
 
+typealias VideoToggleCompletionBlock = (AnyObject!, Bool!) -> Void
 
 protocol VideoInfoToggleProtocol {
-    func toggleVideoInfoPanel() -> Void
+    func toggleVideoInfoPanel(completionBlock:VideoToggleCompletionBlock) -> Void
 }
