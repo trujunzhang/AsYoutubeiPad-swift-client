@@ -8,7 +8,7 @@
 
 import Foundation
 import UIKit
-//import Cartography
+import Cartography
 
 class VideoInfoDrawRectBlockCell: NIDrawRectBlockCell {
 
@@ -18,7 +18,7 @@ class VideoInfoDrawRectBlockCell: NIDrawRectBlockCell {
     var likeCountLabel: UILabel?
     var toggleButton: UIButton?
 
-//    var group: Cartography.ConstraintGroup?
+    var group: Cartography.ConstraintGroup?
 
     var _font: UIFont?
 
@@ -47,16 +47,16 @@ class VideoInfoDrawRectBlockCell: NIDrawRectBlockCell {
         titleLabel = UILabel()
         likeCountLabel = UILabel()
         toggleButton = UIButton()
-//        if let _titleContainer: UIView = titleContainer, _titleLabel: UILabel = titleLabel, _likeCountLabel: UILabel = likeCountLabel, _toggleButton: UIButton = toggleButton {
-//            makeTitlePanel()
-//
-//            // 1
-//            self.blockView.addSubview(_titleContainer)
-//            // 2
-//            _titleContainer.addSubview(_titleLabel)
-//            _titleContainer.addSubview(_likeCountLabel)
-//            _titleContainer.addSubview(_toggleButton)
-//        }
+        if let _titleContainer: UIView = titleContainer, _titleLabel: UILabel = titleLabel, _likeCountLabel: UILabel = likeCountLabel, _toggleButton: UIButton = toggleButton {
+            makeTitlePanel()
+
+            // 1
+            self.blockView.addSubview(_titleContainer)
+            // 2
+            _titleContainer.addSubview(_titleLabel)
+            _titleContainer.addSubview(_likeCountLabel)
+            _titleContainer.addSubview(_toggleButton)
+        }
 
         // line02
         descriptionLabel = NIAttributedLabel()
@@ -66,16 +66,16 @@ class VideoInfoDrawRectBlockCell: NIDrawRectBlockCell {
         }
 
         if let _titleContainer: UIView = titleContainer, _descriptionLabel: NIAttributedLabel = descriptionLabel {
-//            layout(_titleContainer) {
-//                view1 in
-//
-//                view1.leading == view1.superview!.leading
-//                view1.trailing == view1.superview!.trailing
-//
-//                view1.top == view1.superview!.top
-//                view1.height == VIDEO_INFO_TITLE_PANEL_HEIGHT
-//
-//            }
+            layout(_titleContainer) {
+                view1 in
+
+                view1.leading == view1.superview!.leading
+                view1.trailing == view1.superview!.trailing
+
+                view1.top == view1.superview!.top
+                view1.height == VIDEO_INFO_TITLE_PANEL_HEIGHT
+
+            }
 //            group = layout(_descriptionLabel) {
 //                view2 in
 //
@@ -150,23 +150,23 @@ class VideoInfoDrawRectBlockCell: NIDrawRectBlockCell {
     }
 
     func LayoutTitlePanel() {
-//        if let _titleLabel: UILabel = titleLabel, _likeCountLabel: UILabel = likeCountLabel, _toggleButton: UIButton = toggleButton {
-//            layout(_titleLabel, _likeCountLabel, _toggleButton) {
-//                view1, view2, view3 in
-//
-//                view1.leading == view1.superview!.leading + 20
-//                view1.trailing == view1.superview!.trailing - 60
-//
-//                view1.top == view1.superview!.top + 10
-//                view1.height == 14
-//
-//                view2.leading == view2.superview!.leading + 20
-//                view2.trailing == view2.superview!.trailing - 60
-//
-//                view2.top == view1.bottom + 4
-//                view2.height == 14
-//            }
-//        }
+        if let _titleLabel: UILabel = titleLabel, _likeCountLabel: UILabel = likeCountLabel, _toggleButton: UIButton = toggleButton {
+            layout(_titleLabel, _likeCountLabel, _toggleButton) {
+                view1, view2, view3 in
+
+                view1.leading == view1.superview!.leading + 20
+                view1.trailing == view1.superview!.trailing - 60
+
+                view1.top == view1.superview!.top + 10
+                view1.height == 14
+
+                view2.leading == view2.superview!.leading + 20
+                view2.trailing == view2.superview!.trailing - 60
+
+                view2.top == view1.bottom + 4
+                view2.height == 14
+            }
+        }
     }
 
 
