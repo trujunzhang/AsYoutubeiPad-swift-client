@@ -12,8 +12,10 @@ import Cartography
 
 class VideoInfoViewController: UIViewController, UITableViewDelegate {
 
+    @IBOutlet weak var tableView: UITableView!
+    
     var model: NITableViewModel?
-    var tableView: UITableView?
+//    var tableView: UITableView?
     var isOpen: Bool = false
     var cellFactory: NICellFactory?
 
@@ -29,19 +31,20 @@ class VideoInfoViewController: UIViewController, UITableViewDelegate {
         self.view.backgroundColor = UIColor(rgba: VIDEO_INFO_BACKGROUND_COLOR)
 
         makeModel()
-        tableView = UITableView()
+        
+//        tableView = UITableView()
 
-        self.view.addSubview(tableView!)
+//        self.view.addSubview(tableView!)
 
-        layout(tableView!) {
-            view1 in
-
-            view1.leading == view1.superview!.leading + VIDEO_INFO_TABLEVIEW_MARGIN_LEFT_RIGHT
-            view1.trailing == view1.superview!.trailing - VIDEO_INFO_TABLEVIEW_MARGIN_LEFT_RIGHT
-
-            view1.top == view1.superview!.top + 20
-            view1.bottom == view1.superview!.bottom - 20
-        }
+//        layout(tableView!) {
+//            view1 in
+//
+//            view1.leading == view1.superview!.leading + VIDEO_INFO_TABLEVIEW_MARGIN_LEFT_RIGHT
+//            view1.trailing == view1.superview!.trailing - VIDEO_INFO_TABLEVIEW_MARGIN_LEFT_RIGHT
+//
+//            view1.top == view1.superview!.top + 20
+//            view1.bottom == view1.superview!.bottom - 20
+//        }
 
         tableView?.dataSource = model
         tableView?.delegate = self
@@ -81,7 +84,7 @@ class VideoInfoViewController: UIViewController, UITableViewDelegate {
         videoInfoObject = VideoInfoObject()
         obj = NIDrawRectBlockCellObject(block: drawTextBlock, object: videoInfoObject)
         tableContents = [
-//                NIDrawRectBlockCellObject(block: drawTextBlock, object: videoInfoObject),
+                NIDrawRectBlockCellObject(block: drawTextBlock, object: videoInfoObject),
                 NITitleCellObject(title: "toggle"),
                 NITitleCellObject(title: "xcode"),
                 NITitleCellObject(title: "wanghao")
@@ -108,7 +111,7 @@ class VideoInfoViewController: UIViewController, UITableViewDelegate {
 
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         if (indexPath.section == 0 && indexPath.row == 1) {
-            performAnimation()
+//            performAnimation()
         }
     }
 
@@ -124,6 +127,10 @@ class VideoInfoViewController: UIViewController, UITableViewDelegate {
         }
     }
 
+    @IBAction func xxx(sender: AnyObject) {
+          performAnimation()
+    }
+    
     // MARK: Video Info tableview cell's animate
     func performAnimation() {
         videoInfoObject?.prepareAnimate(isOpen)
@@ -193,6 +200,8 @@ class VideoInfoViewController: UIViewController, UITableViewDelegate {
         videoInfoObject!.pop_addAnimation(spring, forKey: "TableRowAnimate")
 
     }
+    
+    
 
 
 }
