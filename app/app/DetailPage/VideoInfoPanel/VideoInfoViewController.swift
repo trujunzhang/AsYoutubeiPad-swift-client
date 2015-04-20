@@ -62,7 +62,7 @@ class VideoInfoViewController: UIViewController, UITableViewDelegate {
             let specialRowHeight: CGFloat = VideoInfoDrawRectBlockCell.getBlockCellHeight(infoObject, width: viewWidth)
             //            println("specialRowHeight : \(specialRowHeight)")
 
-            infoObject.setDescriptionMaxHeight(specialRowHeight)
+            infoObject.setDescriptionMaxHeight(specialRowHeight, descriptionWidth: viewWidth)
         }
     }
 
@@ -169,9 +169,9 @@ class VideoInfoViewController: UIViewController, UITableViewDelegate {
         videoInfoObject?.prepareAnimate(isOpen)
 
         if (isOpen == true) {
-            spring.toValue = videoInfoObject!.minValue
+            spring.toValue = videoInfoObject!.minHeightValue
         } else {
-            spring.toValue = videoInfoObject!.maxValue
+            spring.toValue = videoInfoObject!.maxHeightValue
         }
 
         isOpen = !isOpen

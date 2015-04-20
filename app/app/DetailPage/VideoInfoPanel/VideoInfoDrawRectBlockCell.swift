@@ -18,7 +18,7 @@ class VideoInfoDrawRectBlockCell: NIDrawRectBlockCell {
     var likeCountLabel: UILabel?
     var toggleButton: UIButton?
 
-    var group: Cartography.ConstraintGroup = Cartography.ConstraintGroup()
+    var group: Cartography.ConstraintGroup?
 
     var _font: UIFont?
 
@@ -43,7 +43,7 @@ class VideoInfoDrawRectBlockCell: NIDrawRectBlockCell {
 
         // line01
         titleContainer = UIView()
-        titleContainer?.backgroundColor = UIColor.redColor()
+//        titleContainer?.backgroundColor = UIColor.redColor()
         titleLabel = UILabel()
         likeCountLabel = UILabel()
         toggleButton = UIButton()
@@ -76,15 +76,15 @@ class VideoInfoDrawRectBlockCell: NIDrawRectBlockCell {
                 view1.height == VIDEO_INFO_TITLE_PANEL_HEIGHT
 
             }
-            group = layout(_descriptionLabel) {
-                view2 in
-
-                view2.leading == view2.superview!.leading + 20
-                view2.trailing == view2.superview!.trailing - 20
-
-                view2.top == view2.superview!.leading + VIDEO_INFO_TITLE_PANEL_HEIGHT
-                view2.height == 100
-            }
+//            group = layout(_descriptionLabel) {
+//                view2 in
+//
+//                view2.leading == view2.superview!.leading + 20
+//                view2.trailing == view2.superview!.trailing - 20
+//
+//                view2.top == view2.superview!.leading + VIDEO_INFO_TITLE_PANEL_HEIGHT
+//                view2.height == 100
+//            }
         }
 
 
@@ -103,22 +103,15 @@ class VideoInfoDrawRectBlockCell: NIDrawRectBlockCell {
         super.shouldUpdateCellWithObject(object)
 
         let infoObject: VideoInfoObject = object.object as! VideoInfoObject
-        let maxHeight:CGFloat = infoObject.maxValue
+        let maxHeight: CGFloat = infoObject.maxHeightValue
 
         if let _descriptionLabel: NIAttributedLabel = descriptionLabel, _titleLabel: UILabel = titleLabel, _likeCountLabel: UILabel = likeCountLabel, _toggleButton: UIButton = toggleButton {
             _descriptionLabel.text = infoObject.descriptionString
             _titleLabel.text = infoObject.title
             _likeCountLabel.text = infoObject.likeCount
 
-            group = layout(_descriptionLabel,replace: group) {
-                view2 in
-
-                view2.leading == view2.superview!.leading + 20
-                view2.trailing == view2.superview!.trailing - 20
-
-                view2.top == view2.superview!.leading + VIDEO_INFO_TITLE_PANEL_HEIGHT
-                view2.height == maxHeight
-            }
+            let descriptinRect: CGRect = CGRectMake(VIDEO_INFO_TABLEVIEW_MARGIN_LEFT_RIGHT, 0, infoObject.descriptionWidth - VIDEO_INFO_TABLEVIEW_MARGIN_LEFT_RIGHT * 2, maxHeight)
+            _descriptionLabel.frame = descriptinRect
         }
 
         return true

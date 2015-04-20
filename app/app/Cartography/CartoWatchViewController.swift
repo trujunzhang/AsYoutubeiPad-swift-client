@@ -63,7 +63,7 @@ class CartoWatchViewController : UIViewController {
             view2.trailing  == view2.superview!.trailing
             
             view2.top      == view1.bottom
-            view2.height    == 0
+            view2.height   == 0
             
             // _videoOtherContainer
             view3.leading   == view3.superview!.leading

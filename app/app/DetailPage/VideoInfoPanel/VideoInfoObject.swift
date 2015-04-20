@@ -8,24 +8,27 @@
 
 import Foundation
 
-class VideoInfoObject : NSObject{
+class VideoInfoObject: NSObject {
 
-    var maxValue: CGFloat = 0
-    var minValue: CGFloat = VIDEO_INFO_TITLE_PANEL_HEIGHT
+    var maxHeightValue: CGFloat = 0
+    var minHeightValue: CGFloat = VIDEO_INFO_TITLE_PANEL_HEIGHT
+
+    var descriptionWidth: CGFloat = 0
 
     var fromValue: CGFloat?
 
     func prepareAnimate(open: Bool) {
         if (open == true) {
-            fromValue = maxValue;
+            fromValue = maxHeightValue;
         } else {
-            fromValue = minValue;
+            fromValue = minHeightValue;
         }
     }
 
-    func setDescriptionMaxHeight(max: CGFloat) {
+    func setDescriptionMaxHeight(max: CGFloat, descriptionWidth: CGFloat) {
+        descriptionWidth = descriptionWidth
         currentRowHeight = max
-        maxValue = max
+        maxHeightValue = max
     }
 
     var title = "WebStorm 10 - New features"
