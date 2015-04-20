@@ -16,7 +16,7 @@ class VideoInfoDrawRectBlockCell: NIDrawRectBlockCell {
     var descriptionLabel: NIAttributedLabel?
     var titleLabel: UILabel?
     var likeCountLabel: UILabel?
-    var toggleButton: UIButton?
+    var toggleButton: UIImageView?
     
     var toggleContainer: UIView?
     
@@ -50,7 +50,7 @@ class VideoInfoDrawRectBlockCell: NIDrawRectBlockCell {
         titleLabel = UILabel()
         likeCountLabel = UILabel()
         makeButton()
-        if let _toggleContainer:UIView = toggleContainer, _titleLabel: UILabel = titleLabel, _likeCountLabel: UILabel = likeCountLabel, _toggleButton: UIButton = toggleButton {
+        if let _toggleContainer:UIView = toggleContainer, _titleLabel: UILabel = titleLabel, _likeCountLabel: UILabel = likeCountLabel, _toggleButton: UIImageView = toggleButton {
             
             let playTap = UITapGestureRecognizer(target: self, action: "playTapped")
             playTap.numberOfTouchesRequired = 1
@@ -74,7 +74,7 @@ class VideoInfoDrawRectBlockCell: NIDrawRectBlockCell {
                 view1.top == view1.superview!.top
                 view1.height == VIDEO_INFO_TITLE_PANEL_HEIGHT
             }
-
+            
         }
         
         // line02
@@ -107,11 +107,11 @@ class VideoInfoDrawRectBlockCell: NIDrawRectBlockCell {
         
         if let infoObject: VideoInfoObject = videoInfoObject {
         } else {
-//            println("VideoInfoToggleProtocol  ... ")
+            //            println("VideoInfoToggleProtocol  ... ")
             videoInfoObject = infoObject
         }
         
-        if let _descriptionLabel: NIAttributedLabel = descriptionLabel, _titleLabel: UILabel = titleLabel, _likeCountLabel: UILabel = likeCountLabel, _toggleButton: UIButton = toggleButton {
+        if let _descriptionLabel: NIAttributedLabel = descriptionLabel, _titleLabel: UILabel = titleLabel, _likeCountLabel: UILabel = likeCountLabel {
             _descriptionLabel.text = infoObject.descriptionString
             _titleLabel.text = infoObject.title
             _likeCountLabel.text = infoObject.likeCount
@@ -120,7 +120,7 @@ class VideoInfoDrawRectBlockCell: NIDrawRectBlockCell {
                 infoObject.descriptionWidth - VIDEO_INFO_TABLEVIEW_MARGIN_LEFT_RIGHT * 2, maxHeight)
             _descriptionLabel.frame = rect
             
-//            println("shouldUpdateCellWithObject... +\(rect)")
+            //            println("shouldUpdateCellWithObject... +\(rect)")
             
             isShowed = true
         }
@@ -150,23 +150,15 @@ class VideoInfoDrawRectBlockCell: NIDrawRectBlockCell {
     }
     
     func makeButton() {
-        let expand_guide = UIImage(named: "expand_guide") as UIImage?
-        let collapse_guide = UIImage(named: "collapse_guide") as UIImage?
-        toggleButton = UIButton.buttonWithType(UIButtonType.System) as? UIButton
+        toggleButton = UIImageView()
         toggleButton!.backgroundColor = UIColor.clearColor()
-        toggleButton!.highlighted = false
         
-//        if let _expand_guide = expand_guide, _collapse_guide = collapse_guide {
-//            toggleButton!.setImage(UIImage(named: "expand_guide"), forState: UIControlState.Normal)
-////            toggleButton!.setImage(_collapse_guide, forState: UIControlState.Selected)
-//        }
-        toggleButton!.setImage(UIImage(named: "expand_guide"), forState: UIControlState.Normal)
-//        toggleButton!.addTarget(self, action: "btnTouched:", forControlEvents: .TouchUpInside)
-        
+        toggleButton!.image = UIImage(named: "collapse_guide")
+        toggleButton!.image = UIImage(named: "expand_guide")
     }
     
     func LayoutTitlePanel() {
-        if let _titleLabel: UILabel = titleLabel, _likeCountLabel: UILabel = likeCountLabel, _toggleButton: UIButton = toggleButton {
+        if let _titleLabel: UILabel = titleLabel, _likeCountLabel: UILabel = likeCountLabel, _toggleButton: UIImageView = toggleButton {
             layout(_titleLabel, _likeCountLabel, _toggleButton) {
                 view1, view2, view3 in
                 
@@ -194,23 +186,18 @@ class VideoInfoDrawRectBlockCell: NIDrawRectBlockCell {
         }
     }
     
-    
-    func btnTouched(sender: UIButton!) {
+    func playTapped(){
         if let infoObject: VideoInfoObject = videoInfoObject {
             infoObject.videoInfoToggleProtocol!.toggleVideoInfoPanel({ (object, isOpen) -> Void in
                 
                 println("btnTouched: + \(isOpen)")
                 if (isOpen == true) {
-                    self.toggleButton!.setImage(UIImage(named: "expand_guide"), forState: UIControlState.Normal)
+                    self.toggleButton!.image = UIImage(named: "expand_guide")
                 } else {
-                    self.toggleButton!.setImage(UIImage(named: "collapse_guide"), forState: UIControlState.Normal)
+                    self.toggleButton!.image = UIImage(named: "collapse_guide")
                 }
             })
         }
-    }
-    
-    func playTapped(){
-        let x = 0
     }
     
 }

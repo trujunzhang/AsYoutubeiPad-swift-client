@@ -152,9 +152,10 @@ class VideoInfoViewController: UIViewController, UITableViewDelegate, VideoInfoT
             (anim, finished) -> Void in
             
             completionBlock(nil, self.isOpen)
-            self.videoInfoObject!.currentRowHeight = toValue
             
-            self.updateAnimatedTableCell()
+//            self.videoInfoObject!.currentRowHeight = toValue
+            
+//            self.updateAnimatedTableCell()
         }
         
         let property: POPAnimatableProperty = POPAnimatableProperty.propertyWithName("com.rwt.heightContstraint", initializer: {
