@@ -103,7 +103,7 @@ class VideoInfoDrawRectBlockCell: NIDrawRectBlockCell {
         super.shouldUpdateCellWithObject(object)
 
         let infoObject: VideoInfoObject = object.object as! VideoInfoObject
-        let currentRowHeight:CGFloat = infoObject.currentRowHeight
+        let maxHeight:CGFloat = infoObject.maxValue
 
         if let _descriptionLabel: NIAttributedLabel = descriptionLabel, _titleLabel: UILabel = titleLabel, _likeCountLabel: UILabel = likeCountLabel, _toggleButton: UIButton = toggleButton {
             _descriptionLabel.text = infoObject.descriptionString
@@ -117,7 +117,7 @@ class VideoInfoDrawRectBlockCell: NIDrawRectBlockCell {
                 view2.trailing == view2.superview!.trailing - 20
 
                 view2.top == view2.superview!.leading + VIDEO_INFO_TITLE_PANEL_HEIGHT
-                view2.height == currentRowHeight
+                view2.height == maxHeight
             }
         }
 
