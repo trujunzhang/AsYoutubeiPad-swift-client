@@ -22,6 +22,7 @@
 		5E3AB3CC1AE3D7DC00BB0944 /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E3AB3C71AE3D7DC00BB0944 /* UIColorExtension.swift */; };
 		5E43A6C11AE10AFF00BB915E /* VideoInfoBlockUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E43A6C01AE10AFF00BB915E /* VideoInfoBlockUtils.m */; };
 		5E4BFB8D1AE3214100BC7A33 /* pop.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E87FD951AD8C2500021E80C /* pop.framework */; };
+		5E769B5D1AE4896800F450EE /* MovieEmbeddedBasedBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E769B4B1AE4896800F450EE /* MovieEmbeddedBasedBarViewController.swift */; };
 		5E9973541AE0FFB200692398 /* NetworkBlockCellsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E9973531AE0FFB200692398 /* NetworkBlockCellsViewController.m */; };
 		5EA6F25E1AD8C9930017493D /* Cartography.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5EA6F25C1AD8C9930017493D /* Cartography.framework */; };
 		5EFED9A61AE3AB3F00EEB23E /* VideoInfoDrawRectBlockCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EFED9A51AE3AB3F00EEB23E /* VideoInfoDrawRectBlockCell.swift */; };
@@ -71,6 +72,7 @@
 		5E43A6BF1AE10AFF00BB915E /* VideoInfoBlockUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VideoInfoBlockUtils.h; path = NimbusDemo/VideoInfoBlockUtils.h; sourceTree = "<group>"; };
 		5E43A6C01AE10AFF00BB915E /* VideoInfoBlockUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VideoInfoBlockUtils.m; path = NimbusDemo/VideoInfoBlockUtils.m; sourceTree = "<group>"; };
 		5E52BAC31AD8C449007C3F32 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
+		5E769B4B1AE4896800F450EE /* MovieEmbeddedBasedBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieEmbeddedBasedBarViewController.swift; sourceTree = "<group>"; };
 		5E87FD931AD8C24B0021E80C /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Bolts.framework; path = Carthage/Build/iOS/Bolts.framework; sourceTree = "<group>"; };
 		5E87FD951AD8C2500021E80C /* pop.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = pop.framework; path = Carthage/Build/iOS/pop.framework; sourceTree = "<group>"; };
 		5E9973521AE0FFB200692398 /* NetworkBlockCellsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NetworkBlockCellsViewController.h; path = NimbusDemo/NetworkBlockCellsViewController.h; sourceTree = "<group>"; };
@@ -159,6 +161,7 @@
 		5E1E2CE71AD8B898004CC05B /* app */ = {
 			isa = PBXGroup;
 			children = (
+				5E769B491AE4896800F450EE /* WatchView */,
 				5E3AB3C01AE3D7DC00BB0944 /* Common */,
 				5EFED9AD1AE3B67500EEB23E /* Business-Logic-Layer */,
 				5EFED9A21AE3AB1A00EEB23E /* DetailPage */,
@@ -227,6 +230,22 @@
 				5E3AB3C71AE3D7DC00BB0944 /* UIColorExtension.swift */,
 			);
 			path = "UIColor-Hex-Swift-master";
+			sourceTree = "<group>";
+		};
+		5E769B491AE4896800F450EE /* WatchView */ = {
+			isa = PBXGroup;
+			children = (
+				5E769B4A1AE4896800F450EE /* Bars */,
+			);
+			path = WatchView;
+			sourceTree = "<group>";
+		};
+		5E769B4A1AE4896800F450EE /* Bars */ = {
+			isa = PBXGroup;
+			children = (
+				5E769B4B1AE4896800F450EE /* MovieEmbeddedBasedBarViewController.swift */,
+			);
+			path = Bars;
 			sourceTree = "<group>";
 		};
 		5EC282D61ADCEA9F007CB736 /* Cartography */ = {
@@ -512,6 +531,7 @@
 				5E39CFAE1AE10BE5001032E6 /* VideoInfoObject.m in Sources */,
 				5E9973541AE0FFB200692398 /* NetworkBlockCellsViewController.m in Sources */,
 				5E1D62AA1AE0BBFA00D65370 /* NetworkDrawRectBlockCell.m in Sources */,
+				5E769B5D1AE4896800F450EE /* MovieEmbeddedBasedBarViewController.swift in Sources */,
 				5EFED9B21AE3B67F00EEB23E /* LayoutUtils.swift in Sources */,
 				5E3AB3CA1AE3D7DC00BB0944 /* PathExtensionFile.swift in Sources */,
 				5E3AB3C81AE3D7DC00BB0944 /* Path.swift in Sources */,

@@ -39,8 +39,8 @@
 
 
 
-// Library: facebook/Pop [used]
-//#import <pop/POP.h>
+// Library: facebook/Pop
+#import <pop/POP.h>
 
 // Library: ObservingPlayerItem
 // url: https://github.com/acrookston/ObservingPlayerItem

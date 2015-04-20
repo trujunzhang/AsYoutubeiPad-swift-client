@@ -11,90 +11,90 @@ import UIKit
 import Cartography
 
 class VideoInfoViewController: UIViewController, UITableViewDelegate {
-
+    
     var model: NITableViewModel?
     var tableView: UITableView?
     var isOpen: Bool = false
     var cellFactory: NICellFactory?
-
+    
     var videoInfoObject: VideoInfoObject?
     var obj: NIDrawRectBlockCellObject?
     var animateObject: TableAnimateObject?
-
+    
     var tableContents: [AnyObject] = [AnyObject]()
-
-
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         self.view.backgroundColor = UIColor(rgba: VIDEO_INFO_BACKGROUND_COLOR)
-
+        
         makeModel()
         tableView = UITableView()
-
+        
         self.view.addSubview(tableView!)
-
+        
         layout(tableView!) {
             view1 in
-
+            
             view1.leading == view1.superview!.leading + VIDEO_INFO_TABLEVIEW_MARGIN_LEFT_RIGHT
             view1.trailing == view1.superview!.trailing - VIDEO_INFO_TABLEVIEW_MARGIN_LEFT_RIGHT
-
+            
             view1.top == view1.superview!.top + 20
             view1.bottom == view1.superview!.bottom - 20
         }
-
+        
         tableView?.dataSource = model
         tableView?.delegate = self
-
+        
         tableView?.rowHeight = 100
-
+        
         isOpen = true
-
+        
     }
-
+    
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
-
+        
         if let infoObject: VideoInfoObject = videoInfoObject {
             let viewWidth = self.view.frame.size.width - (VIDEO_INFO_TABLEVIEW_MARGIN_LEFT_RIGHT * 2)
-//            println("viewWidth : \(viewWidth)")
-
+            //            println("viewWidth : \(viewWidth)")
+            
             let specialRowHeight = VideoInfoDrawRectBlockCell.getBlockCellHeight(infoObject, width: viewWidth)
-//            println("specialRowHeight : \(specialRowHeight)")
-
+            //            println("specialRowHeight : \(specialRowHeight)")
+            
             infoObject.currentRowHeight = specialRowHeight
-
+            
             animateObject = TableAnimateObject(_maxValue: specialRowHeight)
         }
     }
-
+    
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
     }
-
+    
     // MARK : model
     func makeModel() {
         let drawTextBlock: NICellDrawRectBlock = {
             rect, object, cell in
-
+            
             return 0
         }
-
+        
         videoInfoObject = VideoInfoObject()
         obj = NIDrawRectBlockCellObject(block: drawTextBlock, object: videoInfoObject)
         tableContents = [
-                NIDrawRectBlockCellObject(block: drawTextBlock, object: videoInfoObject),
-                NITitleCellObject(title: "xcode"),
-                NITitleCellObject(title: "wanghao")
+            NIDrawRectBlockCellObject(block: drawTextBlock, object: videoInfoObject),
+            NITitleCellObject(title: "xcode"),
+            NITitleCellObject(title: "wanghao")
         ]
-
+        
         cellFactory = NICellFactory()
         cellFactory?.mapObjectClass(NIDrawRectBlockCellObject.self, toCellClass: VideoInfoDrawRectBlockCell.self)
-
+        
         model = NITableViewModel(listArray: tableContents, delegate: cellFactory)
     }
-
+    
     // MARK: UITableViewDelegate
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         if (indexPath.section == 0 && indexPath.row == 0) {
@@ -102,10 +102,10 @@ class VideoInfoViewController: UIViewController, UITableViewDelegate {
                 return infoObject.currentRowHeight + VIDEO_INFO_TITLE_PANEL_HEIGHT
             }
         }
-
+        
         return 200
     }
-
+    
     func updateAnimatedTableCell() {
         if let _tableView: UITableView = tableView {
             _tableView.beginUpdates()
@@ -115,55 +115,65 @@ class VideoInfoViewController: UIViewController, UITableViewDelegate {
             _tableView.endUpdates()
         }
     }
-
+    
     // MARK: Video Info tableview cell's animate
     func performAnimation() {
-
-        let spring: POPBasicAnimation = POPBasicAnimation.animation
+        
+        let spring: POPBasicAnimation = POPBasicAnimation()
         var name = kCAMediaTimingFunctionEaseOut
         if (isOpen == true) {
             name = kCAMediaTimingFunctionEaseIn
         }
         spring.timingFunction = CAMediaTimingFunction(name: name)
-
+        
         let property: POPAnimatableProperty = POPAnimatableProperty.propertyWithName("com.rwt.heightContstraint", initializer: {
             (object) -> Void in
-
+            
             let prop: POPMutableAnimatableProperty = object as POPMutableAnimatableProperty
-
+            
             // note the object used is NSLayoutConstraint, the same object we assign the animation to
-            prop.readBlock = {
-                (object, values) -> Void in
-                values[0] = object.fromValue
+            prop.readBlock = {(anyObject, values) -> Void in
+                
+                if let object:TableAnimateObject = anyObject as? TableAnimateObject {
+                    values[0] = object.fromValue!
+                }
+                
             }
-
-            prop.writeBlock = {
-                (animateObject, values) -> Void in
-                object.fromValue = values[0]
-                videoInfoObject.currentRowHeight = values[0]
-
-                self.updateAnimatedTableCell()
+            
+            prop.writeBlock = {(anyObject, values) -> Void in
+                
+                if let object:TableAnimateObject = anyObject as? TableAnimateObject {
+                    object.fromValue = values[0]
+                    self.videoInfoObject!.currentRowHeight = values[0]
+                    
+                    self.updateAnimatedTableCell()
+                }
+                                
             }
-
+            
+            
             // this helps Pop determine when the animation is over
             prop.threshold = 0.01
-
-
+            
+            
         }) as! POPAnimatableProperty
-
+        
         spring.property = property
-        if (isOpen == true) {
-            animateObject.fromValue = animateObject.maxValue;
-            spring.toValue = animateObject.minValue
-        } else {
-            animateObject.fromValue = animateObject.minValue;
-            spring.toValue = animateObject.maxValue
-        }
-
+        
+        //        if (isOpen == true) {
+        //            animateObject.fromValue = animateObject.maxValue;
+        //            spring.toValue = animateObject.minValue
+        //        } else {
+        //            animateObject.fromValue = animateObject.minValue;
+        //            spring.toValue = animateObject.maxValue
+        //        }
+        
         isOpen = !isOpen
-
-        animateObject.pop_addAnimation(spring, forKey: "TableRowAnimate")
+        
+        //        animateObject.pop_addAnimation(spring, forKey: "TableRowAnimate")
+        
+        
     }
-
-
+    
+    
 }
