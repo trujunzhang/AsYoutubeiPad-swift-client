@@ -14,7 +14,6 @@ class VideoInfoDrawRectBlockCell: NIDrawRectBlockCell {
     var videoInfoObject: VideoInfoObject?
 
     var descriptionLabel: NIAttributedLabel?
-    var titleContainer: UIView?
     var titleLabel: UILabel?
     var likeCountLabel: UILabel?
     var toggleButton: UIButton?
@@ -45,18 +44,13 @@ class VideoInfoDrawRectBlockCell: NIDrawRectBlockCell {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
 
         // line01
-        titleContainer = UIView()
-//        titleContainer?.backgroundColor = UIColor.redColor()
         titleLabel = UILabel()
         likeCountLabel = UILabel()
         makeButton()
-        if let _titleContainer: UIView = titleContainer, _titleLabel: UILabel = titleLabel, _likeCountLabel: UILabel = likeCountLabel, _toggleButton: UIButton = toggleButton {
-            // 1
-            self.blockView.addSubview(_titleContainer)
-            // 2
-            _titleContainer.addSubview(_titleLabel)
-            _titleContainer.addSubview(_likeCountLabel)
-            _titleContainer.addSubview(_toggleButton)
+        if let _titleLabel: UILabel = titleLabel, _likeCountLabel: UILabel = likeCountLabel, _toggleButton: UIButton = toggleButton {
+            self.blockView.addSubview(_titleLabel)
+            self.blockView.addSubview(_likeCountLabel)
+            self.blockView.addSubview(_toggleButton)
         }
 
         // line02
@@ -65,20 +59,6 @@ class VideoInfoDrawRectBlockCell: NIDrawRectBlockCell {
             makeDescriptionLabel(_descriptionLabel)
             self.blockView.addSubview(_descriptionLabel)
         }
-
-        if let _titleContainer: UIView = titleContainer, _descriptionLabel: NIAttributedLabel = descriptionLabel {
-            layout(_titleContainer) {
-                view1 in
-
-                view1.leading == view1.superview!.leading
-                view1.trailing == view1.superview!.trailing
-
-                view1.top == view1.superview!.top
-                view1.height == VIDEO_INFO_TITLE_PANEL_HEIGHT
-
-            }
-        }
-
 
         LayoutTitlePanel()
     }
@@ -166,24 +146,25 @@ class VideoInfoDrawRectBlockCell: NIDrawRectBlockCell {
 
                 // _titleLabel
                 view1.leading == view1.superview!.leading + 20
-                view1.trailing == view1.superview!.trailing - 160
+                view1.trailing == view1.superview!.trailing - 200
 
                 view1.top == view1.superview!.top + 10
                 view1.height == 14
 
                 // _likeCountLabel
                 view2.leading == view2.superview!.leading + 20
-                view2.trailing == view2.superview!.trailing - 160
+                view2.trailing == view2.superview!.trailing - 200
 
                 view2.top == view1.bottom + 4
                 view2.height == 14
 
                 // _toggleButton
-                view3.top == view3.superview!.top + 4
+//                view3.top == view3.superview!.top + 4
+                view3.centerX == view3.superview!.centerX
                 view3.trailing == view3.superview!.trailing - 14
 
-                view2.width == VIDEO_INFO_TOGGLE_WIDTH_HEIGHT
-                view2.height == VIDEO_INFO_TOGGLE_WIDTH_HEIGHT
+                view3.width == VIDEO_INFO_TOGGLE_WIDTH_HEIGHT
+                view3.height == VIDEO_INFO_TOGGLE_WIDTH_HEIGHT
             }
         }
     }
