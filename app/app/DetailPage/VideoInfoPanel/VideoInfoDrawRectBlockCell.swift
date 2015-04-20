@@ -152,7 +152,17 @@ class VideoInfoDrawRectBlockCell: NIDrawRectBlockCell {
 //        likeCountLabel = UILabel()
 //        toggleButton = UIButton()
 
+        let expand_guide = UIImage(named: "expand_guide") as UIImage?
+        let collapse_guide = UIImage(named: "collapse_guide") as UIImage?
+        let button = UIButton.buttonWithType(UIButtonType.System) as? UIButton
 
+        if let _expand_guide = expand_guide, _collapse_guide = collapse_guide {
+            button!.setImage(_expand_guide, forState: UIControlState.Normal)
+            button!.setImage(_collapse_guide, forState: UIControlState.Selected)
+        }
+        button!.addTarget(self, action: "btnTouched:", forControlEvents: .TouchUpInside)
+
+        toggleButton = button
     }
 
     func LayoutTitlePanel() {
@@ -175,5 +185,11 @@ class VideoInfoDrawRectBlockCell: NIDrawRectBlockCell {
         }
     }
 
+
+    func btnTouched(sender: UIButton!) {
+        if let infoObject: VideoInfoObject = videoInfoObject {
+            infoObject.videoInfoToggleProtocol!.toggleVideoInfoPanel()
+        }
+    }
 
 }
