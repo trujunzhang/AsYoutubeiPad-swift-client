@@ -159,9 +159,8 @@ class VideoInfoDrawRectBlockCell: NIDrawRectBlockCell {
                 view2.height == 14
 
                 // _toggleButton
-//                view3.top == view3.superview!.top + 4
-                view3.centerX == view3.superview!.centerX
-                view3.trailing == view3.superview!.trailing - 14
+                view3.top == view3.superview!.top
+                view3.trailing == view3.superview!.trailing
 
                 view3.width == VIDEO_INFO_TOGGLE_WIDTH_HEIGHT
                 view3.height == VIDEO_INFO_TOGGLE_WIDTH_HEIGHT
@@ -171,8 +170,7 @@ class VideoInfoDrawRectBlockCell: NIDrawRectBlockCell {
 
 
     func btnTouched(sender: UIButton!) {
-        sender.selected = !sender.selected
-//        println("btnTouched...")
+//        sender.selected = !sender.selected
         if let infoObject: VideoInfoObject = videoInfoObject {
             infoObject.videoInfoToggleProtocol!.toggleVideoInfoPanel()
         }
