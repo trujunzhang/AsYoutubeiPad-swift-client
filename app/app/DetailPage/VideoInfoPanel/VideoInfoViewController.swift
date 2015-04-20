@@ -148,7 +148,7 @@ class VideoInfoViewController: UIViewController, UITableViewDelegate {
                     
                     self.updateAnimatedTableCell()
                 }
-                                
+                
             }
             
             
@@ -159,20 +159,18 @@ class VideoInfoViewController: UIViewController, UITableViewDelegate {
         }) as! POPAnimatableProperty
         
         spring.property = property
+        animateObject?.prepareAnimate(isOpen)
         
-        //        if (isOpen == true) {
-        //            animateObject.fromValue = animateObject.maxValue;
-        //            spring.toValue = animateObject.minValue
-        //        } else {
-        //            animateObject.fromValue = animateObject.minValue;
-        //            spring.toValue = animateObject.maxValue
-        //        }
+        if (isOpen == true) {
+            spring.toValue = animateObject!.minValue
+        } else {
+            spring.toValue = animateObject!.maxValue
+        }
         
         isOpen = !isOpen
         
-        //        animateObject.pop_addAnimation(spring, forKey: "TableRowAnimate")
-        
-        
+        animateObject!.pop_addAnimation(spring, forKey: "TableRowAnimate")
+                
     }
     
     
