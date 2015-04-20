@@ -60,7 +60,8 @@ class VideoInfoViewController: UIViewController, UITableViewDelegate {
             let viewWidth = self.view.frame.size.width - (VIDEO_INFO_TABLEVIEW_MARGIN_LEFT_RIGHT * 2)
             //            println("viewWidth : \(viewWidth)")
             
-            let specialRowHeight = VideoInfoDrawRectBlockCell.getBlockCellHeight(infoObject, width: viewWidth)
+            let specialRowHeight:CGFloat = 300
+//            VideoInfoDrawRectBlockCell.getBlockCellHeight(infoObject, width: viewWidth)
             //            println("specialRowHeight : \(specialRowHeight)")
             
             infoObject.currentRowHeight = specialRowHeight
@@ -105,6 +106,13 @@ class VideoInfoViewController: UIViewController, UITableViewDelegate {
         
         return 200
     }
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        if (indexPath.section == 0 && indexPath.row == 1) {
+            performAnimation()
+        }
+    }
+    
+    // MARK: tableview events
     
     func updateAnimatedTableCell() {
         if let _tableView: UITableView = tableView {
@@ -170,7 +178,7 @@ class VideoInfoViewController: UIViewController, UITableViewDelegate {
         isOpen = !isOpen
         
         animateObject!.pop_addAnimation(spring, forKey: "TableRowAnimate")
-                
+        
     }
     
     

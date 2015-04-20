@@ -43,6 +43,7 @@ class VideoInfoDrawRectBlockCell: NIDrawRectBlockCell {
 
         // line01
         titleContainer = UIView()
+        titleContainer?.backgroundColor = UIColor.redColor()
         titleLabel = UILabel()
         likeCountLabel = UILabel()
         toggleButton = UIButton()
