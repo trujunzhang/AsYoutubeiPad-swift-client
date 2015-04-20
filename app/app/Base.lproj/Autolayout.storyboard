@@ -2,7 +2,6 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7531" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="J4G-BV-OhN">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7520"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Network Block Cells View Controller-->
@@ -64,26 +63,15 @@
                                     <action selector="xxx:" destination="J4G-BV-OhN" eventType="touchUpInside" id="Gf0-PO-dlc"/>
                                 </connections>
                             </button>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="zyF-Nf-aHE">
-                                <rect key="frame" x="16" y="40" width="568" height="496"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="zyF-Nf-aHE" firstAttribute="leading" secondItem="828-Ds-fGu" secondAttribute="leadingMargin" id="8ej-6c-Lrq"/>
                             <constraint firstAttribute="centerX" secondItem="vJj-0o-dpP" secondAttribute="centerX" id="MBY-6j-mL6"/>
-                            <constraint firstItem="9fm-75-1S1" firstAttribute="top" secondItem="zyF-Nf-aHE" secondAttribute="bottom" id="jcF-oh-g6V"/>
-                            <constraint firstItem="zyF-Nf-aHE" firstAttribute="top" secondItem="OUB-73-v2z" secondAttribute="bottom" constant="40" id="p96-WT-giU"/>
                             <constraint firstItem="vJj-0o-dpP" firstAttribute="top" secondItem="OUB-73-v2z" secondAttribute="bottom" constant="10" id="tbu-7y-akE"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="zyF-Nf-aHE" secondAttribute="trailing" id="yaM-Vm-xvM"/>
                         </constraints>
                     </view>
                     <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
                     <navigationItem key="navigationItem" id="uf8-t5-Tia"/>
-                    <connections>
-                        <outlet property="tableView" destination="zyF-Nf-aHE" id="nZJ-iq-Rff"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="deQ-g6-deV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
