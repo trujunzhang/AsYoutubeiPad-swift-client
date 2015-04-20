@@ -18,6 +18,8 @@ class VideoInfoDrawRectBlockCell: NIDrawRectBlockCell {
     var likeCountLabel: UILabel?
     var toggleButton: UIButton?
     
+    var toggleContainer: UIView?
+    
     var group: Cartography.ConstraintGroup?
     
     var _font: UIFont?
@@ -44,13 +46,28 @@ class VideoInfoDrawRectBlockCell: NIDrawRectBlockCell {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
         // line01
+        toggleContainer = UIView()
         titleLabel = UILabel()
         likeCountLabel = UILabel()
         makeButton()
-        if let _titleLabel: UILabel = titleLabel, _likeCountLabel: UILabel = likeCountLabel, _toggleButton: UIButton = toggleButton {
-            self.blockView.addSubview(_titleLabel)
-            self.blockView.addSubview(_likeCountLabel)
-            self.blockView.addSubview(_toggleButton)
+        if let _toggleContainer:UIView = toggleContainer, _titleLabel: UILabel = titleLabel, _likeCountLabel: UILabel = likeCountLabel, _toggleButton: UIButton = toggleButton {
+            self.blockView.addSubview(_toggleContainer)
+            
+            _toggleContainer.addSubview(_titleLabel)
+            _toggleContainer.addSubview(_likeCountLabel)
+            _toggleContainer.addSubview(_toggleButton)
+            
+            layout(_toggleContainer) {
+                view1 in
+                
+                // _titleLabel
+                view1.leading == view1.superview!.leading
+                view1.trailing == view1.superview!.trailing
+                
+                view1.top == view1.superview!.top
+                view1.height == VIDEO_INFO_TITLE_PANEL_HEIGHT
+            }
+
         }
         
         // line02
