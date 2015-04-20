@@ -81,7 +81,8 @@ class VideoInfoViewController: UIViewController, UITableViewDelegate {
         videoInfoObject = VideoInfoObject()
         obj = NIDrawRectBlockCellObject(block: drawTextBlock, object: videoInfoObject)
         tableContents = [
-                NIDrawRectBlockCellObject(block: drawTextBlock, object: videoInfoObject),
+//                NIDrawRectBlockCellObject(block: drawTextBlock, object: videoInfoObject),
+                NITitleCellObject(title: "toggle"),
                 NITitleCellObject(title: "xcode"),
                 NITitleCellObject(title: "wanghao")
         ]
@@ -96,7 +97,9 @@ class VideoInfoViewController: UIViewController, UITableViewDelegate {
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         if (indexPath.section == 0 && indexPath.row == 0) {
             if let infoObject: VideoInfoObject = videoInfoObject {
-                return infoObject.currentRowHeight + VIDEO_INFO_TITLE_PANEL_HEIGHT + 20
+                let height = infoObject.currentRowHeight + VIDEO_INFO_TITLE_PANEL_HEIGHT
+                println("tablerow's height: \(height)")
+                return height
             }
         }
 
@@ -123,6 +126,15 @@ class VideoInfoViewController: UIViewController, UITableViewDelegate {
 
     // MARK: Video Info tableview cell's animate
     func performAnimation() {
+        videoInfoObject?.prepareAnimate(isOpen)
+
+        var toValue: CGFloat = 0
+        if (isOpen == true) {
+            toValue = 0
+        } else {
+            toValue = videoInfoObject!.maxHeightValue
+        }
+
 
         let spring: POPBasicAnimation = POPBasicAnimation()
         var name = kCAMediaTimingFunctionEaseOut
@@ -130,6 +142,15 @@ class VideoInfoViewController: UIViewController, UITableViewDelegate {
             name = kCAMediaTimingFunctionEaseIn
         }
         spring.timingFunction = CAMediaTimingFunction(name: name)
+        spring.completionBlock = {
+            (anim, finished) -> Void in
+
+            self.videoInfoObject!.currentRowHeight = toValue
+
+            self.updateAnimatedTableCell()
+
+            let x = 0
+        }
 
         let property: POPAnimatableProperty = POPAnimatableProperty.propertyWithName("com.rwt.heightContstraint", initializer: {
             (object) -> Void in
@@ -162,17 +183,10 @@ class VideoInfoViewController: UIViewController, UITableViewDelegate {
             // this helps Pop determine when the animation is over
             prop.threshold = 0.01
 
-
         }) as! POPAnimatableProperty
 
         spring.property = property
-        videoInfoObject?.prepareAnimate(isOpen)
-
-        if (isOpen == true) {
-            spring.toValue = videoInfoObject!.minHeightValue
-        } else {
-            spring.toValue = videoInfoObject!.maxHeightValue
-        }
+        spring.toValue = toValue
 
         isOpen = !isOpen
 

@@ -222,6 +222,7 @@ CGFloat DEFAULT_ROW_HEIGHT = 60.0;
     }
     spring.timingFunction = [CAMediaTimingFunction functionWithName:name];
 
+
     POPAnimatableProperty *property = [POPAnimatableProperty propertyWithName:@"curtainOpenPoint" initializer:^(POPMutableAnimatableProperty *prop) {
         prop.readBlock = ^(TableAnimateObject *vc, CGFloat values[]) {
             values[0] = vc.fromValue;

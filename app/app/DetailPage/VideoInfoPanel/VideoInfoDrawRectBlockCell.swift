@@ -8,7 +8,7 @@
 
 import Foundation
 import UIKit
-import Cartography
+//import Cartography
 
 class VideoInfoDrawRectBlockCell: NIDrawRectBlockCell {
 
@@ -18,7 +18,7 @@ class VideoInfoDrawRectBlockCell: NIDrawRectBlockCell {
     var likeCountLabel: UILabel?
     var toggleButton: UIButton?
 
-    var group: Cartography.ConstraintGroup?
+//    var group: Cartography.ConstraintGroup?
 
     var _font: UIFont?
 
@@ -33,7 +33,7 @@ class VideoInfoDrawRectBlockCell: NIDrawRectBlockCell {
                 attributes: [NSFontAttributeName: VideoInfoDrawRectBlockCell.getDescriptionBlockCellFont()],
                 context: nil)
 
-        let cellHeight = boundingRect.size.height + 20
+        let cellHeight = boundingRect.size.height + 120
         return cellHeight
     }
 

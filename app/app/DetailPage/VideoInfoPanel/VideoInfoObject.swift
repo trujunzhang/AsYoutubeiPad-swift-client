@@ -19,9 +19,9 @@ class VideoInfoObject: NSObject {
 
     func prepareAnimate(open: Bool) {
         if (open == true) {
-            fromValue = maxHeightValue;
+            fromValue = maxHeightValue
         } else {
-            fromValue = minHeightValue;
+            fromValue = 0
         }
     }
 
