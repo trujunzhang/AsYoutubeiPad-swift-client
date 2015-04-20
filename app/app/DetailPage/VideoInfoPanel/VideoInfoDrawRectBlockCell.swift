@@ -23,6 +23,8 @@ class VideoInfoDrawRectBlockCell: NIDrawRectBlockCell {
 
     var _font: UIFont?
 
+    var isShowed = false
+
     // MARK : static functions
     class func getDescriptionBlockCellFont() -> UIFont {
         return UIFont(name: "AmericanTypewriter", size: 12)!
@@ -92,11 +94,16 @@ class VideoInfoDrawRectBlockCell: NIDrawRectBlockCell {
     override func shouldUpdateCellWithObject(object: AnyObject!) -> Bool {
         super.shouldUpdateCellWithObject(object)
 
+        if (isShowed == true) {
+            return false
+        }
+
         let infoObject: VideoInfoObject = object.object as! VideoInfoObject
         let maxHeight: CGFloat = infoObject.maxHeightValue
 
         if let infoObject: VideoInfoObject = videoInfoObject {
         } else {
+            println("VideoInfoToggleProtocol  ... ")
             videoInfoObject = infoObject
         }
 
@@ -108,6 +115,10 @@ class VideoInfoDrawRectBlockCell: NIDrawRectBlockCell {
             let rect: CGRect = CGRectMake(VIDEO_INFO_TABLEVIEW_MARGIN_LEFT_RIGHT, VIDEO_INFO_TITLE_PANEL_HEIGHT,
                     infoObject.descriptionWidth - VIDEO_INFO_TABLEVIEW_MARGIN_LEFT_RIGHT * 2, maxHeight)
             _descriptionLabel.frame = rect
+
+            println("shouldUpdateCellWithObject... +\(rect)")
+
+            isShowed = true
         }
 
         return true
@@ -138,6 +149,8 @@ class VideoInfoDrawRectBlockCell: NIDrawRectBlockCell {
         let expand_guide = UIImage(named: "expand_guide") as UIImage?
         let collapse_guide = UIImage(named: "collapse_guide") as UIImage?
         toggleButton = UIButton.buttonWithType(UIButtonType.System) as? UIButton
+        toggleButton!.backgroundColor = UIColor.clearColor()
+        toggleButton!.highlighted = false
 
         if let _expand_guide = expand_guide, _collapse_guide = collapse_guide {
             toggleButton!.setImage(_expand_guide, forState: UIControlState.Normal)
@@ -153,14 +166,14 @@ class VideoInfoDrawRectBlockCell: NIDrawRectBlockCell {
 
                 // _titleLabel
                 view1.leading == view1.superview!.leading + 20
-                view1.trailing == view1.superview!.trailing - 60
+                view1.trailing == view1.superview!.trailing - 160
 
                 view1.top == view1.superview!.top + 10
                 view1.height == 14
 
                 // _likeCountLabel
                 view2.leading == view2.superview!.leading + 20
-                view2.trailing == view2.superview!.trailing - 60
+                view2.trailing == view2.superview!.trailing - 160
 
                 view2.top == view1.bottom + 4
                 view2.height == 14
@@ -178,6 +191,7 @@ class VideoInfoDrawRectBlockCell: NIDrawRectBlockCell {
 
     func btnTouched(sender: UIButton!) {
         sender.selected = !sender.selected
+//        println("btnTouched...")
         if let infoObject: VideoInfoObject = videoInfoObject {
             infoObject.videoInfoToggleProtocol!.toggleVideoInfoPanel()
         }
