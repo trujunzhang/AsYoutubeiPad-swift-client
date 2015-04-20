@@ -170,7 +170,6 @@ class VideoInfoDrawRectBlockCell: NIDrawRectBlockCell {
 
 
     func btnTouched(sender: UIButton!) {
-//        sender.selected = !sender.selected
         if let infoObject: VideoInfoObject = videoInfoObject {
             infoObject.videoInfoToggleProtocol!.toggleVideoInfoPanel()
         }

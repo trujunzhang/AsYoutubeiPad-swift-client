@@ -150,11 +150,9 @@ class VideoInfoViewController: UIViewController, UITableViewDelegate, VideoInfoT
         spring.timingFunction = CAMediaTimingFunction(name: name)
         spring.completionBlock = {
             (anim, finished) -> Void in
-
             self.videoInfoObject!.currentRowHeight = toValue
 
             self.updateAnimatedTableCell()
-
             let x = 0
         }
 
@@ -185,7 +183,6 @@ class VideoInfoViewController: UIViewController, UITableViewDelegate, VideoInfoT
 
             }
 
-
             // this helps Pop determine when the animation is over
             prop.threshold = 0.01
 
@@ -197,7 +194,6 @@ class VideoInfoViewController: UIViewController, UITableViewDelegate, VideoInfoT
         isOpen = !isOpen
 
         videoInfoObject!.pop_addAnimation(spring, forKey: "TableRowAnimate")
-
     }
 
     // MARK : VideoInfoToggleProtocol
