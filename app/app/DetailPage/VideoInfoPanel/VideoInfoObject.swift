@@ -25,8 +25,8 @@ class VideoInfoObject: NSObject {
         }
     }
 
-    func setDescriptionMaxHeight(max: CGFloat, descriptionWidth: CGFloat) {
-        descriptionWidth = descriptionWidth
+    func setDescriptionMaxHeight(max: CGFloat, _descriptionWidth: CGFloat) {
+        descriptionWidth = _descriptionWidth
         currentRowHeight = max
         maxHeightValue = max
     }

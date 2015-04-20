@@ -62,7 +62,7 @@ class VideoInfoViewController: UIViewController, UITableViewDelegate {
             let specialRowHeight: CGFloat = VideoInfoDrawRectBlockCell.getBlockCellHeight(infoObject, width: viewWidth)
             //            println("specialRowHeight : \(specialRowHeight)")
 
-            infoObject.setDescriptionMaxHeight(specialRowHeight, descriptionWidth: viewWidth)
+            infoObject.setDescriptionMaxHeight(specialRowHeight, _descriptionWidth: viewWidth)
         }
     }
 
