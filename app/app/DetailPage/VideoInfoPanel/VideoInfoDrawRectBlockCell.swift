@@ -47,10 +47,8 @@ class VideoInfoDrawRectBlockCell: NIDrawRectBlockCell {
 //        titleContainer?.backgroundColor = UIColor.redColor()
         titleLabel = UILabel()
         likeCountLabel = UILabel()
-        toggleButton = UIButton()
+        makeButton()
         if let _titleContainer: UIView = titleContainer, _titleLabel: UILabel = titleLabel, _likeCountLabel: UILabel = likeCountLabel, _toggleButton: UIButton = toggleButton {
-            makeTitlePanel()
-
             // 1
             self.blockView.addSubview(_titleContainer)
             // 2
@@ -77,15 +75,6 @@ class VideoInfoDrawRectBlockCell: NIDrawRectBlockCell {
                 view1.height == VIDEO_INFO_TITLE_PANEL_HEIGHT
 
             }
-//            group = layout(_descriptionLabel) {
-//                view2 in
-//
-//                view2.leading == view2.superview!.leading + 20
-//                view2.trailing == view2.superview!.trailing - 20
-//
-//                view2.top == view2.superview!.leading + VIDEO_INFO_TITLE_PANEL_HEIGHT
-//                view2.height == 100
-//            }
         }
 
 
@@ -145,24 +134,16 @@ class VideoInfoDrawRectBlockCell: NIDrawRectBlockCell {
         label.linksHaveUnderlines = true
     }
 
-    func makeTitlePanel() {
-//        VIDEO_INFO_TITLE_PANEL_HEIGHT
-
-//        titleLabel = UILabel()
-//        likeCountLabel = UILabel()
-//        toggleButton = UIButton()
-
+    func makeButton() {
         let expand_guide = UIImage(named: "expand_guide") as UIImage?
         let collapse_guide = UIImage(named: "collapse_guide") as UIImage?
-        let button = UIButton.buttonWithType(UIButtonType.System) as? UIButton
+        toggleButton = UIButton.buttonWithType(UIButtonType.System) as? UIButton
 
         if let _expand_guide = expand_guide, _collapse_guide = collapse_guide {
-            button!.setImage(_expand_guide, forState: UIControlState.Normal)
-            button!.setImage(_collapse_guide, forState: UIControlState.Selected)
+            toggleButton!.setImage(_expand_guide, forState: UIControlState.Normal)
+            toggleButton!.setImage(_collapse_guide, forState: UIControlState.Selected)
         }
-        button!.addTarget(self, action: "btnTouched:", forControlEvents: .TouchUpInside)
-
-        toggleButton = button
+        toggleButton!.addTarget(self, action: "btnTouched:", forControlEvents: .TouchUpInside)
     }
 
     func LayoutTitlePanel() {
@@ -170,23 +151,33 @@ class VideoInfoDrawRectBlockCell: NIDrawRectBlockCell {
             layout(_titleLabel, _likeCountLabel, _toggleButton) {
                 view1, view2, view3 in
 
+                // _titleLabel
                 view1.leading == view1.superview!.leading + 20
                 view1.trailing == view1.superview!.trailing - 60
 
                 view1.top == view1.superview!.top + 10
                 view1.height == 14
 
+                // _likeCountLabel
                 view2.leading == view2.superview!.leading + 20
                 view2.trailing == view2.superview!.trailing - 60
 
                 view2.top == view1.bottom + 4
                 view2.height == 14
+
+                // _toggleButton
+                view3.top == view3.superview!.top + 4
+                view3.trailing == view3.superview!.trailing - 14
+
+                view2.width == VIDEO_INFO_TOGGLE_WIDTH_HEIGHT
+                view2.height == VIDEO_INFO_TOGGLE_WIDTH_HEIGHT
             }
         }
     }
 
 
     func btnTouched(sender: UIButton!) {
+        sender.selected = !sender.selected
         if let infoObject: VideoInfoObject = videoInfoObject {
             infoObject.videoInfoToggleProtocol!.toggleVideoInfoPanel()
         }

@@ -13,6 +13,8 @@ let VIDEO_INFO_BACKGROUND_COLOR = "#fff1f1f1"
 
 let VIDEO_INFO_TABLEVIEW_MARGIN_LEFT_RIGHT: CGFloat = 20
 
+let VIDEO_INFO_TOGGLE_WIDTH_HEIGHT: CGFloat = 39
+
 
 protocol VideoInfoToggleProtocol {
     func toggleVideoInfoPanel() -> Void

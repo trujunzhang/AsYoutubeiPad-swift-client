@@ -100,7 +100,7 @@ class VideoInfoViewController: UIViewController, UITableViewDelegate, VideoInfoT
         if (indexPath.section == 0 && indexPath.row == 0) {
             if let infoObject: VideoInfoObject = videoInfoObject {
                 let height = infoObject.currentRowHeight + VIDEO_INFO_TITLE_PANEL_HEIGHT
-                println("tablerow's height: \(height)")
+//                println("tablerow's height: \(height)")
                 return height
             }
         }
@@ -202,7 +202,8 @@ class VideoInfoViewController: UIViewController, UITableViewDelegate, VideoInfoT
 
     // MARK : VideoInfoToggleProtocol
     func toggleVideoInfoPanel() -> Void {
-
+        let x = 0
+        performAnimation()
     }
 
 
