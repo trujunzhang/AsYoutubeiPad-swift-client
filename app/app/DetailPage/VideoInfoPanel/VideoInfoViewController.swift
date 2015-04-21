@@ -139,24 +139,19 @@ class VideoInfoViewController: UIViewController, UITableViewDelegate, VideoInfoT
     func performAnimation(completionBlock: VideoToggleCompletionBlock) {
         videoInfoObject?.prepareAnimate(isOpen)
 
+        var name = kCAMediaTimingFunctionEaseIn
         var toValue: CGFloat = 0
-        if (isOpen == true) {
-            toValue = 0
-        } else {
+        if (isOpen == false) {
+            name = kCAMediaTimingFunctionEaseOut
             toValue = videoInfoObject!.maxHeightValue
         }
 
-
         let spring: POPBasicAnimation = POPBasicAnimation()
-        var name = kCAMediaTimingFunctionEaseOut
-        if (isOpen == true) {
-            name = kCAMediaTimingFunctionEaseIn
-        }
         spring.timingFunction = CAMediaTimingFunction(name: name)
         spring.completionBlock = {
             (anim, finished) -> Void in
 
-            completionBlock(nil, self.isOpen)
+//            completionBlock(nil, self.isOpen)
 
 //            self.videoInfoObject!.currentRowHeight = toValue
 
@@ -199,6 +194,8 @@ class VideoInfoViewController: UIViewController, UITableViewDelegate, VideoInfoT
         spring.toValue = toValue
 
         isOpen = !isOpen
+
+        videoInfoObject!.isOpen = isOpen
 
         videoInfoObject!.pop_addAnimation(spring, forKey: "TableRowAnimate")
     }

@@ -110,6 +110,8 @@ class VideoInfoDrawRectBlockCell: NIDrawRectBlockCell {
             videoInfoObject = infoObject
         }
 
+        showToggleImage(infoObject.isOpen)
+
         if let _descriptionLabel: NIAttributedLabel = descriptionLabel, _titleLabel: UILabel = titleLabel, _likeCountLabel: UILabel = likeCountLabel {
             _descriptionLabel.text = infoObject.descriptionString
             _titleLabel.text = infoObject.title
@@ -199,7 +201,7 @@ class VideoInfoDrawRectBlockCell: NIDrawRectBlockCell {
             infoObject.videoInfoToggleProtocol!.toggleVideoInfoPanel({
                 (object, isOpen) -> Void in
 
-                self.showToggleImage(isOpen)
+//                self.showToggleImage(isOpen)
             })
         }
     }

@@ -17,6 +17,7 @@ class VideoInfoObject: NSObject {
     var descriptionWidth: CGFloat = 0
 
     var fromValue: CGFloat?
+    var isOpen: Bool = false
 
     var descriptionRect: CGRect?
 
