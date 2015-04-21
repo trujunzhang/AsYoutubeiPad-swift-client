@@ -120,9 +120,7 @@ class VideoInfoViewController: UIViewController, UITableViewDelegate, VideoInfoT
     func updateAnimatedTableCell() {
         if let _tableView: UITableView = tableView {
             _tableView.beginUpdates()
-            let indexPath: NSIndexPath = NSIndexPath(forRow: 0, inSection: 0)
-            let reloadIndexPath = [indexPath]
-            _tableView.reloadRowsAtIndexPaths(reloadIndexPath, withRowAnimation: .None)
+            _tableView.reloadRowsAtIndexPaths([NSIndexPath(forRow: 0, inSection: 0)], withRowAnimation: .None)
             _tableView.endUpdates()
         }
     }
