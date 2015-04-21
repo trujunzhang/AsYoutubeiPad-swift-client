@@ -18,6 +18,8 @@ class VideoInfoObject: NSObject {
 
     var fromValue: CGFloat?
 
+    var descriptionRect: CGRect?
+
     func prepareAnimate(open: Bool) {
         if (open == true) {
             fromValue = maxHeightValue
