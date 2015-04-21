@@ -20,7 +20,7 @@ class NBMenuTableViewController: UIViewController,UITableViewDelegate {
     var obj: NIDrawRectBlockCellObject?
     
     var tableContents: [AnyObject] = [AnyObject]()
-        
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         

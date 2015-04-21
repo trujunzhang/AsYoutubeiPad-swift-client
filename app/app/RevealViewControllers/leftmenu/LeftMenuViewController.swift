@@ -9,7 +9,10 @@
 import UIKit
 
 class LeftMenuViewController: UIViewController ,SWRevealViewControllerDelegate{
-
+    
+    var menuTableViewController: NBMenuTableViewController?
+    var menuTableRootView: UIView?
+    
     
     required init(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
@@ -31,18 +34,17 @@ class LeftMenuViewController: UIViewController ,SWRevealViewControllerDelegate{
     }
     
     func initMenuTableView() {
+        menuTableViewController = NBMenuTableViewController()
         
-//        var menuViewController:AsMenuTableViewController = AsMenuTableViewController(viewWidth: REAR_VIEW_WIDTH)
-//        self.addChildViewController(menuViewController)
-//        
-//        var addView =  menuViewController.view;
-//        self.view.addSubview(addView)
-//        
-//        menuViewController.didMoveToParentViewController(self)
-//        addView.frame=self.view.bounds;
+        if let viewController:UIViewController = menuTableViewController {
+            menuTableRootView = viewController.view
+            
+            self.view.addSubview(menuTableRootView!)
+            self.addChildViewController(viewController)
+        }
     }
     
-
+    
     
     
 }
