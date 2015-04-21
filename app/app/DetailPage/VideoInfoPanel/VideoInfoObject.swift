@@ -17,15 +17,15 @@ class VideoInfoObject: NSObject {
     var descriptionWidth: CGFloat = 0
 
     var fromValue: CGFloat?
-    var isOpen: Bool = false
+    var isOpen: Bool = true
 
     var descriptionRect: CGRect?
 
-    func prepareAnimate(open: Bool) {
-        if (open == true) {
+    func prepareAnimate() {
+
+        fromValue = 0
+        if (isOpen == true) {
             fromValue = maxHeightValue
-        } else {
-            fromValue = 0
         }
     }
 

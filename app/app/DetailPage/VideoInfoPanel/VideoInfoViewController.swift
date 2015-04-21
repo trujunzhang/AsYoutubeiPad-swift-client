@@ -14,7 +14,6 @@ class VideoInfoViewController: UIViewController, UITableViewDelegate, VideoInfoT
 
     var model: NITableViewModel?
     var tableView: UITableView?
-    var isOpen: Bool = false
     var cellFactory: NICellFactory?
 
     var videoInfoObject: VideoInfoObject?
@@ -47,10 +46,7 @@ class VideoInfoViewController: UIViewController, UITableViewDelegate, VideoInfoT
         tableView?.dataSource = model
         tableView?.delegate = self
 
-        tableView?.rowHeight = 100
-
-        isOpen = true
-
+//        tableView?.rowHeight = 100
     }
 
     override func viewWillAppear(animated: Bool) {
@@ -137,11 +133,11 @@ class VideoInfoViewController: UIViewController, UITableViewDelegate, VideoInfoT
 
     // MARK: Video Info tableview cell's animate
     func performAnimation(completionBlock: VideoToggleCompletionBlock) {
-        videoInfoObject?.prepareAnimate(isOpen)
+        videoInfoObject?.prepareAnimate()
 
         var name = kCAMediaTimingFunctionEaseIn
         var toValue: CGFloat = 0
-        if (isOpen == false) {
+        if (videoInfoObject!.isOpen == false) {
             name = kCAMediaTimingFunctionEaseOut
             toValue = videoInfoObject!.maxHeightValue
         }
@@ -150,11 +146,7 @@ class VideoInfoViewController: UIViewController, UITableViewDelegate, VideoInfoT
         spring.timingFunction = CAMediaTimingFunction(name: name)
         spring.completionBlock = {
             (anim, finished) -> Void in
-
-//            completionBlock(nil, self.isOpen)
-
 //            self.videoInfoObject!.currentRowHeight = toValue
-
 //            self.updateAnimatedTableCell()
         }
 
@@ -193,20 +185,16 @@ class VideoInfoViewController: UIViewController, UITableViewDelegate, VideoInfoT
         spring.property = property
         spring.toValue = toValue
 
-        isOpen = !isOpen
-
-        videoInfoObject!.isOpen = isOpen
+        videoInfoObject!.isOpen = !(videoInfoObject!.isOpen)
 
         videoInfoObject!.pop_addAnimation(spring, forKey: "TableRowAnimate")
     }
 
     // MARK : VideoInfoToggleProtocol
     func toggleVideoInfoPanel(completionBlock: VideoToggleCompletionBlock) -> Bool {
-//        completionBlock(nil, !self.isOpen)
-
         performAnimation(completionBlock)
 
-        return isOpen
+        return true
     }
 
 
