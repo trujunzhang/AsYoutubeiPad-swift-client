@@ -32,7 +32,6 @@ def import_pods
 
 
    
-#    pod 'SWRevealViewController'
 #    pod 'ISMemoryCache'
 #    pod 'EGOCache'
 #    pod 'SDWebImage'

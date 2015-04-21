@@ -147,7 +147,7 @@ CGFloat DEFAULT_ROW_HEIGHT = 60.0;
 //
 //    [self updateAnimatedTableCell];
 
-    NSString *debug = @"debug";
+//    NSString *debug = @"debug";
 
     [self performAnimation];
 }
@@ -192,7 +192,6 @@ CGFloat DEFAULT_ROW_HEIGHT = 60.0;
 
     _videoInfoObject.showRect = CGRectMake(20, 20, self.tableView.frame.size.width, _videoInfoObject.currentRowHeight);
 
-    NSString *debug = @"debug";
 }
 
 - (void)viewDidLayoutSubviews {
@@ -200,7 +199,6 @@ CGFloat DEFAULT_ROW_HEIGHT = 60.0;
 
     _videoInfoObject.showRect = CGRectMake(20, 20, self.tableView.frame.size.width - 40, _videoInfoObject.currentRowHeight);
 
-    NSString *debug = @"debug";
 }
 
 

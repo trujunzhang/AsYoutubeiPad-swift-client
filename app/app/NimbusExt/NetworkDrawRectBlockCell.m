@@ -95,12 +95,6 @@
     return YES;
 }
 
-+ (CGFloat)getBlockCellVisibleHeight:(VideoInfoObject *)object withWidth:(CGFloat)width {
-
-    CGSize size1 = [object.descriptionString sizeWithFont:[NetworkDrawRectBlockCell getRectBlockCellFont] constrainedToSize:CGSizeMake(width - 40, CGFLOAT_MAX)];
-
-    return size1.height;
-}
 
 + (CGFloat)getBlockCellHeight:(VideoInfoObject *)object withWidth:(CGFloat)width {
     CGRect textRect1 = [object.descriptionString boundingRectWithSize:CGSizeMake(width - 40, CGFLOAT_MAX)
