@@ -189,10 +189,8 @@ class VideoInfoViewController: UIViewController, UITableViewDelegate, VideoInfoT
     }
 
     // MARK : VideoInfoToggleProtocol
-    func toggleVideoInfoPanel(completionBlock: VideoToggleCompletionBlock) -> Bool {
+    func toggleVideoInfoPanel(completionBlock: VideoToggleCompletionBlock) -> Void {
         performAnimation(completionBlock)
-
-        return true
     }
 
 

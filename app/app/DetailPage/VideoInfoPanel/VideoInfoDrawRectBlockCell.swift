@@ -201,7 +201,6 @@ class VideoInfoDrawRectBlockCell: NIDrawRectBlockCell {
             infoObject.videoInfoToggleProtocol!.toggleVideoInfoPanel({
                 (object, isOpen) -> Void in
 
-//                self.showToggleImage(isOpen)
             })
         }
     }
