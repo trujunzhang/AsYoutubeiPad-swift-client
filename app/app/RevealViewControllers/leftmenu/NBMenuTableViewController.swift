@@ -71,21 +71,31 @@ class NBMenuTableViewController: UIViewController, UITableViewDelegate {
         videoInfoObject = VideoInfoObject()
         obj = NIDrawRectBlockCellObject(block: drawTextBlock, object: videoInfoObject)
         tableContents = [
-                NIDrawRectBlockCellObject(block: drawTextBlock, object: videoInfoObject),
+//            "wanghao",
+//                NIDrawRectBlockCellObject(block: drawTextBlock, object: videoInfoObject),
+                NITitleCellObject(title: "wanghao"),
                 NITitleCellObject(title: "toggle", image: UIImage(named: "Film.png")),
-                NITitleCellObject(title: "xcode"),
-                NITitleCellObject(title: "wanghao")
+                NITitleCellObject(title: "xcode")
         ]
 
         cellFactory = NICellFactory()
         cellFactory?.mapObjectClass(NIDrawRectBlockCellObject.self, toCellClass: VideoInfoDrawRectBlockCell.self)
 
         model = NIMutableTableViewModel(listArray: tableContents, delegate: cellFactory)
+
+        // We are going to show how to recompile the section index so we provide the settings here.
+//        [_model setSectionIndexType:NITableViewModelSectionIndexDynamic showsSearch:NO showsSummary:NO];
+        model!.setSectionIndexType(NITableViewModelSectionIndexDynamic, showsSearch:false, showsSummary:false)
+
+
+
+//        let indexSet: NSIndexSet = model!.insertSectionWithTitle("wanghao", atIndex: 0)
+//        tableView?.insertSections(indexSet, withRowAnimation: UITableViewRowAnimation.None)
     }
 
     // MARK: UITableViewDelegate
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-        return 200
+        return 80
     }
 
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
