@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		5E1D62AA1AE0BBFA00D65370 /* NetworkDrawRectBlockCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E1D62A91AE0BBFA00D65370 /* NetworkDrawRectBlockCell.m */; };
 		5E1E2CEB1AD8B898004CC05B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E1E2CEA1AD8B898004CC05B /* AppDelegate.swift */; };
 		5E1E2CF01AD8B898004CC05B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5E1E2CEE1AD8B898004CC05B /* Main.storyboard */; };
 		5E1E2CF21AD8B898004CC05B /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5E1E2CF11AD8B898004CC05B /* Images.xcassets */; };
@@ -18,26 +17,20 @@
 		5E37DF911AE61D00009D605E /* LeftMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E37DF8B1AE61D00009D605E /* LeftMenuViewController.swift */; };
 		5E37DF921AE61D00009D605E /* FrontBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E37DF8D1AE61D00009D605E /* FrontBaseViewController.swift */; };
 		5E37DF931AE61D00009D605E /* SubscriptionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E37DF8E1AE61D00009D605E /* SubscriptionsViewController.swift */; };
-		5E39CFAE1AE10BE5001032E6 /* VideoInfoObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E39CFAD1AE10BE5001032E6 /* VideoInfoObject.m */; };
 		5E3AB3C81AE3D7DC00BB0944 /* Path.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E3AB3C21AE3D7DC00BB0944 /* Path.swift */; };
 		5E3AB3C91AE3D7DC00BB0944 /* PathExtensionDir.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E3AB3C31AE3D7DC00BB0944 /* PathExtensionDir.swift */; };
 		5E3AB3CA1AE3D7DC00BB0944 /* PathExtensionFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E3AB3C41AE3D7DC00BB0944 /* PathExtensionFile.swift */; };
 		5E3AB3CB1AE3D7DC00BB0944 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E3AB3C51AE3D7DC00BB0944 /* Result.swift */; };
 		5E3AB3CC1AE3D7DC00BB0944 /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E3AB3C71AE3D7DC00BB0944 /* UIColorExtension.swift */; };
-		5E43A6C11AE10AFF00BB915E /* VideoInfoBlockUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E43A6C01AE10AFF00BB915E /* VideoInfoBlockUtils.m */; };
 		5E4BFB8D1AE3214100BC7A33 /* pop.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E87FD951AD8C2500021E80C /* pop.framework */; };
-		5E769B5D1AE4896800F450EE /* MovieEmbeddedBasedBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E769B4B1AE4896800F450EE /* MovieEmbeddedBasedBarViewController.swift */; };
-		5E9973541AE0FFB200692398 /* NetworkBlockCellsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E9973531AE0FFB200692398 /* NetworkBlockCellsViewController.m */; };
 		5EA6F25E1AD8C9930017493D /* Cartography.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5EA6F25C1AD8C9930017493D /* Cartography.framework */; };
 		5EC804E31AE660CA00FC42C4 /* NBMenuTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EC804E21AE660CA00FC42C4 /* NBMenuTableViewController.swift */; };
 		5EC804E51AE662DF00FC42C4 /* LeftMenuConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EC804E41AE662DF00FC42C4 /* LeftMenuConstant.swift */; };
+		5ECF59541AE72311003CABB9 /* LeftMenuDrawRectBlockCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ECF59531AE72311003CABB9 /* LeftMenuDrawRectBlockCell.swift */; };
 		5EFED9A61AE3AB3F00EEB23E /* VideoInfoDrawRectBlockCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EFED9A51AE3AB3F00EEB23E /* VideoInfoDrawRectBlockCell.swift */; };
 		5EFED9A81AE3AC6700EEB23E /* VideoInfoObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EFED9A71AE3AC6700EEB23E /* VideoInfoObject.swift */; };
 		5EFED9AA1AE3B17400EEB23E /* VideoInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EFED9A91AE3B17400EEB23E /* VideoInfoViewController.swift */; };
 		5EFED9AC1AE3B1E700EEB23E /* VideoInfoConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EFED9AB1AE3B1E700EEB23E /* VideoInfoConstant.swift */; };
-		5EFED9B21AE3B67F00EEB23E /* LayoutUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EFED9AF1AE3B67F00EEB23E /* LayoutUtils.swift */; };
-		5EFED9B31AE3B67F00EEB23E /* NSObject_BlockBasedSelector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EFED9B01AE3B67F00EEB23E /* NSObject_BlockBasedSelector.swift */; };
-		5EFED9B41AE3B67F00EEB23E /* StoryBoardUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EFED9B11AE3B67F00EEB23E /* StoryBoardUtils.swift */; };
 		CB32D06F89412E5AAD9F456C /* libPods-appTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6F41558897D0187FFE158F21 /* libPods-appTests.a */; };
 		FE4BD745914619899B4CFFE4 /* libPods-app.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EC98874876136DD34019F3EC /* libPods-app.a */; };
 /* End PBXBuildFile section */
@@ -56,8 +49,6 @@
 		1509935D33F2EDACDF69A354 /* Pods-appTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-appTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-appTests/Pods-appTests.release.xcconfig"; sourceTree = "<group>"; };
 		33A19E501CD1C695FC7E8FA4 /* Pods-app.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-app.release.xcconfig"; path = "Pods/Target Support Files/Pods-app/Pods-app.release.xcconfig"; sourceTree = "<group>"; };
 		5A453D09E91E275880C7A46C /* Pods-appTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-appTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-appTests/Pods-appTests.debug.xcconfig"; sourceTree = "<group>"; };
-		5E1D62A81AE0BBFA00D65370 /* NetworkDrawRectBlockCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetworkDrawRectBlockCell.h; sourceTree = "<group>"; };
-		5E1D62A91AE0BBFA00D65370 /* NetworkDrawRectBlockCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetworkDrawRectBlockCell.m; sourceTree = "<group>"; };
 		5E1E2CE51AD8B898004CC05B /* app.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = app.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5E1E2CE91AD8B898004CC05B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5E1E2CEA1AD8B898004CC05B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -72,34 +63,24 @@
 		5E37DF8B1AE61D00009D605E /* LeftMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LeftMenuViewController.swift; sourceTree = "<group>"; };
 		5E37DF8D1AE61D00009D605E /* FrontBaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FrontBaseViewController.swift; sourceTree = "<group>"; };
 		5E37DF8E1AE61D00009D605E /* SubscriptionsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubscriptionsViewController.swift; sourceTree = "<group>"; };
-		5E39CFAC1AE10BE5001032E6 /* VideoInfoObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VideoInfoObject.h; path = NimbusDemo/VideoInfoObject.h; sourceTree = "<group>"; };
-		5E39CFAD1AE10BE5001032E6 /* VideoInfoObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VideoInfoObject.m; path = NimbusDemo/VideoInfoObject.m; sourceTree = "<group>"; };
 		5E3AB3C21AE3D7DC00BB0944 /* Path.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Path.swift; sourceTree = "<group>"; };
 		5E3AB3C31AE3D7DC00BB0944 /* PathExtensionDir.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PathExtensionDir.swift; sourceTree = "<group>"; };
 		5E3AB3C41AE3D7DC00BB0944 /* PathExtensionFile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PathExtensionFile.swift; sourceTree = "<group>"; };
 		5E3AB3C51AE3D7DC00BB0944 /* Result.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
 		5E3AB3C71AE3D7DC00BB0944 /* UIColorExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
-		5E43A6BF1AE10AFF00BB915E /* VideoInfoBlockUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VideoInfoBlockUtils.h; path = NimbusDemo/VideoInfoBlockUtils.h; sourceTree = "<group>"; };
-		5E43A6C01AE10AFF00BB915E /* VideoInfoBlockUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VideoInfoBlockUtils.m; path = NimbusDemo/VideoInfoBlockUtils.m; sourceTree = "<group>"; };
 		5E52BAC31AD8C449007C3F32 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
-		5E769B4B1AE4896800F450EE /* MovieEmbeddedBasedBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieEmbeddedBasedBarViewController.swift; sourceTree = "<group>"; };
 		5E87FD931AD8C24B0021E80C /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Bolts.framework; path = Carthage/Build/iOS/Bolts.framework; sourceTree = "<group>"; };
 		5E87FD951AD8C2500021E80C /* pop.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = pop.framework; path = Carthage/Build/iOS/pop.framework; sourceTree = "<group>"; };
-		5E9973521AE0FFB200692398 /* NetworkBlockCellsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NetworkBlockCellsViewController.h; path = NimbusDemo/NetworkBlockCellsViewController.h; sourceTree = "<group>"; };
-		5E9973531AE0FFB200692398 /* NetworkBlockCellsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NetworkBlockCellsViewController.m; path = NimbusDemo/NetworkBlockCellsViewController.m; sourceTree = "<group>"; };
-		5E99735B1AE1005C00692398 /* YTNimbusTableView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = YTNimbusTableView.h; path = NimbusDemo/YTNimbusTableView.h; sourceTree = "<group>"; };
 		5EA6F25C1AD8C9930017493D /* Cartography.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cartography.framework; path = Carthage/Build/iOS/Cartography.framework; sourceTree = "<group>"; };
 		5EA6F25D1AD8C9930017493D /* WebImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebImage.framework; path = Carthage/Build/iOS/WebImage.framework; sourceTree = "<group>"; };
 		5EA6F2601AD8CA020017493D /* app-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "app-Bridging-Header.h"; sourceTree = "<group>"; };
 		5EC804E21AE660CA00FC42C4 /* NBMenuTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NBMenuTableViewController.swift; sourceTree = "<group>"; };
 		5EC804E41AE662DF00FC42C4 /* LeftMenuConstant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LeftMenuConstant.swift; sourceTree = "<group>"; };
+		5ECF59531AE72311003CABB9 /* LeftMenuDrawRectBlockCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LeftMenuDrawRectBlockCell.swift; sourceTree = "<group>"; };
 		5EFED9A51AE3AB3F00EEB23E /* VideoInfoDrawRectBlockCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoInfoDrawRectBlockCell.swift; sourceTree = "<group>"; };
 		5EFED9A71AE3AC6700EEB23E /* VideoInfoObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoInfoObject.swift; sourceTree = "<group>"; };
 		5EFED9A91AE3B17400EEB23E /* VideoInfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoInfoViewController.swift; sourceTree = "<group>"; };
 		5EFED9AB1AE3B1E700EEB23E /* VideoInfoConstant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoInfoConstant.swift; sourceTree = "<group>"; };
-		5EFED9AF1AE3B67F00EEB23E /* LayoutUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LayoutUtils.swift; sourceTree = "<group>"; };
-		5EFED9B01AE3B67F00EEB23E /* NSObject_BlockBasedSelector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSObject_BlockBasedSelector.swift; sourceTree = "<group>"; };
-		5EFED9B11AE3B67F00EEB23E /* StoryBoardUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoryBoardUtils.swift; sourceTree = "<group>"; };
 		6F41558897D0187FFE158F21 /* libPods-appTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-appTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EC98874876136DD34019F3EC /* libPods-app.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-app.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F56A9DEB18C78036C526EAC9 /* Pods-app.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-app.debug.xcconfig"; path = "Pods/Target Support Files/Pods-app/Pods-app.debug.xcconfig"; sourceTree = "<group>"; };
@@ -141,15 +122,6 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		5E1D62A71AE0BBFA00D65370 /* NimbusExt */ = {
-			isa = PBXGroup;
-			children = (
-				5E1D62A81AE0BBFA00D65370 /* NetworkDrawRectBlockCell.h */,
-				5E1D62A91AE0BBFA00D65370 /* NetworkDrawRectBlockCell.m */,
-			);
-			path = NimbusExt;
-			sourceTree = "<group>";
-		};
 		5E1E2CDC1AD8B898004CC05B = {
 			isa = PBXGroup;
 			children = (
@@ -174,12 +146,8 @@
 			isa = PBXGroup;
 			children = (
 				5E37DF861AE61D00009D605E /* RevealViewControllers */,
-				5E769B491AE4896800F450EE /* WatchView */,
 				5E3AB3C01AE3D7DC00BB0944 /* Common */,
-				5EFED9AD1AE3B67500EEB23E /* Business-Logic-Layer */,
 				5EFED9A21AE3AB1A00EEB23E /* DetailPage */,
-				5E1D62A71AE0BBFA00D65370 /* NimbusExt */,
-				5ED52E531ADFB84000AF409B /* NimbusDemo */,
 				5EC282D61ADCEA9F007CB736 /* Cartography */,
 				5E1E2CEA1AD8B898004CC05B /* AppDelegate.swift */,
 				5E1E2CEE1AD8B898004CC05B /* Main.storyboard */,
@@ -233,6 +201,7 @@
 				5E37DF8B1AE61D00009D605E /* LeftMenuViewController.swift */,
 				5EC804E21AE660CA00FC42C4 /* NBMenuTableViewController.swift */,
 				5EC804E41AE662DF00FC42C4 /* LeftMenuConstant.swift */,
+				5ECF59531AE72311003CABB9 /* LeftMenuDrawRectBlockCell.swift */,
 			);
 			path = leftmenu;
 			sourceTree = "<group>";
@@ -274,50 +243,11 @@
 			path = "UIColor-Hex-Swift-master";
 			sourceTree = "<group>";
 		};
-		5E769B491AE4896800F450EE /* WatchView */ = {
-			isa = PBXGroup;
-			children = (
-				5E769B4A1AE4896800F450EE /* Bars */,
-			);
-			path = WatchView;
-			sourceTree = "<group>";
-		};
-		5E769B4A1AE4896800F450EE /* Bars */ = {
-			isa = PBXGroup;
-			children = (
-				5E769B4B1AE4896800F450EE /* MovieEmbeddedBasedBarViewController.swift */,
-			);
-			path = Bars;
-			sourceTree = "<group>";
-		};
 		5EC282D61ADCEA9F007CB736 /* Cartography */ = {
 			isa = PBXGroup;
 			children = (
 			);
 			name = Cartography;
-			sourceTree = "<group>";
-		};
-		5ED52E531ADFB84000AF409B /* NimbusDemo */ = {
-			isa = PBXGroup;
-			children = (
-				5EED963D1AE1BE2200C7F73E /* TableCells */,
-				5E9973521AE0FFB200692398 /* NetworkBlockCellsViewController.h */,
-				5E9973531AE0FFB200692398 /* NetworkBlockCellsViewController.m */,
-				5E99735B1AE1005C00692398 /* YTNimbusTableView.h */,
-				5E43A6BF1AE10AFF00BB915E /* VideoInfoBlockUtils.h */,
-				5E43A6C01AE10AFF00BB915E /* VideoInfoBlockUtils.m */,
-				5E39CFAC1AE10BE5001032E6 /* VideoInfoObject.h */,
-				5E39CFAD1AE10BE5001032E6 /* VideoInfoObject.m */,
-			);
-			name = NimbusDemo;
-			sourceTree = "<group>";
-		};
-		5EED963D1AE1BE2200C7F73E /* TableCells */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = TableCells;
-			path = NimbusDemo/TableCells;
 			sourceTree = "<group>";
 		};
 		5EFED9A21AE3AB1A00EEB23E /* DetailPage */ = {
@@ -345,25 +275,6 @@
 				5EFED9AB1AE3B1E700EEB23E /* VideoInfoConstant.swift */,
 			);
 			path = VideoInfoPanel;
-			sourceTree = "<group>";
-		};
-		5EFED9AD1AE3B67500EEB23E /* Business-Logic-Layer */ = {
-			isa = PBXGroup;
-			children = (
-				5EFED9AE1AE3B67F00EEB23E /* Utils */,
-			);
-			name = "Business-Logic-Layer";
-			sourceTree = "<group>";
-		};
-		5EFED9AE1AE3B67F00EEB23E /* Utils */ = {
-			isa = PBXGroup;
-			children = (
-				5EFED9AF1AE3B67F00EEB23E /* LayoutUtils.swift */,
-				5EFED9B01AE3B67F00EEB23E /* NSObject_BlockBasedSelector.swift */,
-				5EFED9B11AE3B67F00EEB23E /* StoryBoardUtils.swift */,
-			);
-			name = Utils;
-			path = "Business-Logic-Layer/Utils";
 			sourceTree = "<group>";
 		};
 		AA4B77283D03A4084AB3C91E /* Pods */ = {
@@ -563,24 +474,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				5E3AB3CC1AE3D7DC00BB0944 /* UIColorExtension.swift in Sources */,
-				5EFED9B31AE3B67F00EEB23E /* NSObject_BlockBasedSelector.swift in Sources */,
 				5EFED9A61AE3AB3F00EEB23E /* VideoInfoDrawRectBlockCell.swift in Sources */,
-				5EFED9B41AE3B67F00EEB23E /* StoryBoardUtils.swift in Sources */,
 				5EFED9AC1AE3B1E700EEB23E /* VideoInfoConstant.swift in Sources */,
 				5E37DF911AE61D00009D605E /* LeftMenuViewController.swift in Sources */,
 				5E1E2CEB1AD8B898004CC05B /* AppDelegate.swift in Sources */,
 				5EFED9AA1AE3B17400EEB23E /* VideoInfoViewController.swift in Sources */,
 				5E3AB3CB1AE3D7DC00BB0944 /* Result.swift in Sources */,
-				5E39CFAE1AE10BE5001032E6 /* VideoInfoObject.m in Sources */,
-				5E9973541AE0FFB200692398 /* NetworkBlockCellsViewController.m in Sources */,
-				5E1D62AA1AE0BBFA00D65370 /* NetworkDrawRectBlockCell.m in Sources */,
-				5E769B5D1AE4896800F450EE /* MovieEmbeddedBasedBarViewController.swift in Sources */,
-				5EFED9B21AE3B67F00EEB23E /* LayoutUtils.swift in Sources */,
 				5E37DF921AE61D00009D605E /* FrontBaseViewController.swift in Sources */,
 				5E3AB3CA1AE3D7DC00BB0944 /* PathExtensionFile.swift in Sources */,
 				5E37DF901AE61D00009D605E /* LeftMenuSectionsUtils.swift in Sources */,
 				5E3AB3C81AE3D7DC00BB0944 /* Path.swift in Sources */,
-				5E43A6C11AE10AFF00BB915E /* VideoInfoBlockUtils.m in Sources */,
+				5ECF59541AE72311003CABB9 /* LeftMenuDrawRectBlockCell.swift in Sources */,
 				5EC804E51AE662DF00FC42C4 /* LeftMenuConstant.swift in Sources */,
 				5E3AB3C91AE3D7DC00BB0944 /* PathExtensionDir.swift in Sources */,
 				5E37DF931AE61D00009D605E /* SubscriptionsViewController.swift in Sources */,
