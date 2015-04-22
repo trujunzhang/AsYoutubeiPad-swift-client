@@ -35,17 +35,16 @@ class NBMenuTableViewController: UIViewController,UITableViewDelegate {
         layout(tableView!) {
             view1 in
             
-            view1.leading == view1.superview!.leading + VIDEO_INFO_TABLEVIEW_MARGIN_LEFT_RIGHT
-            view1.trailing == view1.superview!.trailing - VIDEO_INFO_TABLEVIEW_MARGIN_LEFT_RIGHT
-            
-            view1.top == view1.superview!.top + 20 + 100
-            view1.bottom == view1.superview!.bottom - 20
+            view1.leading == view1.superview!.leading
+
+            view1.top == view1.superview!.top
+            view1.bottom == view1.superview!.bottom
+
+            view1.width ==  LEFT_MENU_WIDTH
         }
         
         tableView?.dataSource = model
         tableView?.delegate = self
-        
-        //        tableView?.rowHeight = 100
     }
 
     
@@ -101,8 +100,7 @@ class NBMenuTableViewController: UIViewController,UITableViewDelegate {
         }
     }
 
-    // MARK: NIMutableTableViewModelDelegate
-//    tableview
+
     
     
 }

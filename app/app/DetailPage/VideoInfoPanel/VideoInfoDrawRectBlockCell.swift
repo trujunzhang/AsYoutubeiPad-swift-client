@@ -119,9 +119,9 @@ class VideoInfoDrawRectBlockCell: NIDrawRectBlockCell {
 
 //            let rect: CGRect = CGRectMake(VIDEO_INFO_TABLEVIEW_MARGIN_LEFT_RIGHT, VIDEO_INFO_TITLE_PANEL_HEIGHT,
 //                infoObject.descriptionWidth - VIDEO_INFO_TABLEVIEW_MARGIN_LEFT_RIGHT * 2, maxHeight)
-            _descriptionLabel.frame = infoObject.descriptionRect!
+//            _descriptionLabel.frame = infoObject.descriptionRect!
 
-            println("shouldUpdateCellWithObject... +\(infoObject.descriptionRect)")
+//            println("shouldUpdateCellWithObject... +\(infoObject.descriptionRect)")
 
             isShowed = true
         }

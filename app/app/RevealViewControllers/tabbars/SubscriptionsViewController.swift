@@ -14,13 +14,27 @@ class SubscriptionsViewController: FrontBaseViewController {
     
     @IBOutlet var container: UIView!
     
+    var menuTableViewController: NBMenuTableViewController? // unused(test)
+    var menuTableRootView: UIView?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         showChannelPage()
+        
+        showLeftMenu() // test
     }
     
-
+    func showLeftMenu(){
+        menuTableViewController = NBMenuTableViewController()
+        
+        if let viewController:UIViewController = menuTableViewController {
+            menuTableRootView = viewController.view
+            
+            self.view.addSubview(menuTableRootView!)
+            self.addChildViewController(viewController)
+        }
+    }
     
     func showChannelPage(){
         

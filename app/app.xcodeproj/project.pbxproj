@@ -201,9 +201,9 @@
 			children = (
 				5E37DF8A1AE61D00009D605E /* LeftMenuSectionsUtils.swift */,
 				5E37DF8B1AE61D00009D605E /* LeftMenuViewController.swift */,
-				5EC804E21AE660CA00FC42C4 /* NBMenuTableViewController.swift */,
 				5EC804E41AE662DF00FC42C4 /* LeftMenuConstant.swift */,
 				5ECF59531AE72311003CABB9 /* LeftMenuDrawRectBlockCell.swift */,
+				5EC804E21AE660CA00FC42C4 /* NBMenuTableViewController.swift */,
 				5E0BD1001AE72617001E43B7 /* NBMenuSectionGenerator.swift */,
 			);
 			path = leftmenu;
