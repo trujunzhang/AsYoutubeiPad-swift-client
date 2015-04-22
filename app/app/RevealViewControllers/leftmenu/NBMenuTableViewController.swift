@@ -12,7 +12,7 @@ import Cartography
 
 class NBMenuTableViewController: UIViewController,UITableViewDelegate {
     
-    var model: NITableViewModel?
+    var model: NIMutableTableViewModel?
     var tableView: UITableView?
     var cellFactory: NICellFactory?
     
@@ -79,7 +79,7 @@ class NBMenuTableViewController: UIViewController,UITableViewDelegate {
         cellFactory = NICellFactory()
         cellFactory?.mapObjectClass(NIDrawRectBlockCellObject.self, toCellClass: VideoInfoDrawRectBlockCell.self)
         
-        model = NITableViewModel(listArray: tableContents, delegate: cellFactory)
+        model = NIMutableTableViewModel(listArray: tableContents, delegate: cellFactory)
     }
     
     // MARK: UITableViewDelegate
@@ -101,6 +101,8 @@ class NBMenuTableViewController: UIViewController,UITableViewDelegate {
         }
     }
 
+    // MARK: NIMutableTableViewModelDelegate
+//    tableview
     
     
 }
