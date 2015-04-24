@@ -57,13 +57,13 @@ enum YTPlayListItemsType: Int {
 
 public class LeftMenuSectionsUtils {
     
-    func getHeaderPanelArray() ->[MenuRowItemInfo]{
+    class func getHeaderPanelArray() ->[MenuRowItemInfo]{
         return [
             MenuRowItemInfo(title: "HeaderPanel",        imageUrl: "",       rowHParas: -1           ),
         ]
     }
     
-    func getDefaultCategories() ->[MenuRowItemInfo]{
+    class func getDefaultCategories() ->[MenuRowItemInfo]{
         return [
             MenuRowItemInfo(title: "Autos & Vehicles",        imageUrl: "Autos",           rowHParas: YTPlayListItemsType.kUploadsTag.rawValue     ),
             MenuRowItemInfo(title: "Comedy",                  imageUrl: "Comedy",          rowHParas: YTPlayListItemsType.kUploadsTag.rawValue     ),
@@ -83,7 +83,7 @@ public class LeftMenuSectionsUtils {
         ]
     }
     
-    func getSignUserCategoriess() ->[MenuRowItemInfo]{
+    class func getSignUserCategoriess() ->[MenuRowItemInfo]{
         return [
             MenuRowItemInfo(title: "Subscriptions",    imageUrl: "subscriptions",   rowHParas: YTPlayListItemsType.kUploadsTag.rawValue           ),
             MenuRowItemInfo(title: "What to Watch",    imageUrl: "recommended",     rowHParas: YTPlayListItemsType.kWatchHistoryTag.rawValue      ),
@@ -95,7 +95,7 @@ public class LeftMenuSectionsUtils {
 
 
     
-    func getCategoriesMenuItemTree() -> MenuSectionItemInfo{
+    class func getCategoriesMenuItemTree() -> MenuSectionItemInfo{
         return
             MenuSectionItemInfo(
                 sectionIdentifier:    CellIdentifier.CategoriesCellIdentifier,
@@ -109,7 +109,7 @@ public class LeftMenuSectionsUtils {
     }
     
     
-    func getSignInMenuItemTree() -> MenuSectionItemInfo{
+    class func getSignInMenuItemTree() -> MenuSectionItemInfo{
         return
             MenuSectionItemInfo(
                 sectionIdentifier:    CellIdentifier.SignUserCellIdentifier,
@@ -122,7 +122,7 @@ public class LeftMenuSectionsUtils {
         )
     }
     
-    func _insertSectionHeaderItem(row : MenuRowItemInfo) -> MenuSectionItemInfo{
+    class func _insertSectionHeaderItem(row : MenuRowItemInfo) -> MenuSectionItemInfo{
         return
             MenuSectionItemInfo(
                 sectionIdentifier:    CellIdentifier.SubscriptionsCellIdentifier,
@@ -135,7 +135,7 @@ public class LeftMenuSectionsUtils {
         )
     }
     
-    func getEmptySubscriptionsMenuItemTree(rows : [MenuRowItemInfo]) -> MenuSectionItemInfo{
+    class func getEmptySubscriptionsMenuItemTree(rows : [MenuRowItemInfo]) -> MenuSectionItemInfo{
         return
             MenuSectionItemInfo(
                 sectionIdentifier:    CellIdentifier.SubscriptionsCellIdentifier,
@@ -148,20 +148,20 @@ public class LeftMenuSectionsUtils {
         )
     }
     
-    func getSignOutMenuItemTreeArray() -> [MenuSectionItemInfo]{
+    class func getSignOutMenuItemTreeArray() -> [MenuSectionItemInfo]{
         return [
             getCategoriesMenuItemTree()
         ]
     }
     
-    func getSignInMenuItemTreeArray() -> [MenuSectionItemInfo]{
+    class func getSignInMenuItemTreeArray() -> [MenuSectionItemInfo]{
         return [
             getSignInMenuItemTree(),
             getCategoriesMenuItemTree()
         ]
     }
     
-    func getSignInMenuItemTreeArrayWithSubscriptions(rows : [MenuRowItemInfo]) -> [MenuSectionItemInfo]{
+    class func getSignInMenuItemTreeArrayWithSubscriptions(rows : [MenuRowItemInfo]) -> [MenuSectionItemInfo]{
         return [
             getSignInMenuItemTree(),
             getEmptySubscriptionsMenuItemTree(rows),

@@ -21,6 +21,8 @@ class NBMenuTableViewController: UIViewController, UITableViewDelegate {
 
     var tableContents: [AnyObject] = [AnyObject]()
 
+    var tableData: [MenuSectionItemInfo] = [MenuSectionItemInfo]()
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -100,8 +102,15 @@ class NBMenuTableViewController: UIViewController, UITableViewDelegate {
         // We are going to show how to recompile the section index so we provide the settings here.
         model!.setSectionIndexType(NITableViewModelSectionIndexDynamic, showsSearch: false, showsSummary: false)
 
-        //        let indexSet: NSIndexSet = model!.insertSectionWithTitle("wanghao", atIndex: 0)
-        //        tableView?.insertSections(indexSet, withRowAnimation: UITableViewRowAnimation.None)
+    }
+
+    func createSections() {
+        let tableData: [MenuSectionItemInfo] = LeftMenuSectionsUtils.getSignOutMenuItemTreeArray()
+
+        for itemInfo : MenuSectionItemInfo in tableData {
+
+        }
+
     }
 
     // MARK: UITableViewDelegate
