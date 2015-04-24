@@ -11,6 +11,12 @@ import Foundation
 
 class NBMenuSectionGenerator {
 
+    class func generatorSections(tableData: [MenuSectionItemInfo]) {
+        for itemInfo: MenuSectionItemInfo in tableData {
+            let section: NITableViewModelSection = NITableViewModelSection()
+            // 1.
+        }
+    }
 
 
 }

@@ -152,7 +152,7 @@ class YTSectionTitleCell: UITableViewCell, NICell {
                 view2, view3 in
 
                 // theTitleLabel
-                view2.leading == view1.superview!.leading + 20
+                view2.leading == view2.superview!.leading + 20
                 view2.centerY == view2.superview!.centerY
                 view2.trailing == view2.superview!.trailing - 20
 
