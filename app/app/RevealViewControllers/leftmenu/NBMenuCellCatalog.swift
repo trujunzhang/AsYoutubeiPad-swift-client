@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 import Cartography
 
 // MARK : YTCategoryCellObject
@@ -39,21 +40,23 @@ class YTCategoryCell: UITableViewCell, NICell {
         titleLabel = UILabel()
         if let theTitleLabel: UILabel = titleLabel {
             theTitleLabel.textColor = UIColor.whiteColor()
+
+            self.addSubview(theTitleLabel)
         }
         thumbnailView = UIImageView()
         if let theThumbnailView: UIImageView = thumbnailView {
 
+            self.addSubview(theThumbnailView)
         }
         divide = UIView()
-
         if let theDivide: UIView = divide {
 
+            theDivide.backgroundColor = UIColor.lightGrayColor()
+            self.addSubview(theDivide)
         }
 
         if let theTitleLabel: UILabel = titleLabel, theThumbnailView: UIImageView = thumbnailView, theDivide: UIView = divide {
-            self.addSubview(theTitleLabel)
-            self.addSubview(theThumbnailView)
-            self.addSubview(theDivide)
+            let pixelHeight: CGFloat = 1.0f / UIScreen.mainScreen().scale
 
             layout(theTitleLabel, theThumbnailView, theDivide) {
                 view1, view2, view3 in
