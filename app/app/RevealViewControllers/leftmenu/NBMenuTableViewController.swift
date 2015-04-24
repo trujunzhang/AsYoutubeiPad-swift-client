@@ -89,15 +89,15 @@ class NBMenuTableViewController: UIViewController, UITableViewDelegate {
         ]
 
         cellFactory = NICellFactory()
-        cellFactory?.mapObjectClass(NIDrawRectBlockCellObject.self, toCellClass: VideoInfoDrawRectBlockCell.self)
+
+        if let theCellFactory: NICellFactory = cellFactory {
+            theCellFactory.mapObjectClass(NIDrawRectBlockCellObject.self, toCellClass: VideoInfoDrawRectBlockCell.self)
+        }
 
         model = NIMutableTableViewModel(listArray: tableContents, delegate: cellFactory)
 
         // We are going to show how to recompile the section index so we provide the settings here.
-        //        [_model setSectionIndexType:NITableViewModelSectionIndexDynamic showsSearch:NO showsSummary:NO];
         model!.setSectionIndexType(NITableViewModelSectionIndexDynamic, showsSearch: false, showsSummary: false)
-
-
 
         //        let indexSet: NSIndexSet = model!.insertSectionWithTitle("wanghao", atIndex: 0)
         //        tableView?.insertSections(indexSet, withRowAnimation: UITableViewRowAnimation.None)
