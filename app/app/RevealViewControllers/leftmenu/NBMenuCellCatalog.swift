@@ -56,31 +56,31 @@ class YTCategoryCell: UITableViewCell, NICell {
         }
 
         if let theTitleLabel: UILabel = titleLabel, theThumbnailView: UIImageView = thumbnailView, theDivide: UIView = divide {
-            let pixelHeight: CGFloat = 1.0f / UIScreen.mainScreen().scale
+            let pixelHeight: CGFloat = 1.0 / UIScreen.mainScreen().scale
 
             layout(theTitleLabel, theThumbnailView, theDivide) {
                 view1, view2, view3 in
 
-                // _titleLabel
+                // theTitleLabel
                 view1.leading == view1.superview!.leading + 20
                 view1.trailing == view1.superview!.trailing - 200
 
                 view1.top == view1.superview!.top + 10
                 view1.height == 14
 
-                // _likeCountLabel
+                // theThumbnailView
                 view2.leading == view2.superview!.leading + 20
                 view2.trailing == view2.superview!.trailing - 200
 
                 view2.top == view1.bottom + 4
                 view2.height == 14
 
-                // _toggleButton
+                // theDivide
                 view3.top == view3.superview!.top
-                view3.trailing == view3.superview!.trailing
+                view3.leading == view3.superview!.leading + 20
+                view3.trailing == view3.superview!.trailing - 20
 
-                view3.width == VIDEO_INFO_TOGGLE_WIDTH_HEIGHT
-                view3.height == VIDEO_INFO_TOGGLE_WIDTH_HEIGHT
+                view3.height == pixelHeight
             }
         }
 
