@@ -107,7 +107,7 @@ class NBMenuTableViewController: UIViewController, UITableViewDelegate {
     func createSections() {
         let tableData: [MenuSectionItemInfo] = LeftMenuSectionsUtils.getSignOutMenuItemTreeArray()
 
-        for itemInfo : MenuSectionItemInfo in tableData {
+        for itemInfo: MenuSectionItemInfo in tableData {
 
         }
 
