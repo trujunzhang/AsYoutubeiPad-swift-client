@@ -116,10 +116,9 @@ class YTSectionTitleCellObject: NICellObject {
 
     var title = ""
 
-    init(title: String, image: UIImage, userInfo: AnyObject) {
-        super.init(cellClass: YTSectionTitleCell.self, userInfo: userInfo)
+    init(title: String) {
+        super.init(cellClass: YTSectionTitleCell.self, userInfo: nil)
 
-        self.userInfo = userInfo
         self.title = title
     }
 }

@@ -11,11 +11,16 @@ import Foundation
 
 class NBMenuSectionGenerator {
 
-    class func generatorSections(tableData: [MenuSectionItemInfo]) {
+    class func generatorSections(tableData: [MenuSectionItemInfo]) -> [AnyObject] {
+        var tableContents: [AnyObject] = [AnyObject]()
         for itemInfo: MenuSectionItemInfo in tableData {
-            let section: NITableViewModelSection = NITableViewModelSection()
-            // 1.
+
+            // 1. section title
+            let sectionTitle: YTSectionTitleCellObject = YTSectionTitleCellObject(title: itemInfo.headerTitle)
+            tableContents.append(sectionTitle)
         }
+
+        return  tableContents
     }
 
 

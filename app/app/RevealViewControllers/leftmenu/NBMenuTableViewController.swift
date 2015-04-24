@@ -30,6 +30,7 @@ class NBMenuTableViewController: UIViewController, UITableViewDelegate {
 
 
         makeModel()
+        createSections()
 
         tableView = UITableView()
 
@@ -107,7 +108,9 @@ class NBMenuTableViewController: UIViewController, UITableViewDelegate {
     func createSections() {
         let tableData: [MenuSectionItemInfo] = LeftMenuSectionsUtils.getSignOutMenuItemTreeArray()
 
-        NBMenuSectionGenerator.generatorSections(tableData)
+        var tableContents: [AnyObject] = NBMenuSectionGenerator.generatorSections(tableData)
+
+        let x = 0
     }
 
     // MARK: UITableViewDelegate
