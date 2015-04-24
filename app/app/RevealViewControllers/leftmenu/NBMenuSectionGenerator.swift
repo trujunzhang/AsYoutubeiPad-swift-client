@@ -21,7 +21,7 @@ class NBMenuSectionGenerator {
 
             var rows: [MenuRowItemInfo] = itemInfo.rows
             for row: MenuRowItemInfo in rows {
-                let rowCellObject: YTMenuRowCellObject = YTMenuRowCellObject(title: row.title, image: UIImage(named: row.image))
+                let rowCellObject: YTMenuRowCellObject = YTMenuRowCellObject(title: row.title, image: UIImage(named: row.imageUrl)!)
                 tableContents.append(rowCellObject)
             }
         }
