@@ -16,8 +16,6 @@ enum YTSegmentItemType :Int{
     case  YTSegmentItemPlaylist = 2
 }
 
-//enum YTPlaylistItemsType :Int{
-//}
 
 class YTYoutubeRequestInfo: NSObject {
     var parameters = NSMutableDictionary()

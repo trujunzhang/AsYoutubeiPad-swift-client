@@ -34,7 +34,7 @@ class YoutubeFetcherForVideosTests: YoutubeFetcherBase {
                 self.isSucess = sucess
                 
                 if(sucess == true){
-                    var array:NSArray = object as NSArray
+                    var array:NSArray = object as! NSArray
                     
                     XCTAssertTrue(array.count > 0, "Array length must greater than 0")
                     
@@ -57,7 +57,7 @@ class YoutubeFetcherForVideosTests: YoutubeFetcherBase {
                 var length = self.requestInfo.getVideoListCount()
                 XCTAssertTrue(length == 20, "fetching data length is equal")
                 
-                var expectVideoCache:YoutubeVideoCache = self.requestInfo.videoList[0] as YoutubeVideoCache
+                var expectVideoCache:YoutubeVideoCache = self.requestInfo.videoList[0] as! YoutubeVideoCache
                 var identifier = videoCache?.identifier
                 XCTAssertEqual(identifier!, expectVideoCache.identifier, "the same YoutubeVideoCache")
             }
@@ -77,7 +77,7 @@ class YoutubeFetcherForVideosTests: YoutubeFetcherBase {
                 self.isSucess = sucess
                 
                 if(sucess == true){
-                    var array:NSArray = object as NSArray
+                    var array:NSArray = object as! NSArray
                     
                     XCTAssertTrue(array.count > 0, "Array length must greater than 0")
                     
@@ -100,7 +100,7 @@ class YoutubeFetcherForVideosTests: YoutubeFetcherBase {
                 var length = self.requestInfo.getVideoListCount()
                 XCTAssertTrue(length == 20, "fetching data length is equal")
                 
-                var expectVideoCache:YoutubeVideoCache = self.requestInfo.videoList[0] as YoutubeVideoCache
+                var expectVideoCache:YoutubeVideoCache = self.requestInfo.videoList[0] as! YoutubeVideoCache
                 var identifier = videoCache?.identifier
                 XCTAssertEqual(identifier!, expectVideoCache.identifier, "the same YoutubeVideoCache")
             }
@@ -118,13 +118,13 @@ class YoutubeFetcherForVideosTests: YoutubeFetcherBase {
             self.isSucess = sucess
             
             if(sucess == true){
-                var array:NSArray = object as NSArray
+                var array:NSArray = object as! NSArray
                 
                 XCTAssertTrue(array.count == 1, "Array length must be one")
                 
                 XCTAssertTrue(array[0] is YoutubeVideoCache, "Array object must being YoutubeVideoCache")
                 
-                var videoCache :YoutubeVideoCache = array[0] as YoutubeVideoCache
+                var videoCache :YoutubeVideoCache = array[0] as! YoutubeVideoCache
                 var description = YoutubeParser.getVideoDescription(videoCache)
                 XCTAssertNotNil(description, "description must not nil")
             }

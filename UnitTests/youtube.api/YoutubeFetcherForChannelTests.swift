@@ -25,7 +25,7 @@ class YoutubeFetcherForChannelTests: YoutubeFetcherBase {
         let expectation = expectationWithDescription("fetchingChannelList")
         
         YoutubeFetcher.sharedInstance.fetchingChannelList("UC0wObT_HayGfWLdRAnFyPwA", completeHandler: { (object, sucess) -> Void in
-            var channel :GTLYouTubeChannel = object as GTLYouTubeChannel
+            var channel :GTLYouTubeChannel = object as! GTLYouTubeChannel
             var imageUrl = channel.snippet.thumbnails.high
             
             expectation.fulfill()
@@ -47,13 +47,13 @@ class YoutubeFetcherForChannelTests: YoutubeFetcherBase {
             self.isSucess = sucess
             
             if(sucess == true){
-                var array:NSArray = object as NSArray
+                var array:NSArray = object as! NSArray
                 
                 XCTAssertTrue(array.count == 1, "Array length must be one")
                 
                 XCTAssertTrue(array[0] is MABYT3_Channel, "Array object must being MABYT3_Channel")
                 
-                var channel :MABYT3_Channel = array[0] as MABYT3_Channel
+                var channel :MABYT3_Channel = array[0] as! MABYT3_Channel
                 var imageUrl = YoutubeModelParser.getMABChannelThumbnalUrl(channel)
                 XCTAssertNotNil(imageUrl, "imageUrl must not nil")
             }

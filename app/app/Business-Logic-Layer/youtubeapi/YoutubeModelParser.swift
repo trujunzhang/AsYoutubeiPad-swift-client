@@ -71,18 +71,18 @@ class YoutubeModelParser {
         return defaultValue
     }
     
-    class func convertToMenuRowArrayFromSubscriptions(subscriptions: NSArray) -> [MenuRowItemInfo] {
-        // array of MenuRowItemInfo
-        var rows = [MenuRowItemInfo]()
-        
-        for subscription in subscriptions {
-            var title = self.getSubscriptionTitle(subscription as! GTLYouTubeSubscription)
-            var url = self.getSubscriptionUrl(subscription as! GTLYouTubeSubscription)
-            var rowItem: MenuRowItemInfo =
-            MenuRowItemInfo(title: title as String, imageUrl: url as String, rowHParas: YTPlayListItemsType.kUploadsTag.rawValue)
-            rows.append(rowItem)
-        }
-        return rows
-    }
+//    class func convertToMenuRowArrayFromSubscriptions(subscriptions: NSArray) -> [MenuRowItemInfo] {
+//        // array of MenuRowItemInfo
+//        var rows = [MenuRowItemInfo]()
+//        
+//        for subscription in subscriptions {
+//            var title = self.getSubscriptionTitle(subscription as! GTLYouTubeSubscription)
+//            var url = self.getSubscriptionUrl(subscription as! GTLYouTubeSubscription)
+//            var rowItem: MenuRowItemInfo =
+//            MenuRowItemInfo(title: title as String, imageUrl: url as String, rowHParas: YTPlayListItemsType.kUploadsTag.rawValue)
+//            rows.append(rowItem)
+//        }
+//        return rows
+//    }
     
 }
