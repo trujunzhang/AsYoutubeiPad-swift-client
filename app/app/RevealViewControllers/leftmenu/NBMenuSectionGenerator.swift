@@ -7,7 +7,7 @@
 //
 
 import Foundation
-
+import UIKit
 
 class NBMenuSectionGenerator {
 
@@ -16,11 +16,17 @@ class NBMenuSectionGenerator {
         for itemInfo: MenuSectionItemInfo in tableData {
 
             // 1. section title
-            let sectionTitle: YTSectionTitleCellObject = YTSectionTitleCellObject(title: itemInfo.headerTitle)
-            tableContents.append(sectionTitle)
+            let sectionTitleObject: YTSectionTitleCellObject = YTSectionTitleCellObject(title: itemInfo.headerTitle)
+            tableContents.append(sectionTitleObject)
+
+            var rows: [MenuRowItemInfo] = itemInfo.rows
+            for row: MenuRowItemInfo in rows {
+                let rowCellObject: YTMenuRowCellObject = YTMenuRowCellObject(title: row.title, image: UIImage(named: row.image))
+                tableContents.append(rowCellObject)
+            }
         }
 
-        return  tableContents
+        return tableContents
     }
 
 

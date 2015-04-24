@@ -78,7 +78,7 @@ class NBMenuTableViewController: UIViewController, UITableViewDelegate {
 
         videoInfoObject = VideoInfoObject()
         obj = NIDrawRectBlockCellObject(block: drawTextBlock, object: videoInfoObject)
-        let cellObject: YTCategoryCellObject = YTCategoryCellObject(title: "", image: UIImage(named: "Film.png")!, userInfo: obj!)
+        let cellObject: YTMenuRowCellObject = YTMenuRowCellObject(title: "", image: UIImage(named: "Film.png")!, userInfo: obj!)
         //        YTCategoryCellObject(title: "", image: UIImage(named: ""), userInfo: nil)
         //        YTCategoryCellObject(title: "toggle", image: UIImage(named: "Film.png"), userInfo: nil)
 
@@ -86,8 +86,8 @@ class NBMenuTableViewController: UIViewController, UITableViewDelegate {
                 //            "wanghao",
                 //                NIDrawRectBlockCellObject(block: drawTextBlock, object: videoInfoObject),
                 NITitleCellObject(title: "wanghao"),
-                YTCategoryCellObject(title: "Category", image: UIImage(named: "Film.png")!, userInfo: obj!),
-                YTCategoryCellObject(title: "djzhang", image: UIImage(named: "Film.png")!, userInfo: obj!),
+                YTMenuRowCellObject(title: "Category", image: UIImage(named: "Film.png")!, userInfo: obj!),
+                YTMenuRowCellObject(title: "djzhang", image: UIImage(named: "Film.png")!, userInfo: obj!),
                 //                YTCategoryCellObject(title:  "toggle", image: UIImage(named: "Film.png"),userInfo: nil),
                 //                NITitleCellObject(title: "xcode")
         ]

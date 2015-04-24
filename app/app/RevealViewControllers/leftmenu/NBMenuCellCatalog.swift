@@ -12,15 +12,14 @@ import Cartography
 
 // MARK : YTCategoryCellObject
 
-class YTCategoryCellObject: NICellObject {
+class YTMenuRowCellObject: NICellObject {
 
     var title = ""
     var image: UIImage?
 
-    init(title: String, image: UIImage, userInfo: AnyObject) {
-        super.init(cellClass: YTCategoryCell.self, userInfo: userInfo)
+    init(title: String, image: UIImage) {
+        super.init(cellClass: YTMenuRowCell.self, userInfo: nil)
 
-        self.userInfo = userInfo
         self.title = title
         self.image = image
     }
@@ -28,7 +27,7 @@ class YTCategoryCellObject: NICellObject {
 
 }
 
-class YTCategoryCell: UITableViewCell, NICell {
+class YTMenuRowCell: UITableViewCell, NICell {
     var titleLabel: UILabel?
     var thumbnailView: UIImageView?
     var divide: UIView?
@@ -98,7 +97,7 @@ class YTCategoryCell: UITableViewCell, NICell {
 
     func shouldUpdateCellWithObject(object: AnyObject!) -> Bool {
         backgroundColor = UIColor.clearColor()
-        let cellObject: YTCategoryCellObject = object as! YTCategoryCellObject
+        let cellObject: YTMenuRowCellObject = object as! YTMenuRowCellObject
 
         if let theThumbnailView: UIImageView = thumbnailView, theTitleLabel: UILabel = titleLabel {
             theThumbnailView.image = cellObject.image
