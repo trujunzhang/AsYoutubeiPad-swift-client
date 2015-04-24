@@ -10,3 +10,4 @@ import Foundation
 
 
 let LEFT_MENU_WIDTH: CGFloat = 240
+let LEFT_MENU_ICON_WH:CGFloat = 31

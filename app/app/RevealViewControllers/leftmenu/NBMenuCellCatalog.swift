@@ -55,25 +55,23 @@ class YTCategoryCell: UITableViewCell, NICell {
             self.addSubview(theDivide)
         }
 
-        if let theTitleLabel: UILabel = titleLabel, theThumbnailView: UIImageView = thumbnailView, theDivide: UIView = divide {
+        if let theThumbnailView: UIImageView = thumbnailView, theTitleLabel: UILabel = titleLabel, theDivide: UIView = divide {
             let pixelHeight: CGFloat = 1.0 / UIScreen.mainScreen().scale
 
-            layout(theTitleLabel, theThumbnailView, theDivide) {
+            layout(theThumbnailView, theTitleLabel, theDivide) {
                 view1, view2, view3 in
+                
+                // theThumbnailView
+                view1.leading == view1.superview!.leading + 4
+                view1.centerY == view1.superview!.centerY
+
+                view1.width == LEFT_MENU_ICON_WH
+                view1.height == LEFT_MENU_ICON_WH
 
                 // theTitleLabel
-                view1.leading == view1.superview!.leading + 20
-                view1.trailing == view1.superview!.trailing - 200
-
-                view1.top == view1.superview!.top + 10
-                view1.height == 14
-
-                // theThumbnailView
-                view2.leading == view2.superview!.leading + 20
-                view2.trailing == view2.superview!.trailing - 200
-
-                view2.top == view1.bottom + 4
-                view2.height == 14
+                view2.leading == view1.leading + 20
+                view2.centerY == view2.superview!.centerY
+                view2.trailing == view2.superview!.trailing - 20
 
                 // theDivide
                 view3.top == view3.superview!.top
