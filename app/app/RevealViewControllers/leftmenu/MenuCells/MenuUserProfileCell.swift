@@ -9,7 +9,15 @@
 import UIKit
 
 class MenuUserProfileCell: UITableViewCell {
-
+    
+    @IBOutlet weak var userThumbnailImageView: UIImageView!
+    @IBOutlet weak var userNameLabel: UILabel!
+    @IBOutlet weak var emailLabel: UILabel!
+    
+    @IBOutlet weak var settingImageView: UIImageView!
+    
+    @IBOutlet weak var titlebarImageView: UIImageView!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
