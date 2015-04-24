@@ -10,26 +10,49 @@ import Foundation
 
 // MARK : YTCategoryCellObject
 
-class YTCategoryCellObject: NITitleCellObject {
+class YTCategoryCellObject: NICellObject {
 
-    class func makeCategoryCellObject(title: String!, image: UIImage!) -> YTCategoryCellObject {
-        return YTCategoryCellObject(title: title, image: image, userInfo: nil)
+    var title = ""
+    var image: UIImage?
+
+    init(title: String, image: UIImage, userInfo: AnyObject) {
+        super.init(cellClass: YTCategoryCell.self, userInfo: userInfo)
+ 
+        self.userInfo = userInfo
+        self.title = title
+        self.image = image
     }
 
-    init!(title: String!, image: UIImage!, userInfo: AnyObject!) {
-        super.init(title: title, image: image, cellClass: YTCategoryCell.self, userInfo: userInfo)
-    }
-    override init!(title: String!, image: UIImage!) {
-        super.init(title: title, image: image)
-    }
+
 }
 
-class YTCategoryCell: NITextCell {
-    override func shouldUpdateCellWithObject(object: AnyObject!) -> Bool {
-        backgroundColor = UIColor.clearColor()
-        
-        textLabel?.textColor = UIColor.whiteColor()
+class YTCategoryCell: UITableViewCell, NICell {
+    var titleLabel: UILabel?
+    var thumbnailView: UIImageView?
+    var divide: UIView?
 
-        return super.shouldUpdateCellWithObject(object)
+    // MARK : Life Cycle
+    override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
+        super.init(style: style, reuseIdentifier: reuseIdentifier)
+
+    }
+
+    required init(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+    }
+
+    override func prepareForReuse() {
+        super.prepareForReuse()
+
+        self.titleLabel!.text = nil
+        self.thumbnailView!.image = nil
+    }
+
+    func shouldUpdateCellWithObject(object: AnyObject!) -> Bool {
+        backgroundColor = UIColor.clearColor()
+
+//        textLabel?.textColor = UIColor.whiteColor()
+
+        return true
     }
 }

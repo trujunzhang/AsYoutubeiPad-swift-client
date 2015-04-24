@@ -24,8 +24,6 @@ class VideoInfoDrawRectBlockCell: NIDrawRectBlockCell {
 
     var _font: UIFont?
 
-    var isShowed = false
-
     // MARK : static functions
     class func getDescriptionBlockCellFont() -> UIFont {
         return UIFont(name: "AmericanTypewriter", size: 12)!
@@ -98,10 +96,6 @@ class VideoInfoDrawRectBlockCell: NIDrawRectBlockCell {
     override func shouldUpdateCellWithObject(object: AnyObject!) -> Bool {
         super.shouldUpdateCellWithObject(object)
 
-//        if (isShowed == true) {
-//            return false
-//        }
-
         let infoObject: VideoInfoObject = object.object as! VideoInfoObject
 
         if let infoObject: VideoInfoObject = videoInfoObject {
@@ -122,8 +116,6 @@ class VideoInfoDrawRectBlockCell: NIDrawRectBlockCell {
 //            _descriptionLabel.frame = infoObject.descriptionRect!
 
 //            println("shouldUpdateCellWithObject... +\(infoObject.descriptionRect)")
-
-            isShowed = true
         }
 
         return true
@@ -187,7 +179,7 @@ class VideoInfoDrawRectBlockCell: NIDrawRectBlockCell {
         }
     }
 
-    func showToggleImage(isOpen:Bool) {
+    func showToggleImage(isOpen: Bool) {
         println("btnTouched: + \(isOpen)")
         if (isOpen == true) {
             self.toggleButton!.image = UIImage(named: "expand_guide")

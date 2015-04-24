@@ -11,7 +11,6 @@ import Foundation
 
 class NBMenuSectionGenerator {
 
-//NICellCatalog
 
 
 }
