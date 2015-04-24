@@ -34,7 +34,7 @@ class LeftMenuViewController: UIViewController ,SWRevealViewControllerDelegate{
     }
     
     func initMenuTableView() {
-        menuTableViewController = NBMenuTableViewController()
+        menuTableViewController = NBMenuTableViewController.instance()
         
         if let viewController:UIViewController = menuTableViewController {
             menuTableRootView = viewController.view

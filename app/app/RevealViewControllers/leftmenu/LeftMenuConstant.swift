@@ -11,3 +11,16 @@ import Foundation
 
 let LEFT_MENU_WIDTH: CGFloat = 240
 let LEFT_MENU_ICON_WH:CGFloat = 31
+
+
+//NBMenuTableViewController
+
+extension NBMenuTableViewController{
+    
+    class func instance() -> NBMenuTableViewController {
+        
+        var viewController: NBMenuTableViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("NBMenuTableViewController") as! NBMenuTableViewController
+        
+        return viewController
+    }
+}
