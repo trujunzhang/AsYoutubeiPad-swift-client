@@ -12,18 +12,18 @@ def import_pods
 
 
 
-#    pod 'Google-API-Client/YouTube'
+   pod 'Google-API-Client/YouTube'
 
 
 #    pod 'IGYouTubeExtractor'
 
   # ________________project library___________________
   pod "App_Module_Resources", :path => "../modules/App_Module_Resources"
-#  pod "YouTubeAPI3-Objective-C-wrapper", :path => "../modules/YouTubeAPI3-Objective-C-wrapper"
+  pod "YouTubeAPI3-Objective-C-wrapper", :path => "../modules/YouTubeAPI3-Objective-C-wrapper"
   pod "Nimbus", :path => "../dependencies/Nimbus"
   pod "AFNetworking", :path => "../dependencies/AFNetworking"
-  
-  
+
+
 
   #pod "WPMoviePlayerController", :path => "../dependencies/WPMoviePlayerController"
 
@@ -31,7 +31,7 @@ def import_pods
   #pod "MPMoviePlayerController-Subtitles", :path => "../dependencies/MPMoviePlayerController-Subtitles"
 
 
-   
+
 #    pod 'ISMemoryCache'
 #    pod 'EGOCache'
 #    pod 'SDWebImage'
@@ -39,8 +39,8 @@ def import_pods
     # pod 'SQPersist'
 
     # pod 'pop'
-    # pod 'AsyncDisplayKit'  
-  
+    # pod 'AsyncDisplayKit'
+
 
 end
 

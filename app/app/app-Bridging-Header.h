@@ -11,12 +11,16 @@
 #import "SWRevealViewController.h"
 
 // Library: gtm-oauth2
-//#import "GTMOAuth2Authentication.h"
-//#import "GTMOAuth2ViewControllerTouch.h"
+#import "GTMOAuth2Authentication.h"
+#import "GTMOAuth2ViewControllerTouch.h"
 
 // Library : google-api-client[Youtube]
-//#import "GTLYouTube.h"
-//#import "GTLService.h"
+#import "GTLYouTube.h"
+#import "GTLService.h"
+
+// Library: YouTubeAPI3-Objective-C-wrapper
+#import "MABYouTube_Sources.h"
+#import "YoutubeParser.h"
 
 // Library: IGYouTubeExtractor
 //#import "IGYouTubeExtractor.h"
@@ -26,9 +30,7 @@
 //#import "SOSRTParserHelper.h"
 //#import "SRTParserInterface.h"
 
-// Library: YouTubeAPI3-Objective-C-wrapper
-//#import "MABYouTube_Sources.h"
-//#import "YoutubeParser.h"
+
 
 // Library: STCollapseTableView [used]
 //#import "STCollapseTableView.h"

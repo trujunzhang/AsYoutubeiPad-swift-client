@@ -14,6 +14,7 @@ Pod::Spec.new do |s|
 
   s.subspec 'API' do |sub|
     sub.source_files = 'Pod/Classes/API/*/*/*.{h,m}','Pod/Classes/API/*/*.{h,m}'
+    sub.dependency 'XMLDictionary'
   end
 
   s.subspec 'OAuthFrameWork' do |sub|
