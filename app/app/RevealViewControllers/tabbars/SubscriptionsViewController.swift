@@ -8,7 +8,7 @@
 
 import UIKit
 import AVFoundation
-
+import Cartography
 
 class SubscriptionsViewController: FrontBaseViewController {
     
@@ -26,12 +26,25 @@ class SubscriptionsViewController: FrontBaseViewController {
     }
     
     func showLeftMenu(){
-        menuTableViewController = NBMenuTableViewController()
+        menuTableViewController = NBMenuTableViewController.instance()
         
         if let viewController:UIViewController = menuTableViewController {
             menuTableRootView = viewController.view
             
             self.view.addSubview(menuTableRootView!)
+            
+            
+            layout(menuTableRootView!) {
+                view1 in
+                
+                view1.leading == view1.superview!.leading
+                
+                view1.top == view1.superview!.top
+                view1.bottom == view1.superview!.bottom
+                
+                view1.width == LEFT_MENU_WIDTH
+            }
+            
             self.addChildViewController(viewController)
         }
     }
@@ -40,30 +53,30 @@ class SubscriptionsViewController: FrontBaseViewController {
         
         //        let channelPageViewController: ChannelPageViewController = ChannelPageViewController() // used
         
-//        let channelPageViewController: YTVideoWatchViewController = YTVideoWatchViewController()
-////        channelPageViewController.videoID = "uD6Okha_Yj0"// has subtitle
-//        channelPageViewController.videoID = "eoXneK3WIgQ"  // no  subtitle
-//        
-//        channelPageViewController.view.frame = container.bounds
-//        
-//        container.addSubview(channelPageViewController.view)
-//        
-//        self.addChildViewController(channelPageViewController)
+        //        let channelPageViewController: YTVideoWatchViewController = YTVideoWatchViewController()
+        ////        channelPageViewController.videoID = "uD6Okha_Yj0"// has subtitle
+        //        channelPageViewController.videoID = "eoXneK3WIgQ"  // no  subtitle
+        //
+        //        channelPageViewController.view.frame = container.bounds
+        //
+        //        container.addSubview(channelPageViewController.view)
+        //
+        //        self.addChildViewController(channelPageViewController)
     }
     
-//    func test(){
-//        
-//        var tabBarItemsController: UIViewController =
-//        self.storyboard!.instantiateViewControllerWithIdentifier("YTTabBarItemsViewController") as! UIViewController
-//        
-//        
-//        let headerView:UIView = UIView()
-//        headerView.frame = CGRectMake(0, 100, self.view.frame.size.width, 44)
-//        headerView.addSubview(tabBarItemsController.view)
-//        
-//        
-//        //        self.view.addSubview(headerView)
-//    }
+    //    func test(){
+    //
+    //        var tabBarItemsController: UIViewController =
+    //        self.storyboard!.instantiateViewControllerWithIdentifier("YTTabBarItemsViewController") as! UIViewController
+    //
+    //
+    //        let headerView:UIView = UIView()
+    //        headerView.frame = CGRectMake(0, 100, self.view.frame.size.width, 44)
+    //        headerView.addSubview(tabBarItemsController.view)
+    //
+    //
+    //        //        self.view.addSubview(headerView)
+    //    }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

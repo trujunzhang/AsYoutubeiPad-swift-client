@@ -11,9 +11,12 @@ import UIKit
 import Cartography
 
 class NBMenuTableViewController: UIViewController, UITableViewDelegate {
+    
+    @IBOutlet weak var tableView: UITableView!
+    
+    @IBOutlet weak var loadingView: UIActivityIndicatorView!
 
     var model: NIMutableTableViewModel?
-    var tableView: UITableView?
     var cellFactory: NICellFactory?
 
     var videoInfoObject: VideoInfoObject?
@@ -33,7 +36,7 @@ class NBMenuTableViewController: UIViewController, UITableViewDelegate {
         makeModel()
 
 
-        tableView = UITableView()
+//        tableView = UITableView()
 
         if let theTableView: UITableView = tableView {
             theTableView.backgroundColor = UIColor.blackColor()
@@ -44,16 +47,16 @@ class NBMenuTableViewController: UIViewController, UITableViewDelegate {
             theTableView.dataSource = model
             theTableView.delegate = self
 
-            layout(theTableView) {
-                view1 in
-
-                view1.leading == view1.superview!.leading
-
-                view1.top == view1.superview!.top
-                view1.bottom == view1.superview!.bottom
-
-                view1.width == LEFT_MENU_WIDTH
-            }
+//            layout(theTableView) {
+//                view1 in
+//
+//                view1.leading == view1.superview!.leading
+//
+//                view1.top == view1.superview!.top
+//                view1.bottom == view1.superview!.bottom
+//
+//                view1.width == LEFT_MENU_WIDTH
+//            }
 
         }
     }

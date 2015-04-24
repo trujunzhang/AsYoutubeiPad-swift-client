@@ -27,7 +27,7 @@
         <!--Menu Table View Controller-->
         <scene sceneID="d41-U3-GWA">
             <objects>
-                <viewController id="qwC-j3-nyK" customClass="NBMenuTableViewController" customModule="app" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="NBMenuTableViewController" id="qwC-j3-nyK" customClass="NBMenuTableViewController" customModule="app" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="SNW-Gg-IzH"/>
                         <viewControllerLayoutGuide type="bottom" id="tgT-lq-BQ6"/>
@@ -38,10 +38,6 @@
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="container_background.png" translatesAutoresizingMaskIntoConstraints="NO" id="R8A-bW-Rgz">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="600" id="1Dt-VH-Nho"/>
-                                    <constraint firstAttribute="width" constant="600" id="8Wu-8C-521"/>
-                                </constraints>
                             </imageView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="XNl-FS-eHF">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
@@ -56,11 +52,19 @@
                             <constraint firstAttribute="trailing" secondItem="XNl-FS-eHF" secondAttribute="trailing" id="Bp6-2A-JWr"/>
                             <constraint firstAttribute="bottom" secondItem="XNl-FS-eHF" secondAttribute="bottom" id="ebf-6Z-lry"/>
                             <constraint firstItem="XNl-FS-eHF" firstAttribute="top" secondItem="TIy-1B-nBg" secondAttribute="top" id="giV-6R-BYo"/>
-                            <constraint firstAttribute="centerX" secondItem="R8A-bW-Rgz" secondAttribute="centerX" id="pER-BV-vuO"/>
+                            <constraint firstItem="R8A-bW-Rgz" firstAttribute="leading" secondItem="TIy-1B-nBg" secondAttribute="leading" id="iR4-09-nvH"/>
+                            <constraint firstAttribute="bottom" secondItem="R8A-bW-Rgz" secondAttribute="bottom" id="oBO-lD-dre"/>
                             <constraint firstItem="XNl-FS-eHF" firstAttribute="leading" secondItem="TIy-1B-nBg" secondAttribute="leading" id="rHp-Ab-xs9"/>
-                            <constraint firstAttribute="centerY" secondItem="R8A-bW-Rgz" secondAttribute="centerY" id="rkE-K4-y00"/>
+                            <constraint firstItem="R8A-bW-Rgz" firstAttribute="top" secondItem="TIy-1B-nBg" secondAttribute="top" id="rsk-VV-SHY"/>
+                            <constraint firstAttribute="trailing" secondItem="R8A-bW-Rgz" secondAttribute="trailing" id="yvn-Cd-3aT"/>
                         </constraints>
                     </view>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="600" height="600"/>
+                    <connections>
+                        <outlet property="loadingView" destination="BXd-DG-qd3" id="4ag-e3-jLc"/>
+                        <outlet property="tableView" destination="XNl-FS-eHF" id="NIt-hF-ne4"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FfQ-y6-L3T" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
