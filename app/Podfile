@@ -4,7 +4,7 @@ platform :ios, '8.0'
 
 inhibit_all_warnings!
 
-link_with 'app', 'appTests'
+# link_with 'app', 'appTests'
 
 def import_pods
 #    pod 'XMLDictionary'
@@ -53,13 +53,11 @@ target 'app', :exclusive => true do
 end
 
 
-target 'appTests', :exclusive => true do
+# target 'appTests', :exclusive => true do
     #  import_pods
 
     #pod 'Expecta'
     #pod 'OCMock'
     #pod 'OCMockito'
 
-
-
-end
+# end
