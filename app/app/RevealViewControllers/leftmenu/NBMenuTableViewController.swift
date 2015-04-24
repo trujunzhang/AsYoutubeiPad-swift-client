@@ -83,7 +83,8 @@ class NBMenuTableViewController: UIViewController, UITableViewDelegate {
                 //            "wanghao",
                 //                NIDrawRectBlockCellObject(block: drawTextBlock, object: videoInfoObject),
                 NITitleCellObject(title: "wanghao"),
-                cellObject,
+                YTCategoryCellObject(title: "Category", image: UIImage(named: "Film.png")!, userInfo: obj!),
+                YTCategoryCellObject(title: "djzhang", image: UIImage(named: "Film.png")!, userInfo: obj!),
                 //                YTCategoryCellObject(title:  "toggle", image: UIImage(named: "Film.png"),userInfo: nil),
                 //                NITitleCellObject(title: "xcode")
         ]
