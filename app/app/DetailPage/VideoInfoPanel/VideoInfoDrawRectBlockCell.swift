@@ -48,24 +48,24 @@ class VideoInfoDrawRectBlockCell: NIDrawRectBlockCell {
         titleLabel = UILabel()
         likeCountLabel = UILabel()
         makeButton()
-        if let _toggleContainer: UIView = toggleContainer, _titleLabel: UILabel = titleLabel, _likeCountLabel: UILabel = likeCountLabel, _toggleButton: UIImageView = toggleButton {
+        if let theToggleContainer: UIView = toggleContainer, theTitleLabel: UILabel = titleLabel, theLikeCountLabel: UILabel = likeCountLabel, theToggleButton: UIImageView = toggleButton {
 
             let playTap = UITapGestureRecognizer(target: self, action: "playTapped")
             playTap.numberOfTouchesRequired = 1
             playTap.numberOfTapsRequired = 1
-            _toggleContainer.userInteractionEnabled = true
-            _toggleContainer.addGestureRecognizer(playTap)
+            theToggleContainer.userInteractionEnabled = true
+            theToggleContainer.addGestureRecognizer(playTap)
 
-            self.blockView.addSubview(_toggleContainer)
+            self.blockView.addSubview(theToggleContainer)
 
-            _toggleContainer.addSubview(_titleLabel)
-            _toggleContainer.addSubview(_likeCountLabel)
-            _toggleContainer.addSubview(_toggleButton)
+            theToggleContainer.addSubview(theTitleLabel)
+            theToggleContainer.addSubview(theLikeCountLabel)
+            theToggleContainer.addSubview(theToggleButton)
 
-            layout(_toggleContainer) {
+            layout(theToggleContainer) {
                 view1 in
 
-                // _titleLabel
+                // theTitleLabel
                 view1.leading == view1.superview!.leading
                 view1.trailing == view1.superview!.trailing
 
@@ -77,9 +77,9 @@ class VideoInfoDrawRectBlockCell: NIDrawRectBlockCell {
 
         // line02
         descriptionLabel = NIAttributedLabel()
-        if let _descriptionLabel: NIAttributedLabel = descriptionLabel {
-            makeDescriptionLabel(_descriptionLabel)
-            self.blockView.addSubview(_descriptionLabel)
+        if let theDescriptionLabel: NIAttributedLabel = descriptionLabel {
+            makeDescriptionLabel(theDescriptionLabel)
+            self.blockView.addSubview(theDescriptionLabel)
         }
 
         LayoutTitlePanel()
@@ -106,14 +106,14 @@ class VideoInfoDrawRectBlockCell: NIDrawRectBlockCell {
 
         showToggleImage(infoObject.isOpen)
 
-        if let _descriptionLabel: NIAttributedLabel = descriptionLabel, _titleLabel: UILabel = titleLabel, _likeCountLabel: UILabel = likeCountLabel {
-            _descriptionLabel.text = infoObject.descriptionString
-            _titleLabel.text = infoObject.title
-            _likeCountLabel.text = infoObject.likeCount
+        if let theDescriptionLabel: NIAttributedLabel = descriptionLabel, theTitleLabel: UILabel = titleLabel, theLikeCountLabel: UILabel = likeCountLabel {
+            theDescriptionLabel.text = infoObject.descriptionString
+            theTitleLabel.text = infoObject.title
+            theLikeCountLabel.text = infoObject.likeCount
 
 //            let rect: CGRect = CGRectMake(VIDEO_INFO_TABLEVIEW_MARGIN_LEFT_RIGHT, VIDEO_INFO_TITLE_PANEL_HEIGHT,
 //                infoObject.descriptionWidth - VIDEO_INFO_TABLEVIEW_MARGIN_LEFT_RIGHT * 2, maxHeight)
-//            _descriptionLabel.frame = infoObject.descriptionRect!
+//            theDescriptionLabel.frame = infoObject.descriptionRect!
 
 //            println("shouldUpdateCellWithObject... +\(infoObject.descriptionRect)")
         }
@@ -151,25 +151,25 @@ class VideoInfoDrawRectBlockCell: NIDrawRectBlockCell {
     }
 
     func LayoutTitlePanel() {
-        if let _titleLabel: UILabel = titleLabel, _likeCountLabel: UILabel = likeCountLabel, _toggleButton: UIImageView = toggleButton {
-            layout(_titleLabel, _likeCountLabel, _toggleButton) {
+        if let theTitleLabel: UILabel = titleLabel, theLikeCountLabel: UILabel = likeCountLabel, theToggleButton: UIImageView = toggleButton {
+            layout(theTitleLabel, theLikeCountLabel, theToggleButton) {
                 view1, view2, view3 in
 
-                // _titleLabel
+                // theTitleLabel
                 view1.leading == view1.superview!.leading + 20
                 view1.trailing == view1.superview!.trailing - 200
 
                 view1.top == view1.superview!.top + 10
                 view1.height == 14
 
-                // _likeCountLabel
+                // theLikeCountLabel
                 view2.leading == view2.superview!.leading + 20
                 view2.trailing == view2.superview!.trailing - 200
 
                 view2.top == view1.bottom + 4
                 view2.height == 14
 
-                // _toggleButton
+                // theToggleButton
                 view3.top == view3.superview!.top
                 view3.trailing == view3.superview!.trailing
 
