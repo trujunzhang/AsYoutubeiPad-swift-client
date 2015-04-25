@@ -42,17 +42,6 @@ class LeftMenuViewController: UIViewController ,SWRevealViewControllerDelegate{
             
             self.view.addSubview(menuTableRootView!)
             self.addChildViewController(viewController)
-            
-            layout(menuTableRootView!) {
-                view1 in
-                
-                view1.leading == view1.superview!.leading
-                
-                view1.top == view1.superview!.top
-                view1.bottom == view1.superview!.bottom
-                
-                view1.width == LEFT_MENU_WIDTH
-            }
         }
     }
     

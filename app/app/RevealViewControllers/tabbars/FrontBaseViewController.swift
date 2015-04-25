@@ -25,7 +25,7 @@ class FrontBaseViewController:UIViewController {
             
             //            leftMenuButton.target = self.revealViewController()
             //            leftMenuButton.action = "revealToggle:"
-            self.view.addGestureRecognizer(self.revealViewController().tapGestureRecognizer())
+//            self.view.addGestureRecognizer(self.revealViewController().tapGestureRecognizer()) // used
             //            self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
         }
     }

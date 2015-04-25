@@ -30,9 +30,11 @@ class NBMenuTableViewController: UIViewController, UITableViewDelegate, NBMenuTi
         self.view.backgroundColor = UIColor(rgba: VIDEO_INFO_BACKGROUND_COLOR)
         YoutubeFetcher.sharedInstance.delegate = self
 
-        showLoadingPanel()
-
-        createSections([], update: false)
+        if (YoutubeUserProfile.sharedInstance.hasLogin() == true) {
+            showLoadingPanel()
+        }else{
+            hideLoadingPanel()
+        }
 
         // create NICellFactory instance
         cellFactory = NICellFactory()
@@ -48,6 +50,8 @@ class NBMenuTableViewController: UIViewController, UITableViewDelegate, NBMenuTi
 
             theTableView.delegate = self
         }
+
+        createSections([], update: false)
     }
 
 
@@ -96,6 +100,7 @@ class NBMenuTableViewController: UIViewController, UITableViewDelegate, NBMenuTi
 
         if let theTableView: UITableView = tableView {
             theTableView.dataSource = model
+            theTableView.reloadData()
         }
 
     }
@@ -169,9 +174,6 @@ class NBMenuTableViewController: UIViewController, UITableViewDelegate, NBMenuTi
 
         // Then reload tableview
         createSections(array, update: true)
-        if let theTableView: UITableView = tableView {
-            theTableView.reloadData()
-        }
     }
 
 }
