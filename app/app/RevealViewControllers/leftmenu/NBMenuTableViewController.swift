@@ -123,13 +123,41 @@ class NBMenuTableViewController: UIViewController, UITableViewDelegate, NBMenuTi
                 let x = 0
             }
         }
-//        viewController.mod
         
-        self.presentViewController(viewController, animated: true) { () -> Void in
-           
+        let navCon:UINavigationController = UINavigationController(rootViewController: viewController)
+        navCon.providesPresentationContextTransitionStyle = true
+        navCon.definesPresentationContext = true
+        navCon.modalPresentationStyle = .FormSheet
+
+        
+        self.presentViewController(navCon, animated: true) { () -> Void in
+            
         }
         
     }
+    
+    //    UINavigationController *navCon = [[UINavigationController alloc] initWithRootViewController:vcObj];
+    //
+    //    if ([[UIDevice currentDevice].systemVersion floatValue] >= 8.0) {
+    //
+    //    navCon.providesPresentationContextTransitionStyle = YES;
+    //    navCon.definesPresentationContext = YES;
+    //    navCon.modalPresentationStyle = UIModalPresentationOverCurrentContext;
+    //
+    //    [self presentViewController:navCon animated:NO completion:nil];
+    //    }
+    //    else {
+    //
+    //    AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+    //    [self presentViewController:navCon animated:NO completion:^{
+    //    [navCon dismissViewControllerAnimated:NO completion:^{
+    //    appDelegate.window.rootViewController.modalPresentationStyle = UIModalPresentationCurrentContext;
+    //    [self presentViewController:navCon animated:NO completion:nil];
+    //    appDelegate.window.rootViewController.modalPresentationStyle = UIModalPresentationFullScreen;
+    //    
+    //    }];
+    //    }];
+    //    }
     
     
 }
