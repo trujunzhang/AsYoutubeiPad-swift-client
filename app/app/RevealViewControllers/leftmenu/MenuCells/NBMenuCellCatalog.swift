@@ -55,7 +55,6 @@ class YTMenuRowCell: UITableViewCell, NICell {
             self.addSubview(theThumbnailView)
         }
 
-
         if let theThumbnailView: UIImageView = thumbnailView, theTitleLabel: UILabel = titleLabel {
             layout(theThumbnailView, theTitleLabel) {
                 view1, view2 in
@@ -71,7 +70,6 @@ class YTMenuRowCell: UITableViewCell, NICell {
                 view2.leading == view1.trailing + 20
                 view2.centerY == view2.superview!.centerY
                 view2.trailing == view2.superview!.trailing - 20
-
             }
         }
 
@@ -94,7 +92,17 @@ class YTMenuRowCell: UITableViewCell, NICell {
         let cellObject: YTMenuRowCellObject = object as! YTMenuRowCellObject
 
         if let theThumbnailView: UIImageView = thumbnailView, theTitleLabel: UILabel = titleLabel {
-            theThumbnailView.image = cellObject.image
+            let image: UIImage = cellObject.image
+            let imageUrl = cellObject.imageUrl
+
+            if (imageUrl.isEmpty == true) {
+                // local icon image
+                theThumbnailView.image = cellObject.image
+            } else {
+                // remote image
+                theThumbnailView.image = cellObject.image
+            }
+
             theTitleLabel.text = cellObject.title
         }
 
