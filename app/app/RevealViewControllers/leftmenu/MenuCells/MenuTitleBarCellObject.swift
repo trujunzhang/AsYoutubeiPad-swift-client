@@ -16,11 +16,13 @@ import Cartography
 class MenuTitleBarCellObject: NICellObject {
 
     var title = ""
+    var menuTitleBarTapProtocol: NBMenuTitleBarTapProtocol?
 
-    init(title: String) {
+    init(title: String, menuTitleBarTapProtocol: NBMenuTitleBarTapProtocol) {
         super.init(cellClass: MenuTitleBarCell.self, userInfo: nil)
 
         self.title = title
+        self.menuTitleBarTapProtocol = menuTitleBarTapProtocol
     }
 }
 
@@ -32,6 +34,7 @@ class MenuTitleBarCell: UITableViewCell, NICell {
     var titlebarImageView: UIImageView?
     var settingsImageView: UIImageView?
 
+    var menuTitleBarTapProtocol: NBMenuTitleBarTapProtocol?
 
     // MARK : Life Cycle
     override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
@@ -141,6 +144,10 @@ class MenuTitleBarCell: UITableViewCell, NICell {
     func shouldUpdateCellWithObject(object: AnyObject!) -> Bool {
         backgroundColor = UIColor.clearColor()
 
+        let infoObject: MenuTitleBarCellObject = object as! MenuTitleBarCellObject
+
+        self.menuTitleBarTapProtocol = infoObject.menuTitleBarTapProtocol
+
         if let theUserName: UILabel = userNameLabel, theEmailLabel: UILabel = emailLabel {
             theUserName.text = "Zhang Trujun"
             theEmailLabel.text = "wanghaobackup@gmail.com"
@@ -151,7 +158,9 @@ class MenuTitleBarCell: UITableViewCell, NICell {
 
     // MARK: UITapGestureRecognizer
     func loginTapped() {
-
+        if let theMenuTitleBarTapProtocol: NBMenuTitleBarTapProtocol = menuTitleBarTapProtocol {
+            theMenuTitleBarTapProtocol.showLoginPanel()
+        }
     }
 }
 

@@ -11,12 +11,12 @@ import UIKit
 
 class NBMenuSectionGenerator {
 
-    class func generatorSections(tableData: [MenuSectionItemInfo]) -> NBTableModelRowInfo {
+    class func generatorSections(tableData: [MenuSectionItemInfo], menuTitleBarTapProtocol: NBMenuTitleBarTapProtocol) -> NBTableModelRowInfo {
         var tableContents: [AnyObject] = [AnyObject]()
         var tableRowHeights: [CGFloat] = [CGFloat]()
 
         // title bar
-        tableContents.append(MenuTitleBarCellObject(title: ""))
+        tableContents.append(MenuTitleBarCellObject(title: "", menuTitleBarTapProtocol: menuTitleBarTapProtocol))
         tableRowHeights.append(MENU_TITLEBAR_HEIGHT)
 
         for itemInfo: MenuSectionItemInfo in tableData {

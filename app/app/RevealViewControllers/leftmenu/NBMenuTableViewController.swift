@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 import Cartography
 
-class NBMenuTableViewController: UIViewController, UITableViewDelegate {
+class NBMenuTableViewController: UIViewController, UITableViewDelegate, NBMenuTitleBarTapProtocol {
 
     @IBOutlet weak var tableView: UITableView!
 
@@ -100,7 +100,7 @@ class NBMenuTableViewController: UIViewController, UITableViewDelegate {
     func createSections() {
         let tableData: [MenuSectionItemInfo] = LeftMenuSectionsUtils.getSignOutMenuItemTreeArray()
 
-        tableModelRowInfo = NBMenuSectionGenerator.generatorSections(tableData)
+        tableModelRowInfo = NBMenuSectionGenerator.generatorSections(tableData, menuTitleBarTapProtocol: self)
     }
 
     // MARK: UITableViewDelegate
@@ -112,6 +112,11 @@ class NBMenuTableViewController: UIViewController, UITableViewDelegate {
         if (indexPath.section == 0 && indexPath.row == 1) {
             //            performAnimation()
         }
+    }
+
+    // MARK: NBMenuTitleBarTapProtocol
+    func showLoginPanel() -> Void {
+
     }
 
 

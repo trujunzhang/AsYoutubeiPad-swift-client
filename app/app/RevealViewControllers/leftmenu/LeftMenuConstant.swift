@@ -21,6 +21,9 @@ struct NBTableModelRowInfo {
     var tableRowHeights: [CGFloat]
 }
 
+protocol NBMenuTitleBarTapProtocol {
+    func showLoginPanel() -> Void
+}
 
 // MARK: NBMenuTableViewController
 
