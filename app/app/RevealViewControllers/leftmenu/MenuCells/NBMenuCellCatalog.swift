@@ -99,7 +99,8 @@ class YTMenuRowCell: UITableViewCell, NICell {
                 theThumbnailView.image = cellObject.image
             } else {
                 // remote image
-                theThumbnailView.image = cellObject.image
+                let URL = NSURL(string: cellObject.imageUrl)!
+                theThumbnailView.hnk_setImageFromURL(URL)
             }
 
             theTitleLabel.text = cellObject.title
