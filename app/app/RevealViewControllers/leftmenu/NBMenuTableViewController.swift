@@ -84,11 +84,11 @@ class NBMenuTableViewController: UIViewController, UITableViewDelegate, NBMenuTi
 
         var tableData: [MenuSectionItemInfo] = [MenuSectionItemInfo]()
         if (YoutubeUserProfile.sharedInstance.hasLogin() == true) {
-            tableData = LeftMenuSectionsUtils.getSignOutMenuItemTreeArray()
+            let subscriptionData: [MenuRowItemInfo] = YoutubeModelParser.convertToMenuRowArrayFromSubscriptions(array)
+            tableData = LeftMenuSectionsUtils.getSignInMenuItemTreeArrayWithSubscriptions(subscriptionData)
         } else {
             tableData = LeftMenuSectionsUtils.getSignOutMenuItemTreeArray()
         }
-//        let tableData: [MenuSectionItemInfo] = LeftMenuSectionsUtils.getSignOutMenuItemTreeArray()
 
         tableModelRowInfo = NBMenuSectionGenerator.generatorSections(tableData, menuTitleBarTapProtocol: self)
 

@@ -16,12 +16,20 @@ class YTMenuRowCellObject: NICellObject {
 
     var title = ""
     var image: UIImage?
+    var imageUrl = ""
 
     init(title: String, image: UIImage) {
         super.init(cellClass: YTMenuRowCell.self, userInfo: nil)
 
         self.title = title
         self.image = image
+    }
+
+    init(title: String, imageUrl: String) {
+        super.init(cellClass: YTMenuRowCell.self, userInfo: nil)
+
+        self.title = title
+        self.imageUrl = imageUrl
     }
 
 

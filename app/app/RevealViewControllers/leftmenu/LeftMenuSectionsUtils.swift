@@ -141,7 +141,7 @@ public class LeftMenuSectionsUtils {
                 sectionIdentifier:    CellIdentifier.SubscriptionsCellIdentifier,
                 sectionType:          MenuSectionType.LMenuTreeSubscriptions,
                 rowType    :          MenuRowType.LMenuTreeRowLine,
-                headerTitle:          "  Subscriptions",
+                headerTitle:          "Subscriptions",
                 rows:                 rows,
                 isHideTitle:          false,
                 isRemoteImage:        true

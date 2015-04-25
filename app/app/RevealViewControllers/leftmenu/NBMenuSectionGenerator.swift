@@ -25,10 +25,17 @@ class NBMenuSectionGenerator {
             tableContents.append(YTSectionTitleCellObject(title: itemInfo.headerTitle))
             tableRowHeights.append(MENU_SECTION_TITLE_HEIGHT)
 
-            var rows: [MenuRowItemInfo] = itemInfo.rows
+            let rows: [MenuRowItemInfo] = itemInfo.rows
+            let isRemoteImage: Bool = itemInfo.isRemoteImage
             for row: MenuRowItemInfo in rows {
                 // rows
-                tableContents.append(YTMenuRowCellObject(title: row.title, image: UIImage(named: row.imageUrl)!))
+                var cellObject: YTMenuRowCellObject
+                if (isRemoteImage == true) {
+                    cellObject = YTMenuRowCellObject(title: row.title, imageUrl: row.imageUrl)
+                } else {
+                    cellObject = YTMenuRowCellObject(title: row.title, image: UIImage(named: row.imageUrl)!)
+                }
+                tableContents.append(cellObject)
                 tableRowHeights.append(MENU_ROW_HEIGHT)
             }
         }
