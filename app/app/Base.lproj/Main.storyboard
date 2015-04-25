@@ -61,11 +61,22 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="XNl-FS-eHF">
                                 <rect key="frame" x="0.0" y="18" width="600" height="582"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             </tableView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kic-fp-Rfi">
+                                <rect key="frame" x="0.0" y="60" width="600" height="80"/>
+                                <color key="backgroundColor" red="0.60000002384185791" green="0.60000002384185791" blue="0.60000002384185791" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="80" id="Re4-L7-PPp"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="kic-fp-Rfi" firstAttribute="top" secondItem="TIy-1B-nBg" secondAttribute="top" constant="60" id="50a-eB-kza"/>
                             <constraint firstAttribute="trailing" secondItem="XNl-FS-eHF" secondAttribute="trailing" id="Bp6-2A-JWr"/>
+                            <constraint firstItem="kic-fp-Rfi" firstAttribute="leading" secondItem="TIy-1B-nBg" secondAttribute="leading" id="NCR-Wa-GoN"/>
+                            <constraint firstAttribute="trailing" secondItem="kic-fp-Rfi" secondAttribute="trailing" id="Q18-bJ-h8B"/>
                             <constraint firstAttribute="bottom" secondItem="XNl-FS-eHF" secondAttribute="bottom" id="ebf-6Z-lry"/>
                             <constraint firstItem="XNl-FS-eHF" firstAttribute="top" secondItem="TIy-1B-nBg" secondAttribute="top" constant="18" id="giV-6R-BYo"/>
                             <constraint firstItem="R8A-bW-Rgz" firstAttribute="leading" secondItem="TIy-1B-nBg" secondAttribute="leading" id="iR4-09-nvH"/>
