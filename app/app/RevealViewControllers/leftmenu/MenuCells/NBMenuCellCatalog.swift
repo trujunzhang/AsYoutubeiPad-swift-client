@@ -30,7 +30,6 @@ class YTMenuRowCellObject: NICellObject {
 class YTMenuRowCell: UITableViewCell, NICell {
     var titleLabel: UILabel?
     var thumbnailView: UIImageView?
-    var divide: UIView?
 
     // MARK : Life Cycle
     override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
@@ -47,18 +46,11 @@ class YTMenuRowCell: UITableViewCell, NICell {
 
             self.addSubview(theThumbnailView)
         }
-        divide = UIView()
-        if let theDivide: UIView = divide {
 
-            theDivide.backgroundColor = UIColor.lightGrayColor()
-            self.addSubview(theDivide)
-        }
 
-        if let theThumbnailView: UIImageView = thumbnailView, theTitleLabel: UILabel = titleLabel, theDivide: UIView = divide {
-            let pixelHeight: CGFloat = 1.0 /// UIScreen.mainScreen().scale
-
-            layout(theThumbnailView, theTitleLabel, theDivide) {
-                view1, view2, view3 in
+        if let theThumbnailView: UIImageView = thumbnailView, theTitleLabel: UILabel = titleLabel {
+            layout(theThumbnailView, theTitleLabel) {
+                view1, view2 in
 
                 // theThumbnailView
                 view1.leading == view1.superview!.leading + 16
@@ -72,12 +64,6 @@ class YTMenuRowCell: UITableViewCell, NICell {
                 view2.centerY == view2.superview!.centerY
                 view2.trailing == view2.superview!.trailing - 20
 
-                // theDivide
-                view3.top == view3.superview!.top + 2
-                view3.leading == view3.superview!.leading + 20
-                view3.trailing == view3.superview!.trailing - 20
-
-                view3.height == pixelHeight
             }
         }
 
