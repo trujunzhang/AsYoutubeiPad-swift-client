@@ -16,7 +16,7 @@ protocol AuthorUserFetchingDelegate {
 
 class YoutubeFetcher: NSObject {
     var youTubeService: GTLServiceYouTube?
-    var _delegate: AuthorUserFetchingDelegate?
+    var delegate: AuthorUserFetchingDelegate?
 
     class var sharedInstance: YoutubeFetcher {
 
@@ -32,10 +32,14 @@ class YoutubeFetcher: NSObject {
 
 
         self.youTubeService = GTLServiceYouTube()
-        self.youTubeService?.shouldFetchNextPages = true
-        self.youTubeService?.retryEnabled = true
-        self.youTubeService?.APIKey = apiKey
-        
+
+        if let theYouTubeService: GTLServiceYouTube = self.youTubeService {
+
+            theYouTubeService.shouldFetchNextPages = true
+            theYouTubeService.retryEnabled = true
+            theYouTubeService.APIKey = apiKey
+
+        }
     }
 
     func initLoggedUser() {
@@ -58,7 +62,7 @@ class YoutubeFetcher: NSObject {
             (ticket, resultList, error) -> Void in
 
             println("error in fetchingLoggedUserChannelInfo is \(error)")
-            
+
             if (error == nil) {
                 let result = resultList as! GTLYouTubeChannelListResponse
                 let array = result.items()
@@ -67,8 +71,8 @@ class YoutubeFetcher: NSObject {
 
                     YoutubeUserProfile.sharedInstance.saveLoggedUserChannel(channel)
 
-                    if (self._delegate != nil) {
-                        self._delegate?.endFetchingUserChannel(channel)
+                    if (self.delegate != nil) {
+                        self.delegate?.endFetchingUserChannel(channel)
                     }
 
                     var subsriptions: NSMutableArray = []
@@ -118,8 +122,8 @@ class YoutubeFetcher: NSObject {
             if (error == nil) {
                 let result = resultList as! GTLYouTubeSubscriptionListResponse
                 let array = result.items()
-                if (self._delegate != nil) {
-                    self._delegate?.endFetchingUserSubscriptions(array)
+                if (self.delegate != nil) {
+                    self.delegate?.endFetchingUserSubscriptions(array)
                 }
             }
         })
