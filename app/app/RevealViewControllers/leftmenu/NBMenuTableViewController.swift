@@ -14,6 +14,7 @@ class NBMenuTableViewController: UIViewController, UITableViewDelegate, NBMenuTi
 
     @IBOutlet weak var tableView: UITableView!
 
+    @IBOutlet weak var loadingPanel: UIView!
     @IBOutlet weak var loadingView: UIActivityIndicatorView!
 
     var model: NIMutableTableViewModel?
@@ -34,7 +35,7 @@ class NBMenuTableViewController: UIViewController, UITableViewDelegate, NBMenuTi
 
         createSections()
         makeModel()
-
+        
         showLoadingPanel()
 
         if let theTableView: UITableView = tableView {
@@ -135,11 +136,13 @@ class NBMenuTableViewController: UIViewController, UITableViewDelegate, NBMenuTi
 
     // MARK :
     func showLoadingPanel(){
+        loadingPanel.hidden = false
         loadingView.startAnimating()
         loadingView.hidesWhenStopped = true
     }
 
     func hideLoadingPanel(){
+        loadingPanel.hidden = true
         loadingView.stopAnimating()
     }
 
@@ -150,7 +153,7 @@ class NBMenuTableViewController: UIViewController, UITableViewDelegate, NBMenuTi
     }
 
     func endFetchingUserSubscriptions(array: NSArray){
-
+        hideLoadingPanel()
     }
 
 }

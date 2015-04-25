@@ -100,6 +100,7 @@
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="600" height="600"/>
                     <connections>
+                        <outlet property="loadingPanel" destination="kic-fp-Rfi" id="aXO-mP-OIN"/>
                         <outlet property="loadingView" destination="xvz-j9-xJu" id="FCg-HL-zej"/>
                         <outlet property="tableView" destination="XNl-FS-eHF" id="NIt-hF-ne4"/>
                     </connections>
