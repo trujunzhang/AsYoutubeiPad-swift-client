@@ -32,12 +32,10 @@ class YoutubeFetcher: NSObject {
 
 
         self.youTubeService = GTLServiceYouTube()
-
-        if let theYouTubeService: GTLServiceYouTube = youTubeService {
-            theYouTubeService.shouldFetchNextPages = true
-            theYouTubeService.retryEnabled = true
-            theYouTubeService.APIKey = apiKey
-        }
+        self.youTubeService?.shouldFetchNextPages = true
+        self.youTubeService?.retryEnabled = true
+        self.youTubeService?.APIKey = apiKey
+        
     }
 
     func initLoggedUser() {
@@ -59,6 +57,8 @@ class YoutubeFetcher: NSObject {
             //GTLYouTubeChannel array
             (ticket, resultList, error) -> Void in
 
+            println("error in fetchingLoggedUserChannelInfo is \(error)")
+            
             if (error == nil) {
                 let result = resultList as! GTLYouTubeChannelListResponse
                 let array = result.items()

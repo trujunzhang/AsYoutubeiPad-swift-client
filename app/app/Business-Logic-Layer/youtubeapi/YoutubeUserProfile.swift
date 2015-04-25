@@ -96,7 +96,7 @@ class YoutubeUserProfile: NSObject {
         super.init()
 
         if(userChannel.isLogin == true){
-            self.auth = GTMOAuth2ViewControllerTouch.authForGoogleFromKeychainForName("Google", clientID: kMyClientID, clientSecret: kMyClientSecret)
+            self.auth = GTMOAuth2ViewControllerTouch.authForGoogleFromKeychainForName(keychainItemName, clientID: kMyClientID, clientSecret: kMyClientSecret)
         }
 
     }

@@ -113,7 +113,7 @@ class NBMenuTableViewController: UIViewController, UITableViewDelegate, NBMenuTi
     // MARK: NBMenuTitleBarTapProtocol
     func showLoginPanel() -> Void {
         let viewController: GTMOAuth2ViewControllerTouch =
-        GTMOAuth2ViewControllerTouch(scope: scope, clientID: kMyClientID, clientSecret: kMyClientSecret, keychainItemName: "") { (controllerTouch, auth, error) -> Void in
+        GTMOAuth2ViewControllerTouch(scope: scope, clientID: kMyClientID, clientSecret: kMyClientSecret, keychainItemName: keychainItemName) { (controllerTouch, auth, error) -> Void in
             
             if(error != nil){
                 // Authentication failed
@@ -121,6 +121,7 @@ class NBMenuTableViewController: UIViewController, UITableViewDelegate, NBMenuTi
             }else{
                 // Authentication succeeded
                 YoutubeUserProfile.sharedInstance.authorizeRequest(auth)
+                YoutubeFetcher.sharedInstance.initLoggedUser()
                 self.dismissViewControllerAnimated(true, completion: { () -> Void in
                     
                 })
