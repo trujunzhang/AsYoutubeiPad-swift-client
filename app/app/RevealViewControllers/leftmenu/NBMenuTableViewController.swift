@@ -131,7 +131,7 @@ class NBMenuTableViewController: UIViewController, UITableViewDelegate, NBMenuTi
         let navCon:UINavigationController = UINavigationController(rootViewController: viewController)
         navCon.providesPresentationContextTransitionStyle = true
         navCon.definesPresentationContext = true
-        navCon.modalPresentationStyle = .FormSheet
+        navCon.modalPresentationStyle = .PageSheet
 
         
         self.presentViewController(navCon, animated: true) { () -> Void in
