@@ -30,11 +30,7 @@ class NBMenuTableViewController: UIViewController, UITableViewDelegate, NBMenuTi
         self.view.backgroundColor = UIColor(rgba: VIDEO_INFO_BACKGROUND_COLOR)
         YoutubeFetcher.sharedInstance.delegate = self
 
-        if (YoutubeUserProfile.sharedInstance.hasLogin() == true) {
-            self.startFetchingLoggedSubscriptionList()
-        } else {
-            hideLoadingPanel()
-        }
+
 
         // create NICellFactory instance
         cellFactory = NICellFactory()
@@ -51,7 +47,13 @@ class NBMenuTableViewController: UIViewController, UITableViewDelegate, NBMenuTi
             theTableView.delegate = self
         }
 
-        createSections([], update: false)
+
+        if (YoutubeUserProfile.sharedInstance.hasLogin() == true) {
+            self.startFetchingLoggedSubscriptionList()
+        } else {
+            hideLoadingPanel()
+            createSections([])
+        }
     }
 
 
@@ -81,11 +83,7 @@ class NBMenuTableViewController: UIViewController, UITableViewDelegate, NBMenuTi
         return model
     }
 
-    func createSections(array: NSArray, update: Bool) {
-        if (YoutubeUserProfile.sharedInstance.hasLogin() == true && update == false) {
-            return
-        }
-
+    func createSections(array: NSArray) {
         var tableData: [MenuSectionItemInfo] = [MenuSectionItemInfo]()
         if (YoutubeUserProfile.sharedInstance.hasLogin() == true) {
             let subscriptionData: [MenuRowItemInfo] = YoutubeModelParser.convertToMenuRowArrayFromSubscriptions(array)
@@ -178,7 +176,7 @@ class NBMenuTableViewController: UIViewController, UITableViewDelegate, NBMenuTi
         hideLoadingPanel()
 
         // Then reload tableview
-        createSections(array, update: true)
+        createSections(array)
     }
 
 }
