@@ -59,18 +59,15 @@
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                             </imageView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="XNl-FS-eHF">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <rect key="frame" x="0.0" y="18" width="600" height="582"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </tableView>
-                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="BXd-DG-qd3">
-                                <rect key="frame" x="0.0" y="100" width="600" height="20"/>
-                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="XNl-FS-eHF" secondAttribute="trailing" id="Bp6-2A-JWr"/>
                             <constraint firstAttribute="bottom" secondItem="XNl-FS-eHF" secondAttribute="bottom" id="ebf-6Z-lry"/>
-                            <constraint firstItem="XNl-FS-eHF" firstAttribute="top" secondItem="TIy-1B-nBg" secondAttribute="top" id="giV-6R-BYo"/>
+                            <constraint firstItem="XNl-FS-eHF" firstAttribute="top" secondItem="TIy-1B-nBg" secondAttribute="top" constant="18" id="giV-6R-BYo"/>
                             <constraint firstItem="R8A-bW-Rgz" firstAttribute="leading" secondItem="TIy-1B-nBg" secondAttribute="leading" id="iR4-09-nvH"/>
                             <constraint firstAttribute="bottom" secondItem="R8A-bW-Rgz" secondAttribute="bottom" id="oBO-lD-dre"/>
                             <constraint firstItem="XNl-FS-eHF" firstAttribute="leading" secondItem="TIy-1B-nBg" secondAttribute="leading" id="rHp-Ab-xs9"/>
@@ -81,7 +78,6 @@
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="600" height="600"/>
                     <connections>
-                        <outlet property="loadingView" destination="BXd-DG-qd3" id="4ag-e3-jLc"/>
                         <outlet property="tableView" destination="XNl-FS-eHF" id="NIt-hF-ne4"/>
                     </connections>
                 </viewController>

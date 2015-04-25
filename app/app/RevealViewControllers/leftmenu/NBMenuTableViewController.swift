@@ -39,7 +39,7 @@ class NBMenuTableViewController: UIViewController, UITableViewDelegate {
 //        tableView = UITableView()
 
         if let theTableView: UITableView = tableView {
-            theTableView.backgroundColor = UIColor.blackColor()
+            theTableView.backgroundColor = UIColor.clearColor()
             theTableView.separatorStyle = .None
 
             self.view.addSubview(theTableView)
