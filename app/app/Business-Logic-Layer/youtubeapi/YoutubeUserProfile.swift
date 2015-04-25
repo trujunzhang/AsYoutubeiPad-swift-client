@@ -13,7 +13,7 @@ let TAG_CHANNELID = "author_channelid"
 let TAG_USERNAME = "author_username"
 let TAG_EMAIL = "author_email"
 
-public class LoggedUserChannelInfo {
+public class LoggedUserChannelInfo :NSObject,DebugPrintable,Printable {
     var channelID :       String = ""
     var title     :       String = ""
     var userName  :       String = ""
@@ -46,7 +46,7 @@ public class LoggedUserChannelInfo {
         }
     }
 
-    init(){
+    override init(){
         if let theChannelID: String = Defaults[TAG_CHANNELID].string {
             channelID = theChannelID
         }
@@ -63,6 +63,12 @@ public class LoggedUserChannelInfo {
         }
     }
 
+//    var description: String {
+//        return "A description"
+//    }
+//    var debugDescription: String {
+//        return "A debugDescription"
+//    }
 
 }
 
