@@ -22,7 +22,7 @@ class SubscriptionsViewController: FrontBaseViewController {
         
         showChannelPage()
         
-        showLeftMenu() // test
+//        showLeftMenu() // test
     }
     
     func showLeftMenu(){

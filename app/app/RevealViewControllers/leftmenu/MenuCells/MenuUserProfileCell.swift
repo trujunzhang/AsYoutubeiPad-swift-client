@@ -12,6 +12,7 @@ class MenuUserProfileCellObject: NSObject,NINibCellObject {
     
     // MARK: NINibCellObject
     func cellNib() -> UINib! {
+       let x =  NSStringFromClass(MenuUserProfileCell.self)
         return UINib(nibName: "MenuUserProfileCell", bundle: nil)
     }
     
