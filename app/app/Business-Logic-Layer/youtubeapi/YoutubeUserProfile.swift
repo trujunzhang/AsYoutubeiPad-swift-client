@@ -8,15 +8,14 @@
 
 import Foundation
 
-public struct LoggedUserChannelInfo {
-    var channelID :       String
-    var title     :       String
-    var userName  :       String
-    var email     :       String
-    var isLogin   :       Bool
+public class LoggedUserChannelInfo {
+    var channelID :       String = ""
+    var title     :       String = ""
+    var userName  :       String = ""
+    var email     :       String = ""
+    var isLogin   :       Bool   = false
 
     init(_channelID: String, _title: String, _userName: String){
-        self.init()
         channelID = _channelID
         title     = _title
         userName  = _userName
@@ -25,7 +24,6 @@ public struct LoggedUserChannelInfo {
     }
 
     init(_email: String){
-        self.init()
         channelID = ""
         title     = ""
         userName  = ""
@@ -38,7 +36,11 @@ public struct LoggedUserChannelInfo {
         title     = ""
         userName  = ""
         email     = ""
-        isLogin   =  false
+        isLogin   = false
+        Defaults["hasLoggedInKey"] = true
+        if let theIsLogin: Bool = Defaults["hasLoggedInKey"].bool {
+            isLogin = theIsLogin
+        }
     }
 
 }
@@ -47,7 +49,7 @@ class YoutubeUserProfile: NSObject {
     var isLogin: Bool?
     var auth: GTMOAuth2Authentication!
 
-    var userChannel: LoggedUserChannelInfo?
+    var userChannel: LoggedUserChannelInfo = LoggedUserChannelInfo()
 
     class var sharedInstance: YoutubeUserProfile {
 
