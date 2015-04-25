@@ -31,12 +31,8 @@ class NBMenuTableViewController: UIViewController, UITableViewDelegate, NBMenuTi
 
         self.view.backgroundColor = UIColor(rgba: VIDEO_INFO_BACKGROUND_COLOR)
 
-
         createSections()
         makeModel()
-
-
-//        tableView = UITableView()
 
         if let theTableView: UITableView = tableView {
             theTableView.backgroundColor = UIColor.clearColor()
