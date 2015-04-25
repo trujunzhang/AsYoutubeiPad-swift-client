@@ -11,9 +11,9 @@ import UIKit
 import Cartography
 
 class NBMenuTableViewController: UIViewController, UITableViewDelegate {
-    
+
     @IBOutlet weak var tableView: UITableView!
-    
+
     @IBOutlet weak var loadingView: UIActivityIndicatorView!
 
     var model: NIMutableTableViewModel?
@@ -87,6 +87,7 @@ class NBMenuTableViewController: UIViewController, UITableViewDelegate {
 
         if let theCellFactory: NICellFactory = cellFactory {
             theCellFactory.mapObjectClass(NIDrawRectBlockCellObject.self, toCellClass: VideoInfoDrawRectBlockCell.self)
+//            theCellFactory.mapObjectClass(MenuUserProfileCellObject.self, toCellClass: MenuUserProfileCell.self)
         }
 
         model = NIMutableTableViewModel(listArray: tableContents, delegate: cellFactory)

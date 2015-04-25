@@ -8,40 +8,42 @@
 
 import UIKit
 
-class MenuUserProfileCellObject: NSObject,NINibCellObject {
-    
+class MenuUserProfileCellObject: NSObject, NINibCellObject {
+
     // MARK: NINibCellObject
     func cellNib() -> UINib! {
-       let x =  NSStringFromClass(MenuUserProfileCell.self)
+        let x = NSStringFromClass(MenuUserProfileCell.self)
         return UINib(nibName: "MenuUserProfileCell", bundle: nil)
     }
-    
+
 }
 
 
-class MenuUserProfileCell: UITableViewCell,NICell {
-    
+class MenuUserProfileCell: UITableViewCell, NICell {
+
     @IBOutlet weak var userThumbnailImageView: UIImageView!
     @IBOutlet weak var userNameLabel: UILabel!
     @IBOutlet weak var emailLabel: UILabel!
-    
+
     @IBOutlet weak var settingImageView: UIImageView!
-    
+
     @IBOutlet weak var titlebarImageView: UIImageView!
 
     override func setSelected(selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-        
+
         // Configure the view for the selected state
     }
-    
+
     // MARK: NINibCell
     func shouldUpdateCellWithObject(object: AnyObject!) -> Bool {
-        
+
         return true
     }
-    
 
-    
-    
+    func shouldAppendObjectClassToReuseIdentifier() -> Bool {
+        return true
+    }
+
+
 }
