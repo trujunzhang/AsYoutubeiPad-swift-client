@@ -14,8 +14,8 @@ class NBMenuSectionGenerator {
     class func generatorSections(tableData: [MenuSectionItemInfo]) -> [AnyObject] {
         var tableContents: [AnyObject] = [AnyObject]()
         
-        let titleBar: MenuUserProfileCellObject = MenuUserProfileCellObject()
-        tableContents.append(titleBar)
+//        let titleBar: MenuUserProfileCellObject = MenuUserProfileCellObject()
+//        tableContents.append(titleBar)
         
         for itemInfo: MenuSectionItemInfo in tableData {
 

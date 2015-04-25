@@ -87,7 +87,7 @@ class NBMenuTableViewController: UIViewController, UITableViewDelegate {
 
         if let theCellFactory: NICellFactory = cellFactory {
             theCellFactory.mapObjectClass(NIDrawRectBlockCellObject.self, toCellClass: VideoInfoDrawRectBlockCell.self)
-            theCellFactory.mapObjectClass(NIDrawRectBlockCellObject.self, toCellClass: LeftMenuUserProfileBlockCell.self)
+//            theCellFactory.mapObjectClass(NIDrawRectBlockCellObject.self, toCellClass: LeftMenuUserProfileBlockCell.self)
         }
 
         model = NIMutableTableViewModel(listArray: tableContents, delegate: cellFactory)

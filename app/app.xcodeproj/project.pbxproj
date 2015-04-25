@@ -27,14 +27,11 @@
 		5E3AB3CA1AE3D7DC00BB0944 /* PathExtensionFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E3AB3C41AE3D7DC00BB0944 /* PathExtensionFile.swift */; };
 		5E3AB3CB1AE3D7DC00BB0944 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E3AB3C51AE3D7DC00BB0944 /* Result.swift */; };
 		5E3AB3CC1AE3D7DC00BB0944 /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E3AB3C71AE3D7DC00BB0944 /* UIColorExtension.swift */; };
-		5E3C6F431AEB2E2000C8F322 /* LeftMenuDrawRectBlockCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E3C6F421AEB2E2000C8F322 /* LeftMenuDrawRectBlockCell.swift */; };
 		5E498E931AEA4EDD0081081E /* YoutubeApiConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E498E921AEA4EDD0081081E /* YoutubeApiConstant.swift */; };
 		5E4BFB8D1AE3214100BC7A33 /* pop.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E87FD951AD8C2500021E80C /* pop.framework */; };
 		5EA6F25E1AD8C9930017493D /* Cartography.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5EA6F25C1AD8C9930017493D /* Cartography.framework */; };
 		5EC804E31AE660CA00FC42C4 /* NBMenuTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EC804E21AE660CA00FC42C4 /* NBMenuTableViewController.swift */; };
 		5EC804E51AE662DF00FC42C4 /* LeftMenuConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EC804E41AE662DF00FC42C4 /* LeftMenuConstant.swift */; };
-		5ECDC50E1AEA6FB500371AE7 /* LeftMenuUserProfileBlockCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ECDC50C1AEA6FB500371AE7 /* LeftMenuUserProfileBlockCell.swift */; };
-		5ECDC50F1AEA6FB500371AE7 /* MenuUserProfileCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5ECDC50D1AEA6FB500371AE7 /* MenuUserProfileCell.xib */; };
 		5EFB22AF1AE9D946009956FA /* NBMenuCellCatalog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EFB22AE1AE9D946009956FA /* NBMenuCellCatalog.swift */; };
 		5EFED9A61AE3AB3F00EEB23E /* VideoInfoDrawRectBlockCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EFED9A51AE3AB3F00EEB23E /* VideoInfoDrawRectBlockCell.swift */; };
 		5EFED9A81AE3AC6700EEB23E /* VideoInfoObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EFED9A71AE3AC6700EEB23E /* VideoInfoObject.swift */; };
@@ -71,7 +68,6 @@
 		5E3AB3C41AE3D7DC00BB0944 /* PathExtensionFile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PathExtensionFile.swift; sourceTree = "<group>"; };
 		5E3AB3C51AE3D7DC00BB0944 /* Result.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
 		5E3AB3C71AE3D7DC00BB0944 /* UIColorExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
-		5E3C6F421AEB2E2000C8F322 /* LeftMenuDrawRectBlockCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LeftMenuDrawRectBlockCell.swift; path = MenuCells/LeftMenuDrawRectBlockCell.swift; sourceTree = "<group>"; };
 		5E498E921AEA4EDD0081081E /* YoutubeApiConstant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YoutubeApiConstant.swift; sourceTree = "<group>"; };
 		5E52BAC31AD8C449007C3F32 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
 		5E87FD931AD8C24B0021E80C /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Bolts.framework; path = Carthage/Build/iOS/Bolts.framework; sourceTree = "<group>"; };
@@ -81,8 +77,6 @@
 		5EA6F2601AD8CA020017493D /* app-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "app-Bridging-Header.h"; sourceTree = "<group>"; };
 		5EC804E21AE660CA00FC42C4 /* NBMenuTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NBMenuTableViewController.swift; sourceTree = "<group>"; };
 		5EC804E41AE662DF00FC42C4 /* LeftMenuConstant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LeftMenuConstant.swift; sourceTree = "<group>"; };
-		5ECDC50C1AEA6FB500371AE7 /* LeftMenuUserProfileBlockCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LeftMenuUserProfileBlockCell.swift; path = MenuCells/LeftMenuUserProfileBlockCell.swift; sourceTree = "<group>"; };
-		5ECDC50D1AEA6FB500371AE7 /* MenuUserProfileCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = MenuUserProfileCell.xib; path = MenuCells/MenuUserProfileCell.xib; sourceTree = "<group>"; };
 		5EFB22AE1AE9D946009956FA /* NBMenuCellCatalog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NBMenuCellCatalog.swift; sourceTree = "<group>"; };
 		5EFED9A51AE3AB3F00EEB23E /* VideoInfoDrawRectBlockCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoInfoDrawRectBlockCell.swift; sourceTree = "<group>"; };
 		5EFED9A71AE3AC6700EEB23E /* VideoInfoObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoInfoObject.swift; sourceTree = "<group>"; };
@@ -276,9 +270,6 @@
 		5ECDC50B1AEA6F5500371AE7 /* MenuCells */ = {
 			isa = PBXGroup;
 			children = (
-				5E3C6F421AEB2E2000C8F322 /* LeftMenuDrawRectBlockCell.swift */,
-				5ECDC50C1AEA6FB500371AE7 /* LeftMenuUserProfileBlockCell.swift */,
-				5ECDC50D1AEA6FB500371AE7 /* MenuUserProfileCell.xib */,
 			);
 			name = MenuCells;
 			sourceTree = "<group>";
@@ -384,7 +375,6 @@
 			files = (
 				5E1E2CF01AD8B898004CC05B /* Main.storyboard in Resources */,
 				5E1E2CF51AD8B898004CC05B /* LaunchScreen.xib in Resources */,
-				5ECDC50F1AEA6FB500371AE7 /* MenuUserProfileCell.xib in Resources */,
 				5E1E2CF21AD8B898004CC05B /* Images.xcassets in Resources */,
 				5E2209A81AD8CBE300DD748D /* Autolayout.storyboard in Resources */,
 			);
@@ -448,7 +438,6 @@
 				5E0BD1011AE72617001E43B7 /* NBMenuSectionGenerator.swift in Sources */,
 				5E3AB3CC1AE3D7DC00BB0944 /* UIColorExtension.swift in Sources */,
 				5EFED9A61AE3AB3F00EEB23E /* VideoInfoDrawRectBlockCell.swift in Sources */,
-				5ECDC50E1AEA6FB500371AE7 /* LeftMenuUserProfileBlockCell.swift in Sources */,
 				5EFED9AC1AE3B1E700EEB23E /* VideoInfoConstant.swift in Sources */,
 				5E37DF911AE61D00009D605E /* LeftMenuViewController.swift in Sources */,
 				5E1E2CEB1AD8B898004CC05B /* AppDelegate.swift in Sources */,
@@ -468,7 +457,6 @@
 				5EC804E51AE662DF00FC42C4 /* LeftMenuConstant.swift in Sources */,
 				5E3AB3C91AE3D7DC00BB0944 /* PathExtensionDir.swift in Sources */,
 				5E37DF931AE61D00009D605E /* SubscriptionsViewController.swift in Sources */,
-				5E3C6F431AEB2E2000C8F322 /* LeftMenuDrawRectBlockCell.swift in Sources */,
 				5EC804E31AE660CA00FC42C4 /* NBMenuTableViewController.swift in Sources */,
 				5EFED9A81AE3AC6700EEB23E /* VideoInfoObject.swift in Sources */,
 			);
