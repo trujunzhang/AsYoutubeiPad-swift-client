@@ -8,6 +8,11 @@
 
 import Foundation
 
+let TAG_ISLOGIN = "hasLoggedInKey"
+let TAG_CHANNELID = "hasLoggedInKey"
+let TAG_USERNAME = "hasLoggedInKey"
+let TAG_EMAIL = "hasLoggedInKey"
+
 public class LoggedUserChannelInfo {
     var channelID :       String = ""
     var title     :       String = ""
@@ -32,13 +37,16 @@ public class LoggedUserChannelInfo {
     }
 
     init(){
-        channelID = ""
-        title     = ""
-        userName  = ""
-        email     = ""
-        isLogin   = false
-        Defaults["hasLoggedInKey"] = true
-        if let theIsLogin: Bool = Defaults["hasLoggedInKey"].bool {
+        if let theChannelID: String = Defaults[TAG_CHANNELID].string {
+            channelID = theChannelID
+        }
+        if let theUserName: String = Defaults[TAG_USERNAME].string {
+            userName = theUserName
+        }
+        if let theEmail: String = Defaults[TAG_EMAIL].string {
+            email = theEmail
+        }
+        if let theIsLogin: Bool = Defaults[TAG_ISLOGIN].bool {
             isLogin = theIsLogin
         }
     }
