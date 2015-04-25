@@ -15,30 +15,25 @@ class NBMenuSectionGenerator {
         var tableContents: [AnyObject] = [AnyObject]()
         var tableRowHeights: [CGFloat] = [CGFloat]()
 
-        let titleBar: MenuTitleBarCellObject = MenuTitleBarCellObject(title: "")
-        tableContents.append(titleBar)
+        // title bar
+        tableContents.append(MenuTitleBarCellObject(title: ""))
         tableRowHeights.append(MENU_TITLEBAR_HEIGHT)
 
         for itemInfo: MenuSectionItemInfo in tableData {
 
             // 1. section title
-            let sectionTitleObject: YTSectionTitleCellObject = YTSectionTitleCellObject(title: itemInfo.headerTitle)
-            tableContents.append(sectionTitleObject)
+            tableContents.append(YTSectionTitleCellObject(title: itemInfo.headerTitle))
             tableRowHeights.append(MENU_SECTION_TITLE_HEIGHT)
 
             var rows: [MenuRowItemInfo] = itemInfo.rows
             for row: MenuRowItemInfo in rows {
-                let rowCellObject: YTMenuRowCellObject = YTMenuRowCellObject(title: row.title, image: UIImage(named: row.imageUrl)!)
-                tableContents.append(rowCellObject)
+                // rows
+                tableContents.append(YTMenuRowCellObject(title: row.title, image: UIImage(named: row.imageUrl)!))
                 tableRowHeights.append(MENU_ROW_HEIGHT)
             }
         }
 
         return NBTableModelRowInfo(tableContents: tableContents, tableRowHeights: tableRowHeights)
-    }
-
-    private class func appendTableContent(cellObject: NICellObject,toArray:[AnyObject], withCellHeight:CGFloat){
-
     }
 
 

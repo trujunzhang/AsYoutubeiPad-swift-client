@@ -105,7 +105,7 @@ class NBMenuTableViewController: UIViewController, UITableViewDelegate {
 
     // MARK: UITableViewDelegate
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-        return 80
+        return tableModelRowInfo!.tableRowHeights[indexPath.row]
     }
 
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
