@@ -34,6 +34,7 @@
 		5EBEE6FF1AEB3292001ED7AB /* NBMenuCellCatalog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EBEE6FE1AEB3292001ED7AB /* NBMenuCellCatalog.swift */; };
 		5EC804E31AE660CA00FC42C4 /* NBMenuTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EC804E21AE660CA00FC42C4 /* NBMenuTableViewController.swift */; };
 		5EC804E51AE662DF00FC42C4 /* LeftMenuConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EC804E41AE662DF00FC42C4 /* LeftMenuConstant.swift */; };
+		5EE8C6911AEB6A3500156F4D /* SwiftyUserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EE8C6901AEB6A3500156F4D /* SwiftyUserDefaults.swift */; };
 		5EFED9A61AE3AB3F00EEB23E /* VideoInfoDrawRectBlockCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EFED9A51AE3AB3F00EEB23E /* VideoInfoDrawRectBlockCell.swift */; };
 		5EFED9A81AE3AC6700EEB23E /* VideoInfoObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EFED9A71AE3AC6700EEB23E /* VideoInfoObject.swift */; };
 		5EFED9AA1AE3B17400EEB23E /* VideoInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EFED9A91AE3B17400EEB23E /* VideoInfoViewController.swift */; };
@@ -80,6 +81,7 @@
 		5EBEE6FE1AEB3292001ED7AB /* NBMenuCellCatalog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NBMenuCellCatalog.swift; path = MenuCells/NBMenuCellCatalog.swift; sourceTree = "<group>"; };
 		5EC804E21AE660CA00FC42C4 /* NBMenuTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NBMenuTableViewController.swift; sourceTree = "<group>"; };
 		5EC804E41AE662DF00FC42C4 /* LeftMenuConstant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LeftMenuConstant.swift; sourceTree = "<group>"; };
+		5EE8C6901AEB6A3500156F4D /* SwiftyUserDefaults.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyUserDefaults.swift; sourceTree = "<group>"; };
 		5EFED9A51AE3AB3F00EEB23E /* VideoInfoDrawRectBlockCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoInfoDrawRectBlockCell.swift; sourceTree = "<group>"; };
 		5EFED9A71AE3AC6700EEB23E /* VideoInfoObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoInfoObject.swift; sourceTree = "<group>"; };
 		5EFED9A91AE3B17400EEB23E /* VideoInfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoInfoViewController.swift; sourceTree = "<group>"; };
@@ -120,6 +122,7 @@
 		5E0B70271AEA4C25007287C7 /* Business-Logic-Layer */ = {
 			isa = PBXGroup;
 			children = (
+				5EE8C68F1AEB6A3500156F4D /* SwiftyUserDefaults */,
 				5E0B702A1AEA4C48007287C7 /* youtubeapi */,
 			);
 			name = "Business-Logic-Layer";
@@ -275,6 +278,15 @@
 				5EBEE6FC1AEB327C001ED7AB /* MenuTitleBarCellObject.swift */,
 			);
 			name = MenuCells;
+			sourceTree = "<group>";
+		};
+		5EE8C68F1AEB6A3500156F4D /* SwiftyUserDefaults */ = {
+			isa = PBXGroup;
+			children = (
+				5EE8C6901AEB6A3500156F4D /* SwiftyUserDefaults.swift */,
+			);
+			name = SwiftyUserDefaults;
+			path = "Business-Logic-Layer/SwiftyUserDefaults";
 			sourceTree = "<group>";
 		};
 		5EFED9A21AE3AB1A00EEB23E /* DetailPage */ = {
@@ -460,6 +472,7 @@
 				5E0B70391AEA4C48007287C7 /* YoutubeUserProfile.swift in Sources */,
 				5EC804E51AE662DF00FC42C4 /* LeftMenuConstant.swift in Sources */,
 				5E3AB3C91AE3D7DC00BB0944 /* PathExtensionDir.swift in Sources */,
+				5EE8C6911AEB6A3500156F4D /* SwiftyUserDefaults.swift in Sources */,
 				5E37DF931AE61D00009D605E /* SubscriptionsViewController.swift in Sources */,
 				5EC804E31AE660CA00FC42C4 /* NBMenuTableViewController.swift in Sources */,
 				5EFED9A81AE3AC6700EEB23E /* VideoInfoObject.swift in Sources */,
