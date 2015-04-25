@@ -145,8 +145,6 @@ class NBMenuTableViewController: UIViewController, UITableViewDelegate, NBMenuTi
             () -> Void in
 
         }
-
-
     }
 
     func startFetchingLoggedSubscriptionList() {
