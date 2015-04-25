@@ -65,9 +65,20 @@
                             </tableView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kic-fp-Rfi">
                                 <rect key="frame" x="0.0" y="60" width="600" height="80"/>
+                                <subviews>
+                                    <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="xvz-j9-xJu">
+                                        <rect key="frame" x="290" y="30" width="20" height="20"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="20" id="OCL-ml-RNj"/>
+                                            <constraint firstAttribute="height" constant="20" id="UdE-QZ-HHg"/>
+                                        </constraints>
+                                    </activityIndicatorView>
+                                </subviews>
                                 <color key="backgroundColor" red="0.60000002384185791" green="0.60000002384185791" blue="0.60000002384185791" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
+                                    <constraint firstAttribute="centerX" secondItem="xvz-j9-xJu" secondAttribute="centerX" id="Dr3-e7-ofX"/>
                                     <constraint firstAttribute="height" constant="80" id="Re4-L7-PPp"/>
+                                    <constraint firstAttribute="centerY" secondItem="xvz-j9-xJu" secondAttribute="centerY" id="blh-Ob-eCD"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -89,6 +100,7 @@
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="600" height="600"/>
                     <connections>
+                        <outlet property="loadingView" destination="xvz-j9-xJu" id="FCg-HL-zej"/>
                         <outlet property="tableView" destination="XNl-FS-eHF" id="NIt-hF-ne4"/>
                     </connections>
                 </viewController>

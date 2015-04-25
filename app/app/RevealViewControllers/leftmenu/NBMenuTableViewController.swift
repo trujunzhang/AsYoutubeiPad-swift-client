@@ -37,15 +37,13 @@ class NBMenuTableViewController: UIViewController, UITableViewDelegate, NBMenuTi
 
         showLoadingPanel()
 
-//        if let theTableView: UITableView = tableView {
-//            theTableView.backgroundColor = UIColor.clearColor()
-//            theTableView.separatorStyle = .None
-//
-//            self.view.addSubview(theTableView)
-//
+        if let theTableView: UITableView = tableView {
+            theTableView.backgroundColor = UIColor.clearColor()
+            theTableView.separatorStyle = .None
+
 //            theTableView.dataSource = model
-//            theTableView.delegate = self
-//        }
+            theTableView.delegate = self
+        }
     }
 
 
