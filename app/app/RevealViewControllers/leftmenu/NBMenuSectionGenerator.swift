@@ -20,10 +20,13 @@ class NBMenuSectionGenerator {
         tableRowHeights.append(MENU_TITLEBAR_HEIGHT)
 
         for itemInfo: MenuSectionItemInfo in tableData {
+            let isHideTitle: Bool = itemInfo.isHideTitle
 
             // 1. section title
-            tableContents.append(YTSectionTitleCellObject(title: itemInfo.headerTitle))
-            tableRowHeights.append(MENU_SECTION_TITLE_HEIGHT)
+            if (isHideTitle == false) {
+                tableContents.append(YTSectionTitleCellObject(title: itemInfo.headerTitle))
+                tableRowHeights.append(MENU_SECTION_TITLE_HEIGHT)
+            }
 
             let rows: [MenuRowItemInfo] = itemInfo.rows
             let isRemoteImage: Bool = itemInfo.isRemoteImage
