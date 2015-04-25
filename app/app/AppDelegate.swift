@@ -28,8 +28,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
             revealViewController.revealToggleAnimated(true)
 
-            YoutubeFetcher.sharedInstance.initLoggedUser()
-
 //            println(YoutubeUserProfile.sharedInstance.userChannel)
         }
         return true

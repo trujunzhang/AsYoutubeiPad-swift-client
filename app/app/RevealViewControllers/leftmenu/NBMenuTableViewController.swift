@@ -31,8 +31,8 @@ class NBMenuTableViewController: UIViewController, UITableViewDelegate, NBMenuTi
         YoutubeFetcher.sharedInstance.delegate = self
 
         if (YoutubeUserProfile.sharedInstance.hasLogin() == true) {
-            showLoadingPanel()
-        }else{
+            self.startFetchingLoggedSubscriptionList()
+        } else {
             hideLoadingPanel()
         }
 
@@ -112,7 +112,7 @@ class NBMenuTableViewController: UIViewController, UITableViewDelegate, NBMenuTi
 
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         if (indexPath.section == 0 && indexPath.row == 1) {
-            //            performAnimation()
+
         }
     }
 
@@ -128,7 +128,7 @@ class NBMenuTableViewController: UIViewController, UITableViewDelegate, NBMenuTi
             } else {
                 // Authentication succeeded
                 YoutubeUserProfile.sharedInstance.authorizeRequest(auth)
-                YoutubeFetcher.sharedInstance.initLoggedUser()
+                self.startFetchingLoggedSubscriptionList()
                 self.dismissViewControllerAnimated(true, completion: {
                     () -> Void in
 
@@ -148,6 +148,11 @@ class NBMenuTableViewController: UIViewController, UITableViewDelegate, NBMenuTi
         }
 
 
+    }
+
+    func startFetchingLoggedSubscriptionList() {
+        showLoadingPanel()
+        YoutubeFetcher.sharedInstance.initLoggedUser()
     }
 
     // MARK :
