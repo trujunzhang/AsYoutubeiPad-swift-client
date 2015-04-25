@@ -22,7 +22,7 @@ class NBMenuTableViewController: UIViewController, UITableViewDelegate {
     var videoInfoObject: VideoInfoObject?
     var obj: NIDrawRectBlockCellObject?
 
-    var tableContents: [AnyObject] = [AnyObject]()
+    var tableModelRowInfo: NBTableModelRowInfo?
 
     var tableData: [MenuSectionItemInfo] = [MenuSectionItemInfo]()
 
@@ -90,7 +90,7 @@ class NBMenuTableViewController: UIViewController, UITableViewDelegate {
             theCellFactory.mapObjectClass(NIDrawRectBlockCellObject.self, toCellClass: MenuTitleBarCellObject.self)
         }
 
-        model = NIMutableTableViewModel(listArray: tableContents, delegate: cellFactory)
+        model = NIMutableTableViewModel(listArray: tableModelRowInfo!.tableContents, delegate: cellFactory)
 
         // We are going to show how to recompile the section index so we provide the settings here.
         model!.setSectionIndexType(NITableViewModelSectionIndexDynamic, showsSearch: false, showsSummary: false)
@@ -100,9 +100,7 @@ class NBMenuTableViewController: UIViewController, UITableViewDelegate {
     func createSections() {
         let tableData: [MenuSectionItemInfo] = LeftMenuSectionsUtils.getSignOutMenuItemTreeArray()
 
-        tableContents = NBMenuSectionGenerator.generatorSections(tableData)
-
-        let x = 0
+        tableModelRowInfo = NBMenuSectionGenerator.generatorSections(tableData)
     }
 
     // MARK: UITableViewDelegate

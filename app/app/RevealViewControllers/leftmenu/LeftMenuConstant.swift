@@ -10,17 +10,22 @@ import Foundation
 
 
 let LEFT_MENU_WIDTH: CGFloat = 270
-let LEFT_MENU_ICON_WH:CGFloat = 31
+let LEFT_MENU_ICON_WH: CGFloat = 31
+
+struct NBTableModelRowInfo {
+    var tableContents: [AnyObject]
+    var tableRowHeights: [CGFloat]
+}
 
 
-//NBMenuTableViewController
+// MARK: NBMenuTableViewController
 
-extension NBMenuTableViewController{
-    
+extension NBMenuTableViewController {
+
     class func instance() -> NBMenuTableViewController {
-        
+
         var viewController: NBMenuTableViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("NBMenuTableViewController") as! NBMenuTableViewController
-        
+
         return viewController
     }
 }

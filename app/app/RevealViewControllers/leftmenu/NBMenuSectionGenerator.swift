@@ -11,8 +11,9 @@ import UIKit
 
 class NBMenuSectionGenerator {
 
-    class func generatorSections(tableData: [MenuSectionItemInfo]) -> [AnyObject] {
+    class func generatorSections(tableData: [MenuSectionItemInfo]) -> NBTableModelRowInfo {
         var tableContents: [AnyObject] = [AnyObject]()
+        var tableRowHeights: [CGFloat] = [CGFloat]()
 
         let titleBar: MenuTitleBarCellObject = MenuTitleBarCellObject(title: "")
         tableContents.append(titleBar)
@@ -30,7 +31,7 @@ class NBMenuSectionGenerator {
             }
         }
 
-        return tableContents
+        return NBTableModelRowInfo(tableContents: tableContents,tableRowHeights: tableRowHeights)
     }
 
 
