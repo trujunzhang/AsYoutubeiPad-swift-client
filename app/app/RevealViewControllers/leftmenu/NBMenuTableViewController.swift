@@ -20,9 +20,6 @@ class NBMenuTableViewController: UIViewController, UITableViewDelegate, NBMenuTi
     var model: NIMutableTableViewModel?
     var cellFactory: NICellFactory?
 
-    var videoInfoObject: VideoInfoObject?
-    var obj: NIDrawRectBlockCellObject?
-
     var tableModelRowInfo: NBTableModelRowInfo?
 
     var tableData: [MenuSectionItemInfo] = [MenuSectionItemInfo]()
@@ -33,16 +30,22 @@ class NBMenuTableViewController: UIViewController, UITableViewDelegate, NBMenuTi
         self.view.backgroundColor = UIColor(rgba: VIDEO_INFO_BACKGROUND_COLOR)
         YoutubeFetcher.sharedInstance.delegate = self
 
-        createSections()
-        makeModel()
-        
         showLoadingPanel()
+
+        createSections([], update: false)
+
+        // create NICellFactory instance
+        cellFactory = NICellFactory()
+
+        if let theCellFactory: NICellFactory = cellFactory {
+            theCellFactory.mapObjectClass(NIDrawRectBlockCellObject.self, toCellClass: VideoInfoDrawRectBlockCell.self)
+            theCellFactory.mapObjectClass(NIDrawRectBlockCellObject.self, toCellClass: MenuTitleBarCellObject.self)
+        }
 
         if let theTableView: UITableView = tableView {
             theTableView.backgroundColor = UIColor.clearColor()
             theTableView.separatorStyle = .None
 
-//            theTableView.dataSource = model
             theTableView.delegate = self
         }
     }
@@ -66,27 +69,36 @@ class NBMenuTableViewController: UIViewController, UITableViewDelegate, NBMenuTi
             return 0
         }
 
-        videoInfoObject = VideoInfoObject()
-        obj = NIDrawRectBlockCellObject(block: drawTextBlock, object: videoInfoObject)
-
-        cellFactory = NICellFactory()
-
-        if let theCellFactory: NICellFactory = cellFactory {
-            theCellFactory.mapObjectClass(NIDrawRectBlockCellObject.self, toCellClass: VideoInfoDrawRectBlockCell.self)
-            theCellFactory.mapObjectClass(NIDrawRectBlockCellObject.self, toCellClass: MenuTitleBarCellObject.self)
-        }
 
         model = NIMutableTableViewModel(listArray: tableModelRowInfo!.tableContents, delegate: cellFactory)
 
         // We are going to show how to recompile the section index so we provide the settings here.
-        model!.setSectionIndexType(NITableViewModelSectionIndexDynamic, showsSearch: false, showsSummary: false)
-
+        if let theModel: NIMutableTableViewModel = model {
+            theModel.setSectionIndexType(NITableViewModelSectionIndexDynamic, showsSearch: false, showsSummary: false)
+        }
     }
 
-    func createSections() {
-        let tableData: [MenuSectionItemInfo] = LeftMenuSectionsUtils.getSignOutMenuItemTreeArray()
+    func createSections(array: NSArray, update: Bool) {
+        if (YoutubeUserProfile.sharedInstance.hasLogin() == true && update == false) {
+            return
+        }
+
+        var tableData: [MenuSectionItemInfo] = [MenuSectionItemInfo]()
+        if (YoutubeUserProfile.sharedInstance.hasLogin() == true) {
+
+        } else {
+            tableData = LeftMenuSectionsUtils.getSignOutMenuItemTreeArray()
+        }
+//        let tableData: [MenuSectionItemInfo] = LeftMenuSectionsUtils.getSignOutMenuItemTreeArray()
 
         tableModelRowInfo = NBMenuSectionGenerator.generatorSections(tableData, menuTitleBarTapProtocol: self)
+
+        makeModel()
+
+        if let theTableView: UITableView = tableView {
+            theTableView.dataSource = model
+        }
+
     }
 
     // MARK: UITableViewDelegate
@@ -135,25 +147,29 @@ class NBMenuTableViewController: UIViewController, UITableViewDelegate, NBMenuTi
     }
 
     // MARK :
-    func showLoadingPanel(){
+    func showLoadingPanel() {
         loadingPanel.hidden = false
         loadingView.startAnimating()
         loadingView.hidesWhenStopped = true
     }
 
-    func hideLoadingPanel(){
+    func hideLoadingPanel() {
         loadingPanel.hidden = true
         loadingView.stopAnimating()
     }
 
 
     // MARK: AuthorUserFetchingDelegate
-    func endFetchingUserChannel(channel: GTLYouTubeChannel){
-        let x = 0
+    func endFetchingUserChannel(channel: GTLYouTubeChannel) {
+
     }
 
-    func endFetchingUserSubscriptions(array: NSArray){
+    func endFetchingUserSubscriptions(array: NSArray) {
+        // First of all,hide loading panel
         hideLoadingPanel()
+
+        // Then reload tableview
+        createSections(array, update: true)
     }
 
 }
