@@ -141,7 +141,7 @@ class YTSectionTitleCell: UITableViewCell, NICell {
                 view2.trailing == view2.superview!.trailing - 20
 
                 // theDivide
-                view3.top == view3.superview!.top + 2
+                view3.bottom == view3.superview!.bottom - 2
                 view3.leading == view3.superview!.leading + 20
                 view3.trailing == view3.superview!.trailing - 20
 

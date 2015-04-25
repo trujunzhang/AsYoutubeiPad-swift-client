@@ -1,35 +1,35 @@
 //
-//  LeftMenuConstant.swift
+//  leftmenuconstant.swift
 //  app
 //
-//  Created by djzhang on 4/21/15.
-//  Copyright (c) 2015 djzhang. All rights reserved.
+//  created by djzhang on 4/21/15.
+//  copyright (c) 2015 djzhang. all rights reserved.
 //
 
-import Foundation
+import foundation
 
 
-let LEFT_MENU_WIDTH: CGFloat = 270
-let LEFT_MENU_ICON_WH: CGFloat = 31
+let left_menu_width: cgfloat = 270
+let left_menu_icon_wh: cgfloat = 31
 
-let MENU_TITLEBAR_HEIGHT: CGFloat = 50
-let MENU_SECTION_TITLE_HEIGHT: CGFloat = 20
-let MENU_ROW_HEIGHT: CGFloat = 40
+let menu_titlebar_height: cgfloat = 56
+let menu_section_title_height: cgfloat = 30
+let menu_row_height: cgfloat = 58
 
-struct NBTableModelRowInfo {
-    var tableContents: [AnyObject]
-    var tableRowHeights: [CGFloat]
+struct nbtablemodelrowinfo {
+    var tablecontents: [anyobject]
+    var tablerowheights: [cgfloat]
 }
 
 
-// MARK: NBMenuTableViewController
+// mark: nbmenutableviewcontroller
 
-extension NBMenuTableViewController {
+extension nbmenutableviewcontroller {
 
-    class func instance() -> NBMenuTableViewController {
+    class func instance() -> nbmenutableviewcontroller {
 
-        var viewController: NBMenuTableViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("NBMenuTableViewController") as! NBMenuTableViewController
+        var viewcontroller: nbmenutableviewcontroller = uistoryboard(name: "main", bundle: nil).instantiateviewcontrollerwithidentifier("nbmenutableviewcontroller") as! nbmenutableviewcontroller
 
-        return viewController
+        return viewcontroller
     }
 }
