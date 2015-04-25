@@ -92,7 +92,6 @@ class YTMenuRowCell: UITableViewCell, NICell {
         let cellObject: YTMenuRowCellObject = object as! YTMenuRowCellObject
 
         if let theThumbnailView: UIImageView = thumbnailView, theTitleLabel: UILabel = titleLabel {
-            let image: UIImage = cellObject.image
             let imageUrl = cellObject.imageUrl
 
             if (imageUrl.isEmpty == true) {
