@@ -30,6 +30,7 @@ class MenuTitleBarCell: UITableViewCell, NICell {
     var emailLabel: UILabel?
 
     var titlebarImageView: UIImageView?
+    var settingsImageView: UIImageView?
 
 
     // MARK : Life Cycle
@@ -39,6 +40,7 @@ class MenuTitleBarCell: UITableViewCell, NICell {
         titlebarImageView = UIImageView()
         if let theTitlebarImageView: UIImageView = titlebarImageView {
             theTitlebarImageView.image = UIImage(named: "guide_titlebar_frost_cropped")
+
             self.addSubview(theTitlebarImageView)
         }
         thumbnailImageView = UIImageView()
@@ -56,14 +58,21 @@ class MenuTitleBarCell: UITableViewCell, NICell {
         }
         emailLabel = UILabel()
         if let theEmailLabel: UILabel = emailLabel {
-            theEmailLabel.backgroundColor = UIColor.lightGrayColor()
+            theEmailLabel.textColor = UIColor.whiteColor()
 
             self.addSubview(theEmailLabel)
         }
+        settingsImageView = UIImageView()
+        if let theSettingsImageView: UIImageView = settingsImageView {
+            theSettingsImageView.image = UIImage(named: "guide_settings")
 
-        if let theTitlebarImageView: UIImageView = titlebarImageView, theThumbnailImageView: UIImageView = thumbnailImageView, theUserName: UILabel = userNameLabel, theEmailLabel: UILabel = emailLabel {
-            layout(theTitlebarImageView) {
-                view1 in
+            self.addSubview(theSettingsImageView)
+        }
+
+
+        if let theTitlebarImageView: UIImageView = titlebarImageView, theSettingsImageView: UIImageView = settingsImageView, theThumbnailImageView: UIImageView = thumbnailImageView, theUserName: UILabel = userNameLabel, theEmailLabel: UILabel = emailLabel {
+            layout(theTitlebarImageView, theSettingsImageView) {
+                view1, view2 in
 
                 // theTitlebarImageView
                 view1.leading == view1.superview!.leading
@@ -72,6 +81,12 @@ class MenuTitleBarCell: UITableViewCell, NICell {
                 view1.width == 216
                 view1.height == 44
 
+                // theSettingsImageView
+                view2.trailing == view2.superview!.trailing - 11
+                view2.top == view2.superview!.top + 5
+
+                view2.width == 35
+                view2.height == 34
             }
             layout(theThumbnailImageView, theUserName, theEmailLabel) {
                 view1, view2, view3 in
@@ -87,14 +102,14 @@ class MenuTitleBarCell: UITableViewCell, NICell {
                 view2.leading == view1.trailing + 6
                 view2.top == view2.superview!.top + 6
 
-                view2.width == 170
+                view2.width == 140
                 view2.height == 14
 
                 // theEmailLabel
                 view3.leading == view1.trailing + 6
                 view3.top == view2.bottom + 6
 
-                view3.width == 170
+                view3.width == 140
                 view3.height == 14
             }
         }
@@ -111,7 +126,7 @@ class MenuTitleBarCell: UITableViewCell, NICell {
 
         self.userNameLabel!.text = nil
         self.emailLabel!.text = nil
-        self.titlebarImageView!.image = nil
+//        self.titlebarImageView!.image = nil
     }
 
     func shouldUpdateCellWithObject(object: AnyObject!) -> Bool {
