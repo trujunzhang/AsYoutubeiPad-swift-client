@@ -128,6 +128,7 @@ class NBMenuTableViewController: UIViewController, UITableViewDelegate, NBMenuTi
                 // Authentication succeeded
                 YoutubeUserProfile.sharedInstance.authorizeRequest(auth)
                 self.startFetchingLoggedSubscriptionList()
+                self.reloadTableView(NIMutableTableViewModel( delegate: nil))
                 self.dismissViewControllerAnimated(true, completion: {
                     () -> Void in
 
@@ -150,8 +151,6 @@ class NBMenuTableViewController: UIViewController, UITableViewDelegate, NBMenuTi
     func startFetchingLoggedSubscriptionList() {
         showLoadingPanel()
         YoutubeFetcher.sharedInstance.initLoggedUser()
-
-        reloadTableView(NIMutableTableViewModel(listArray: [], delegate: cellFactory))
     }
 
     // MARK :
