@@ -12,6 +12,10 @@ import Foundation
 let LEFT_MENU_WIDTH: CGFloat = 270
 let LEFT_MENU_ICON_WH: CGFloat = 31
 
+let MENU_TITLEBAR_HEIGHT: CGFloat = 50
+let MENU_SECTION_TITLE_HEIGHT: CGFloat = 20
+let MENU_ROW_HEIGHT: CGFloat = 40
+
 struct NBTableModelRowInfo {
     var tableContents: [AnyObject]
     var tableRowHeights: [CGFloat]
