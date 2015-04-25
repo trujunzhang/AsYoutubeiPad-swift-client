@@ -18,7 +18,7 @@ class MenuUserProfileCellObject: NSObject,NINibCellObject {
 }
 
 
-class MenuUserProfileCell: UITableViewCell {
+class MenuUserProfileCell: UITableViewCell,NICell {
     
     @IBOutlet weak var userThumbnailImageView: UIImageView!
     @IBOutlet weak var userNameLabel: UILabel!
@@ -27,16 +27,20 @@ class MenuUserProfileCell: UITableViewCell {
     @IBOutlet weak var settingImageView: UIImageView!
     
     @IBOutlet weak var titlebarImageView: UIImageView!
-    
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-    }
 
     override func setSelected(selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
+        
         // Configure the view for the selected state
     }
+    
+    // MARK: NINibCell
+    func shouldUpdateCellWithObject(object: AnyObject!) -> Bool {
+        
+        return true
+    }
+    
+
+    
     
 }
