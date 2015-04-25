@@ -8,6 +8,16 @@
 
 import UIKit
 
+class MenuUserProfileCellObject: NSObject,NINibCellObject {
+    
+    // MARK: NINibCellObject
+    func cellNib() -> UINib! {
+        return UINib(nibName: "MenuUserProfileCell", bundle: nil)
+    }
+    
+}
+
+
 class MenuUserProfileCell: UITableViewCell {
     
     @IBOutlet weak var userThumbnailImageView: UIImageView!
