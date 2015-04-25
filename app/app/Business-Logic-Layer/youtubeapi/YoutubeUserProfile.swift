@@ -13,6 +13,24 @@ public struct LoggedUserChannelInfo {
     var channelID :       String
     var title :           String
     var userName :        String
+    var email    :        String
+    
+    init(_channelID: String, _title: String, _userName: String){
+        channelID = _channelID
+        title     = _title
+        userName  = _userName
+        
+        email     = ""
+    }
+    
+    init(_email: String){
+        channelID = ""
+        title     = ""
+        userName  = ""
+        
+        email     = _email
+    }
+    
 }
 
 class YoutubeUserProfile: NSObject {
@@ -36,7 +54,7 @@ class YoutubeUserProfile: NSObject {
         isLogin = self.hasLogin()
         //        isLogin = true
         
-        userChannel = LoggedUserChannelInfo(channelID: "", title: "", userName: "")
+        userChannel = LoggedUserChannelInfo(_channelID: "", _title: "", _userName: "")
         
         if(isLogin == true){
             self.auth = GTMOAuth2ViewControllerTouch.authForGoogleFromKeychainForName("Google", clientID: kMyClientID, clientSecret: kMyClientSecret)
@@ -50,13 +68,13 @@ class YoutubeUserProfile: NSObject {
     func loadLoggedUserChannelInfo() ->LoggedUserChannelInfo {
         var _userChannel: LoggedUserChannelInfo?
         
-        _userChannel = LoggedUserChannelInfo(channelID: "", title: "", userName: "")
+        _userChannel = LoggedUserChannelInfo(_channelID: "", _title: "", _userName: "")
         
         return _userChannel!
     }
     
     func saveLoggedUserChannelInfo(channelID : String,title :  String,userName : String){
-        userChannel = LoggedUserChannelInfo(channelID: channelID, title: title, userName: userName)
+        userChannel = LoggedUserChannelInfo(_channelID: channelID, _title: title, _userName: userName)
         
         var defaults = NSUserDefaults.standardUserDefaults()
         

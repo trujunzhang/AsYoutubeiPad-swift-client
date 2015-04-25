@@ -121,6 +121,10 @@ class NBMenuTableViewController: UIViewController, UITableViewDelegate, NBMenuTi
             }else{
                 // Authentication succeeded
                 let x = 0
+                
+                self.dismissViewControllerAnimated(true, completion: { () -> Void in
+                    
+                })
             }
         }
         
@@ -133,6 +137,7 @@ class NBMenuTableViewController: UIViewController, UITableViewDelegate, NBMenuTi
         self.presentViewController(navCon, animated: true) { () -> Void in
             
         }
+
         
     }
     
