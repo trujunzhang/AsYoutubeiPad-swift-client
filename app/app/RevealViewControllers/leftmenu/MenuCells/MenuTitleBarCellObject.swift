@@ -40,6 +40,7 @@ class MenuTitleBarCell: UITableViewCell, NICell {
         titlebarImageView = UIImageView()
         if let theTitlebarImageView: UIImageView = titlebarImageView {
             theTitlebarImageView.image = UIImage(named: "guide_titlebar_frost_cropped")
+            createTapGestureRecognizerForView(theTitlebarImageView, action: "loginTapped")
 
             self.addSubview(theTitlebarImageView)
         }
@@ -117,6 +118,14 @@ class MenuTitleBarCell: UITableViewCell, NICell {
 
     }
 
+    func createTapGestureRecognizerForView(view: UIView, action: String) {
+        let playTap = UITapGestureRecognizer(target: self, action: "wanghao")
+        playTap.numberOfTouchesRequired = 1
+        playTap.numberOfTapsRequired = 1
+        view.userInteractionEnabled = true
+        view.addGestureRecognizer(playTap)
+    }
+
     required init(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
     }
@@ -138,6 +147,11 @@ class MenuTitleBarCell: UITableViewCell, NICell {
         }
 
         return true
+    }
+
+    // MARK: UITapGestureRecognizer
+    func loginTapped() {
+        let x = 0
     }
 }
 

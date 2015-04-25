@@ -50,11 +50,8 @@ class VideoInfoDrawRectBlockCell: NIDrawRectBlockCell {
         makeButton()
         if let theToggleContainer: UIView = toggleContainer, theTitleLabel: UILabel = titleLabel, theLikeCountLabel: UILabel = likeCountLabel, theToggleButton: UIImageView = toggleButton {
 
-            let playTap = UITapGestureRecognizer(target: self, action: "playTapped")
-            playTap.numberOfTouchesRequired = 1
-            playTap.numberOfTapsRequired = 1
-            theToggleContainer.userInteractionEnabled = true
-            theToggleContainer.addGestureRecognizer(playTap)
+
+            createTapGestureRecognizerForView(theToggleContainer)
 
             self.blockView.addSubview(theToggleContainer)
 
@@ -83,6 +80,14 @@ class VideoInfoDrawRectBlockCell: NIDrawRectBlockCell {
         }
 
         LayoutTitlePanel()
+    }
+
+    func createTapGestureRecognizerForView(view: UIView) {
+        let playTap = UITapGestureRecognizer(target: self, action: "playTapped")
+        playTap.numberOfTouchesRequired = 1
+        playTap.numberOfTapsRequired = 1
+        view.userInteractionEnabled = true
+        view.addGestureRecognizer(playTap)
     }
 
     required init(coder aDecoder: NSCoder) {
@@ -188,6 +193,7 @@ class VideoInfoDrawRectBlockCell: NIDrawRectBlockCell {
         }
     }
 
+    // MARK: UITapGestureRecognizer
     func playTapped() {
         if let infoObject: VideoInfoObject = videoInfoObject {
             infoObject.videoInfoToggleProtocol!.toggleVideoInfoPanel({
