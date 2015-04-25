@@ -151,7 +151,7 @@ class MenuTitleBarCell: UITableViewCell, NICell {
 
     // MARK: UITapGestureRecognizer
     func loginTapped() {
-        let x = 0
+
     }
 }
 
