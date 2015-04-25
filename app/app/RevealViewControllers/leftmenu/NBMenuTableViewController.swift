@@ -62,20 +62,19 @@ class NBMenuTableViewController: UIViewController, UITableViewDelegate, NBMenuTi
 
 
     // MARK : model
-    func makeModel() {
+    func makeModel(tableContents: [AnyObject]) -> NIMutableTableViewModel {
         let drawTextBlock: NICellDrawRectBlock = {
             rect, object, cell in
 
             return 0
         }
 
-
-        model = NIMutableTableViewModel(listArray: tableModelRowInfo!.tableContents, delegate: cellFactory)
+        let model: NIMutableTableViewModel = NIMutableTableViewModel(listArray: tableContents, delegate: cellFactory)
 
         // We are going to show how to recompile the section index so we provide the settings here.
-        if let theModel: NIMutableTableViewModel = model {
-            theModel.setSectionIndexType(NITableViewModelSectionIndexDynamic, showsSearch: false, showsSummary: false)
-        }
+        model.setSectionIndexType(NITableViewModelSectionIndexDynamic, showsSearch: false, showsSummary: false)
+
+        return model
     }
 
     func createSections(array: NSArray, update: Bool) {
@@ -85,7 +84,7 @@ class NBMenuTableViewController: UIViewController, UITableViewDelegate, NBMenuTi
 
         var tableData: [MenuSectionItemInfo] = [MenuSectionItemInfo]()
         if (YoutubeUserProfile.sharedInstance.hasLogin() == true) {
-
+            tableData = LeftMenuSectionsUtils.getSignOutMenuItemTreeArray()
         } else {
             tableData = LeftMenuSectionsUtils.getSignOutMenuItemTreeArray()
         }
@@ -93,7 +92,7 @@ class NBMenuTableViewController: UIViewController, UITableViewDelegate, NBMenuTi
 
         tableModelRowInfo = NBMenuSectionGenerator.generatorSections(tableData, menuTitleBarTapProtocol: self)
 
-        makeModel()
+        model = makeModel(tableModelRowInfo!.tableContents)
 
         if let theTableView: UITableView = tableView {
             theTableView.dataSource = model
@@ -170,6 +169,9 @@ class NBMenuTableViewController: UIViewController, UITableViewDelegate, NBMenuTi
 
         // Then reload tableview
         createSections(array, update: true)
+        if let theTableView: UITableView = tableView {
+            theTableView.reloadData()
+        }
     }
 
 }
