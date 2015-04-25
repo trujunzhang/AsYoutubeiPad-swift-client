@@ -121,6 +121,7 @@ class NBMenuTableViewController: UIViewController, UITableViewDelegate, NBMenuTi
             }else{
                 // Authentication succeeded
                 let x = 0
+                let userEmail = auth.userEmail
                 
                 self.dismissViewControllerAnimated(true, completion: { () -> Void in
                     
@@ -140,29 +141,7 @@ class NBMenuTableViewController: UIViewController, UITableViewDelegate, NBMenuTi
 
         
     }
-    
-    //    UINavigationController *navCon = [[UINavigationController alloc] initWithRootViewController:vcObj];
-    //
-    //    if ([[UIDevice currentDevice].systemVersion floatValue] >= 8.0) {
-    //
-    //    navCon.providesPresentationContextTransitionStyle = YES;
-    //    navCon.definesPresentationContext = YES;
-    //    navCon.modalPresentationStyle = UIModalPresentationOverCurrentContext;
-    //
-    //    [self presentViewController:navCon animated:NO completion:nil];
-    //    }
-    //    else {
-    //
-    //    AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
-    //    [self presentViewController:navCon animated:NO completion:^{
-    //    [navCon dismissViewControllerAnimated:NO completion:^{
-    //    appDelegate.window.rootViewController.modalPresentationStyle = UIModalPresentationCurrentContext;
-    //    [self presentViewController:navCon animated:NO completion:nil];
-    //    appDelegate.window.rootViewController.modalPresentationStyle = UIModalPresentationFullScreen;
-    //    
-    //    }];
-    //    }];
-    //    }
+
     
     
 }
