@@ -37,6 +37,15 @@ public class LoggedUserChannelInfo {
         Defaults[TAG_ISLOGIN] = true
     }
 
+    func removeAllLoggedInfo(){
+        let keys:[String] = [TAG_ISLOGIN,TAG_CHANNELID,TAG_USERNAME,TAG_EMAIL]
+        for key:String in keys{
+            if !Defaults.hasKey(key) {
+                Defaults.remove(key)
+            }
+        }
+    }
+
     init(){
         if let theChannelID: String = Defaults[TAG_CHANNELID].string {
             channelID = theChannelID
@@ -53,6 +62,7 @@ public class LoggedUserChannelInfo {
             println("saved isLogin is \(theIsLogin)")
         }
     }
+
 
 }
 
@@ -79,23 +89,14 @@ class YoutubeUserProfile: NSObject {
 
     }
 
-    //MARK :
-    func saveLoggedUserChannelInfo(channelID : String,title :  String,userName : String){
-        userChannel = LoggedUserChannelInfo(_channelID: channelID, _title: title, _userName: userName)
-
-        var defaults = NSUserDefaults.standardUserDefaults()
-
-        defaults.setObject(channelID, forKey: "channelID")
-
-        defaults.synchronize()
-    }
-
-
-    //MARK :
+    //MARK : logged user infos
     func hasLogin() -> Bool {
         return userChannel.isLogin
     }
 
+    func loginout(){
+        self.userChannel.removeAllLoggedInfo()
+    }
 
     func authorizeRequest(finishedWithAuth: GTMOAuth2Authentication!) {
         self.auth = finishedWithAuth
@@ -103,7 +104,6 @@ class YoutubeUserProfile: NSObject {
         if let theUserEmail = finishedWithAuth.userEmail {
             self.userChannel.saveFinishedWithAuth(theUserEmail)
         }
-
 
         println("self.auth \(self.auth)")
         var req: NSMutableURLRequest! = NSMutableURLRequest(URL: self.auth.tokenURL)
