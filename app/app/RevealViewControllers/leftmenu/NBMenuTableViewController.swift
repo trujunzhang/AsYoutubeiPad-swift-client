@@ -35,27 +35,17 @@ class NBMenuTableViewController: UIViewController, UITableViewDelegate, NBMenuTi
         createSections()
         makeModel()
 
-        if let theTableView: UITableView = tableView {
-            theTableView.backgroundColor = UIColor.clearColor()
-            theTableView.separatorStyle = .None
+        showLoadingPanel()
 
-            self.view.addSubview(theTableView)
-
-            theTableView.dataSource = model
-            theTableView.delegate = self
-
-            //            layout(theTableView) {
-            //                view1 in
-            //
-            //                view1.leading == view1.superview!.leading
-            //
-            //                view1.top == view1.superview!.top
-            //                view1.bottom == view1.superview!.bottom
-            //
-            //                view1.width == LEFT_MENU_WIDTH
-            //            }
-
-        }
+//        if let theTableView: UITableView = tableView {
+//            theTableView.backgroundColor = UIColor.clearColor()
+//            theTableView.separatorStyle = .None
+//
+//            self.view.addSubview(theTableView)
+//
+//            theTableView.dataSource = model
+//            theTableView.delegate = self
+//        }
     }
 
 
@@ -144,6 +134,17 @@ class NBMenuTableViewController: UIViewController, UITableViewDelegate, NBMenuTi
 
 
     }
+
+    // MARK :
+    func showLoadingPanel(){
+        loadingView.startAnimating()
+        loadingView.hidesWhenStopped = true
+    }
+
+    func hideLoadingPanel(){
+        loadingView.stopAnimating()
+    }
+
 
     // MARK: AuthorUserFetchingDelegate
     func endFetchingUserChannel(channel: GTLYouTubeChannel){
