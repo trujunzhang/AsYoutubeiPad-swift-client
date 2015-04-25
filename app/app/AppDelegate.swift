@@ -29,9 +29,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             revealViewController.revealToggleAnimated(true)
 
             YoutubeFetcher.sharedInstance.initLoggedUser()
-
-            let isLogin = YoutubeUserProfile.sharedInstance.userChannel.isLogin
-            println("isLogin: \(isLogin)")
         }
         return true
     }

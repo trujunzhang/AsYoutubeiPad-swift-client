@@ -40,7 +40,7 @@ class YoutubeFetcher: NSObject {
     }
     
     func initLoggedUser() {
-        if (YoutubeUserProfile.sharedInstance.isLogin == true) {
+        if (YoutubeUserProfile.sharedInstance.hasLogin() == true) {
             self.youTubeService?.authorizer = YoutubeUserProfile.sharedInstance.auth
             var canAuthorie = YoutubeUserProfile.sharedInstance.auth.canAuthorize
             

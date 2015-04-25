@@ -9,9 +9,9 @@
 import Foundation
 
 let TAG_ISLOGIN = "hasLoggedInKey"
-let TAG_CHANNELID = "hasLoggedInKey"
-let TAG_USERNAME = "hasLoggedInKey"
-let TAG_EMAIL = "hasLoggedInKey"
+let TAG_CHANNELID = "author_channelid"
+let TAG_USERNAME = "author_username"
+let TAG_EMAIL = "author_email"
 
 public class LoggedUserChannelInfo {
     var channelID :       String = ""
@@ -28,12 +28,13 @@ public class LoggedUserChannelInfo {
         email     = ""
     }
 
-    init(_email: String){
-        channelID = ""
-        title     = ""
-        userName  = ""
-
+    func saveFinishedWithAuth(_email: String){
         email     = _email
+        isLogin   = true
+
+        println("saving email is :\(_email)")
+        Defaults[TAG_EMAIL]   = _email
+        Defaults[TAG_ISLOGIN] = true
     }
 
     init(){
@@ -45,16 +46,17 @@ public class LoggedUserChannelInfo {
         }
         if let theEmail: String = Defaults[TAG_EMAIL].string {
             email = theEmail
+            println("saved email is \(email)")
         }
         if let theIsLogin: Bool = Defaults[TAG_ISLOGIN].bool {
             isLogin = theIsLogin
+            println("saved isLogin is \(theIsLogin)")
         }
     }
 
 }
 
 class YoutubeUserProfile: NSObject {
-    var isLogin: Bool?
     var auth: GTMOAuth2Authentication!
 
     var userChannel: LoggedUserChannelInfo = LoggedUserChannelInfo()
@@ -71,28 +73,13 @@ class YoutubeUserProfile: NSObject {
     override init() {
         super.init()
 
-        isLogin = self.hasLogin()
-        //        isLogin = true
-
-        userChannel = LoggedUserChannelInfo(_channelID: "", _title: "", _userName: "")
-
-        if(isLogin == true){
+        if(userChannel.isLogin == true){
             self.auth = GTMOAuth2ViewControllerTouch.authForGoogleFromKeychainForName("Google", clientID: kMyClientID, clientSecret: kMyClientSecret)
-
-            userChannel = self.loadLoggedUserChannelInfo()
         }
 
     }
 
     //MARK :
-    func loadLoggedUserChannelInfo() ->LoggedUserChannelInfo {
-        var _userChannel: LoggedUserChannelInfo?
-
-        _userChannel = LoggedUserChannelInfo(_channelID: "", _title: "", _userName: "")
-
-        return _userChannel!
-    }
-
     func saveLoggedUserChannelInfo(channelID : String,title :  String,userName : String){
         userChannel = LoggedUserChannelInfo(_channelID: channelID, _title: title, _userName: userName)
 
@@ -106,25 +93,19 @@ class YoutubeUserProfile: NSObject {
 
     //MARK :
     func hasLogin() -> Bool {
-        var defaults: NSUserDefaults? = NSUserDefaults.standardUserDefaults()
-        var hasLoggedInFlag: Bool! = defaults?.boolForKey("hasLoggedInKey")
-
-        return hasLoggedInFlag
-        //        return false
+        return userChannel.isLogin
     }
 
-    func saveLoggedInFlag() {
-        var defaults = NSUserDefaults.standardUserDefaults()
-        defaults.setBool(true, forKey: "hasLoggedInKey")
-        defaults.synchronize()
-    }
 
     func authorizeRequest(finishedWithAuth: GTMOAuth2Authentication!) {
         self.auth = finishedWithAuth
 
-        self.saveLoggedInFlag()
+        if let theUserEmail = finishedWithAuth.userEmail {
+            self.userChannel.saveFinishedWithAuth(theUserEmail)
+        }
 
-        println("self \(self.auth)")
+
+        println("self.auth \(self.auth)")
         var req: NSMutableURLRequest! = NSMutableURLRequest(URL: self.auth.tokenURL)
         self.auth.authorizeRequest(req, completionHandler: {
             (error) -> Void in
