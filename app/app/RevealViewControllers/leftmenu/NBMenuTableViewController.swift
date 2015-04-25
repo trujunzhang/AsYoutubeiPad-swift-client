@@ -30,8 +30,6 @@ class NBMenuTableViewController: UIViewController, UITableViewDelegate, NBMenuTi
         self.view.backgroundColor = UIColor(rgba: VIDEO_INFO_BACKGROUND_COLOR)
         YoutubeFetcher.sharedInstance.delegate = self
 
-
-
         // create NICellFactory instance
         cellFactory = NICellFactory()
 
@@ -96,11 +94,14 @@ class NBMenuTableViewController: UIViewController, UITableViewDelegate, NBMenuTi
 
         model = makeModel(tableModelRowInfo!.tableContents)
 
+        reloadTableView(model!)
+    }
+
+    func reloadTableView(model: NIMutableTableViewModel) {
         if let theTableView: UITableView = tableView {
             theTableView.dataSource = model
             theTableView.reloadData()
         }
-
     }
 
     // MARK: UITableViewDelegate
@@ -151,6 +152,8 @@ class NBMenuTableViewController: UIViewController, UITableViewDelegate, NBMenuTi
     func startFetchingLoggedSubscriptionList() {
         showLoadingPanel()
         YoutubeFetcher.sharedInstance.initLoggedUser()
+
+        reloadTableView(NIMutableTableViewModel(listArray: [], delegate: cellFactory))
     }
 
     // MARK :
