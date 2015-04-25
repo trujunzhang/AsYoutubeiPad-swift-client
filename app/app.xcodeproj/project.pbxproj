@@ -29,6 +29,7 @@
 		5E3AB3CC1AE3D7DC00BB0944 /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E3AB3C71AE3D7DC00BB0944 /* UIColorExtension.swift */; };
 		5E498E931AEA4EDD0081081E /* YoutubeApiConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E498E921AEA4EDD0081081E /* YoutubeApiConstant.swift */; };
 		5E4BFB8D1AE3214100BC7A33 /* pop.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E87FD951AD8C2500021E80C /* pop.framework */; };
+		5E9F197C1AEBB27400CC4D47 /* Haneke.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E9F197B1AEBB27400CC4D47 /* Haneke.framework */; };
 		5EA6F25E1AD8C9930017493D /* Cartography.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5EA6F25C1AD8C9930017493D /* Cartography.framework */; };
 		5EBEE6FD1AEB327C001ED7AB /* MenuTitleBarCellObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EBEE6FC1AEB327C001ED7AB /* MenuTitleBarCellObject.swift */; };
 		5EBEE6FF1AEB3292001ED7AB /* NBMenuCellCatalog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EBEE6FE1AEB3292001ED7AB /* NBMenuCellCatalog.swift */; };
@@ -74,6 +75,7 @@
 		5E52BAC31AD8C449007C3F32 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
 		5E87FD931AD8C24B0021E80C /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Bolts.framework; path = Carthage/Build/iOS/Bolts.framework; sourceTree = "<group>"; };
 		5E87FD951AD8C2500021E80C /* pop.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = pop.framework; path = Carthage/Build/iOS/pop.framework; sourceTree = "<group>"; };
+		5E9F197B1AEBB27400CC4D47 /* Haneke.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Haneke.framework; path = Carthage/Build/iOS/Haneke.framework; sourceTree = "<group>"; };
 		5EA6F25C1AD8C9930017493D /* Cartography.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cartography.framework; path = Carthage/Build/iOS/Cartography.framework; sourceTree = "<group>"; };
 		5EA6F25D1AD8C9930017493D /* WebImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebImage.framework; path = Carthage/Build/iOS/WebImage.framework; sourceTree = "<group>"; };
 		5EA6F2601AD8CA020017493D /* app-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "app-Bridging-Header.h"; sourceTree = "<group>"; };
@@ -98,6 +100,7 @@
 			files = (
 				FE4BD745914619899B4CFFE4 /* libPods-app.a in Frameworks */,
 				5EA6F25E1AD8C9930017493D /* Cartography.framework in Frameworks */,
+				5E9F197C1AEBB27400CC4D47 /* Haneke.framework in Frameworks */,
 				5E4BFB8D1AE3214100BC7A33 /* pop.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -108,6 +111,7 @@
 		0B7ED32E7A2330FF886E2633 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				5E9F197B1AEBB27400CC4D47 /* Haneke.framework */,
 				5EA6F25C1AD8C9930017493D /* Cartography.framework */,
 				5EA6F25D1AD8C9930017493D /* WebImage.framework */,
 				5E52BAC31AD8C449007C3F32 /* Alamofire.framework */,
@@ -406,6 +410,7 @@
 			inputPaths = (
 				"$(SRCROOT)/Carthage/Build/iOS/Cartography.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/pop.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/Haneke.framework",
 			);
 			outputPaths = (
 			);
