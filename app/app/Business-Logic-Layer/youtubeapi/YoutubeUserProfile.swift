@@ -12,6 +12,7 @@ let TAG_ISLOGIN = "hasLoggedInKey"
 let TAG_CHANNELID = "author_channelid"
 let TAG_USERNAME = "author_username"
 let TAG_EMAIL = "author_email"
+let TAG_TITLE = "author_title"
 
 public class LoggedUserChannelInfo :NSObject,DebugPrintable,Printable {
     var channelID :       String = ""
@@ -19,14 +20,6 @@ public class LoggedUserChannelInfo :NSObject,DebugPrintable,Printable {
     var userName  :       String = ""
     var email     :       String = ""
     var isLogin   :       Bool   = false
-
-    init(_channelID: String, _title: String, _userName: String){
-        channelID = _channelID
-        title     = _title
-        userName  = _userName
-
-        email     = ""
-    }
 
     func saveFinishedWithAuth(_email: String){
         email     = _email
@@ -37,8 +30,18 @@ public class LoggedUserChannelInfo :NSObject,DebugPrintable,Printable {
         Defaults[TAG_ISLOGIN] = true
     }
 
+    func saveLoggedUserChannel(channelID: String, title: String, userName: String){
+        self.channelID = channelID
+        self.title     = title
+        self.userName  = userName
+
+        Defaults[TAG_CHANNELID] = channelID
+        Defaults[TAG_TITLE]     = title
+        Defaults[TAG_USERNAME]  = userName
+    }
+
     func removeAllLoggedInfo(){
-        let keys:[String] = [TAG_ISLOGIN,TAG_CHANNELID,TAG_USERNAME,TAG_EMAIL]
+        let keys:[String] = [TAG_ISLOGIN,TAG_CHANNELID,TAG_USERNAME,TAG_EMAIL,TAG_TITLE]
         for key:String in keys{
             if !Defaults.hasKey(key) {
                 Defaults.remove(key)
@@ -47,6 +50,10 @@ public class LoggedUserChannelInfo :NSObject,DebugPrintable,Printable {
     }
 
     override init(){
+        if let theIsLogin: Bool = Defaults[TAG_ISLOGIN].bool {
+            isLogin = theIsLogin
+            println("saved isLogin is \(theIsLogin)")
+        }
         if let theChannelID: String = Defaults[TAG_CHANNELID].string {
             channelID = theChannelID
         }
@@ -57,9 +64,8 @@ public class LoggedUserChannelInfo :NSObject,DebugPrintable,Printable {
             email = theEmail
             println("saved email is \(email)")
         }
-        if let theIsLogin: Bool = Defaults[TAG_ISLOGIN].bool {
-            isLogin = theIsLogin
-            println("saved isLogin is \(theIsLogin)")
+        if let theTitle: String = Defaults[TAG_TITLE].string {
+            title = theTitle
         }
     }
 
@@ -98,6 +104,14 @@ class YoutubeUserProfile: NSObject {
     //MARK : logged user infos
     func hasLogin() -> Bool {
         return userChannel.isLogin
+    }
+
+    func saveLoggedUserChannel(channel: GTLYouTubeChannel){
+        var channelID: String = YoutubeModelParser.getAuthChannelID(channel) as String
+        var title: String     = YoutubeModelParser.getAuthChannelTitle(channel) as String
+        var userName: String  = YoutubeModelParser.getAuthChannelTitle(channel) as String
+
+        self.userChannel.saveLoggedUserChannel(channelID,title: title,userName: userName)
     }
 
     func loginout(){

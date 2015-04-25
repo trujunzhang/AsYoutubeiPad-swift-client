@@ -120,8 +120,6 @@ class NBMenuTableViewController: UIViewController, UITableViewDelegate, NBMenuTi
                 
             }else{
                 // Authentication succeeded
-                let x = 0
-//                let userEmail = auth.userEmail
                 YoutubeUserProfile.sharedInstance.authorizeRequest(auth)
                 self.dismissViewControllerAnimated(true, completion: { () -> Void in
                     
