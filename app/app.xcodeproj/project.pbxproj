@@ -30,9 +30,10 @@
 		5E498E931AEA4EDD0081081E /* YoutubeApiConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E498E921AEA4EDD0081081E /* YoutubeApiConstant.swift */; };
 		5E4BFB8D1AE3214100BC7A33 /* pop.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E87FD951AD8C2500021E80C /* pop.framework */; };
 		5EA6F25E1AD8C9930017493D /* Cartography.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5EA6F25C1AD8C9930017493D /* Cartography.framework */; };
+		5EBEE6FD1AEB327C001ED7AB /* MenuTitleBarCellObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EBEE6FC1AEB327C001ED7AB /* MenuTitleBarCellObject.swift */; };
+		5EBEE6FF1AEB3292001ED7AB /* NBMenuCellCatalog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EBEE6FE1AEB3292001ED7AB /* NBMenuCellCatalog.swift */; };
 		5EC804E31AE660CA00FC42C4 /* NBMenuTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EC804E21AE660CA00FC42C4 /* NBMenuTableViewController.swift */; };
 		5EC804E51AE662DF00FC42C4 /* LeftMenuConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EC804E41AE662DF00FC42C4 /* LeftMenuConstant.swift */; };
-		5EFB22AF1AE9D946009956FA /* NBMenuCellCatalog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EFB22AE1AE9D946009956FA /* NBMenuCellCatalog.swift */; };
 		5EFED9A61AE3AB3F00EEB23E /* VideoInfoDrawRectBlockCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EFED9A51AE3AB3F00EEB23E /* VideoInfoDrawRectBlockCell.swift */; };
 		5EFED9A81AE3AC6700EEB23E /* VideoInfoObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EFED9A71AE3AC6700EEB23E /* VideoInfoObject.swift */; };
 		5EFED9AA1AE3B17400EEB23E /* VideoInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EFED9A91AE3B17400EEB23E /* VideoInfoViewController.swift */; };
@@ -75,9 +76,10 @@
 		5EA6F25C1AD8C9930017493D /* Cartography.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cartography.framework; path = Carthage/Build/iOS/Cartography.framework; sourceTree = "<group>"; };
 		5EA6F25D1AD8C9930017493D /* WebImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebImage.framework; path = Carthage/Build/iOS/WebImage.framework; sourceTree = "<group>"; };
 		5EA6F2601AD8CA020017493D /* app-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "app-Bridging-Header.h"; sourceTree = "<group>"; };
+		5EBEE6FC1AEB327C001ED7AB /* MenuTitleBarCellObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MenuTitleBarCellObject.swift; path = MenuCells/MenuTitleBarCellObject.swift; sourceTree = "<group>"; };
+		5EBEE6FE1AEB3292001ED7AB /* NBMenuCellCatalog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NBMenuCellCatalog.swift; path = MenuCells/NBMenuCellCatalog.swift; sourceTree = "<group>"; };
 		5EC804E21AE660CA00FC42C4 /* NBMenuTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NBMenuTableViewController.swift; sourceTree = "<group>"; };
 		5EC804E41AE662DF00FC42C4 /* LeftMenuConstant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LeftMenuConstant.swift; sourceTree = "<group>"; };
-		5EFB22AE1AE9D946009956FA /* NBMenuCellCatalog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NBMenuCellCatalog.swift; sourceTree = "<group>"; };
 		5EFED9A51AE3AB3F00EEB23E /* VideoInfoDrawRectBlockCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoInfoDrawRectBlockCell.swift; sourceTree = "<group>"; };
 		5EFED9A71AE3AC6700EEB23E /* VideoInfoObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoInfoObject.swift; sourceTree = "<group>"; };
 		5EFED9A91AE3B17400EEB23E /* VideoInfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoInfoViewController.swift; sourceTree = "<group>"; };
@@ -218,7 +220,6 @@
 				5EC804E41AE662DF00FC42C4 /* LeftMenuConstant.swift */,
 				5EC804E21AE660CA00FC42C4 /* NBMenuTableViewController.swift */,
 				5E0BD1001AE72617001E43B7 /* NBMenuSectionGenerator.swift */,
-				5EFB22AE1AE9D946009956FA /* NBMenuCellCatalog.swift */,
 			);
 			path = leftmenu;
 			sourceTree = "<group>";
@@ -270,6 +271,8 @@
 		5ECDC50B1AEA6F5500371AE7 /* MenuCells */ = {
 			isa = PBXGroup;
 			children = (
+				5EBEE6FE1AEB3292001ED7AB /* NBMenuCellCatalog.swift */,
+				5EBEE6FC1AEB327C001ED7AB /* MenuTitleBarCellObject.swift */,
 			);
 			name = MenuCells;
 			sourceTree = "<group>";
@@ -442,7 +445,8 @@
 				5E37DF911AE61D00009D605E /* LeftMenuViewController.swift in Sources */,
 				5E1E2CEB1AD8B898004CC05B /* AppDelegate.swift in Sources */,
 				5EFED9AA1AE3B17400EEB23E /* VideoInfoViewController.swift in Sources */,
-				5EFB22AF1AE9D946009956FA /* NBMenuCellCatalog.swift in Sources */,
+				5EBEE6FF1AEB3292001ED7AB /* NBMenuCellCatalog.swift in Sources */,
+				5EBEE6FD1AEB327C001ED7AB /* MenuTitleBarCellObject.swift in Sources */,
 				5E0B70351AEA4C48007287C7 /* YoutubeDataFetcher.swift in Sources */,
 				5E0B703A1AEA4C48007287C7 /* YTYoutubeRequestInfo.swift in Sources */,
 				5E3AB3CB1AE3D7DC00BB0944 /* Result.swift in Sources */,
