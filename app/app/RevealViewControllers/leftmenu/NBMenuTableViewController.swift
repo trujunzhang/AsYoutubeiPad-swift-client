@@ -117,7 +117,10 @@ class NBMenuTableViewController: UIViewController, UITableViewDelegate, NBMenuTi
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         let index: Int = indexPath.row
 
-
+        if let theTableModelRowInfo: NBTableModelRowInfo = tableModelRowInfo {
+            let rowParamInfo: LeftRowParamInfo = theTableModelRowInfo.tableParams[index]
+            println(rowParamInfo.simpleDescription)
+        }
     }
 
     // MARK: NBMenuTitleBarTapProtocol

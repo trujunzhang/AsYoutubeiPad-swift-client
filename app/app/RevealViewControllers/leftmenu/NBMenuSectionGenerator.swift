@@ -31,7 +31,7 @@ class NBMenuSectionGenerator {
     class func generatorSections(tableData: [MenuSectionItemInfo], menuTitleBarTapProtocol: NBMenuTitleBarTapProtocol, userInfo: LoggedUserInfo) -> NBTableModelRowInfo {
         var tableContents: [AnyObject] = [AnyObject]()
         var tableRowHeights: [CGFloat] = [CGFloat]()
-        var tableParams: [AnyObject] = [AnyObject]()
+        var tableParams: [LeftRowParamInfo] = [LeftRowParamInfo]()
 
         // title bar
         var titleCellObject: NICellObject = MenuLoginTitleBarCellObject(menuTitleBarTapProtocol: menuTitleBarTapProtocol)

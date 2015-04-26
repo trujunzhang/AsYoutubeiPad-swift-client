@@ -20,7 +20,7 @@ let MENU_ROW_HEIGHT: CGFloat = 58
 struct NBTableModelRowInfo {
     var tableContents: [AnyObject]
     var tableRowHeights: [CGFloat]
-    var tableParams: [AnyObject]
+    var tableParams: [LeftRowParamInfo]
 }
 
 class LeftRowParamInfo {
