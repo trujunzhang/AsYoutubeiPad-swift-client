@@ -65,6 +65,7 @@ class NBMenuSectionGenerator {
                 }
                 tableContents.append(cellObject)
                 tableRowHeights.append(MENU_ROW_HEIGHT)
+                tableParams.append(LeftRowParamInfo(hasSectionTitle: true))
             }
         }
 
