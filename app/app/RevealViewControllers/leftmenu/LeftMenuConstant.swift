@@ -30,6 +30,9 @@ class LeftRowParamInfo {
     var hasSectionTitle: Bool = true
     var hasAction: Bool = false
 
+    init() {
+
+    }
     init(hasSectionTitle: Bool) {
         self.hasSectionTitle = hasSectionTitle
         self.hasAction = false

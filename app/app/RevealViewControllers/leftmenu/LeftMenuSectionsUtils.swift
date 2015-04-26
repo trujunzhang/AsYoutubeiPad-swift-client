@@ -20,7 +20,7 @@ public enum CellIdentifier {
 public struct MenuRowItemInfo {
     var title :       String
     var imageUrl :    String
-    var rowHParas :   Int
+    var rowHParas :   AnyObject
 }
 
 public struct MenuSectionItemInfo {

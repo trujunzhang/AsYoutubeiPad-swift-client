@@ -59,14 +59,18 @@ class YoutubeModelParser {
 
 
     // MARK: Parse for GTLYouTubeSubscription
-    class func getSubscriptionTitle(subscription: GTLYouTubeSubscription) -> NSString {
-        return subscription.snippet.title
+    class func getSubscriptionTitle(subscription: GTLYouTubeSubscription) -> String {
+        return subscription.snippet.title as String
     }
 
-    class func getSubscriptionUrl(subscription: GTLYouTubeSubscription) -> NSString {
+    class func getSubscriptionChannelId(subscription: GTLYouTubeSubscription) -> String {
+        return subscription.identifier as String
+    }
+
+    class func getSubscriptionUrl(subscription: GTLYouTubeSubscription) -> String {
         var thumbnails: GTLYouTubeThumbnailDetails = subscription.snippet.thumbnails
         var dictionary: NSMutableDictionary = thumbnails.JSON["default"] as! NSMutableDictionary
-        var defaultValue: NSString = dictionary["url"] as! NSString
+        var defaultValue: String = dictionary["url"] as! String
 
         return defaultValue
     }
@@ -76,10 +80,10 @@ class YoutubeModelParser {
         var rows = [MenuRowItemInfo]()
 
         for subscription in subscriptions {
-            var title: String = self.getSubscriptionTitle(subscription as! GTLYouTubeSubscription) as String
-            var url: String = self.getSubscriptionUrl(subscription as! GTLYouTubeSubscription) as String
-            var rowItem: MenuRowItemInfo =
-            MenuRowItemInfo(title: title, imageUrl: url, rowHParas: YTPlayListItemsType.kUploadsTag.rawValue)
+            var title: String = self.getSubscriptionTitle(subscription as! GTLYouTubeSubscription)
+            var url: String = self.getSubscriptionUrl(subscription as! GTLYouTubeSubscription)
+            var channelId: String = self.getSubscriptionChannelId(subscription as! GTLYouTubeSubscription)
+            var rowItem: MenuRowItemInfo = MenuRowItemInfo(title: title, imageUrl: url, rowHParas: channelId)
             rows.append(rowItem)
         }
         return rows
