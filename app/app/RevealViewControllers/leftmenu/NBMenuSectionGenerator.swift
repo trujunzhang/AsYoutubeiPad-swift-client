@@ -31,15 +31,17 @@ class NBMenuSectionGenerator {
     class func generatorSections(tableData: [MenuSectionItemInfo], menuTitleBarTapProtocol: NBMenuTitleBarTapProtocol, userInfo: LoggedUserInfo) -> NBTableModelRowInfo {
         var tableContents: [AnyObject] = [AnyObject]()
         var tableRowHeights: [CGFloat] = [CGFloat]()
+        var tableParams: [AnyObject] = [AnyObject]()
 
         // title bar
-        var titleCellObject: NICellObject  = MenuLoginTitleBarCellObject(menuTitleBarTapProtocol: menuTitleBarTapProtocol)
+        var titleCellObject: NICellObject = MenuLoginTitleBarCellObject(menuTitleBarTapProtocol: menuTitleBarTapProtocol)
         if (userInfo.isLogin == true) {
             titleCellObject = MenuTitleBarLoggedCellObject(userName: userInfo.userName, email: userInfo.email, menuTitleBarTapProtocol: menuTitleBarTapProtocol)
         }
 
         tableContents.append(titleCellObject)
         tableRowHeights.append(MENU_TITLEBAR_HEIGHT)
+        tableParams.append(LeftRowParamInfo())
 
         for itemInfo: MenuSectionItemInfo in tableData {
             let isHideTitle: Bool = itemInfo.isHideTitle
@@ -48,6 +50,7 @@ class NBMenuSectionGenerator {
             if (isHideTitle == false) {
                 tableContents.append(YTSectionTitleCellObject(title: itemInfo.headerTitle))
                 tableRowHeights.append(MENU_SECTION_TITLE_HEIGHT)
+                tableParams.append(LeftRowParamInfo(hasSectionTitle: true))
             }
 
             let rows: [MenuRowItemInfo] = itemInfo.rows
@@ -65,7 +68,7 @@ class NBMenuSectionGenerator {
             }
         }
 
-        return NBTableModelRowInfo(tableContents: tableContents, tableRowHeights: tableRowHeights)
+        return NBTableModelRowInfo(tableContents: tableContents, tableRowHeights: tableRowHeights, tableParams: tableParams)
     }
 
 

@@ -83,6 +83,7 @@ class NBMenuTableViewController: UIViewController, UITableViewDelegate, NBMenuTi
 
     func createSections(array: NSArray) {
         var tableData: [MenuSectionItemInfo] = [MenuSectionItemInfo]()
+
         if (YoutubeUserProfile.sharedInstance.hasLogin() == true) {
             let subscriptionData: [MenuRowItemInfo] = YoutubeModelParser.convertToMenuRowArrayFromSubscriptions(array)
             tableData = LeftMenuSectionsUtils.getSignInMenuItemTreeArrayWithSubscriptions(subscriptionData)
@@ -114,9 +115,9 @@ class NBMenuTableViewController: UIViewController, UITableViewDelegate, NBMenuTi
     }
 
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        if (indexPath.section == 0 && indexPath.row == 1) {
+        let index: Int = indexPath.row
 
-        }
+
     }
 
     // MARK: NBMenuTitleBarTapProtocol

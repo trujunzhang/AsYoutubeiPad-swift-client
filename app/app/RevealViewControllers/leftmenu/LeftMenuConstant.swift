@@ -16,10 +16,28 @@ let MENU_TITLEBAR_HEIGHT: CGFloat = 56
 let MENU_SECTION_TITLE_HEIGHT: CGFloat = 30
 let MENU_ROW_HEIGHT: CGFloat = 58
 
+
 struct NBTableModelRowInfo {
     var tableContents: [AnyObject]
     var tableRowHeights: [CGFloat]
+    var tableParams: [AnyObject]
 }
+
+class LeftRowParamInfo {
+    var rowSectionIdentifier: CellIdentifier = .CategoriesCellIdentifier
+    var rowHParas: Int = -1
+    var videoId: String = ""
+    var hasSectionTitle: Bool = true
+    var hasAction: Bool = false
+
+    init(hasSectionTitle: Bool) {
+        self.hasSectionTitle = hasSectionTitle
+        self.hasAction = false
+    }
+
+
+}
+
 
 protocol NBMenuTitleBarTapProtocol {
     func showLoginPanel() -> Void
