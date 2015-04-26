@@ -13,23 +13,22 @@ import Cartography
 
 // MARK : YTCategoryCellObject
 
-class MenuTitleBarCellObject: NICellObject {
+
+class MenuTitleBarLoginCellObject: NICellObject {
 
     var title = ""
     var menuTitleBarTapProtocol: NBMenuTitleBarTapProtocol?
 
     init(title: String, menuTitleBarTapProtocol: NBMenuTitleBarTapProtocol) {
-        super.init(cellClass: MenuTitleBarCell.self, userInfo: nil)
+        super.init(cellClass: MenuTitleBarBaseCell.self, userInfo: nil)
 
         self.title = title
         self.menuTitleBarTapProtocol = menuTitleBarTapProtocol
     }
 }
 
-class MenuTitleBarCell: UITableViewCell, NICell {
+class MenuTitleBarBaseCell: UITableViewCell {
     var thumbnailImageView: UIImageView?
-    var userNameLabel: UILabel?
-    var emailLabel: UILabel?
 
     var titlebarImageView: UIImageView?
     var settingsImageView: UIImageView?
@@ -54,18 +53,7 @@ class MenuTitleBarCell: UITableViewCell, NICell {
 
             self.addSubview(theThumbnailImageView)
         }
-        userNameLabel = UILabel()
-        if let theUserName: UILabel = userNameLabel {
-            theUserName.textColor = UIColor.whiteColor()
 
-            self.addSubview(theUserName)
-        }
-        emailLabel = UILabel()
-        if let theEmailLabel: UILabel = emailLabel {
-            theEmailLabel.textColor = UIColor.whiteColor()
-
-            self.addSubview(theEmailLabel)
-        }
         settingsImageView = UIImageView()
         if let theSettingsImageView: UIImageView = settingsImageView {
             theSettingsImageView.image = UIImage(named: "guide_settings")
@@ -74,7 +62,7 @@ class MenuTitleBarCell: UITableViewCell, NICell {
         }
 
 
-        if let theTitlebarImageView: UIImageView = titlebarImageView, theSettingsImageView: UIImageView = settingsImageView, theThumbnailImageView: UIImageView = thumbnailImageView, theUserName: UILabel = userNameLabel, theEmailLabel: UILabel = emailLabel {
+        if let theTitlebarImageView: UIImageView = titlebarImageView, theSettingsImageView: UIImageView = settingsImageView, theThumbnailImageView: UIImageView = thumbnailImageView {
             layout(theTitlebarImageView, theSettingsImageView) {
                 view1, view2 in
 
@@ -92,8 +80,8 @@ class MenuTitleBarCell: UITableViewCell, NICell {
                 view2.width == 35
                 view2.height == 34
             }
-            layout(theThumbnailImageView, theUserName, theEmailLabel) {
-                view1, view2, view3 in
+            layout(theThumbnailImageView) {
+                view1 in
 
                 // theThumbnailImageView
                 view1.leading == view1.superview!.leading + 6
@@ -101,20 +89,6 @@ class MenuTitleBarCell: UITableViewCell, NICell {
 
                 view1.width == 32
                 view1.height == 32
-
-                // theUserName
-                view2.leading == view1.trailing + 6
-                view2.top == view2.superview!.top + 6
-
-                view2.width == 140
-                view2.height == 14
-
-                // theEmailLabel
-                view3.leading == view1.trailing + 6
-                view3.top == view2.bottom + 6
-
-                view3.width == 140
-                view3.height == 14
             }
         }
 
@@ -133,32 +107,6 @@ class MenuTitleBarCell: UITableViewCell, NICell {
         super.init(coder: aDecoder)
     }
 
-    override func prepareForReuse() {
-        super.prepareForReuse()
-
-        self.userNameLabel!.text = nil
-        self.emailLabel!.text = nil
-//        self.titlebarImageView!.image = nil
-    }
-
-    func shouldUpdateCellWithObject(object: AnyObject!) -> Bool {
-        backgroundColor = UIColor.clearColor()
-
-        let infoObject: MenuTitleBarCellObject = object as! MenuTitleBarCellObject
-
-        self.menuTitleBarTapProtocol = infoObject.menuTitleBarTapProtocol
-
-        if let theUserName: UILabel = userNameLabel, theEmailLabel: UILabel = emailLabel {
-            theUserName.text = "Zhang Trujun"
-            theEmailLabel.text = "wanghaobackup@gmail.com"
-        }
-
-        return true
-    }
-
-    class func shouldAppendObjectClassToReuseIdentifier() -> Bool {
-        return true
-    }
 
     // MARK: UITapGestureRecognizer
     func loginTapped() {

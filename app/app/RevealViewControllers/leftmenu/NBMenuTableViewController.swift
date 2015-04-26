@@ -35,7 +35,7 @@ class NBMenuTableViewController: UIViewController, UITableViewDelegate, NBMenuTi
 
         if let theCellFactory: NICellFactory = cellFactory {
             theCellFactory.mapObjectClass(NIDrawRectBlockCellObject.self, toCellClass: VideoInfoDrawRectBlockCell.self)
-            theCellFactory.mapObjectClass(NIDrawRectBlockCellObject.self, toCellClass: MenuTitleBarCellObject.self)
+//            theCellFactory.mapObjectClass(NIDrawRectBlockCellObject.self, toCellClass: MenuTitleBarCellObject.self)
         }
 
         if let theTableView: UITableView = tableView {
@@ -90,7 +90,11 @@ class NBMenuTableViewController: UIViewController, UITableViewDelegate, NBMenuTi
             tableData = LeftMenuSectionsUtils.getSignOutMenuItemTreeArray()
         }
 
-        tableModelRowInfo = NBMenuSectionGenerator.generatorSections(tableData, menuTitleBarTapProtocol: self)
+        var userInfo: LoggedUserInfo = LoggedUserInfo()
+        if (YoutubeUserProfile.sharedInstance.hasLogin()) {
+            userInfo = LoggedUserInfo(userName: YoutubeUserProfile.sharedInstance.userChannel.userName, email: YoutubeUserProfile.sharedInstance.userChannel.email)
+        }
+        tableModelRowInfo = NBMenuSectionGenerator.generatorSections(tableData, menuTitleBarTapProtocol: self, userInfo: userInfo)
 
         model = makeModel(tableModelRowInfo!.tableContents)
 
@@ -128,7 +132,7 @@ class NBMenuTableViewController: UIViewController, UITableViewDelegate, NBMenuTi
                 // Authentication succeeded
                 YoutubeUserProfile.sharedInstance.authorizeRequest(auth)
                 self.startFetchingLoggedSubscriptionList()
-                self.reloadTableView(NIMutableTableViewModel( delegate: nil))
+                self.reloadTableView(NIMutableTableViewModel(delegate: nil))
                 self.dismissViewControllerAnimated(true, completion: {
                     () -> Void in
 

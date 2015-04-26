@@ -9,14 +9,37 @@
 import Foundation
 import UIKit
 
+struct LoggedUserInfo {
+    let email: String
+    let userName: String
+    let isLogin: Bool
+
+    init() {
+        self.userName = ""
+        self.email = ""
+        self.isLogin = false
+    }
+    init(userName: String, email: String) {
+        self.userName = userName
+        self.email = email
+        self.isLogin = true
+    }
+}
+
 class NBMenuSectionGenerator {
 
-    class func generatorSections(tableData: [MenuSectionItemInfo], menuTitleBarTapProtocol: NBMenuTitleBarTapProtocol) -> NBTableModelRowInfo {
+    class func generatorSections(tableData: [MenuSectionItemInfo], menuTitleBarTapProtocol: NBMenuTitleBarTapProtocol, userInfo: LoggedUserInfo) -> NBTableModelRowInfo {
         var tableContents: [AnyObject] = [AnyObject]()
         var tableRowHeights: [CGFloat] = [CGFloat]()
 
         // title bar
-        tableContents.append(MenuTitleBarCellObject(title: "", menuTitleBarTapProtocol: menuTitleBarTapProtocol))
+        var titleCellObject: NICellObject
+        if (userInfo.isLogin == true) {
+            titleCellObject = MenuTitleBarLoggedCellObject(userName: userInfo.userName, email: userInfo.email, menuTitleBarTapProtocol: menuTitleBarTapProtocol)
+        } else {
+            titleCellObject = MenuTitleBarLoggedCellObject(userName: "", email: "", menuTitleBarTapProtocol: menuTitleBarTapProtocol)
+        }
+        tableContents.append(titleCellObject)
         tableRowHeights.append(MENU_TITLEBAR_HEIGHT)
 
         for itemInfo: MenuSectionItemInfo in tableData {
