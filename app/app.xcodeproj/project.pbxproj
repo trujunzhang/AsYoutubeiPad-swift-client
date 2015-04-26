@@ -41,6 +41,7 @@
 		5EC91E1A1AECB738000EB0F4 /* NSDateExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EC91E191AECB738000EB0F4 /* NSDateExtensions.swift */; };
 		5ECA615C1AECC88B00D02728 /* MenuTitleBarBaseCellObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ECA615B1AECC88B00D02728 /* MenuTitleBarBaseCellObject.swift */; };
 		5EE8C6911AEB6A3500156F4D /* SwiftyUserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EE8C6901AEB6A3500156F4D /* SwiftyUserDefaults.swift */; };
+		5EF6D8DB1AEDB31E00F77D17 /* LoggedUserChannelInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EF6D8DA1AEDB31E00F77D17 /* LoggedUserChannelInfo.swift */; };
 		5EFED9A61AE3AB3F00EEB23E /* VideoInfoDrawRectBlockCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EFED9A51AE3AB3F00EEB23E /* VideoInfoDrawRectBlockCell.swift */; };
 		5EFED9A81AE3AC6700EEB23E /* VideoInfoObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EFED9A71AE3AC6700EEB23E /* VideoInfoObject.swift */; };
 		5EFED9AA1AE3B17400EEB23E /* VideoInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EFED9A91AE3B17400EEB23E /* VideoInfoViewController.swift */; };
@@ -94,6 +95,7 @@
 		5EC91E191AECB738000EB0F4 /* NSDateExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSDateExtensions.swift; sourceTree = "<group>"; };
 		5ECA615B1AECC88B00D02728 /* MenuTitleBarBaseCellObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MenuTitleBarBaseCellObject.swift; path = MenuCells/MenuTitleBarBaseCellObject.swift; sourceTree = "<group>"; };
 		5EE8C6901AEB6A3500156F4D /* SwiftyUserDefaults.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyUserDefaults.swift; sourceTree = "<group>"; };
+		5EF6D8DA1AEDB31E00F77D17 /* LoggedUserChannelInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoggedUserChannelInfo.swift; sourceTree = "<group>"; };
 		5EFED9A51AE3AB3F00EEB23E /* VideoInfoDrawRectBlockCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoInfoDrawRectBlockCell.swift; sourceTree = "<group>"; };
 		5EFED9A71AE3AC6700EEB23E /* VideoInfoObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoInfoObject.swift; sourceTree = "<group>"; };
 		5EFED9A91AE3B17400EEB23E /* VideoInfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoInfoViewController.swift; sourceTree = "<group>"; };
@@ -152,6 +154,7 @@
 				5E0B70311AEA4C48007287C7 /* YoutubeUserProfile.swift */,
 				5E0B70321AEA4C48007287C7 /* YTYoutubeRequestInfo.swift */,
 				5E498E921AEA4EDD0081081E /* YoutubeApiConstant.swift */,
+				5EF6D8DA1AEDB31E00F77D17 /* LoggedUserChannelInfo.swift */,
 			);
 			name = youtubeapi;
 			path = "Business-Logic-Layer/youtubeapi";
@@ -482,6 +485,7 @@
 				5EA5D0071AECB7EF00E0BE18 /* YTMenuRowCellObject.swift in Sources */,
 				5EBEE6FF1AEB3292001ED7AB /* YTSectionTitleCellObject.swift in Sources */,
 				5EBEE6FD1AEB327C001ED7AB /* MenuLoggedTitleBarCell.swift in Sources */,
+				5EF6D8DB1AEDB31E00F77D17 /* LoggedUserChannelInfo.swift in Sources */,
 				5E0B70351AEA4C48007287C7 /* YoutubeDataFetcher.swift in Sources */,
 				5E0B703A1AEA4C48007287C7 /* YTYoutubeRequestInfo.swift in Sources */,
 				5E3AB3CB1AE3D7DC00BB0944 /* Result.swift in Sources */,
