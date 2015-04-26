@@ -47,26 +47,24 @@ class MenuLoggedTitleBarCell: MenuTitleBarBaseCell, NICell {
             self.addSubview(theEmailLabel)
         }
 
-
-
         if let theUserName: UILabel = userNameLabel, theEmailLabel: UILabel = emailLabel {
 
             layout(theUserName, theEmailLabel) {
                 view2, view3 in
 
-//                // theUserName
-//                view2.leadingMargin == 40 + 6
-//                view2.top == view2.superview!.top + 6
-//
-//                view2.width == 140
-//                view2.height == 14
-//
-//                // theEmailLabel
-//                view3.leading == 40 + 6
-//                view3.top == view2.bottom + 6
-//
-//                view3.width == 140
-//                view3.height == 14
+                // theUserName
+                view2.leading == view2.superview!.leading + 50
+                view2.top == view2.superview!.top + 6
+
+                view2.width == 140
+                view2.height == 14
+
+                // theEmailLabel
+                view3.leading == view3.superview!.leading + 50
+                view3.top == view2.bottom + 6
+
+                view3.width == 140
+                view3.height == 14
             }
         }
 
