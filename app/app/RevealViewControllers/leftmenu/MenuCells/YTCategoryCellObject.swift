@@ -33,8 +33,7 @@ class YTMenuRowCellObject: NICellObject {
         self.title = title
         self.imageUrl = imageUrl
     }
-    
-    
+
 }
 
 class YTMenuRowCell: UITableViewCell, NICell {
