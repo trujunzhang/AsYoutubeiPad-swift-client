@@ -32,6 +32,7 @@
 		5E9F197C1AEBB27400CC4D47 /* Haneke.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E9F197B1AEBB27400CC4D47 /* Haneke.framework */; };
 		5EA5D0071AECB7EF00E0BE18 /* YTMenuRowCellObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EA5D0061AECB7EF00E0BE18 /* YTMenuRowCellObject.swift */; };
 		5EA6F25E1AD8C9930017493D /* Cartography.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5EA6F25C1AD8C9930017493D /* Cartography.framework */; };
+		5EA9E72C1AECBAE40041F9D5 /* YTMenuRemoteRowCellObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EA9E72B1AECBAE40041F9D5 /* YTMenuRemoteRowCellObject.swift */; };
 		5EBEE6FD1AEB327C001ED7AB /* MenuTitleBarCellObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EBEE6FC1AEB327C001ED7AB /* MenuTitleBarCellObject.swift */; };
 		5EBEE6FF1AEB3292001ED7AB /* YTSectionTitleCellObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EBEE6FE1AEB3292001ED7AB /* YTSectionTitleCellObject.swift */; };
 		5EC804E31AE660CA00FC42C4 /* NBMenuTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EC804E21AE660CA00FC42C4 /* NBMenuTableViewController.swift */; };
@@ -82,6 +83,7 @@
 		5EA6F25C1AD8C9930017493D /* Cartography.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cartography.framework; path = Carthage/Build/iOS/Cartography.framework; sourceTree = "<group>"; };
 		5EA6F25D1AD8C9930017493D /* WebImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebImage.framework; path = Carthage/Build/iOS/WebImage.framework; sourceTree = "<group>"; };
 		5EA6F2601AD8CA020017493D /* app-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "app-Bridging-Header.h"; sourceTree = "<group>"; };
+		5EA9E72B1AECBAE40041F9D5 /* YTMenuRemoteRowCellObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = YTMenuRemoteRowCellObject.swift; path = MenuCells/YTMenuRemoteRowCellObject.swift; sourceTree = "<group>"; };
 		5EBEE6FC1AEB327C001ED7AB /* MenuTitleBarCellObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MenuTitleBarCellObject.swift; path = MenuCells/MenuTitleBarCellObject.swift; sourceTree = "<group>"; };
 		5EBEE6FE1AEB3292001ED7AB /* YTSectionTitleCellObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = YTSectionTitleCellObject.swift; path = MenuCells/YTSectionTitleCellObject.swift; sourceTree = "<group>"; };
 		5EC804E21AE660CA00FC42C4 /* NBMenuTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NBMenuTableViewController.swift; sourceTree = "<group>"; };
@@ -283,6 +285,7 @@
 		5ECDC50B1AEA6F5500371AE7 /* MenuCells */ = {
 			isa = PBXGroup;
 			children = (
+				5EA9E72B1AECBAE40041F9D5 /* YTMenuRemoteRowCellObject.swift */,
 				5EBEE6FE1AEB3292001ED7AB /* YTSectionTitleCellObject.swift */,
 				5EBEE6FC1AEB327C001ED7AB /* MenuTitleBarCellObject.swift */,
 				5EA5D0061AECB7EF00E0BE18 /* YTMenuRowCellObject.swift */,
@@ -480,6 +483,7 @@
 				5E0B70371AEA4C48007287C7 /* YoutubeFetcher.swift in Sources */,
 				5E0B70381AEA4C48007287C7 /* YoutubeModelParser.swift in Sources */,
 				5E3AB3CA1AE3D7DC00BB0944 /* PathExtensionFile.swift in Sources */,
+				5EA9E72C1AECBAE40041F9D5 /* YTMenuRemoteRowCellObject.swift in Sources */,
 				5E37DF901AE61D00009D605E /* LeftMenuSectionsUtils.swift in Sources */,
 				5E3AB3C81AE3D7DC00BB0944 /* Path.swift in Sources */,
 				5E0B70391AEA4C48007287C7 /* YoutubeUserProfile.swift in Sources */,
