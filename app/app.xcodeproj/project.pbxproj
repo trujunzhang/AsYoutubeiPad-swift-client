@@ -29,6 +29,7 @@
 		5E3AB3CC1AE3D7DC00BB0944 /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E3AB3C71AE3D7DC00BB0944 /* UIColorExtension.swift */; };
 		5E498E931AEA4EDD0081081E /* YoutubeApiConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E498E921AEA4EDD0081081E /* YoutubeApiConstant.swift */; };
 		5E4BFB8D1AE3214100BC7A33 /* pop.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E87FD951AD8C2500021E80C /* pop.framework */; };
+		5E917D951AECCEEC00922AE7 /* MenuLoginTitleBarCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E917D941AECCEEC00922AE7 /* MenuLoginTitleBarCell.swift */; };
 		5E9F197C1AEBB27400CC4D47 /* Haneke.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E9F197B1AEBB27400CC4D47 /* Haneke.framework */; };
 		5EA5D0071AECB7EF00E0BE18 /* YTMenuRowCellObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EA5D0061AECB7EF00E0BE18 /* YTMenuRowCellObject.swift */; };
 		5EA6F25E1AD8C9930017493D /* Cartography.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5EA6F25C1AD8C9930017493D /* Cartography.framework */; };
@@ -79,6 +80,7 @@
 		5E52BAC31AD8C449007C3F32 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
 		5E87FD931AD8C24B0021E80C /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Bolts.framework; path = Carthage/Build/iOS/Bolts.framework; sourceTree = "<group>"; };
 		5E87FD951AD8C2500021E80C /* pop.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = pop.framework; path = Carthage/Build/iOS/pop.framework; sourceTree = "<group>"; };
+		5E917D941AECCEEC00922AE7 /* MenuLoginTitleBarCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MenuLoginTitleBarCell.swift; path = MenuCells/MenuLoginTitleBarCell.swift; sourceTree = "<group>"; };
 		5E9F197B1AEBB27400CC4D47 /* Haneke.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Haneke.framework; path = Carthage/Build/iOS/Haneke.framework; sourceTree = "<group>"; };
 		5EA5D0061AECB7EF00E0BE18 /* YTMenuRowCellObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = YTMenuRowCellObject.swift; path = MenuCells/YTMenuRowCellObject.swift; sourceTree = "<group>"; };
 		5EA6F25C1AD8C9930017493D /* Cartography.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cartography.framework; path = Carthage/Build/iOS/Cartography.framework; sourceTree = "<group>"; };
@@ -287,10 +289,11 @@
 		5ECDC50B1AEA6F5500371AE7 /* MenuCells */ = {
 			isa = PBXGroup;
 			children = (
+				5E917D941AECCEEC00922AE7 /* MenuLoginTitleBarCell.swift */,
 				5ECA615B1AECC88B00D02728 /* MenuTitleBarBaseCellObject.swift */,
+				5EBEE6FC1AEB327C001ED7AB /* MenuLoggedTitleBarCell.swift */,
 				5EA9E72B1AECBAE40041F9D5 /* YTMenuRemoteRowCellObject.swift */,
 				5EBEE6FE1AEB3292001ED7AB /* YTSectionTitleCellObject.swift */,
-				5EBEE6FC1AEB327C001ED7AB /* MenuLoggedTitleBarCell.swift */,
 				5EA5D0061AECB7EF00E0BE18 /* YTMenuRowCellObject.swift */,
 			);
 			name = MenuCells;
@@ -472,6 +475,7 @@
 				5ECA615C1AECC88B00D02728 /* MenuTitleBarBaseCellObject.swift in Sources */,
 				5EFED9A61AE3AB3F00EEB23E /* VideoInfoDrawRectBlockCell.swift in Sources */,
 				5EFED9AC1AE3B1E700EEB23E /* VideoInfoConstant.swift in Sources */,
+				5E917D951AECCEEC00922AE7 /* MenuLoginTitleBarCell.swift in Sources */,
 				5E37DF911AE61D00009D605E /* LeftMenuViewController.swift in Sources */,
 				5E1E2CEB1AD8B898004CC05B /* AppDelegate.swift in Sources */,
 				5EFED9AA1AE3B17400EEB23E /* VideoInfoViewController.swift in Sources */,

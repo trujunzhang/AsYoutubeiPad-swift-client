@@ -37,7 +37,7 @@ class NBMenuSectionGenerator {
         if (userInfo.isLogin == true) {
             titleCellObject = MenuTitleBarLoggedCellObject(userName: userInfo.userName, email: userInfo.email, menuTitleBarTapProtocol: menuTitleBarTapProtocol)
         } else {
-            titleCellObject = MenuTitleBarLoggedCellObject(userName: "", email: "", menuTitleBarTapProtocol: menuTitleBarTapProtocol)
+            titleCellObject = MenuLoginTitleBarCellObject(menuTitleBarTapProtocol: menuTitleBarTapProtocol)
         }
         tableContents.append(titleCellObject)
         tableRowHeights.append(MENU_TITLEBAR_HEIGHT)
