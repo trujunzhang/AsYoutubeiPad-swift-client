@@ -32,9 +32,9 @@ class NBMenuSectionGenerator {
             let isRemoteImage: Bool = itemInfo.isRemoteImage
             for row: MenuRowItemInfo in rows {
                 // rows
-                var cellObject: YTMenuRowCellObject
+                var cellObject: NICellObject
                 if (isRemoteImage == true) {
-                    cellObject = YTMenuRowCellObject(title: row.title, imageUrl: row.imageUrl)
+                    cellObject = YTMenuRemoteRowCellObject(title: row.title, imageUrl: row.imageUrl)
                 } else {
                     cellObject = YTMenuRowCellObject(title: row.title, image: UIImage(named: row.imageUrl)!)
                 }
