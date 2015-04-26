@@ -156,6 +156,10 @@ class MenuTitleBarCell: UITableViewCell, NICell {
         return true
     }
 
+    class func shouldAppendObjectClassToReuseIdentifier() -> Bool {
+        return true
+    }
+
     // MARK: UITapGestureRecognizer
     func loginTapped() {
         if let theMenuTitleBarTapProtocol: NBMenuTitleBarTapProtocol = menuTitleBarTapProtocol {
