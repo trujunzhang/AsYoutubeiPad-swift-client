@@ -113,7 +113,7 @@ class YoutubeFetcher: NSObject {
         var query: GTLQueryYouTube = GTLQueryYouTube.queryForSubscriptionsListWithPart("id,snippet") as! GTLQueryYouTube
         query.maxResults = 50 // used (important)
         query.channelId = channel.identifier
-        query.fields = "items/id,items/snippet(title,resourceId,thumbnails),nextPageToken"
+        query.fields = "items/snippet(title,resourceId,thumbnails),nextPageToken"
 
         service.executeQuery(query, completionHandler: {
             // GTLYouTubeSubscription array

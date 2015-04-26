@@ -64,7 +64,7 @@ class YoutubeModelParser {
     }
 
     class func getSubscriptionChannelId(subscription: GTLYouTubeSubscription) -> String {
-        return subscription.identifier as String
+        return subscription.snippet.resourceId.channelId as String
     }
 
     class func getSubscriptionUrl(subscription: GTLYouTubeSubscription) -> String {
