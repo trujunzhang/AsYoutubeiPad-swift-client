@@ -33,12 +33,11 @@ class NBMenuSectionGenerator {
         var tableRowHeights: [CGFloat] = [CGFloat]()
 
         // title bar
-        var titleCellObject: NICellObject
+        var titleCellObject: NICellObject  = MenuLoginTitleBarCellObject(menuTitleBarTapProtocol: menuTitleBarTapProtocol)
         if (userInfo.isLogin == true) {
             titleCellObject = MenuTitleBarLoggedCellObject(userName: userInfo.userName, email: userInfo.email, menuTitleBarTapProtocol: menuTitleBarTapProtocol)
-        } else {
-            titleCellObject = MenuLoginTitleBarCellObject(menuTitleBarTapProtocol: menuTitleBarTapProtocol)
         }
+
         tableContents.append(titleCellObject)
         tableRowHeights.append(MENU_TITLEBAR_HEIGHT)
 

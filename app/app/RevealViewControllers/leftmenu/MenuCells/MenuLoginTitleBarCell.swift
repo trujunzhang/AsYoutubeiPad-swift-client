@@ -24,33 +24,24 @@ class MenuLoginTitleBarCellObject: NICellObject {
 }
 
 class MenuLoginTitleBarCell: MenuTitleBarBaseCell, NICell {
-    var userNameLabel: UILabel?
-    var emailLabel: UILabel?
+    var loginLabel: UILabel?
 
     // MARK : Life Cycle
     override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
 
+        loginLabel = UILabel()
+        if let theLoginLabel: UILabel = loginLabel {
+            theLoginLabel.textColor = UIColor.whiteColor()
+            theLoginLabel.text = "Login in"
 
-        userNameLabel = UILabel()
-        if let theUserName: UILabel = userNameLabel {
-            theUserName.textColor = UIColor.whiteColor()
-
-            self.addSubview(theUserName)
-        }
-        emailLabel = UILabel()
-        if let theEmailLabel: UILabel = emailLabel {
-            theEmailLabel.textColor = UIColor.whiteColor()
-
-            self.addSubview(theEmailLabel)
+            self.addSubview(theLoginLabel)
         }
 
+        if let theLoginLabel: UILabel = loginLabel {
 
-
-        if let theUserName: UILabel = userNameLabel, theEmailLabel: UILabel = emailLabel {
-
-            layout(theUserName, theEmailLabel) {
-                view2, view3 in
+            layout(theLoginLabel) {
+                view2 in
 
 //                // theUserName
 //                view2.leadingMargin == 40 + 6
@@ -78,21 +69,14 @@ class MenuLoginTitleBarCell: MenuTitleBarBaseCell, NICell {
     override func prepareForReuse() {
         super.prepareForReuse()
 
-        self.userNameLabel!.text = nil
-        self.emailLabel!.text = nil
+        self.loginLabel!.text = nil
     }
 
     func shouldUpdateCellWithObject(object: AnyObject!) -> Bool {
         backgroundColor = UIColor.clearColor()
 
-        let infoObject: MenuTitleBarLoggedCellObject = object as! MenuTitleBarLoggedCellObject
-
+        let infoObject: MenuLoginTitleBarCellObject = object as! MenuLoginTitleBarCellObject
         self.menuTitleBarTapProtocol = infoObject.menuTitleBarTapProtocol
-
-        if let theUserName: UILabel = userNameLabel, theEmailLabel: UILabel = emailLabel {
-            theUserName.text = infoObject.userName
-            theEmailLabel.text = infoObject.email
-        }
 
         return true
     }
