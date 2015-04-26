@@ -27,7 +27,7 @@ class NBMenuTableViewController: UIViewController, UITableViewDelegate, NBMenuTi
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        self.view.backgroundColor = UIColor(rgba: VIDEO_INFO_BACKGROUND_COLOR)
+        self.view.backgroundColor = UIColor.clearColor()
         YoutubeFetcher.sharedInstance.delegate = self
 
         // create NICellFactory instance
