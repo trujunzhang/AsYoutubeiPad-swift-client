@@ -39,6 +39,8 @@ class LeftRowParamInfo {
     init(sectionIdentifier: CellIdentifier, rowParas: AnyObject) {
         self.rowSectionIdentifier = sectionIdentifier
         self.rowParas = rowParas
+        self.hasSectionTitle = false
+        self.hasAction = true
     }
 
     var simpleDescription: String {
