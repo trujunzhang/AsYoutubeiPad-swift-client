@@ -20,7 +20,8 @@ class MenuTitleBarLoggedCellObject: NICellObject {
 
     init(userName: String, email: String, menuTitleBarTapProtocol: NBMenuTitleBarTapProtocol) {
         super.init(cellClass: MenuLoggedTitleBarCell.self, userInfo: nil)
-
+        self.userName = userName
+        self.email = email
         self.menuTitleBarTapProtocol = menuTitleBarTapProtocol
     }
 }

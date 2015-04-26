@@ -94,6 +94,7 @@ class NBMenuTableViewController: UIViewController, UITableViewDelegate, NBMenuTi
         if (YoutubeUserProfile.sharedInstance.hasLogin()) {
             userInfo = LoggedUserInfo(userName: YoutubeUserProfile.sharedInstance.userChannel.userName, email: YoutubeUserProfile.sharedInstance.userChannel.email)
         }
+//        println(YoutubeUserProfile.sharedInstance.userChannel.simpleDescription)
         tableModelRowInfo = NBMenuSectionGenerator.generatorSections(tableData, menuTitleBarTapProtocol: self, userInfo: userInfo)
 
         model = makeModel(tableModelRowInfo!.tableContents)
