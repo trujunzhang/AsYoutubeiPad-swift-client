@@ -25,8 +25,7 @@ struct NBTableModelRowInfo {
 
 class LeftRowParamInfo {
     var rowSectionIdentifier: CellIdentifier = .CategoriesCellIdentifier
-    var rowHParas: Int = -1
-    var videoId: String = ""
+    var rowParas: AnyObject = -1
     var hasSectionTitle: Bool = true
     var hasAction: Bool = false
 
@@ -37,7 +36,14 @@ class LeftRowParamInfo {
         self.hasSectionTitle = hasSectionTitle
         self.hasAction = false
     }
+    init(sectionIdentifier: CellIdentifier, rowParas: AnyObject) {
+        self.rowSectionIdentifier = sectionIdentifier
+        self.rowParas = rowParas
+    }
 
+    var simpleDescription: String {
+        return "LeftRowParamInfo: rowSectionIdentifier is \(rowSectionIdentifier), rowParas is \(rowParas), hasSectionTitle is \(hasSectionTitle), hasAction is \(hasAction)"
+    }
 
 }
 
