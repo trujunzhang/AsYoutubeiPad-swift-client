@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7702" systemVersion="14D131" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
     </dependencies>
     <scenes>
         <!--Channel Banner View Controller-->
         <scene sceneID="0WL-8T-tRl">
             <objects>
-                <viewController storyboardIdentifier="ChannelBannerViewController" id="aoz-kY-xMM" customClass="ChannelBannerViewController" customModule="AsYoutubeiPadSwiftClient" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ChannelBannerViewController" id="aoz-kY-xMM" customClass="ChannelBannerViewController" customModule="app" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="S8W-iX-85r"/>
                         <viewControllerLayoutGuide type="bottom" id="tao-ad-AWo"/>
@@ -73,6 +73,12 @@
                     <nil key="simulatedStatusBarMetrics"/>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="600" height="300"/>
+                    <connections>
+                        <outlet property="channelSubscribersLabel" destination="oTA-9T-aH7" id="okN-81-U2D"/>
+                        <outlet property="channelThumbnailImageView" destination="Wbk-Dv-rs2" id="i49-gs-boF"/>
+                        <outlet property="channelTitleLabel" destination="tHY-od-n4g" id="tWz-Du-7cX"/>
+                        <outlet property="subscribeButton" destination="V2o-cY-ewi" id="PyZ-j9-h1A"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eNs-7S-kJX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -81,7 +87,7 @@
         <!--Videos Collection View Controller-->
         <scene sceneID="kz8-Zk-dqz">
             <objects>
-                <viewController storyboardIdentifier="YTVideosCollectionViewController" id="4vv-Of-Xsk" customClass="YTVideosCollectionViewController" customModule="AsYoutubeiPadSwiftClient" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="YTVideosCollectionViewController" id="4vv-Of-Xsk" customClass="YTVideosCollectionViewController" customModule="app" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="sJP-4A-plg"/>
                         <viewControllerLayoutGuide type="bottom" id="USD-eb-yup"/>
@@ -100,7 +106,7 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="YTVideoCollectionViewCell" id="k5v-EP-O1O" customClass="YTVideoCollectionViewCell" customModule="AsYoutubeiPadSwiftClient" customModuleProvider="target">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="YTVideoCollectionViewCell" id="k5v-EP-O1O" customClass="YTVideoCollectionViewCell" customModule="app" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -172,7 +178,7 @@
         <!--Tab Bar Items View Controller-->
         <scene sceneID="PoY-Yo-WF6">
             <objects>
-                <viewController storyboardIdentifier="YTTabBarItemsViewController" id="W0Z-AI-8YS" customClass="YTTabBarItemsViewController" customModule="AsYoutubeiPadSwiftClient" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="YTTabBarItemsViewController" id="W0Z-AI-8YS" customClass="YTTabBarItemsViewController" customModule="app" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="H02-Yf-ZuR"/>
                         <viewControllerLayoutGuide type="bottom" id="jQF-ra-bY2"/>

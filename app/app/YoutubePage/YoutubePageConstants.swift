@@ -8,6 +8,7 @@
 
 import Foundation
 
+let DEFAULT_BANNER_IMAGE_NAME = "default_banner"
 
 extension ChannelBannerViewController {
 
