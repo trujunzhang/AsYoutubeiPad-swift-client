@@ -215,10 +215,20 @@ class YoutubeFetcher: NSObject {
     }
 
     // MARK : thumbnail
+    func fetchChannelForPageChannel(channelID: NSString, completeHandler: ObjectHandler) {
+        let fields = "items/snippet(thumbnails),items/statistics"
+        fetchChannelWithChannelId(channelID, fields: fields, completeHandler: completeHandler)
+    }
+
     func fetchChannelForThumbnail(channelID: NSString, completeHandler: ObjectHandler) {
+        let fields = "items/snippet(thumbnails)"
+        fetchChannelWithChannelId(channelID, fields: fields, completeHandler: completeHandler)
+    }
+
+    func fetchChannelWithChannelId(channelID: NSString, fields: String, completeHandler: ObjectHandler) {
         var parameters = NSMutableDictionary(dictionary: [
                 "part": "snippet",
-                "fields": "items/snippet(thumbnails)",
+                "fields": fields,
                 "id": channelID,
         ]
         )

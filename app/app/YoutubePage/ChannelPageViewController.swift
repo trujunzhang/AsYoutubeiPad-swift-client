@@ -11,7 +11,11 @@ import Cartography
 
 class ChannelPageViewController: UIViewController {
 
-    var channelID: String = ""
+    var channelID : String = ""{
+        didSet {
+            fetchingChannel()
+        }
+    }
 
     var channelBannerViewController: ChannelBannerViewController?
     var channelBannerView: UIView?
@@ -66,6 +70,19 @@ class ChannelPageViewController: UIViewController {
 
     override func viewDidLayoutSubviews() {
         var x = 0
+    }
+    
+    // MARK: fetch channel by channelId
+    func fetchingChannel(){
+
+        YoutubeFetcher.sharedInstance.fetchChannelForPageChannel("",completeHandler: { (object, sucess) -> Void in
+            var channel :GTLYouTubeChannel = object as! GTLYouTubeChannel
+            var imageUrl = channel.snippet.thumbnails.high
+            
+            
+
+        })
+        
     }
 
 
