@@ -39,7 +39,7 @@
 // Channel for other request
 + (NSString *)getChannelBannerImageUrl:(id)channel;
 
-+ (NSArray *)getChannelBannerImageUrlArray:(id)channel;
++ (NSString *)getChannelBannerImageUrlArray:(id)channel;
 
 + (NSString *)getChannelSnippetThumbnail:(id)channel;
 

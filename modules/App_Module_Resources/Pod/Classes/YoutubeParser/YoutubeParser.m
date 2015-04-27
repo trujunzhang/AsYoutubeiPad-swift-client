@@ -215,11 +215,7 @@
         ];
     }
 
-    return @[
-            @"",
-            @"",
-            channel.brandingSettings.image.bannerImageUrl,
-    ];
+    return channel.brandingSettings.image.bannerImageUrl;
 }
 
 

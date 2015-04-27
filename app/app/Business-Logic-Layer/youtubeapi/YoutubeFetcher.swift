@@ -30,15 +30,11 @@ class YoutubeFetcher: NSObject {
     override init() {
         super.init()
 
-
         self.youTubeService = GTLServiceYouTube()
-
         if let theYouTubeService: GTLServiceYouTube = self.youTubeService {
-
             theYouTubeService.shouldFetchNextPages = true
             theYouTubeService.retryEnabled = true
             theYouTubeService.APIKey = apiKey
-
         }
     }
 
@@ -135,7 +131,6 @@ class YoutubeFetcher: NSObject {
         var requestInfo: YTYoutubeRequestInfo = YTYoutubeRequestInfo()
 
         requestInfo.makeRequestForSearchWithQueryTeam(queryTeam)
-
         search(requestInfo, completeHandler: completeHandler)
 
         return requestInfo
@@ -145,7 +140,6 @@ class YoutubeFetcher: NSObject {
         var requestInfo: YTYoutubeRequestInfo = YTYoutubeRequestInfo()
 
         requestInfo.makeRequestForRelatedVideo(relatedToVideoId)
-
         search(requestInfo, completeHandler: completeHandler)
 
         return requestInfo
@@ -216,8 +210,23 @@ class YoutubeFetcher: NSObject {
 
     // MARK : thumbnail
     func fetchChannelForPageChannel(channelID: NSString, completeHandler: ObjectHandler) {
-        let fields = "items/snippet(thumbnails),items/statistics"
-        fetchChannelWithChannelId(channelID, fields: fields, completeHandler: completeHandler)
+        let fields = "items/snippet(thumbnails),items/brandingSettings"
+        fetchChannelWithChannelId(channelID, fields: fields, completeHandler: {
+            (object, sucess) -> Void in
+
+            if (sucess == true) {
+                let array = object as! NSArray
+                if (array.count >= 1) {
+                    let channel = array[0] as! MABYT3_Channel
+                    completeHandler(channel, true)
+                } else {
+                    completeHandler(nil, false)
+                }
+            } else {
+                completeHandler(nil, false)
+            }
+        })
+
     }
 
     func fetchChannelForThumbnail(channelID: NSString, completeHandler: ObjectHandler) {
