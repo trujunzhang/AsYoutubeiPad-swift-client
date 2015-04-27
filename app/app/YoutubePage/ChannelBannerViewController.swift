@@ -31,4 +31,11 @@ class ChannelBannerViewController: UIViewController {
         self.subscribeButton.hidden = true
     }
 
+    // MARK: update view
+    func updatePanel(channel: MABYT3_Channel) {
+        let title = YoutubeParser.getChannelBrandingSettingsTitle(channel)
+        let subscriptonCount = YoutubeParser.getChannelStatisticsSubscriberCount(channel)
+
+    }
+
 }

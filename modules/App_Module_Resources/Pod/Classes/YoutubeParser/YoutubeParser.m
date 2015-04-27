@@ -7,6 +7,7 @@
 //
 
 #import <Google-API-Client/GTLYouTubeSubscription.h>
+#import <YouTubeAPI3-Objective-C-wrapper/MABYT3_Channel.h>
 #import "YoutubeParser.h"
 //#import "GTLYouTubeChannelContentDetails.h"
 
@@ -20,6 +21,7 @@
 #import "GTLYouTubeResourceId.h"
 #import "GTLYouTubeThumbnailDetails.h"
 #import "GTLYouTubeThumbnail.h"
+#import "MABYT3_ChannelBrandingSettings.h"
 
 
 @implementation YoutubeParser
@@ -29,7 +31,7 @@
     NSMutableArray *videoIds = [[NSMutableArray alloc] init];
     for (MABYT3_Activity *searchResult in searchResultList) {
         NSString *videoId = [YoutubeParser getvideoIdByActivity:searchResult.contentDetails];
-        if(videoId)
+        if (videoId)
             [videoIds addObject:videoId];
     }
     return [videoIds componentsJoinedByString:@","];
@@ -37,19 +39,19 @@
 
 
 + (NSString *)getvideoIdByActivity:(MABYT3_ActivityContentDetails *)contentDetails {
-    
+
     NSArray *resourceArray = [NSArray arrayWithObjects:
-                              contentDetails.upload,
-                              contentDetails.like,
-                              contentDetails.favorite,
-                              nil];
-    
-    
+            contentDetails.upload,
+            contentDetails.like,
+            contentDetails.favorite,
+                    nil];
+
+
     for (MABYT3_ResourceId *resourceId in resourceArray) {
-        if(![resourceId.videoId isEqualToString:@""])
+        if (![resourceId.videoId isEqualToString:@""])
             return resourceId.videoId;
     }
-    
+
     return nil;
 }
 
@@ -192,52 +194,52 @@
 
 //#pragma mark -
 //#pragma mark Channel for other request
-//
-//
-//+ (NSString *)getChannelBannerImageUrl:(YTYouTubeChannel *)channel {
-//    NSString *imageUrl = channel.brandingSettings.image.bannerMobileMediumHdImageUrl;
-//
-//    NSLog(@"imageUrl = %@", imageUrl);
-//
-//    return imageUrl;
-//}
-//
-//
-//+ (NSArray *)getChannelBannerImageUrlArray:(YTYouTubeChannel *)channel {
-//    NSString *lowUrl = channel.brandingSettings.image.bannerMobileLowImageUrl;
-//    NSString *mediumUrl = channel.brandingSettings.image.bannerMobileMediumHdImageUrl;
-//    NSString *hdUrl = channel.brandingSettings.image.bannerMobileHdImageUrl;
-//    if([mediumUrl isEqualToString:@""] == NO) {
-//        return @[
-//                lowUrl, mediumUrl, hdUrl
-//        ];
-//    }
-//
-//    return @[
-//            @"",
-//            @"",
-//            channel.brandingSettings.image.bannerImageUrl,
-//    ];
-//}
-//
-//
-//+ (NSString *)getChannelSnippetThumbnail:(YTYouTubeChannel *)channel {
-//    YTYouTubeMABThumbmail *thumbnail = channel.snippet.thumbnails[@"default"];
-//    return thumbnail.url;
-//}
-//
-//
-//+ (NSString *)getChannelBrandingSettingsTitle:(YTYouTubeChannel *)channel {
-//    return channel.brandingSettings.channel.title;
-//}
-//
-//
-//+ (NSString *)getChannelStatisticsSubscriberCount:(YTYouTubeChannel *)channel {
-//    unsigned long subscriberCount = channel.statistics.subscriberCount;
-//    return [NSString stringWithFormat:@"%d subscribers", subscriberCount];
-//}
-//
-//
+
+
++ (NSString *)getChannelBannerImageUrl:(MABYT3_Channel *)channel {
+    NSString *imageUrl = channel.brandingSettings.image.bannerMobileMediumHdImageUrl;
+
+    NSLog(@"imageUrl = %@", imageUrl);
+
+    return imageUrl;
+}
+
+
++ (NSArray *)getChannelBannerImageUrlArray:(MABYT3_Channel *)channel {
+    NSString *lowUrl = channel.brandingSettings.image.bannerMobileLowImageUrl;
+    NSString *mediumUrl = channel.brandingSettings.image.bannerMobileMediumHdImageUrl;
+    NSString *hdUrl = channel.brandingSettings.image.bannerMobileHdImageUrl;
+    if ([mediumUrl isEqualToString:@""] == NO) {
+        return @[
+                lowUrl, mediumUrl, hdUrl
+        ];
+    }
+
+    return @[
+            @"",
+            @"",
+            channel.brandingSettings.image.bannerImageUrl,
+    ];
+}
+
+
++ (NSString *)getChannelSnippetThumbnail:(MABYT3_Channel *)channel {
+    MABYT3_Thumbnail *thumbnail = channel.snippet.thumbnails[@"default"];
+    return thumbnail.url;
+}
+
+
++ (NSString *)getChannelBrandingSettingsTitle:(MABYT3_Channel *)channel {
+    return channel.brandingSettings.channel.title;
+}
+
+
++ (NSString *)getChannelStatisticsSubscriberCount:(MABYT3_Channel *)channel {
+    unsigned long subscriberCount = channel.statistics.subscriberCount;
+    return [NSString stringWithFormat:@"%d subscribers", subscriberCount];
+}
+
+
 //#pragma mark -
 //#pragma mark Channel for author
 //
@@ -272,36 +274,35 @@
 
         i++;
 
-        if([str hasPrefix:@"P"] || [str hasPrefix:@"T"])
+        if ([str hasPrefix:@"P"] || [str hasPrefix:@"T"])
             continue;
 
         NSScanner *sc = [NSScanner scannerWithString:str];
         int value = 0;
 
-        if([sc scanInt:&value]) {
+        if ([sc scanInt:&value]) {
             i += [sc scanLocation] - 1;
 
             str = [duration substringWithRange:NSMakeRange(i, duration.length - i)];
 
             i++;
 
-            if([str hasPrefix:@"D"])
+            if ([str hasPrefix:@"D"])
                 days = value;
-            else if([str hasPrefix:@"H"])
+            else if ([str hasPrefix:@"H"])
                 hours = value;
-            else if([str hasPrefix:@"M"])
+            else if ([str hasPrefix:@"M"])
                 minutes = value;
-            else if([str hasPrefix:@"S"])
+            else if ([str hasPrefix:@"S"])
                 seconds = value;
         }
     }
 
-    if(hours == 0) {
+    if (hours == 0) {
         return [NSString stringWithFormat:@"%02d:%02d", minutes, seconds];
     }
     return [NSString stringWithFormat:@"%02d:%02d:%02d", hours, minutes, seconds];
 }
-
 
 
 @end

@@ -225,6 +225,7 @@ class YoutubeFetcher: NSObject {
         fetchChannelWithChannelId(channelID, fields: fields, completeHandler: completeHandler)
     }
 
+    // return MABYT3_Channel
     func fetchChannelWithChannelId(channelID: NSString, fields: String, completeHandler: ObjectHandler) {
         var parameters = NSMutableDictionary(dictionary: [
                 "part": "snippet",
