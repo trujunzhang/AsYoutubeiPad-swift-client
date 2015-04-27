@@ -18,8 +18,17 @@ class ChannelBannerViewController: UIViewController {
     @IBOutlet weak var subscribeButton: UIButton!
 
     override func viewDidLoad() {
-        let defaultImage = UIImage(named: DEFAULT_BANNER_IMAGE_NAME)
+        prepareFetchChannelInfo()
 
+    }
+
+    func prepareFetchChannelInfo() {
+        let defaultImage = UIImage(named: DEFAULT_BANNER_IMAGE_NAME)
+        self.channelThumbnailImageView.image = defaultImage
+
+        self.channelTitleLabel.text = ""
+        self.channelSubscribersLabel.text = ""
+        self.subscribeButton.hidden = true
     }
 
 }

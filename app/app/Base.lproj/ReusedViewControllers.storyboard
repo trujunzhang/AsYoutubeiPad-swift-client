@@ -75,7 +75,7 @@
                     <size key="freeformSize" width="600" height="300"/>
                     <connections>
                         <outlet property="channelSubscribersLabel" destination="oTA-9T-aH7" id="okN-81-U2D"/>
-                        <outlet property="channelThumbnailImageView" destination="Wbk-Dv-rs2" id="i49-gs-boF"/>
+                        <outlet property="channelThumbnailImageView" destination="VMv-v3-sWs" id="bNK-AO-2Ft"/>
                         <outlet property="channelTitleLabel" destination="tHY-od-n4g" id="tWz-Du-7cX"/>
                         <outlet property="subscribeButton" destination="V2o-cY-ewi" id="PyZ-j9-h1A"/>
                     </connections>
