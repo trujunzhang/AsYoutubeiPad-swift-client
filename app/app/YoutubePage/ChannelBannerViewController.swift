@@ -42,6 +42,8 @@ class ChannelBannerViewController: UIViewController {
         }
         self.channelTitleLabel.text = title
         self.channelSubscribersLabel.text = subscriptonCount
+        
+        self.subscribeButton.hidden = false
     }
 
 }

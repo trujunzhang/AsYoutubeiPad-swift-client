@@ -51,8 +51,8 @@ class SubscriptionsViewController: FrontBaseViewController {
     func showChannelPage() {
 
         let channelPageViewController: ChannelPageViewController = ChannelPageViewController() // used
-        channelPageViewController.channelID = "UCGp4UBwpTNegd_4nCpuBcow" // JetBrainsTV
-//        channelPageViewController.channelID = "UCl-radPCbXcrYCE4EdNH3QA" // JFK Library
+//        channelPageViewController.channelID = "UCGp4UBwpTNegd_4nCpuBcow" // JetBrainsTV
+        channelPageViewController.channelID = "UCl-radPCbXcrYCE4EdNH3QA" // JFK Library
         self.addChildViewController(channelPageViewController)
 
         let rootView: UIView = channelPageViewController.view
