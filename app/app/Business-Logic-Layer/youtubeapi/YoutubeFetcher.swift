@@ -210,8 +210,7 @@ class YoutubeFetcher: NSObject {
 
     // MARK : thumbnail
     func fetchChannelForPageChannel(channelID: NSString, completeHandler: ObjectHandler) {
-        let fields = "items/snippet(thumbnails),items/brandingSettings"
-        fetchChannelWithChannelId(channelID, fields: fields, completeHandler: {
+        self.fetchChannelWithChannelId(channelID, fields: "items/brandingSettings,items/statistics", completeHandler: {
             (object, sucess) -> Void in
 
             if (sucess == true) {
