@@ -12,9 +12,9 @@ import Cartography
 class ChannelPageViewController: UIViewController {
 
     var channelBannerViewController: ChannelBannerViewController?
-    var channelBannerView: UIView?;
+    var channelBannerView: UIView?
 
-    var tabBarController: YTTabBarController?
+    var tabBarViewController: YTTabBarController?
     var tabBarView: UIView?
 
 
@@ -22,16 +22,16 @@ class ChannelPageViewController: UIViewController {
         // 1. Top channel Banner panel
         channelBannerViewController = ChannelBannerViewController.instance()
 
-        channelBannerView = channelBannerViewController.view
+        channelBannerView = channelBannerViewController!.view
         if let theChannelBannerView: UIView = channelBannerView {
             self.view.addSubview(theChannelBannerView)
         }
 
         // 2.
-        tabBarController = YTTabBarController()
-        self.addChildViewController(tabBarController)
+        tabBarViewController = YTTabBarController()
+        self.addChildViewController(tabBarViewController!)
 
-        tabBarView = tabBarController.view
+        tabBarView = tabBarViewController!.view
         tabBarView?.backgroundColor = UIColor.blueColor()
         if let theTabBarView: UIView = tabBarView {
             self.view.addSubview(theTabBarView)

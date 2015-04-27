@@ -13,7 +13,7 @@ extension ChannelBannerViewController {
 
     class func instance() -> ChannelBannerViewController {
 
-        var viewController: ChannelBannerViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("ChannelBannerViewController") as! ChannelBannerViewController
+        var viewController: ChannelBannerViewController = UIStoryboard(name: "ReusedViewControllers", bundle: nil).instantiateViewControllerWithIdentifier("ChannelBannerViewController") as! ChannelBannerViewController
 
         return viewController
     }

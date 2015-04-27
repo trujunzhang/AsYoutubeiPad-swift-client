@@ -54,10 +54,10 @@
             </objects>
             <point key="canvasLocation" x="1277" y="-146"/>
         </scene>
-        <!--View Controller-->
+        <!--Subscriptions View Controller-->
         <scene sceneID="H4d-MD-XMW">
             <objects>
-                <viewController id="Lx3-IH-IBJ" sceneMemberID="viewController">
+                <viewController id="Lx3-IH-IBJ" customClass="SubscriptionsViewController" customModule="app" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="gj3-HP-CJi"/>
                         <viewControllerLayoutGuide type="bottom" id="CgT-f5-LIa"/>
