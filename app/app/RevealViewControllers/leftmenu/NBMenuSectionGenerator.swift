@@ -28,6 +28,7 @@ struct LoggedUserInfo {
 
 class NBMenuSectionGenerator {
 
+
     class func generatorSections(tableData: [MenuSectionItemInfo], menuTitleBarTapProtocol: NBMenuTitleBarTapProtocol, userInfo: LoggedUserInfo) -> NBTableModelRowInfo {
         var tableContents: [AnyObject] = [AnyObject]()
         var tableRowHeights: [CGFloat] = [CGFloat]()

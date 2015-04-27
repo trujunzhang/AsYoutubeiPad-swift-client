@@ -6,6 +6,7 @@
 //  Copyright (c) 2014 djzhang. All rights reserved.
 //
 
+#import <Google-API-Client/GTLYouTubeSubscription.h>
 #import "YoutubeParser.h"
 //#import "GTLYouTubeChannelContentDetails.h"
 
@@ -15,6 +16,10 @@
 #import "MABYT3_SearchItem.h"
 
 #import "YoutubeVideoCache.h"
+#import "GTLYouTubeSubscriptionSnippet.h"
+#import "GTLYouTubeResourceId.h"
+#import "GTLYouTubeThumbnailDetails.h"
+#import "GTLYouTubeThumbnail.h"
 
 
 @implementation YoutubeParser
@@ -60,21 +65,21 @@
 
 //#pragma mark -
 //#pragma mark Subscription
-//
-//
-//+ (NSString *)getChannelIdBySubscription:(YTYouTubeSubscription *)subscription {
-//    return subscription.snippet.resourceId.JSON[@"channelId"];
-//}
-//
-//
-//+ (NSString *)getSubscriptionSnippetThumbnailUrl:(YTYouTubeSubscription *)subscription {
-//    return subscription.snippet.thumbnails.high.url;
-//}
-//
-//
-//+ (NSString *)getSubscriptionSnippetTitle:(YTYouTubeSubscription *)subscription {
-//    return subscription.snippet.title;
-//}
+
+
++ (NSString *)getChannelIdBySubscription:(GTLYouTubeSubscription *)subscription {
+    return subscription.snippet.resourceId.JSON[@"channelId"];
+}
+
+
++ (NSString *)getSubscriptionSnippetThumbnailUrl:(GTLYouTubeSubscription *)subscription {
+    return subscription.snippet.thumbnails.high.url;
+}
+
+
++ (NSString *)getSubscriptionSnippetTitle:(GTLYouTubeSubscription *)subscription {
+    return subscription.snippet.title;
+}
 
 
 #pragma mark -

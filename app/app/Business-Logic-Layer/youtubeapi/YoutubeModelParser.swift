@@ -64,7 +64,7 @@ class YoutubeModelParser {
     }
 
     class func getSubscriptionChannelId(subscription: GTLYouTubeSubscription) -> String {
-        return subscription.snippet.resourceId.channelId as String
+        return (subscription.snippet.resourceId.JSON["channelId"] as? String)!
     }
 
     class func getSubscriptionUrl(subscription: GTLYouTubeSubscription) -> String {
@@ -80,9 +80,9 @@ class YoutubeModelParser {
         var rows = [MenuRowItemInfo]()
 
         for subscription in subscriptions {
-            var title: String = self.getSubscriptionTitle(subscription as! GTLYouTubeSubscription)
-            var url: String = self.getSubscriptionUrl(subscription as! GTLYouTubeSubscription)
-            var channelId: String = self.getSubscriptionChannelId(subscription as! GTLYouTubeSubscription)
+            var title: String = YoutubeModelParser.getSubscriptionTitle(subscription as! GTLYouTubeSubscription)
+            var url: String = YoutubeModelParser.getSubscriptionUrl(subscription as! GTLYouTubeSubscription)
+            var channelId: String = YoutubeModelParser.getSubscriptionChannelId(subscription as! GTLYouTubeSubscription)
             var rowItem: MenuRowItemInfo = MenuRowItemInfo(title: title, imageUrl: url, rowHParas: channelId)
             rows.append(rowItem)
         }
