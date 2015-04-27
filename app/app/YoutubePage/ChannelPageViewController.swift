@@ -18,7 +18,7 @@ class ChannelPageViewController:UIViewController {
     
     override func viewDidLoad() {
         // 1. Top channel Banner panel
-        var _channelBannerViewController: ChannelBannerViewController = StoryBoardUtils.getChannelBannerViewController()
+        var _channelBannerViewController: ChannelBannerViewController = ChannelBannerViewController.instance()
         
         channelBannerViewController = _channelBannerViewController
         channelBannerView = _channelBannerViewController.view

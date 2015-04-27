@@ -35,9 +35,9 @@ class YTTabBarItemsViewController: UIViewController {
         
     }
     
-    func makeTabBarItemsDictionary() ->TabBarItemsDictionary {
+    func makeTabBarItemsDictionary() ->TabBarItemsDictionary {// TODO djzhang
         let controller:UIViewController? = UIViewController()
-        let collectionView:YTVideosCollectionViewController = StoryBoardUtils.getYTVideosCollectionViewController()
+//        let collectionView:YTVideosCollectionViewController = StoryBoardUtils.getYTVideosCollectionViewController()
         
         //1
         let buttons:NSMutableDictionary = NSMutableDictionary()
@@ -47,7 +47,7 @@ class YTTabBarItemsViewController: UIViewController {
         
         //2
         let viewControllers:NSMutableDictionary = NSMutableDictionary()
-        viewControllers.setObject(collectionView, forKey: "Activity")
+//        viewControllers.setObject(collectionView, forKey: "Activity")
         viewControllers.setObject(controller!, forKey: "Videos")
         viewControllers.setObject(controller!, forKey: "PlayList")
         

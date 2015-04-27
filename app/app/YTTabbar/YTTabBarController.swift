@@ -41,7 +41,7 @@ class YTTabBarController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // 1
-        var _tabBarItemsViewController: YTTabBarItemsViewController = StoryBoardUtils.getYTTabBarItemsViewController()
+        var _tabBarItemsViewController: YTTabBarItemsViewController = YTTabBarItemsViewController.instance()
         
         let _tabBarItemsView:UIView = _tabBarItemsViewController.view!
         
@@ -69,7 +69,7 @@ class YTTabBarController: UIViewController {
             view1.width   == view1.superview!.width
             view2.width   == view1.width
             
-            view1.height  == TAB_HEIGHT
+            view1.height  == TAB_BAR_HEIGHT
             
             view1.top     == view1.superview!.top
             view2.top     == view1.bottom

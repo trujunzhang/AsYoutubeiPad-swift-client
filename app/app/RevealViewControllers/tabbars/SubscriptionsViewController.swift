@@ -12,9 +12,8 @@ import Cartography
 
 class SubscriptionsViewController: FrontBaseViewController {
     
-    @IBOutlet var container: UIView!
-    
-    var menuTableViewController: NBMenuTableViewController? // unused(test)
+    var menuTableViewController: NBMenuTableViewController?
+    // unused(test)
     var menuTableRootView: UIView?
     
     override func viewDidLoad() {
@@ -22,13 +21,13 @@ class SubscriptionsViewController: FrontBaseViewController {
         
         showChannelPage()
         
-//        showLeftMenu() // test
+        //        showLeftMenu() // test
     }
     
-    func showLeftMenu(){
+    func showLeftMenu() {
         menuTableViewController = NBMenuTableViewController.instance()
         
-        if let viewController:UIViewController = menuTableViewController {
+        if let viewController: UIViewController = menuTableViewController {
             menuTableRootView = viewController.view
             
             self.view.addSubview(menuTableRootView!)
@@ -49,19 +48,27 @@ class SubscriptionsViewController: FrontBaseViewController {
         }
     }
     
-    func showChannelPage(){
+    func showChannelPage() {
         
-        //        let channelPageViewController: ChannelPageViewController = ChannelPageViewController() // used
+        let channelPageViewController: ChannelPageViewController = ChannelPageViewController() // used
+        self.addChildViewController(channelPageViewController)
         
-        //        let channelPageViewController: YTVideoWatchViewController = YTVideoWatchViewController()
-        ////        channelPageViewController.videoID = "uD6Okha_Yj0"// has subtitle
-        //        channelPageViewController.videoID = "eoXneK3WIgQ"  // no  subtitle
-        //
-        //        channelPageViewController.view.frame = container.bounds
-        //
-        //        container.addSubview(channelPageViewController.view)
-        //
-        //        self.addChildViewController(channelPageViewController)
+        let rootView: UIView = channelPageViewController.view
+        self.view.addSubview(rootView)
+        LayoutUtils.LayoutFullView(rootView)
+        
+    }
+    
+    func showWatchVideoPage() {
+//        let channelPageViewController: YTVideoWatchViewController = YTVideoWatchViewController()
+//        //        channelPageViewController.videoID = "uD6Okha_Yj0"// has subtitle
+//        channelPageViewController.videoID = "eoXneK3WIgQ"  // no  subtitle
+//        
+//        self.addChildViewController(channelPageViewController)
+//        
+//        let rootView: UIView = channelPageViewController.view
+//        self.view.addSubview(rootView)
+//        LayoutUtils.LayoutFullView(rootView)
     }
     
     //    func test(){
