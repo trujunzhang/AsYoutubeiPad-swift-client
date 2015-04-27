@@ -205,17 +205,20 @@
 }
 
 
-+ (NSArray *)getChannelBannerImageUrlArray:(MABYT3_Channel *)channel {
-    NSString *lowUrl = channel.brandingSettings.image.bannerMobileLowImageUrl;
-    NSString *mediumUrl = channel.brandingSettings.image.bannerMobileMediumHdImageUrl;
-    NSString *hdUrl = channel.brandingSettings.image.bannerMobileHdImageUrl;
-    if ([mediumUrl isEqualToString:@""] == NO) {
-        return @[
-                lowUrl, mediumUrl, hdUrl
-        ];
-    }
+/**
+* bannerMobileImageUrl
+*/
++ (NSString *)getChannelBannerImageUrlArray:(MABYT3_Channel *)channel {
+    MABYT3_ChannelBrandingSettings *brandingSettings = channel.brandingSettings;
+    MABYT3_ChannelBrandingSettingsImage *brandingSettingsImage = brandingSettings.image;
+    NSString *bannerMobileImageUrl = brandingSettingsImage.bannerMobileImageUrl;
 
-    return channel.brandingSettings.image.bannerImageUrl;
+//    NSString *lowUrl = channel.brandingSettings.image.bannerMobileLowImageUrl;
+//    NSString *mediumUrl = channel.brandingSettings.image.bannerMobileMediumHdImageUrl;
+//    NSString *hdUrl = channel.brandingSettings.image.bannerMobileHdImageUrl;
+
+    return bannerMobileImageUrl;
+//    return channel.brandingSettings.image.bannerImageUrl;
 }
 
 

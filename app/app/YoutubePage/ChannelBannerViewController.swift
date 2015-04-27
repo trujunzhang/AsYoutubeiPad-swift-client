@@ -33,11 +33,13 @@ class ChannelBannerViewController: UIViewController {
 
     // MARK: update view
     func updatePanel(channel: MABYT3_Channel) {
-        let imageUrl = YoutubeParser.getChannelBannerImageUrlArray(channel)
+        let imageUrl: String = YoutubeParser.getChannelBannerImageUrlArray(channel)
         let title = YoutubeParser.getChannelBrandingSettingsTitle(channel)
         let subscriptonCount = YoutubeParser.getChannelStatisticsSubscriberCount(channel)
 
-        self.channelThumbnailImageView.hnk_setImageFromURL(NSURL(string: imageUrl)!)
+        if(imageUrl.isEmpty == false){
+            self.channelThumbnailImageView.hnk_setImageFromURL(NSURL(string: imageUrl)!)
+        }
         self.channelTitleLabel.text = title
         self.channelSubscribersLabel.text = subscriptonCount
     }

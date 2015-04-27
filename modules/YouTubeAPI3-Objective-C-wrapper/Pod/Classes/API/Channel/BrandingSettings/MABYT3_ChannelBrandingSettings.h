@@ -19,7 +19,7 @@
 @property (strong, nonatomic) MABYT3_ChannelBrandingSettingsChannel *channel;
 @property (strong, nonatomic) MABYT3_ChannelBrandingSettingsWatch *watch;
 @property (strong, nonatomic) MABYT3_ChannelBrandingSettingsImage *image;
-@property (strong, nonatomic) NSMutableArray *hints;
+@property (strong, nonatomic) NSMutableArray *hints; // of GTLYouTubePropertyValue
 
 
 - (id) initFromDictionary:(NSDictionary *)dict;

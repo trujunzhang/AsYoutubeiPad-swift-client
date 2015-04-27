@@ -43,7 +43,7 @@
             _image = [[MABYT3_ChannelBrandingSettingsImage alloc] initFromDictionary:[dict objectForKey:@"image"]];
         }
         if ([dict objectForKey:@"hints"]) {
-            _image = [dict objectForKey:@"hints"];
+//            _image = [dict objectForKey:@"hints"];
         }
         
     }
