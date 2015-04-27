@@ -38,21 +38,23 @@ class ChannelPageViewController: UIViewController {
         }
 
         //3.
-        layout(channelBannerView!, tabBarView!) {
-            view1, view2 in
+        if let theChannelBannerView: UIView = channelBannerView, theTabBarView: UIView = tabBarView {
+            layout(theChannelBannerView, theTabBarView) {
+                view1, view2 in
 
-            view1.centerX == view1.superview!.centerX
-            view2.centerX == view1.centerX
+                view1.centerX == view1.superview!.centerX
+                view2.centerX == view1.centerX
 
-            view1.width == view1.superview!.width
-            view2.width == view1.width
+                view1.width == view1.superview!.width
+                view2.width == view1.width
 
-            view1.height == 200
+                view1.height == 200
 
-            view1.top == view1.superview!.top
-            view2.top == view1.bottom
+                view1.top == view1.superview!.top
+                view2.top == view1.bottom
 
-            view2.bottom == view2.superview!.bottom
+                view2.bottom == view2.superview!.bottom
+            }
         }
     }
 
