@@ -210,7 +210,7 @@ class YoutubeFetcher: NSObject {
 
     // MARK : thumbnail
     func fetchChannelForPageChannel(channelID: NSString, completeHandler: ObjectHandler) {
-        self.fetchChannelWithChannelId(channelID, fields: "items/brandingSettings,items/statistics", completeHandler: {
+        self.fetchChannelWithChannelId(channelID, part: "statistics,brandingSettings", fields: "items(brandingSettings,statistics)", completeHandler: {
             (object, sucess) -> Void in
 
             if (sucess == true) {
@@ -230,13 +230,13 @@ class YoutubeFetcher: NSObject {
 
     func fetchChannelForThumbnail(channelID: NSString, completeHandler: ObjectHandler) {
         let fields = "items/snippet(thumbnails)"
-        fetchChannelWithChannelId(channelID, fields: fields, completeHandler: completeHandler)
+        fetchChannelWithChannelId(channelID, part: "snippet", fields: fields, completeHandler: completeHandler)
     }
 
     // return MABYT3_Channel
-    func fetchChannelWithChannelId(channelID: NSString, fields: String, completeHandler: ObjectHandler) {
+    func fetchChannelWithChannelId(channelID: NSString, part: String, fields: String, completeHandler: ObjectHandler) {
         var parameters = NSMutableDictionary(dictionary: [
-                "part": "snippet",
+                "part": part,
                 "fields": fields,
                 "id": channelID,
         ]
