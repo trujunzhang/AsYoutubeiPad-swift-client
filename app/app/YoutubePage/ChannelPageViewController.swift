@@ -9,60 +9,60 @@
 import Foundation
 import Cartography
 
-class ChannelPageViewController:UIViewController {
-    
+class ChannelPageViewController: UIViewController {
+
     var channelBannerViewController: ChannelBannerViewController?
-    var channelBannerView : UIView?;
-    var tabBarView : UIView?
-    
-    
+    var channelBannerView: UIView?;
+
+    var tabBarController: YTTabBarController?
+    var tabBarView: UIView?
+
+
     override func viewDidLoad() {
         // 1. Top channel Banner panel
-        var _channelBannerViewController: ChannelBannerViewController = ChannelBannerViewController.instance()
-        
-        channelBannerViewController = _channelBannerViewController
-        channelBannerView = _channelBannerViewController.view
-        
-        self.view.addSubview(channelBannerView!)
-        
+        channelBannerViewController = ChannelBannerViewController.instance()
+
+        channelBannerView = channelBannerViewController.view
+        if let theChannelBannerView: UIView = channelBannerView {
+            self.view.addSubview(theChannelBannerView)
+        }
+
         // 2.
-        var tabBarController:YTTabBarController = YTTabBarController()
-        var _tabBarView:UIView = tabBarController.view!
-        
-        tabBarView = _tabBarView
-        
+        tabBarController = YTTabBarController()
         self.addChildViewController(tabBarController)
-        
-//        tabBarView?.backgroundColor = UIColor.blueColor()
-        
-        self.view.addSubview(tabBarView!)
-        
+
+        tabBarView = tabBarController.view
+        tabBarView?.backgroundColor = UIColor.blueColor()
+        if let theTabBarView: UIView = tabBarView {
+            self.view.addSubview(theTabBarView)
+        }
+
         //3.
-        layout(channelBannerView!, tabBarView!) { view1, view2 in
-            
+        layout(channelBannerView!, tabBarView!) {
+            view1, view2 in
+
             view1.centerX == view1.superview!.centerX
             view2.centerX == view1.centerX
-            
-            view1.width   == view1.superview!.width
-            view2.width   == view1.width
-            
-            view1.height  == 200
-            
+
+            view1.width == view1.superview!.width
+            view2.width == view1.width
+
+            view1.height == 200
+
             view1.top == view1.superview!.top
             view2.top == view1.bottom
-            
+
             view2.bottom == view2.superview!.bottom
         }
     }
-    
+
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
     }
-    
+
     override func viewDidLayoutSubviews() {
         var x = 0
     }
-    
-    
-    
+
+
 }
