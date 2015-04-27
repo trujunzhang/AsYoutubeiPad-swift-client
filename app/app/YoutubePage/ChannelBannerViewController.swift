@@ -9,7 +9,7 @@
 import Foundation
 
 class ChannelBannerViewController:UIViewController {
-    
+    var channelID :String = ""
         
     override func viewDidLoad() {
         

@@ -11,6 +11,8 @@ import Cartography
 
 class ChannelPageViewController: UIViewController {
 
+    var channelID: String = ""
+
     var channelBannerViewController: ChannelBannerViewController?
     var channelBannerView: UIView?
 
