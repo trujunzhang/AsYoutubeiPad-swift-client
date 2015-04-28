@@ -1,5 +1,5 @@
 //
-//  YoutubeFetcherPlayListTests.swift
+//  YoutubeFetcherPlayListItemTests.swift
 //  appRestApp
 //
 //  Created by djzhang on 4/28/15.
@@ -25,7 +25,7 @@ class YoutubeFetcherPlayListTests: YoutubeFetcherBase {
     func testFetchPlayListWithPlayListId() {
         let expectation = expectationWithDescription("fetchPlayListWithPlayListId")
 
-        YoutubeFetcher.sharedInstance.fetchPlayListWithPlayListId(playlistID, completeHandler: {
+        YoutubeFetcher.sharedInstance.fetchPlayListItemWithPlayListId(playlistID, completeHandler: {
             (object, sucess) -> Void in
 
             XCTAssertNotNil(object, "object not nil")
@@ -37,9 +37,9 @@ class YoutubeFetcherPlayListTests: YoutubeFetcherBase {
 
                 XCTAssertTrue(array.count == 1, "Array length must be one")
 
-                XCTAssertTrue(array[0] is MABYT3_PlayList, "Array object must be MABYT3_PlayList")
+                XCTAssertTrue(array[0] is MABYT3_PlayListItem, "Array object must be MABYT3_PlayListItem")
 
-                var channel: MABYT3_PlayList = array[0] as! MABYT3_PlayList
+                var channel: MABYT3_PlayListItem = array[0] as! MABYT3_PlayListItem
 //                var imageUrl = YoutubeModelParser.getMABChannelThumbnalUrl(channel)
 //                XCTAssertNotNil(imageUrl, "imageUrl must not nil")
             }

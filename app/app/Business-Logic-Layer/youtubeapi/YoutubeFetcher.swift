@@ -267,13 +267,13 @@ class YoutubeFetcher: NSObject {
     }
 
     // MARK: PlayList
-    func fetchPlayListWithPlayListId(playlistID: NSString, completeHandler: ObjectHandler) {
+    func fetchPlayListItemWithPlayListId(playlistID: NSString, completeHandler: ObjectHandler) {
         let fields = "items/snippet"
-        fetchPlayListWithPlayListId(playlistID, part: "snippet", fields: fields, completeHandler: completeHandler)
+        fetchPlayListItemWithPlayListId(playlistID, part: "snippet", fields: fields, completeHandler: completeHandler)
     }
 
     // MABYT3_PlayList
-    func fetchPlayListWithPlayListId(playlistID: NSString, part: String, fields: String, completeHandler: ObjectHandler) {
+    func fetchPlayListItemWithPlayListId(playlistID: NSString, part: String, fields: String, completeHandler: ObjectHandler) {
         var parameters = NSMutableDictionary(dictionary: [
                 "part": part,
                 "fields": fields,
