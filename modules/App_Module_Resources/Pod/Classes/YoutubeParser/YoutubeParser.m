@@ -227,6 +227,11 @@
     return thumbnail.url;
 }
 
++ (NSString *)getChannelUploadsAsPlaylistId:(MABYT3_Channel *)channel {
+    NSMutableDictionary *dictionary = channel.contentDetails.relatedPlaylists;
+    return dictionary[@"uploads"];
+}
+
 
 + (NSString *)getChannelBrandingSettingsTitle:(MABYT3_Channel *)channel {
     return channel.brandingSettings.channel.title;

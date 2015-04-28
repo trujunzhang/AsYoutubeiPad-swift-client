@@ -83,7 +83,7 @@ class YoutubeFetcherForChannelTests: YoutubeFetcherBase {
                 XCTAssertTrue(array[0] is MABYT3_Channel, "Array object must be MABYT3_Channel")
 
                 var channel :MABYT3_Channel = array[0] as! MABYT3_Channel
-//                var imageUrl = YoutubeModelParser.getMABChannelThumbnalUrl(channel)
+                var imageUrl = YoutubeParser.getChannelUploadsAsPlaylistId(channel)
 //                XCTAssertNotNil(imageUrl, "imageUrl must not nil")
             }
             expectation.fulfill()

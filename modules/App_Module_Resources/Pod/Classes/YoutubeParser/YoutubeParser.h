@@ -43,6 +43,8 @@
 
 + (NSString *)getChannelSnippetThumbnail:(id)channel;
 
++ (NSString *)getChannelUploadsAsPlaylistId:(MABYT3_Channel *)channel;
+
 // Subscription
 + (NSString *)getChannelIdBySubscription:(id)subscription;
 
