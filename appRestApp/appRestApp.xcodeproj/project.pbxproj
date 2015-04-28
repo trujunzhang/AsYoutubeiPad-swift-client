@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		5E0024511AEA55AF00BB7383 /* YoutubeModelParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E0024501AEA55AF00BB7383 /* YoutubeModelParser.swift */; };
+		5E01B7B91AEF2C8500AA579C /* YoutubeFetcherSubscriptionListTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E01B7B81AEF2C8500AA579C /* YoutubeFetcherSubscriptionListTests.swift */; };
 		5E1C9B0E1AEA588A00B45119 /* YoutubeApiConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E1C9B0D1AEA588A00B45119 /* YoutubeApiConstant.swift */; };
 		5E1C9B101AEA58A800B45119 /* YTYoutubeRequestInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E1C9B0F1AEA58A800B45119 /* YTYoutubeRequestInfo.swift */; };
 		5E1C9B141AEA58E400B45119 /* YouTubeExtractorUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E1C9B131AEA58E400B45119 /* YouTubeExtractorUtils.swift */; };
@@ -61,6 +62,7 @@
 		4E1383687FCA84694E2ACDE6 /* Pods-appRestAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-appRestAppTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-appRestAppTests/Pods-appRestAppTests.release.xcconfig"; sourceTree = "<group>"; };
 		5716800398E23E4EE3654011 /* Pods-appRestApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-appRestApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-appRestApp/Pods-appRestApp.release.xcconfig"; sourceTree = "<group>"; };
 		5E0024501AEA55AF00BB7383 /* YoutubeModelParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YoutubeModelParser.swift; sourceTree = "<group>"; };
+		5E01B7B81AEF2C8500AA579C /* YoutubeFetcherSubscriptionListTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YoutubeFetcherSubscriptionListTests.swift; sourceTree = "<group>"; };
 		5E1C9B0D1AEA588A00B45119 /* YoutubeApiConstant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YoutubeApiConstant.swift; sourceTree = "<group>"; };
 		5E1C9B0F1AEA58A800B45119 /* YTYoutubeRequestInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YTYoutubeRequestInfo.swift; sourceTree = "<group>"; };
 		5E1C9B131AEA58E400B45119 /* YouTubeExtractorUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YouTubeExtractorUtils.swift; sourceTree = "<group>"; };
@@ -130,6 +132,7 @@
 				5E540C8E1AEA5A73001174F4 /* YoutubeFetcherForChannelTests.swift */,
 				5E540C8F1AEA5A73001174F4 /* YoutubeFetcherForVideosTests.swift */,
 				5E4B4B5C1AEF252800F1B115 /* YoutubeFetchNewSubscriptionVideosTests.swift */,
+				5E01B7B81AEF2C8500AA579C /* YoutubeFetcherSubscriptionListTests.swift */,
 			);
 			name = youtube.api;
 			path = ../../UnitTests/youtube.api;
@@ -464,6 +467,7 @@
 				5E540C9E1AEA5B2F001174F4 /* Tools.swift in Sources */,
 				5EDFD4E11AEDB4070033E0A1 /* LoggedUserChannelInfo.swift in Sources */,
 				5E540C921AEA5A73001174F4 /* YoutubeFetcherBase.swift in Sources */,
+				5E01B7B91AEF2C8500AA579C /* YoutubeFetcherSubscriptionListTests.swift in Sources */,
 				5E540C901AEA5A73001174F4 /* YoutubeDataFetcherForCaptionTests.swift in Sources */,
 				5EDFD4E01AEDB3FA0033E0A1 /* YoutubeUserProfile.swift in Sources */,
 			);
