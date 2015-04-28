@@ -13,6 +13,7 @@ import XCTest
 
 // http://stackoverflow.com/questions/19640796/retrieving-all-the-new-subscription-videos-in-youtube-v3-api
 
+//Retrieving all the new subscription videos in YouTube v3 API
 //You can retrieve this information with the Youtube V3 API but it is incredibly inefficient:
 //
 //1, First get the channel ID from the username (one request).
@@ -24,17 +25,16 @@ import XCTest
 //You can now sort the videos by publishing date and print the most recent.
 
 class YoutubeFetchNewSubscriptionVideosTests: YoutubeFetcherBase {
-    
+
     override func setUp() {
         super.setUp()
         // Put setup code here. This method is called before the invocation of each test method in the class.
     }
-    
+
     override func tearDown() {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
         super.tearDown()
     }
-    
 
-    
+
 }
