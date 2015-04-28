@@ -281,6 +281,8 @@ class YoutubeFetcher: NSObject {
         ]
         )
 
+        println("parameters is \(parameters)")
+
         MABYT3_APIRequest.sharedInstance().LISTPlayListItemForURL(parameters, completion: {
             (responseInfo, error) -> Void in
             if (error == nil) {
