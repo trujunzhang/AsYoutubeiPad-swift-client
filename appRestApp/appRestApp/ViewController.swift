@@ -17,6 +17,7 @@ class ViewController: UIViewController,AuthorUserFetchingDelegate {
         YoutubeFetcher.sharedInstance.delegate = self
         if (YoutubeUserProfile.sharedInstance.hasLogin() == true) {
             loginButton.enabled = false
+            loginButton.backgroundColor = UIColor.redColor()
             self.startFetchingLoggedSubscriptionList()
         }
     }

@@ -20,6 +20,8 @@ class YoutubeFetcherBase: XCTestCase {
     //  "channelTitle": "Adobe Acrobat"
     var playlistID: NSString = "UUl78QGX_hfK6zT8Mc-2w8GA"
 
+    var channelIDs: NSString = "UCbn1OgGei-DV7aSRo_HaAiw,UCl78QGX_hfK6zT8Mc-2w8GA,UCl-radPCbXcrYCE4EdNH3QA"
+
 
     override func setUp() {
         super.setUp()
