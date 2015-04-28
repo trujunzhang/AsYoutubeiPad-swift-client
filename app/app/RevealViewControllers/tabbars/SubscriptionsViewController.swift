@@ -32,7 +32,6 @@ class SubscriptionsViewController: FrontBaseViewController {
 
             self.view.addSubview(menuTableRootView!)
 
-
             layout(menuTableRootView!) {
                 view1 in
 
