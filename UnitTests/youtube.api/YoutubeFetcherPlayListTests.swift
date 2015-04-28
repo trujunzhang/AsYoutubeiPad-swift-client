@@ -7,7 +7,7 @@
 //
 
 import Foundation
-
+import XCTest
 
 class YoutubeFetcherPlayListTests: YoutubeFetcherBase {
 

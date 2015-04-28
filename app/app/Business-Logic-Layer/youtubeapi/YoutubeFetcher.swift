@@ -260,7 +260,7 @@ class YoutubeFetcher: NSObject {
         var parameters = NSMutableDictionary(dictionary: [
                 "part": part,
                 "fields": fields,
-                "id": channelID,
+                "id": playlistID,
         ]
         )
 

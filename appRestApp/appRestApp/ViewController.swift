@@ -9,22 +9,24 @@
 import UIKit
 
 class ViewController: UIViewController,AuthorUserFetchingDelegate {
-
+    
+    @IBOutlet weak var loginButton: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         YoutubeFetcher.sharedInstance.delegate = self
         if (YoutubeUserProfile.sharedInstance.hasLogin() == true) {
-              self.startFetchingLoggedSubscriptionList()
+            loginButton.enabled = false
+            self.startFetchingLoggedSubscriptionList()
         }
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
-
+    
+    
     @IBAction func loginTapped(sender: AnyObject) {
         let viewController: GTMOAuth2ViewControllerTouch =
         GTMOAuth2ViewControllerTouch(scope: scope, clientID: kMyClientID, clientSecret: kMyClientSecret, keychainItemName: keychainItemName) {
@@ -63,7 +65,7 @@ class ViewController: UIViewController,AuthorUserFetchingDelegate {
     // MARK: AuthorUserFetchingDelegate
     func endFetchingUserChannel(channel: GTLYouTubeChannel){
         let x = 0
-
+        
     }
     
     func endFetchingUserSubscriptions(array: NSArray){
