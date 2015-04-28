@@ -174,9 +174,6 @@ class YoutubeFetcher: NSObject {
         })
     }
 
-
-
-
     // MARK : Videos.List
     func fetchVideoListWithVideoId(videoIds: NSString, completeHandler: ObjectHandler) {
         var parameters = [
@@ -243,6 +240,31 @@ class YoutubeFetcher: NSObject {
         )
 
         MABYT3_APIRequest.sharedInstance().LISTChannelsThumbnailsForURL(parameters, completion: {
+            (responseInfo, error) -> Void in
+            if (error == nil) {
+                completeHandler(responseInfo.array, true)
+            } else {
+                completeHandler(nil, false)
+            }
+        })
+    }
+
+    // MARK: PlayList
+    func fetchPlayListWithPlayListId(playlistID: NSString, completeHandler: ObjectHandler) {
+        let fields = "items/snippet"
+        fetchPlayListWithPlayListId(playlistID, part: "snippet", fields: fields, completeHandler: completeHandler)
+    }
+
+    // MABYT3_PlayList
+    func fetchPlayListWithPlayListId(playlistID: NSString, part: String, fields: String, completeHandler: ObjectHandler) {
+        var parameters = NSMutableDictionary(dictionary: [
+                "part": part,
+                "fields": fields,
+                "id": channelID,
+        ]
+        )
+
+        MABYT3_APIRequest.sharedInstance().LISTPlayListForURL(parameters, completion: {
             (responseInfo, error) -> Void in
             if (error == nil) {
                 completeHandler(responseInfo.array, true)

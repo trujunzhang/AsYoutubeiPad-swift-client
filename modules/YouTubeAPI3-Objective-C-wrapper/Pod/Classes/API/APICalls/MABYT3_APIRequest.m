@@ -31,7 +31,7 @@
 - (NSMutableDictionary *)commonDictionary:(NSMutableDictionary *)parameters maxResultsString:(NSString *)maxResultsString {
     NSMutableDictionary *dictionary = [parameters mutableCopy];
     [dictionary setObject:apiKey forKey:@"key"];
-    if(maxResultsString)
+    if (maxResultsString)
         [dictionary setObject:maxResultsString forKey:@"maxResults"];
     return dictionary;
 }
@@ -42,13 +42,13 @@
     NSDictionary *dict = [NSJSONSerialization JSONObjectWithData:data
                                                          options:NSJSONReadingMutableContainers
                                                            error:&e];
-    if([dict objectForKey:@"error"]) {
+    if ([dict objectForKey:@"error"]) {
         NSDictionary *dict2 = [dict objectForKey:@"error"];
-        if([dict2 objectForKey:@"errors"]) {
+        if ([dict2 objectForKey:@"errors"]) {
             NSArray *items = [dict2 objectForKey:@"errors"];
-            if(items.count > 0) {
+            if (items.count > 0) {
                 NSString *dom = @"YTAPI";
-                if([items[0] objectForKey:@"domain"]) {
+                if ([items[0] objectForKey:@"domain"]) {
                     dom = [items[0] objectForKey:@"domain"];
                 }
                 error = [NSError errorWithDomain:dom
@@ -102,9 +102,9 @@
     NSURLSessionDataTask *task = [self GET:@"/timedtext"
                                 parameters:dictionary
                                    success:^(NSURLSessionDataTask *task, id responseObject) {
-                                       NSHTTPURLResponse *httpResponse = (NSHTTPURLResponse *)task.response;
+                                       NSHTTPURLResponse *httpResponse = (NSHTTPURLResponse *) task.response;
 
-                                       if(httpResponse.statusCode == 200) {
+                                       if (httpResponse.statusCode == 200) {
                                            YoutubeResponseInfo *responseInfo = [self parseVideoTranscriptListWithData:responseObject];
                                            dispatch_async(dispatch_get_main_queue(), ^{
                                                completion(responseInfo, nil);
@@ -127,24 +127,24 @@
 
 
 //http://video.google.com/timedtext?type=track&v=boBex_v3_eA&name=&lang=en
-- (NSURLSessionDataTask *)fetchVideoTranscript:(NSString *)videoId  withTrack:(MABYT3_Track*)track  completion:(MABYoutubeResponseBlock)completion {
+- (NSURLSessionDataTask *)fetchVideoTranscript:(NSString *)videoId withTrack:(MABYT3_Track *)track completion:(MABYoutubeResponseBlock)completion {
     NSMutableDictionary *dictionary = [[NSMutableDictionary alloc] init];
 
     [dictionary setObject:videoId forKey:@"v"];
     [dictionary setObject:@"track" forKey:@"type"];
-    
+
     [dictionary setObject:track.name forKey:@"name"];
 //    [dictionary setObject:@"" forKey:@"name"];
-    
+
     [dictionary setObject:track.lang_code forKey:@"lang"];
 //    [dictionary setObject:@"en" forKey:@"lang"];
 
     NSURLSessionDataTask *task = [self GET:@"/timedtext"
                                 parameters:dictionary
                                    success:^(NSURLSessionDataTask *task, id responseObject) {
-                                       NSHTTPURLResponse *httpResponse = (NSHTTPURLResponse *)task.response;
+                                       NSHTTPURLResponse *httpResponse = (NSHTTPURLResponse *) task.response;
 
-                                       if(httpResponse.statusCode == 200) {
+                                       if (httpResponse.statusCode == 200) {
                                            YoutubeResponseInfo *responseInfo = [self parseVideoTranscriptWithData:responseObject];
                                            dispatch_async(dispatch_get_main_queue(), ^{
                                                completion(responseInfo, nil);
@@ -175,7 +175,7 @@
     NSDictionary *dict = [parser dictionaryWithData:data];
 
     MABYT3_TranscriptList *transcriptList = [[MABYT3_TranscriptList alloc] init];
-    if(dict) {
+    if (dict) {
         transcriptList = [[MABYT3_TranscriptList alloc] initFromDictionary:dict];
     }
 
@@ -190,7 +190,7 @@
 
     NSString *convertToSrt = nil;
 
-    if(dict && [dict objectForKey:@"text"]) {
+    if (dict && [dict objectForKey:@"text"]) {
         convertToSrt = [MABYT3_ConvertTranscriptToSrt convertToSrt:[dict objectForKey:@"text"]];
     }
 
@@ -339,9 +339,9 @@
     NSURLSessionDataTask *task = [self GET:@"/complete/search"
                                 parameters:parameters
                                    success:^(NSURLSessionDataTask *task, id responseObject) {
-                                       NSHTTPURLResponse *httpResponse = (NSHTTPURLResponse *)task.response;
+                                       NSHTTPURLResponse *httpResponse = (NSHTTPURLResponse *) task.response;
 
-                                       if(httpResponse.statusCode == 200) {
+                                       if (httpResponse.statusCode == 200) {
                                            YoutubeResponseInfo *responseInfo = [self parseSearchSuggestionList:responseObject];
                                            dispatch_async(dispatch_get_main_queue(), ^{
                                                completion(responseInfo, nil);
@@ -359,7 +359,7 @@
                 });
             }];
 
-    if(self.lastTask) {
+    if (self.lastTask) {
         [self.lastTask cancel];
     }
     self.lastTask = task;
@@ -369,7 +369,7 @@
 
 
 - (void)cancelAllTask {
-    if(self.lastTask) {
+    if (self.lastTask) {
         [self.lastTask cancel];
     }
 }
@@ -390,8 +390,8 @@
 
     NSArray *jsonObject = [NSJSONSerialization JSONObjectWithData:[json dataUsingEncoding:NSUTF8StringEncoding] //Push all the JSON autocomplete detail in to jsonObject array.
                                                           options:0 error:NULL];
-    for (int i = 0;i != [jsonObject count];i++) {
-        for (int j = 0;j != 1;j++) {
+    for (int i = 0; i != [jsonObject count]; i++) {
+        for (int j = 0; j != 1; j++) {
             [arr addObject:[[jsonObject objectAtIndex:i] objectAtIndex:j]];
         }
     }
@@ -431,7 +431,7 @@
 
 - (NSString *)GuidedCategoriesURLforRegion:(NSString *)reg andLanguage:(NSString *)lang {
 
-    if([lang isEqualToString:@""]) {
+    if ([lang isEqualToString:@""]) {
         return [NSString stringWithFormat:@"https://www.googleapis.com/youtube/v3/guideCategories?part=id,snippet&regionCode=%@",
                                           reg];
     }
@@ -443,7 +443,7 @@
 
 - (NSString *)LanguagesURLforLanguae:(NSString *)lang {
 
-    if([lang isEqualToString:@""]) {
+    if ([lang isEqualToString:@""]) {
         return [NSString stringWithFormat:@"https://www.googleapis.com/youtube/v3/i18nLanguages?part=id,snippet"];
     }
     return [NSString stringWithFormat:@"https://www.googleapis.com/youtube/v3/i18nLanguages?part=id,snippet&hl=%@",
@@ -453,7 +453,7 @@
 
 - (NSString *)RegionsURLforLanguae:(NSString *)lang {
 
-    if([lang isEqualToString:@""]) {
+    if ([lang isEqualToString:@""]) {
         return [NSString stringWithFormat:@"https://www.googleapis.com/youtube/v3/i18nRegions?part=id,snippet"];
     }
     return [NSString stringWithFormat:@"https://www.googleapis.com/youtube/v3/i18nRegions?part=id,snippet&hl=%@", lang];
@@ -475,7 +475,7 @@
     for (NSString *key in [params allKeys]) {
         paramS = [NSString stringWithFormat:@"%@&%@=%@", paramS, key, [params objectForKey:key]];
     }
-    if(max != 5) {
+    if (max != 5) {
         paramS = [NSString stringWithFormat:@"%@&maxResults=%@", paramS, [@(max) stringValue]];
     }
     return [NSString stringWithFormat:@"https://www.googleapis.com/youtube/v3/search?part=id,snippet&q=%@&type=channel%@",
@@ -490,7 +490,7 @@
     for (NSString *key in [params allKeys]) {
         paramS = [NSString stringWithFormat:@"%@&%@=%@", paramS, key, [params objectForKey:key]];
     }
-    if(max != 5) {
+    if (max != 5) {
         paramS = [NSString stringWithFormat:@"%@&maxResults=%@", paramS, [@(max) stringValue]];
     }
     return [NSString stringWithFormat:@"https://www.googleapis.com/youtube/v3/search?part=id,snippet&q=%@&type=playlist%@",
@@ -514,22 +514,22 @@
                                        queue:queue
                            completionHandler:^(NSURLResponse *response, NSData *data, NSError *error) {
 
-                               NSHTTPURLResponse *httpresp = (NSHTTPURLResponse *)response;
-                               if(httpresp.statusCode == 200) {
+                               NSHTTPURLResponse *httpresp = (NSHTTPURLResponse *) response;
+                               if (httpresp.statusCode == 200) {
                                    NSError *e = nil;
                                    NSDictionary *dict = [NSJSONSerialization JSONObjectWithData:data
                                                                                         options:NSJSONReadingMutableContainers
                                                                                           error:&e];
-                                   if([dict objectForKey:@"items"]) {
+                                   if ([dict objectForKey:@"items"]) {
                                        NSArray *items = [dict objectForKey:@"items"];
-                                       if(items.count > 0) {
-                                           for (int i = 0;i < items.count;i++) {
+                                       if (items.count > 0) {
+                                           for (int i = 0; i < items.count; i++) {
                                                MABYT3_Activity *itm = [[MABYT3_Activity alloc] initFromDictionary:items[i]];
                                                [arr addObject:itm];
                                            }
                                        }
                                    }
-                                   if([dict objectForKey:@"nextPageToken"]) {
+                                   if ([dict objectForKey:@"nextPageToken"]) {
                                        NSString *pagetoken = [dict objectForKey:@"nextPageToken"];
 //                                    nxtURLStr = [NSString stringWithFormat:@"%@&nextPageToken=%@", urlStr, pagetoken];
                                        nxtURLStr = pagetoken;
@@ -540,13 +540,13 @@
                                    NSDictionary *dict = [NSJSONSerialization JSONObjectWithData:data
                                                                                         options:NSJSONReadingMutableContainers
                                                                                           error:&e];
-                                   if([dict objectForKey:@"error"]) {
+                                   if ([dict objectForKey:@"error"]) {
                                        NSDictionary *dict2 = [dict objectForKey:@"error"];
-                                       if([dict2 objectForKey:@"errors"]) {
+                                       if ([dict2 objectForKey:@"errors"]) {
                                            NSArray *items = [dict2 objectForKey:@"errors"];
-                                           if(items.count > 0) {
+                                           if (items.count > 0) {
                                                NSString *dom = @"YTAPI";
-                                               if([items[0] objectForKey:@"domain"]) {
+                                               if ([items[0] objectForKey:@"domain"]) {
                                                    dom = [items[0] objectForKey:@"domain"];
                                                }
                                                error = [NSError errorWithDomain:dom
@@ -578,16 +578,16 @@
                                        queue:queue
                            completionHandler:^(NSURLResponse *response, NSData *data, NSError *error) {
 
-                               NSHTTPURLResponse *httpresp = (NSHTTPURLResponse *)response;
-                               if(httpresp.statusCode == 200) {
+                               NSHTTPURLResponse *httpresp = (NSHTTPURLResponse *) response;
+                               if (httpresp.statusCode == 200) {
                                    NSError *e = nil;
                                    NSDictionary *dict = [NSJSONSerialization JSONObjectWithData:data
                                                                                         options:NSJSONReadingMutableContainers
                                                                                           error:&e];
-                                   if([dict objectForKey:@"items"]) {
+                                   if ([dict objectForKey:@"items"]) {
                                        NSArray *items = [dict objectForKey:@"items"];
-                                       if(items.count > 0) {
-                                           for (int i = 0;i < items.count;i++) {
+                                       if (items.count > 0) {
+                                           for (int i = 0; i < items.count; i++) {
                                                MABYT3_ChannelSection *itm = [[MABYT3_ChannelSection alloc] initFromDictionary:items[i]];
                                                [arr addObject:itm];
                                            }
@@ -599,13 +599,13 @@
                                    NSDictionary *dict = [NSJSONSerialization JSONObjectWithData:data
                                                                                         options:NSJSONReadingMutableContainers
                                                                                           error:&e];
-                                   if([dict objectForKey:@"error"]) {
+                                   if ([dict objectForKey:@"error"]) {
                                        NSDictionary *dict2 = [dict objectForKey:@"error"];
-                                       if([dict2 objectForKey:@"errors"]) {
+                                       if ([dict2 objectForKey:@"errors"]) {
                                            NSArray *items = [dict2 objectForKey:@"errors"];
-                                           if(items.count > 0) {
+                                           if (items.count > 0) {
                                                NSString *dom = @"YTAPI";
-                                               if([items[0] objectForKey:@"domain"]) {
+                                               if ([items[0] objectForKey:@"domain"]) {
                                                    dom = [items[0] objectForKey:@"domain"];
                                                }
                                                error = [NSError errorWithDomain:dom
@@ -637,16 +637,16 @@
                                        queue:queue
                            completionHandler:^(NSURLResponse *response, NSData *data, NSError *error) {
 
-                               NSHTTPURLResponse *httpresp = (NSHTTPURLResponse *)response;
-                               if(httpresp.statusCode == 200) {
+                               NSHTTPURLResponse *httpresp = (NSHTTPURLResponse *) response;
+                               if (httpresp.statusCode == 200) {
                                    NSError *e = nil;
                                    NSDictionary *dict = [NSJSONSerialization JSONObjectWithData:data
                                                                                         options:NSJSONReadingMutableContainers
                                                                                           error:&e];
-                                   if([dict objectForKey:@"items"]) {
+                                   if ([dict objectForKey:@"items"]) {
                                        NSArray *items = [dict objectForKey:@"items"];
-                                       if(items.count > 0) {
-                                           for (int i = 0;i < items.count;i++) {
+                                       if (items.count > 0) {
+                                           for (int i = 0; i < items.count; i++) {
                                                MABYT3_Channel *itm = [[MABYT3_Channel alloc] initFromDictionary:items[i]];
                                                [arr addObject:itm];
                                            }
@@ -658,13 +658,13 @@
                                    NSDictionary *dict = [NSJSONSerialization JSONObjectWithData:data
                                                                                         options:NSJSONReadingMutableContainers
                                                                                           error:&e];
-                                   if([dict objectForKey:@"error"]) {
+                                   if ([dict objectForKey:@"error"]) {
                                        NSDictionary *dict2 = [dict objectForKey:@"error"];
-                                       if([dict2 objectForKey:@"errors"]) {
+                                       if ([dict2 objectForKey:@"errors"]) {
                                            NSArray *items = [dict2 objectForKey:@"errors"];
-                                           if(items.count > 0) {
+                                           if (items.count > 0) {
                                                NSString *dom = @"YTAPI";
-                                               if([items[0] objectForKey:@"domain"]) {
+                                               if ([items[0] objectForKey:@"domain"]) {
                                                    dom = [items[0] objectForKey:@"domain"];
                                                }
                                                error = [NSError errorWithDomain:dom
@@ -695,16 +695,16 @@
                                        queue:queue
                            completionHandler:^(NSURLResponse *response, NSData *data, NSError *error) {
 
-                               NSHTTPURLResponse *httpresp = (NSHTTPURLResponse *)response;
-                               if(httpresp.statusCode == 200) {
+                               NSHTTPURLResponse *httpresp = (NSHTTPURLResponse *) response;
+                               if (httpresp.statusCode == 200) {
                                    NSError *e = nil;
                                    NSDictionary *dict = [NSJSONSerialization JSONObjectWithData:data
                                                                                         options:NSJSONReadingMutableContainers
                                                                                           error:&e];
-                                   if([dict objectForKey:@"items"]) {
+                                   if ([dict objectForKey:@"items"]) {
                                        NSArray *items = [dict objectForKey:@"items"];
-                                       if(items.count > 0) {
-                                           for (int i = 0;i < items.count;i++) {
+                                       if (items.count > 0) {
+                                           for (int i = 0; i < items.count; i++) {
                                                MABYT3_GuideCategory *itm = [[MABYT3_GuideCategory alloc] initFromDictionary:items[i]];
                                                [arr addObject:itm];
                                            }
@@ -716,13 +716,13 @@
                                    NSDictionary *dict = [NSJSONSerialization JSONObjectWithData:data
                                                                                         options:NSJSONReadingMutableContainers
                                                                                           error:&e];
-                                   if([dict objectForKey:@"error"]) {
+                                   if ([dict objectForKey:@"error"]) {
                                        NSDictionary *dict2 = [dict objectForKey:@"error"];
-                                       if([dict2 objectForKey:@"errors"]) {
+                                       if ([dict2 objectForKey:@"errors"]) {
                                            NSArray *items = [dict2 objectForKey:@"errors"];
-                                           if(items.count > 0) {
+                                           if (items.count > 0) {
                                                NSString *dom = @"YTAPI";
-                                               if([items[0] objectForKey:@"domain"]) {
+                                               if ([items[0] objectForKey:@"domain"]) {
                                                    dom = [items[0] objectForKey:@"domain"];
                                                }
                                                error = [NSError errorWithDomain:dom
@@ -753,16 +753,16 @@
                                        queue:queue
                            completionHandler:^(NSURLResponse *response, NSData *data, NSError *error) {
 
-                               NSHTTPURLResponse *httpresp = (NSHTTPURLResponse *)response;
-                               if(httpresp.statusCode == 200) {
+                               NSHTTPURLResponse *httpresp = (NSHTTPURLResponse *) response;
+                               if (httpresp.statusCode == 200) {
                                    NSError *e = nil;
                                    NSDictionary *dict = [NSJSONSerialization JSONObjectWithData:data
                                                                                         options:NSJSONReadingMutableContainers
                                                                                           error:&e];
-                                   if([dict objectForKey:@"items"]) {
+                                   if ([dict objectForKey:@"items"]) {
                                        NSArray *items = [dict objectForKey:@"items"];
-                                       if(items.count > 0) {
-                                           for (int i = 0;i < items.count;i++) {
+                                       if (items.count > 0) {
+                                           for (int i = 0; i < items.count; i++) {
                                                MABYT3_Language *itm = [[MABYT3_Language alloc] initFromDictionary:items[i]];
                                                [arr addObject:itm];
                                            }
@@ -774,13 +774,13 @@
                                    NSDictionary *dict = [NSJSONSerialization JSONObjectWithData:data
                                                                                         options:NSJSONReadingMutableContainers
                                                                                           error:&e];
-                                   if([dict objectForKey:@"error"]) {
+                                   if ([dict objectForKey:@"error"]) {
                                        NSDictionary *dict2 = [dict objectForKey:@"error"];
-                                       if([dict2 objectForKey:@"errors"]) {
+                                       if ([dict2 objectForKey:@"errors"]) {
                                            NSArray *items = [dict2 objectForKey:@"errors"];
-                                           if(items.count > 0) {
+                                           if (items.count > 0) {
                                                NSString *dom = @"YTAPI";
-                                               if([items[0] objectForKey:@"domain"]) {
+                                               if ([items[0] objectForKey:@"domain"]) {
                                                    dom = [items[0] objectForKey:@"domain"];
                                                }
                                                error = [NSError errorWithDomain:dom
@@ -808,9 +808,9 @@
     NSURLSessionDataTask *task = [self GET:@"/youtube/v3/videos"
                                 parameters:dictionary
                                    success:^(NSURLSessionDataTask *task, id responseObject) {
-                                       NSHTTPURLResponse *httpResponse = (NSHTTPURLResponse *)task.response;
+                                       NSHTTPURLResponse *httpResponse = (NSHTTPURLResponse *) task.response;
 
-                                       if(httpResponse.statusCode == 200) {
+                                       if (httpResponse.statusCode == 200) {
                                            YoutubeResponseInfo *responseInfo = [self parseVideoListWithData:responseObject];
                                            dispatch_async(dispatch_get_main_queue(), ^{
                                                completion(responseInfo, nil);
@@ -842,9 +842,9 @@
     NSURLSessionDataTask *task = [self GET:@"/youtube/v3/subscriptions"
                                 parameters:dictionary
                                    success:^(NSURLSessionDataTask *task, id responseObject) {
-                                       NSHTTPURLResponse *httpResponse = (NSHTTPURLResponse *)task.response;
+                                       NSHTTPURLResponse *httpResponse = (NSHTTPURLResponse *) task.response;
 
-                                       if(httpResponse.statusCode == 200) {
+                                       if (httpResponse.statusCode == 200) {
                                            YoutubeResponseInfo *responseInfo = [self parseSubscriptionListWithData:responseObject];
                                            dispatch_async(dispatch_get_main_queue(), ^{
                                                completion(responseInfo, nil);
@@ -873,9 +873,9 @@
     NSURLSessionDataTask *task = [self GET:@"/youtube/v3/channels"
                                 parameters:dictionary
                                    success:^(NSURLSessionDataTask *task, id responseObject) {
-                                       NSHTTPURLResponse *httpResponse = (NSHTTPURLResponse *)task.response;
+                                       NSHTTPURLResponse *httpResponse = (NSHTTPURLResponse *) task.response;
 
-                                       if(httpResponse.statusCode == 200) {
+                                       if (httpResponse.statusCode == 200) {
                                            YoutubeResponseInfo *responseInfo = [self parseChannelListWithData:responseObject];
                                            dispatch_async(dispatch_get_main_queue(), ^{
                                                completion(responseInfo, nil);
@@ -903,9 +903,9 @@
     NSURLSessionDataTask *task = [self GET:@"/youtube/v3/playlists"
                                 parameters:dictionary
                                    success:^(NSURLSessionDataTask *task, id responseObject) {
-                                       NSHTTPURLResponse *httpResponse = (NSHTTPURLResponse *)task.response;
+                                       NSHTTPURLResponse *httpResponse = (NSHTTPURLResponse *) task.response;
 
-                                       if(httpResponse.statusCode == 200) {
+                                       if (httpResponse.statusCode == 200) {
                                            YoutubeResponseInfo *responseInfo = [self parsePlayListWithData:responseObject];
                                            dispatch_async(dispatch_get_main_queue(), ^{
                                                completion(responseInfo, nil);
@@ -934,9 +934,9 @@
     NSURLSessionDataTask *task = [self GET:@"/youtube/v3/activities"
                                 parameters:dictionary
                                    success:^(NSURLSessionDataTask *task, id responseObject) {
-                                       NSHTTPURLResponse *httpResponse = (NSHTTPURLResponse *)task.response;
+                                       NSHTTPURLResponse *httpResponse = (NSHTTPURLResponse *) task.response;
 
-                                       if(httpResponse.statusCode == 200) {
+                                       if (httpResponse.statusCode == 200) {
                                            YoutubeResponseInfo *responseInfo = [self parseActivitiesListWithData:responseObject];
                                            dispatch_async(dispatch_get_main_queue(), ^{
                                                completion(responseInfo, nil);
@@ -965,9 +965,9 @@
     NSURLSessionDataTask *task = [self GET:@"/youtube/v3/search"
                                 parameters:dictionary
                                    success:^(NSURLSessionDataTask *task, id responseObject) {
-                                       NSHTTPURLResponse *httpResponse = (NSHTTPURLResponse *)task.response;
+                                       NSHTTPURLResponse *httpResponse = (NSHTTPURLResponse *) task.response;
 
-                                       if(httpResponse.statusCode == 200) {
+                                       if (httpResponse.statusCode == 200) {
                                            YoutubeResponseInfo *responseInfo = [self parseSearchListWithData:responseObject];
                                            dispatch_async(dispatch_get_main_queue(), ^{
                                                completion(responseInfo, nil);
@@ -1000,7 +1000,7 @@
         NSError *error = nil;
         NSMutableArray *array = [[NSMutableArray alloc] init];
         YoutubeResponseInfo *responseInfo = nil;
-        if(operation.response.statusCode == 200) {
+        if (operation.response.statusCode == 200) {
 
 //          pageToken = [self parseSearchList:urlStr arr:array data:operation.responseData];
 
@@ -1037,8 +1037,8 @@
     NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:url];
 
     [request setHTTPMethod:@"GET"];
-    if(auth) {
-        if([MAB_GoogleUserCredentials sharedInstance].signedin) {
+    if (auth) {
+        if ([MAB_GoogleUserCredentials sharedInstance].signedin) {
             [request setValue:[NSString stringWithFormat:@"Bearer %@",
                                                          [MAB_GoogleUserCredentials sharedInstance].token.accessToken]
            forHTTPHeaderField:@"Authorization"];
@@ -1054,16 +1054,16 @@
     NSDictionary *dict = [NSJSONSerialization JSONObjectWithData:data
                                                          options:NSJSONReadingMutableContainers
                                                            error:&e];
-    if([dict objectForKey:@"items"]) {
+    if ([dict objectForKey:@"items"]) {
         NSArray *items = [dict objectForKey:@"items"];
-        if(items.count > 0) {
-            for (int i = 0;i < items.count;i++) {
+        if (items.count > 0) {
+            for (int i = 0; i < items.count; i++) {
                 MABYT3_SearchItem *itm = [[MABYT3_SearchItem alloc] initFromDictionary:items[i]];
                 [arr addObject:itm];
             }
         }
     }
-    if([dict objectForKey:@"nextPageToken"]) {
+    if ([dict objectForKey:@"nextPageToken"]) {
         pageToken = [dict objectForKey:@"nextPageToken"];
     }
     return pageToken;
@@ -1084,16 +1084,16 @@
                                        queue:queue
                            completionHandler:^(NSURLResponse *response, NSData *data, NSError *error) {
 
-                               NSHTTPURLResponse *httpresp = (NSHTTPURLResponse *)response;
-                               if(httpresp.statusCode == 200) {
+                               NSHTTPURLResponse *httpresp = (NSHTTPURLResponse *) response;
+                               if (httpresp.statusCode == 200) {
                                    NSError *e = nil;
                                    NSDictionary *dict = [NSJSONSerialization JSONObjectWithData:data
                                                                                         options:NSJSONReadingMutableContainers
                                                                                           error:&e];
-                                   if([dict objectForKey:@"items"]) {
+                                   if ([dict objectForKey:@"items"]) {
                                        NSArray *items = [dict objectForKey:@"items"];
-                                       if(items.count > 0) {
-                                           for (int i = 0;i < items.count;i++) {
+                                       if (items.count > 0) {
+                                           for (int i = 0; i < items.count; i++) {
                                                MABYT3_VideoCategory *itm = [[MABYT3_VideoCategory alloc] initFromDictionary:items[i]];
                                                [arr addObject:itm];
                                            }
@@ -1105,13 +1105,13 @@
                                    NSDictionary *dict = [NSJSONSerialization JSONObjectWithData:data
                                                                                         options:NSJSONReadingMutableContainers
                                                                                           error:&e];
-                                   if([dict objectForKey:@"error"]) {
+                                   if ([dict objectForKey:@"error"]) {
                                        NSDictionary *dict2 = [dict objectForKey:@"error"];
-                                       if([dict2 objectForKey:@"errors"]) {
+                                       if ([dict2 objectForKey:@"errors"]) {
                                            NSArray *items = [dict2 objectForKey:@"errors"];
-                                           if(items.count > 0) {
+                                           if (items.count > 0) {
                                                NSString *dom = @"YTAPI";
-                                               if([items[0] objectForKey:@"domain"]) {
+                                               if ([items[0] objectForKey:@"domain"]) {
                                                    dom = [items[0] objectForKey:@"domain"];
                                                }
                                                error = [NSError errorWithDomain:dom
@@ -1130,7 +1130,7 @@
 
 
 - (void)appendAuthInfo:(NSMutableURLRequest *)request {
-    if([MAB_GoogleUserCredentials sharedInstance].signedin) {
+    if ([MAB_GoogleUserCredentials sharedInstance].signedin) {
         [request setValue:[NSString stringWithFormat:@"Bearer %@",
                                                      [MAB_GoogleUserCredentials sharedInstance].token.accessToken]
        forHTTPHeaderField:@"Authorization"];
@@ -1155,8 +1155,8 @@
                            completionHandler:^(NSURLResponse *response, NSData *data, NSError *error) {
 
                                BOOL added = NO;
-                               NSHTTPURLResponse *httpresp = (NSHTTPURLResponse *)response;
-                               if(httpresp.statusCode == 204) {
+                               NSHTTPURLResponse *httpresp = (NSHTTPURLResponse *) response;
+                               if (httpresp.statusCode == 204) {
                                    added = YES;
                                }
                                else {
@@ -1164,13 +1164,13 @@
                                    NSDictionary *dict = [NSJSONSerialization JSONObjectWithData:data
                                                                                         options:NSJSONReadingMutableContainers
                                                                                           error:&e];
-                                   if([dict objectForKey:@"error"]) {
+                                   if ([dict objectForKey:@"error"]) {
                                        NSDictionary *dict2 = [dict objectForKey:@"error"];
-                                       if([dict2 objectForKey:@"errors"]) {
+                                       if ([dict2 objectForKey:@"errors"]) {
                                            NSArray *items = [dict2 objectForKey:@"errors"];
-                                           if(items.count > 0) {
+                                           if (items.count > 0) {
                                                NSString *dom = @"YTAPI";
-                                               if([items[0] objectForKey:@"domain"]) {
+                                               if ([items[0] objectForKey:@"domain"]) {
                                                    dom = [items[0] objectForKey:@"domain"];
                                                }
                                                error = [NSError errorWithDomain:dom
@@ -1205,8 +1205,8 @@
                            completionHandler:^(NSURLResponse *response, NSData *data, NSError *error) {
 
                                BOOL added = NO;
-                               NSHTTPURLResponse *httpresp = (NSHTTPURLResponse *)response;
-                               if(httpresp.statusCode == 204) {
+                               NSHTTPURLResponse *httpresp = (NSHTTPURLResponse *) response;
+                               if (httpresp.statusCode == 204) {
                                    added = YES;
                                }
                                else {
@@ -1214,13 +1214,13 @@
                                    NSDictionary *dict = [NSJSONSerialization JSONObjectWithData:data
                                                                                         options:NSJSONReadingMutableContainers
                                                                                           error:&e];
-                                   if([dict objectForKey:@"error"]) {
+                                   if ([dict objectForKey:@"error"]) {
                                        NSDictionary *dict2 = [dict objectForKey:@"error"];
-                                       if([dict2 objectForKey:@"errors"]) {
+                                       if ([dict2 objectForKey:@"errors"]) {
                                            NSArray *items = [dict2 objectForKey:@"errors"];
-                                           if(items.count > 0) {
+                                           if (items.count > 0) {
                                                NSString *dom = @"YTAPI";
-                                               if([items[0] objectForKey:@"domain"]) {
+                                               if ([items[0] objectForKey:@"domain"]) {
                                                    dom = [items[0] objectForKey:@"domain"];
                                                }
                                                error = [NSError errorWithDomain:dom
@@ -1244,7 +1244,7 @@
     NSString *post = [NSString stringWithFormat:@"{\"snippet\": {\"resourceId\": {\"channelId\": \"%@\",\"kind\": \"youtube#channel\"}}}",
                                                 channelId];
     NSData *postData = [post dataUsingEncoding:NSASCIIStringEncoding allowLossyConversion:YES];
-    NSString *postLength = [NSString stringWithFormat:@"%lu", (unsigned long)[postData length]];
+    NSString *postLength = [NSString stringWithFormat:@"%lu", (unsigned long) [postData length]];
 
     [request setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
     [request setValue:postLength forHTTPHeaderField:@"Content-Length"];
@@ -1263,13 +1263,13 @@
                            completionHandler:^(NSURLResponse *response, NSData *data, NSError *error) {
 
                                BOOL added = NO;
-                               NSHTTPURLResponse *httpresp = (NSHTTPURLResponse *)response;
-                               if(httpresp.statusCode == 200) {
+                               NSHTTPURLResponse *httpresp = (NSHTTPURLResponse *) response;
+                               if (httpresp.statusCode == 200) {
                                    NSError *e = nil;
                                    NSDictionary *dict = [NSJSONSerialization JSONObjectWithData:data
                                                                                         options:NSJSONReadingMutableContainers
                                                                                           error:&e];
-                                   if([dict objectForKey:@"snippet"]) {
+                                   if ([dict objectForKey:@"snippet"]) {
                                        added = YES;
                                    }
                                }
@@ -1278,13 +1278,13 @@
                                    NSDictionary *dict = [NSJSONSerialization JSONObjectWithData:data
                                                                                         options:NSJSONReadingMutableContainers
                                                                                           error:&e];
-                                   if([dict objectForKey:@"error"]) {
+                                   if ([dict objectForKey:@"error"]) {
                                        NSDictionary *dict2 = [dict objectForKey:@"error"];
-                                       if([dict2 objectForKey:@"errors"]) {
+                                       if ([dict2 objectForKey:@"errors"]) {
                                            NSArray *items = [dict2 objectForKey:@"errors"];
-                                           if(items.count > 0) {
+                                           if (items.count > 0) {
                                                NSString *dom = @"YTAPI";
-                                               if([items[0] objectForKey:@"domain"]) {
+                                               if ([items[0] objectForKey:@"domain"]) {
                                                    dom = [items[0] objectForKey:@"domain"];
                                                }
                                                error = [NSError errorWithDomain:dom
@@ -1311,7 +1311,7 @@
                                                 [@(pos) stringValue]];
     NSData *postData = [post dataUsingEncoding:NSASCIIStringEncoding allowLossyConversion:YES];
     //NSData *postData = [post dataUsingEncoding:NSUTF8StringEncoding];
-    NSString *postLength = [NSString stringWithFormat:@"%lu", (unsigned long)[postData length]];
+    NSString *postLength = [NSString stringWithFormat:@"%lu", (unsigned long) [postData length]];
 
     [request setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
     [request setValue:postLength forHTTPHeaderField:@"Content-Length"];
@@ -1330,13 +1330,13 @@
                            completionHandler:^(NSURLResponse *response, NSData *data, NSError *error) {
 
                                BOOL added = NO;
-                               NSHTTPURLResponse *httpresp = (NSHTTPURLResponse *)response;
-                               if(httpresp.statusCode == 200) {
+                               NSHTTPURLResponse *httpresp = (NSHTTPURLResponse *) response;
+                               if (httpresp.statusCode == 200) {
                                    NSError *e = nil;
                                    NSDictionary *dict = [NSJSONSerialization JSONObjectWithData:data
                                                                                         options:NSJSONReadingMutableContainers
                                                                                           error:&e];
-                                   if([dict objectForKey:@"snippet"]) {
+                                   if ([dict objectForKey:@"snippet"]) {
                                        added = YES;
                                    }
                                }
@@ -1345,13 +1345,13 @@
                                    NSDictionary *dict = [NSJSONSerialization JSONObjectWithData:data
                                                                                         options:NSJSONReadingMutableContainers
                                                                                           error:&e];
-                                   if([dict objectForKey:@"error"]) {
+                                   if ([dict objectForKey:@"error"]) {
                                        NSDictionary *dict2 = [dict objectForKey:@"error"];
-                                       if([dict2 objectForKey:@"errors"]) {
+                                       if ([dict2 objectForKey:@"errors"]) {
                                            NSArray *items = [dict2 objectForKey:@"errors"];
-                                           if(items.count > 0) {
+                                           if (items.count > 0) {
                                                NSString *dom = @"YTAPI";
-                                               if([items[0] objectForKey:@"domain"]) {
+                                               if ([items[0] objectForKey:@"domain"]) {
                                                    dom = [items[0] objectForKey:@"domain"];
                                                }
                                                error = [NSError errorWithDomain:dom
@@ -1379,7 +1379,7 @@
                                                 [self privacyStringFromStatus:status]];
     NSData *postData = [post dataUsingEncoding:NSASCIIStringEncoding allowLossyConversion:YES];
     //NSData *postData = [post dataUsingEncoding:NSUTF8StringEncoding];
-    NSString *postLength = [NSString stringWithFormat:@"%lu", (unsigned long)[postData length]];
+    NSString *postLength = [NSString stringWithFormat:@"%lu", (unsigned long) [postData length]];
 
     [request setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
     [request setValue:postLength forHTTPHeaderField:@"Content-Length"];
@@ -1398,16 +1398,16 @@
                            completionHandler:^(NSURLResponse *response, NSData *data, NSError *error) {
 
                                BOOL added = NO;
-                               NSHTTPURLResponse *httpresp = (NSHTTPURLResponse *)response;
-                               if(httpresp.statusCode == 200) {
+                               NSHTTPURLResponse *httpresp = (NSHTTPURLResponse *) response;
+                               if (httpresp.statusCode == 200) {
                                    NSError *e = nil;
                                    NSDictionary *dict = [NSJSONSerialization JSONObjectWithData:data
                                                                                         options:NSJSONReadingMutableContainers
                                                                                           error:&e];
-                                   if([dict objectForKey:@"id"]) {
+                                   if ([dict objectForKey:@"id"]) {
                                        identifier = [dict objectForKey:@"id"];
                                    }
-                                   if([dict objectForKey:@"snippet"]) {
+                                   if ([dict objectForKey:@"snippet"]) {
                                        added = YES;
                                    }
                                }
@@ -1416,13 +1416,13 @@
                                    NSDictionary *dict = [NSJSONSerialization JSONObjectWithData:data
                                                                                         options:NSJSONReadingMutableContainers
                                                                                           error:&e];
-                                   if([dict objectForKey:@"error"]) {
+                                   if ([dict objectForKey:@"error"]) {
                                        NSDictionary *dict2 = [dict objectForKey:@"error"];
-                                       if([dict2 objectForKey:@"errors"]) {
+                                       if ([dict2 objectForKey:@"errors"]) {
                                            NSArray *items = [dict2 objectForKey:@"errors"];
-                                           if(items.count > 0) {
+                                           if (items.count > 0) {
                                                NSString *dom = @"YTAPI";
-                                               if([items[0] objectForKey:@"domain"]) {
+                                               if ([items[0] objectForKey:@"domain"]) {
                                                    dom = [items[0] objectForKey:@"domain"];
                                                }
                                                error = [NSError errorWithDomain:dom
@@ -1449,7 +1449,7 @@
                                                 desc];
     NSData *postData = [post dataUsingEncoding:NSASCIIStringEncoding allowLossyConversion:YES];
     //NSData *postData = [post dataUsingEncoding:NSUTF8StringEncoding];
-    NSString *postLength = [NSString stringWithFormat:@"%lu", (unsigned long)[postData length]];
+    NSString *postLength = [NSString stringWithFormat:@"%lu", (unsigned long) [postData length]];
 
     [request setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
     [request setValue:postLength forHTTPHeaderField:@"Content-Length"];
@@ -1468,16 +1468,16 @@
                            completionHandler:^(NSURLResponse *response, NSData *data, NSError *error) {
 
                                BOOL added = NO;
-                               NSHTTPURLResponse *httpresp = (NSHTTPURLResponse *)response;
-                               if(httpresp.statusCode == 200) {
+                               NSHTTPURLResponse *httpresp = (NSHTTPURLResponse *) response;
+                               if (httpresp.statusCode == 200) {
                                    NSError *e = nil;
                                    NSDictionary *dict = [NSJSONSerialization JSONObjectWithData:data
                                                                                         options:NSJSONReadingMutableContainers
                                                                                           error:&e];
-                                   if([dict objectForKey:@"id"]) {
+                                   if ([dict objectForKey:@"id"]) {
                                        identifier = [dict objectForKey:@"id"];
                                    }
-                                   if([dict objectForKey:@"snippet"]) {
+                                   if ([dict objectForKey:@"snippet"]) {
                                        added = YES;
                                    }
                                }
@@ -1486,13 +1486,13 @@
                                    NSDictionary *dict = [NSJSONSerialization JSONObjectWithData:data
                                                                                         options:NSJSONReadingMutableContainers
                                                                                           error:&e];
-                                   if([dict objectForKey:@"error"]) {
+                                   if ([dict objectForKey:@"error"]) {
                                        NSDictionary *dict2 = [dict objectForKey:@"error"];
-                                       if([dict2 objectForKey:@"errors"]) {
+                                       if ([dict2 objectForKey:@"errors"]) {
                                            NSArray *items = [dict2 objectForKey:@"errors"];
-                                           if(items.count > 0) {
+                                           if (items.count > 0) {
                                                NSString *dom = @"YTAPI";
-                                               if([items[0] objectForKey:@"domain"]) {
+                                               if ([items[0] objectForKey:@"domain"]) {
                                                    dom = [items[0] objectForKey:@"domain"];
                                                }
                                                error = [NSError errorWithDomain:dom
@@ -1520,7 +1520,7 @@
                                                 [@(pos) stringValue]];
     NSData *postData = [post dataUsingEncoding:NSASCIIStringEncoding allowLossyConversion:YES];
     //NSData *postData = [post dataUsingEncoding:NSUTF8StringEncoding];
-    NSString *postLength = [NSString stringWithFormat:@"%lu", (unsigned long)[postData length]];
+    NSString *postLength = [NSString stringWithFormat:@"%lu", (unsigned long) [postData length]];
 
     [request setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
     [request setValue:postLength forHTTPHeaderField:@"Content-Length"];
@@ -1539,13 +1539,13 @@
                            completionHandler:^(NSURLResponse *response, NSData *data, NSError *error) {
 
                                BOOL added = NO;
-                               NSHTTPURLResponse *httpresp = (NSHTTPURLResponse *)response;
-                               if(httpresp.statusCode == 200) {
+                               NSHTTPURLResponse *httpresp = (NSHTTPURLResponse *) response;
+                               if (httpresp.statusCode == 200) {
                                    NSError *e = nil;
                                    NSDictionary *dict = [NSJSONSerialization JSONObjectWithData:data
                                                                                         options:NSJSONReadingMutableContainers
                                                                                           error:&e];
-                                   if([dict objectForKey:@"snippet"]) {
+                                   if ([dict objectForKey:@"snippet"]) {
                                        added = YES;
                                    }
                                }
@@ -1554,13 +1554,13 @@
                                    NSDictionary *dict = [NSJSONSerialization JSONObjectWithData:data
                                                                                         options:NSJSONReadingMutableContainers
                                                                                           error:&e];
-                                   if([dict objectForKey:@"error"]) {
+                                   if ([dict objectForKey:@"error"]) {
                                        NSDictionary *dict2 = [dict objectForKey:@"error"];
-                                       if([dict2 objectForKey:@"errors"]) {
+                                       if ([dict2 objectForKey:@"errors"]) {
                                            NSArray *items = [dict2 objectForKey:@"errors"];
-                                           if(items.count > 0) {
+                                           if (items.count > 0) {
                                                NSString *dom = @"YTAPI";
-                                               if([items[0] objectForKey:@"domain"]) {
+                                               if ([items[0] objectForKey:@"domain"]) {
                                                    dom = [items[0] objectForKey:@"domain"];
                                                }
                                                error = [NSError errorWithDomain:dom
@@ -1588,7 +1588,7 @@
                                                 [self privacyStringFromStatus:status]];
     NSData *postData = [post dataUsingEncoding:NSASCIIStringEncoding allowLossyConversion:YES];
     //NSData *postData = [post dataUsingEncoding:NSUTF8StringEncoding];
-    NSString *postLength = [NSString stringWithFormat:@"%lu", (unsigned long)[postData length]];
+    NSString *postLength = [NSString stringWithFormat:@"%lu", (unsigned long) [postData length]];
 
     [request setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
     [request setValue:postLength forHTTPHeaderField:@"Content-Length"];
@@ -1607,13 +1607,13 @@
                            completionHandler:^(NSURLResponse *response, NSData *data, NSError *error) {
 
                                BOOL added = NO;
-                               NSHTTPURLResponse *httpresp = (NSHTTPURLResponse *)response;
-                               if(httpresp.statusCode == 200) {
+                               NSHTTPURLResponse *httpresp = (NSHTTPURLResponse *) response;
+                               if (httpresp.statusCode == 200) {
                                    NSError *e = nil;
                                    NSDictionary *dict = [NSJSONSerialization JSONObjectWithData:data
                                                                                         options:NSJSONReadingMutableContainers
                                                                                           error:&e];
-                                   if([dict objectForKey:@"snippet"]) {
+                                   if ([dict objectForKey:@"snippet"]) {
                                        added = YES;
                                    }
                                }
@@ -1622,13 +1622,13 @@
                                    NSDictionary *dict = [NSJSONSerialization JSONObjectWithData:data
                                                                                         options:NSJSONReadingMutableContainers
                                                                                           error:&e];
-                                   if([dict objectForKey:@"error"]) {
+                                   if ([dict objectForKey:@"error"]) {
                                        NSDictionary *dict2 = [dict objectForKey:@"error"];
-                                       if([dict2 objectForKey:@"errors"]) {
+                                       if ([dict2 objectForKey:@"errors"]) {
                                            NSArray *items = [dict2 objectForKey:@"errors"];
-                                           if(items.count > 0) {
+                                           if (items.count > 0) {
                                                NSString *dom = @"YTAPI";
-                                               if([items[0] objectForKey:@"domain"]) {
+                                               if ([items[0] objectForKey:@"domain"]) {
                                                    dom = [items[0] objectForKey:@"domain"];
                                                }
                                                error = [NSError errorWithDomain:dom
@@ -1655,7 +1655,7 @@
                                                 desc];
     NSData *postData = [post dataUsingEncoding:NSASCIIStringEncoding allowLossyConversion:YES];
     //NSData *postData = [post dataUsingEncoding:NSUTF8StringEncoding];
-    NSString *postLength = [NSString stringWithFormat:@"%lu", (unsigned long)[postData length]];
+    NSString *postLength = [NSString stringWithFormat:@"%lu", (unsigned long) [postData length]];
 
     [request setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
     [request setValue:postLength forHTTPHeaderField:@"Content-Length"];
@@ -1674,13 +1674,13 @@
                            completionHandler:^(NSURLResponse *response, NSData *data, NSError *error) {
 
                                BOOL added = NO;
-                               NSHTTPURLResponse *httpresp = (NSHTTPURLResponse *)response;
-                               if(httpresp.statusCode == 200) {
+                               NSHTTPURLResponse *httpresp = (NSHTTPURLResponse *) response;
+                               if (httpresp.statusCode == 200) {
                                    NSError *e = nil;
                                    NSDictionary *dict = [NSJSONSerialization JSONObjectWithData:data
                                                                                         options:NSJSONReadingMutableContainers
                                                                                           error:&e];
-                                   if([dict objectForKey:@"snippet"]) {
+                                   if ([dict objectForKey:@"snippet"]) {
                                        added = YES;
                                    }
                                }
@@ -1689,13 +1689,13 @@
                                    NSDictionary *dict = [NSJSONSerialization JSONObjectWithData:data
                                                                                         options:NSJSONReadingMutableContainers
                                                                                           error:&e];
-                                   if([dict objectForKey:@"error"]) {
+                                   if ([dict objectForKey:@"error"]) {
                                        NSDictionary *dict2 = [dict objectForKey:@"error"];
-                                       if([dict2 objectForKey:@"errors"]) {
+                                       if ([dict2 objectForKey:@"errors"]) {
                                            NSArray *items = [dict2 objectForKey:@"errors"];
-                                           if(items.count > 0) {
+                                           if (items.count > 0) {
                                                NSString *dom = @"YTAPI";
-                                               if([items[0] objectForKey:@"domain"]) {
+                                               if ([items[0] objectForKey:@"domain"]) {
                                                    dom = [items[0] objectForKey:@"domain"];
                                                }
                                                error = [NSError errorWithDomain:dom
@@ -1730,8 +1730,8 @@
                            completionHandler:^(NSURLResponse *response, NSData *data, NSError *error) {
 
                                BOOL added = NO;
-                               NSHTTPURLResponse *httpresp = (NSHTTPURLResponse *)response;
-                               if(httpresp.statusCode == 204) {
+                               NSHTTPURLResponse *httpresp = (NSHTTPURLResponse *) response;
+                               if (httpresp.statusCode == 204) {
                                    added = YES;
                                }
                                else {
@@ -1739,13 +1739,13 @@
                                    NSDictionary *dict = [NSJSONSerialization JSONObjectWithData:data
                                                                                         options:NSJSONReadingMutableContainers
                                                                                           error:&e];
-                                   if([dict objectForKey:@"error"]) {
+                                   if ([dict objectForKey:@"error"]) {
                                        NSDictionary *dict2 = [dict objectForKey:@"error"];
-                                       if([dict2 objectForKey:@"errors"]) {
+                                       if ([dict2 objectForKey:@"errors"]) {
                                            NSArray *items = [dict2 objectForKey:@"errors"];
-                                           if(items.count > 0) {
+                                           if (items.count > 0) {
                                                NSString *dom = @"YTAPI";
-                                               if([items[0] objectForKey:@"domain"]) {
+                                               if ([items[0] objectForKey:@"domain"]) {
                                                    dom = [items[0] objectForKey:@"domain"];
                                                }
                                                error = [NSError errorWithDomain:dom
@@ -1780,8 +1780,8 @@
                            completionHandler:^(NSURLResponse *response, NSData *data, NSError *error) {
 
                                BOOL added = NO;
-                               NSHTTPURLResponse *httpresp = (NSHTTPURLResponse *)response;
-                               if(httpresp.statusCode == 204) {
+                               NSHTTPURLResponse *httpresp = (NSHTTPURLResponse *) response;
+                               if (httpresp.statusCode == 204) {
                                    added = YES;
                                }
                                else {
@@ -1789,13 +1789,13 @@
                                    NSDictionary *dict = [NSJSONSerialization JSONObjectWithData:data
                                                                                         options:NSJSONReadingMutableContainers
                                                                                           error:&e];
-                                   if([dict objectForKey:@"error"]) {
+                                   if ([dict objectForKey:@"error"]) {
                                        NSDictionary *dict2 = [dict objectForKey:@"error"];
-                                       if([dict2 objectForKey:@"errors"]) {
+                                       if ([dict2 objectForKey:@"errors"]) {
                                            NSArray *items = [dict2 objectForKey:@"errors"];
-                                           if(items.count > 0) {
+                                           if (items.count > 0) {
                                                NSString *dom = @"YTAPI";
-                                               if([items[0] objectForKey:@"domain"]) {
+                                               if ([items[0] objectForKey:@"domain"]) {
                                                    dom = [items[0] objectForKey:@"domain"];
                                                }
                                                error = [NSError errorWithDomain:dom
@@ -1830,8 +1830,8 @@
                            completionHandler:^(NSURLResponse *response, NSData *data, NSError *error) {
 
                                BOOL added = NO;
-                               NSHTTPURLResponse *httpresp = (NSHTTPURLResponse *)response;
-                               if(httpresp.statusCode == 204) {
+                               NSHTTPURLResponse *httpresp = (NSHTTPURLResponse *) response;
+                               if (httpresp.statusCode == 204) {
                                    added = YES;
                                }
                                else {
@@ -1839,13 +1839,13 @@
                                    NSDictionary *dict = [NSJSONSerialization JSONObjectWithData:data
                                                                                         options:NSJSONReadingMutableContainers
                                                                                           error:&e];
-                                   if([dict objectForKey:@"error"]) {
+                                   if ([dict objectForKey:@"error"]) {
                                        NSDictionary *dict2 = [dict objectForKey:@"error"];
-                                       if([dict2 objectForKey:@"errors"]) {
+                                       if ([dict2 objectForKey:@"errors"]) {
                                            NSArray *items = [dict2 objectForKey:@"errors"];
-                                           if(items.count > 0) {
+                                           if (items.count > 0) {
                                                NSString *dom = @"YTAPI";
-                                               if([items[0] objectForKey:@"domain"]) {
+                                               if ([items[0] objectForKey:@"domain"]) {
                                                    dom = [items[0] objectForKey:@"domain"];
                                                }
                                                error = [NSError errorWithDomain:dom
@@ -1887,7 +1887,7 @@
 
 - (NSString *)parsePageToken:(NSDictionary *)dict {
     NSString *pageToken = nil;
-    if([dict objectForKey:@"nextPageToken"]) {
+    if ([dict objectForKey:@"nextPageToken"]) {
         pageToken = [dict objectForKey:@"nextPageToken"];
     }
     return pageToken;
@@ -1905,10 +1905,10 @@
                                                          options:NSJSONReadingMutableContainers
                                                            error:&e];
 
-    if([dict objectForKey:@"items"]) {
+    if ([dict objectForKey:@"items"]) {
         NSArray *items = [dict objectForKey:@"items"];
-        if(items.count > 0) {
-            for (int i = 0;i < items.count;i++) {
+        if (items.count > 0) {
+            for (int i = 0; i < items.count; i++) {
                 YoutubeVideoCache *itm = [[YoutubeVideoCache alloc] initFromDictionary:items[i]];
                 [arr addObject:itm];
             }
@@ -1924,10 +1924,10 @@
     NSDictionary *dict = [NSJSONSerialization JSONObjectWithData:data
                                                          options:NSJSONReadingMutableContainers
                                                            error:&e];
-    if([dict objectForKey:@"items"]) {
+    if ([dict objectForKey:@"items"]) {
         NSArray *items = [dict objectForKey:@"items"];
-        if(items.count > 0) {
-            for (int i = 0;i < items.count;i++) {
+        if (items.count > 0) {
+            for (int i = 0; i < items.count; i++) {
                 MABYT3_SearchItem *itm = [[MABYT3_SearchItem alloc] initFromDictionary:items[i]];
                 [arr addObject:itm];
             }
@@ -1944,10 +1944,10 @@
     NSDictionary *dict = [NSJSONSerialization JSONObjectWithData:data
                                                          options:NSJSONReadingMutableContainers
                                                            error:&e];
-    if([dict objectForKey:@"items"]) {
+    if ([dict objectForKey:@"items"]) {
         NSArray *items = [dict objectForKey:@"items"];
-        if(items.count > 0) {
-            for (int i = 0;i < items.count;i++) {
+        if (items.count > 0) {
+            for (int i = 0; i < items.count; i++) {
                 MABYT3_Subscription *itm = [[MABYT3_Subscription alloc] initFromDictionary:items[i]];
                 [arr addObject:itm];
             }
@@ -1964,10 +1964,10 @@
     NSDictionary *dict = [NSJSONSerialization JSONObjectWithData:data
                                                          options:NSJSONReadingMutableContainers
                                                            error:&e];
-    if([dict objectForKey:@"items"]) {
+    if ([dict objectForKey:@"items"]) {
         NSArray *items = [dict objectForKey:@"items"];
-        if(items.count > 0) {
-            for (int i = 0;i < items.count;i++) {
+        if (items.count > 0) {
+            for (int i = 0; i < items.count; i++) {
                 MABYT3_Channel *itm = [[MABYT3_Channel alloc] initFromDictionary:items[i]];
                 [arr addObject:itm];
             }
@@ -1984,10 +1984,10 @@
     NSDictionary *dict = [NSJSONSerialization JSONObjectWithData:data
                                                          options:NSJSONReadingMutableContainers
                                                            error:&e];
-    if([dict objectForKey:@"items"]) {
+    if ([dict objectForKey:@"items"]) {
         NSArray *items = [dict objectForKey:@"items"];
-        if(items.count > 0) {
-            for (int i = 0;i < items.count;i++) {
+        if (items.count > 0) {
+            for (int i = 0; i < items.count; i++) {
                 MABYT3_Activity *itm = [[MABYT3_Activity alloc] initFromDictionary:items[i]];
                 [arr addObject:itm];
             }
@@ -2005,10 +2005,10 @@
     NSDictionary *dict = [NSJSONSerialization JSONObjectWithData:data
                                                          options:NSJSONReadingMutableContainers
                                                            error:&e];
-    if([dict objectForKey:@"items"]) {
+    if ([dict objectForKey:@"items"]) {
         NSArray *items = [dict objectForKey:@"items"];
-        if(items.count > 0) {
-            for (int i = 0;i < items.count;i++) {
+        if (items.count > 0) {
+            for (int i = 0; i < items.count; i++) {
                 MABYT3_PlayList *itm = [[MABYT3_PlayList alloc] initFromDictionary:items[i]];
                 [arr addObject:itm];
             }

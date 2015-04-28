@@ -47,5 +47,7 @@ class YoutubeFetcherSubscriptionListTests: YoutubeFetcherBase, AuthorUserFetchin
     
     func endFetchingUserSubscriptions(array: NSArray) {
         expectation!.fulfill()
+        
+        
     }
 }

@@ -11,23 +11,27 @@ import XCTest
 
 
 class YoutubeFetcherBase: XCTestCase {
-    
+
     var requestInfo = YTYoutubeRequestInfo()
     var isSucess = false
-    
-    var videoID :NSString = "eoXneK3WIgQ"
-    
+
+    var videoID: NSString = "eoXneK3WIgQ"
+
+    //  "channelTitle": "Adobe Acrobat"
+    var playlistID: NSString = "UUl78QGX_hfK6zT8Mc-2w8GA"
+
+
     override func setUp() {
         super.setUp()
         // Put setup code here. This method is called before the invocation of each test method in the class.
-        
+
         requestInfo = YTYoutubeRequestInfo()
         isSucess = false
     }
-    
+
     override func tearDown() {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
         super.tearDown()
     }
-        
+
 }
