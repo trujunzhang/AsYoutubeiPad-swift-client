@@ -15,12 +15,12 @@ class YoutubeFetcherBase: XCTestCase {
     var requestInfo = YTYoutubeRequestInfo()
     var isSucess = false
 
-    var videoID: NSString = "eoXneK3WIgQ"
+    let videoID: NSString = "eoXneK3WIgQ"
 
     //  "channelTitle": "Adobe Acrobat"
-    var playlistID: NSString = "UUl78QGX_hfK6zT8Mc-2w8GA"
+    let playlistID: NSString = "UUl78QGX_hfK6zT8Mc-2w8GA"
 
-    var channelIDs: NSString = "UCbn1OgGei-DV7aSRo_HaAiw,UCl78QGX_hfK6zT8Mc-2w8GA,UCl-radPCbXcrYCE4EdNH3QA"
+    let channelIDs: NSString = "UCbn1OgGei-DV7aSRo_HaAiw,UCl78QGX_hfK6zT8Mc-2w8GA,UCl-radPCbXcrYCE4EdNH3QA"
 
 
     override func setUp() {

@@ -37,7 +37,7 @@ class YoutubeFetcherForChannelTests: YoutubeFetcherBase {
         
     }
     
-    func testFetchChannelForThumbnail(){
+    func _testFetchChannelForThumbnail(){
         let expectation = expectationWithDescription("fetchChannelForThumbnail")
 
         YoutubeFetcher.sharedInstance.fetchChannelForThumbnail("UCl-radPCbXcrYCE4EdNH3QA", completeHandler: { (object, sucess) -> Void in
@@ -69,7 +69,7 @@ class YoutubeFetcherForChannelTests: YoutubeFetcherBase {
     func testFetchChannelForUploadsIds(){
         let expectation = expectationWithDescription("fetchChannelForUploadsIds")
 
-        YoutubeFetcher.sharedInstance.fetchChannelForUploadsIds("UCl-radPCbXcrYCE4EdNH3QA", completeHandler: { (object, sucess) -> Void in
+        YoutubeFetcher.sharedInstance.fetchChannelForUploadsIds(channelIDs, completeHandler: { (object, sucess) -> Void in
 
             XCTAssertNotNil(object, "object not nil")
 
@@ -78,13 +78,13 @@ class YoutubeFetcherForChannelTests: YoutubeFetcherBase {
             if(sucess == true){
                 var array:NSArray = object as! NSArray
 
-                XCTAssertTrue(array.count == 1, "Array length must be one")
+                XCTAssertTrue(array.count == 3, "Array length must be one")
 
                 XCTAssertTrue(array[0] is MABYT3_Channel, "Array object must be MABYT3_Channel")
 
                 var channel :MABYT3_Channel = array[0] as! MABYT3_Channel
-                var imageUrl = YoutubeModelParser.getMABChannelThumbnalUrl(channel)
-                XCTAssertNotNil(imageUrl, "imageUrl must not nil")
+//                var imageUrl = YoutubeModelParser.getMABChannelThumbnalUrl(channel)
+//                XCTAssertNotNil(imageUrl, "imageUrl must not nil")
             }
             expectation.fulfill()
 

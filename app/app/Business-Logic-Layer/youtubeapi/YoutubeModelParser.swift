@@ -12,6 +12,7 @@ import Foundation
 class YoutubeModelParser {
 
     // MARK: Parse for MABYT3_Channel
+
     class func getMABChannelThumbnalUrl(channel: MABYT3_Channel) -> NSString {
         var thumbnail: MABYT3_Thumbnail = channel.snippet.thumbnails["default"] as! MABYT3_Thumbnail
         return thumbnail.url!
