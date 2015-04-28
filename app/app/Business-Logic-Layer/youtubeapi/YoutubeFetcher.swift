@@ -225,6 +225,11 @@ class YoutubeFetcher: NSObject {
 
     }
 
+    func fetchChannelForUploadsIds(channelIDs: NSString, completeHandler: ObjectHandler) {
+        let fields = "items/contentDetails"
+        fetchChannelWithChannelId(channelIDs, part: "contentDetails", fields: fields, completeHandler: completeHandler)
+    }
+
     func fetchChannelForThumbnail(channelID: NSString, completeHandler: ObjectHandler) {
         let fields = "items/snippet(thumbnails)"
         fetchChannelWithChannelId(channelID, part: "snippet", fields: fields, completeHandler: completeHandler)

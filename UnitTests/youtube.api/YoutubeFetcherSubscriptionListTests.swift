@@ -23,7 +23,7 @@ class YoutubeFetcherSubscriptionListTests: YoutubeFetcherBase, AuthorUserFetchin
     }
     
     
-    func testRetrievingSubscriptionList() {
+    func _testRetrievingSubscriptionList() {
         expectation = expectationWithDescription("retrievingSubscriptionList")
         
         YoutubeFetcher.sharedInstance.delegate = self
