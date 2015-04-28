@@ -8,11 +8,15 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController,AuthorUserFetchingDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        YoutubeFetcher.sharedInstance.delegate = self
+        if (YoutubeUserProfile.sharedInstance.hasLogin() == true) {
+              self.startFetchingLoggedSubscriptionList()
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -21,5 +25,50 @@ class ViewController: UIViewController {
     }
 
 
+    @IBAction func loginTapped(sender: AnyObject) {
+        let viewController: GTMOAuth2ViewControllerTouch =
+        GTMOAuth2ViewControllerTouch(scope: scope, clientID: kMyClientID, clientSecret: kMyClientSecret, keychainItemName: keychainItemName) {
+            (controllerTouch, auth, error) -> Void in
+            
+            if (error != nil) {
+                // Authentication failed
+                
+            } else {
+                // Authentication succeeded
+                YoutubeUserProfile.sharedInstance.authorizeRequest(auth)
+                self.startFetchingLoggedSubscriptionList()
+                self.dismissViewControllerAnimated(true, completion: {
+                    () -> Void in
+                    
+                })
+            }
+        }
+        
+        let navCon: UINavigationController = UINavigationController(rootViewController: viewController)
+        navCon.providesPresentationContextTransitionStyle = true
+        navCon.definesPresentationContext = true
+        navCon.modalPresentationStyle = .PageSheet
+        
+        
+        self.presentViewController(navCon, animated: true) {
+            () -> Void in
+            
+        }
+    }
+    
+    func startFetchingLoggedSubscriptionList() {
+        YoutubeFetcher.sharedInstance.initLoggedUser()
+    }
+    
+    // MARK: AuthorUserFetchingDelegate
+    func endFetchingUserChannel(channel: GTLYouTubeChannel){
+        let x = 0
+
+    }
+    
+    func endFetchingUserSubscriptions(array: NSArray){
+        let x = 0
+        
+    }
 }
 
