@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <YouTubeAPI3-Objective-C-wrapper/MABYT3_APIRequest.h>
 
 #import "AFHTTPSessionManager.h"
 
@@ -92,6 +93,8 @@ static NSUInteger search_maxResults = 20;
 - (NSURLSessionDataTask *)LISTChannelsThumbnailsForURL:(NSMutableDictionary *)parameters completion:(MABYoutubeResponseBlock)completion;
 
 - (NSURLSessionDataTask *)LISTPlayListForURL:(NSMutableDictionary *)parameters completion:(MABYoutubeResponseBlock)completion;
+
+- (NSURLSessionDataTask *)LISTPlayListItemForURL:(NSMutableDictionary *)parameters completion:(MABYoutubeResponseBlock)completion;
 
 - (NSURLSessionDataTask *)LISTActivitiesForURL:(NSMutableDictionary *)parameters completion:(MABYoutubeResponseBlock)completion;
 

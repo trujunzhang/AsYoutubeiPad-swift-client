@@ -268,8 +268,8 @@ class YoutubeFetcher: NSObject {
 
     // MARK: PlayList
     func fetchPlayListItemWithPlayListId(playlistID: NSString, completeHandler: ObjectHandler) {
-        let fields = "items/snippet"
-        fetchPlayListItemWithPlayListId(playlistID, part: "snippet", fields: fields, completeHandler: completeHandler)
+        let fields = "items/snippet,items/contentDetails"
+        fetchPlayListItemWithPlayListId(playlistID, part: "snippet,contentDetails", fields: fields, completeHandler: completeHandler)
     }
 
     // MABYT3_PlayList
@@ -281,7 +281,7 @@ class YoutubeFetcher: NSObject {
         ]
         )
 
-        MABYT3_APIRequest.sharedInstance().LISTPlayListForURL(parameters, completion: {
+        MABYT3_APIRequest.sharedInstance().LISTPlayListItemForURL(parameters, completion: {
             (responseInfo, error) -> Void in
             if (error == nil) {
                 completeHandler(responseInfo.array, true)

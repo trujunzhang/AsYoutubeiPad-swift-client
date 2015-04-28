@@ -70,7 +70,7 @@ class YoutubeFetcherForChannelTests: YoutubeFetcherBase {
         }
     }
 
-    func testFetchChannelForUploadsIds() {
+    func _testFetchChannelForUploadsIds() {
         let expectation = expectationWithDescription("fetchChannelForUploadsIds")
 
         YoutubeFetcher.sharedInstance.fetchChannelForUploadsIds(channelIDs, completeHandler: {
