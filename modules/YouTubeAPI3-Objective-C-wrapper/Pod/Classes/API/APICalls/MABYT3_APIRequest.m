@@ -13,18 +13,11 @@
 #import "XMLDictionary.h"
 #import "MAB_GoogleUserCredentials.h"
 #import "AFHTTPRequestOperation.h"
-#import "MABYT3_ConvertTranscriptToSrt.h"
-#import "MABYT3_Activity.h"
-#import "MABYT3_ChannelSection.h"
-#import "MABYT3_GuideCategory.h"
-#import "MABYT3_Language.h"
-#import "MABYT3_SearchItem.h"
-#import "YoutubeVideoCache.h"
-#import "MABYT3_PlayList.h"
-#import "MABYT3_VideoCategory.h"
-#import "MABYT3_TranscriptList.h"
-#import "MABYT3_Track.h"
 
+#import "MABYT3_ConvertTranscriptToSrt.h"
+#import "YoutubeVideoCache.h"
+
+#import "MABYouTube_Sources.h"
 
 @implementation MABYT3_YoutubeRequest
 
@@ -907,6 +900,36 @@
 
                                        if (httpResponse.statusCode == 200) {
                                            YoutubeResponseInfo *responseInfo = [self parsePlayListWithData:responseObject];
+                                           dispatch_async(dispatch_get_main_queue(), ^{
+                                               completion(responseInfo, nil);
+                                           });
+                                       } else {
+                                           NSError *error = [self getError:responseObject httpresp:httpResponse];
+                                           dispatch_async(dispatch_get_main_queue(), ^{
+                                               completion(nil, error);
+                                           });
+                                       }
+
+                                   } failure:^(NSURLSessionDataTask *task, NSError *error) {
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    completion(nil, error);
+                });
+            }];
+
+    return task;
+}
+
+- (NSURLSessionDataTask *)LISTPlayListItemForURL:(NSMutableDictionary *)parameters completion:(MABYoutubeResponseBlock)completion {
+    NSString *maxResultsString = [NSString stringWithFormat:@"%d", search_maxResults];
+    NSMutableDictionary *dictionary = [self commonDictionary:parameters maxResultsString:maxResultsString];
+
+    NSURLSessionDataTask *task = [self GET:@"/youtube/v3/playlistItems"
+                                parameters:dictionary
+                                   success:^(NSURLSessionDataTask *task, id responseObject) {
+                                       NSHTTPURLResponse *httpResponse = (NSHTTPURLResponse *) task.response;
+
+                                       if (httpResponse.statusCode == 200) {
+                                           YoutubeResponseInfo *responseInfo = [self parsePlayListItemWithData:responseObject];
                                            dispatch_async(dispatch_get_main_queue(), ^{
                                                completion(responseInfo, nil);
                                            });
@@ -1977,6 +2000,26 @@
     return [YoutubeResponseInfo infoWithArray:arr pageToken:[self parsePageToken:dict]];
 }
 
+
+- (YoutubeResponseInfo *)parsePlayListItemWithData:(NSData *)data {
+    NSMutableArray *arr = [[NSMutableArray alloc] init];
+    NSError *e = nil;
+
+    NSDictionary *dict = [NSJSONSerialization JSONObjectWithData:data
+                                                         options:NSJSONReadingMutableContainers
+                                                           error:&e];
+    if ([dict objectForKey:@"items"]) {
+        NSArray *items = [dict objectForKey:@"items"];
+        if (items.count > 0) {
+            for (int i = 0; i < items.count; i++) {
+                MABYT3_PlayListItem *itm = [[MABYT3_PlayListItem alloc] initFromDictionary:items[i]];
+                [arr addObject:itm];
+            }
+        }
+    }
+
+    return [YoutubeResponseInfo infoWithArray:arr pageToken:[self parsePageToken:dict]];
+}
 
 - (YoutubeResponseInfo *)parseActivitiesListWithData:(NSData *)data {
     NSMutableArray *arr = [[NSMutableArray alloc] init];
