@@ -1,0 +1,2544 @@
+
+GET https://www.googleapis.com/youtube/v3/playlistItems?part=id%2Csnippet%2CcontentDetails%2Cstatus&maxResults=50&playlistId=UUl78QGX_hfK6zT8Mc-2w8GA&key={YOUR_API_KEY}
+
+{
+ "kind": "youtube#playlistItemListResponse",
+ "etag": "\"tbWC5XrSXxe1WOAx6MK9z4hHSU8/IsmZCxUCGwqMWIpaDc020veKrRY\"",
+ "nextPageToken": "CDIQAA",
+ "pageInfo": {
+  "totalResults": 171,
+  "resultsPerPage": 50
+ },
+ "items": [
+  {
+
+   "kind": "youtube#playlistItem",
+   "etag": "\"tbWC5XrSXxe1WOAx6MK9z4hHSU8/_XwQYSbMfckhzKWhq9dSrVDhpC8\"",
+   "id": "UUQ34oMKCVv9VFf4yrKzziGtxMYgMKS4lk",
+   "snippet": {
+    "publishedAt": "2015-04-23T17:01:24.000Z",
+    "channelId": "UCl78QGX_hfK6zT8Mc-2w8GA",
+    "title": "Adobe Customization Wizard DC – Panel by Panel",
+    "description": "Steve Cordero, Acrobat support engineer conducts a deep dive into the Adobe Customization Wizard DC for Windows",
+    "thumbnails": {
+     "default": {
+      "url": "https://i.ytimg.com/vi/8T3HaR-5lyY/default.jpg",
+      "width": 120,
+      "height": 90
+     },
+     "medium": {
+      "url": "https://i.ytimg.com/vi/8T3HaR-5lyY/mqdefault.jpg",
+      "width": 320,
+      "height": 180
+     },
+     "high": {
+      "url": "https://i.ytimg.com/vi/8T3HaR-5lyY/hqdefault.jpg",
+      "width": 480,
+      "height": 360
+     }
+    },
+    "channelTitle": "Adobe Acrobat",
+    "playlistId": "UUl78QGX_hfK6zT8Mc-2w8GA",
+    "position": 0,
+    "resourceId": {
+     "kind": "youtube#video",
+     "videoId": "8T3HaR-5lyY"
+    }
+   },
+   "contentDetails": {
+    "videoId": "8T3HaR-5lyY"
+   },
+   "status": {
+    "privacyStatus": "public"
+   }
+  },
+  {
+
+   "kind": "youtube#playlistItem",
+   "etag": "\"tbWC5XrSXxe1WOAx6MK9z4hHSU8/QzssTGWhXaaCTbz8WKZa7xp2Cls\"",
+   "id": "UUQ34oMKCVv9WpTSFfYJbF5dKHXRlh4m18",
+   "snippet": {
+    "publishedAt": "2015-04-22T18:57:40.000Z",
+    "channelId": "UCl78QGX_hfK6zT8Mc-2w8GA",
+    "title": "Adobe Document Cloud eSign Services Integrates with Salesforce to Accelerate Your Business",
+    "description": "Adobe Document Cloud eSign services (formerly EchoSign) is the highest-rated e-signature app on the Salesforce AppExchange since 2006. With a native integration on Salesforce and Salesforce1 mobile, Adobe eSign services is trusted and used by businesses of all types, including the Fortune 1000, healthcare organizations, and financial institutions. Accelerate critical business processes in Sales, HR, Legal, Procurement, and Operations by as much as 500%.",
+    "thumbnails": {
+     "default": {
+      "url": "https://i.ytimg.com/vi/ACzFCVF9Z7U/default.jpg",
+      "width": 120,
+      "height": 90
+     },
+     "medium": {
+      "url": "https://i.ytimg.com/vi/ACzFCVF9Z7U/mqdefault.jpg",
+      "width": 320,
+      "height": 180
+     },
+     "high": {
+      "url": "https://i.ytimg.com/vi/ACzFCVF9Z7U/hqdefault.jpg",
+      "width": 480,
+      "height": 360
+     },
+     "standard": {
+      "url": "https://i.ytimg.com/vi/ACzFCVF9Z7U/sddefault.jpg",
+      "width": 640,
+      "height": 480
+     },
+     "maxres": {
+      "url": "https://i.ytimg.com/vi/ACzFCVF9Z7U/maxresdefault.jpg",
+      "width": 1280,
+      "height": 720
+     }
+    },
+    "channelTitle": "Adobe Acrobat",
+    "playlistId": "UUl78QGX_hfK6zT8Mc-2w8GA",
+    "position": 1,
+    "resourceId": {
+     "kind": "youtube#video",
+     "videoId": "ACzFCVF9Z7U"
+    }
+   },
+   "contentDetails": {
+    "videoId": "ACzFCVF9Z7U"
+   },
+   "status": {
+    "privacyStatus": "public"
+   }
+  },
+  {
+
+   "kind": "youtube#playlistItem",
+   "etag": "\"tbWC5XrSXxe1WOAx6MK9z4hHSU8/Qt9zU-T-nv69qnR0TZfKHGeWyTM\"",
+   "id": "UUQ34oMKCVv9UafN91f0gmeF8ZHfFNxm1N",
+   "snippet": {
+    "publishedAt": "2015-04-20T15:44:54.000Z",
+    "channelId": "UCl78QGX_hfK6zT8Mc-2w8GA",
+    "title": "Getting multiple signatures",
+    "description": "How to get multiple signatures on one document.",
+    "thumbnails": {
+     "default": {
+      "url": "https://i.ytimg.com/vi/HbchAAXvEOY/default.jpg",
+      "width": 120,
+      "height": 90
+     },
+     "medium": {
+      "url": "https://i.ytimg.com/vi/HbchAAXvEOY/mqdefault.jpg",
+      "width": 320,
+      "height": 180
+     },
+     "high": {
+      "url": "https://i.ytimg.com/vi/HbchAAXvEOY/hqdefault.jpg",
+      "width": 480,
+      "height": 360
+     },
+     "standard": {
+      "url": "https://i.ytimg.com/vi/HbchAAXvEOY/sddefault.jpg",
+      "width": 640,
+      "height": 480
+     },
+     "maxres": {
+      "url": "https://i.ytimg.com/vi/HbchAAXvEOY/maxresdefault.jpg",
+      "width": 1280,
+      "height": 720
+     }
+    },
+    "channelTitle": "Adobe Acrobat",
+    "playlistId": "UUl78QGX_hfK6zT8Mc-2w8GA",
+    "position": 2,
+    "resourceId": {
+     "kind": "youtube#video",
+     "videoId": "HbchAAXvEOY"
+    }
+   },
+   "contentDetails": {
+    "videoId": "HbchAAXvEOY"
+   },
+   "status": {
+    "privacyStatus": "public"
+   }
+  },
+  {
+
+   "kind": "youtube#playlistItem",
+   "etag": "\"tbWC5XrSXxe1WOAx6MK9z4hHSU8/lbR5DK43eCbOn1OhPr-8KFlRifs\"",
+   "id": "UUQ34oMKCVv9WHSEBnyXOEt_tpKQQ9ZIMg",
+   "snippet": {
+    "publishedAt": "2015-04-20T15:43:55.000Z",
+    "channelId": "UCl78QGX_hfK6zT8Mc-2w8GA",
+    "title": "Using Prefill",
+    "description": "How to pre-fill information into a document from within eSign services, before you send it for e-signing.",
+    "thumbnails": {
+     "default": {
+      "url": "https://i.ytimg.com/vi/LBcOopSp6N4/default.jpg",
+      "width": 120,
+      "height": 90
+     },
+     "medium": {
+      "url": "https://i.ytimg.com/vi/LBcOopSp6N4/mqdefault.jpg",
+      "width": 320,
+      "height": 180
+     },
+     "high": {
+      "url": "https://i.ytimg.com/vi/LBcOopSp6N4/hqdefault.jpg",
+      "width": 480,
+      "height": 360
+     },
+     "standard": {
+      "url": "https://i.ytimg.com/vi/LBcOopSp6N4/sddefault.jpg",
+      "width": 640,
+      "height": 480
+     },
+     "maxres": {
+      "url": "https://i.ytimg.com/vi/LBcOopSp6N4/maxresdefault.jpg",
+      "width": 1280,
+      "height": 720
+     }
+    },
+    "channelTitle": "Adobe Acrobat",
+    "playlistId": "UUl78QGX_hfK6zT8Mc-2w8GA",
+    "position": 3,
+    "resourceId": {
+     "kind": "youtube#video",
+     "videoId": "LBcOopSp6N4"
+    }
+   },
+   "contentDetails": {
+    "videoId": "LBcOopSp6N4"
+   },
+   "status": {
+    "privacyStatus": "public"
+   }
+  },
+  {
+
+   "kind": "youtube#playlistItem",
+   "etag": "\"tbWC5XrSXxe1WOAx6MK9z4hHSU8/teTcdvfBcZmC-5PLGemu_6dtKQQ\"",
+   "id": "UUQ34oMKCVv9XgUkdNLaDAKHY6GPCjcD2A",
+   "snippet": {
+    "publishedAt": "2015-04-20T15:42:11.000Z",
+    "channelId": "UCl78QGX_hfK6zT8Mc-2w8GA",
+    "title": "Setting up your user account",
+    "description": "This tutorial details the recommended first steps to get your user account ready to use; verifying your profile information, choosing your signature option, and setting up notifications.",
+    "thumbnails": {
+     "default": {
+      "url": "https://i.ytimg.com/vi/yMqyI6JE4Ic/default.jpg",
+      "width": 120,
+      "height": 90
+     },
+     "medium": {
+      "url": "https://i.ytimg.com/vi/yMqyI6JE4Ic/mqdefault.jpg",
+      "width": 320,
+      "height": 180
+     },
+     "high": {
+      "url": "https://i.ytimg.com/vi/yMqyI6JE4Ic/hqdefault.jpg",
+      "width": 480,
+      "height": 360
+     },
+     "standard": {
+      "url": "https://i.ytimg.com/vi/yMqyI6JE4Ic/sddefault.jpg",
+      "width": 640,
+      "height": 480
+     },
+     "maxres": {
+      "url": "https://i.ytimg.com/vi/yMqyI6JE4Ic/maxresdefault.jpg",
+      "width": 1280,
+      "height": 720
+     }
+    },
+    "channelTitle": "Adobe Acrobat",
+    "playlistId": "UUl78QGX_hfK6zT8Mc-2w8GA",
+    "position": 4,
+    "resourceId": {
+     "kind": "youtube#video",
+     "videoId": "yMqyI6JE4Ic"
+    }
+   },
+   "contentDetails": {
+    "videoId": "yMqyI6JE4Ic"
+   },
+   "status": {
+    "privacyStatus": "public"
+   }
+  },
+  {
+
+   "kind": "youtube#playlistItem",
+   "etag": "\"tbWC5XrSXxe1WOAx6MK9z4hHSU8/CuCQHeVTrXilDkRYb4GhmWepbio\"",
+   "id": "UUQ34oMKCVv9U65dVZuhYCsX3_TGEQjr5d",
+   "snippet": {
+    "publishedAt": "2015-04-20T15:39:59.000Z",
+    "channelId": "UCl78QGX_hfK6zT8Mc-2w8GA",
+    "title": "Sending a document for signature",
+    "description": "How to upload a document, add form fields, and send it for e-signing.",
+    "thumbnails": {
+     "default": {
+      "url": "https://i.ytimg.com/vi/kqdhIh2hWWE/default.jpg",
+      "width": 120,
+      "height": 90
+     },
+     "medium": {
+      "url": "https://i.ytimg.com/vi/kqdhIh2hWWE/mqdefault.jpg",
+      "width": 320,
+      "height": 180
+     },
+     "high": {
+      "url": "https://i.ytimg.com/vi/kqdhIh2hWWE/hqdefault.jpg",
+      "width": 480,
+      "height": 360
+     },
+     "standard": {
+      "url": "https://i.ytimg.com/vi/kqdhIh2hWWE/sddefault.jpg",
+      "width": 640,
+      "height": 480
+     },
+     "maxres": {
+      "url": "https://i.ytimg.com/vi/kqdhIh2hWWE/maxresdefault.jpg",
+      "width": 1280,
+      "height": 720
+     }
+    },
+    "channelTitle": "Adobe Acrobat",
+    "playlistId": "UUl78QGX_hfK6zT8Mc-2w8GA",
+    "position": 5,
+    "resourceId": {
+     "kind": "youtube#video",
+     "videoId": "kqdhIh2hWWE"
+    }
+   },
+   "contentDetails": {
+    "videoId": "kqdhIh2hWWE"
+   },
+   "status": {
+    "privacyStatus": "public"
+   }
+  },
+  {
+
+   "kind": "youtube#playlistItem",
+   "etag": "\"tbWC5XrSXxe1WOAx6MK9z4hHSU8/HK8eDkIG7ATMSPyqKtOsk4Pa5vs\"",
+   "id": "UUQ34oMKCVv9UY5x2M8xqFwXM2YmuOSgra",
+   "snippet": {
+    "publishedAt": "2015-04-07T20:30:56.000Z",
+    "channelId": "UCl78QGX_hfK6zT8Mc-2w8GA",
+    "title": "Edit anything, anywhere",
+    "description": "See how Acrobat DC makes it simple and natural to edit any paper or PDF document – across desktops or mobile.",
+    "thumbnails": {
+     "default": {
+      "url": "https://i.ytimg.com/vi/-tmzfUwF78k/default.jpg",
+      "width": 120,
+      "height": 90
+     },
+     "medium": {
+      "url": "https://i.ytimg.com/vi/-tmzfUwF78k/mqdefault.jpg",
+      "width": 320,
+      "height": 180
+     },
+     "high": {
+      "url": "https://i.ytimg.com/vi/-tmzfUwF78k/hqdefault.jpg",
+      "width": 480,
+      "height": 360
+     },
+     "standard": {
+      "url": "https://i.ytimg.com/vi/-tmzfUwF78k/sddefault.jpg",
+      "width": 640,
+      "height": 480
+     },
+     "maxres": {
+      "url": "https://i.ytimg.com/vi/-tmzfUwF78k/maxresdefault.jpg",
+      "width": 1280,
+      "height": 720
+     }
+    },
+    "channelTitle": "Adobe Acrobat",
+    "playlistId": "UUl78QGX_hfK6zT8Mc-2w8GA",
+    "position": 6,
+    "resourceId": {
+     "kind": "youtube#video",
+     "videoId": "-tmzfUwF78k"
+    }
+   },
+   "contentDetails": {
+    "videoId": "-tmzfUwF78k"
+   },
+   "status": {
+    "privacyStatus": "public"
+   }
+  },
+  {
+
+   "kind": "youtube#playlistItem",
+   "etag": "\"tbWC5XrSXxe1WOAx6MK9z4hHSU8/KyhCieNa7ob2ggoZXlsowFwdy54\"",
+   "id": "UUQ34oMKCVv9VY6tGXW7c_mYf4F4ucMSY1",
+   "snippet": {
+    "publishedAt": "2015-04-07T20:30:47.000Z",
+    "channelId": "UCl78QGX_hfK6zT8Mc-2w8GA",
+    "title": "Turn paper to PDF in a snap.",
+    "description": "See how Acrobat DC helps you turn paper documents into digital PDFs you can search and store – using the camera on your mobile device.",
+    "thumbnails": {
+     "default": {
+      "url": "https://i.ytimg.com/vi/LfOm4ItRup4/default.jpg",
+      "width": 120,
+      "height": 90
+     },
+     "medium": {
+      "url": "https://i.ytimg.com/vi/LfOm4ItRup4/mqdefault.jpg",
+      "width": 320,
+      "height": 180
+     },
+     "high": {
+      "url": "https://i.ytimg.com/vi/LfOm4ItRup4/hqdefault.jpg",
+      "width": 480,
+      "height": 360
+     },
+     "standard": {
+      "url": "https://i.ytimg.com/vi/LfOm4ItRup4/sddefault.jpg",
+      "width": 640,
+      "height": 480
+     },
+     "maxres": {
+      "url": "https://i.ytimg.com/vi/LfOm4ItRup4/maxresdefault.jpg",
+      "width": 1280,
+      "height": 720
+     }
+    },
+    "channelTitle": "Adobe Acrobat",
+    "playlistId": "UUl78QGX_hfK6zT8Mc-2w8GA",
+    "position": 7,
+    "resourceId": {
+     "kind": "youtube#video",
+     "videoId": "LfOm4ItRup4"
+    }
+   },
+   "contentDetails": {
+    "videoId": "LfOm4ItRup4"
+   },
+   "status": {
+    "privacyStatus": "public"
+   }
+  },
+  {
+
+   "kind": "youtube#playlistItem",
+   "etag": "\"tbWC5XrSXxe1WOAx6MK9z4hHSU8/almDcB1GntL3bUVpcUGlL-w2wcc\"",
+   "id": "UUQ34oMKCVv9Us6B0sXhdx9z9hPrJlQG8p",
+   "snippet": {
+    "publishedAt": "2015-04-07T20:30:35.000Z",
+    "channelId": "UCl78QGX_hfK6zT8Mc-2w8GA",
+    "title": "Get documents e-signed with Acrobat DC.",
+    "description": "Getting important signatures should take minutes, not months. Acrobat DC makes it easy to send and track documents that anyone can sign in seconds – on any device.",
+    "thumbnails": {
+     "default": {
+      "url": "https://i.ytimg.com/vi/yVf3BR1uuzU/default.jpg",
+      "width": 120,
+      "height": 90
+     },
+     "medium": {
+      "url": "https://i.ytimg.com/vi/yVf3BR1uuzU/mqdefault.jpg",
+      "width": 320,
+      "height": 180
+     },
+     "high": {
+      "url": "https://i.ytimg.com/vi/yVf3BR1uuzU/hqdefault.jpg",
+      "width": 480,
+      "height": 360
+     },
+     "standard": {
+      "url": "https://i.ytimg.com/vi/yVf3BR1uuzU/sddefault.jpg",
+      "width": 640,
+      "height": 480
+     },
+     "maxres": {
+      "url": "https://i.ytimg.com/vi/yVf3BR1uuzU/maxresdefault.jpg",
+      "width": 1280,
+      "height": 720
+     }
+    },
+    "channelTitle": "Adobe Acrobat",
+    "playlistId": "UUl78QGX_hfK6zT8Mc-2w8GA",
+    "position": 8,
+    "resourceId": {
+     "kind": "youtube#video",
+     "videoId": "yVf3BR1uuzU"
+    }
+   },
+   "contentDetails": {
+    "videoId": "yVf3BR1uuzU"
+   },
+   "status": {
+    "privacyStatus": "public"
+   }
+  },
+  {
+
+   "kind": "youtube#playlistItem",
+   "etag": "\"tbWC5XrSXxe1WOAx6MK9z4hHSU8/hi5pzP5sDjz18qUF8__L509NKTI\"",
+   "id": "UUQ34oMKCVv9U2HFTSTIbNYINcGx9B1SmT",
+   "snippet": {
+    "publishedAt": "2015-04-07T20:30:27.000Z",
+    "channelId": "UCl78QGX_hfK6zT8Mc-2w8GA",
+    "title": "Stop filling out forms by hand.",
+    "description": "See how Adobe DC takes the pain out of filling out forms by making it easy to fill, sign, and send from your computer, browser, or tablet.",
+    "thumbnails": {
+     "default": {
+      "url": "https://i.ytimg.com/vi/hYxRNgPuDbg/default.jpg",
+      "width": 120,
+      "height": 90
+     },
+     "medium": {
+      "url": "https://i.ytimg.com/vi/hYxRNgPuDbg/mqdefault.jpg",
+      "width": 320,
+      "height": 180
+     },
+     "high": {
+      "url": "https://i.ytimg.com/vi/hYxRNgPuDbg/hqdefault.jpg",
+      "width": 480,
+      "height": 360
+     },
+     "standard": {
+      "url": "https://i.ytimg.com/vi/hYxRNgPuDbg/sddefault.jpg",
+      "width": 640,
+      "height": 480
+     },
+     "maxres": {
+      "url": "https://i.ytimg.com/vi/hYxRNgPuDbg/maxresdefault.jpg",
+      "width": 1280,
+      "height": 720
+     }
+    },
+    "channelTitle": "Adobe Acrobat",
+    "playlistId": "UUl78QGX_hfK6zT8Mc-2w8GA",
+    "position": 9,
+    "resourceId": {
+     "kind": "youtube#video",
+     "videoId": "hYxRNgPuDbg"
+    }
+   },
+   "contentDetails": {
+    "videoId": "hYxRNgPuDbg"
+   },
+   "status": {
+    "privacyStatus": "public"
+   }
+  },
+  {
+
+   "kind": "youtube#playlistItem",
+   "etag": "\"tbWC5XrSXxe1WOAx6MK9z4hHSU8/F1Ql6Joauwj2dtQ2gLEh94Q5vSc\"",
+   "id": "UUQ34oMKCVv9WJiRSv5Z4CYo9UatwYoZY2",
+   "snippet": {
+    "publishedAt": "2015-04-07T20:30:17.000Z",
+    "channelId": "UCl78QGX_hfK6zT8Mc-2w8GA",
+    "title": "Stay connected to your files with Mobile Link",
+    "description": "Start work on your desktop, finish on your phone. With the Mobile Link feature in Acrobat DC, your recent files go where you do. So you can pick up right where you left off every time – across desktops, mobile, and web.",
+    "thumbnails": {
+     "default": {
+      "url": "https://i.ytimg.com/vi/WjxhMB0VfVY/default.jpg",
+      "width": 120,
+      "height": 90
+     },
+     "medium": {
+      "url": "https://i.ytimg.com/vi/WjxhMB0VfVY/mqdefault.jpg",
+      "width": 320,
+      "height": 180
+     },
+     "high": {
+      "url": "https://i.ytimg.com/vi/WjxhMB0VfVY/hqdefault.jpg",
+      "width": 480,
+      "height": 360
+     },
+     "standard": {
+      "url": "https://i.ytimg.com/vi/WjxhMB0VfVY/sddefault.jpg",
+      "width": 640,
+      "height": 480
+     },
+     "maxres": {
+      "url": "https://i.ytimg.com/vi/WjxhMB0VfVY/maxresdefault.jpg",
+      "width": 1280,
+      "height": 720
+     }
+    },
+    "channelTitle": "Adobe Acrobat",
+    "playlistId": "UUl78QGX_hfK6zT8Mc-2w8GA",
+    "position": 10,
+    "resourceId": {
+     "kind": "youtube#video",
+     "videoId": "WjxhMB0VfVY"
+    }
+   },
+   "contentDetails": {
+    "videoId": "WjxhMB0VfVY"
+   },
+   "status": {
+    "privacyStatus": "public"
+   }
+  },
+  {
+
+   "kind": "youtube#playlistItem",
+   "etag": "\"tbWC5XrSXxe1WOAx6MK9z4hHSU8/uM24dBOObc5E_GCH0I29xPu9HJk\"",
+   "id": "UUQ34oMKCVv9X7JyifZ4NN0EJaW-CMxyZp",
+   "snippet": {
+    "publishedAt": "2015-04-06T15:52:02.000Z",
+    "channelId": "UCl78QGX_hfK6zT8Mc-2w8GA",
+    "title": "Acrobat DC named user deployment (non-serialized)",
+    "description": "Adobe's Steve Cordero walks you through the process of deploying Acrobat DC on Windows & MAC for named-user licensing (i.e. non-serialized) scenario.",
+    "thumbnails": {
+     "default": {
+      "url": "https://i.ytimg.com/vi/toOPiEYey4s/default.jpg",
+      "width": 120,
+      "height": 90
+     },
+     "medium": {
+      "url": "https://i.ytimg.com/vi/toOPiEYey4s/mqdefault.jpg",
+      "width": 320,
+      "height": 180
+     },
+     "high": {
+      "url": "https://i.ytimg.com/vi/toOPiEYey4s/hqdefault.jpg",
+      "width": 480,
+      "height": 360
+     }
+    },
+    "channelTitle": "Adobe Acrobat",
+    "playlistId": "UUl78QGX_hfK6zT8Mc-2w8GA",
+    "position": 11,
+    "resourceId": {
+     "kind": "youtube#video",
+     "videoId": "toOPiEYey4s"
+    }
+   },
+   "contentDetails": {
+    "videoId": "toOPiEYey4s"
+   },
+   "status": {
+    "privacyStatus": "public"
+   }
+  },
+  {
+
+   "kind": "youtube#playlistItem",
+   "etag": "\"tbWC5XrSXxe1WOAx6MK9z4hHSU8/HMe7TH_J0Yuk03L9t1rUsB9N-bo\"",
+   "id": "UUQ34oMKCVv9W8BGEzwuFyXt5dHmBtXcU2",
+   "snippet": {
+    "publishedAt": "2015-04-04T19:23:58.000Z",
+    "channelId": "UCl78QGX_hfK6zT8Mc-2w8GA",
+    "title": "Reimagining Adobe Acrobat for a mobile-first world",
+    "description": "With a rapidly growing population perpetually on the go and working across multiple devices, the Adobe Acrobat team knew it was the perfect time to create a cloud-connected ecosystem of products and services that worked seamlessly, whenever and wherever. See how Adobe reimagined this legacy product into the all-new Acrobat DC and Adobe Document Cloud.",
+    "thumbnails": {
+     "default": {
+      "url": "https://i.ytimg.com/vi/rahSYl9vxFU/default.jpg",
+      "width": 120,
+      "height": 90
+     },
+     "medium": {
+      "url": "https://i.ytimg.com/vi/rahSYl9vxFU/mqdefault.jpg",
+      "width": 320,
+      "height": 180
+     },
+     "high": {
+      "url": "https://i.ytimg.com/vi/rahSYl9vxFU/hqdefault.jpg",
+      "width": 480,
+      "height": 360
+     },
+     "standard": {
+      "url": "https://i.ytimg.com/vi/rahSYl9vxFU/sddefault.jpg",
+      "width": 640,
+      "height": 480
+     },
+     "maxres": {
+      "url": "https://i.ytimg.com/vi/rahSYl9vxFU/maxresdefault.jpg",
+      "width": 1280,
+      "height": 720
+     }
+    },
+    "channelTitle": "Adobe Acrobat",
+    "playlistId": "UUl78QGX_hfK6zT8Mc-2w8GA",
+    "position": 12,
+    "resourceId": {
+     "kind": "youtube#video",
+     "videoId": "rahSYl9vxFU"
+    }
+   },
+   "contentDetails": {
+    "videoId": "rahSYl9vxFU"
+   },
+   "status": {
+    "privacyStatus": "public"
+   }
+  },
+  {
+
+   "kind": "youtube#playlistItem",
+   "etag": "\"tbWC5XrSXxe1WOAx6MK9z4hHSU8/Btpv3YXq0Op_w-4wXWiUsTRkd2E\"",
+   "id": "UUQ34oMKCVv9UjoYSqMgzbzEDozihxRGyw",
+   "snippet": {
+    "publishedAt": "2015-03-18T17:09:35.000Z",
+    "channelId": "UCl78QGX_hfK6zT8Mc-2w8GA",
+    "title": "The Ultimate #FORMRAGE Tournament",
+    "description": "People hate paperwork. In the Ultimate FORMRAGE Tournament, the most irritating paper forms go head-to-head until one out frustrates the rest. Fill out a bracket for a chance to win an iPad mini and a subscription to Acrobat DC, part of the new Adobe Document Cloud:  http://adobe.ly/1BRxSBV",
+    "thumbnails": {
+     "default": {
+      "url": "https://i.ytimg.com/vi/xZpobOt5-fU/default.jpg",
+      "width": 120,
+      "height": 90
+     },
+     "medium": {
+      "url": "https://i.ytimg.com/vi/xZpobOt5-fU/mqdefault.jpg",
+      "width": 320,
+      "height": 180
+     },
+     "high": {
+      "url": "https://i.ytimg.com/vi/xZpobOt5-fU/hqdefault.jpg",
+      "width": 480,
+      "height": 360
+     },
+     "standard": {
+      "url": "https://i.ytimg.com/vi/xZpobOt5-fU/sddefault.jpg",
+      "width": 640,
+      "height": 480
+     },
+     "maxres": {
+      "url": "https://i.ytimg.com/vi/xZpobOt5-fU/maxresdefault.jpg",
+      "width": 1280,
+      "height": 720
+     }
+    },
+    "channelTitle": "Adobe Acrobat",
+    "playlistId": "UUl78QGX_hfK6zT8Mc-2w8GA",
+    "position": 13,
+    "resourceId": {
+     "kind": "youtube#video",
+     "videoId": "xZpobOt5-fU"
+    }
+   },
+   "contentDetails": {
+    "videoId": "xZpobOt5-fU"
+   },
+   "status": {
+    "privacyStatus": "public"
+   }
+  },
+  {
+
+   "kind": "youtube#playlistItem",
+   "etag": "\"tbWC5XrSXxe1WOAx6MK9z4hHSU8/JCDGeqNOU0c13ugUR6OrwrkxNkU\"",
+   "id": "UUQ34oMKCVv9ULG8K2uyy09Vbp6NvObAwF",
+   "snippet": {
+    "publishedAt": "2014-07-09T14:43:09.000Z",
+    "channelId": "UCl78QGX_hfK6zT8Mc-2w8GA",
+    "title": "Deploying Acrobat XI for Creative Cloud Team Subscribers (Windows)",
+    "description": "Adobe's Steve Cordero walks you through the process of deploying Acrobat XI on Windows as part of your Creative Cloud Team subscription.",
+    "thumbnails": {
+     "default": {
+      "url": "https://i.ytimg.com/vi/MOKAaGE_7RY/default.jpg",
+      "width": 120,
+      "height": 90
+     },
+     "medium": {
+      "url": "https://i.ytimg.com/vi/MOKAaGE_7RY/mqdefault.jpg",
+      "width": 320,
+      "height": 180
+     },
+     "high": {
+      "url": "https://i.ytimg.com/vi/MOKAaGE_7RY/hqdefault.jpg",
+      "width": 480,
+      "height": 360
+     },
+     "standard": {
+      "url": "https://i.ytimg.com/vi/MOKAaGE_7RY/sddefault.jpg",
+      "width": 640,
+      "height": 480
+     }
+    },
+    "channelTitle": "Adobe Acrobat",
+    "playlistId": "UUl78QGX_hfK6zT8Mc-2w8GA",
+    "position": 14,
+    "resourceId": {
+     "kind": "youtube#video",
+     "videoId": "MOKAaGE_7RY"
+    }
+   },
+   "contentDetails": {
+    "videoId": "MOKAaGE_7RY"
+   },
+   "status": {
+    "privacyStatus": "public"
+   }
+  },
+  {
+
+   "kind": "youtube#playlistItem",
+   "etag": "\"tbWC5XrSXxe1WOAx6MK9z4hHSU8/PLhPSBlpqHjrZ5Bf4qSHx9CbKxQ\"",
+   "id": "UUQ34oMKCVv9WVIOrwvd7DBbZRRHFt_nIM",
+   "snippet": {
+    "publishedAt": "2014-07-08T17:12:42.000Z",
+    "channelId": "UCl78QGX_hfK6zT8Mc-2w8GA",
+    "title": "Deploying Acrobat XI for Creative Cloud Team Subscribers (Mac)",
+    "description": "Adobe's Steve Cordero walks you through the process of deploying Acrobat XI on Mac OSX as part of your Creative Cloud Team subscription.",
+    "thumbnails": {
+     "default": {
+      "url": "https://i.ytimg.com/vi/GWSLLIZaxVw/default.jpg",
+      "width": 120,
+      "height": 90
+     },
+     "medium": {
+      "url": "https://i.ytimg.com/vi/GWSLLIZaxVw/mqdefault.jpg",
+      "width": 320,
+      "height": 180
+     },
+     "high": {
+      "url": "https://i.ytimg.com/vi/GWSLLIZaxVw/hqdefault.jpg",
+      "width": 480,
+      "height": 360
+     },
+     "standard": {
+      "url": "https://i.ytimg.com/vi/GWSLLIZaxVw/sddefault.jpg",
+      "width": 640,
+      "height": 480
+     }
+    },
+    "channelTitle": "Adobe Acrobat",
+    "playlistId": "UUl78QGX_hfK6zT8Mc-2w8GA",
+    "position": 15,
+    "resourceId": {
+     "kind": "youtube#video",
+     "videoId": "GWSLLIZaxVw"
+    }
+   },
+   "contentDetails": {
+    "videoId": "GWSLLIZaxVw"
+   },
+   "status": {
+    "privacyStatus": "public"
+   }
+  },
+  {
+
+   "kind": "youtube#playlistItem",
+   "etag": "\"tbWC5XrSXxe1WOAx6MK9z4hHSU8/akoyvFpPGiBFo-UBt_DyU3oXF_Y\"",
+   "id": "UUQ34oMKCVv9XTGYHZFhX7ZXQPp6SKMU2r",
+   "snippet": {
+    "publishedAt": "2014-06-04T20:26:31.000Z",
+    "channelId": "UCl78QGX_hfK6zT8Mc-2w8GA",
+    "title": "Geoffrey Moore on e-signatures: Removing the last bottleneck to digital transactions",
+    "description": "Geoffrey Moore outlines how digital systems are disrupting our entire world, using the e-signature market as an example. He discusses how every activity in life is being infiltrated by digital interactions made possible by ubiquitous mobile devices, Web applications, and cloud computing.  This is forcing industry after industry to confront the technology adoption life cycle yet once again.  We are poised between an era of old IT and new IT, directing it away from data and records and pointing it squarely at the user experience itself. Electronic signatures are a perfect example of inertia impeding the implementation of a solution with significant business benefits.  We look at it from the IT perspective, but also from the lines of business with high contract volumes that would benefit from implementing e-signatures the most -- sales and sales operations, HR and finance.",
+    "thumbnails": {
+     "default": {
+      "url": "https://i.ytimg.com/vi/yU5Ubo-t_XY/default.jpg",
+      "width": 120,
+      "height": 90
+     },
+     "medium": {
+      "url": "https://i.ytimg.com/vi/yU5Ubo-t_XY/mqdefault.jpg",
+      "width": 320,
+      "height": 180
+     },
+     "high": {
+      "url": "https://i.ytimg.com/vi/yU5Ubo-t_XY/hqdefault.jpg",
+      "width": 480,
+      "height": 360
+     },
+     "standard": {
+      "url": "https://i.ytimg.com/vi/yU5Ubo-t_XY/sddefault.jpg",
+      "width": 640,
+      "height": 480
+     },
+     "maxres": {
+      "url": "https://i.ytimg.com/vi/yU5Ubo-t_XY/maxresdefault.jpg",
+      "width": 1280,
+      "height": 720
+     }
+    },
+    "channelTitle": "Adobe Acrobat",
+    "playlistId": "UUl78QGX_hfK6zT8Mc-2w8GA",
+    "position": 16,
+    "resourceId": {
+     "kind": "youtube#video",
+     "videoId": "yU5Ubo-t_XY"
+    }
+   },
+   "contentDetails": {
+    "videoId": "yU5Ubo-t_XY"
+   },
+   "status": {
+    "privacyStatus": "public"
+   }
+  },
+  {
+
+   "kind": "youtube#playlistItem",
+   "etag": "\"tbWC5XrSXxe1WOAx6MK9z4hHSU8/49VNjjnFXwva5crXl-lwGMPhceo\"",
+   "id": "UUQ34oMKCVv9UpW8DfVE6wnsJxH3Lnt4XY",
+   "snippet": {
+    "publishedAt": "2014-01-14T22:07:11.000Z",
+    "channelId": "UCl78QGX_hfK6zT8Mc-2w8GA",
+    "title": "Why Adobe EchoSign?",
+    "description": "Adobe® EchoSign® is the easiest electronic signature solution anywhere. Small companies and large enterprises use it to get documents signed and close business—quickly, securely, on any device.",
+    "thumbnails": {
+     "default": {
+      "url": "https://i.ytimg.com/vi/bWs3kXarjT8/default.jpg",
+      "width": 120,
+      "height": 90
+     },
+     "medium": {
+      "url": "https://i.ytimg.com/vi/bWs3kXarjT8/mqdefault.jpg",
+      "width": 320,
+      "height": 180
+     },
+     "high": {
+      "url": "https://i.ytimg.com/vi/bWs3kXarjT8/hqdefault.jpg",
+      "width": 480,
+      "height": 360
+     },
+     "standard": {
+      "url": "https://i.ytimg.com/vi/bWs3kXarjT8/sddefault.jpg",
+      "width": 640,
+      "height": 480
+     },
+     "maxres": {
+      "url": "https://i.ytimg.com/vi/bWs3kXarjT8/maxresdefault.jpg",
+      "width": 1280,
+      "height": 720
+     }
+    },
+    "channelTitle": "Adobe Acrobat",
+    "playlistId": "UUl78QGX_hfK6zT8Mc-2w8GA",
+    "position": 17,
+    "resourceId": {
+     "kind": "youtube#video",
+     "videoId": "bWs3kXarjT8"
+    }
+   },
+   "contentDetails": {
+    "videoId": "bWs3kXarjT8"
+   },
+   "status": {
+    "privacyStatus": "public"
+   }
+  },
+  {
+
+   "kind": "youtube#playlistItem",
+   "etag": "\"tbWC5XrSXxe1WOAx6MK9z4hHSU8/MWoicvk1o3CGZ1OWEGdTBXQPXAY\"",
+   "id": "UUQ34oMKCVv9V8dEq_YXLLZsunFDSnXbdy",
+   "snippet": {
+    "publishedAt": "2012-10-08T21:31:01.000Z",
+    "channelId": "UCl78QGX_hfK6zT8Mc-2w8GA",
+    "title": "Create Accessible PDF Files for People with Disabilities",
+    "description": "Acrobat XI helps simplify the creation and verification of accessible PDF documents that need to meet PDF/UA and WCAG 2.0 standards.",
+    "thumbnails": {
+     "default": {
+      "url": "https://i.ytimg.com/vi/lBvWPQugzo4/default.jpg",
+      "width": 120,
+      "height": 90
+     },
+     "medium": {
+      "url": "https://i.ytimg.com/vi/lBvWPQugzo4/mqdefault.jpg",
+      "width": 320,
+      "height": 180
+     },
+     "high": {
+      "url": "https://i.ytimg.com/vi/lBvWPQugzo4/hqdefault.jpg",
+      "width": 480,
+      "height": 360
+     },
+     "standard": {
+      "url": "https://i.ytimg.com/vi/lBvWPQugzo4/sddefault.jpg",
+      "width": 640,
+      "height": 480
+     },
+     "maxres": {
+      "url": "https://i.ytimg.com/vi/lBvWPQugzo4/maxresdefault.jpg",
+      "width": 1280,
+      "height": 720
+     }
+    },
+    "channelTitle": "Adobe Acrobat",
+    "playlistId": "UUl78QGX_hfK6zT8Mc-2w8GA",
+    "position": 18,
+    "resourceId": {
+     "kind": "youtube#video",
+     "videoId": "lBvWPQugzo4"
+    }
+   },
+   "contentDetails": {
+    "videoId": "lBvWPQugzo4"
+   },
+   "status": {
+    "privacyStatus": "public"
+   }
+  },
+  {
+
+   "kind": "youtube#playlistItem",
+   "etag": "\"tbWC5XrSXxe1WOAx6MK9z4hHSU8/4iHi1yDqtHfNthfYdO72nOnM5-w\"",
+   "id": "UUQ34oMKCVv9X06-aE1BUP-ENF7TAqi4mO",
+   "snippet": {
+    "publishedAt": "2012-10-08T19:05:55.000Z",
+    "channelId": "UCl78QGX_hfK6zT8Mc-2w8GA",
+    "title": "Standardize Routine PDF Tasks",
+    "description": "Acrobat XI lets you create and share step-by-step Actions that make complex or repetitive document preparation tasks easy for people to execute consistently.",
+    "thumbnails": {
+     "default": {
+      "url": "https://i.ytimg.com/vi/XxvSchERQhk/default.jpg",
+      "width": 120,
+      "height": 90
+     },
+     "medium": {
+      "url": "https://i.ytimg.com/vi/XxvSchERQhk/mqdefault.jpg",
+      "width": 320,
+      "height": 180
+     },
+     "high": {
+      "url": "https://i.ytimg.com/vi/XxvSchERQhk/hqdefault.jpg",
+      "width": 480,
+      "height": 360
+     },
+     "standard": {
+      "url": "https://i.ytimg.com/vi/XxvSchERQhk/sddefault.jpg",
+      "width": 640,
+      "height": 480
+     },
+     "maxres": {
+      "url": "https://i.ytimg.com/vi/XxvSchERQhk/maxresdefault.jpg",
+      "width": 1280,
+      "height": 720
+     }
+    },
+    "channelTitle": "Adobe Acrobat",
+    "playlistId": "UUl78QGX_hfK6zT8Mc-2w8GA",
+    "position": 19,
+    "resourceId": {
+     "kind": "youtube#video",
+     "videoId": "XxvSchERQhk"
+    }
+   },
+   "contentDetails": {
+    "videoId": "XxvSchERQhk"
+   },
+   "status": {
+    "privacyStatus": "public"
+   }
+  },
+  {
+
+   "kind": "youtube#playlistItem",
+   "etag": "\"tbWC5XrSXxe1WOAx6MK9z4hHSU8/feCOweUg7e_9_QzVGb5ZRfJ9ccs\"",
+   "id": "UUQ34oMKCVv9VTl-70Ps4hkaF6niSdkaf-",
+   "snippet": {
+    "publishedAt": "2012-10-08T19:04:34.000Z",
+    "channelId": "UCl78QGX_hfK6zT8Mc-2w8GA",
+    "title": "Sign PDF Files Electronically",
+    "description": "Acrobat XI makes it simple to use electronic signatures, whether signing a PDF yourself or getting a file e-signed by others.",
+    "thumbnails": {
+     "default": {
+      "url": "https://i.ytimg.com/vi/oIju5jh86kQ/default.jpg",
+      "width": 120,
+      "height": 90
+     },
+     "medium": {
+      "url": "https://i.ytimg.com/vi/oIju5jh86kQ/mqdefault.jpg",
+      "width": 320,
+      "height": 180
+     },
+     "high": {
+      "url": "https://i.ytimg.com/vi/oIju5jh86kQ/hqdefault.jpg",
+      "width": 480,
+      "height": 360
+     },
+     "standard": {
+      "url": "https://i.ytimg.com/vi/oIju5jh86kQ/sddefault.jpg",
+      "width": 640,
+      "height": 480
+     },
+     "maxres": {
+      "url": "https://i.ytimg.com/vi/oIju5jh86kQ/maxresdefault.jpg",
+      "width": 1280,
+      "height": 720
+     }
+    },
+    "channelTitle": "Adobe Acrobat",
+    "playlistId": "UUl78QGX_hfK6zT8Mc-2w8GA",
+    "position": 20,
+    "resourceId": {
+     "kind": "youtube#video",
+     "videoId": "oIju5jh86kQ"
+    }
+   },
+   "contentDetails": {
+    "videoId": "oIju5jh86kQ"
+   },
+   "status": {
+    "privacyStatus": "public"
+   }
+  },
+  {
+
+   "kind": "youtube#playlistItem",
+   "etag": "\"tbWC5XrSXxe1WOAx6MK9z4hHSU8/oCUTue3ZuCW3nqEOw5ZM6p7PbHY\"",
+   "id": "UUQ34oMKCVv9Uhd70ELJNH-Ab5sgRW-Aii",
+   "snippet": {
+    "publishedAt": "2012-10-08T19:03:20.000Z",
+    "channelId": "UCl78QGX_hfK6zT8Mc-2w8GA",
+    "title": "Send a Document for Shared Review",
+    "description": "Acrobat XI lets you gather feedback and approvals faster than ever by sending a document out for shared review.",
+    "thumbnails": {
+     "default": {
+      "url": "https://i.ytimg.com/vi/IOsxCOc86rA/default.jpg",
+      "width": 120,
+      "height": 90
+     },
+     "medium": {
+      "url": "https://i.ytimg.com/vi/IOsxCOc86rA/mqdefault.jpg",
+      "width": 320,
+      "height": 180
+     },
+     "high": {
+      "url": "https://i.ytimg.com/vi/IOsxCOc86rA/hqdefault.jpg",
+      "width": 480,
+      "height": 360
+     },
+     "standard": {
+      "url": "https://i.ytimg.com/vi/IOsxCOc86rA/sddefault.jpg",
+      "width": 640,
+      "height": 480
+     },
+     "maxres": {
+      "url": "https://i.ytimg.com/vi/IOsxCOc86rA/maxresdefault.jpg",
+      "width": 1280,
+      "height": 720
+     }
+    },
+    "channelTitle": "Adobe Acrobat",
+    "playlistId": "UUl78QGX_hfK6zT8Mc-2w8GA",
+    "position": 21,
+    "resourceId": {
+     "kind": "youtube#video",
+     "videoId": "IOsxCOc86rA"
+    }
+   },
+   "contentDetails": {
+    "videoId": "IOsxCOc86rA"
+   },
+   "status": {
+    "privacyStatus": "public"
+   }
+  },
+  {
+
+   "kind": "youtube#playlistItem",
+   "etag": "\"tbWC5XrSXxe1WOAx6MK9z4hHSU8/E0zwhv_bFfJnCWDtv9aWpLqY1BA\"",
+   "id": "UUQ34oMKCVv9Xw13UCpWTDDNBYXNH8oBOG",
+   "snippet": {
+    "publishedAt": "2012-10-08T19:01:45.000Z",
+    "channelId": "UCl78QGX_hfK6zT8Mc-2w8GA",
+    "title": "Remove and Redact Sensitive Information from PDF Files",
+    "description": "Acrobat XI includes powerful redaction and sanitization tools to let you permanently delete sensitive information from your PDF files,  including hidden data.",
+    "thumbnails": {
+     "default": {
+      "url": "https://i.ytimg.com/vi/i386dodJCWY/default.jpg",
+      "width": 120,
+      "height": 90
+     },
+     "medium": {
+      "url": "https://i.ytimg.com/vi/i386dodJCWY/mqdefault.jpg",
+      "width": 320,
+      "height": 180
+     },
+     "high": {
+      "url": "https://i.ytimg.com/vi/i386dodJCWY/hqdefault.jpg",
+      "width": 480,
+      "height": 360
+     },
+     "standard": {
+      "url": "https://i.ytimg.com/vi/i386dodJCWY/sddefault.jpg",
+      "width": 640,
+      "height": 480
+     },
+     "maxres": {
+      "url": "https://i.ytimg.com/vi/i386dodJCWY/maxresdefault.jpg",
+      "width": 1280,
+      "height": 720
+     }
+    },
+    "channelTitle": "Adobe Acrobat",
+    "playlistId": "UUl78QGX_hfK6zT8Mc-2w8GA",
+    "position": 22,
+    "resourceId": {
+     "kind": "youtube#video",
+     "videoId": "i386dodJCWY"
+    }
+   },
+   "contentDetails": {
+    "videoId": "i386dodJCWY"
+   },
+   "status": {
+    "privacyStatus": "public"
+   }
+  },
+  {
+
+   "kind": "youtube#playlistItem",
+   "etag": "\"tbWC5XrSXxe1WOAx6MK9z4hHSU8/HqFfewvMkNo_9z3hrYnOn-loSq0\"",
+   "id": "UUQ34oMKCVv9WSGFwh_3e-4BLRKwJhrhCn",
+   "snippet": {
+    "publishedAt": "2012-10-08T19:00:31.000Z",
+    "channelId": "UCl78QGX_hfK6zT8Mc-2w8GA",
+    "title": "Protect PDF Files with Passwords and Permissions",
+    "description": "Acrobat XI helps you protect sensitive information in PDFs by applying passwords and file permissions to control how people can use your files.",
+    "thumbnails": {
+     "default": {
+      "url": "https://i.ytimg.com/vi/xe1JcbncBF0/default.jpg",
+      "width": 120,
+      "height": 90
+     },
+     "medium": {
+      "url": "https://i.ytimg.com/vi/xe1JcbncBF0/mqdefault.jpg",
+      "width": 320,
+      "height": 180
+     },
+     "high": {
+      "url": "https://i.ytimg.com/vi/xe1JcbncBF0/hqdefault.jpg",
+      "width": 480,
+      "height": 360
+     },
+     "standard": {
+      "url": "https://i.ytimg.com/vi/xe1JcbncBF0/sddefault.jpg",
+      "width": 640,
+      "height": 480
+     },
+     "maxres": {
+      "url": "https://i.ytimg.com/vi/xe1JcbncBF0/maxresdefault.jpg",
+      "width": 1280,
+      "height": 720
+     }
+    },
+    "channelTitle": "Adobe Acrobat",
+    "playlistId": "UUl78QGX_hfK6zT8Mc-2w8GA",
+    "position": 23,
+    "resourceId": {
+     "kind": "youtube#video",
+     "videoId": "xe1JcbncBF0"
+    }
+   },
+   "contentDetails": {
+    "videoId": "xe1JcbncBF0"
+   },
+   "status": {
+    "privacyStatus": "public"
+   }
+  },
+  {
+
+   "kind": "youtube#playlistItem",
+   "etag": "\"tbWC5XrSXxe1WOAx6MK9z4hHSU8/Y3-EwH9vglLyskrWFlJJ4bXkggk\"",
+   "id": "UUQ34oMKCVv9UvEfZ9D0sTvr6Yj5oo5MSY",
+   "snippet": {
+    "publishedAt": "2012-10-08T18:59:03.000Z",
+    "channelId": "UCl78QGX_hfK6zT8Mc-2w8GA",
+    "title": "Merge Multiple File Types into One PDF",
+    "description": "Acrobat XI includes new drag-and-drop features that let you preview and arrange multiple documents and pages before merging them into a single PDF.",
+    "thumbnails": {
+     "default": {
+      "url": "https://i.ytimg.com/vi/tluba7ohJvE/default.jpg",
+      "width": 120,
+      "height": 90
+     },
+     "medium": {
+      "url": "https://i.ytimg.com/vi/tluba7ohJvE/mqdefault.jpg",
+      "width": 320,
+      "height": 180
+     },
+     "high": {
+      "url": "https://i.ytimg.com/vi/tluba7ohJvE/hqdefault.jpg",
+      "width": 480,
+      "height": 360
+     },
+     "standard": {
+      "url": "https://i.ytimg.com/vi/tluba7ohJvE/sddefault.jpg",
+      "width": 640,
+      "height": 480
+     },
+     "maxres": {
+      "url": "https://i.ytimg.com/vi/tluba7ohJvE/maxresdefault.jpg",
+      "width": 1280,
+      "height": 720
+     }
+    },
+    "channelTitle": "Adobe Acrobat",
+    "playlistId": "UUl78QGX_hfK6zT8Mc-2w8GA",
+    "position": 24,
+    "resourceId": {
+     "kind": "youtube#video",
+     "videoId": "tluba7ohJvE"
+    }
+   },
+   "contentDetails": {
+    "videoId": "tluba7ohJvE"
+   },
+   "status": {
+    "privacyStatus": "public"
+   }
+  },
+  {
+
+   "kind": "youtube#playlistItem",
+   "etag": "\"tbWC5XrSXxe1WOAx6MK9z4hHSU8/xqSNZmUIdIg8vbokFSQlu7fdcnU\"",
+   "id": "UUQ34oMKCVv9X2RJdgP4gsD2DFAHlu2y0A",
+   "snippet": {
+    "publishedAt": "2012-10-08T18:57:58.000Z",
+    "channelId": "UCl78QGX_hfK6zT8Mc-2w8GA",
+    "title": "Export PDF Comments to Microsoft Word",
+    "description": "Acrobat XI lets you export comments made in a PDF file back to the original Microsoft Word document for fast review and integration.",
+    "thumbnails": {
+     "default": {
+      "url": "https://i.ytimg.com/vi/mTZEAb2WAHQ/default.jpg",
+      "width": 120,
+      "height": 90
+     },
+     "medium": {
+      "url": "https://i.ytimg.com/vi/mTZEAb2WAHQ/mqdefault.jpg",
+      "width": 320,
+      "height": 180
+     },
+     "high": {
+      "url": "https://i.ytimg.com/vi/mTZEAb2WAHQ/hqdefault.jpg",
+      "width": 480,
+      "height": 360
+     },
+     "standard": {
+      "url": "https://i.ytimg.com/vi/mTZEAb2WAHQ/sddefault.jpg",
+      "width": 640,
+      "height": 480
+     },
+     "maxres": {
+      "url": "https://i.ytimg.com/vi/mTZEAb2WAHQ/maxresdefault.jpg",
+      "width": 1280,
+      "height": 720
+     }
+    },
+    "channelTitle": "Adobe Acrobat",
+    "playlistId": "UUl78QGX_hfK6zT8Mc-2w8GA",
+    "position": 25,
+    "resourceId": {
+     "kind": "youtube#video",
+     "videoId": "mTZEAb2WAHQ"
+    }
+   },
+   "contentDetails": {
+    "videoId": "mTZEAb2WAHQ"
+   },
+   "status": {
+    "privacyStatus": "public"
+   }
+  },
+  {
+
+   "kind": "youtube#playlistItem",
+   "etag": "\"tbWC5XrSXxe1WOAx6MK9z4hHSU8/pMn8OdbxurFnwCZ4q9D-LbvG4do\"",
+   "id": "UUQ34oMKCVv9Xog3wInQ9gPukYqikRjTTM",
+   "snippet": {
+    "publishedAt": "2012-10-08T18:56:57.000Z",
+    "channelId": "UCl78QGX_hfK6zT8Mc-2w8GA",
+    "title": "Edit PDF Files",
+    "description": "Acrobat XI includes powerful new editing features that let you edit text and images right in your PDF.",
+    "thumbnails": {
+     "default": {
+      "url": "https://i.ytimg.com/vi/qjOw1CgH-MA/default.jpg",
+      "width": 120,
+      "height": 90
+     },
+     "medium": {
+      "url": "https://i.ytimg.com/vi/qjOw1CgH-MA/mqdefault.jpg",
+      "width": 320,
+      "height": 180
+     },
+     "high": {
+      "url": "https://i.ytimg.com/vi/qjOw1CgH-MA/hqdefault.jpg",
+      "width": 480,
+      "height": 360
+     },
+     "standard": {
+      "url": "https://i.ytimg.com/vi/qjOw1CgH-MA/sddefault.jpg",
+      "width": 640,
+      "height": 480
+     },
+     "maxres": {
+      "url": "https://i.ytimg.com/vi/qjOw1CgH-MA/maxresdefault.jpg",
+      "width": 1280,
+      "height": 720
+     }
+    },
+    "channelTitle": "Adobe Acrobat",
+    "playlistId": "UUl78QGX_hfK6zT8Mc-2w8GA",
+    "position": 26,
+    "resourceId": {
+     "kind": "youtube#video",
+     "videoId": "qjOw1CgH-MA"
+    }
+   },
+   "contentDetails": {
+    "videoId": "qjOw1CgH-MA"
+   },
+   "status": {
+    "privacyStatus": "public"
+   }
+  },
+  {
+
+   "kind": "youtube#playlistItem",
+   "etag": "\"tbWC5XrSXxe1WOAx6MK9z4hHSU8/eCRcNLts1W9gcVvOwmaYCXqem3s\"",
+   "id": "UUQ34oMKCVv9UjlpuEyAnwtZrw7uez1pS_",
+   "snippet": {
+    "publishedAt": "2012-10-08T18:55:42.000Z",
+    "channelId": "UCl78QGX_hfK6zT8Mc-2w8GA",
+    "title": "Distribute Forms and Analyze Results",
+    "description": "Acrobat XI  and Adobe FormsCentral make it simple to distribute PDF or web forms, collect data, and analyze the results in real time.",
+    "thumbnails": {
+     "default": {
+      "url": "https://i.ytimg.com/vi/_OSmm4de-og/default.jpg",
+      "width": 120,
+      "height": 90
+     },
+     "medium": {
+      "url": "https://i.ytimg.com/vi/_OSmm4de-og/mqdefault.jpg",
+      "width": 320,
+      "height": 180
+     },
+     "high": {
+      "url": "https://i.ytimg.com/vi/_OSmm4de-og/hqdefault.jpg",
+      "width": 480,
+      "height": 360
+     },
+     "standard": {
+      "url": "https://i.ytimg.com/vi/_OSmm4de-og/sddefault.jpg",
+      "width": 640,
+      "height": 480
+     },
+     "maxres": {
+      "url": "https://i.ytimg.com/vi/_OSmm4de-og/maxresdefault.jpg",
+      "width": 1280,
+      "height": 720
+     }
+    },
+    "channelTitle": "Adobe Acrobat",
+    "playlistId": "UUl78QGX_hfK6zT8Mc-2w8GA",
+    "position": 27,
+    "resourceId": {
+     "kind": "youtube#video",
+     "videoId": "_OSmm4de-og"
+    }
+   },
+   "contentDetails": {
+    "videoId": "_OSmm4de-og"
+   },
+   "status": {
+    "privacyStatus": "public"
+   }
+  },
+  {
+
+   "kind": "youtube#playlistItem",
+   "etag": "\"tbWC5XrSXxe1WOAx6MK9z4hHSU8/jeWrMfJq9U4YOxO0BaNxED66-1k\"",
+   "id": "UUQ34oMKCVv9X2f5A5SOZxLdS5NVhlnGCH",
+   "snippet": {
+    "publishedAt": "2012-10-08T18:54:20.000Z",
+    "channelId": "UCl78QGX_hfK6zT8Mc-2w8GA",
+    "title": "Create New PDF and Web Forms",
+    "description": "Acrobat XI Pro includes the all-new Adobe FormsCentral desktop app to let you create PDF and web forms in minutes from scratch or by customizing templates.",
+    "thumbnails": {
+     "default": {
+      "url": "https://i.ytimg.com/vi/9yiNFAdHmeo/default.jpg",
+      "width": 120,
+      "height": 90
+     },
+     "medium": {
+      "url": "https://i.ytimg.com/vi/9yiNFAdHmeo/mqdefault.jpg",
+      "width": 320,
+      "height": 180
+     },
+     "high": {
+      "url": "https://i.ytimg.com/vi/9yiNFAdHmeo/hqdefault.jpg",
+      "width": 480,
+      "height": 360
+     },
+     "standard": {
+      "url": "https://i.ytimg.com/vi/9yiNFAdHmeo/sddefault.jpg",
+      "width": 640,
+      "height": 480
+     },
+     "maxres": {
+      "url": "https://i.ytimg.com/vi/9yiNFAdHmeo/maxresdefault.jpg",
+      "width": 1280,
+      "height": 720
+     }
+    },
+    "channelTitle": "Adobe Acrobat",
+    "playlistId": "UUl78QGX_hfK6zT8Mc-2w8GA",
+    "position": 28,
+    "resourceId": {
+     "kind": "youtube#video",
+     "videoId": "9yiNFAdHmeo"
+    }
+   },
+   "contentDetails": {
+    "videoId": "9yiNFAdHmeo"
+   },
+   "status": {
+    "privacyStatus": "public"
+   }
+  },
+  {
+
+   "kind": "youtube#playlistItem",
+   "etag": "\"tbWC5XrSXxe1WOAx6MK9z4hHSU8/MPbaqvBCXPfK4ZWslX-9Zc9nZpE\"",
+   "id": "UUQ34oMKCVv9UYGP0ajfh9IS7G8rLU4_qw",
+   "snippet": {
+    "publishedAt": "2012-10-08T18:53:16.000Z",
+    "channelId": "UCl78QGX_hfK6zT8Mc-2w8GA",
+    "title": "Convert Word, Excel, or PowerPoint Files to PDF",
+    "description": "Acrobat XI lets you convert Microsoft Word, Excel, or PowerPoint files to PDF with one-button ease in Windows, so you can share files that look the same no matter what device they are viewed on.",
+    "thumbnails": {
+     "default": {
+      "url": "https://i.ytimg.com/vi/mOQ5DzROpuo/default.jpg",
+      "width": 120,
+      "height": 90
+     },
+     "medium": {
+      "url": "https://i.ytimg.com/vi/mOQ5DzROpuo/mqdefault.jpg",
+      "width": 320,
+      "height": 180
+     },
+     "high": {
+      "url": "https://i.ytimg.com/vi/mOQ5DzROpuo/hqdefault.jpg",
+      "width": 480,
+      "height": 360
+     },
+     "standard": {
+      "url": "https://i.ytimg.com/vi/mOQ5DzROpuo/sddefault.jpg",
+      "width": 640,
+      "height": 480
+     },
+     "maxres": {
+      "url": "https://i.ytimg.com/vi/mOQ5DzROpuo/maxresdefault.jpg",
+      "width": 1280,
+      "height": 720
+     }
+    },
+    "channelTitle": "Adobe Acrobat",
+    "playlistId": "UUl78QGX_hfK6zT8Mc-2w8GA",
+    "position": 29,
+    "resourceId": {
+     "kind": "youtube#video",
+     "videoId": "mOQ5DzROpuo"
+    }
+   },
+   "contentDetails": {
+    "videoId": "mOQ5DzROpuo"
+   },
+   "status": {
+    "privacyStatus": "public"
+   }
+  },
+  {
+
+   "kind": "youtube#playlistItem",
+   "etag": "\"tbWC5XrSXxe1WOAx6MK9z4hHSU8/WipGu-W5qLtvRw1toxFCa5afW9I\"",
+   "id": "UUQ34oMKCVv9UovUIx1EjrgNlzGaxJd4bU",
+   "snippet": {
+    "publishedAt": "2012-10-08T18:51:58.000Z",
+    "channelId": "UCl78QGX_hfK6zT8Mc-2w8GA",
+    "title": "Convert PDF Files to Word, Excel and PowerPoint",
+    "description": "Acrobat XI makes it even easier to convert a PDF file into a Microsoft Word, Excel, or PowerPoint document that you can quickly edit and reuse.",
+    "thumbnails": {
+     "default": {
+      "url": "https://i.ytimg.com/vi/SMLTrU7S9C0/default.jpg",
+      "width": 120,
+      "height": 90
+     },
+     "medium": {
+      "url": "https://i.ytimg.com/vi/SMLTrU7S9C0/mqdefault.jpg",
+      "width": 320,
+      "height": 180
+     },
+     "high": {
+      "url": "https://i.ytimg.com/vi/SMLTrU7S9C0/hqdefault.jpg",
+      "width": 480,
+      "height": 360
+     },
+     "standard": {
+      "url": "https://i.ytimg.com/vi/SMLTrU7S9C0/sddefault.jpg",
+      "width": 640,
+      "height": 480
+     },
+     "maxres": {
+      "url": "https://i.ytimg.com/vi/SMLTrU7S9C0/maxresdefault.jpg",
+      "width": 1280,
+      "height": 720
+     }
+    },
+    "channelTitle": "Adobe Acrobat",
+    "playlistId": "UUl78QGX_hfK6zT8Mc-2w8GA",
+    "position": 30,
+    "resourceId": {
+     "kind": "youtube#video",
+     "videoId": "SMLTrU7S9C0"
+    }
+   },
+   "contentDetails": {
+    "videoId": "SMLTrU7S9C0"
+   },
+   "status": {
+    "privacyStatus": "public"
+   }
+  },
+  {
+
+   "kind": "youtube#playlistItem",
+   "etag": "\"tbWC5XrSXxe1WOAx6MK9z4hHSU8/MZQon6lTCQGvUpyQ8K4xjcWLyJw\"",
+   "id": "UUQ34oMKCVv9V2XYmUptDv4fUAm0LohYHU",
+   "snippet": {
+    "publishedAt": "2012-10-08T18:50:46.000Z",
+    "channelId": "UCl78QGX_hfK6zT8Mc-2w8GA",
+    "title": "Convert PDF Files from Web Pages, Paper Documents or any Application That Prints",
+    "description": "Acrobat XI makes it easy to create a PDF of virtually any content by  converting a web page to PDF, scanning a document to PDF, or simply printing to PDF.",
+    "thumbnails": {
+     "default": {
+      "url": "https://i.ytimg.com/vi/BxQKd2AzGp8/default.jpg",
+      "width": 120,
+      "height": 90
+     },
+     "medium": {
+      "url": "https://i.ytimg.com/vi/BxQKd2AzGp8/mqdefault.jpg",
+      "width": 320,
+      "height": 180
+     },
+     "high": {
+      "url": "https://i.ytimg.com/vi/BxQKd2AzGp8/hqdefault.jpg",
+      "width": 480,
+      "height": 360
+     },
+     "standard": {
+      "url": "https://i.ytimg.com/vi/BxQKd2AzGp8/sddefault.jpg",
+      "width": 640,
+      "height": 480
+     },
+     "maxres": {
+      "url": "https://i.ytimg.com/vi/BxQKd2AzGp8/maxresdefault.jpg",
+      "width": 1280,
+      "height": 720
+     }
+    },
+    "channelTitle": "Adobe Acrobat",
+    "playlistId": "UUl78QGX_hfK6zT8Mc-2w8GA",
+    "position": 31,
+    "resourceId": {
+     "kind": "youtube#video",
+     "videoId": "BxQKd2AzGp8"
+    }
+   },
+   "contentDetails": {
+    "videoId": "BxQKd2AzGp8"
+   },
+   "status": {
+    "privacyStatus": "public"
+   }
+  },
+  {
+
+   "kind": "youtube#playlistItem",
+   "etag": "\"tbWC5XrSXxe1WOAx6MK9z4hHSU8/Xl3W7wBs1C_YgawjQw47zck8jtw\"",
+   "id": "UUQ34oMKCVv9VonYxJM-tZjw7Vr6gFVtVq",
+   "snippet": {
+    "publishedAt": "2012-10-08T18:48:53.000Z",
+    "channelId": "UCl78QGX_hfK6zT8Mc-2w8GA",
+    "title": "Combine Files into a PDF Portfolio",
+    "description": "Acrobat XI lets you present related materials professionally by combining multiple files into a single, well-organized, branded PDF Portfolio.",
+    "thumbnails": {
+     "default": {
+      "url": "https://i.ytimg.com/vi/CH0l6yrQlt0/default.jpg",
+      "width": 120,
+      "height": 90
+     },
+     "medium": {
+      "url": "https://i.ytimg.com/vi/CH0l6yrQlt0/mqdefault.jpg",
+      "width": 320,
+      "height": 180
+     },
+     "high": {
+      "url": "https://i.ytimg.com/vi/CH0l6yrQlt0/hqdefault.jpg",
+      "width": 480,
+      "height": 360
+     },
+     "standard": {
+      "url": "https://i.ytimg.com/vi/CH0l6yrQlt0/sddefault.jpg",
+      "width": 640,
+      "height": 480
+     },
+     "maxres": {
+      "url": "https://i.ytimg.com/vi/CH0l6yrQlt0/maxresdefault.jpg",
+      "width": 1280,
+      "height": 720
+     }
+    },
+    "channelTitle": "Adobe Acrobat",
+    "playlistId": "UUl78QGX_hfK6zT8Mc-2w8GA",
+    "position": 32,
+    "resourceId": {
+     "kind": "youtube#video",
+     "videoId": "CH0l6yrQlt0"
+    }
+   },
+   "contentDetails": {
+    "videoId": "CH0l6yrQlt0"
+   },
+   "status": {
+    "privacyStatus": "public"
+   }
+  },
+  {
+
+   "kind": "youtube#playlistItem",
+   "etag": "\"tbWC5XrSXxe1WOAx6MK9z4hHSU8/lHOR0tw0VPYMwkfNWZ11Rd2Xo6I\"",
+   "id": "UUQ34oMKCVv9UQMFvXCSL0AJRPUn05KbXV",
+   "snippet": {
+    "publishedAt": "2012-10-01T20:33:05.000Z",
+    "channelId": "UCl78QGX_hfK6zT8Mc-2w8GA",
+    "title": "Video Interview with IDC",
+    "description": "New Adobe-commissioned IDC white paper identifies opportunities for increasing information worker productivity.  Read the results of a global survey of 1,200 information workers and IT professionals conducted by IDC and sponsored by Adobe to better understand information worker needs and challenges. The report shows that gaps in individual productivity, inefficiencies in collaboration, and barriers to working on mobile devices are costing organizations almost US$20,000 per information worker annually.",
+    "thumbnails": {
+     "default": {
+      "url": "https://i.ytimg.com/vi/6EXTFAG-Hqg/default.jpg",
+      "width": 120,
+      "height": 90
+     },
+     "medium": {
+      "url": "https://i.ytimg.com/vi/6EXTFAG-Hqg/mqdefault.jpg",
+      "width": 320,
+      "height": 180
+     },
+     "high": {
+      "url": "https://i.ytimg.com/vi/6EXTFAG-Hqg/hqdefault.jpg",
+      "width": 480,
+      "height": 360
+     },
+     "standard": {
+      "url": "https://i.ytimg.com/vi/6EXTFAG-Hqg/sddefault.jpg",
+      "width": 640,
+      "height": 480
+     },
+     "maxres": {
+      "url": "https://i.ytimg.com/vi/6EXTFAG-Hqg/maxresdefault.jpg",
+      "width": 1280,
+      "height": 720
+     }
+    },
+    "channelTitle": "Adobe Acrobat",
+    "playlistId": "UUl78QGX_hfK6zT8Mc-2w8GA",
+    "position": 33,
+    "resourceId": {
+     "kind": "youtube#video",
+     "videoId": "6EXTFAG-Hqg"
+    }
+   },
+   "contentDetails": {
+    "videoId": "6EXTFAG-Hqg"
+   },
+   "status": {
+    "privacyStatus": "public"
+   }
+  },
+  {
+
+   "kind": "youtube#playlistItem",
+   "etag": "\"tbWC5XrSXxe1WOAx6MK9z4hHSU8/BOV4geExBV47Vku1ceRHzeBWkuk\"",
+   "id": "UUQ34oMKCVv9VYfJ12qV64akpEOoflOAo6",
+   "snippet": {
+    "publishedAt": "2012-10-01T20:25:43.000Z",
+    "channelId": "UCl78QGX_hfK6zT8Mc-2w8GA",
+    "title": "Steve Gottwals on Acrobat XI IT Deployment",
+    "description": "Steve Gottwals, Group Product Manager for Acrobat and Reader, covers all the improvements and investments we have made that makes that make configuring, deploying, managing, and updating Adobe Acrobat XI and Adobe Reader XI easier, faster and more cost effective for IT professionals.",
+    "thumbnails": {
+     "default": {
+      "url": "https://i.ytimg.com/vi/qtbpMgdNF2A/default.jpg",
+      "width": 120,
+      "height": 90
+     },
+     "medium": {
+      "url": "https://i.ytimg.com/vi/qtbpMgdNF2A/mqdefault.jpg",
+      "width": 320,
+      "height": 180
+     },
+     "high": {
+      "url": "https://i.ytimg.com/vi/qtbpMgdNF2A/hqdefault.jpg",
+      "width": 480,
+      "height": 360
+     },
+     "standard": {
+      "url": "https://i.ytimg.com/vi/qtbpMgdNF2A/sddefault.jpg",
+      "width": 640,
+      "height": 480
+     },
+     "maxres": {
+      "url": "https://i.ytimg.com/vi/qtbpMgdNF2A/maxresdefault.jpg",
+      "width": 1280,
+      "height": 720
+     }
+    },
+    "channelTitle": "Adobe Acrobat",
+    "playlistId": "UUl78QGX_hfK6zT8Mc-2w8GA",
+    "position": 34,
+    "resourceId": {
+     "kind": "youtube#video",
+     "videoId": "qtbpMgdNF2A"
+    }
+   },
+   "contentDetails": {
+    "videoId": "qtbpMgdNF2A"
+   },
+   "status": {
+    "privacyStatus": "public"
+   }
+  },
+  {
+
+   "kind": "youtube#playlistItem",
+   "etag": "\"tbWC5XrSXxe1WOAx6MK9z4hHSU8/y8ckjzegGV-KJ8b1C9SXS6jMyeM\"",
+   "id": "UUQ34oMKCVv9Vmoo5mGRIWbORKbVlgvtLM",
+   "snippet": {
+    "publishedAt": "2012-10-01T18:09:35.000Z",
+    "channelId": "UCl78QGX_hfK6zT8Mc-2w8GA",
+    "title": "Brad Arkin on Acrobat XI Application Security",
+    "description": "Brad Arkin, Adobe's Director of Product Security, talks about the defense-in-depth best practices we have taken with Adobe Acrobat XI and Adobe Reader XI, including the latest application security measures implemented within the software.",
+    "thumbnails": {
+     "default": {
+      "url": "https://i.ytimg.com/vi/8ckpxwty78U/default.jpg",
+      "width": 120,
+      "height": 90
+     },
+     "medium": {
+      "url": "https://i.ytimg.com/vi/8ckpxwty78U/mqdefault.jpg",
+      "width": 320,
+      "height": 180
+     },
+     "high": {
+      "url": "https://i.ytimg.com/vi/8ckpxwty78U/hqdefault.jpg",
+      "width": 480,
+      "height": 360
+     },
+     "standard": {
+      "url": "https://i.ytimg.com/vi/8ckpxwty78U/sddefault.jpg",
+      "width": 640,
+      "height": 480
+     }
+    },
+    "channelTitle": "Adobe Acrobat",
+    "playlistId": "UUl78QGX_hfK6zT8Mc-2w8GA",
+    "position": 35,
+    "resourceId": {
+     "kind": "youtube#video",
+     "videoId": "8ckpxwty78U"
+    }
+   },
+   "contentDetails": {
+    "videoId": "8ckpxwty78U"
+   },
+   "status": {
+    "privacyStatus": "public"
+   }
+  },
+  {
+
+   "kind": "youtube#playlistItem",
+   "etag": "\"tbWC5XrSXxe1WOAx6MK9z4hHSU8/q5Rlw4lJ05Z78UDeleOlkhZp2yc\"",
+   "id": "UUQ34oMKCVv9WNn-iWbjnwn3DTJ4oDUEph",
+   "snippet": {
+    "publishedAt": "2012-05-03T20:43:55.000Z",
+    "channelId": "UCl78QGX_hfK6zT8Mc-2w8GA",
+    "title": "Workflow Study: How to Create Documentation Graphics Using Acrobat X Pro",
+    "description": "http://blogs.adobe.com/acrobat/\n\nA workflow case study of using Acrobat X Pro. for managing and creating graphics for your documentation. Find more Acrobat tips at http://acrobatusers.com/tutorials",
+    "thumbnails": {
+     "default": {
+      "url": "https://i.ytimg.com/vi/8LiM00RTOms/default.jpg",
+      "width": 120,
+      "height": 90
+     },
+     "medium": {
+      "url": "https://i.ytimg.com/vi/8LiM00RTOms/mqdefault.jpg",
+      "width": 320,
+      "height": 180
+     },
+     "high": {
+      "url": "https://i.ytimg.com/vi/8LiM00RTOms/hqdefault.jpg",
+      "width": 480,
+      "height": 360
+     },
+     "standard": {
+      "url": "https://i.ytimg.com/vi/8LiM00RTOms/sddefault.jpg",
+      "width": 640,
+      "height": 480
+     },
+     "maxres": {
+      "url": "https://i.ytimg.com/vi/8LiM00RTOms/maxresdefault.jpg",
+      "width": 1280,
+      "height": 720
+     }
+    },
+    "channelTitle": "Adobe Acrobat",
+    "playlistId": "UUl78QGX_hfK6zT8Mc-2w8GA",
+    "position": 36,
+    "resourceId": {
+     "kind": "youtube#video",
+     "videoId": "8LiM00RTOms"
+    }
+   },
+   "contentDetails": {
+    "videoId": "8LiM00RTOms"
+   },
+   "status": {
+    "privacyStatus": "public"
+   }
+  },
+  {
+
+   "kind": "youtube#playlistItem",
+   "etag": "\"tbWC5XrSXxe1WOAx6MK9z4hHSU8/X6dXWQV8LzkwfckB1Ftlb4dT3tg\"",
+   "id": "UUQ34oMKCVv9XlvPEebdDUglBsGWo-0luc",
+   "snippet": {
+    "publishedAt": "2012-04-25T13:27:22.000Z",
+    "channelId": "UCl78QGX_hfK6zT8Mc-2w8GA",
+    "title": "Converting PDF Files to Other File Formats in Acrobat X",
+    "description": "http://blogs.adobe.com/acrobat/\n\nThis video explains how to convert your PDF file to other file formats such as Word and Excel in Acrobat X Std. or Pro. Find more Acrobat tips at http://acrobatusers.com/tutorials",
+    "thumbnails": {
+     "default": {
+      "url": "https://i.ytimg.com/vi/PPV8fwG4yD0/default.jpg",
+      "width": 120,
+      "height": 90
+     },
+     "medium": {
+      "url": "https://i.ytimg.com/vi/PPV8fwG4yD0/mqdefault.jpg",
+      "width": 320,
+      "height": 180
+     },
+     "high": {
+      "url": "https://i.ytimg.com/vi/PPV8fwG4yD0/hqdefault.jpg",
+      "width": 480,
+      "height": 360
+     },
+     "standard": {
+      "url": "https://i.ytimg.com/vi/PPV8fwG4yD0/sddefault.jpg",
+      "width": 640,
+      "height": 480
+     }
+    },
+    "channelTitle": "Adobe Acrobat",
+    "playlistId": "UUl78QGX_hfK6zT8Mc-2w8GA",
+    "position": 37,
+    "resourceId": {
+     "kind": "youtube#video",
+     "videoId": "PPV8fwG4yD0"
+    }
+   },
+   "contentDetails": {
+    "videoId": "PPV8fwG4yD0"
+   },
+   "status": {
+    "privacyStatus": "public"
+   }
+  },
+  {
+
+   "kind": "youtube#playlistItem",
+   "etag": "\"tbWC5XrSXxe1WOAx6MK9z4hHSU8/fv6JfnpC0R9LjfHHhrsk1BpDBAk\"",
+   "id": "UUQ34oMKCVv9UcjolAzUsQSH-wVBGUkTO4",
+   "snippet": {
+    "publishedAt": "2012-04-25T05:18:49.000Z",
+    "channelId": "UCl78QGX_hfK6zT8Mc-2w8GA",
+    "title": "Getting Started in Acrobat X",
+    "description": "http://blogs.adobe.com/acrobat/\n\nThis video shows you how to get started in Acrobat X Std. or Pro. Find more Acrobat tips at http://acrobatusers.com/tutorials",
+    "thumbnails": {
+     "default": {
+      "url": "https://i.ytimg.com/vi/cwBmeGUPdBY/default.jpg",
+      "width": 120,
+      "height": 90
+     },
+     "medium": {
+      "url": "https://i.ytimg.com/vi/cwBmeGUPdBY/mqdefault.jpg",
+      "width": 320,
+      "height": 180
+     },
+     "high": {
+      "url": "https://i.ytimg.com/vi/cwBmeGUPdBY/hqdefault.jpg",
+      "width": 480,
+      "height": 360
+     },
+     "standard": {
+      "url": "https://i.ytimg.com/vi/cwBmeGUPdBY/sddefault.jpg",
+      "width": 640,
+      "height": 480
+     }
+    },
+    "channelTitle": "Adobe Acrobat",
+    "playlistId": "UUl78QGX_hfK6zT8Mc-2w8GA",
+    "position": 38,
+    "resourceId": {
+     "kind": "youtube#video",
+     "videoId": "cwBmeGUPdBY"
+    }
+   },
+   "contentDetails": {
+    "videoId": "cwBmeGUPdBY"
+   },
+   "status": {
+    "privacyStatus": "public"
+   }
+  },
+  {
+
+   "kind": "youtube#playlistItem",
+   "etag": "\"tbWC5XrSXxe1WOAx6MK9z4hHSU8/P6ml_9QbM1PSPkDwg44HARZHIms\"",
+   "id": "UUQ34oMKCVv9XHBI1a7vVg8DJC2ECyO7zp",
+   "snippet": {
+    "publishedAt": "2012-04-25T05:16:31.000Z",
+    "channelId": "UCl78QGX_hfK6zT8Mc-2w8GA",
+    "title": "Adding Interactivity to PDF Files in Acrobat X",
+    "description": "http://blogs.adobe.com/acrobat/\n\nThe video details how to add bookmarks, links, and buttons for interactivity to your PDF documents in Acrobat X Std. and Pro. Find more Acrobat tips at http://acrobatusers.com/tutorials",
+    "thumbnails": {
+     "default": {
+      "url": "https://i.ytimg.com/vi/hm-hGyKLn-0/default.jpg",
+      "width": 120,
+      "height": 90
+     },
+     "medium": {
+      "url": "https://i.ytimg.com/vi/hm-hGyKLn-0/mqdefault.jpg",
+      "width": 320,
+      "height": 180
+     },
+     "high": {
+      "url": "https://i.ytimg.com/vi/hm-hGyKLn-0/hqdefault.jpg",
+      "width": 480,
+      "height": 360
+     },
+     "standard": {
+      "url": "https://i.ytimg.com/vi/hm-hGyKLn-0/sddefault.jpg",
+      "width": 640,
+      "height": 480
+     }
+    },
+    "channelTitle": "Adobe Acrobat",
+    "playlistId": "UUl78QGX_hfK6zT8Mc-2w8GA",
+    "position": 39,
+    "resourceId": {
+     "kind": "youtube#video",
+     "videoId": "hm-hGyKLn-0"
+    }
+   },
+   "contentDetails": {
+    "videoId": "hm-hGyKLn-0"
+   },
+   "status": {
+    "privacyStatus": "public"
+   }
+  },
+  {
+
+   "kind": "youtube#playlistItem",
+   "etag": "\"tbWC5XrSXxe1WOAx6MK9z4hHSU8/oU0noUID67VPFjhB2H0C9ndxVdI\"",
+   "id": "UUQ34oMKCVv9VvI2UHfl95MB5IyObnyhpS",
+   "snippet": {
+    "publishedAt": "2012-04-23T21:51:56.000Z",
+    "channelId": "UCl78QGX_hfK6zT8Mc-2w8GA",
+    "title": "Adobe FormsCentral: Now Supporting PDF Forms",
+    "description": "http://blogs.adobe.com/acrobat/tag/formscentral/\n\nToday, we are pleased to announce that creating forms and surveys as fillable PDF documents is just as easy with FormsCentral.  From our first release of Adobe® FormsCentral to each subsequent enhancement, ease of use has been our mantra. We set out to provide you with the world's best online service to create forms, distribute them, collect information, and analyze the results. Over the last year, customers have shared amazing successes with us, demonstrating how their businesses, schools, and organizations have simplified and streamlined what has traditionally been a time consuming and costly process.",
+    "thumbnails": {
+     "default": {
+      "url": "https://i.ytimg.com/vi/VDPgdqpYrJY/default.jpg",
+      "width": 120,
+      "height": 90
+     },
+     "medium": {
+      "url": "https://i.ytimg.com/vi/VDPgdqpYrJY/mqdefault.jpg",
+      "width": 320,
+      "height": 180
+     },
+     "high": {
+      "url": "https://i.ytimg.com/vi/VDPgdqpYrJY/hqdefault.jpg",
+      "width": 480,
+      "height": 360
+     },
+     "standard": {
+      "url": "https://i.ytimg.com/vi/VDPgdqpYrJY/sddefault.jpg",
+      "width": 640,
+      "height": 480
+     },
+     "maxres": {
+      "url": "https://i.ytimg.com/vi/VDPgdqpYrJY/maxresdefault.jpg",
+      "width": 1280,
+      "height": 720
+     }
+    },
+    "channelTitle": "Adobe Acrobat",
+    "playlistId": "UUl78QGX_hfK6zT8Mc-2w8GA",
+    "position": 40,
+    "resourceId": {
+     "kind": "youtube#video",
+     "videoId": "VDPgdqpYrJY"
+    }
+   },
+   "contentDetails": {
+    "videoId": "VDPgdqpYrJY"
+   },
+   "status": {
+    "privacyStatus": "public"
+   }
+  },
+  {
+
+   "kind": "youtube#playlistItem",
+   "etag": "\"tbWC5XrSXxe1WOAx6MK9z4hHSU8/SxDDRoS0nU5evm7cWMwe80VwXyI\"",
+   "id": "UUQ34oMKCVv9VgGv945Ixio_vUyy5G6Wgm",
+   "snippet": {
+    "publishedAt": "2012-04-05T20:00:29.000Z",
+    "channelId": "UCl78QGX_hfK6zT8Mc-2w8GA",
+    "title": "Adobe Reader eSignature Enhancements Demo",
+    "description": "http://blogs.adobe.com/acrobat/\n\nRebecca Staley, Marketing Specialist for Adobe Acrobat Solutions, discusses the new eSignature enhancements to Adobe Reader for the desktop and mobile devices.",
+    "thumbnails": {
+     "default": {
+      "url": "https://i.ytimg.com/vi/O_fLxNmSTlc/default.jpg",
+      "width": 120,
+      "height": 90
+     },
+     "medium": {
+      "url": "https://i.ytimg.com/vi/O_fLxNmSTlc/mqdefault.jpg",
+      "width": 320,
+      "height": 180
+     },
+     "high": {
+      "url": "https://i.ytimg.com/vi/O_fLxNmSTlc/hqdefault.jpg",
+      "width": 480,
+      "height": 360
+     },
+     "standard": {
+      "url": "https://i.ytimg.com/vi/O_fLxNmSTlc/sddefault.jpg",
+      "width": 640,
+      "height": 480
+     },
+     "maxres": {
+      "url": "https://i.ytimg.com/vi/O_fLxNmSTlc/maxresdefault.jpg",
+      "width": 1280,
+      "height": 720
+     }
+    },
+    "channelTitle": "Adobe Acrobat",
+    "playlistId": "UUl78QGX_hfK6zT8Mc-2w8GA",
+    "position": 41,
+    "resourceId": {
+     "kind": "youtube#video",
+     "videoId": "O_fLxNmSTlc"
+    }
+   },
+   "contentDetails": {
+    "videoId": "O_fLxNmSTlc"
+   },
+   "status": {
+    "privacyStatus": "public"
+   }
+  },
+  {
+
+   "kind": "youtube#playlistItem",
+   "etag": "\"tbWC5XrSXxe1WOAx6MK9z4hHSU8/pzWSEyz9YMfD-Ad4iXcAzbHyz70\"",
+   "id": "UUQ34oMKCVv9UAsjfYRGxfD9MV9EQZTW3F",
+   "snippet": {
+    "publishedAt": "2012-03-15T22:03:16.000Z",
+    "channelId": "UCl78QGX_hfK6zT8Mc-2w8GA",
+    "title": "Adobe FormsCentral: Using PayPal in your Forms",
+    "description": "http://blogs.adobe.com/acrobat/tag/formscentral/\n\nFormsCentral now supports PayPal! Accept payment for products, event registrations, donations, and more with the easy PayPal integration for your forms. This video covers the basics of what you need to know to get started.",
+    "thumbnails": {
+     "default": {
+      "url": "https://i.ytimg.com/vi/GlS-WF0fOFI/default.jpg",
+      "width": 120,
+      "height": 90
+     },
+     "medium": {
+      "url": "https://i.ytimg.com/vi/GlS-WF0fOFI/mqdefault.jpg",
+      "width": 320,
+      "height": 180
+     },
+     "high": {
+      "url": "https://i.ytimg.com/vi/GlS-WF0fOFI/hqdefault.jpg",
+      "width": 480,
+      "height": 360
+     },
+     "standard": {
+      "url": "https://i.ytimg.com/vi/GlS-WF0fOFI/sddefault.jpg",
+      "width": 640,
+      "height": 480
+     },
+     "maxres": {
+      "url": "https://i.ytimg.com/vi/GlS-WF0fOFI/maxresdefault.jpg",
+      "width": 1280,
+      "height": 720
+     }
+    },
+    "channelTitle": "Adobe Acrobat",
+    "playlistId": "UUl78QGX_hfK6zT8Mc-2w8GA",
+    "position": 42,
+    "resourceId": {
+     "kind": "youtube#video",
+     "videoId": "GlS-WF0fOFI"
+    }
+   },
+   "contentDetails": {
+    "videoId": "GlS-WF0fOFI"
+   },
+   "status": {
+    "privacyStatus": "public"
+   }
+  },
+  {
+
+   "kind": "youtube#playlistItem",
+   "etag": "\"tbWC5XrSXxe1WOAx6MK9z4hHSU8/H6NXgXSdbcSZxFHyG7pGE3CoGgs\"",
+   "id": "UUQ34oMKCVv9UcRVtUiOqbXiAZT4-ZsTRH",
+   "snippet": {
+    "publishedAt": "2012-03-13T15:36:07.000Z",
+    "channelId": "UCl78QGX_hfK6zT8Mc-2w8GA",
+    "title": "Adobe Acrobat: The Adobe Customization Wizard X Demystified (Part 1)",
+    "description": "http://blogs.adobe.com/acrobat/\n\nThis Adobe Acrobat video is the first in a series that covers topics relevant to IT, this one covers the basics of the Adobe Customization Wizard X.",
+    "thumbnails": {
+     "default": {
+      "url": "https://i.ytimg.com/vi/o39uKQM33-s/default.jpg",
+      "width": 120,
+      "height": 90
+     },
+     "medium": {
+      "url": "https://i.ytimg.com/vi/o39uKQM33-s/mqdefault.jpg",
+      "width": 320,
+      "height": 180
+     },
+     "high": {
+      "url": "https://i.ytimg.com/vi/o39uKQM33-s/hqdefault.jpg",
+      "width": 480,
+      "height": 360
+     },
+     "standard": {
+      "url": "https://i.ytimg.com/vi/o39uKQM33-s/sddefault.jpg",
+      "width": 640,
+      "height": 480
+     }
+    },
+    "channelTitle": "Adobe Acrobat",
+    "playlistId": "UUl78QGX_hfK6zT8Mc-2w8GA",
+    "position": 43,
+    "resourceId": {
+     "kind": "youtube#video",
+     "videoId": "o39uKQM33-s"
+    }
+   },
+   "contentDetails": {
+    "videoId": "o39uKQM33-s"
+   },
+   "status": {
+    "privacyStatus": "public"
+   }
+  },
+  {
+
+   "kind": "youtube#playlistItem",
+   "etag": "\"tbWC5XrSXxe1WOAx6MK9z4hHSU8/5Zbpxyd3I6ppp4vz8LvZlUc1G7I\"",
+   "id": "UUQ34oMKCVv9VeZ3qrEL8Mxk3NuoHnC48V",
+   "snippet": {
+    "publishedAt": "2012-02-14T04:05:47.000Z",
+    "channelId": "UCl78QGX_hfK6zT8Mc-2w8GA",
+    "title": "Adobe FormsCentral Turns 1: An Interview with Todd Gerber",
+    "description": "http://blogs.adobe.com/acrobat/happy-1st-birthday-formscentral/\n\nIn honor of Adobe FormsCentral's first birthday, FormsCentral Marketing Manager Todd Gerber discusses some favorite moments of the past year and what we can look forward to in the coming months.",
+    "thumbnails": {
+     "default": {
+      "url": "https://i.ytimg.com/vi/KQmm4mdEIxA/default.jpg",
+      "width": 120,
+      "height": 90
+     },
+     "medium": {
+      "url": "https://i.ytimg.com/vi/KQmm4mdEIxA/mqdefault.jpg",
+      "width": 320,
+      "height": 180
+     },
+     "high": {
+      "url": "https://i.ytimg.com/vi/KQmm4mdEIxA/hqdefault.jpg",
+      "width": 480,
+      "height": 360
+     },
+     "standard": {
+      "url": "https://i.ytimg.com/vi/KQmm4mdEIxA/sddefault.jpg",
+      "width": 640,
+      "height": 480
+     }
+    },
+    "channelTitle": "Adobe Acrobat",
+    "playlistId": "UUl78QGX_hfK6zT8Mc-2w8GA",
+    "position": 44,
+    "resourceId": {
+     "kind": "youtube#video",
+     "videoId": "KQmm4mdEIxA"
+    }
+   },
+   "contentDetails": {
+    "videoId": "KQmm4mdEIxA"
+   },
+   "status": {
+    "privacyStatus": "public"
+   }
+  },
+  {
+
+   "kind": "youtube#playlistItem",
+   "etag": "\"tbWC5XrSXxe1WOAx6MK9z4hHSU8/WRSi46Jr9_MHsHdZXMV57Nbwkt8\"",
+   "id": "UUQ34oMKCVv9XRMIUCgHuGjY4e6hO3PjI1",
+   "snippet": {
+    "publishedAt": "2012-02-14T02:11:07.000Z",
+    "channelId": "UCl78QGX_hfK6zT8Mc-2w8GA",
+    "title": "Adobe FormsCentral Turns 1: An Interview with Randy Swineford",
+    "description": "http://blogs.adobe.com/acrobat/happy-1st-birthday-formscentral/\n\nIn honor of Adobe FormsCentral's first birthday, FormsCentral Product Manager Randy Swineford talks about some highlights of the service's first year.",
+    "thumbnails": {
+     "default": {
+      "url": "https://i.ytimg.com/vi/LEdiy-XV7GE/default.jpg",
+      "width": 120,
+      "height": 90
+     },
+     "medium": {
+      "url": "https://i.ytimg.com/vi/LEdiy-XV7GE/mqdefault.jpg",
+      "width": 320,
+      "height": 180
+     },
+     "high": {
+      "url": "https://i.ytimg.com/vi/LEdiy-XV7GE/hqdefault.jpg",
+      "width": 480,
+      "height": 360
+     },
+     "standard": {
+      "url": "https://i.ytimg.com/vi/LEdiy-XV7GE/sddefault.jpg",
+      "width": 640,
+      "height": 480
+     }
+    },
+    "channelTitle": "Adobe Acrobat",
+    "playlistId": "UUl78QGX_hfK6zT8Mc-2w8GA",
+    "position": 45,
+    "resourceId": {
+     "kind": "youtube#video",
+     "videoId": "LEdiy-XV7GE"
+    }
+   },
+   "contentDetails": {
+    "videoId": "LEdiy-XV7GE"
+   },
+   "status": {
+    "privacyStatus": "public"
+   }
+  },
+  {
+
+   "kind": "youtube#playlistItem",
+   "etag": "\"tbWC5XrSXxe1WOAx6MK9z4hHSU8/6_7rJQ-Y7MLQGTM4qCS4cGOqWDw\"",
+   "id": "UUQ34oMKCVv9UwZQWz9QDLRf1pngz0wkCA",
+   "snippet": {
+    "publishedAt": "2012-02-14T01:28:02.000Z",
+    "channelId": "UCl78QGX_hfK6zT8Mc-2w8GA",
+    "title": "Happy Birthday, Adobe FormsCentral!",
+    "description": "http://blogs.adobe.com/acrobat/happy-1st-birthday-formscentral/\n\nAdobe FormsCentral celebrates its first birthday on February 14, 2012. Here are some of us from the team at FormsCentral, saying happy birthday to FormsCentral!",
+    "thumbnails": {
+     "default": {
+      "url": "https://i.ytimg.com/vi/J8CsGxjDqaQ/default.jpg",
+      "width": 120,
+      "height": 90
+     },
+     "medium": {
+      "url": "https://i.ytimg.com/vi/J8CsGxjDqaQ/mqdefault.jpg",
+      "width": 320,
+      "height": 180
+     },
+     "high": {
+      "url": "https://i.ytimg.com/vi/J8CsGxjDqaQ/hqdefault.jpg",
+      "width": 480,
+      "height": 360
+     },
+     "standard": {
+      "url": "https://i.ytimg.com/vi/J8CsGxjDqaQ/sddefault.jpg",
+      "width": 640,
+      "height": 480
+     }
+    },
+    "channelTitle": "Adobe Acrobat",
+    "playlistId": "UUl78QGX_hfK6zT8Mc-2w8GA",
+    "position": 46,
+    "resourceId": {
+     "kind": "youtube#video",
+     "videoId": "J8CsGxjDqaQ"
+    }
+   },
+   "contentDetails": {
+    "videoId": "J8CsGxjDqaQ"
+   },
+   "status": {
+    "privacyStatus": "public"
+   }
+  },
+  {
+
+   "kind": "youtube#playlistItem",
+   "etag": "\"tbWC5XrSXxe1WOAx6MK9z4hHSU8/uTcZGZphWtR_49dHdV2G7bArYMs\"",
+   "id": "UUQ34oMKCVv9UOEljeA3EDKIwYqSJ0YmjZ",
+   "snippet": {
+    "publishedAt": "2012-02-13T21:50:30.000Z",
+    "channelId": "UCl78QGX_hfK6zT8Mc-2w8GA",
+    "title": "Adobe FormsCentral Highlights: View Details",
+    "description": "http://blogs.adobe.com/acrobat/tag/formscentral/\n\nThis video highlights the ability to view the details of a given response in your Adobe FormsCentral response table.",
+    "thumbnails": {
+     "default": {
+      "url": "https://i.ytimg.com/vi/tcOrQ9f5R_c/default.jpg",
+      "width": 120,
+      "height": 90
+     },
+     "medium": {
+      "url": "https://i.ytimg.com/vi/tcOrQ9f5R_c/mqdefault.jpg",
+      "width": 320,
+      "height": 180
+     },
+     "high": {
+      "url": "https://i.ytimg.com/vi/tcOrQ9f5R_c/hqdefault.jpg",
+      "width": 480,
+      "height": 360
+     },
+     "standard": {
+      "url": "https://i.ytimg.com/vi/tcOrQ9f5R_c/sddefault.jpg",
+      "width": 640,
+      "height": 480
+     },
+     "maxres": {
+      "url": "https://i.ytimg.com/vi/tcOrQ9f5R_c/maxresdefault.jpg",
+      "width": 1280,
+      "height": 720
+     }
+    },
+    "channelTitle": "Adobe Acrobat",
+    "playlistId": "UUl78QGX_hfK6zT8Mc-2w8GA",
+    "position": 47,
+    "resourceId": {
+     "kind": "youtube#video",
+     "videoId": "tcOrQ9f5R_c"
+    }
+   },
+   "contentDetails": {
+    "videoId": "tcOrQ9f5R_c"
+   },
+   "status": {
+    "privacyStatus": "public"
+   }
+  },
+  {
+
+   "kind": "youtube#playlistItem",
+   "etag": "\"tbWC5XrSXxe1WOAx6MK9z4hHSU8/89IAF6yIfX5j_lQGbJv0mRIRb10\"",
+   "id": "UUQ34oMKCVv9Vfm9b8KQkIamfsCyskpi47",
+   "snippet": {
+    "publishedAt": "2012-02-13T21:50:27.000Z",
+    "channelId": "UCl78QGX_hfK6zT8Mc-2w8GA",
+    "title": "Adobe FormsCentral Highlights: Publishing Responses in FormsCentral",
+    "description": "http://blogs.adobe.com/acrobat/tag/formscentral/\n\nThis video highlights the ability to publish responses in Adobe FormsCentral,",
+    "thumbnails": {
+     "default": {
+      "url": "https://i.ytimg.com/vi/YIDqzqhITF4/default.jpg",
+      "width": 120,
+      "height": 90
+     },
+     "medium": {
+      "url": "https://i.ytimg.com/vi/YIDqzqhITF4/mqdefault.jpg",
+      "width": 320,
+      "height": 180
+     },
+     "high": {
+      "url": "https://i.ytimg.com/vi/YIDqzqhITF4/hqdefault.jpg",
+      "width": 480,
+      "height": 360
+     },
+     "standard": {
+      "url": "https://i.ytimg.com/vi/YIDqzqhITF4/sddefault.jpg",
+      "width": 640,
+      "height": 480
+     },
+     "maxres": {
+      "url": "https://i.ytimg.com/vi/YIDqzqhITF4/maxresdefault.jpg",
+      "width": 1280,
+      "height": 720
+     }
+    },
+    "channelTitle": "Adobe Acrobat",
+    "playlistId": "UUl78QGX_hfK6zT8Mc-2w8GA",
+    "position": 48,
+    "resourceId": {
+     "kind": "youtube#video",
+     "videoId": "YIDqzqhITF4"
+    }
+   },
+   "contentDetails": {
+    "videoId": "YIDqzqhITF4"
+   },
+   "status": {
+    "privacyStatus": "public"
+   }
+  },
+  {
+
+   "kind": "youtube#playlistItem",
+   "etag": "\"tbWC5XrSXxe1WOAx6MK9z4hHSU8/crQjyiBnWU-SPGPguTvgw_EsA2I\"",
+   "id": "UUQ34oMKCVv9U-p8iWkh-FpXPefL809TIW",
+   "snippet": {
+    "publishedAt": "2012-02-13T21:50:20.000Z",
+    "channelId": "UCl78QGX_hfK6zT8Mc-2w8GA",
+    "title": "Adobe FormsCentral Highlights: Formulas in FormsCentral",
+    "description": "http://blogs.adobe.com/acrobat/tag/formscentral/\n\nThis video highlights the use of formulas in Adobe FormsCentral.",
+    "thumbnails": {
+     "default": {
+      "url": "https://i.ytimg.com/vi/YWqmZ3O2fsY/default.jpg",
+      "width": 120,
+      "height": 90
+     },
+     "medium": {
+      "url": "https://i.ytimg.com/vi/YWqmZ3O2fsY/mqdefault.jpg",
+      "width": 320,
+      "height": 180
+     },
+     "high": {
+      "url": "https://i.ytimg.com/vi/YWqmZ3O2fsY/hqdefault.jpg",
+      "width": 480,
+      "height": 360
+     },
+     "standard": {
+      "url": "https://i.ytimg.com/vi/YWqmZ3O2fsY/sddefault.jpg",
+      "width": 640,
+      "height": 480
+     },
+     "maxres": {
+      "url": "https://i.ytimg.com/vi/YWqmZ3O2fsY/maxresdefault.jpg",
+      "width": 1280,
+      "height": 720
+     }
+    },
+    "channelTitle": "Adobe Acrobat",
+    "playlistId": "UUl78QGX_hfK6zT8Mc-2w8GA",
+    "position": 49,
+    "resourceId": {
+     "kind": "youtube#video",
+     "videoId": "YWqmZ3O2fsY"
+    }
+   },
+   "contentDetails": {
+    "videoId": "YWqmZ3O2fsY"
+   },
+   "status": {
+    "privacyStatus": "public"
+   }
+  }
+ ]
+}
