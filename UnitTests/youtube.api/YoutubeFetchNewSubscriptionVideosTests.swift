@@ -11,6 +11,18 @@ import Foundation
 import UIKit
 import XCTest
 
+// http://stackoverflow.com/questions/19640796/retrieving-all-the-new-subscription-videos-in-youtube-v3-api
+
+//You can retrieve this information with the Youtube V3 API but it is incredibly inefficient:
+//
+//1, First get the channel ID from the username (one request).
+//2, Now get the subscriptions for the channel (batchable - one request per 50 subs).
+//3, Now get the playlists for each subscribed channel (batchable - one request per 50 subs).
+//4, Get the most recent playlistItems for the "uploads" system playlist of each channel. (one request per sub).
+//5, Get the video related to each playlistItem (batchable - one request 50 playlistItems).
+//
+//You can now sort the videos by publishing date and print the most recent.
+
 class YoutubeFetchNewSubscriptionVideosTests: YoutubeFetcherBase {
     
     override func setUp() {
