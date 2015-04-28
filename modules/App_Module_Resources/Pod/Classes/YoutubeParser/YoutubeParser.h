@@ -45,6 +45,8 @@
 
 + (NSString *)getChannelUploadsAsPlaylistId:(MABYT3_Channel *)channel;
 
++ (NSString *)getUploadsIdsAsPlaylistIds:(id)channels;
+
 // Subscription
 + (NSString *)getChannelIdBySubscription:(id)subscription;
 

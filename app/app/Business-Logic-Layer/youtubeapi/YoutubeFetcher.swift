@@ -225,6 +225,18 @@ class YoutubeFetcher: NSObject {
 
     }
 
+    func fetchVideoFromPlaylistItems(channelIDs: NSString, completeHandler: ObjectHandler) {
+        self.fetchChannelForUploadsIds(channelIDs, completeHandler: {
+            (object, sucess) -> Void in
+
+            if (sucess == true) {
+                var channels: NSArray = object as! NSArray
+                let playlistIds: NSString = YoutubeParser.getUploadsIdsAsPlaylistIds(channels)
+
+            }
+        })
+    }
+
     func fetchChannelForUploadsIds(channelIDs: NSString, completeHandler: ObjectHandler) {
         let fields = "items/contentDetails"
         fetchChannelWithChannelId(channelIDs, part: "contentDetails", fields: fields, completeHandler: completeHandler)

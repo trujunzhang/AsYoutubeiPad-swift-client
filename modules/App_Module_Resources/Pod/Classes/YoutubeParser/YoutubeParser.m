@@ -232,6 +232,14 @@
     return dictionary[@"uploads"];
 }
 
++ (NSString *)getUploadsIdsAsPlaylistIds:(NSArray *)channels {
+    NSMutableArray *playlistIds = [[NSMutableArray alloc] init];
+    for (MABYT3_Channel *channel in channels) {
+        [playlistIds addObject:[self getChannelUploadsAsPlaylistId:channel]];// used
+    }
+    return [playlistIds componentsJoinedByString:@","];
+}
+
 
 + (NSString *)getChannelBrandingSettingsTitle:(MABYT3_Channel *)channel {
     return channel.brandingSettings.channel.title;
