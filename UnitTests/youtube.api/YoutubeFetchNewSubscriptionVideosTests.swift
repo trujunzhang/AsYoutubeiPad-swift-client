@@ -37,4 +37,8 @@ class YoutubeFetchNewSubscriptionVideosTests: YoutubeFetcherBase {
     }
 
 
+    func testRetrievingAllTheNewSubscriptionVideos() {
+        XCTAssert(true, "Pass")
+    }
+
 }
