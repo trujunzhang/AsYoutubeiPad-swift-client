@@ -19,9 +19,11 @@ class SubscriptionsViewController: FrontBaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        showChannelPage()
+//        showChannelPage()
 
         //        showLeftMenu() // test
+        
+        showCollectionPanel()//test
     }
 
     func showLeftMenu() {
@@ -58,6 +60,15 @@ class SubscriptionsViewController: FrontBaseViewController {
         self.view.addSubview(rootView)
         LayoutUtils.LayoutFullView(rootView)
 
+    }
+
+    func showCollectionPanel() {
+        let channelPageViewController: YTVideosCollectionViewController = YTVideosCollectionViewController.instance()
+        self.addChildViewController(channelPageViewController)
+
+        let rootView: UIView = channelPageViewController.view
+        self.view.addSubview(rootView)
+        LayoutUtils.LayoutFullView(rootView)
     }
 
     func showWatchVideoPage() {
