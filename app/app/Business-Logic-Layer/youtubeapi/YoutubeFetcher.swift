@@ -318,7 +318,7 @@ class YoutubeFetcher: NSObject {
         var query: GTLQueryYouTube = GTLQueryYouTube.queryForActivitiesListWithPart("snippet,contentDetails") as! GTLQueryYouTube
         query.home = true
         query.maxResults = 50
-        query.fields = "items/contentDetails,items/snippet(publishedAt,channelId),nextPageToken"
+        query.fields = "items/contentDetails,items/snippet(publishedAt,channelId,type),nextPageToken"
 
         service.executeQuery(query, completionHandler: {
             //GTLYouTubeActivity array
@@ -331,7 +331,7 @@ class YoutubeFetcher: NSObject {
                 let array = result.items()
 
                 if (array.count >= 1) {
-//                    YoutubeParser.
+                    YoutubeParser.filterSnippetTypeIsUploadInActivity(array)
                     let activity: GTLYouTubeActivity = array[0] as! GTLYouTubeActivity
 
                     completeHandler(array, true)

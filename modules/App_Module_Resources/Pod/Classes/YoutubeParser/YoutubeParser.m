@@ -36,16 +36,34 @@
     NSMutableArray *uploadActivities = [[NSMutableArray alloc] init];
     for (GTLYouTubeActivity *activity in activities) {
         NSString *snippetTypeInActivity = [self getSnippetTypeInActivity:activity];
+        GTLDateTime *publishedAt = [self getSnippetPublishedAtInActivity:activity];
+        NSDate *date = publishedAt.date;
+//        NSLog(@"Date output: %@", date);
         if ([snippetTypeInActivity isEqualToString:@"upload"]) {
             [uploadActivities addObject:activity];
         }
     }
-    return uploadActivities;
+
+    NSArray *sortedArray = [uploadActivities sortedArrayUsingComparator:^(GTLYouTubeActivity *a1, GTLYouTubeActivity *a2) {
+        GTLDateTime *dateTime1 = [self getSnippetPublishedAtInActivity:a1];
+        GTLDateTime *dateTime2 = [self getSnippetPublishedAtInActivity:a2];
+        NSDate *d1 = dateTime1.date;
+        NSDate *d2 = dateTime2.date;
+
+        return -1 * [d1 compare:d2];
+    }];
+
+    return sortedArray;
 }
 
 + (NSString *)getSnippetTypeInActivity:(GTLYouTubeActivity *)activity {
     return activity.snippet.type;
 }
+
++ (GTLDateTime *)getSnippetPublishedAtInActivity:(GTLYouTubeActivity *)activity {
+    return activity.snippet.publishedAt;
+}
+
 
 + (NSString *)getVideoIdsByActivityList:(NSMutableArray *)searchResultList {
     NSMutableArray *videoIds = [[NSMutableArray alloc] init];
