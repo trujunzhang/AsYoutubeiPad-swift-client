@@ -48,7 +48,7 @@ class YoutubeFetchActivityListTests: YoutubeFetcherBase {
 
         })
 
-        waitForExpectationsWithTimeout(50) {
+        waitForExpectationsWithTimeout(100) {
             (error) in
             XCTAssertNil(error, "\(error)")
         }
