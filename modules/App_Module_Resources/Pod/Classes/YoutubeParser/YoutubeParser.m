@@ -38,7 +38,8 @@
 
 + (NSString *)getVideoIdsByGTLActivityList:(NSMutableArray *)activities {
     NSMutableArray *videoIds = [[NSMutableArray alloc] init];
-    for (MABYT3_Activity *activity in activities) {
+    for (int i = 0; i < 20; ++i) {
+        MABYT3_Activity *activity = activities[i];
         NSString *videoId = [YoutubeParser getVideoIdByGTLActivityContentDetails:activity];
         if (videoId) {
             [videoIds addObject:videoId];
