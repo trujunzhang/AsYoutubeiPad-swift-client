@@ -18,7 +18,7 @@
 
 + (NSString *)getVideoIdsBySearchResult:(id)searchResultList;
 
-+ (NSString *)getChannelIdsFromSubscriptionList:(NSMutableArray *)subscriptions;
++ (NSString *)getChannelIdsFromSubscriptionList:(id)subscriptions;
 
 + (NSString *)checkAndAppendThumbnailWithChannelId:(NSString *)channelId;
 

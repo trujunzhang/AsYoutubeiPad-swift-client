@@ -62,8 +62,8 @@ class YoutubeFetchNewSubscriptionVideosTests: YoutubeFetcherBase, AuthorUserFetc
     }
 
     func endFetchingUserSubscriptions(array: NSArray) {
+        let channelIds = YoutubeParser.getChannelIdsFromSubscriptionList(array)
+        println("channelIds is \(channelIds)")
         expectation!.fulfill()
-
-
     }
 }
