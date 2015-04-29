@@ -299,32 +299,29 @@ class YoutubeFetcher: NSObject {
 
 
     // MARK: youtube.activities.list
-    func fetchActivityListOnHomePage(completeHandler: ObjectHandler) {
-        let fields = "items/contentDetails,items/snippet(publishedAt,channelId),nextPageToken"
-        var parameters = NSMutableDictionary(dictionary: [
-                "part": "snippet,contentDetails",
-                "fields": fields,
-                "maxResults": "50",
-                "home": "true"
-        ]
-        )
 
-        fetchActivityList(parameters, completeHandler: completeHandler)
+    func prepareFetchingActivityListOnHomePage(completeHandler: ObjectHandler) -> YTYoutubeRequestInfo {
+        var requestInfo: YTYoutubeRequestInfo = YTYoutubeRequestInfo()
+
+        requestInfo.makeRequestForActivityListOnHomePage()
+        fetchActivityListWithAccessToken(requestInfo, completeHandler: completeHandler)
+
+        return requestInfo
     }
 
+
     // GTLYouTubeActivity
-    func fetchActivityList(parameters: NSMutableDictionary, completeHandler: ObjectHandler) {
+    func fetchActivityListWithAccessToken(requestInfo: YTYoutubeRequestInfo, completeHandler: ObjectHandler) {
 
         let service: GTLService = self.youTubeService!
 
         var query: GTLQueryYouTube = GTLQueryYouTube.queryForActivitiesListWithPart("snippet,contentDetails") as! GTLQueryYouTube
         query.home = true
         query.maxResults = 50
-        let fields = "items/contentDetails,items/snippet(publishedAt,channelId),nextPageToken"
-        query.fields = fields
+        query.fields = "items/contentDetails,items/snippet(publishedAt,channelId),nextPageToken"
 
         service.executeQuery(query, completionHandler: {
-            //GTLYouTubeChannel array
+            //GTLYouTubeActivity array
             (ticket, resultList, error) -> Void in
 
             println("error in fetchActivityList is \(error)")
@@ -332,14 +329,16 @@ class YoutubeFetcher: NSObject {
             if (error == nil) {
                 let result = resultList as! GTLYouTubeActivityListResponse
                 let array = result.items()
-                let count = array.count
-                println("count is \(count)")
 
                 if (array.count >= 1) {
                     let activity: GTLYouTubeActivity = array[0] as! GTLYouTubeActivity
 
-                    let x = 0
+                    completeHandler(array, true)
+                } else {
+                    completeHandler(nil, false)
                 }
+            } else {
+                completeHandler(nil, false)
             }
         })
     }

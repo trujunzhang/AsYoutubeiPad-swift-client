@@ -25,7 +25,7 @@ class YoutubeFetchActivityListTests: YoutubeFetcherBase {
     func testFetchActivityListOnHomePage() {
         let expectation = expectationWithDescription("fetchActivityListOnHomePage")
 
-        YoutubeFetcher.sharedInstance.fetchActivityListOnHomePage({
+        YoutubeFetcher.sharedInstance.prepareFetchingActivityListOnHomePage({
             (object, sucess) -> Void in
 
             XCTAssertNotNil(object, "object not nil")
@@ -37,7 +37,7 @@ class YoutubeFetchActivityListTests: YoutubeFetcherBase {
 
                 XCTAssertTrue(array.count != 0, "Array length must be one")
 
-                XCTAssertTrue(array[0] is MABYT3_Activity, "Array object must be MABYT3_Channel")
+                XCTAssertTrue(array[0] is GTLYouTubeActivity, "Array object must be GTLYouTubeActivity")
 
                 var channel: GTLYouTubeActivity = array[0] as! GTLYouTubeActivity
 //                var uploadsId = YoutubeParser.getChannelUploadsAsPlaylistId(channel)
@@ -48,7 +48,7 @@ class YoutubeFetchActivityListTests: YoutubeFetcherBase {
 
         })
 
-        waitForExpectationsWithTimeout(10) {
+        waitForExpectationsWithTimeout(30) {
             (error) in
             XCTAssertNil(error, "\(error)")
         }
