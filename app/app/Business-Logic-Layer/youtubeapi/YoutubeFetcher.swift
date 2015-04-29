@@ -332,7 +332,8 @@ class YoutubeFetcher: NSObject {
 
                 if (array.count >= 1) {
 
-                    let sortedArray = YoutubeParser.filterSnippetTypeIsUploadInActivity(array)
+                    let sortedArray = YoutubeParser.filterSnippetTypeIsUploadInGTLActivity(array)
+                    let videoIDs = YoutubeParser.getVideoIdsByGTLActivityList(sortedArray)
                     let activity: GTLYouTubeActivity = array[0] as! GTLYouTubeActivity
 
                     completeHandler(array, true)

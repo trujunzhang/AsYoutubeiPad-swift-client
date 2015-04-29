@@ -32,7 +32,22 @@
 #pragma mark
 #pragma mark - GTLYouTubeActivity
 
-+ (NSArray *)filterSnippetTypeIsUploadInActivity:(NSMutableArray *)activities {
++ (NSString *)getVideoIdByGTLActivityContentDetails:(GTLYouTubeActivity *)activity {
+    return activity.contentDetails.upload.videoId;
+}
+
++ (NSString *)getVideoIdsByGTLActivityList:(NSMutableArray *)activities {
+    NSMutableArray *videoIds = [[NSMutableArray alloc] init];
+    for (MABYT3_Activity *activity in activities) {
+        NSString *videoId = [YoutubeParser getVideoIdByGTLActivityContentDetails:activity];
+        if (videoId) {
+            [videoIds addObject:videoId];
+        }
+    }
+    return [videoIds componentsJoinedByString:@","];
+}
+
++ (NSArray *)filterSnippetTypeIsUploadInGTLActivity:(NSMutableArray *)activities {
     NSMutableArray *uploadActivities = [[NSMutableArray alloc] init];
     for (GTLYouTubeActivity *activity in activities) {
         NSString *snippetTypeInActivity = [self getSnippetTypeInActivity:activity];
@@ -80,7 +95,7 @@
 + (NSString *)getVideoIdsByActivityList:(NSMutableArray *)searchResultList {
     NSMutableArray *videoIds = [[NSMutableArray alloc] init];
     for (MABYT3_Activity *searchResult in searchResultList) {
-        NSString *videoId = [YoutubeParser getvideoIdByActivity:searchResult.contentDetails];
+        NSString *videoId = [YoutubeParser getVideoIdByActivity:searchResult.contentDetails];
         if (videoId)
             [videoIds addObject:videoId];
     }
@@ -88,7 +103,7 @@
 }
 
 
-+ (NSString *)getvideoIdByActivity:(MABYT3_ActivityContentDetails *)contentDetails {
++ (NSString *)getVideoIdByActivity:(MABYT3_ActivityContentDetails *)contentDetails {
 
     NSArray *resourceArray = [NSArray arrayWithObjects:
             contentDetails.upload,
