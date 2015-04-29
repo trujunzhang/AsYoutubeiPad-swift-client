@@ -10,6 +10,8 @@
 
 @interface YoutubeParser : NSObject
 
++ (NSString *)filterSnippetTypeIsUploadInActivity:(id)activities;
+
 + (NSString *)getVideoIdsByActivityList:(NSMutableArray *)searchResultList;
 
 + (NSString *)getVideoIdsBySearchResult:(NSMutableArray *)searchResultList;

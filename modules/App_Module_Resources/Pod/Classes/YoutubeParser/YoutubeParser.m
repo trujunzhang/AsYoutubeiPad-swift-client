@@ -22,10 +22,30 @@
 #import "GTLYouTubeThumbnailDetails.h"
 #import "GTLYouTubeThumbnail.h"
 #import "MABYT3_ChannelBrandingSettings.h"
+#import "MABYouTube_Sources.h"
+#import "GTLYouTube.h"
 
 
 @implementation YoutubeParser
 
+
+#pragma mark
+#pragma mark - GTLYouTubeActivity
+
++ (NSString *)filterSnippetTypeIsUploadInActivity:(NSMutableArray *)activities {
+    NSMutableArray *uploadActivities = [[NSMutableArray alloc] init];
+    for (GTLYouTubeActivity *activity in activities) {
+        NSString *snippetTypeInActivity = [self getSnippetTypeInActivity:activity];
+        if ([snippetTypeInActivity isEqualToString:@"upload"]) {
+            [uploadActivities addObject:activity];
+        }
+    }
+    return uploadActivities;
+}
+
++ (NSString *)getSnippetTypeInActivity:(GTLYouTubeActivity *)activity {
+    return activity.snippet.type;
+}
 
 + (NSString *)getVideoIdsByActivityList:(NSMutableArray *)searchResultList {
     NSMutableArray *videoIds = [[NSMutableArray alloc] init];
