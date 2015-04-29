@@ -158,14 +158,36 @@ static NSUInteger UPLOADS_PAGE_LENGTH = 20;
 
 //#pragma mark -
 //#pragma mark Subscription
-+ (NSString *)getChannelIdsFromSubscriptionList:(NSMutableArray *)subscriptions{
-    NSMutableArray *channelIds = [[NSMutableArray alloc] init];
-    for (GTLYouTubeSubscription *subscription in subscriptions) {
-        NSString *channelId = [YoutubeParser getChannelIdBySubscription:subscription];
-        if (channelId)
-            [channelIds addObject:channelId];
+
++ (NSArray *)getChannelIdsArrayFromSubscriptionList:(NSMutableArray *)subscriptions {
+    NSMutableArray *videoIdsPages = [[NSMutableArray alloc] init];
+    NSUInteger pangeNumber = 50;
+    NSUInteger count = subscriptions.count;
+    NSUInteger pages = count / pangeNumber;
+    NSUInteger lastNumber = count % pangeNumber;
+    if (lastNumber != 0) {
+        pages++;
+    }
+    for (int j = 0; j < pages; ++j) {
+        NSUInteger start = j * pangeNumber;
+        NSUInteger endMax = start + pangeNumber;
+        NSUInteger end = MIN(count, endMax);
+        NSString *videoIdsString = [self getChannelIdsFromSubscriptionList:subscriptions from:start end:end];
+        [videoIdsPages addObject:videoIdsString];
     }
 
+    return videoIdsPages;
+}
+
++ (NSString *)getChannelIdsFromSubscriptionList:(NSMutableArray *)subscriptions from:(NSUInteger)start end:(NSUInteger)end {
+    NSMutableArray *channelIds = [[NSMutableArray alloc] init];
+    for (int i = start; i < end; ++i) {
+        GTLYouTubeSubscription *subscription = subscriptions[i];
+        NSString *channelId = [YoutubeParser getChannelIdBySubscription:subscription];
+        if (channelId) {
+            [channelIds addObject:channelId];
+        }
+    }
     return [channelIds componentsJoinedByString:@","];
 }
 

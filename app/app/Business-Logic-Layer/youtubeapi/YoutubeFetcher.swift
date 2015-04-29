@@ -88,6 +88,34 @@ class YoutubeFetcher: NSObject {
         })
     }
 
+    func fetchingUploadsIdFromChannelList(channelIDs: NSString, completeHandler: ObjectHandler) {
+        let service: GTLService = self.youTubeService!
+
+        var query: GTLQueryYouTube = GTLQueryYouTube.queryForChannelsListWithPart("contentDetails") as! GTLQueryYouTube
+        query.fields = "items/contentDetails(relatedPlaylists)"
+        query.identifier = channelIDs as String
+
+        service.executeQuery(query, completionHandler: {
+            //GTLYouTubeChannel array
+            (ticket, resultList, error) -> Void in
+
+            println("error in fetchingUploadsIdFromChannelList is \(error)")
+
+            if (error == nil) {
+                let result = resultList as! GTLYouTubeChannelListResponse
+                let array = result.items()
+                if (array.count >= 1) {
+                    completeHandler(array, true)
+                } else {
+                    completeHandler(nil, false)
+                }
+            } else {
+                completeHandler(nil, false)
+            }
+
+        })
+    }
+
     func fetchingChannelList(channelID: NSString, completeHandler: ObjectHandler) {
         let service: GTLService = self.youTubeService!
 

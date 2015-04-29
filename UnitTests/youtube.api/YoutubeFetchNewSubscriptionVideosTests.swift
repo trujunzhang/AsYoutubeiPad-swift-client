@@ -38,6 +38,34 @@ class YoutubeFetchNewSubscriptionVideosTests: YoutubeFetcherBase, AuthorUserFetc
     }
 
 
+    func _testFetchingUploadsIdFromChannelList() {
+        let expectation = expectationWithDescription("fetchingChannelList")
+//
+//        YoutubeFetcher.sharedInstance.fetchingUploadsIdFromChannelList(subscribedChannelIds, completeHandler: {
+//            (object, sucess) -> Void in
+//
+//            XCTAssertNotNil(object, "object not nil")
+//
+//            self.isSucess = sucess
+//
+//            if (sucess == true) {
+//                var array: NSArray = object as! NSArray
+//                let count = array.count
+//                println("count is \(count)")
+//
+//
+////                XCTAssertTrue(array.count == 20, "Array length must be 20")
+//
+//            }
+//            expectation.fulfill()
+//        })
+
+        waitForExpectationsWithTimeout(10) {
+            (error) in
+            XCTAssertNil(error, "\(error)")
+        }
+    }
+
     func testRetrievingAllTheNewSubscriptionVideos() {
         expectation = expectationWithDescription("retrievingSubscriptionList")
 
@@ -62,8 +90,8 @@ class YoutubeFetchNewSubscriptionVideosTests: YoutubeFetcherBase, AuthorUserFetc
     }
 
     func endFetchingUserSubscriptions(array: NSArray) {
-        let channelIds = YoutubeParser.getChannelIdsFromSubscriptionList(array)
-        println("channelIds is \(channelIds)")
+        let channelIdsArray = YoutubeParser.getChannelIdsArrayFromSubscriptionList(array)
+        println("channelIds is \(channelIdsArray)")
         expectation!.fulfill()
     }
 }
