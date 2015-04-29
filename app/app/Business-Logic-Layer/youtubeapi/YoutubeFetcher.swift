@@ -319,7 +319,7 @@ class YoutubeFetcher: NSObject {
 
         var query: GTLQueryYouTube = GTLQueryYouTube.queryForActivitiesListWithPart("snippet,contentDetails") as! GTLQueryYouTube
         query.home = true
-        query.maxResults = 50
+//        query.maxResults = 50
         let fields = "items/contentDetails,items/snippet(publishedAt,channelId),nextPageToken"
         query.fields = fields
 
