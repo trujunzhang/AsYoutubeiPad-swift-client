@@ -32,7 +32,7 @@
 #pragma mark
 #pragma mark - GTLYouTubeActivity
 
-+ (NSString *)filterSnippetTypeIsUploadInActivity:(NSMutableArray *)activities {
++ (NSArray *)filterSnippetTypeIsUploadInActivity:(NSMutableArray *)activities {
     NSMutableArray *uploadActivities = [[NSMutableArray alloc] init];
     for (GTLYouTubeActivity *activity in activities) {
         NSString *snippetTypeInActivity = [self getSnippetTypeInActivity:activity];
@@ -41,9 +41,11 @@
         }
     }
 
-//    [self printActivitySnippetPublishedAtForArray:uploadActivities];
 
-    NSArray *sortedArray = [uploadActivities sortedArrayUsingComparator:^(GTLYouTubeActivity *a1, GTLYouTubeActivity *a2) {
+    NSArray *dataArray = [NSArray arrayWithArray:uploadActivities];
+//    [self printActivitySnippetPublishedAtForArray:dataArray];
+
+    NSArray *sortedArray = [dataArray sortedArrayUsingComparator:^(GTLYouTubeActivity *a1, GTLYouTubeActivity *a2) {
         GTLDateTime *dateTime1 = [self getSnippetPublishedAtInActivity:a1];
         GTLDateTime *dateTime2 = [self getSnippetPublishedAtInActivity:a2];
         NSDate *d1 = dateTime1.date;
