@@ -23,7 +23,7 @@ static NSUInteger search_maxResults = 20;
 
 @interface MABYT3_YoutubeRequest : AFHTTPSessionManager
 
-- (NSMutableDictionary *)commonDictionary:(NSMutableDictionary *)parameters maxResultsString:(NSString *)maxResultsString;
+- (id)commonDictionary:(id)parameters maxResultsString:(NSString *)maxResultsString;
 
 - (NSError *)getError:(NSData *)data httpresp:(NSHTTPURLResponse *)httpresp;
 @end
@@ -56,7 +56,7 @@ static NSUInteger search_maxResults = 20;
 
 + (MABYT3_AutoCompleteRequest *)sharedInstance;
 
-- (NSURLSessionDataTask *)autoCompleteSuggestions:(NSMutableDictionary *)parameters completion:(MABYoutubeResponseBlock)completion;
+- (NSURLSessionDataTask *)autoCompleteSuggestions:(id)parameters completion:(MABYoutubeResponseBlock)completion;
 
 - (void)cancelAllTask;
 
@@ -86,19 +86,19 @@ static NSUInteger search_maxResults = 20;
 
 - (void)LISTRegionsForURL:(NSString *)urlStr andHandler:(void (^)(NSMutableArray *, NSError *))handler;
 
-- (NSURLSessionDataTask *)LISTVideosForURL:(NSMutableDictionary *)parameters completion:(MABYoutubeResponseBlock)completion;
+- (NSURLSessionDataTask *)LISTVideosForURL:(id)parameters completion:(MABYoutubeResponseBlock)completion;
 
-- (NSURLSessionDataTask *)LISTSubscriptionsForURL:(NSMutableDictionary *)parameters completion:(MABYoutubeResponseBlock)completion accessToken:(NSString *)authToken;
+- (NSURLSessionDataTask *)LISTSubscriptionsForURL:(id)parameters completion:(MABYoutubeResponseBlock)completion accessToken:(NSString *)authToken;
 
-- (NSURLSessionDataTask *)LISTChannelsThumbnailsForURL:(NSMutableDictionary *)parameters completion:(MABYoutubeResponseBlock)completion;
+- (NSURLSessionDataTask *)LISTChannelsThumbnailsForURL:(id)parameters completion:(MABYoutubeResponseBlock)completion;
 
-- (NSURLSessionDataTask *)LISTPlayListForURL:(NSMutableDictionary *)parameters completion:(MABYoutubeResponseBlock)completion;
+- (NSURLSessionDataTask *)LISTPlayListForURL:(id)parameters completion:(MABYoutubeResponseBlock)completion;
 
-- (NSURLSessionDataTask *)LISTPlayListItemForURL:(NSMutableDictionary *)parameters completion:(MABYoutubeResponseBlock)completion;
+- (NSURLSessionDataTask *)LISTPlayListItemForURL:(id)parameters completion:(MABYoutubeResponseBlock)completion;
 
-- (NSURLSessionDataTask *)LISTActivitiesForURL:(NSMutableDictionary *)parameters completion:(MABYoutubeResponseBlock)completion;
+- (NSURLSessionDataTask *)LISTActivitiesForURL:(id)parameters completion:(MABYoutubeResponseBlock)completion;
 
-- (NSURLSessionDataTask *)searchForParameters:(NSMutableDictionary *)parameters completion:(MABYoutubeResponseBlock)completion;
+- (NSURLSessionDataTask *)searchForParameters:(id)parameters completion:(MABYoutubeResponseBlock)completion;
 
 
 - (void)LIKEVideo:(NSString *)videoId andHandler:(void (^)(NSError *, BOOL))handler;
