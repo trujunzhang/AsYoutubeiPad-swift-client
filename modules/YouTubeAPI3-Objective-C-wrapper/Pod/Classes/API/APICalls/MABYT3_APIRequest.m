@@ -16,7 +16,6 @@
 
 #import "MABYT3_ConvertTranscriptToSrt.h"
 #import "YoutubeVideoCache.h"
-
 #import "MABYouTube_Sources.h"
 
 @implementation MABYT3_YoutubeRequest

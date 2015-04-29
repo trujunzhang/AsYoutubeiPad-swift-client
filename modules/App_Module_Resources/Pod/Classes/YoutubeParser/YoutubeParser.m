@@ -37,23 +37,29 @@ static NSUInteger UPLOADS_PAGE_LENGTH = 20;
     return activity.contentDetails.upload.videoId;
 }
 
-+ (NSArray *)getVideoIdsByGTLActivityList:(NSMutableArray *)activities {
++ (NSArray *)getVideoIdsArrayByGTLActivityList:(NSMutableArray *)activities {
     NSMutableArray *videoIdsPages = [[NSMutableArray alloc] init];
     NSUInteger pages = activities.count / UPLOADS_PAGE_LENGTH;
+    pages = 1;
     for (int j = 0; j < pages; ++j) {
-        NSMutableArray *videoIds = [[NSMutableArray alloc] init];
-        for (int i = 0; i < UPLOADS_PAGE_LENGTH; ++i) {
-            MABYT3_Activity *activity = activities[i];
-            NSString *videoId = [YoutubeParser getVideoIdByGTLActivityContentDetails:activity];
-            if (videoId) {
-                [videoIds addObject:videoId];
-            }
-            NSString *videoIdsString = [videoIds componentsJoinedByString:@","];
-            [videoIdsPages addObject:videoIdsString];
-        }
+        NSString *videoIdsString = [self getVideoIdsStringByGTLActivityList:activities];
+        [videoIdsPages addObject:videoIdsString];
     }
 
     return videoIdsPages;
+}
+
++ (NSString *)getVideoIdsStringByGTLActivityList:(NSMutableArray *)activities {
+    NSMutableArray *videoIds = [[NSMutableArray alloc] init];
+    for (int i = 0; i < UPLOADS_PAGE_LENGTH; ++i) {
+        MABYT3_Activity *activity = activities[i];
+        NSString *videoId = [YoutubeParser getVideoIdByGTLActivityContentDetails:activity];
+        if (videoId) {
+            [videoIds addObject:videoId];
+        }
+    }
+
+    return [videoIds componentsJoinedByString:@","];
 }
 
 + (NSArray *)filterSnippetTypeIsUploadInGTLActivity:(NSMutableArray *)activities {

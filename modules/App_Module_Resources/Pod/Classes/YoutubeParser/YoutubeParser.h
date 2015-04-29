@@ -10,7 +10,7 @@
 
 @interface YoutubeParser : NSObject
 
-+ (NSArray *)getVideoIdsByGTLActivityList:(id)activities;
++ (NSArray *)getVideoIdsArrayByGTLActivityList:(id)activities;
 
 + (NSArray *)filterSnippetTypeIsUploadInGTLActivity:(id)activities;
 
