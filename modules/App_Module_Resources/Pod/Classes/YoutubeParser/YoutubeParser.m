@@ -39,19 +39,26 @@ static NSUInteger UPLOADS_PAGE_LENGTH = 20;
 
 + (NSArray *)getVideoIdsArrayByGTLActivityList:(NSMutableArray *)activities {
     NSMutableArray *videoIdsPages = [[NSMutableArray alloc] init];
-    NSUInteger pages = activities.count / UPLOADS_PAGE_LENGTH;
-    pages = 1;
+    NSUInteger count = activities.count;
+    NSUInteger pages = count / UPLOADS_PAGE_LENGTH;
+    NSUInteger lastNumber = count % UPLOADS_PAGE_LENGTH;
+    if (lastNumber != 0) {
+        pages++;
+    }
     for (int j = 0; j < pages; ++j) {
-        NSString *videoIdsString = [self getVideoIdsStringByGTLActivityList:activities];
+        NSUInteger start = j * UPLOADS_PAGE_LENGTH;
+        NSUInteger endMax = start + UPLOADS_PAGE_LENGTH;
+        NSUInteger end = MIN(count, endMax);
+        NSString *videoIdsString = [self getVideoIdsStringByGTLActivityList:activities from:start end:end];
         [videoIdsPages addObject:videoIdsString];
     }
 
     return videoIdsPages;
 }
 
-+ (NSString *)getVideoIdsStringByGTLActivityList:(NSMutableArray *)activities {
++ (NSString *)getVideoIdsStringByGTLActivityList:(NSMutableArray *)activities from:(NSUInteger)start end:(NSUInteger)end {
     NSMutableArray *videoIds = [[NSMutableArray alloc] init];
-    for (int i = 0; i < UPLOADS_PAGE_LENGTH; ++i) {
+    for (int i = start; i < end; ++i) {
         MABYT3_Activity *activity = activities[i];
         NSString *videoId = [YoutubeParser getVideoIdByGTLActivityContentDetails:activity];
         if (videoId) {
