@@ -35,11 +35,11 @@ class YoutubeFetchActivityListTests: YoutubeFetcherBase {
             if (sucess == true) {
                 var array: NSArray = object as! NSArray
 
-                XCTAssertTrue(array.count == 50, "Array length must be one")
+                XCTAssertTrue(array.count != 0, "Array length must be one")
 
                 XCTAssertTrue(array[0] is MABYT3_Activity, "Array object must be MABYT3_Channel")
 
-                var channel: MABYT3_Activity = array[0] as! MABYT3_Activity
+                var channel: GTLYouTubeActivity = array[0] as! GTLYouTubeActivity
 //                var uploadsId = YoutubeParser.getChannelUploadsAsPlaylistId(channel)
 
 //                XCTAssertTrue(uploadsId == "UUbn1OgGei-DV7aSRo_HaAiw", "uploadsId must be UUbn1OgGei-DV7aSRo_HaAiw")

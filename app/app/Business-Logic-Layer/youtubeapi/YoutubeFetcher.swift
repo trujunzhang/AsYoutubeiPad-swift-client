@@ -32,16 +32,20 @@ class YoutubeFetcher: NSObject {
 
         self.youTubeService = GTLServiceYouTube()
         if let theYouTubeService: GTLServiceYouTube = self.youTubeService {
+            // public parameters
             theYouTubeService.shouldFetchNextPages = true
             theYouTubeService.retryEnabled = true
             theYouTubeService.APIKey = apiKey
+
+            // authored parameters
+            self.youTubeService?.authorizer = YoutubeUserProfile.sharedInstance.auth
+            var canAuthorie = YoutubeUserProfile.sharedInstance.auth.canAuthorize
+            println("canAuthorie is \(canAuthorie)")
         }
+
     }
 
     func initLoggedUser() {
-        self.youTubeService?.authorizer = YoutubeUserProfile.sharedInstance.auth
-        var canAuthorie = YoutubeUserProfile.sharedInstance.auth.canAuthorize
-        println("canAuthorie is \(canAuthorie)")
         self.fetchingLoggedUserChannelInfo()
     }
 
@@ -308,8 +312,40 @@ class YoutubeFetcher: NSObject {
         fetchActivityList(parameters, completeHandler: completeHandler)
     }
 
-    // MABYT3_Activity
+    // GTLYouTubeActivity
     func fetchActivityList(parameters: NSMutableDictionary, completeHandler: ObjectHandler) {
+
+        let service: GTLService = self.youTubeService!
+
+        var query: GTLQueryYouTube = GTLQueryYouTube.queryForActivitiesListWithPart("snippet,contentDetails") as! GTLQueryYouTube
+        query.home = true
+        query.maxResults = 50
+        let fields = "items/contentDetails,items/snippet(publishedAt,channelId),nextPageToken"
+        query.fields = fields
+
+        service.executeQuery(query, completionHandler: {
+            //GTLYouTubeChannel array
+            (ticket, resultList, error) -> Void in
+
+            println("error in fetchActivityList is \(error)")
+
+            if (error == nil) {
+                let result = resultList as! GTLYouTubeActivityListResponse
+                let array = result.items()
+                let count = array.count
+                println("count is \(count)")
+
+                if (array.count >= 1) {
+                    let activity: GTLYouTubeActivity = array[0] as! GTLYouTubeActivity
+
+                    let x = 0
+                }
+            }
+        })
+    }
+
+    // MABYT3_Activity
+    func fetchActivityListWithoutAuth(parameters: NSMutableDictionary, completeHandler: ObjectHandler) {
 
         println("parameters is \(parameters)")
 
