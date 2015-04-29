@@ -300,7 +300,8 @@ class YoutubeFetcher: NSObject {
         var parameters = NSMutableDictionary(dictionary: [
                 "part": "snippet,contentDetails",
                 "fields": fields,
-                "maxResults": "50"
+                "maxResults": "50",
+                "home": "true"
         ]
         )
 
