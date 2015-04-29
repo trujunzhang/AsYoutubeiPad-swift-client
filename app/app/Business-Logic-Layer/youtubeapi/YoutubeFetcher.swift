@@ -299,20 +299,20 @@ class YoutubeFetcher: NSObject {
         let fields = "items/contentDetails,items/snippet(publishedAt,channelId),nextPageToken"
         var parameters = NSMutableDictionary(dictionary: [
                 "part": "snippet,contentDetails",
-                "fields": fields
+                "fields": fields,
+                "maxResults": "50"
         ]
         )
 
         fetchActivityList(parameters, completeHandler: completeHandler)
     }
 
-    // MABYT3_PlayList
+    // MABYT3_Activity
     func fetchActivityList(parameters: NSMutableDictionary, completeHandler: ObjectHandler) {
-
 
         println("parameters is \(parameters)")
 
-        MABYT3_APIRequest.sharedInstance().LISTPlayListItemForURL(parameters, completion: {
+        MABYT3_APIRequest.sharedInstance().LISTActivitiesForURL(parameters, completion: {
             (responseInfo, error) -> Void in
             if (error == nil) {
                 completeHandler(responseInfo.array, true)

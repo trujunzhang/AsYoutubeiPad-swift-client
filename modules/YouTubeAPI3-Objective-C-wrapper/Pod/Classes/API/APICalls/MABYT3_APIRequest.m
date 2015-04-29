@@ -23,9 +23,15 @@
 
 - (NSMutableDictionary *)commonDictionary:(NSMutableDictionary *)parameters maxResultsString:(NSString *)maxResultsString {
     NSMutableDictionary *dictionary = [parameters mutableCopy];
+    // 1. add key
     [dictionary setObject:apiKey forKey:@"key"];
-    if (maxResultsString)
-        [dictionary setObject:maxResultsString forKey:@"maxResults"];
+
+    // 2. add maxResult
+    BOOL isExist = [dictionary.allKeys containsObject:@"maxResults"];
+    if (isExist == NO) {
+        if (maxResultsString)
+            [dictionary setObject:maxResultsString forKey:@"maxResults"];
+    }
     return dictionary;
 }
 

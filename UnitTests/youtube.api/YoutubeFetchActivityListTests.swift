@@ -11,8 +11,6 @@ import Foundation
 import XCTest
 
 class YoutubeFetchActivityListTests: YoutubeFetcherBase {
-    var expectation: XCTestExpectation?
-
     override func setUp() {
         super.setUp()
         // Put setup code here. This method is called before the invocation of each test method in the class.
@@ -24,12 +22,33 @@ class YoutubeFetchActivityListTests: YoutubeFetcherBase {
     }
 
 
-    func _testRetrievingSubscriptionList() {
-        expectation = expectationWithDescription("retrievingSubscriptionList")
+    func testFetchActivityListOnHomePage() {
+        let expectation = expectationWithDescription("fetchActivityListOnHomePage")
 
+        YoutubeFetcher.sharedInstance.fetchActivityListOnHomePage({
+            (object, sucess) -> Void in
 
+            XCTAssertNotNil(object, "object not nil")
 
-        waitForExpectationsWithTimeout(20) {
+            self.isSucess = sucess
+
+            if (sucess == true) {
+                var array: NSArray = object as! NSArray
+
+                XCTAssertTrue(array.count == 50, "Array length must be one")
+
+                XCTAssertTrue(array[0] is MABYT3_Activity, "Array object must be MABYT3_Channel")
+
+                var channel: MABYT3_Activity = array[0] as! MABYT3_Activity
+//                var uploadsId = YoutubeParser.getChannelUploadsAsPlaylistId(channel)
+
+//                XCTAssertTrue(uploadsId == "UUbn1OgGei-DV7aSRo_HaAiw", "uploadsId must be UUbn1OgGei-DV7aSRo_HaAiw")
+            }
+            expectation.fulfill()
+
+        })
+
+        waitForExpectationsWithTimeout(10) {
             (error) in
             XCTAssertNil(error, "\(error)")
         }
