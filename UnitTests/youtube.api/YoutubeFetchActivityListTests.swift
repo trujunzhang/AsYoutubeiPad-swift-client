@@ -22,7 +22,7 @@ class YoutubeFetchActivityListTests: YoutubeFetcherBase {
     }
 
 
-    func testFetchActivityListOnHomePage() {
+    func _testFetchActivityListOnHomePage() {
         let expectation = expectationWithDescription("fetchActivityListOnHomePage")
 
         YoutubeFetcher.sharedInstance.prepareFetchingActivityListOnHomePage({

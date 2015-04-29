@@ -17,6 +17,7 @@
 // Library : google-api-client[Youtube]
 #import "GTLYouTube.h"
 #import "GTLService.h"
+#import "GTLDateTime.h"
 
 // Library: YouTubeAPI3-Objective-C-wrapper
 #import "MABYouTube_Sources.h"

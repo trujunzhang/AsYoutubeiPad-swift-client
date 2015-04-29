@@ -24,7 +24,8 @@ import XCTest
 //
 //You can now sort the videos by publishing date and print the most recent.
 
-class YoutubeFetchNewSubscriptionVideosTests: YoutubeFetcherBase {
+class YoutubeFetchNewSubscriptionVideosTests: YoutubeFetcherBase, AuthorUserFetchingDelegate {
+    var expectation: XCTestExpectation?
 
     override func setUp() {
         super.setUp()
@@ -38,7 +39,31 @@ class YoutubeFetchNewSubscriptionVideosTests: YoutubeFetcherBase {
 
 
     func testRetrievingAllTheNewSubscriptionVideos() {
-        XCTAssert(true, "Pass")
+        expectation = expectationWithDescription("retrievingSubscriptionList")
+
+        YoutubeFetcher.sharedInstance.delegate = self
+        let hasLogin = YoutubeUserProfile.sharedInstance.hasLogin()
+        XCTAssertTrue(hasLogin == true, "Before testing fetching subscription list, must login first")
+
+        if (hasLogin == true) {
+            YoutubeFetcher.sharedInstance.initLoggedUser()
+        }
+
+        waitForExpectationsWithTimeout(20) {
+            (error) in
+            XCTAssertNil(error, "\(error)")
+        }
     }
 
+    // MARK: AuthorUserFetchingDelegate
+    func endFetchingUserChannel(channel: GTLYouTubeChannel) {
+        let x = 0
+
+    }
+
+    func endFetchingUserSubscriptions(array: NSArray) {
+        expectation!.fulfill()
+
+
+    }
 }

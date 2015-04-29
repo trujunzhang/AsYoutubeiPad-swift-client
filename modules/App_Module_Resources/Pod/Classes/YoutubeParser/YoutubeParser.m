@@ -34,6 +34,8 @@ static NSUInteger UPLOADS_PAGE_LENGTH = 20;
 #pragma mark - GTLYouTubeActivity
 
 + (NSString *)getVideoIdByGTLActivityContentDetails:(GTLYouTubeActivity *)activity {
+    NSString *title = activity.snippet.title;
+    NSLog(@"title = %@", title);
     return activity.contentDetails.upload.videoId;
 }
 
@@ -73,13 +75,14 @@ static NSUInteger UPLOADS_PAGE_LENGTH = 20;
     NSMutableArray *uploadActivities = [[NSMutableArray alloc] init];
     for (GTLYouTubeActivity *activity in activities) {
         NSString *snippetTypeInActivity = [self getSnippetTypeInActivity:activity];
-        if ([snippetTypeInActivity isEqualToString:@"upload"]) {
-            [uploadActivities addObject:activity];
-        }
+//        if ([snippetTypeInActivity isEqualToString:@"upload"]) {
+        [uploadActivities addObject:activity];
+//        }
     }
 
 
     NSArray *dataArray = [NSArray arrayWithArray:uploadActivities];
+    NSLog(@"dataArray = %d", dataArray.count);
 //    [self printActivitySnippetPublishedAtForArray:dataArray];
 
     NSArray *sortedArray = [dataArray sortedArrayUsingComparator:^(GTLYouTubeActivity *a1, GTLYouTubeActivity *a2) {
@@ -92,6 +95,7 @@ static NSUInteger UPLOADS_PAGE_LENGTH = 20;
     }];
 
 //    [self printActivitySnippetPublishedAtForArray:sortedArray];
+    NSLog(@"sortedArray = %d", sortedArray.count);
 
     return sortedArray;
 }

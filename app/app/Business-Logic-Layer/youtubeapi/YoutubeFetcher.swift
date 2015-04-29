@@ -327,7 +327,10 @@ class YoutubeFetcher: NSObject {
         var query: GTLQueryYouTube = GTLQueryYouTube.queryForActivitiesListWithPart("snippet,contentDetails") as! GTLQueryYouTube
         query.home = true
         query.maxResults = 50
-        query.fields = "items/contentDetails,items/snippet(publishedAt,channelId,type),nextPageToken"
+//        let publishedAfter:GTLDateTime = GTLDateTime.dateTimeWithRFC3339String("2015-04-28T07:00:00.000Z")
+//        query.publishedAfter = "2015-04-28T07:00:00.000Z"
+//        query.fields = "items/contentDetails,items/snippet(publishedAt,channelId,type),nextPageToken"// used
+        query.fields = "items/contentDetails,items/snippet(publishedAt,channelId,type,title),nextPageToken"
 
         service.executeQuery(query, completionHandler: {
             //GTLYouTubeActivity array
