@@ -18,6 +18,8 @@
 
 + (NSString *)getVideoIdsBySearchResult:(id)searchResultList;
 
++ (NSString *)getChannelIdsFromSubscriptionList:(NSMutableArray *)subscriptions;
+
 + (NSString *)checkAndAppendThumbnailWithChannelId:(NSString *)channelId;
 
 + (void)AppendThumbnailWithChannelId:(NSString *)channelId withThumbnailUrl:(NSString *)thumbnailUrl;

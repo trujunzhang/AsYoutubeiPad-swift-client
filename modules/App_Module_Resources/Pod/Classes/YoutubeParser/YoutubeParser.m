@@ -158,6 +158,16 @@ static NSUInteger UPLOADS_PAGE_LENGTH = 20;
 
 //#pragma mark -
 //#pragma mark Subscription
++ (NSString *)getChannelIdsFromSubscriptionList:(NSMutableArray *)subscriptions{
+    NSMutableArray *channelIds = [[NSMutableArray alloc] init];
+    for (GTLYouTubeSubscription *subscription in subscriptions) {
+        NSString *channelId = [YoutubeParser getChannelIdBySubscription:subscription];
+        if (channelId)
+            [channelIds addObject:channelId];
+    }
+
+    return [channelIds componentsJoinedByString:@","];
+}
 
 
 + (NSString *)getChannelIdBySubscription:(GTLYouTubeSubscription *)subscription {
