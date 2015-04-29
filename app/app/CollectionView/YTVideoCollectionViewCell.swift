@@ -7,7 +7,7 @@
 //
 
 import UIKit
-//import Haneke
+import Haneke
 
 class YTVideoCollectionViewCell: UICollectionViewCell {
     
@@ -39,7 +39,7 @@ class YTVideoCollectionViewCell: UICollectionViewCell {
         
         // 1
         let url = NSURL(string: thumbnailUrl as String)
-//        thumbnailImage.hnk_setImageFromURL(url!) // used
+        thumbnailImage.hnk_setImageFromURL(url!) // used
         
         // 2
         titleLabel.text = videoTitle
@@ -64,8 +64,8 @@ class YTVideoCollectionViewCell: UICollectionViewCell {
                 var channel :MABYT3_Channel = array[0] as! MABYT3_Channel
                 var imageUrl = YoutubeModelParser.getMABChannelThumbnalUrl(channel)
                 
-//                let url = NSURL(string: imageUrl)
-//                self.channelThumbnailImage.hnk_setImageFromURL(url!)// used
+                let url = NSURL(string: imageUrl as String)
+                self.channelThumbnailImage.hnk_setImageFromURL(url!)// used
             }
         })
         

@@ -50,6 +50,8 @@
 		5EC804E51AE662DF00FC42C4 /* LeftMenuConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EC804E41AE662DF00FC42C4 /* LeftMenuConstant.swift */; };
 		5EC91E1A1AECB738000EB0F4 /* NSDateExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EC91E191AECB738000EB0F4 /* NSDateExtensions.swift */; };
 		5ECA615C1AECC88B00D02728 /* MenuTitleBarBaseCellObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ECA615B1AECC88B00D02728 /* MenuTitleBarBaseCellObject.swift */; };
+		5ED690F31AF0CD6800560A83 /* YTVideoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ED690F11AF0CD6800560A83 /* YTVideoCollectionViewCell.swift */; };
+		5ED690F41AF0CD6800560A83 /* YTVideosCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ED690F21AF0CD6800560A83 /* YTVideosCollectionViewController.swift */; };
 		5EE8C6911AEB6A3500156F4D /* SwiftyUserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EE8C6901AEB6A3500156F4D /* SwiftyUserDefaults.swift */; };
 		5EF6D8DB1AEDB31E00F77D17 /* LoggedUserChannelInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EF6D8DA1AEDB31E00F77D17 /* LoggedUserChannelInfo.swift */; };
 		5EFED9A61AE3AB3F00EEB23E /* VideoInfoDrawRectBlockCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EFED9A51AE3AB3F00EEB23E /* VideoInfoDrawRectBlockCell.swift */; };
@@ -114,6 +116,8 @@
 		5EC804E41AE662DF00FC42C4 /* LeftMenuConstant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LeftMenuConstant.swift; sourceTree = "<group>"; };
 		5EC91E191AECB738000EB0F4 /* NSDateExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSDateExtensions.swift; sourceTree = "<group>"; };
 		5ECA615B1AECC88B00D02728 /* MenuTitleBarBaseCellObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MenuTitleBarBaseCellObject.swift; path = MenuCells/MenuTitleBarBaseCellObject.swift; sourceTree = "<group>"; };
+		5ED690F11AF0CD6800560A83 /* YTVideoCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YTVideoCollectionViewCell.swift; sourceTree = "<group>"; };
+		5ED690F21AF0CD6800560A83 /* YTVideosCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YTVideosCollectionViewController.swift; sourceTree = "<group>"; };
 		5EE8C6901AEB6A3500156F4D /* SwiftyUserDefaults.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyUserDefaults.swift; sourceTree = "<group>"; };
 		5EF6D8DA1AEDB31E00F77D17 /* LoggedUserChannelInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoggedUserChannelInfo.swift; sourceTree = "<group>"; };
 		5EFED9A51AE3AB3F00EEB23E /* VideoInfoDrawRectBlockCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoInfoDrawRectBlockCell.swift; sourceTree = "<group>"; };
@@ -225,6 +229,7 @@
 		5E1E2CE71AD8B898004CC05B /* app */ = {
 			isa = PBXGroup;
 			children = (
+				5ED690F01AF0CD6800560A83 /* CollectionView */,
 				5E0514B81AEDC60900A90A0B /* YTTabbar */,
 				5E0514B11AEDC54C00A90A0B /* YoutubePage */,
 				5E0B70271AEA4C25007287C7 /* Business-Logic-Layer */,
@@ -354,6 +359,15 @@
 				5EA5D0061AECB7EF00E0BE18 /* YTMenuRowCellObject.swift */,
 			);
 			name = MenuCells;
+			sourceTree = "<group>";
+		};
+		5ED690F01AF0CD6800560A83 /* CollectionView */ = {
+			isa = PBXGroup;
+			children = (
+				5ED690F11AF0CD6800560A83 /* YTVideoCollectionViewCell.swift */,
+				5ED690F21AF0CD6800560A83 /* YTVideosCollectionViewController.swift */,
+			);
+			path = CollectionView;
 			sourceTree = "<group>";
 		};
 		5EE8C68F1AEB6A3500156F4D /* SwiftyUserDefaults */ = {
@@ -539,6 +553,7 @@
 				5E1E2CEB1AD8B898004CC05B /* AppDelegate.swift in Sources */,
 				5E0514BF1AEDC60900A90A0B /* YTTabBarItemsUtils.swift in Sources */,
 				5E0514B71AEDC58000A90A0B /* YoutubePageConstants.swift in Sources */,
+				5ED690F31AF0CD6800560A83 /* YTVideoCollectionViewCell.swift in Sources */,
 				5EFED9AA1AE3B17400EEB23E /* VideoInfoViewController.swift in Sources */,
 				5EA5D0071AECB7EF00E0BE18 /* YTMenuRowCellObject.swift in Sources */,
 				5EBEE6FF1AEB3292001ED7AB /* YTSectionTitleCellObject.swift in Sources */,
@@ -552,6 +567,7 @@
 				5E3AB3CB1AE3D7DC00BB0944 /* Result.swift in Sources */,
 				5E498E931AEA4EDD0081081E /* YoutubeApiConstant.swift in Sources */,
 				5E37DF921AE61D00009D605E /* FrontBaseViewController.swift in Sources */,
+				5ED690F41AF0CD6800560A83 /* YTVideosCollectionViewController.swift in Sources */,
 				5EC91E1A1AECB738000EB0F4 /* NSDateExtensions.swift in Sources */,
 				5E0B70371AEA4C48007287C7 /* YoutubeFetcher.swift in Sources */,
 				5E0B70381AEA4C48007287C7 /* YoutubeModelParser.swift in Sources */,

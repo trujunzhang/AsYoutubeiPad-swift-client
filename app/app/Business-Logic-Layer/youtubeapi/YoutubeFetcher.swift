@@ -37,16 +37,24 @@ class YoutubeFetcher: NSObject {
             theYouTubeService.retryEnabled = true
             theYouTubeService.APIKey = apiKey
 
-            // authored parameters
-            self.youTubeService?.authorizer = YoutubeUserProfile.sharedInstance.auth
-            var canAuthorie = YoutubeUserProfile.sharedInstance.auth.canAuthorize
-            println("canAuthorie is \(canAuthorie)")
+            self.setupLoggedAuth()
         }
 
     }
 
     func initLoggedUser() {
+        self.setupLoggedAuth()
         self.fetchingLoggedUserChannelInfo()
+    }
+
+    func setupLoggedAuth() {
+        if (YoutubeUserProfile.sharedInstance.hasLogin() == false) {
+            return
+        }
+        // authored parameters
+        self.youTubeService?.authorizer = YoutubeUserProfile.sharedInstance.auth
+        var canAuthorie = YoutubeUserProfile.sharedInstance.auth.canAuthorize
+        println("canAuthorie is \(canAuthorie)")
     }
 
     func fetchingLoggedUserChannelInfo() {
