@@ -17,8 +17,9 @@ enum YTSegmentItemType: Int {
 
 
 class YTYoutubeRequestInfo: NSObject {
-    var parameters = NSMutableDictionary()
-    var videoList = NSMutableArray()
+    var parameters:NSMutableDictionary = NSMutableDictionary()
+    var videoList: NSMutableArray = NSMutableArray()
+    var videoIdsPages: [AnyObject] = [AnyObject]()
 
     var nextPageToken = ""
     var hasLoadingMore = true

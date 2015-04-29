@@ -197,6 +197,7 @@ class YoutubeFetcher: NSObject {
         fetchVideoList(parameters, completeHandler: completeHandler)
     }
 
+    // YoutubeVideoCache
     func fetchVideoList(_parameters: NSDictionary, completeHandler: ObjectHandler) {
 
         MABYT3_APIRequest.sharedInstance().LISTVideosForURL(NSMutableDictionary(dictionary: _parameters), completion: {
@@ -333,9 +334,13 @@ class YoutubeFetcher: NSObject {
                 if (array.count >= 1) {
 
                     let sortedArray = YoutubeParser.filterSnippetTypeIsUploadInGTLActivity(array)
-                    let videoIdsArray = YoutubeParser.getVideoIdsByGTLActivityList(sortedArray)
+                    let videoIdsPages = YoutubeParser.getVideoIdsByGTLActivityList(sortedArray)
 
-                    self.fetchVideoListWithVideoId(videoIdsArray[0] as! NSString, completeHandler: {
+                    // 1. store videoIds pages array
+                    requestInfo.videoIdsPages = videoIdsPages
+
+                    // 2. Fetching the first page
+                    self.fetchVideoListWithVideoId(videoIdsPages[0] as! NSString, completeHandler: {
                         (object, sucess) -> Void in
 
                         if (sucess == true) {
