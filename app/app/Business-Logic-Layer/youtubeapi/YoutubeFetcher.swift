@@ -294,4 +294,32 @@ class YoutubeFetcher: NSObject {
     }
 
 
+    // MARK: youtube.activities.list
+    func fetchActivityListOnHomePage(completeHandler: ObjectHandler) {
+        let fields = "items/contentDetails,items/snippet(publishedAt,channelId),nextPageToken"
+        var parameters = NSMutableDictionary(dictionary: [
+                "part": "snippet,contentDetails",
+                "fields": fields
+        ]
+        )
+
+        fetchActivityList(parameters, completeHandler: completeHandler)
+    }
+
+    // MABYT3_PlayList
+    func fetchActivityList(parameters: NSMutableDictionary, completeHandler: ObjectHandler) {
+
+
+        println("parameters is \(parameters)")
+
+        MABYT3_APIRequest.sharedInstance().LISTPlayListItemForURL(parameters, completion: {
+            (responseInfo, error) -> Void in
+            if (error == nil) {
+                completeHandler(responseInfo.array, true)
+            } else {
+                completeHandler(nil, false)
+            }
+        })
+    }
+
 }

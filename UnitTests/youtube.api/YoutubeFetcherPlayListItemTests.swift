@@ -22,7 +22,7 @@ class YoutubeFetcherPlayListTests: YoutubeFetcherBase {
     }
 
 
-    func testFetchPlayListWithPlayListId() {
+    func _testFetchPlayListWithPlayListId() {
         let expectation = expectationWithDescription("fetchPlayListWithPlayListId")
 
         YoutubeFetcher.sharedInstance.fetchPlayListItemWithPlayListId(playlistID, completeHandler: {
