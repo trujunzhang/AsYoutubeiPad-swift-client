@@ -35,7 +35,7 @@ class YoutubeFetchActivityListTests: YoutubeFetcherBase {
             if (sucess == true) {
                 var array: NSArray = object as! NSArray
 
-                XCTAssertTrue(array.count == 20, "Array length must be one")
+                XCTAssertTrue(array.count == 20, "Array length must be 20")
 
                 XCTAssertTrue(array[0] is YoutubeVideoCache, "Array object must be GTLYouTubeActivity")
 
