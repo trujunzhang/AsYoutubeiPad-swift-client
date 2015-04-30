@@ -9,8 +9,23 @@
 import Foundation
 
 class RevealViewHelper: NSObject {
-    var subscriptionsViewController:SubscriptionsViewController?
-    
+    var subscriptionsViewController: SubscriptionsViewController?
 
-    
+    class var sharedInstance: RevealViewHelper {
+
+        struct Singleton {
+            static let instance = RevealViewHelper()
+        }
+
+        return Singleton.instance
+    }
+
+    func registerSubscriptionsViewController(subscriptionsViewController: SubscriptionsViewController) {
+        self.subscriptionsViewController = subscriptionsViewController
+    }
+
+    func changeChannelPanel(channelId: NSString) {
+
+    }
+
 }
