@@ -17,7 +17,7 @@ protocol RetrievingNewSubscriptionVideosFetchingHelperDelegate {
 class YoutubeRetrievingNewSubscriptionVideosFetcherHelper: NSObject, RetrievingNewSubscriptionVideosFetchingDelegate {
     var delegate: RetrievingNewSubscriptionVideosFetchingHelperDelegate?
     var channelIDsArray: NSArray?
-    var fetchingStep = 0
+    var fetchingStep :Int = 0
 
     var fetchedChannels: NSMutableArray = NSMutableArray()
     var youtubeRetrievingNewSubscriptionVideosFetcher: YoutubeRetrievingNewSubscriptionVideosFetcher?
@@ -34,14 +34,17 @@ class YoutubeRetrievingNewSubscriptionVideosFetcherHelper: NSObject, RetrievingN
     }
 
     func fetchingNextStep() {
-        if (fetchingStep == channelIDsArray.count) {
+        if (fetchingStep == channelIDsArray!.count) {
             if (self.delegate != nil) {
                 self.delegate!.endFetchingNewSubscriptionVideos(fetchedChannels)
             }
             return
         }
-        var channelIDs: NSString = channelIDsArray[fetchingStep] as! NSString
+        
+        let object: AnyObject? = self.channelIDsArray?.objectAtIndex(fetchingStep)
+        var channelIDs: NSString = object  as! NSString
         fetchingStep++
+        
         if let newSubscriptionVideosFetcher: YoutubeRetrievingNewSubscriptionVideosFetcher = youtubeRetrievingNewSubscriptionVideosFetcher {
             newSubscriptionVideosFetcher.fetchingNextUploadsIdFromChannelList(channelIDs)
         }
@@ -51,7 +54,7 @@ class YoutubeRetrievingNewSubscriptionVideosFetcherHelper: NSObject, RetrievingN
 
     // MARK: RetrievingNewSubscriptionVideosFetchingDelegate
     func nextFetching(array: NSObject) {
-        fetchedChannels.addObjectsFromArray(array)
+        fetchedChannels.addObjectsFromArray(array as! [AnyObject])
 
         fetchingNextStep()
     }
