@@ -38,7 +38,7 @@ class YoutubeFetchNewSubscriptionVideosTests: YoutubeFetcherBase, AuthorUserFetc
     }
 
 
-    func _testFetchingUploadsIdFromChannelList() {
+    func testFetchingUploadsIdFromChannelList() {
         let expectation = expectationWithDescription("fetchingChannelList")
 
         YoutubeFetcher.sharedInstance.fetchingUploadsIdFromChannelListByChannelIdsArray(subscribedChannelIds, completeHandler: {
@@ -66,7 +66,7 @@ class YoutubeFetchNewSubscriptionVideosTests: YoutubeFetcherBase, AuthorUserFetc
         }
     }
 
-    func testRetrievingAllTheNewSubscriptionVideos() {
+    func _testRetrievingAllTheNewSubscriptionVideos() {
         expectation = expectationWithDescription("retrievingSubscriptionList")
 
         YoutubeFetcher.sharedInstance.delegate = self
