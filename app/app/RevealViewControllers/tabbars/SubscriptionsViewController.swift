@@ -19,11 +19,11 @@ class SubscriptionsViewController: FrontBaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-//        showChannelPage()
+        showChannelPage()
 
         //        showLeftMenu() // test
         
-        showCollectionPanel()//test
+//        showCollectionPanel()//test
     }
 
     func showLeftMenu() {

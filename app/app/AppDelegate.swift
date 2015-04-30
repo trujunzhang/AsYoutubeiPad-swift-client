@@ -26,8 +26,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             revealViewController.rearViewRevealWidth = LEFT_MENU_WIDTH
             revealViewController.rearViewRevealOverdraw = 0
 
-//            revealViewController.revealToggleAnimated(true)
-
+            revealViewController.revealToggleAnimated(true)
         }
         return true
     }
