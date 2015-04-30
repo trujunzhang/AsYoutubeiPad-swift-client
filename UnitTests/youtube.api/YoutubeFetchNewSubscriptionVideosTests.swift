@@ -55,9 +55,11 @@ class YoutubeFetchNewSubscriptionVideosTests: YoutubeFetcherBase, RetrievingNewS
     func endFetchingNewSubscriptionVideos(array: NSArray) {
         // of GTLYouTubeChannel
 
-        println("Array in endFetchingNewSubscriptionVideos is \(array)")
+//        println("Array in endFetchingNewSubscriptionVideos is \(array)")
 
-//        startFetchingPlayListItems(array)
+        let uploadIds = YoutubeParser.getUploadIdsArrayInContentDetailsFromGTLChannelList(array)
+
+        startFetchingPlayListItems(uploadIds)
     }
 
     func startFetchingPlayListItems(array: NSArray) {
@@ -69,6 +71,9 @@ class YoutubeFetchNewSubscriptionVideosTests: YoutubeFetcherBase, RetrievingNewS
     // MARK: RetrievingPlayListItemsFetchingHelperDelegate
     func endFetchingPlayListItems(array: NSArray) {
 
+        println("Array in endFetchingPlayListItems is \(array.count)")
+
+        let x = 0
     }
 
 }
