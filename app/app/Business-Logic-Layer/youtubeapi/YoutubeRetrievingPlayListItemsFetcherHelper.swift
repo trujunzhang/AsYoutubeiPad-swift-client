@@ -9,58 +9,57 @@
 import Foundation
 
 
-//
-//protocol RetrievingPlayListItemsFetchingHelperDelegate {
-////    func failureFetchingNewsSubscriptionVideos()
-//
-//    func endFetchingNewSubscriptionVideos(array: NSArray)
-//}
-//
-//class YoutubeRetrievingPlayListItemsFetcherHelper: NSObject, RetrievingPlayListItemsFetchingDelegate {
-//    var delegate: RetrievingPlayListItemsFetchingHelperDelegate?
-//    var channelIDsArray: NSArray?
-//    var fetchingStep: Int = 0
-//
-//    var fetchedChannels: NSMutableArray = NSMutableArray()
-//    var youtubeRetrievingPlayListItemsFetcher: YoutubeRetrievingPlayListItemsFetcher?
-//
-//    func startFetchingNewSubscriptionVideos(channelIDsArray: NSArray) {
-//        self.channelIDsArray = channelIDsArray
-//
-//        youtubeRetrievingPlayListItemsFetcher = YoutubeRetrievingPlayListItemsFetcher()
-//        if let newSubscriptionVideosFetcher: YoutubeRetrievingPlayListItemsFetcher = youtubeRetrievingPlayListItemsFetcher {
-//            newSubscriptionVideosFetcher.delegate = self
-//        }
-//
-//        fetchingNextStep()
-//    }
-//
-//    func fetchingNextStep() {
-//        if (fetchingStep == channelIDsArray!.count) {
-//            if (self.delegate != nil) {
-//                self.delegate!.endFetchingNewSubscriptionVideos(fetchedChannels)
-//            }
-//            return
-//        }
-//
-//        let object: AnyObject? = self.channelIDsArray?.objectAtIndex(fetchingStep)
-//        var channelIDs: NSString = object as! NSString
-//        fetchingStep++
-//
-//        if let newSubscriptionVideosFetcher: YoutubeRetrievingPlayListItemsFetcher = youtubeRetrievingPlayListItemsFetcher {
-//            newSubscriptionVideosFetcher.fetchingNextUploadsIdFromChannelList(channelIDs)
-//        }
-//    }
-//
-//
-//
-//    // MARK: RetrievingPlayListItemsFetchingDelegate
-//    func nextFetching(array: NSObject) {
-//        let channels = array as! [AnyObject]
-//        fetchedChannels.addObjectsFromArray(channels)
-//
-////        println("Result in nextFetching is \(channels)")
-//
-//        fetchingNextStep()
-//    }
-//}
+protocol RetrievingPlayListItemsFetchingHelperDelegate {
+//    func failureFetchingNewsSubscriptionVideos()
+
+    func endFetchingNewSubscriptionVideos(array: NSArray)
+}
+
+class YoutubeRetrievingPlayListItemsFetcherHelper: NSObject, FetchingNextDelegate {
+    var delegate: RetrievingPlayListItemsFetchingHelperDelegate?
+    var playlistItemsIdsArray: NSArray?
+    var fetchingStep: Int = 0
+
+    var fetchedPlayListItems: NSMutableArray = NSMutableArray()
+    var youtubeRetrievingPlayListItemsFetcher: YoutubeRetrievingPlayListItemsFetcher?
+
+    func startFetchingplaylistItems(playlistItemsIdsArray: NSArray) {
+        self.playlistItemsIdsArray = playlistItemsIdsArray
+
+        youtubeRetrievingPlayListItemsFetcher = YoutubeRetrievingPlayListItemsFetcher()
+        if let playListItemsFetcher: YoutubeRetrievingPlayListItemsFetcher = youtubeRetrievingPlayListItemsFetcher {
+            playListItemsFetcher.delegate = self
+        }
+
+        fetchingNextStep()
+    }
+
+    func fetchingNextStep() {
+        if (fetchingStep == playlistItemsIdsArray!.count) {
+            if (self.delegate != nil) {
+                self.delegate!.endFetchingNewSubscriptionVideos(fetchedPlayListItems)
+            }
+            return
+        }
+
+        let object: AnyObject? = self.playlistItemsIdsArray?.objectAtIndex(fetchingStep)
+        var playlistID: NSString = object as! NSString
+        fetchingStep++
+
+        if let playListItemsFetcher: YoutubeRetrievingPlayListItemsFetcher = youtubeRetrievingPlayListItemsFetcher {
+            playListItemsFetcher.fetchingNextPlayListItemsFromChannelList(playlistID)
+        }
+    }
+
+
+
+    // MARK: FetchingNextDelegate
+    func nextFetching(array: NSObject) {
+        let playListItems = array as! [AnyObject]
+        fetchedPlayListItems.addObjectsFromArray(playListItems)
+
+        println("Result in nextFetching is \(playListItems.count)")
+
+        fetchingNextStep()
+    }
+}

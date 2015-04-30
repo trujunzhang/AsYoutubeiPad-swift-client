@@ -9,24 +9,22 @@
 import Foundation
 
 
+class YoutubeRetrievingPlayListItemsFetcher: NSObject {
+    var delegate: FetchingNextDelegate?
 
-//
-//class YoutubeRetrievingPlayListItemsFetcher: NSObject {
-//    var delegate: RetrievingPlayListItemsFetchingDelegate?
-//
-//    func fetchingNextUploadsIdFromChannelList(channelIDs: NSString) {
-//
-//        YoutubeFetcher.sharedInstance.fetchingUploadsIdFromChannelList(channelIDs, completeHandler: {
-//            (object, sucess) -> Void in
-//
-//            if (sucess == true) {
-//                var array: NSArray = object as! NSArray
-//
-//                if (self.delegate != nil) {
-//                    self.delegate!.nextFetching(array)
-//                }
-//            }
-//        })
-//
-//    }
-//}
+    func fetchingNextPlayListItemsFromChannelList(playlistID: NSString) {
+
+        YoutubeFetcher.sharedInstance.fetchGTLPlayListItems(playlistID, completeHandler: {
+            (object, sucess) -> Void in
+
+            if (sucess == true) {
+                var array: NSArray = object as! NSArray
+
+                if (self.delegate != nil) {
+                    self.delegate!.nextFetching(array)
+                }
+            }
+        })
+
+    }
+}
