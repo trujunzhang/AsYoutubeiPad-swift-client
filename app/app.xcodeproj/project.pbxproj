@@ -46,6 +46,7 @@
 		5EA5D0071AECB7EF00E0BE18 /* YTMenuRowCellObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EA5D0061AECB7EF00E0BE18 /* YTMenuRowCellObject.swift */; };
 		5EA6F25E1AD8C9930017493D /* Cartography.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5EA6F25C1AD8C9930017493D /* Cartography.framework */; };
 		5EA9E72C1AECBAE40041F9D5 /* YTMenuRemoteRowCellObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EA9E72B1AECBAE40041F9D5 /* YTMenuRemoteRowCellObject.swift */; };
+		5EBB47F51AF248E6007D6CE1 /* RevealViewHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EBB47F41AF248E6007D6CE1 /* RevealViewHelper.swift */; };
 		5EBEE6FD1AEB327C001ED7AB /* MenuLoggedTitleBarCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EBEE6FC1AEB327C001ED7AB /* MenuLoggedTitleBarCell.swift */; };
 		5EBEE6FF1AEB3292001ED7AB /* YTSectionTitleCellObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EBEE6FE1AEB3292001ED7AB /* YTSectionTitleCellObject.swift */; };
 		5EC804E31AE660CA00FC42C4 /* NBMenuTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EC804E21AE660CA00FC42C4 /* NBMenuTableViewController.swift */; };
@@ -113,6 +114,7 @@
 		5EA6F25D1AD8C9930017493D /* WebImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebImage.framework; path = Carthage/Build/iOS/WebImage.framework; sourceTree = "<group>"; };
 		5EA6F2601AD8CA020017493D /* app-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "app-Bridging-Header.h"; sourceTree = "<group>"; };
 		5EA9E72B1AECBAE40041F9D5 /* YTMenuRemoteRowCellObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = YTMenuRemoteRowCellObject.swift; path = MenuCells/YTMenuRemoteRowCellObject.swift; sourceTree = "<group>"; };
+		5EBB47F41AF248E6007D6CE1 /* RevealViewHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RevealViewHelper.swift; path = RevealViewControllers/Utils/RevealViewHelper.swift; sourceTree = "<group>"; };
 		5EBEE6FC1AEB327C001ED7AB /* MenuLoggedTitleBarCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MenuLoggedTitleBarCell.swift; path = MenuCells/MenuLoggedTitleBarCell.swift; sourceTree = "<group>"; };
 		5EBEE6FE1AEB3292001ED7AB /* YTSectionTitleCellObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = YTSectionTitleCellObject.swift; path = MenuCells/YTSectionTitleCellObject.swift; sourceTree = "<group>"; };
 		5EC804E21AE660CA00FC42C4 /* NBMenuTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NBMenuTableViewController.swift; sourceTree = "<group>"; };
@@ -279,6 +281,7 @@
 		5E37DF861AE61D00009D605E /* RevealViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				5EBB47F31AF248A2007D6CE1 /* Utils */,
 				5E37DF871AE61D00009D605E /* leftmenu */,
 				5E37DF8C1AE61D00009D605E /* tabbars */,
 			);
@@ -341,6 +344,15 @@
 				5E43CDB51AEDC48500EFA0F8 /* LayoutUtils.swift */,
 			);
 			name = Utils;
+			sourceTree = "<group>";
+		};
+		5EBB47F31AF248A2007D6CE1 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				5EBB47F41AF248E6007D6CE1 /* RevealViewHelper.swift */,
+			);
+			name = Utils;
+			path = ..;
 			sourceTree = "<group>";
 		};
 		5EC282D61ADCEA9F007CB736 /* Cartography */ = {
@@ -569,6 +581,7 @@
 				5E0B703A1AEA4C48007287C7 /* YTYoutubeRequestInfo.swift in Sources */,
 				5E3AB3CB1AE3D7DC00BB0944 /* Result.swift in Sources */,
 				5E498E931AEA4EDD0081081E /* YoutubeApiConstant.swift in Sources */,
+				5EBB47F51AF248E6007D6CE1 /* RevealViewHelper.swift in Sources */,
 				5E37DF921AE61D00009D605E /* FrontBaseViewController.swift in Sources */,
 				5EC91E1A1AECB738000EB0F4 /* NSDateExtensions.swift in Sources */,
 				5E0B70371AEA4C48007287C7 /* YoutubeFetcher.swift in Sources */,
