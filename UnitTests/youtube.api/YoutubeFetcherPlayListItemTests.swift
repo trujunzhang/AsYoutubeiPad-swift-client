@@ -35,7 +35,7 @@ class YoutubeFetcherPlayListTests: YoutubeFetcherBase {
             if (sucess == true) {
                 var array: NSArray = object as! NSArray
 
-                XCTAssertTrue(array.count == 1, "Array length must be one")
+                XCTAssertTrue(array.count >= 1, "Array length must be one")
 
                 XCTAssertTrue(array[0] is MABYT3_PlayListItem, "Array object must be MABYT3_PlayListItem")
 
@@ -53,4 +53,35 @@ class YoutubeFetcherPlayListTests: YoutubeFetcherBase {
         }
     }
 
+
+    func testFetchGTLPlayListItems() {
+        let expectation = expectationWithDescription("fetchGTLPlayListItems")
+
+        YoutubeFetcher.sharedInstance.fetchGTLPlayListItems(playlistID, completeHandler: {
+            (object, sucess) -> Void in
+
+            XCTAssertNotNil(object, "object not nil")
+
+            self.isSucess = sucess
+
+            if (sucess == true) {
+                var array: NSArray = object as! NSArray
+
+                XCTAssertTrue(array.count >= 1, "Array length must be one")
+
+                XCTAssertTrue(array[0] is GTLYouTubePlaylistItem, "Array object must be GTLYouTubePlaylistItem")
+
+                var channel: GTLYouTubePlaylistItem = array[0] as! GTLYouTubePlaylistItem
+//                var imageUrl = YoutubeModelParser.getMABChannelThumbnalUrl(channel)
+//                XCTAssertNotNil(imageUrl, "imageUrl must not nil")
+            }
+            expectation.fulfill()
+
+        })
+
+        waitForExpectationsWithTimeout(10) {
+            (error) in
+            XCTAssertNil(error, "\(error)")
+        }
+    }
 }

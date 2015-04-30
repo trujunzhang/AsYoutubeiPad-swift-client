@@ -38,7 +38,7 @@ class YoutubeFetchNewSubscriptionVideosTests: YoutubeFetcherBase, RetrievingNewS
     }
 
 
-    func testFetchingUploadsIdFromChannelList() {
+    func _testFetchingUploadsIdFromChannelList() {
         let expectation = expectationWithDescription("FetchingUploadsIdFromChannelList")
 
         let helper: YoutubeRetrievingNewSubscriptionVideosFetcherHelper = YoutubeRetrievingNewSubscriptionVideosFetcherHelper()

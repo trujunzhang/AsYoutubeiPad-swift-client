@@ -458,20 +458,19 @@ class YoutubeFetcher: NSObject {
         var query: GTLQueryYouTube = GTLQueryYouTube.queryForPlaylistItemsListWithPart("snippet,contentDetails") as! GTLQueryYouTube
         query.playlistId = playlistID as String
         query.maxResults = 50
-        query.fields = "items/contentDetails,items/snippet(publishedAt,channelId,type,title),nextPageToken"
+        query.fields = "items/contentDetails,items/snippet(publishedAt,channelId,type,title)"
 
         service.executeQuery(query, completionHandler: {
             (ticket, resultList, error) -> Void in
 
-            println("error in fetchActivityList is \(error)")
+            println("error in fetchGTLPlayListItems is \(error)")
 
             if (error == nil) {
                 let result = resultList as! GTLYouTubePlaylistItemListResponse
                 let array = result.items()
 
                 if (array.count >= 1) {
-
-//                    completeHandler(array, true)
+                    completeHandler(array, true)
                 } else {
                     completeHandler(nil, false)
                 }
