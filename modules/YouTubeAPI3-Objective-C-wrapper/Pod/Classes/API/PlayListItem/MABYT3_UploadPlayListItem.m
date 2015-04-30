@@ -15,13 +15,14 @@
 - (id)init {
 
     self = [super init];
-    if(self) {
+    if (self) {
         _kind = @"youtube#playlistItem";
         _etag = @"";
         _identifier = @"";
-        _snippet = [[MABYT3_PlayListItemSnippet alloc] init];
-        _contentDetails = [[MABYT3_PlayListItemContentDetails alloc] init];
-        _privacyStatus = kYTPrivacyStatusPublic;
+
+        _publishedAt = @"";
+        _title = @"";
+        _videoId = @"";
     }
     return self;
 }
@@ -29,50 +30,43 @@
 - (id)initFromDictionary:(NSDictionary *)dict {
 
     self = [super init];
-    if(self) {
+    if (self) {
         _kind = @"youtube#playlistItem";
         _etag = @"";
         _identifier = @"";
-        _snippet = [[MABYT3_PlayListItemSnippet alloc] init];
-        _contentDetails = [[MABYT3_PlayListItemContentDetails alloc] init];
-        _privacyStatus = kYTPrivacyStatusPublic;
 
-        if([dict objectForKey:@"kind"]) {
+        _publishedAt = @"";
+        _title = @"";
+        _videoId = @"";
+
+        if ([dict objectForKey:@"kind"]) {
             _kind = [dict objectForKey:@"kind"];
         }
-        if([dict objectForKey:@"etag"]) {
+        if ([dict objectForKey:@"etag"]) {
             _etag = [dict objectForKey:@"etag"];
         }
-        if([dict objectForKey:@"id"]) {
+        if ([dict objectForKey:@"id"]) {
             _identifier = [dict objectForKey:@"id"];
         }
-        if([dict objectForKey:@"snippet"]) {
-            _snippet = [[MABYT3_PlayListItemSnippet alloc] initFromDictionary:[dict objectForKey:@"snippet"]];
-        }
-        if([dict objectForKey:@"contentDetails"]) {
-            _contentDetails = [[MABYT3_PlayListItemContentDetails alloc] initFromDictionary:[dict objectForKey:@"contentDetails"]];
-        }
-        if([dict objectForKey:@"status"]) {
-            NSDictionary *dict2 = [dict objectForKey:@"status"];
-            if([dict2 objectForKey:@"privacyStatus"]) {
-                _privacyStatus = [self privacyStatusFromString:[dict2 objectForKey:@"privacyStatus"]];
+        NSDictionary *snippetDict = [dict objectForKey:@"snippet"];
+        if (snippetDict) {
+            if ([snippetDict objectForKey:@"publishedAt"]) {
+                _publishedAt = [[MAB_GDate alloc] initFromString:[snippetDict objectForKey:@"publishedAt"]];
+            }
+            if ([snippetDict objectForKey:@"title"]) {
+                _title = [[MAB_GDate alloc] initFromString:[snippetDict objectForKey:@"title"]];
             }
         }
+        NSDictionary *contentDetailsDict = [dict objectForKey:@"contentDetails"];
+        if (contentDetailsDict) {
+            if ([contentDetailsDict objectForKey:@"videoId"]) {
+                _videoId = [[MAB_GDate alloc] initFromString:[contentDetailsDict objectForKey:@"videoId"]];
+            }
+        }
+
     }
     return self;
 }
 
-- (YTPrivacyStatus)privacyStatusFromString:(NSString *)prvString {
-
-    YTPrivacyStatus retVal = kYTPrivacyStatusPublic;
-
-    if([prvString isEqualToString:@"private"]) {
-        retVal = kYTPrivacyStatusPrivate;
-    }
-    else if([prvString isEqualToString:@"unlisted"]) {
-        retVal = kYTPrivacyStatusUnlisted;
-    }
-    return retVal;
-}
 
 @end
