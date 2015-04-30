@@ -32,6 +32,8 @@
 		5E540C9E1AEA5B2F001174F4 /* Tools.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E540C9C1AEA5B29001174F4 /* Tools.swift */; };
 		5E5B8FA31AF1B7E2007331EB /* YoutubeRetrievingNewSubscriptionVideosFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E222A851AF1AF1200E0A89E /* YoutubeRetrievingNewSubscriptionVideosFetcher.swift */; };
 		5E5B8FA41AF1B7E7007331EB /* YoutubeRetrievingNewSubscriptionVideosFetcherHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E222A871AF1AFEC00E0A89E /* YoutubeRetrievingNewSubscriptionVideosFetcherHelper.swift */; };
+		5E70DC481AF27EA6003262F2 /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E70DC461AF27EA6003262F2 /* Nimble.framework */; };
+		5E70DC491AF27EA6003262F2 /* Quick.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E70DC471AF27EA6003262F2 /* Quick.framework */; };
 		5E7180DF1AF1C8830099363B /* YoutubeRetrievingPlayListItemsFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E7180DE1AF1C8830099363B /* YoutubeRetrievingPlayListItemsFetcher.swift */; };
 		5E7180E11AF1C8A40099363B /* YoutubeRetrievingPlayListItemsFetcherHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E7180E01AF1C8A40099363B /* YoutubeRetrievingPlayListItemsFetcherHelper.swift */; };
 		5E7BB3771AEDB17B00956E71 /* LeftMenuSectionsUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E7BB3761AEDB17B00956E71 /* LeftMenuSectionsUtils.swift */; };
@@ -87,6 +89,8 @@
 		5E540C8E1AEA5A73001174F4 /* YoutubeFetcherForChannelTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YoutubeFetcherForChannelTests.swift; sourceTree = "<group>"; };
 		5E540C8F1AEA5A73001174F4 /* YoutubeFetcherForVideosTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YoutubeFetcherForVideosTests.swift; sourceTree = "<group>"; };
 		5E540C9C1AEA5B29001174F4 /* Tools.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tools.swift; sourceTree = "<group>"; };
+		5E70DC461AF27EA6003262F2 /* Nimble.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Nimble.framework; path = Carthage/Build/iOS/Nimble.framework; sourceTree = "<group>"; };
+		5E70DC471AF27EA6003262F2 /* Quick.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quick.framework; path = Carthage/Build/iOS/Quick.framework; sourceTree = "<group>"; };
 		5E7180DE1AF1C8830099363B /* YoutubeRetrievingPlayListItemsFetcher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YoutubeRetrievingPlayListItemsFetcher.swift; sourceTree = "<group>"; };
 		5E7180E01AF1C8A40099363B /* YoutubeRetrievingPlayListItemsFetcherHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YoutubeRetrievingPlayListItemsFetcherHelper.swift; sourceTree = "<group>"; };
 		5E7BB3761AEDB17B00956E71 /* LeftMenuSectionsUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LeftMenuSectionsUtils.swift; path = ../../app/app/RevealViewControllers/leftmenu/LeftMenuSectionsUtils.swift; sourceTree = "<group>"; };
@@ -115,6 +119,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5E70DC481AF27EA6003262F2 /* Nimble.framework in Frameworks */,
+				5E70DC491AF27EA6003262F2 /* Quick.framework in Frameworks */,
 				8A92A71050A94C3F1078293B /* libPods-appRestApp.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -133,6 +139,8 @@
 		046BE09B9B3DC5FF2D3CC602 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				5E70DC461AF27EA6003262F2 /* Nimble.framework */,
+				5E70DC471AF27EA6003262F2 /* Quick.framework */,
 				858F21B5FEB0E5DDDBA28052 /* libPods-appRestApp.a */,
 				27E531DC54A179CD71BF552C /* libPods-appRestAppTests.a */,
 			);
@@ -297,6 +305,7 @@
 				5E83A74F1AEA50D100C37C84 /* Frameworks */,
 				5E83A7501AEA50D100C37C84 /* Resources */,
 				09627A2C5FF0C6A47145BE52 /* Copy Pods Resources */,
+				5E70DC4A1AF27EB0003262F2 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -430,6 +439,21 @@
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
+		};
+		5E70DC4A1AF27EB0003262F2 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/nimble.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/Quick.framework",
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks";
 		};
 		A793B78C1FF3627FA9B877DB /* Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -624,6 +648,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = appRestApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -637,6 +665,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = appRestApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
