@@ -22,7 +22,7 @@ class SubscriptionsViewController: FrontBaseViewController {
         showChannelPage()
 
         //        showLeftMenu() // test
-        
+
 //        showCollectionPanel()//test
     }
 
@@ -50,7 +50,6 @@ class SubscriptionsViewController: FrontBaseViewController {
     }
 
     func showChannelPage() {
-
         let channelPageViewController: ChannelPageViewController = ChannelPageViewController() // used
 //        channelPageViewController.channelID = "UCGp4UBwpTNegd_4nCpuBcow" // JetBrainsTV
         channelPageViewController.channelID = "UCl-radPCbXcrYCE4EdNH3QA" // JFK Library
@@ -59,7 +58,6 @@ class SubscriptionsViewController: FrontBaseViewController {
         let rootView: UIView = channelPageViewController.view
         self.view.addSubview(rootView)
         LayoutUtils.LayoutFullView(rootView)
-
     }
 
     func showCollectionPanel() {
