@@ -925,11 +925,11 @@
 }
 
 - (NSURLSessionDataTask *)LISTPlayListItemForURL:(NSMutableDictionary *)parameters completion:(MABYoutubeResponseBlock)completion {
-    NSString *maxResultsString = [NSString stringWithFormat:@"%d", search_maxResults];
-    NSMutableDictionary *dictionary = [self commonDictionary:parameters maxResultsString:maxResultsString];
+//    NSString *maxResultsString = [NSString stringWithFormat:@"%d", search_maxResults];
+//    NSMutableDictionary *dictionary = [self commonDictionary:parameters maxResultsString:maxResultsString];
 
     NSURLSessionDataTask *task = [self GET:@"/youtube/v3/playlistItems"
-                                parameters:dictionary
+                                parameters:parameters
                                    success:^(NSURLSessionDataTask *task, id responseObject) {
                                        NSHTTPURLResponse *httpResponse = (NSHTTPURLResponse *) task.response;
 

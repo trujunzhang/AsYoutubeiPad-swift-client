@@ -426,20 +426,19 @@ class YoutubeFetcher: NSObject {
 
     // MARK : playlistItems.list
     func fetchPlayListItemWithPlayListId(playlistID: NSString, completeHandler: ObjectHandler) {
-        let fields = "items/snippet,items/contentDetails"
-        fetchPlayListItemWithPlayListId(playlistID, part: "snippet,contentDetails", fields: fields, completeHandler: completeHandler)
+        var parameters = NSMutableDictionary(dictionary: [
+                "part": "snippet,contentDetails",
+                "fields": "items/contentDetails,items/snippet(publishedAt,title)",
+                "playlistId": playlistID,
+                "maxResults": "5"
+        ]
+        )
+        fetchPlayListItemWithPlayListId(parameters, completeHandler: completeHandler)
     }
 
     // MABYT3_PlayList
-    func fetchPlayListItemWithPlayListId(playlistID: NSString, part: String, fields: String, completeHandler: ObjectHandler) {
-        var parameters = NSMutableDictionary(dictionary: [
-                "part": part,
-                "fields": fields,
-                "playlistId": playlistID,
-        ]
-        )
-
-        println("parameters is \(parameters)")
+    func fetchPlayListItemWithPlayListId(parameters: NSMutableDictionary, completeHandler: ObjectHandler) {
+//        println("parameters is \(parameters)")
 
         MABYT3_APIRequest.sharedInstance().LISTPlayListItemForURL(parameters, completion: {
             (responseInfo, error) -> Void in

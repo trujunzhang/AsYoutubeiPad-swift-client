@@ -14,7 +14,7 @@ class YoutubeRetrievingPlayListItemsFetcher: NSObject {
 
     func fetchingNextPlayListItemsFromChannelList(playlistID: NSString) {
 
-        YoutubeFetcher.sharedInstance.fetchGTLPlayListItems(playlistID, completeHandler: {
+        YoutubeFetcher.sharedInstance.fetchPlayListItemWithPlayListId(playlistID, completeHandler: {
             (object, sucess) -> Void in
 
             if (sucess == true) {
