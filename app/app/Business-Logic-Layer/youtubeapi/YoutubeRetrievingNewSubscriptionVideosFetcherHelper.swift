@@ -34,7 +34,8 @@ class YoutubeRetrievingNewSubscriptionVideosFetcherHelper: NSObject, FetchingNex
     }
 
     func fetchingNextStep() {
-        if (fetchingStep == channelIDsArray!.count) {
+//        if (fetchingStep == channelIDsArray!.count) {// used
+        if (fetchingStep == 1) {
             if (self.delegate != nil) {
                 self.delegate!.endFetchingNewSubscriptionVideos(fetchedChannels)
             }
