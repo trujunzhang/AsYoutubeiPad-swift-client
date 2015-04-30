@@ -45,7 +45,7 @@ class YoutubeFetchNewSubscriptionVideosTests: YoutubeFetcherBase, RetrievingNewS
         helper.delegate = self
         helper.startFetchingNewSubscriptionVideos(subscribedChannelIds)
 
-        waitForExpectationsWithTimeout(100) {
+        waitForExpectationsWithTimeout(400) {
             (error) in
             XCTAssertNil(error, "\(error)")
         }

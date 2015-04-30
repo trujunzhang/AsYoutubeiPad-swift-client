@@ -58,7 +58,7 @@ class YoutubeRetrievingPlayListItemsFetcherHelper: NSObject, FetchingNextDelegat
         let playListItems = array as! [AnyObject]
         fetchedPlayListItems.addObjectsFromArray(playListItems)
 
-        println("Result in nextFetching is \(playListItems.count)")
+//        println("Result in nextFetching is \(playListItems.count)")
 
         fetchingNextStep()
     }
