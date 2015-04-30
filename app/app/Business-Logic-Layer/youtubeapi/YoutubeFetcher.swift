@@ -95,13 +95,30 @@ class YoutubeFetcher: NSObject {
         var fetchingStep = 0
         var channelIDs: NSString = channelIDsArray[fetchingStep] as! NSString
 
+        self.fetchingNextUploadsIdFromChannelList(channelIDs, completeHandler: {
+            (object, sucess) -> Void in
+
+            if (sucess == true) {
+                var array: NSArray = object as! NSArray
+
+//                let count = array.count
+//                println("channels count in fetchingUploadsIdFromChannelListByChannelIdsArray is \(count)")
+
+
+            }
+        })
+
+    }
+
+    func fetchingNextUploadsIdFromChannelList(channelIDs: NSString, completeHandler: ObjectHandler) {
         self.fetchingUploadsIdFromChannelList(channelIDs, completeHandler: {
             (object, sucess) -> Void in
 
             if (sucess == true) {
                 var array: NSArray = object as! NSArray
-                let count = array.count
-                println("channels count in fetchingUploadsIdFromChannelListByChannelIdsArray is \(count)")
+//                let count = array.count
+//                println("channels count in fetchingUploadsIdFromChannelListByChannelIdsArray is \(count)")
+                completeHandler(object, true)
             }
         })
     }
