@@ -40,25 +40,25 @@ class YoutubeFetchNewSubscriptionVideosTests: YoutubeFetcherBase, AuthorUserFetc
 
     func _testFetchingUploadsIdFromChannelList() {
         let expectation = expectationWithDescription("fetchingChannelList")
-//
-//        YoutubeFetcher.sharedInstance.fetchingUploadsIdFromChannelList(subscribedChannelIds, completeHandler: {
-//            (object, sucess) -> Void in
-//
-//            XCTAssertNotNil(object, "object not nil")
-//
-//            self.isSucess = sucess
-//
-//            if (sucess == true) {
-//                var array: NSArray = object as! NSArray
-//                let count = array.count
-//                println("count is \(count)")
-//
-//
-////                XCTAssertTrue(array.count == 20, "Array length must be 20")
-//
-//            }
-//            expectation.fulfill()
-//        })
+
+        YoutubeFetcher.sharedInstance.fetchingUploadsIdFromChannelListByChannelIdsArray(subscribedChannelIds, completeHandler: {
+            (object, sucess) -> Void in
+
+            XCTAssertNotNil(object, "object not nil")
+
+            self.isSucess = sucess
+
+            if (sucess == true) {
+                var array: NSArray = object as! NSArray
+                let count = array.count
+                println("count is \(count)")
+
+
+//                XCTAssertTrue(array.count == 20, "Array length must be 20")
+
+            }
+            expectation.fulfill()
+        })
 
         waitForExpectationsWithTimeout(10) {
             (error) in

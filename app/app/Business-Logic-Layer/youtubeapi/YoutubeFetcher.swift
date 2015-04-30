@@ -88,6 +88,21 @@ class YoutubeFetcher: NSObject {
         })
     }
 
+    func fetchingUploadsIdFromChannelListByChannelIdsArray(channelIDsArray: NSArray, completeHandler: ObjectHandler) {
+        let channels: NSMutableArray = NSMutableArray()
+        for object in channelIDsArray {
+            let channelIDs: NSString = object as! NSString
+            self.fetchingUploadsIdFromChannelList(channelIDs, completeHandler: {
+                (object, sucess) -> Void in
+                if (sucess == true) {
+                    var array: NSArray = object as! NSArray
+                    let count = array.count
+                    println("channels count in fetchingUploadsIdFromChannelListByChannelIdsArray is \(count)")
+                }
+            })
+        }
+    }
+
     func fetchingUploadsIdFromChannelList(channelIDs: NSString, completeHandler: ObjectHandler) {
         let service: GTLService = self.youTubeService!
 
