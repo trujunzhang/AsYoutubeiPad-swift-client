@@ -15,7 +15,7 @@ class YTVideosCollectionViewController: UIViewController, UICollectionViewDataSo
     var requestInfo = YTYoutubeRequestInfo()
 
 
-    func makeRequestTask() {
+    func makeRequestTask123() {
         requestInfo = YoutubeFetcher.sharedInstance.prepareFetchingActivityListOnHomePage(  {
             (object, sucess) -> Void in
             if (sucess == true) {
@@ -32,7 +32,7 @@ class YTVideosCollectionViewController: UIViewController, UICollectionViewDataSo
         })
     }
 
-    func makeRequestTask123() {
+    func makeRequestTask() {
         requestInfo = YoutubeFetcher.sharedInstance.prepareRequestSearch("Sketch 3", completeHandler: {
             (object, sucess) -> Void in
             if (sucess == true) {
@@ -79,14 +79,14 @@ class YTVideosCollectionViewController: UIViewController, UICollectionViewDataSo
     }
 
     // The cell that is returned must be retrieved from a call to -dequeueReusableCellWithReuseIdentifier:forIndexPath:
-//    func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
-//        let cell: YTVideoCollectionViewCell = collectionView.dequeueReusableCellWithReuseIdentifier("YTVideoCollectionViewCell", forIndexPath: indexPath) as! YTVideoCollectionViewCell
-//
-////        let videoCache: YoutubeVideoCache = self.requestInfo.videoList[indexPath.row] as! YoutubeVideoCache
-////        cell.setupCell(videoCache)
-//
-//        return cell
-//    }
+    func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
+        let cell: YTVideoCollectionViewCell = collectionView.dequeueReusableCellWithReuseIdentifier("YTVideoCollectionViewCell", forIndexPath: indexPath) as! YTVideoCollectionViewCell
+
+        let videoCache: YoutubeVideoCache = self.requestInfo.videoList[indexPath.row] as! YoutubeVideoCache
+        cell.setupCell(videoCache)
+
+        return cell
+    }
 
 
 
