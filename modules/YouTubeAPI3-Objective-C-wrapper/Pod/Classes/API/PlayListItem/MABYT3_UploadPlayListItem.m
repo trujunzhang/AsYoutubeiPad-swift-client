@@ -51,16 +51,16 @@
         NSDictionary *snippetDict = [dict objectForKey:@"snippet"];
         if (snippetDict) {
             if ([snippetDict objectForKey:@"publishedAt"]) {
-                _publishedAt = [[MAB_GDate alloc] initFromString:[snippetDict objectForKey:@"publishedAt"]];
+                _publishedAt = [snippetDict objectForKey:@"publishedAt"];
             }
             if ([snippetDict objectForKey:@"title"]) {
-                _title = [[MAB_GDate alloc] initFromString:[snippetDict objectForKey:@"title"]];
+                _title = [snippetDict objectForKey:@"title"];
             }
         }
         NSDictionary *contentDetailsDict = [dict objectForKey:@"contentDetails"];
         if (contentDetailsDict) {
             if ([contentDetailsDict objectForKey:@"videoId"]) {
-                _videoId = [[MAB_GDate alloc] initFromString:[contentDetailsDict objectForKey:@"videoId"]];
+                _videoId = [contentDetailsDict objectForKey:@"videoId"];
             }
         }
 

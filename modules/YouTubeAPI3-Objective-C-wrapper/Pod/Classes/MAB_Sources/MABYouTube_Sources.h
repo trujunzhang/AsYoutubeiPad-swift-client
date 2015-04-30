@@ -41,6 +41,7 @@
 #import "MABYT3_ResourceId.h"
 #import "MABYT3_PlayList.h"
 #import "MABYT3_PlayListItem.h"
+#import "MABYT3_UploadPlayListItem.h"
 #import "MABYT3_ChannelBrandingSettings.h"
 #import "MABYT3_VideoCategory.h"
 #import "MABYT3_Language.h"
