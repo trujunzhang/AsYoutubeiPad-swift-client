@@ -433,11 +433,11 @@ class YoutubeFetcher: NSObject {
                 "maxResults": "5"
         ]
         )
-        fetchPlayListItemWithPlayListId(parameters, completeHandler: completeHandler)
+        fetchPlayListItemWithDictionary(parameters, completeHandler: completeHandler)
     }
 
     // MABYT3_PlayList
-    func fetchPlayListItemWithPlayListId(parameters: NSMutableDictionary, completeHandler: ObjectHandler) {
+    func fetchPlayListItemWithDictionary(parameters: NSMutableDictionary, completeHandler: ObjectHandler) {
 //        println("parameters is \(parameters)")
 
         MABYT3_APIRequest.sharedInstance().LISTPlayListItemForURL(parameters, completion: {

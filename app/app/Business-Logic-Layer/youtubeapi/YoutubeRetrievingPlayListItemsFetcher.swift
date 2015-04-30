@@ -12,10 +12,11 @@ import Foundation
 class YoutubeRetrievingPlayListItemsFetcher: NSObject {
     var delegate: FetchingNextDelegate?
 
-    var parameters: [String:String] = [
+    var parameters: NSMutableDictionary = [
             "part": "snippet,contentDetails",
             "fields": "items/contentDetails,items/snippet(publishedAt,title)",
             "maxResults": "5",
+            "key": apiKey
     ]
 
     override init() {
@@ -24,15 +25,8 @@ class YoutubeRetrievingPlayListItemsFetcher: NSObject {
 
     func fetchingNextPlayListItemsFromChannelList(playlistID: NSString) {
         parameters["playlistId"] = playlistID as String
-//        var parameters = NSMutableDictionary(dictionary: [
-//                "part": "snippet,contentDetails",
-//                "fields": "items/contentDetails,items/snippet(publishedAt,title)",
-//                "maxResults": "5",
-//                "playlistId": playlistID,
-//        ]
-//        )
 
-        YoutubeFetcher.sharedInstance.fetchPlayListItemWithPlayListId(playlistID, completeHandler: {
+        YoutubeFetcher.sharedInstance.fetchPlayListItemWithDictionary(parameters, completeHandler: {
             (object, sucess) -> Void in
 
             if (sucess == true) {
