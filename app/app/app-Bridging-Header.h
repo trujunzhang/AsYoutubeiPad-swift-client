@@ -53,7 +53,7 @@
 #import "NimbusWebController.h"
 #import "NimbusModels.h"
 #import "NimbusAttributedLabel.h"
-#import "NIMutableTableViewModel+Private.h"
+#import "NimbusCollections.h"
 
 
 // Library: SDWebImage

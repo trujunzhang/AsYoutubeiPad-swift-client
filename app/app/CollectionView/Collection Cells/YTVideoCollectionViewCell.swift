@@ -7,12 +7,29 @@
 //
 
 import UIKit
+import Foundation
 
-class YTVideoCollectionViewCell: UICollectionViewCell {
+class YTVideoCollectionViewCellObject: NSObject, NICollectionViewNibCellObject {
+    
+    
+    // MARK: NICollectionViewNibCellObject
+    func collectionViewCellNib() -> UINib {
+        return UINib(nibName: "YTVideoCollectionViewCell", bundle: nil)
+    }
+}
 
+class YTVideoCollectionViewCell: UICollectionViewCell, NICollectionViewCell {
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
     }
-
+    
+    
+    // MARK: NICollectionViewCell
+    func shouldUpdateCellWithObject(object: AnyObject!) -> Bool {
+        return true
+    }
+    
+    
 }

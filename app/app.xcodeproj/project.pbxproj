@@ -25,8 +25,6 @@
 		5E1E2CF01AD8B898004CC05B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5E1E2CEE1AD8B898004CC05B /* Main.storyboard */; };
 		5E1E2CF21AD8B898004CC05B /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5E1E2CF11AD8B898004CC05B /* Images.xcassets */; };
 		5E1E2CF51AD8B898004CC05B /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5E1E2CF31AD8B898004CC05B /* LaunchScreen.xib */; };
-		5E21AE901AF233A40046FE65 /* YTVideoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E21AE8E1AF233A40046FE65 /* YTVideoCollectionViewCell.swift */; };
-		5E21AE911AF233A40046FE65 /* YTVideoCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5E21AE8F1AF233A40046FE65 /* YTVideoCollectionViewCell.xib */; };
 		5E21AE931AF233DC0046FE65 /* NBCollectionSectionGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E21AE921AF233DC0046FE65 /* NBCollectionSectionGenerator.swift */; };
 		5E21AE951AF233FF0046FE65 /* NBVideosCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E21AE941AF233FF0046FE65 /* NBVideosCollectionViewController.swift */; };
 		5E2209A81AD8CBE300DD748D /* Autolayout.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5E2209A61AD8CBE300DD748D /* Autolayout.storyboard */; };
@@ -55,7 +53,8 @@
 		5EC91E1A1AECB738000EB0F4 /* NSDateExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EC91E191AECB738000EB0F4 /* NSDateExtensions.swift */; };
 		5ECA615C1AECC88B00D02728 /* MenuTitleBarBaseCellObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ECA615B1AECC88B00D02728 /* MenuTitleBarBaseCellObject.swift */; };
 		5ECB14D31AF0D3D1006592AC /* YTVideoCollectionConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ECB14D21AF0D3D1006592AC /* YTVideoCollectionConstant.swift */; };
-		5ED690F41AF0CD6800560A83 /* YTVideosCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ED690F21AF0CD6800560A83 /* YTVideosCollectionViewController.swift */; };
+		5EDAEA7C1AF23DE90021F7F5 /* YTVideoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EDAEA7A1AF23DE90021F7F5 /* YTVideoCollectionViewCell.swift */; };
+		5EDAEA7D1AF23DE90021F7F5 /* YTVideoCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5EDAEA7B1AF23DE90021F7F5 /* YTVideoCollectionViewCell.xib */; };
 		5EE8C6911AEB6A3500156F4D /* SwiftyUserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EE8C6901AEB6A3500156F4D /* SwiftyUserDefaults.swift */; };
 		5EF6D8DB1AEDB31E00F77D17 /* LoggedUserChannelInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EF6D8DA1AEDB31E00F77D17 /* LoggedUserChannelInfo.swift */; };
 		5EFED9A61AE3AB3F00EEB23E /* VideoInfoDrawRectBlockCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EFED9A51AE3AB3F00EEB23E /* VideoInfoDrawRectBlockCell.swift */; };
@@ -91,8 +90,6 @@
 		5E1E2CF41AD8B898004CC05B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		5E1E2CFF1AD8B898004CC05B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5E1E2D001AD8B898004CC05B /* appTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = appTests.swift; sourceTree = "<group>"; };
-		5E21AE8E1AF233A40046FE65 /* YTVideoCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = YTVideoCollectionViewCell.swift; path = "Collection Cells/YTVideoCollectionViewCell.swift"; sourceTree = "<group>"; };
-		5E21AE8F1AF233A40046FE65 /* YTVideoCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = YTVideoCollectionViewCell.xib; path = "Collection Cells/YTVideoCollectionViewCell.xib"; sourceTree = "<group>"; };
 		5E21AE921AF233DC0046FE65 /* NBCollectionSectionGenerator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NBCollectionSectionGenerator.swift; sourceTree = "<group>"; };
 		5E21AE941AF233FF0046FE65 /* NBVideosCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NBVideosCollectionViewController.swift; sourceTree = "<group>"; };
 		5E2209A71AD8CBE300DD748D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Autolayout.storyboard; sourceTree = "<group>"; };
@@ -125,7 +122,8 @@
 		5EC91E191AECB738000EB0F4 /* NSDateExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSDateExtensions.swift; sourceTree = "<group>"; };
 		5ECA615B1AECC88B00D02728 /* MenuTitleBarBaseCellObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MenuTitleBarBaseCellObject.swift; path = MenuCells/MenuTitleBarBaseCellObject.swift; sourceTree = "<group>"; };
 		5ECB14D21AF0D3D1006592AC /* YTVideoCollectionConstant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YTVideoCollectionConstant.swift; sourceTree = "<group>"; };
-		5ED690F21AF0CD6800560A83 /* YTVideosCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YTVideosCollectionViewController.swift; sourceTree = "<group>"; };
+		5EDAEA7A1AF23DE90021F7F5 /* YTVideoCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YTVideoCollectionViewCell.swift; sourceTree = "<group>"; };
+		5EDAEA7B1AF23DE90021F7F5 /* YTVideoCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YTVideoCollectionViewCell.xib; sourceTree = "<group>"; };
 		5EE8C6901AEB6A3500156F4D /* SwiftyUserDefaults.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyUserDefaults.swift; sourceTree = "<group>"; };
 		5EF6D8DA1AEDB31E00F77D17 /* LoggedUserChannelInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoggedUserChannelInfo.swift; sourceTree = "<group>"; };
 		5EFED9A51AE3AB3F00EEB23E /* VideoInfoDrawRectBlockCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoInfoDrawRectBlockCell.swift; sourceTree = "<group>"; };
@@ -282,15 +280,6 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		5E21AE891AF232EF0046FE65 /* Collection Cells */ = {
-			isa = PBXGroup;
-			children = (
-				5E21AE8E1AF233A40046FE65 /* YTVideoCollectionViewCell.swift */,
-				5E21AE8F1AF233A40046FE65 /* YTVideoCollectionViewCell.xib */,
-			);
-			name = "Collection Cells";
-			sourceTree = "<group>";
-		};
 		5E37DF861AE61D00009D605E /* RevealViewControllers */ = {
 			isa = PBXGroup;
 			children = (
@@ -381,13 +370,21 @@
 		5ED690F01AF0CD6800560A83 /* CollectionView */ = {
 			isa = PBXGroup;
 			children = (
-				5E21AE891AF232EF0046FE65 /* Collection Cells */,
-				5ED690F21AF0CD6800560A83 /* YTVideosCollectionViewController.swift */,
+				5EDAEA791AF23DE90021F7F5 /* Collection Cells */,
 				5ECB14D21AF0D3D1006592AC /* YTVideoCollectionConstant.swift */,
 				5E21AE921AF233DC0046FE65 /* NBCollectionSectionGenerator.swift */,
 				5E21AE941AF233FF0046FE65 /* NBVideosCollectionViewController.swift */,
 			);
 			path = CollectionView;
+			sourceTree = "<group>";
+		};
+		5EDAEA791AF23DE90021F7F5 /* Collection Cells */ = {
+			isa = PBXGroup;
+			children = (
+				5EDAEA7A1AF23DE90021F7F5 /* YTVideoCollectionViewCell.swift */,
+				5EDAEA7B1AF23DE90021F7F5 /* YTVideoCollectionViewCell.xib */,
+			);
+			path = "Collection Cells";
 			sourceTree = "<group>";
 		};
 		5EE8C68F1AEB6A3500156F4D /* SwiftyUserDefaults */ = {
@@ -499,7 +496,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5E1E2CF01AD8B898004CC05B /* Main.storyboard in Resources */,
-				5E21AE911AF233A40046FE65 /* YTVideoCollectionViewCell.xib in Resources */,
+				5EDAEA7D1AF23DE90021F7F5 /* YTVideoCollectionViewCell.xib in Resources */,
 				5E1E2CF51AD8B898004CC05B /* LaunchScreen.xib in Resources */,
 				5E56998D1AEDCDA100EE0E6A /* ReusedViewControllers.storyboard in Resources */,
 				5E1E2CF21AD8B898004CC05B /* Images.xcassets in Resources */,
@@ -588,7 +585,6 @@
 				5E3AB3CB1AE3D7DC00BB0944 /* Result.swift in Sources */,
 				5E498E931AEA4EDD0081081E /* YoutubeApiConstant.swift in Sources */,
 				5E37DF921AE61D00009D605E /* FrontBaseViewController.swift in Sources */,
-				5ED690F41AF0CD6800560A83 /* YTVideosCollectionViewController.swift in Sources */,
 				5EC91E1A1AECB738000EB0F4 /* NSDateExtensions.swift in Sources */,
 				5E0B70371AEA4C48007287C7 /* YoutubeFetcher.swift in Sources */,
 				5E0B70381AEA4C48007287C7 /* YoutubeModelParser.swift in Sources */,
@@ -608,7 +604,7 @@
 				5EC804E31AE660CA00FC42C4 /* NBMenuTableViewController.swift in Sources */,
 				5E0514B41AEDC54C00A90A0B /* ChannelBannerViewController.swift in Sources */,
 				5EFED9A81AE3AC6700EEB23E /* VideoInfoObject.swift in Sources */,
-				5E21AE901AF233A40046FE65 /* YTVideoCollectionViewCell.swift in Sources */,
+				5EDAEA7C1AF23DE90021F7F5 /* YTVideoCollectionViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

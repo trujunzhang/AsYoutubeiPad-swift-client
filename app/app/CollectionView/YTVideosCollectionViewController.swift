@@ -79,14 +79,14 @@ class YTVideosCollectionViewController: UIViewController, UICollectionViewDataSo
     }
 
     // The cell that is returned must be retrieved from a call to -dequeueReusableCellWithReuseIdentifier:forIndexPath:
-    func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
-        let cell: YTVideoCollectionViewCell = collectionView.dequeueReusableCellWithReuseIdentifier("YTVideoCollectionViewCell", forIndexPath: indexPath) as! YTVideoCollectionViewCell
-
-//        let videoCache: YoutubeVideoCache = self.requestInfo.videoList[indexPath.row] as! YoutubeVideoCache
-//        cell.setupCell(videoCache)
-
-        return cell
-    }
+//    func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
+//        let cell: YTVideoCollectionViewCell = collectionView.dequeueReusableCellWithReuseIdentifier("YTVideoCollectionViewCell", forIndexPath: indexPath) as! YTVideoCollectionViewCell
+//
+////        let videoCache: YoutubeVideoCache = self.requestInfo.videoList[indexPath.row] as! YoutubeVideoCache
+////        cell.setupCell(videoCache)
+//
+//        return cell
+//    }
 
 
 

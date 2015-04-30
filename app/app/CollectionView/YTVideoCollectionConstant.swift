@@ -9,12 +9,12 @@
 import Foundation
 
 
-extension YTVideosCollectionViewController {
-    
-    class func instance() -> YTVideosCollectionViewController {
-        
-        var viewController: YTVideosCollectionViewController = UIStoryboard(name: "ReusedViewControllers", bundle: nil).instantiateViewControllerWithIdentifier("YTVideosCollectionViewController") as! YTVideosCollectionViewController
-        
-        return viewController
-    }
-}
+//extension YTVideosCollectionViewController {
+//    
+//    class func instance() -> YTVideosCollectionViewController {
+//        
+//        var viewController: YTVideosCollectionViewController = UIStoryboard(name: "ReusedViewControllers", bundle: nil).instantiateViewControllerWithIdentifier("YTVideosCollectionViewController") as! YTVideosCollectionViewController
+//        
+//        return viewController
+//    }
+//}
