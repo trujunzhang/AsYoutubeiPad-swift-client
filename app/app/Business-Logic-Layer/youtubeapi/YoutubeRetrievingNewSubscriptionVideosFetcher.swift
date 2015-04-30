@@ -9,11 +9,9 @@
 import Foundation
 
 protocol RetrievingNewSubscriptionVideosFetchingDelegate {
-    func endFetchingUserChannel(channel: GTLYouTubeChannel)
-    
-    func endFetchingUserSubscriptions(array: NSArray)
+    func nextFetching(array: NSObject)
 }
 
-class YoutubeRetrievingNewSubscriptionVideosFetcher :NSObject {
-    
+class YoutubeRetrievingNewSubscriptionVideosFetcher: NSObject {
+
 }

@@ -24,7 +24,7 @@ import XCTest
 //
 //You can now sort the videos by publishing date and print the most recent.
 
-class YoutubeFetchNewSubscriptionVideosTests: YoutubeFetcherBase, AuthorUserFetchingDelegate {
+class YoutubeFetchNewSubscriptionVideosTests: YoutubeFetcherBase, RetrievingNewSubscriptionVideosFetchingHelperDelegate {
     var expectation: XCTestExpectation?
 
     override func setUp() {
@@ -39,26 +39,11 @@ class YoutubeFetchNewSubscriptionVideosTests: YoutubeFetcherBase, AuthorUserFetc
 
 
     func testFetchingUploadsIdFromChannelList() {
-        let expectation = expectationWithDescription("fetchingChannelList")
+        let expectation = expectationWithDescription("FetchingUploadsIdFromChannelList")
 
-        YoutubeFetcher.sharedInstance.fetchingUploadsIdFromChannelListByChannelIdsArray(subscribedChannelIds, completeHandler: {
-            (object, sucess) -> Void in
-
-            XCTAssertNotNil(object, "object not nil")
-
-            self.isSucess = sucess
-
-            if (sucess == true) {
-                var array: NSArray = object as! NSArray
-                let count = array.count
-                println("count is \(count)")
-
-
-//                XCTAssertTrue(array.count == 20, "Array length must be 20")
-
-            }
-            expectation.fulfill()
-        })
+        let helper: YoutubeRetrievingNewSubscriptionVideosFetcherHelper = YoutubeRetrievingNewSubscriptionVideosFetcherHelper()
+        helper.delegate = self
+        helper.startFetchingNewSubscriptionVideos(subscribedChannelIds)
 
         waitForExpectationsWithTimeout(10) {
             (error) in
@@ -66,32 +51,9 @@ class YoutubeFetchNewSubscriptionVideosTests: YoutubeFetcherBase, AuthorUserFetc
         }
     }
 
-    func _testRetrievingAllTheNewSubscriptionVideos() {
-        expectation = expectationWithDescription("retrievingSubscriptionList")
-
-        YoutubeFetcher.sharedInstance.delegate = self
-        let hasLogin = YoutubeUserProfile.sharedInstance.hasLogin()
-        XCTAssertTrue(hasLogin == true, "Before testing fetching subscription list, must login first")
-
-        if (hasLogin == true) {
-            YoutubeFetcher.sharedInstance.initLoggedUser()
-        }
-
-        waitForExpectationsWithTimeout(20) {
-            (error) in
-            XCTAssertNil(error, "\(error)")
-        }
-    }
-
-    // MARK: AuthorUserFetchingDelegate
-    func endFetchingUserChannel(channel: GTLYouTubeChannel) {
-        let x = 0
+    // MARK: RetrievingNewSubscriptionVideosFetchingHelperDelegate
+    func endFetchingNewSubscriptionVideos(array: NSArray) {
 
     }
 
-    func endFetchingUserSubscriptions(array: NSArray) {
-        let channelIdsArray = YoutubeParser.getChannelIdsArrayFromSubscriptionList(array)
-        println("channelIds is \(channelIdsArray)")
-        expectation!.fulfill()
-    }
 }

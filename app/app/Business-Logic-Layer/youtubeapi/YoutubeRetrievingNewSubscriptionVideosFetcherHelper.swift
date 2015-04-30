@@ -8,7 +8,21 @@
 
 import Foundation
 
-//RetrievingNewSubscriptionVideosFetchingDelegate
-class YoutubeRetrievingNewSubscriptionVideosFetcherHelper :NSObject{
-    
+protocol RetrievingNewSubscriptionVideosFetchingHelperDelegate {
+//    func failureFetchingNewsSubscriptionVideos()
+
+    func endFetchingNewSubscriptionVideos(array: NSArray)
+}
+
+class YoutubeRetrievingNewSubscriptionVideosFetcherHelper: NSObject, RetrievingNewSubscriptionVideosFetchingDelegate {
+    var delegate: RetrievingNewSubscriptionVideosFetchingHelperDelegate?
+
+    func startFetchingNewSubscriptionVideos(channelIDsArray: NSArray) {
+
+    }
+
+    // MARK: RetrievingNewSubscriptionVideosFetchingDelegate
+    func nextFetching(array: NSObject) {
+
+    }
 }

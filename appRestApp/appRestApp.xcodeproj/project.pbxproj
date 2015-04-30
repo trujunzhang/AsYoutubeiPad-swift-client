@@ -30,6 +30,8 @@
 		5E540C9A1AEA5AC0001174F4 /* YoutubeModelParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E0024501AEA55AF00BB7383 /* YoutubeModelParser.swift */; };
 		5E540C9D1AEA5B29001174F4 /* Tools.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E540C9C1AEA5B29001174F4 /* Tools.swift */; };
 		5E540C9E1AEA5B2F001174F4 /* Tools.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E540C9C1AEA5B29001174F4 /* Tools.swift */; };
+		5E5B8FA31AF1B7E2007331EB /* YoutubeRetrievingNewSubscriptionVideosFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E222A851AF1AF1200E0A89E /* YoutubeRetrievingNewSubscriptionVideosFetcher.swift */; };
+		5E5B8FA41AF1B7E7007331EB /* YoutubeRetrievingNewSubscriptionVideosFetcherHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E222A871AF1AFEC00E0A89E /* YoutubeRetrievingNewSubscriptionVideosFetcherHelper.swift */; };
 		5E7BB3771AEDB17B00956E71 /* LeftMenuSectionsUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E7BB3761AEDB17B00956E71 /* LeftMenuSectionsUtils.swift */; };
 		5E83A7581AEA50D100C37C84 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E83A7571AEA50D100C37C84 /* AppDelegate.swift */; };
 		5E83A75A1AEA50D100C37C84 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E83A7591AEA50D100C37C84 /* ViewController.swift */; };
@@ -475,6 +477,7 @@
 				5E540C961AEA5AA8001174F4 /* YoutubeApiConstant.swift in Sources */,
 				5EDFD4DF1AEDB3E30033E0A1 /* LeftMenuSectionsUtils.swift in Sources */,
 				5E540C951AEA5A7F001174F4 /* YoutubeDataFetcher.swift in Sources */,
+				5E5B8FA41AF1B7E7007331EB /* YoutubeRetrievingNewSubscriptionVideosFetcherHelper.swift in Sources */,
 				5E540C891AEA5A2D001174F4 /* YTYoutubeRequestInfo.swift in Sources */,
 				5E540C9A1AEA5AC0001174F4 /* YoutubeModelParser.swift in Sources */,
 				5E540C971AEA5AB4001174F4 /* YouTubeExtractorUtils.swift in Sources */,
@@ -485,6 +488,7 @@
 				5E01B7B91AEF2C8500AA579C /* YoutubeFetcherSubscriptionListTests.swift in Sources */,
 				5EA685281AEF4F2A0047FA91 /* YoutubeFetcherPlayListItemTests.swift in Sources */,
 				5E540C901AEA5A73001174F4 /* YoutubeDataFetcherForCaptionTests.swift in Sources */,
+				5E5B8FA31AF1B7E2007331EB /* YoutubeRetrievingNewSubscriptionVideosFetcher.swift in Sources */,
 				5EDFD4E01AEDB3FA0033E0A1 /* YoutubeUserProfile.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
