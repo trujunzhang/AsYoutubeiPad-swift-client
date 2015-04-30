@@ -12,7 +12,7 @@ import Foundation
 protocol RetrievingPlayListItemsFetchingHelperDelegate {
 //    func failureFetchingNewsSubscriptionVideos()
 
-    func endFetchingNewSubscriptionVideos(array: NSArray)
+    func endFetchingPlayListItems(array: NSArray)
 }
 
 class YoutubeRetrievingPlayListItemsFetcherHelper: NSObject, FetchingNextDelegate {
@@ -37,7 +37,7 @@ class YoutubeRetrievingPlayListItemsFetcherHelper: NSObject, FetchingNextDelegat
     func fetchingNextStep() {
         if (fetchingStep == playlistItemsIdsArray!.count) {
             if (self.delegate != nil) {
-                self.delegate!.endFetchingNewSubscriptionVideos(fetchedPlayListItems)
+                self.delegate!.endFetchingPlayListItems(fetchedPlayListItems)
             }
             return
         }

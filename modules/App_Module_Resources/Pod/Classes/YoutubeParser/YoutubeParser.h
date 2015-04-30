@@ -10,6 +10,11 @@
 
 @interface YoutubeParser : NSObject
 
+#pragma mark
+#pragma mark - GTLYouTubeChannel
+
++ (NSArray *)getUploadIdsArrayInContentDetailsFromGTLChannelList:(id)channels;
+
 + (NSArray *)getVideoIdsArrayByGTLActivityList:(id)activities;
 
 + (NSArray *)filterSnippetTypeIsUploadInGTLActivity:(id)activities;

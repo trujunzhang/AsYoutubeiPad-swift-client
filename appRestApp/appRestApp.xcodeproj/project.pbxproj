@@ -50,6 +50,8 @@
 		5EDFD4E01AEDB3FA0033E0A1 /* YoutubeUserProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EDFD4D81AEDB35E0033E0A1 /* YoutubeUserProfile.swift */; };
 		5EDFD4E11AEDB4070033E0A1 /* LoggedUserChannelInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EDFD4DA1AEDB3870033E0A1 /* LoggedUserChannelInfo.swift */; };
 		5EDFD4E21AEDB4160033E0A1 /* SwiftyUserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EDFD4DD1AEDB3A30033E0A1 /* SwiftyUserDefaults.swift */; };
+		5EF252571AF1CD1400AC63C3 /* YoutubeRetrievingPlayListItemsFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E7180DE1AF1C8830099363B /* YoutubeRetrievingPlayListItemsFetcher.swift */; };
+		5EF252581AF1CD1800AC63C3 /* YoutubeRetrievingPlayListItemsFetcherHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E7180E01AF1C8A40099363B /* YoutubeRetrievingPlayListItemsFetcherHelper.swift */; };
 		8A92A71050A94C3F1078293B /* libPods-appRestApp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 858F21B5FEB0E5DDDBA28052 /* libPods-appRestApp.a */; };
 		9E63D12B11E44317ACB7A3DC /* libPods-appRestAppTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 27E531DC54A179CD71BF552C /* libPods-appRestAppTests.a */; };
 /* End PBXBuildFile section */
@@ -488,6 +490,7 @@
 				5E5B8FA41AF1B7E7007331EB /* YoutubeRetrievingNewSubscriptionVideosFetcherHelper.swift in Sources */,
 				5E540C891AEA5A2D001174F4 /* YTYoutubeRequestInfo.swift in Sources */,
 				5E540C9A1AEA5AC0001174F4 /* YoutubeModelParser.swift in Sources */,
+				5EF252581AF1CD1800AC63C3 /* YoutubeRetrievingPlayListItemsFetcherHelper.swift in Sources */,
 				5E540C971AEA5AB4001174F4 /* YouTubeExtractorUtils.swift in Sources */,
 				5E83A76E1AEA50D100C37C84 /* appRestAppTests.swift in Sources */,
 				5E540C9E1AEA5B2F001174F4 /* Tools.swift in Sources */,
@@ -498,6 +501,7 @@
 				5E540C901AEA5A73001174F4 /* YoutubeDataFetcherForCaptionTests.swift in Sources */,
 				5E5B8FA31AF1B7E2007331EB /* YoutubeRetrievingNewSubscriptionVideosFetcher.swift in Sources */,
 				5EDFD4E01AEDB3FA0033E0A1 /* YoutubeUserProfile.swift in Sources */,
+				5EF252571AF1CD1400AC63C3 /* YoutubeRetrievingPlayListItemsFetcher.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

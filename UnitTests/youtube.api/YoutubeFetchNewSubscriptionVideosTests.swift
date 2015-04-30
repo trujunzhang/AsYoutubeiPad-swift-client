@@ -24,7 +24,7 @@ import XCTest
 //
 //You can now sort the videos by publishing date and print the most recent.
 
-class YoutubeFetchNewSubscriptionVideosTests: YoutubeFetcherBase, RetrievingNewSubscriptionVideosFetchingHelperDelegate {
+class YoutubeFetchNewSubscriptionVideosTests: YoutubeFetcherBase, RetrievingNewSubscriptionVideosFetchingHelperDelegate, RetrievingPlayListItemsFetchingHelperDelegate {
     var expectation: XCTestExpectation?
 
     override func setUp() {
@@ -53,9 +53,22 @@ class YoutubeFetchNewSubscriptionVideosTests: YoutubeFetcherBase, RetrievingNewS
 
     // MARK: RetrievingNewSubscriptionVideosFetchingHelperDelegate
     func endFetchingNewSubscriptionVideos(array: NSArray) {
+        // of GTLYouTubeChannel
 
-        println("Array in endFetchingNewSubscriptionVideos is \(array.count)")
-        let x = 0
+        println("Array in endFetchingNewSubscriptionVideos is \(array)")
+
+//        startFetchingPlayListItems(array)
+    }
+
+    func startFetchingPlayListItems(array: NSArray) {
+        let helper: YoutubeRetrievingPlayListItemsFetcherHelper = YoutubeRetrievingPlayListItemsFetcherHelper()
+        helper.delegate = self
+        helper.startFetchingplaylistItems(array)
+    }
+
+    // MARK: RetrievingPlayListItemsFetchingHelperDelegate
+    func endFetchingPlayListItems(array: NSArray) {
+
     }
 
 }

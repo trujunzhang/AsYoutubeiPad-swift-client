@@ -33,7 +33,7 @@ static NSUInteger UPLOADS_PAGE_LENGTH = 20;
 #pragma mark
 #pragma mark - GTLYouTubeChannel
 
-+ (NSString *)getUploadIdsArrayInContentDetailsFromGTLChannelList:(NSMutableArray *)channels {
++ (NSArray *)getUploadIdsArrayInContentDetailsFromGTLChannelList:(NSMutableArray *)channels {
     NSMutableArray *uploadIds = [[NSMutableArray alloc] init];
     for (GTLYouTubeChannel *channel in channels) {
         NSString *uploadId = [YoutubeParser getUploadIdsInContentDetailsFromGTLChannelList:channel];
