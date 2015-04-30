@@ -14,6 +14,8 @@
 		5E1C9B141AEA58E400B45119 /* YouTubeExtractorUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E1C9B131AEA58E400B45119 /* YouTubeExtractorUtils.swift */; };
 		5E1C9B161AEA58F600B45119 /* YoutubeDataFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E1C9B151AEA58F600B45119 /* YoutubeDataFetcher.swift */; };
 		5E1C9B181AEA590700B45119 /* YoutubeFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E1C9B171AEA590700B45119 /* YoutubeFetcher.swift */; };
+		5E222A861AF1AF1200E0A89E /* YoutubeRetrievingNewSubscriptionVideosFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E222A851AF1AF1200E0A89E /* YoutubeRetrievingNewSubscriptionVideosFetcher.swift */; };
+		5E222A881AF1AFEC00E0A89E /* YoutubeRetrievingNewSubscriptionVideosFetcherHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E222A871AF1AFEC00E0A89E /* YoutubeRetrievingNewSubscriptionVideosFetcherHelper.swift */; };
 		5E4B4B5D1AEF252800F1B115 /* YoutubeFetchNewSubscriptionVideosTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E4B4B5C1AEF252800F1B115 /* YoutubeFetchNewSubscriptionVideosTests.swift */; };
 		5E540C891AEA5A2D001174F4 /* YTYoutubeRequestInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E1C9B0F1AEA58A800B45119 /* YTYoutubeRequestInfo.swift */; };
 		5E540C901AEA5A73001174F4 /* YoutubeDataFetcherForCaptionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E540C8B1AEA5A73001174F4 /* YoutubeDataFetcherForCaptionTests.swift */; };
@@ -70,6 +72,8 @@
 		5E1C9B131AEA58E400B45119 /* YouTubeExtractorUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YouTubeExtractorUtils.swift; sourceTree = "<group>"; };
 		5E1C9B151AEA58F600B45119 /* YoutubeDataFetcher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YoutubeDataFetcher.swift; sourceTree = "<group>"; };
 		5E1C9B171AEA590700B45119 /* YoutubeFetcher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YoutubeFetcher.swift; sourceTree = "<group>"; };
+		5E222A851AF1AF1200E0A89E /* YoutubeRetrievingNewSubscriptionVideosFetcher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YoutubeRetrievingNewSubscriptionVideosFetcher.swift; sourceTree = "<group>"; };
+		5E222A871AF1AFEC00E0A89E /* YoutubeRetrievingNewSubscriptionVideosFetcherHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YoutubeRetrievingNewSubscriptionVideosFetcherHelper.swift; sourceTree = "<group>"; };
 		5E4B4B5C1AEF252800F1B115 /* YoutubeFetchNewSubscriptionVideosTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YoutubeFetchNewSubscriptionVideosTests.swift; sourceTree = "<group>"; };
 		5E540C8B1AEA5A73001174F4 /* YoutubeDataFetcherForCaptionTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YoutubeDataFetcherForCaptionTests.swift; sourceTree = "<group>"; };
 		5E540C8C1AEA5A73001174F4 /* YouTubeExtractorUtilsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YouTubeExtractorUtilsTests.swift; sourceTree = "<group>"; };
@@ -244,6 +248,8 @@
 				5E1C9B0F1AEA58A800B45119 /* YTYoutubeRequestInfo.swift */,
 				5E1C9B0D1AEA588A00B45119 /* YoutubeApiConstant.swift */,
 				5E0024501AEA55AF00BB7383 /* YoutubeModelParser.swift */,
+				5E222A851AF1AF1200E0A89E /* YoutubeRetrievingNewSubscriptionVideosFetcher.swift */,
+				5E222A871AF1AFEC00E0A89E /* YoutubeRetrievingNewSubscriptionVideosFetcherHelper.swift */,
 			);
 			name = youtubeapi;
 			path = "../../app/app/Business-Logic-Layer/youtubeapi";
@@ -443,6 +449,7 @@
 				5E83A75A1AEA50D100C37C84 /* ViewController.swift in Sources */,
 				5EDFD4DB1AEDB3870033E0A1 /* LoggedUserChannelInfo.swift in Sources */,
 				5E83A7581AEA50D100C37C84 /* AppDelegate.swift in Sources */,
+				5E222A861AF1AF1200E0A89E /* YoutubeRetrievingNewSubscriptionVideosFetcher.swift in Sources */,
 				5E0024511AEA55AF00BB7383 /* YoutubeModelParser.swift in Sources */,
 				5E1C9B181AEA590700B45119 /* YoutubeFetcher.swift in Sources */,
 				5E1C9B141AEA58E400B45119 /* YouTubeExtractorUtils.swift in Sources */,
@@ -450,6 +457,7 @@
 				5E7BB3771AEDB17B00956E71 /* LeftMenuSectionsUtils.swift in Sources */,
 				5E540C9D1AEA5B29001174F4 /* Tools.swift in Sources */,
 				5EDFD4D91AEDB35E0033E0A1 /* YoutubeUserProfile.swift in Sources */,
+				5E222A881AF1AFEC00E0A89E /* YoutubeRetrievingNewSubscriptionVideosFetcherHelper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
