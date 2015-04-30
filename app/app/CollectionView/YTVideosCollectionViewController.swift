@@ -82,8 +82,8 @@ class YTVideosCollectionViewController: UIViewController, UICollectionViewDataSo
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         let cell: YTVideoCollectionViewCell = collectionView.dequeueReusableCellWithReuseIdentifier("YTVideoCollectionViewCell", forIndexPath: indexPath) as! YTVideoCollectionViewCell
 
-        let videoCache: YoutubeVideoCache = self.requestInfo.videoList[indexPath.row] as! YoutubeVideoCache
-        cell.setupCell(videoCache)
+//        let videoCache: YoutubeVideoCache = self.requestInfo.videoList[indexPath.row] as! YoutubeVideoCache
+//        cell.setupCell(videoCache)
 
         return cell
     }
