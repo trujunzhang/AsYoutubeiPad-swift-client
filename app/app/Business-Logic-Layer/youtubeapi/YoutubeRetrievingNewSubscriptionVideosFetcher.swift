@@ -13,5 +13,21 @@ protocol RetrievingNewSubscriptionVideosFetchingDelegate {
 }
 
 class YoutubeRetrievingNewSubscriptionVideosFetcher: NSObject {
+    var delegate: RetrievingNewSubscriptionVideosFetchingDelegate?
 
+    func fetchingNextUploadsIdFromChannelList(channelIDs: NSString) {
+
+        YoutubeFetcher.sharedInstance.fetchingUploadsIdFromChannelList(channelIDs, completeHandler: {
+            (object, sucess) -> Void in
+
+            if (sucess == true) {
+                var array: NSArray = object as! NSArray
+
+                if (self.delegate != nil) {
+                    self.delegate!.nextFetching(array)
+                }
+            }
+        })
+
+    }
 }

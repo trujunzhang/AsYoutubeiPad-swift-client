@@ -53,7 +53,7 @@ class YoutubeFetchNewSubscriptionVideosTests: YoutubeFetcherBase, RetrievingNewS
 
     // MARK: RetrievingNewSubscriptionVideosFetchingHelperDelegate
     func endFetchingNewSubscriptionVideos(array: NSArray) {
-
+        let x = 0
     }
 
 }
