@@ -14,7 +14,7 @@ protocol RetrievingNewSubscriptionVideosFetchingHelperDelegate {
     func endFetchingNewSubscriptionVideos(array: NSArray)
 }
 
-class YoutubeRetrievingNewSubscriptionVideosFetcherHelper: NSObject, RetrievingNewSubscriptionVideosFetchingDelegate {
+class YoutubeRetrievingNewSubscriptionVideosFetcherHelper: NSObject, FetchingNextDelegate {
     var delegate: RetrievingNewSubscriptionVideosFetchingHelperDelegate?
     var channelIDsArray: NSArray?
     var fetchingStep: Int = 0
@@ -52,12 +52,12 @@ class YoutubeRetrievingNewSubscriptionVideosFetcherHelper: NSObject, RetrievingN
 
 
 
-    // MARK: RetrievingNewSubscriptionVideosFetchingDelegate
+    // MARK: FetchingNextDelegate
     func nextFetching(array: NSObject) {
         let channels = array as! [AnyObject]
         fetchedChannels.addObjectsFromArray(channels)
 
-//        println("Result in nextFetching is \(channels)")
+        println("Result in nextFetching is \(channels.count)")
 
         fetchingNextStep()
     }

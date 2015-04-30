@@ -54,7 +54,7 @@ class YoutubeFetcherPlayListTests: YoutubeFetcherBase {
     }
 
 
-    func testFetchGTLPlayListItems() {
+    func _testFetchGTLPlayListItems() {
         let expectation = expectationWithDescription("fetchGTLPlayListItems")
 
         YoutubeFetcher.sharedInstance.fetchGTLPlayListItems(playlistID, completeHandler: {

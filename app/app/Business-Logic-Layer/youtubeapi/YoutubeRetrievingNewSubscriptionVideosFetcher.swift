@@ -8,12 +8,9 @@
 
 import Foundation
 
-protocol RetrievingNewSubscriptionVideosFetchingDelegate {
-    func nextFetching(array: NSObject)
-}
 
 class YoutubeRetrievingNewSubscriptionVideosFetcher: NSObject {
-    var delegate: RetrievingNewSubscriptionVideosFetchingDelegate?
+    var delegate: FetchingNextDelegate?
 
     func fetchingNextUploadsIdFromChannelList(channelIDs: NSString) {
 

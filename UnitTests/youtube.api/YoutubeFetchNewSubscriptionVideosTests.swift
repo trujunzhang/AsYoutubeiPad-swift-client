@@ -38,7 +38,7 @@ class YoutubeFetchNewSubscriptionVideosTests: YoutubeFetcherBase, RetrievingNewS
     }
 
 
-    func _testFetchingUploadsIdFromChannelList() {
+    func testFetchingUploadsIdFromChannelList() {
         let expectation = expectationWithDescription("FetchingUploadsIdFromChannelList")
 
         let helper: YoutubeRetrievingNewSubscriptionVideosFetcherHelper = YoutubeRetrievingNewSubscriptionVideosFetcherHelper()
@@ -54,6 +54,7 @@ class YoutubeFetchNewSubscriptionVideosTests: YoutubeFetcherBase, RetrievingNewS
     // MARK: RetrievingNewSubscriptionVideosFetchingHelperDelegate
     func endFetchingNewSubscriptionVideos(array: NSArray) {
 
+        println("Array in endFetchingNewSubscriptionVideos is \(array.count)")
         let x = 0
     }
 
