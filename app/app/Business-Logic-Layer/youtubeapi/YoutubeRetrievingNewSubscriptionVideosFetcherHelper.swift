@@ -17,7 +17,7 @@ protocol RetrievingNewSubscriptionVideosFetchingHelperDelegate {
 class YoutubeRetrievingNewSubscriptionVideosFetcherHelper: NSObject, RetrievingNewSubscriptionVideosFetchingDelegate {
     var delegate: RetrievingNewSubscriptionVideosFetchingHelperDelegate?
     var channelIDsArray: NSArray?
-    var fetchingStep :Int = 0
+    var fetchingStep: Int = 0
 
     var fetchedChannels: NSMutableArray = NSMutableArray()
     var youtubeRetrievingNewSubscriptionVideosFetcher: YoutubeRetrievingNewSubscriptionVideosFetcher?
@@ -40,11 +40,11 @@ class YoutubeRetrievingNewSubscriptionVideosFetcherHelper: NSObject, RetrievingN
             }
             return
         }
-        
+
         let object: AnyObject? = self.channelIDsArray?.objectAtIndex(fetchingStep)
-        var channelIDs: NSString = object  as! NSString
+        var channelIDs: NSString = object as! NSString
         fetchingStep++
-        
+
         if let newSubscriptionVideosFetcher: YoutubeRetrievingNewSubscriptionVideosFetcher = youtubeRetrievingNewSubscriptionVideosFetcher {
             newSubscriptionVideosFetcher.fetchingNextUploadsIdFromChannelList(channelIDs)
         }
@@ -54,7 +54,10 @@ class YoutubeRetrievingNewSubscriptionVideosFetcherHelper: NSObject, RetrievingN
 
     // MARK: RetrievingNewSubscriptionVideosFetchingDelegate
     func nextFetching(array: NSObject) {
-        fetchedChannels.addObjectsFromArray(array as! [AnyObject])
+        let channels = array as! [AnyObject]
+        fetchedChannels.addObjectsFromArray(channels)
+
+//        println("Result in nextFetching is \(channels)")
 
         fetchingNextStep()
     }
