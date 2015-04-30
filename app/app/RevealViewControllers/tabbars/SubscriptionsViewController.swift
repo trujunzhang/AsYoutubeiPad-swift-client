@@ -11,6 +11,13 @@ import AVFoundation
 import Cartography
 
 class SubscriptionsViewController: FrontBaseViewController {
+    // JFK Library
+    let channelID = "UCl-radPCbXcrYCE4EdNH3QA"
+    // JetBrainsTV
+//    let channelID = "UCGp4UBwpTNegd_4nCpuBcow"
+
+    var lastViewController: UIViewController?
+
 
     var menuTableViewController: NBMenuTableViewController?
     // unused(test)
@@ -19,7 +26,7 @@ class SubscriptionsViewController: FrontBaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        showChannelPage()
+        showChannelPage(channelID)
 
         //        showLeftMenu() // test
 
@@ -49,10 +56,21 @@ class SubscriptionsViewController: FrontBaseViewController {
         }
     }
 
-    func showChannelPage() {
+    func cleanLastController() {
+        if let theViewController: UIViewController = self.lastViewController {
+            theViewController.removeFromParentViewController()
+            let rootView: UIView = theViewController.view
+            rootView.removeFromSuperview()
+        }
+    }
+
+    func showChannelPage(channelID: NSString) {
+        // 1. Clean last panel
+        self.cleanLastController()
+
+        // 2. Add new panel to root view
         let channelPageViewController: ChannelPageViewController = ChannelPageViewController() // used
-//        channelPageViewController.channelID = "UCGp4UBwpTNegd_4nCpuBcow" // JetBrainsTV
-        channelPageViewController.channelID = "UCl-radPCbXcrYCE4EdNH3QA" // JFK Library
+        channelPageViewController.channelID = channelID as String
         self.addChildViewController(channelPageViewController)
 
         let rootView: UIView = channelPageViewController.view

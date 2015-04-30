@@ -25,6 +25,9 @@ class RevealViewHelper: NSObject {
     }
 
     func changeChannelPanel(channelId: NSString) {
+        if let theSubscriptionsViewController: SubscriptionsViewController = self.subscriptionsViewController {
+            theSubscriptionsViewController.showChannelPage(channelId)
+        }
 
     }
 
