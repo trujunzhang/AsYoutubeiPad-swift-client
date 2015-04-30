@@ -342,32 +342,6 @@ class YoutubeFetcher: NSObject {
         })
     }
 
-    // MARK: PlayList
-    func fetchPlayListItemWithPlayListId(playlistID: NSString, completeHandler: ObjectHandler) {
-        let fields = "items/snippet,items/contentDetails"
-        fetchPlayListItemWithPlayListId(playlistID, part: "snippet,contentDetails", fields: fields, completeHandler: completeHandler)
-    }
-
-    // MABYT3_PlayList
-    func fetchPlayListItemWithPlayListId(playlistID: NSString, part: String, fields: String, completeHandler: ObjectHandler) {
-        var parameters = NSMutableDictionary(dictionary: [
-                "part": part,
-                "fields": fields,
-                "playlistId": playlistID,
-        ]
-        )
-
-        println("parameters is \(parameters)")
-
-        MABYT3_APIRequest.sharedInstance().LISTPlayListItemForURL(parameters, completion: {
-            (responseInfo, error) -> Void in
-            if (error == nil) {
-                completeHandler(responseInfo.array, true)
-            } else {
-                completeHandler(nil, false)
-            }
-        })
-    }
 
 
     // MARK: youtube.activities.list
@@ -449,5 +423,63 @@ class YoutubeFetcher: NSObject {
             }
         })
     }
+
+    // MARK : playlistItems.list
+    func fetchPlayListItemWithPlayListId(playlistID: NSString, completeHandler: ObjectHandler) {
+        let fields = "items/snippet,items/contentDetails"
+        fetchPlayListItemWithPlayListId(playlistID, part: "snippet,contentDetails", fields: fields, completeHandler: completeHandler)
+    }
+
+    // MABYT3_PlayList
+    func fetchPlayListItemWithPlayListId(playlistID: NSString, part: String, fields: String, completeHandler: ObjectHandler) {
+        var parameters = NSMutableDictionary(dictionary: [
+                "part": part,
+                "fields": fields,
+                "playlistId": playlistID,
+        ]
+        )
+
+        println("parameters is \(parameters)")
+
+        MABYT3_APIRequest.sharedInstance().LISTPlayListItemForURL(parameters, completion: {
+            (responseInfo, error) -> Void in
+            if (error == nil) {
+                completeHandler(responseInfo.array, true)
+            } else {
+                completeHandler(nil, false)
+            }
+        })
+    }
+
+    func fetchGTLPlayListItems(playlistID: NSString, completeHandler: ObjectHandler) {
+
+        let service: GTLService = self.youTubeService!
+
+        var query: GTLQueryYouTube = GTLQueryYouTube.queryForPlaylistItemsListWithPart("snippet,contentDetails") as! GTLQueryYouTube
+        query.playlistId = playlistID as String
+        query.maxResults = 50
+        query.fields = "items/contentDetails,items/snippet(publishedAt,channelId,type,title),nextPageToken"
+
+        service.executeQuery(query, completionHandler: {
+            (ticket, resultList, error) -> Void in
+
+            println("error in fetchActivityList is \(error)")
+
+            if (error == nil) {
+                let result = resultList as! GTLYouTubePlaylistItemListResponse
+                let array = result.items()
+
+                if (array.count >= 1) {
+
+//                    completeHandler(array, true)
+                } else {
+                    completeHandler(nil, false)
+                }
+            } else {
+                completeHandler(nil, false)
+            }
+        })
+    }
+
 
 }
