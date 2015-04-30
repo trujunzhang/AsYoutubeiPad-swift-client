@@ -458,7 +458,8 @@ class YoutubeFetcher: NSObject {
         var query: GTLQueryYouTube = GTLQueryYouTube.queryForPlaylistItemsListWithPart("snippet,contentDetails") as! GTLQueryYouTube
         query.playlistId = playlistID as String
         query.maxResults = 50
-        query.fields = "items/contentDetails,items/snippet(publishedAt,channelId,type,title)"
+//        query.fields = "items/contentDetails,items/snippet(publishedAt,channelId,type,title)"
+        query.fields = "items/contentDetails,items/snippet(publishedAt,title)"
 
         service.executeQuery(query, completionHandler: {
             (ticket, resultList, error) -> Void in
