@@ -12,11 +12,13 @@ class YTVideosCollectionViewController: UIViewController, UICollectionViewDataSo
 
     @IBOutlet var collectionView: UICollectionView!
 
+    @IBOutlet weak var flowLayout: UICollectionViewFlowLayout!
+
     var requestInfo = YTYoutubeRequestInfo()
 
 
     func makeRequestTask123() {
-        requestInfo = YoutubeFetcher.sharedInstance.prepareFetchingActivityListOnHomePage(  {
+        requestInfo = YoutubeFetcher.sharedInstance.prepareFetchingActivityListOnHomePage({
             (object, sucess) -> Void in
             if (sucess == true) {
                 var array: NSArray = object as! NSArray
@@ -55,6 +57,8 @@ class YTVideosCollectionViewController: UIViewController, UICollectionViewDataSo
     // Mark :
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        self.flowLayout.itemSize = CGSizeMake(100, 100)
         self.collectionView.dataSource = self
         self.collectionView.delegate = self
 
