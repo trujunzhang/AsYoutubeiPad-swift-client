@@ -27,18 +27,32 @@
                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ddL-Lb-SzS">
-                        <rect key="frame" x="8" y="153" width="32" height="32"/>
-                    </imageView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cqx-St-6GG">
-                        <rect key="frame" x="47" y="158" width="151" height="21"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                        <nil key="highlightedColor"/>
-                    </label>
+                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tsb-og-XJU">
+                        <rect key="frame" x="-16" y="155" width="230" height="57"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ddL-Lb-SzS">
+                                <rect key="frame" x="20" y="5" width="32" height="32"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cqx-St-6GG">
+                                <rect key="frame" x="59" y="10" width="151" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
                 </subviews>
                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             </view>
+            <connections>
+                <outlet property="channelContainer" destination="tsb-og-XJU" id="uLE-X1-esR"/>
+                <outlet property="channelThumbnailImage" destination="ddL-Lb-SzS" id="mWV-M6-79h"/>
+                <outlet property="channelTitleLabel" destination="Cqx-St-6GG" id="AiF-XE-4af"/>
+                <outlet property="infoLabel" destination="xCv-9D-biE" id="kzj-AM-dfv"/>
+                <outlet property="thumbnailImage" destination="JWD-BZ-MBD" id="32B-ga-kkc"/>
+                <outlet property="titleLabel" destination="NNH-KN-fhz" id="bLH-6C-0wm"/>
+            </connections>
         </collectionViewCell>
     </objects>
 </document>
