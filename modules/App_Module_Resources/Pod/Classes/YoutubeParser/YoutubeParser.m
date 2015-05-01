@@ -31,6 +31,17 @@
 static NSUInteger UPLOADS_PAGE_LENGTH = 20;
 
 #pragma mark
+#pragma mark - MABYT3_Activity_NewestVideoId
+
++ (NSArray *)sortNewestVideoListInActivityList:(NSArray *)dataArray {
+    NSArray *sortedArray = [dataArray sortedArrayUsingComparator:^(MABYT3_Activity_NewestVideoId *a1, MABYT3_Activity_NewestVideoId *a2) {
+        return -1 * [a1.publishedAt compare:a2.publishedAt];
+    }];
+
+    return sortedArray;
+}
+
+#pragma mark
 #pragma mark - GTLYouTubeChannel
 
 + (NSArray *)getUploadIdsArrayInContentDetailsFromGTLChannelList:(NSMutableArray *)channels {

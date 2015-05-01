@@ -13,6 +13,8 @@
 #pragma mark
 #pragma mark - GTLYouTubeChannel
 
++ (NSArray *)sortNewestVideoListInActivityList:(id)dataArray;
+
 + (NSArray *)getUploadIdsArrayInContentDetailsFromGTLChannelList:(id)channels;
 
 + (NSArray *)getVideoIdsArrayByGTLActivityList:(id)activities;
