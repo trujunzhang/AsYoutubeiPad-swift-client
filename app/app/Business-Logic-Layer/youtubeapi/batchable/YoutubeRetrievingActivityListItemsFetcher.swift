@@ -15,6 +15,7 @@ class YoutubeRetrievingActivityListItemsFetcher: NSObject {
     var parameters: NSMutableDictionary = [
             "part": "snippet,contentDetails",
 //            "fields": "items/contentDetails,items/snippet(publishedAt,title)",
+//            "fields": "items/contentDetails,items/snippet(publishedAt,channelId)",
             "fields": "items/contentDetails,items/snippet(publishedAt)",
             "maxResults": "2",
             "key": apiKey

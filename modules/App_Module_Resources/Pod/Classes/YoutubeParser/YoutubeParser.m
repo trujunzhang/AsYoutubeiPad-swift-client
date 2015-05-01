@@ -68,6 +68,9 @@ static NSUInteger UPLOADS_PAGE_LENGTH = 20;
         MABYT3_Activity_NewestVideoId *activity = activities[i];
         NSString *videoId = activity.videoId;
         if (videoId) {
+            if([videoId isEqualToString:@""]){
+                videoId = @"";
+            }
             [videoIds addObject:videoId];
         }
     }
