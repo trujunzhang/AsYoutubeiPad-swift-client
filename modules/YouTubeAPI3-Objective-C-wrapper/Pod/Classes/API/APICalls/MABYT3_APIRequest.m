@@ -1963,7 +1963,9 @@
         if (items.count > 0) {
             for (int i = 0; i < items.count; i++) {
                 MABYT3_Activity_NewestVideoId *itm = [[MABYT3_Activity_NewestVideoId alloc] initFromDictionary:items[i]];
-                [arr addObject:itm];
+                if (itm.containUpload == YES) {
+                    [arr addObject:itm];
+                }
             }
         }
     }

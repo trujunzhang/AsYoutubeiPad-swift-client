@@ -47,7 +47,7 @@ class YoutubeFetchActivityListTests: YoutubeFetcherBase, RetrievingItemsFetching
 //            println("fullNameArr is \(fullNameArr)")
             array.addObjectsFromArray(fullNameArr)
         }
-        println("array is \(array)")
+//        println("array is \(array)")
         return array;
     }
 
