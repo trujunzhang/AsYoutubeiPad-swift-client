@@ -22,7 +22,7 @@ class YoutubeRetrievingNewSubscriptionVideosFetcherHelper: NSObject, FetchingNex
     var fetchedChannels: NSMutableArray = NSMutableArray()
     var youtubeRetrievingNewSubscriptionVideosFetcher: YoutubeRetrievingNewSubscriptionVideosFetcher?
 
-    func startFetchingNewSubscriptionVideos(channelIDsArray: NSArray) {
+    func startFetchingItems(channelIDsArray: NSArray) {
         self.channelIDsArray = channelIDsArray
 
         youtubeRetrievingNewSubscriptionVideosFetcher = YoutubeRetrievingNewSubscriptionVideosFetcher()

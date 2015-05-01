@@ -10,7 +10,7 @@
 import Quick
 import Nimble
 
-class YoutubeFetchActivityListTests: YoutubeFetcherBase {
+class YoutubeFetchActivityListTests: YoutubeFetcherBase, RetrievingActivityListItemsFetchingHelperDelegate {
 
     override func setUp() {
         super.setUp()
@@ -22,8 +22,41 @@ class YoutubeFetchActivityListTests: YoutubeFetcherBase {
         super.tearDown()
     }
 
+    func testFetchingNesestVideoIdsFromActivitylList() {
+        let expectation = expectationWithDescription("fetchActivityListOnHomePage")
 
-    func testFetchActivityListOnHomePage() {
+        let helper: YoutubeRetrievingActivityListItemsFetcherHelper = YoutubeRetrievingActivityListItemsFetcherHelper()
+        helper.delegate = self
+        helper.startFetchingItems(subscribedChannelIds)
+
+        waitForExpectationsWithTimeout(100) {
+            (error) in
+            XCTAssertNil(error, "\(error)")
+        }
+    }
+
+    func endFetchingActivityListItems(array: NSArray) {
+        self.checkFetchingNewestVideoIDSResult(object, sucess: true)
+    }
+
+    func checkFetchingNewestVideoIDSResult(object: AnyObject, sucess: Bool) {
+        self.isSucess = sucess
+
+        expect(sucess).to(beTrue())
+
+        if (sucess == true) {
+            var array: NSArray = object as! NSArray
+
+            expect(array).toNot(beEmpty())
+
+            let firstObject: AnyObject = array[0]
+            expect(firstObject is YoutubeVideoCache).to(beTrue())
+
+            var channel: YoutubeVideoCache = firstObject as! YoutubeVideoCache
+        }
+    }
+
+    func _testFetchActivityListOnHomePage() {
         let expectation = expectationWithDescription("fetchActivityListOnHomePage")
 
         AuthoredFetcher.sharedInstance.prepareFetchingActivityListOnHomePage({

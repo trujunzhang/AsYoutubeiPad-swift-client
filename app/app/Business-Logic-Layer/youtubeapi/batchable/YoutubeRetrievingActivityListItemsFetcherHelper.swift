@@ -23,7 +23,7 @@ class YoutubeRetrievingActivityListItemsFetcherHelper: NSObject, FetchingNextDel
     var fetchedActivityListItems: NSMutableArray = NSMutableArray()
     var youtubeRetrievingActivityListItemsFetcher: YoutubeRetrievingActivityListItemsFetcher?
 
-    func startFetchingplaylistItems(playlistItemsIdsArray: NSArray) {
+    func startFetchingItems(playlistItemsIdsArray: NSArray) {
         self.playlistItemsIdsArray = playlistItemsIdsArray
 
         youtubeRetrievingActivityListItemsFetcher = YoutubeRetrievingActivityListItemsFetcher()

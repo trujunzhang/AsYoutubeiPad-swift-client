@@ -43,7 +43,7 @@ class YoutubeFetchNewSubscriptionVideosTests: YoutubeFetcherBase, RetrievingNewS
 
         let helper: YoutubeRetrievingNewSubscriptionVideosFetcherHelper = YoutubeRetrievingNewSubscriptionVideosFetcherHelper()
         helper.delegate = self
-        helper.startFetchingNewSubscriptionVideos(subscribedChannelIds)
+        helper.startFetchingItems(subscribedChannelIds)
 
         waitForExpectationsWithTimeout(400) {
             (error) in
@@ -65,7 +65,7 @@ class YoutubeFetchNewSubscriptionVideosTests: YoutubeFetcherBase, RetrievingNewS
     func startFetchingPlayListItems(array: NSArray) {
         let helper: YoutubeRetrievingPlayListItemsFetcherHelper = YoutubeRetrievingPlayListItemsFetcherHelper()
         helper.delegate = self
-        helper.startFetchingplaylistItems(array)
+        helper.startFetchingItems(array)
     }
 
     // MARK: RetrievingPlayListItemsFetchingHelperDelegate
