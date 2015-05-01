@@ -72,7 +72,9 @@ class NBVideosCollectionViewController: UICollectionViewController, NICollection
 
     // MARK : model
     func makeModel(collectionContents: [AnyObject]) -> NIMutableCollectionViewModel {
-        let model: NIMutableCollectionViewModel = NIMutableCollectionViewModel(listArray: collectionContents, delegate: cellFactory)
+//        let model: NIMutableCollectionViewModel = NIMutableCollectionViewModel(listArray: collectionContents, delegate: cellFactory)
+        let model: NIMutableCollectionViewModel = NimbusCollectionsUtils.makeNIMutableCollectionViewModel(collectionContents)
+
 
         return model
     }
@@ -94,11 +96,11 @@ class NBVideosCollectionViewController: UICollectionViewController, NICollection
             theCollectionView.reloadData()
         }
     }
-    
+
     // MARK: NICollectionViewModelDelegate
     func collectionViewModel(collectionViewModel: NICollectionViewModel!, cellForCollectionView collectionView: UICollectionView!, atIndexPath indexPath: NSIndexPath!, withObject object: AnyObject!) -> UICollectionViewCell! {
-        
-      return  NICollectionViewCellFactory.collectionViewModel(collectionViewModel, cellForCollectionView: collectionView, atIndexPath: indexPath, withObject: object)
+
+        return NICollectionViewCellFactory.collectionViewModel(collectionViewModel, cellForCollectionView: collectionView, atIndexPath: indexPath, withObject: object)
 
 //                + (UICollectionViewCell *)collectionViewModel:(NICollectionViewModel *)collectionViewModel cellForCollectionView:(UICollectionView *)collectionView atIndexPath:(NSIndexPath *)indexPath withObject:(id)object;
 //        return [NICellFactory tableViewModel:tableViewModel cellForTableView:tableView atIndexPath:indexPath withObject:object];

@@ -44,7 +44,7 @@ class NBVideoCollectionViewCell: UICollectionViewCell, NICollectionViewCell {
         
         self.backgroundColor = UIColor.redColor()
 
-//        setupCell(videoCache)
+        setupCell(videoCache)
 
         return true
     }
