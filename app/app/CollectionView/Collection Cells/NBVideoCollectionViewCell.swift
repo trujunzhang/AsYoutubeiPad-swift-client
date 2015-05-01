@@ -80,7 +80,7 @@ class NBVideoCollectionViewCell: UICollectionViewCell, NICollectionViewCell {
     func setupChannelThumbnail(videoCache: YoutubeVideoCache) {
         let channelID = YoutubeParser.getChannelIdByVideo(videoCache)
 
-        YoutubeFetcher.sharedInstance.fetchChannelForThumbnail(channelID, completeHandler: {
+        YoutubeFetcher.fetchChannelForThumbnail(channelID, completeHandler: {
             (object, sucess) -> Void in
             if (sucess == true) {
                 var array: NSArray = object as! NSArray

@@ -18,7 +18,7 @@ class YTVideosCollectionViewController: UIViewController, UICollectionViewDataSo
 
 
     func makeRequestTask123() {
-        requestInfo = YoutubeFetcher.sharedInstance.prepareFetchingActivityListOnHomePage({
+        requestInfo = YoutubeFetcher.prepareFetchingActivityListOnHomePage({
             (object, sucess) -> Void in
             if (sucess == true) {
                 var array: NSArray = object as! NSArray
@@ -35,7 +35,7 @@ class YTVideosCollectionViewController: UIViewController, UICollectionViewDataSo
     }
 
     func makeRequestTask() {
-        requestInfo = YoutubeFetcher.sharedInstance.prepareRequestSearch("Sketch 3", completeHandler: {
+        requestInfo = YoutubeFetcher.prepareRequestSearch("Sketch 3", completeHandler: {
             (object, sucess) -> Void in
             if (sucess == true) {
                 var array: NSArray = object as! NSArray

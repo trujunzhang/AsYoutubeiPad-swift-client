@@ -22,7 +22,7 @@ class NBVideosCollectionViewController: UICollectionViewController, NICollection
 
 
     func makeRequestTask() {
-        requestInfo = YoutubeFetcher.sharedInstance.prepareRequestSearch("Sketch 3", completeHandler: {
+        requestInfo = YoutubeFetcher.prepareRequestSearch("Sketch 3", completeHandler: {
             (object, sucess) -> Void in
             if (sucess == true) {
                 var array: NSArray = object as! NSArray

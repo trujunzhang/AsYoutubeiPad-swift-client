@@ -51,7 +51,7 @@ class YTVideoCollectionViewCell: UICollectionViewCell {
     func setupChannelThumbnail() {
         let channelID = YoutubeParser.getChannelIdByVideo(videoCache)
 
-        YoutubeFetcher.sharedInstance.fetchChannelForThumbnail(channelID, completeHandler: {
+        YoutubeFetcher.fetchChannelForThumbnail(channelID, completeHandler: {
             (object, sucess) -> Void in
             if (sucess == true) {
                 var array: NSArray = object as! NSArray

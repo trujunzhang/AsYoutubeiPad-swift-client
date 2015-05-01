@@ -75,7 +75,7 @@ class ChannelPageViewController: UIViewController {
     // MARK: fetch channel by channelId
     func fetchingChannel() {
 
-        YoutubeFetcher.sharedInstance.fetchChannelForPageChannel(channelID, completeHandler: {
+        YoutubeFetcher.fetchChannelForPageChannel(channelID, completeHandler: {
             (object, sucess) -> Void in
 
             if (sucess == true) {

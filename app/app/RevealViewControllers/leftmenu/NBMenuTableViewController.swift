@@ -28,7 +28,7 @@ class NBMenuTableViewController: UIViewController, UITableViewDelegate, NBMenuTi
         super.viewDidLoad()
 
         self.view.backgroundColor = UIColor.clearColor()
-        YoutubeFetcher.sharedInstance.delegate = self
+        AuthoredFetcher.sharedInstance.delegate = self
 
         // create NICellFactory instance
         cellFactory = NICellFactory()
@@ -182,7 +182,7 @@ class NBMenuTableViewController: UIViewController, UITableViewDelegate, NBMenuTi
 
     func startFetchingLoggedSubscriptionList() {
         showLoadingPanel()
-        YoutubeFetcher.sharedInstance.initLoggedUser()
+        AuthoredFetcher.sharedInstance.initLoggedUser()
     }
 
     // MARK :
