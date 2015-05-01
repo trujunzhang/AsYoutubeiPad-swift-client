@@ -32,8 +32,8 @@
 		5E540C9E1AEA5B2F001174F4 /* Tools.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E540C9C1AEA5B29001174F4 /* Tools.swift */; };
 		5E5B8FA31AF1B7E2007331EB /* YoutubeRetrievingNewSubscriptionVideosFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E222A851AF1AF1200E0A89E /* YoutubeRetrievingNewSubscriptionVideosFetcher.swift */; };
 		5E5B8FA41AF1B7E7007331EB /* YoutubeRetrievingNewSubscriptionVideosFetcherHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E222A871AF1AFEC00E0A89E /* YoutubeRetrievingNewSubscriptionVideosFetcherHelper.swift */; };
-		5E70DC481AF27EA6003262F2 /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E70DC461AF27EA6003262F2 /* Nimble.framework */; };
-		5E70DC491AF27EA6003262F2 /* Quick.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E70DC471AF27EA6003262F2 /* Quick.framework */; };
+		5E70DC4C1AF27F91003262F2 /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E70DC461AF27EA6003262F2 /* Nimble.framework */; };
+		5E70DC4D1AF27F91003262F2 /* Quick.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E70DC471AF27EA6003262F2 /* Quick.framework */; };
 		5E7180DF1AF1C8830099363B /* YoutubeRetrievingPlayListItemsFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E7180DE1AF1C8830099363B /* YoutubeRetrievingPlayListItemsFetcher.swift */; };
 		5E7180E11AF1C8A40099363B /* YoutubeRetrievingPlayListItemsFetcherHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E7180E01AF1C8A40099363B /* YoutubeRetrievingPlayListItemsFetcherHelper.swift */; };
 		5E7BB3771AEDB17B00956E71 /* LeftMenuSectionsUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E7BB3761AEDB17B00956E71 /* LeftMenuSectionsUtils.swift */; };
@@ -119,8 +119,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5E70DC481AF27EA6003262F2 /* Nimble.framework in Frameworks */,
-				5E70DC491AF27EA6003262F2 /* Quick.framework in Frameworks */,
 				8A92A71050A94C3F1078293B /* libPods-appRestApp.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -130,6 +128,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				9E63D12B11E44317ACB7A3DC /* libPods-appRestAppTests.a in Frameworks */,
+				5E70DC4C1AF27F91003262F2 /* Nimble.framework in Frameworks */,
+				5E70DC4D1AF27F91003262F2 /* Quick.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -305,7 +305,6 @@
 				5E83A74F1AEA50D100C37C84 /* Frameworks */,
 				5E83A7501AEA50D100C37C84 /* Resources */,
 				09627A2C5FF0C6A47145BE52 /* Copy Pods Resources */,
-				5E70DC4A1AF27EB0003262F2 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -325,6 +324,7 @@
 				5E83A7641AEA50D100C37C84 /* Frameworks */,
 				5E83A7651AEA50D100C37C84 /* Resources */,
 				24163A72B4104C5E9BF0CF06 /* Copy Pods Resources */,
+				5E70DC4B1AF27F66003262F2 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -440,7 +440,7 @@
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
-		5E70DC4A1AF27EB0003262F2 /* ShellScript */ = {
+		5E70DC4B1AF27F66003262F2 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -684,6 +684,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
@@ -705,6 +706,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
 				INFOPLIST_FILE = appRestAppTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";

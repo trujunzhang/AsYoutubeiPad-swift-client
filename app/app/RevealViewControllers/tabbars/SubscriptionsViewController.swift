@@ -26,6 +26,11 @@ class SubscriptionsViewController: FrontBaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        // Register
+        if self.revealViewController() != nil {
+            RevealViewHelper.sharedInstance.registerSubscriptionsViewController(self)
+        }
+
         showChannelPage(channelID)
 
         //        showLeftMenu() // test

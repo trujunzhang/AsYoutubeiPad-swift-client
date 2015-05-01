@@ -26,13 +26,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             revealViewController.rearViewRevealWidth = LEFT_MENU_WIDTH
             revealViewController.rearViewRevealOverdraw = 0
 
-            let xxx: UIViewController = revealViewController.frontViewController
-
-            println("front view is \(xxx)")
-
-//            let viewController: SubscriptionsViewController = revealViewController.frontViewController as! SubscriptionsViewController
-//            RevealViewHelper.sharedInstance.registerSubscriptionsViewController(viewController)
-
             revealViewController.revealToggleAnimated(true)
         }
         return true

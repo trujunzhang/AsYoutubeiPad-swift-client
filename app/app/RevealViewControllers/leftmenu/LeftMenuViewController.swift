@@ -21,6 +21,11 @@ class LeftMenuViewController: UIViewController, SWRevealViewControllerDelegate {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        if self.revealViewController() != nil {
+            let x = 0
+//            self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
+        }
+
         initMenuTableView()
     }
 
