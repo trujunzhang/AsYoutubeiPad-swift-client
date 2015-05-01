@@ -26,7 +26,7 @@ class YoutubeFetchActivityListTests: YoutubeFetcherBase {
     func testFetchActivityListOnHomePage() {
         let expectation = expectationWithDescription("fetchActivityListOnHomePage")
 
-        YoutubeFetcher.prepareFetchingActivityListOnHomePage({
+        AuthoredFetcher.sharedInstance.prepareFetchingActivityListOnHomePage({
             (object, sucess) -> Void in
 
             self.checkResult(object, sucess: sucess)

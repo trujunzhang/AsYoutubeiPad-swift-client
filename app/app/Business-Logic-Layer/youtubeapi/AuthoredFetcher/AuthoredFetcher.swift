@@ -161,6 +161,16 @@ class AuthoredFetcher: NSObject {
 
 
     // GTLYouTubeActivity
+    func prepareFetchingActivityListOnHomePage(completeHandler: ObjectHandler) -> YTYoutubeRequestInfo {
+        var requestInfo: YTYoutubeRequestInfo = YTYoutubeRequestInfo()
+
+        requestInfo.makeRequestForActivityListOnHomePage()
+
+        fetchActivityListWithAccessToken(requestInfo, completeHandler: completeHandler)
+
+        return requestInfo
+    }
+
     func fetchActivityListWithAccessToken(requestInfo: YTYoutubeRequestInfo, completeHandler: ObjectHandler) {
 
         let service: GTLService = self.youTubeService!

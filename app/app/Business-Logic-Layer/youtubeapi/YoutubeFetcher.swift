@@ -194,14 +194,6 @@ class YoutubeFetcher: NSObject {
 
     // MARK: youtube.activities.list
 
-    class func prepareFetchingActivityListOnHomePage(completeHandler: ObjectHandler) -> YTYoutubeRequestInfo {
-        var requestInfo: YTYoutubeRequestInfo = YTYoutubeRequestInfo()
-
-        requestInfo.makeRequestForActivityListOnHomePage()
-        AuthoredFetcher.sharedInstance.fetchActivityListWithAccessToken(requestInfo, completeHandler: completeHandler)
-
-        return requestInfo
-    }
 
 
     // MABYT3_Activity
