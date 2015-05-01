@@ -39,6 +39,7 @@ class NBVideosCollectionViewController: UIViewController {
         super.viewDidLoad()
 
         // create NICellFactory instance
+        makeRequestTask()
         self.makeCollectionView()
         cellFactory = NICollectionViewCellFactory()
     }
@@ -48,7 +49,11 @@ class NBVideosCollectionViewController: UIViewController {
         flowLayout.itemSize = CGSizeMake(214, 200)
         collectionView = UICollectionView(frame: CGRectZero, collectionViewLayout: flowLayout)
 
-        LayoutUtils.LayoutFullView(collectionView!)
+        if let theCollectionView: UICollectionView = collectionView {
+            self.view.addSubview(theCollectionView)
+            LayoutUtils.LayoutFullView(theCollectionView)
+        }
+
     }
 
     override func viewWillAppear(animated: Bool) {
@@ -69,11 +74,9 @@ class NBVideosCollectionViewController: UIViewController {
     // MARK: refresh collection
 
     func createSections(array: NSArray) {
-        // 1. 
         self.requestInfo.appendArray(array)
 
         let collectionContents: [AnyObject] = NBCollectionSectionGenerator.generatorSections(array)
-
         model = makeModel(collectionContents)
 
         reloadCollectionView(model!)

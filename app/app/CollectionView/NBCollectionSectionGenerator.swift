@@ -14,6 +14,10 @@ class NBCollectionSectionGenerator {
     class func generatorSections(array: NSArray) -> [AnyObject] {
         var collectionContents: [AnyObject] = [AnyObject]()
 
+        for object in array{
+            println("object is \(object)")
+        }
+
         return collectionContents
     }
 
