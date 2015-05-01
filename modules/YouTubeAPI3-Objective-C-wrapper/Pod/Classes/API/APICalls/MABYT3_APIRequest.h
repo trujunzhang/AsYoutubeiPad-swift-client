@@ -74,6 +74,8 @@ static NSUInteger search_maxResults = 20;
 - (NSString *)RegionsURLforLanguae:(NSString *)lang;
 
 
+- (NSURLSessionDataTask *)LISTActivitiesForURLFilterUpload:(NSMutableDictionary *)parameters completion:(MABYoutubeResponseBlock)completion;
+
 - (void)LISTActivitiesForURL:(NSString *)urlStr andHandler:(MABYoutubeResponseBlock)handler;
 
 - (void)LISTChannelSectionsForURL:(NSString *)urlStr andHandler:(void (^)(NSMutableArray *, NSError *))handler;

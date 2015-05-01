@@ -24,8 +24,8 @@ class YoutubeRetrievingActivityListItemsFetcher: NSObject {
 
     }
 
-    func fetchingNextActivityListItemsFromChannelList(playlistID: NSString) {
-        parameters["playlistId"] = playlistID as String
+    func fetchingNextActivityListItemsFromChannelList(channelId: NSString) {
+        parameters["channelId"] = channelId as String
 
         YoutubeFetcher.fetchActivityListWithoutAuth(parameters, completeHandler: {
             (object, sucess) -> Void in

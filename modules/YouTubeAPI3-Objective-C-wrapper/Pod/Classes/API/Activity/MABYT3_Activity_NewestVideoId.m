@@ -22,6 +22,7 @@
         _publishedAt = @"";
         _title = @"";
         _videoId = @"";
+        _containUpload = YES;
     }
     return self;
 }
@@ -37,6 +38,8 @@
         _publishedAt = @"";
         _title = @"";
         _videoId = @"";
+
+        _containUpload = YES;
 
         if ([dict objectForKey:@"kind"]) {
             _kind = [dict objectForKey:@"kind"];
@@ -58,9 +61,18 @@
         }
         NSDictionary *contentDetailsDict = [dict objectForKey:@"contentDetails"];
         if (contentDetailsDict) {
-            if ([contentDetailsDict objectForKey:@"videoId"]) {
-                _videoId = [contentDetailsDict objectForKey:@"videoId"];
+
+            NSDictionary *uploadDict = [contentDetailsDict objectForKey:@"upload"];
+            if (uploadDict) {
+                if ([uploadDict objectForKey:@"videoId"]) {
+                    _videoId = [contentDetailsDict objectForKey:@"videoId"];
+                } else {
+                    _containUpload = NO;
+                }
             }
+
+        } else {
+            _containUpload = NO;
         }
 
     }

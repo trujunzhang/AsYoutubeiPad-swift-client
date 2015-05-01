@@ -199,17 +199,20 @@ class YoutubeFetcher: NSObject {
                 "maxResults": "2",
                 "key": apiKey
         ]
-        fetchActivityListWithoutAuth(parameters,completeHandler: completeHandler)
+        fetchActivityListWithoutAuth(parameters, completeHandler: completeHandler)
     }
     // MABYT3_Activity
     class func fetchActivityListWithoutAuth(parameters: NSMutableDictionary, completeHandler: ObjectHandler) {
 
         println("parameters is \(parameters)")
 
-        MABYT3_APIRequest.sharedInstance().LISTActivitiesForURL(parameters, completion: {
+        MABYT3_APIRequest.sharedInstance().LISTActivitiesForURLFilterUpload(parameters, completion: {
             (responseInfo, error) -> Void in
+            //MABYT3_Activity_NewestVideoId
             if (error == nil) {
-                completeHandler(responseInfo.array, true)
+                let array = responseInfo.array
+                println("array in fetchActivityListWithoutAuth is \(array)")
+                completeHandler(array, true)
             } else {
                 completeHandler(nil, false)
             }

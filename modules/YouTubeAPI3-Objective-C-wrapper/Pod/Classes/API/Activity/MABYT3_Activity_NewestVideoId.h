@@ -16,5 +16,7 @@
 @property (strong, nonatomic) NSString *title;
 @property (strong, nonatomic) NSString *videoId;
 
+@property(nonatomic) BOOL containUpload;
+
 - (id)initFromDictionary:(NSDictionary *)dict;
 @end
