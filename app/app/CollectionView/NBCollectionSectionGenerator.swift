@@ -12,10 +12,13 @@ import Foundation
 class NBCollectionSectionGenerator {
 
     class func generatorSections(array: NSArray) -> [AnyObject] {
+        // of YoutubeVideoCache
         var collectionContents: [AnyObject] = [AnyObject]()
 
-        for object in array{
-            println("object is \(object)")
+        for object in array {
+            let videoCache: YoutubeVideoCache = object as! YoutubeVideoCache
+            let cellObject: NBVideoCollectionViewCellObject = NBVideoCollectionViewCellObject(videoCache: videoCache)
+            collectionContents.append(cellObject)
         }
 
         return collectionContents
