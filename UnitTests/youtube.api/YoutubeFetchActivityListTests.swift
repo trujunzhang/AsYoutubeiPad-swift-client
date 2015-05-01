@@ -27,12 +27,28 @@ class YoutubeFetchActivityListTests: YoutubeFetcherBase, RetrievingItemsFetching
 
         let helper: YoutubeRetrievingActivityListItemsFetcherHelper = YoutubeRetrievingActivityListItemsFetcherHelper()
         helper.delegate = self
-        helper.startFetchingItems(subscribedChannelIds)
+
+        let array = getSubscribedChannelIdsArray(subscribedChannelIds)
+        helper.startFetchingItems(array)
 
         waitForExpectationsWithTimeout(100) {
             (error) in
             XCTAssertNil(error, "\(error)")
         }
+    }
+
+    func getSubscribedChannelIdsArray(subscribedChannelIds: NSArray) -> NSMutableArray {
+        let array: NSMutableArray = NSMutableArray()
+        for line in subscribedChannelIds {
+            let lineString = line as! String
+            var fullNameArr = split(lineString) {
+                $0 == ","
+            }
+//            println("fullNameArr is \(fullNameArr)")
+            array.addObjectsFromArray(fullNameArr)
+        }
+        println("array is \(array)")
+        return array;
     }
 
     func endFetchingAllItems(array: NSArray) {
