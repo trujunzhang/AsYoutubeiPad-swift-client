@@ -31,11 +31,11 @@ class SubscriptionsViewController: FrontBaseViewController {
             RevealViewHelper.sharedInstance.registerSubscriptionsViewController(self)
         }
 
-        showChannelPage(channelID)
+//        showChannelPage(channelID)
 
         //        showLeftMenu() // test
 
-//        showCollectionPanel()//test
+        showCollectionPanel()//test
     }
 
     func showLeftMenu() {
@@ -84,7 +84,9 @@ class SubscriptionsViewController: FrontBaseViewController {
     }
 
     func showCollectionPanel() {
-        let channelPageViewController: YTVideosCollectionViewController = YTVideosCollectionViewController.instance()
+//        let channelPageViewController: YTVideosCollectionViewController = YTVideosCollectionViewController.instance()
+        let channelPageViewController: NBVideosCollectionViewController = NBVideosCollectionViewController()
+
         self.addChildViewController(channelPageViewController)
 
         let rootView: UIView = channelPageViewController.view

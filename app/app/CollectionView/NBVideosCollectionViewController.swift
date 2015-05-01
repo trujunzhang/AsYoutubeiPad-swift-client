@@ -21,34 +21,16 @@ class NBVideosCollectionViewController: UIViewController {
 
     var requestInfo = YTYoutubeRequestInfo()
 
+
     func makeRequestTask() {
-        requestInfo = YoutubeFetcher.sharedInstance.prepareFetchingActivityListOnHomePage({
-            (object, sucess) -> Void in
-            if (sucess == true) {
-                var array: NSArray = object as! NSArray
-
-                var length = array.count
-
-                println("Length is \(length)")
-
-                self.requestInfo.appendArray(array)
-
-//                self.collectionView.reloadData()
-            }
-        })
-    }
-
-    func makeRequestTask123() {
         requestInfo = YoutubeFetcher.sharedInstance.prepareRequestSearch("Sketch 3", completeHandler: {
             (object, sucess) -> Void in
             if (sucess == true) {
                 var array: NSArray = object as! NSArray
-
                 var length = array.count
 
                 self.requestInfo.appendArray(array)
 
-//                self.collectionView.reloadData()
             }
         })
     }
@@ -68,14 +50,12 @@ class NBVideosCollectionViewController: UIViewController {
         super.viewDidAppear(animated)
     }
 
-
-
     // MARK : model
     func makeModel(tableContents: [AnyObject]) -> NIMutableCollectionViewModel {
-
         let model: NIMutableCollectionViewModel = NIMutableCollectionViewModel(listArray: tableContents, delegate: cellFactory)
 
         return model
     }
+
 
 }
