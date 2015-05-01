@@ -14,7 +14,7 @@ class YoutubeRetrievingNewSubscriptionVideosFetcher: NSObject {
 
     func fetchingNextUploadsIdFromChannelList(channelIDs: NSString) {
 
-        YoutubeFetcher.sharedInstance.fetchingUploadsIdFromChannelList(channelIDs, completeHandler: {
+        AuthoredFetcher.sharedInstance.fetchingUploadsIdFromChannelList(channelIDs, completeHandler: {
             (object, sucess) -> Void in
 
             if (sucess == true) {

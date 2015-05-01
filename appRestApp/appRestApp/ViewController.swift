@@ -14,7 +14,7 @@ class ViewController: UIViewController, AuthorUserFetchingDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        YoutubeFetcher.sharedInstance.delegate = self
+        AuthoredFetcher.sharedInstance.delegate = self
         if (YoutubeUserProfile.sharedInstance.hasLogin() == true) {
             loginButton.enabled = false
             loginButton.backgroundColor = UIColor.redColor()
@@ -61,7 +61,7 @@ class ViewController: UIViewController, AuthorUserFetchingDelegate {
     }
 
     func startFetchingLoggedSubscriptionList() {
-        YoutubeFetcher.sharedInstance.initLoggedUser()
+        AuthoredFetcher.sharedInstance.initLoggedUser()
     }
 
     // MARK: AuthorUserFetchingDelegate
