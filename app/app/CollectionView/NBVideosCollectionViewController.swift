@@ -40,7 +40,7 @@ class NBVideosCollectionViewController: UICollectionViewController, NICollection
 
         // create NICellFactory instance
         makeRequestTask()
-//        self.makeCollectionView()
+        self.makeCollectionView()
         cellFactory = NICollectionViewCellFactory()
 
         if let theCellFactory: NICollectionViewCellFactory = cellFactory {

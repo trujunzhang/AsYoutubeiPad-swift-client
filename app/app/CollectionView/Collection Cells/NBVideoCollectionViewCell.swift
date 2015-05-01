@@ -42,7 +42,7 @@ class NBVideoCollectionViewCell: UICollectionViewCell, NICollectionViewCell {
         let cellObject = object as! NBVideoCollectionViewCellObject
         let videoCache: YoutubeVideoCache = cellObject.videoCache!
         
-        self.backgroundColor = UIColor.redColor()
+        self.backgroundColor = UIColor.clearColor()
 
         setupCell(videoCache)
 
