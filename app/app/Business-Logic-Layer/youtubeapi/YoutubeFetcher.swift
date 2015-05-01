@@ -68,7 +68,6 @@ class YoutubeFetcher: NSObject {
     }
 
 
-
     class func search(requestInfo: YTYoutubeRequestInfo, completeHandler: ObjectHandler) {
 
         MABYT3_APIRequest.sharedInstance().searchForParameters(requestInfo.parameters, completion: {
@@ -193,9 +192,15 @@ class YoutubeFetcher: NSObject {
 
 
     // MARK: youtube.activities.list
-
-
-
+    class func fetchActivityListWithChannelId(channelId: NSString, completeHandler: ObjectHandler) {
+        var parameters: NSMutableDictionary = [
+                "part": "snippet,contentDetails",
+                "fields": "items/contentDetails,items/snippet(publishedAt)",
+                "maxResults": "2",
+                "key": apiKey
+        ]
+        fetchActivityListWithoutAuth(parameters,completeHandler: completeHandler)
+    }
     // MABYT3_Activity
     class func fetchActivityListWithoutAuth(parameters: NSMutableDictionary, completeHandler: ObjectHandler) {
 
