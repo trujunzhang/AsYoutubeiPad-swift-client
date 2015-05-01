@@ -55,7 +55,7 @@ class YoutubeFetchActivityListTests: YoutubeFetcherBase, RetrievingItemsFetching
         let sortedArray = YoutubeParser.sortNewestVideoListInActivityList(array)
         let newestVideoIdsArray = YoutubeParser.getNewestVideoIdsArrayByMABActivityList(sortedArray)
 
-        println("count of newestVideoIdsArray is \(newestVideoIdsArray.count)")
+        println("count of sortedArray is \(sortedArray.count)")
         println("newestVideoIdsArray is \(newestVideoIdsArray)")
 
         expectation!.fulfill()
