@@ -31,11 +31,11 @@ class SubscriptionsViewController: FrontBaseViewController {
             RevealViewHelper.sharedInstance.registerSubscriptionsViewController(self)
         }
 
-//        showChannelPage(channelID)
+        showChannelPage(channelID)
 
         //        showLeftMenu() // test
 
-        showCollectionPanel()//test
+//        showCollectionPanel()//test
     }
 
     func showLeftMenu() {
