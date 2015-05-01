@@ -7,4 +7,5 @@
 
 
 @interface GTLYoutubeUtils : NSObject
++ (NSString *)getPublishedAfter;
 @end
