@@ -36,7 +36,7 @@ class YoutubeFetchActivityListTests: YoutubeFetcherBase, RetrievingItemsFetching
     }
 
     func endFetchingAllItems(array: NSArray) {
-//        self.checkFetchingNewestVideoIDSResult(object, sucess: true)
+        self.checkFetchingNewestVideoIDSResult(array, sucess: true)
     }
 
     func checkFetchingNewestVideoIDSResult(object: AnyObject, sucess: Bool) {
