@@ -56,6 +56,7 @@ class NBVideosCollectionViewController: UICollectionViewController, NICollection
 //        collectionView = UICollectionView(frame: CGRectZero, collectionViewLayout: flowLayout)
 
         if let theCollectionView: UICollectionView = collectionView {
+            theCollectionView.contentInset = UIEdgeInsetsMake(20.0, 20.0, 20.0, 20.0)
             theCollectionView.backgroundColor = UIColor.clearColor()
             theCollectionView.collectionViewLayout = flowLayout
 //            self.view.addSubview(theCollectionView)
