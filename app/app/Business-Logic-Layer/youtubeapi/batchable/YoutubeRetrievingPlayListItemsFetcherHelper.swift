@@ -9,14 +9,8 @@
 import Foundation
 
 
-protocol RetrievingPlayListItemsFetchingHelperDelegate {
-//    func failureFetchingNewsSubscriptionVideos()
-
-    func endFetchingPlayListItems(array: NSArray)
-}
-
 class YoutubeRetrievingPlayListItemsFetcherHelper: NSObject, FetchingNextDelegate {
-    var delegate: RetrievingPlayListItemsFetchingHelperDelegate?
+    var delegate: RetrievingItemsFetchingHelperDelegate?
     var playlistItemsIdsArray: NSArray?
     var fetchingStep: Int = 0
 
@@ -37,7 +31,7 @@ class YoutubeRetrievingPlayListItemsFetcherHelper: NSObject, FetchingNextDelegat
     func fetchingNextStep() {
         if (fetchingStep == playlistItemsIdsArray!.count) {
             if (self.delegate != nil) {
-                self.delegate!.endFetchingPlayListItems(fetchedPlayListItems)
+                self.delegate!.endFetchingAllItems(fetchedPlayListItems)
             }
             return
         }

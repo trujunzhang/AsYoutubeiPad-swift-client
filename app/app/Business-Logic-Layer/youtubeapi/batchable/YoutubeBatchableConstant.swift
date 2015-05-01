@@ -11,3 +11,9 @@ import Foundation
 protocol FetchingNextDelegate {
     func nextFetching(array: NSObject)
 }
+
+protocol RetrievingItemsFetchingHelperDelegate {
+//    func failureFetchingNewsSubscriptionVideos()
+
+    func endFetchingAllItems(array: NSArray)
+}

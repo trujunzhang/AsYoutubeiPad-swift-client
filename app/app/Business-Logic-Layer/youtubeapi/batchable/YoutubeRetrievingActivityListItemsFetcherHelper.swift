@@ -9,22 +9,16 @@
 import Foundation
 
 
-protocol RetrievingActivityListItemsFetchingHelperDelegate {
-//    func failureFetchingNewsSubscriptionVideos()
-
-    func endFetchingActivityListItems(array: NSArray)
-}
-
 class YoutubeRetrievingActivityListItemsFetcherHelper: NSObject, FetchingNextDelegate {
-    var delegate: RetrievingActivityListItemsFetchingHelperDelegate?
-    var playlistItemsIdsArray: NSArray?
+    var delegate: RetrievingItemsFetchingHelperDelegate?
+    var subscribedChannelIdArray: NSArray?
     var fetchingStep: Int = 0
 
     var fetchedActivityListItems: NSMutableArray = NSMutableArray()
     var youtubeRetrievingActivityListItemsFetcher: YoutubeRetrievingActivityListItemsFetcher?
 
-    func startFetchingItems(playlistItemsIdsArray: NSArray) {
-        self.playlistItemsIdsArray = playlistItemsIdsArray
+    func startFetchingItems(subscribedChannelIds: NSArray) {
+        self.subscribedChannelIdArray = subscribedChannelIds
 
         youtubeRetrievingActivityListItemsFetcher = YoutubeRetrievingActivityListItemsFetcher()
         if let playListItemsFetcher: YoutubeRetrievingActivityListItemsFetcher = youtubeRetrievingActivityListItemsFetcher {
@@ -35,14 +29,14 @@ class YoutubeRetrievingActivityListItemsFetcherHelper: NSObject, FetchingNextDel
     }
 
     func fetchingNextStep() {
-        if (fetchingStep == playlistItemsIdsArray!.count) {
+        if (fetchingStep == subscribedChannelIdArray!.count) {
             if (self.delegate != nil) {
-                self.delegate!.endFetchingActivityListItems(fetchedActivityListItems)
+                self.delegate!.endFetchingAllItems(fetchedActivityListItems)
             }
             return
         }
 
-        let object: AnyObject? = self.playlistItemsIdsArray?.objectAtIndex(fetchingStep)
+        let object: AnyObject? = self.subscribedChannelIdArray?.objectAtIndex(fetchingStep)
         var playlistID: NSString = object as! NSString
         fetchingStep++
 

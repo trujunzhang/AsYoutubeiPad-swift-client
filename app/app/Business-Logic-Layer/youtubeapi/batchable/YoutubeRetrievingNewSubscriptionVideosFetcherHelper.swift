@@ -8,14 +8,9 @@
 
 import Foundation
 
-protocol RetrievingNewSubscriptionVideosFetchingHelperDelegate {
-//    func failureFetchingNewsSubscriptionVideos()
-
-    func endFetchingNewSubscriptionVideos(array: NSArray)
-}
 
 class YoutubeRetrievingNewSubscriptionVideosFetcherHelper: NSObject, FetchingNextDelegate {
-    var delegate: RetrievingNewSubscriptionVideosFetchingHelperDelegate?
+    var delegate: RetrievingItemsFetchingHelperDelegate?
     var channelIDsArray: NSArray?
     var fetchingStep: Int = 0
 
@@ -37,7 +32,7 @@ class YoutubeRetrievingNewSubscriptionVideosFetcherHelper: NSObject, FetchingNex
 //        if (fetchingStep == channelIDsArray!.count) {// used
         if (fetchingStep == 1) {
             if (self.delegate != nil) {
-                self.delegate!.endFetchingNewSubscriptionVideos(fetchedChannels)
+                self.delegate!.endFetchingAllItems(fetchedChannels)
             }
             return
         }
