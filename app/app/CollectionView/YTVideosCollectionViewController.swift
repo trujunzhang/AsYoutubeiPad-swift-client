@@ -58,7 +58,7 @@ class YTVideosCollectionViewController: UIViewController, UICollectionViewDataSo
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        self.flowLayout.itemSize = CGSizeMake(100, 100)
+        self.flowLayout.itemSize = CGSizeMake(214, 200)
         self.collectionView.dataSource = self
         self.collectionView.delegate = self
 
