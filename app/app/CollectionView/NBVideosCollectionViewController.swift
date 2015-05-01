@@ -13,7 +13,7 @@ import Foundation
 import UIKit
 import Cartography
 
-class NBVideosCollectionViewController: UICollectionViewController {
+class NBVideosCollectionViewController: UICollectionViewController, NICollectionViewModelDelegate {
     var model: NIMutableCollectionViewModel?
 
     var cellFactory: NICollectionViewCellFactory?
@@ -93,6 +93,15 @@ class NBVideosCollectionViewController: UICollectionViewController {
             theCollectionView.dataSource = model
             theCollectionView.reloadData()
         }
+    }
+    
+    // MARK: NICollectionViewModelDelegate
+    func collectionViewModel(collectionViewModel: NICollectionViewModel!, cellForCollectionView collectionView: UICollectionView!, atIndexPath indexPath: NSIndexPath!, withObject object: AnyObject!) -> UICollectionViewCell! {
+        
+      return  NICollectionViewCellFactory.collectionViewModel(collectionViewModel, cellForCollectionView: collectionView, atIndexPath: indexPath, withObject: object)
+
+//                + (UICollectionViewCell *)collectionViewModel:(NICollectionViewModel *)collectionViewModel cellForCollectionView:(UICollectionView *)collectionView atIndexPath:(NSIndexPath *)indexPath withObject:(id)object;
+//        return [NICellFactory tableViewModel:tableViewModel cellForTableView:tableView atIndexPath:indexPath withObject:object];
     }
 
 }

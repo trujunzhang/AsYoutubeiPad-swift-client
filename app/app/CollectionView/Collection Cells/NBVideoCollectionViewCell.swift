@@ -41,8 +41,10 @@ class NBVideoCollectionViewCell: UICollectionViewCell, NICollectionViewCell {
     func shouldUpdateCellWithObject(object: AnyObject!) -> Bool {
         let cellObject = object as! NBVideoCollectionViewCellObject
         let videoCache: YoutubeVideoCache = cellObject.videoCache!
+        
+        self.backgroundColor = UIColor.redColor()
 
-        setupCell(videoCache)
+//        setupCell(videoCache)
 
         return true
     }
