@@ -9,16 +9,16 @@
 import UIKit
 import Foundation
 
-class YTVideoCollectionViewCellObject: NSObject, NICollectionViewNibCellObject {
+class NBVideoCollectionViewCellObject: NSObject, NICollectionViewNibCellObject {
     
     
     // MARK: NICollectionViewNibCellObject
     func collectionViewCellNib() -> UINib {
-        return UINib(nibName: "YTVideoCollectionViewCell", bundle: nil)
+        return UINib(nibName: "NBVideoCollectionViewCell", bundle: nil)
     }
 }
 
-class YTVideoCollectionViewCell: UICollectionViewCell, NICollectionViewCell {
+class NBVideoCollectionViewCell: UICollectionViewCell, NICollectionViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
