@@ -9,25 +9,21 @@
 import Foundation
 
 
-class FrontBaseViewController:UIViewController {
-    
-    var leftMenuButton: UIBarButtonItem!
-    
-    
+class FrontBaseViewController: UIViewController {
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        
         // Do any additional setup after loading the view.
         if self.revealViewController() != nil {
-            leftMenuButton = UIBarButtonItem(image: UIImage(named: "reveal-icon"), style: .Plain, target: self.revealViewController(), action: "revealToggle:")
-            self.navigationController?.navigationItem.leftBarButtonItems = [leftMenuButton]
-            
-            //            leftMenuButton.target = self.revealViewController()
-            //            leftMenuButton.action = "revealToggle:"
+
+//            let leftMenuButton: UIBarButtonItem = UIBarButtonItem(image: UIImage(named: "reveal-icon"), style: .Plain, target: self.revealViewController(), action: "revealToggle:")
+            let leftMenuButton: UIBarButtonItem = UIBarButtonItem(image: UIImage(named: "Travel"), style: .Plain, target: self.revealViewController(), action: "revealToggle:")
+            self.navigationItem.leftBarButtonItem = leftMenuButton
+
 //            self.view.addGestureRecognizer(self.revealViewController().tapGestureRecognizer()) // used
             //            self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
         }
     }
-    
+
 }

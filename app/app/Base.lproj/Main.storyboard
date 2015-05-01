@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7702" systemVersion="14D131" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7702" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
     </dependencies>
@@ -18,7 +18,7 @@
                     </view>
                     <connections>
                         <segue destination="8oo-n9-XnN" kind="custom" identifier="sw_rear" customClass="SWRevealViewControllerSegueSetController" id="drB-6j-rTb"/>
-                        <segue destination="Lx3-IH-IBJ" kind="custom" identifier="sw_front" customClass="SWRevealViewControllerSegueSetController" id="0rR-lZ-MHS"/>
+                        <segue destination="e8a-34-j0d" kind="custom" identifier="sw_front" customClass="SWRevealViewControllerSegueSetController" id="0rR-lZ-MHS"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -63,14 +63,16 @@
                         <viewControllerLayoutGuide type="bottom" id="CgT-f5-LIa"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="GJA-ki-alv">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="536"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <extendedEdge key="edgesForExtendedLayout"/>
+                    <navigationItem key="navigationItem" id="4pr-W4-cq4"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Izz-I7-Ewa" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1291" y="660"/>
+            <point key="canvasLocation" x="2103" y="660"/>
         </scene>
         <!--Menu Table View Controller-->
         <scene sceneID="d41-U3-GWA">
@@ -266,6 +268,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ilZ-CU-kWP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1189" y="1837"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="w6M-4x-Pye">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="e8a-34-j0d" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="ssT-Vf-xTq">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Lx3-IH-IBJ" kind="relationship" relationship="rootViewController" id="nyY-9X-5JY"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7tA-Pp-MaJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1291" y="660"/>
         </scene>
     </scenes>
     <resources>
