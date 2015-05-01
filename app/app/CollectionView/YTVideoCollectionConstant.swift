@@ -18,3 +18,13 @@ extension YTVideosCollectionViewController {
         return viewController
     }
 }
+
+extension NBVideosCollectionViewController {
+
+    class func instance() -> NBVideosCollectionViewController {
+
+        var viewController: NBVideosCollectionViewController = UIStoryboard(name: "ReusedViewControllers", bundle: nil).instantiateViewControllerWithIdentifier("NBVideosCollectionViewController") as! NBVideosCollectionViewController
+
+        return viewController
+    }
+}

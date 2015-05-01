@@ -13,9 +13,8 @@ import Foundation
 import UIKit
 import Cartography
 
-class NBVideosCollectionViewController: UIViewController {
+class NBVideosCollectionViewController: UICollectionViewController {
     var model: NIMutableCollectionViewModel?
-    var collectionView: UICollectionView?
 
     var cellFactory: NICollectionViewCellFactory?
 
@@ -35,23 +34,30 @@ class NBVideosCollectionViewController: UIViewController {
         })
     }
 
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // create NICellFactory instance
         makeRequestTask()
-        self.makeCollectionView()
+//        self.makeCollectionView()
         cellFactory = NICollectionViewCellFactory()
+
+        if let theCellFactory: NICollectionViewCellFactory = cellFactory {
+            theCellFactory.mapObjectClass(NBVideoCollectionViewCellObject.self, toCellClass: NBVideoCollectionViewCell.self)
+            //            theCellFactory.mapObjectClass(NIDrawRectBlockCellObject.self, toCellClass: MenuTitleBarCellObject.self)
+        }
     }
 
     func makeCollectionView() {
         let flowLayout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
         flowLayout.itemSize = CGSizeMake(214, 200)
-        collectionView = UICollectionView(frame: CGRectZero, collectionViewLayout: flowLayout)
+//        collectionView = UICollectionView(frame: CGRectZero, collectionViewLayout: flowLayout)
 
         if let theCollectionView: UICollectionView = collectionView {
-            self.view.addSubview(theCollectionView)
-            LayoutUtils.LayoutFullView(theCollectionView)
+            theCollectionView.collectionViewLayout = flowLayout
+//            self.view.addSubview(theCollectionView)
+//            LayoutUtils.LayoutFullView(theCollectionView)
         }
 
     }

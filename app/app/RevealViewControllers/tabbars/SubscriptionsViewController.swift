@@ -85,13 +85,13 @@ class SubscriptionsViewController: FrontBaseViewController {
 
     func showCollectionPanel() {
 //        let channelPageViewController: YTVideosCollectionViewController = YTVideosCollectionViewController.instance()
-        let channelPageViewController: NBVideosCollectionViewController = NBVideosCollectionViewController()
-
-        self.addChildViewController(channelPageViewController)
+        let channelPageViewController: NBVideosCollectionViewController = NBVideosCollectionViewController.instance()
 
         let rootView: UIView = channelPageViewController.view
         self.view.addSubview(rootView)
         LayoutUtils.LayoutFullView(rootView)
+
+        self.addChildViewController(channelPageViewController)
     }
 
     func showWatchVideoPage() {
