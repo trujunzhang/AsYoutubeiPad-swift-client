@@ -39,8 +39,9 @@ class NBVideosCollectionViewController: UICollectionViewController, NICollection
         super.viewDidLoad()
 
         // create NICellFactory instance
-        makeRequestTask()
+        self.makeRequestTask()
         self.makeCollectionView()
+
         cellFactory = NICollectionViewCellFactory()
 
         if let theCellFactory: NICollectionViewCellFactory = cellFactory {
@@ -55,6 +56,7 @@ class NBVideosCollectionViewController: UICollectionViewController, NICollection
 //        collectionView = UICollectionView(frame: CGRectZero, collectionViewLayout: flowLayout)
 
         if let theCollectionView: UICollectionView = collectionView {
+            theCollectionView.backgroundColor = UIColor.clearColor()
             theCollectionView.collectionViewLayout = flowLayout
 //            self.view.addSubview(theCollectionView)
 //            LayoutUtils.LayoutFullView(theCollectionView)

@@ -38,7 +38,7 @@ class ChannelPageViewController: UIViewController {
         self.addChildViewController(tabBarViewController!)
 
         tabBarView = tabBarViewController!.view
-        tabBarView?.backgroundColor = UIColor.blueColor()
+        tabBarView?.backgroundColor = UIColor.clearColor()
         if let theTabBarView: UIView = tabBarView {
             self.view.addSubview(theTabBarView)
         }
@@ -78,7 +78,7 @@ class ChannelPageViewController: UIViewController {
         YoutubeFetcher.sharedInstance.fetchChannelForPageChannel(channelID, completeHandler: {
             (object, sucess) -> Void in
 
-            if(sucess == true){
+            if (sucess == true) {
                 var channel: MABYT3_Channel = object as! MABYT3_Channel
                 self.fetchedChannel(channel)
             }

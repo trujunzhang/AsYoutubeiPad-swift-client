@@ -56,7 +56,7 @@ class YTTabBarController: UIViewController {
         // 2
         presentationView = UIView()
 
-        presentationView?.backgroundColor = UIColor.blueColor()
+        presentationView?.backgroundColor = UIColor.clearColor()
 
         // 3
         self.view.addSubview(_tabBarItemsView)
