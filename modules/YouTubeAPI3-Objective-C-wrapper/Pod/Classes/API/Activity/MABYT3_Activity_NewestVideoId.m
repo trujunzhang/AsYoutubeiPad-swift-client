@@ -64,8 +64,9 @@
 
             NSDictionary *uploadDict = [contentDetailsDict objectForKey:@"upload"];
             if (uploadDict) {
-                if ([uploadDict objectForKey:@"videoId"]) {
-                    _videoId = [contentDetailsDict objectForKey:@"videoId"];
+                NSString *objectForKey = [uploadDict objectForKey:@"videoId"];
+                if (objectForKey) {
+                    _videoId = objectForKey;
                 } else {
                     _containUpload = NO;
                 }
