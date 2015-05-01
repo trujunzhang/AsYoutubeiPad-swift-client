@@ -47,11 +47,17 @@ class YoutubeFetcher: NSObject {
         })
     }
 
+    class func prepareFetchingRelativeVideos(relatedToVideoId: NSString, completeHandler: ObjectHandler) -> YTYoutubeRequestInfo {
+        var requestInfo: YTYoutubeRequestInfo = YTYoutubeRequestInfo()
+
+        requestInfo.makeRequestForRelatedVideo(relatedToVideoId)
+        search(requestInfo, completeHandler: completeHandler)
+
+        return requestInfo
+    }
 
 
     // Mark : searchList
-
-
     class func prepareRequestSearch(queryTeam: NSString, completeHandler: ObjectHandler) -> YTYoutubeRequestInfo {
         var requestInfo: YTYoutubeRequestInfo = YTYoutubeRequestInfo()
 
@@ -61,14 +67,6 @@ class YoutubeFetcher: NSObject {
         return requestInfo
     }
 
-    class func prepareFetchingRelativeVideos(relatedToVideoId: NSString, completeHandler: ObjectHandler) -> YTYoutubeRequestInfo {
-        var requestInfo: YTYoutubeRequestInfo = YTYoutubeRequestInfo()
-
-        requestInfo.makeRequestForRelatedVideo(relatedToVideoId)
-        search(requestInfo, completeHandler: completeHandler)
-
-        return requestInfo
-    }
 
 
     class func search(requestInfo: YTYoutubeRequestInfo, completeHandler: ObjectHandler) {
