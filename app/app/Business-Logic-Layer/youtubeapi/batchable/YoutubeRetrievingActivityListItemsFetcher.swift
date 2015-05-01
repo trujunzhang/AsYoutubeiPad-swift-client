@@ -22,9 +22,7 @@ class YoutubeRetrievingActivityListItemsFetcher: NSObject {
     ]
 
     override init() {
-        let publishedAfter = GTLYoutubeUtils.getPublishedAfter()
-
-        let x = 0
+        parameters["publishedAfter"] = GTLYoutubeUtils.getPublishedAfter() as String
     }
 
     func fetchingNextActivityListItemsFromChannelList(channelId: NSString) {
