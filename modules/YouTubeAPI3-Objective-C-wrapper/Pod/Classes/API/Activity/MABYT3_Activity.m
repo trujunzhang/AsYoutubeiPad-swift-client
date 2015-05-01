@@ -16,7 +16,7 @@
 
     self = [super init];
     if(self) {
-        _kind = @"youtube#subscription";
+        _kind = @"youtube#activity";
         _etag = @"";
         _identifier = @"";
         _snippet = [[MABYT3_ActivitySnippet alloc] init];
@@ -29,7 +29,7 @@
 
     self = [super init];
     if(self) {
-        _kind = @"youtube#subscription";
+        _kind = @"youtube#activity";
         _etag = @"";
         _identifier = @"";
         _snippet = [[MABYT3_ActivitySnippet alloc] init];

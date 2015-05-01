@@ -496,6 +496,32 @@
                                       paramS];
 }
 
+- (NSURLSessionDataTask *)LISTActivitiesForURLFilterUpload:(NSMutableDictionary *)parameters completion:(MABYoutubeResponseBlock)completion {
+    NSURLSessionDataTask *task = [self GET:@"/youtube/v3/activities"
+                                parameters:parameters
+                                   success:^(NSURLSessionDataTask *task, id responseObject) {
+                                       NSHTTPURLResponse *httpResponse = (NSHTTPURLResponse *) task.response;
+
+                                       if (httpResponse.statusCode == 200) {
+                                           YoutubeResponseInfo *responseInfo = [self parseActivityListFilterUploadWithData:responseObject];
+                                           dispatch_async(dispatch_get_main_queue(), ^{
+                                               completion(responseInfo, nil);
+                                           });
+                                       } else {
+                                           NSError *error = [self getError:responseObject httpresp:httpResponse];
+                                           dispatch_async(dispatch_get_main_queue(), ^{
+                                               completion(nil, error);
+                                           });
+                                       }
+
+                                   } failure:^(NSURLSessionDataTask *task, NSError *error) {
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    completion(nil, error);
+                });
+            }];
+
+    return task;
+}
 
 - (void)LISTActivitiesForURL:(NSString *)urlStr andHandler:(MABYoutubeResponseBlock)handler {
 
@@ -1925,6 +1951,24 @@
 #pragma mark -
 #pragma mark parse msdata to model collect
 
+- (YoutubeResponseInfo *)parseActivityListFilterUploadWithData:(NSData *)data {
+    NSMutableArray *arr = [[NSMutableArray alloc] init];
+    NSError *e = nil;
+    NSDictionary *dict = [NSJSONSerialization JSONObjectWithData:data
+                                                         options:NSJSONReadingMutableContainers
+                                                           error:&e];
+
+    if ([dict objectForKey:@"items"]) {
+        NSArray *items = [dict objectForKey:@"items"];
+        if (items.count > 0) {
+            for (int i = 0; i < items.count; i++) {
+                MABYT3_Activity_NewestVideoId *itm = [[MABYT3_Activity_NewestVideoId alloc] initFromDictionary:items[i]];
+                [arr addObject:itm];
+            }
+        }
+    }
+    return [YoutubeResponseInfo infoWithArray:arr pageToken:[self parsePageToken:dict]];
+}
 
 - (YoutubeResponseInfo *)parseVideoListWithData:(NSData *)data {
     NSMutableArray *arr = [[NSMutableArray alloc] init];

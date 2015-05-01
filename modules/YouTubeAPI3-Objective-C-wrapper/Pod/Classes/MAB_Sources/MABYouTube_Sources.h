@@ -36,6 +36,7 @@
 #import "MABYT3_ThumbnailDetails.h"
 #import "MABYT3_SearchItem.h"
 #include "MABYT3_Activity.h"
+#include "MABYT3_Activity_NewestVideoId.h"
 #import "MABYT3_Channel.h"
 #import "MABYT3_ActivityContentDetails.h"
 #import "MABYT3_ResourceId.h"
