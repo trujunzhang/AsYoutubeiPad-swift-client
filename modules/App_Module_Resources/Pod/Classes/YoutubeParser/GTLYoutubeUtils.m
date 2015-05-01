@@ -4,6 +4,7 @@
 //
 
 #import "GTLYoutubeUtils.h"
+#import "GTLDateTime.h"
 
 
 @implementation GTLYoutubeUtils {
@@ -21,20 +22,12 @@
     [components setDay:([components day] - 7)];
     NSDate *lastWeek = [cal dateFromComponents:components];
 
+//    NSLog(@"lastWeek=%@", lastWeek);
 
-    NSLog(@"lastWeek=%@", lastWeek);
+    GTLDateTime *gtlDateTime = [GTLDateTime dateTimeWithDate:lastWeek timeZone:nil];
+    NSString *string = gtlDateTime.RFC3339String;
 
-    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-    NSLocale *enUSLocale = [[NSLocale alloc] initWithLocaleIdentifier:@"en_US"];
-
-    [dateFormatter setLocale:enUSLocale];
-    [dateFormatter setDateFormat:@"YYYY-MM-D hh:mm:ss.sZ"];
-//    [dateFormatter setTimeZone:[NSTimeZone localTimeZone]];
-
-    // "publishedAt": "2015-04-30T19:00:01.000Z",
-    NSString *stringFromDate = [dateFormatter stringFromDate:lastWeek];
-
-    return stringFromDate;
+    return string;
 }
 
 + (NSString *)getDateExample {
