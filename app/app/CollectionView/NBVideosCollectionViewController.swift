@@ -71,9 +71,9 @@ class NBVideosCollectionViewController: UIViewController {
     }
 
     func reloadCollectionView(model: NIMutableCollectionViewModel) {
-        if let theTableView: UITableView = tableView {
-            theTableView.dataSource = model
-            theTableView.reloadData()
+        if let theCollectionView: UICollectionView = collectionView {
+            theCollectionView.dataSource = model
+            theCollectionView.reloadData()
         }
     }
 
