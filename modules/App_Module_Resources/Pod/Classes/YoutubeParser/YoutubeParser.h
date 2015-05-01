@@ -15,6 +15,8 @@
 
 + (NSArray *)sortNewestVideoListInActivityList:(id)dataArray;
 
++ (NSArray *)getNewestVideoIdsArrayByMABActivityList:(id)activities;
+
 + (NSArray *)getUploadIdsArrayInContentDetailsFromGTLChannelList:(id)channels;
 
 + (NSArray *)getVideoIdsArrayByGTLActivityList:(id)activities;

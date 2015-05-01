@@ -41,6 +41,40 @@ static NSUInteger UPLOADS_PAGE_LENGTH = 20;
     return sortedArray;
 }
 
+
++ (NSArray *)getNewestVideoIdsArrayByMABActivityList:(NSMutableArray *)activities {
+    NSMutableArray *videoIdsPages = [[NSMutableArray alloc] init];
+    NSUInteger count = activities.count;
+    NSUInteger pageNumber = UPLOADS_PAGE_LENGTH;
+    NSUInteger pages = count / pageNumber;
+    NSUInteger lastNumber = count % pageNumber;
+    if (lastNumber != 0) {
+        pages++;
+    }
+    for (int j = 0; j < pages; ++j) {
+        NSUInteger start = j * pageNumber;
+        NSUInteger endMax = start + pageNumber;
+        NSUInteger end = MIN(count, endMax);
+        NSString *videoIdsString = [self getNewestVideoIdsStringByMABActivityList:activities from:start end:end];
+        [videoIdsPages addObject:videoIdsString];
+    }
+
+    return videoIdsPages;
+}
+
++ (NSString *)getNewestVideoIdsStringByMABActivityList:(NSMutableArray *)activities from:(NSUInteger)start end:(NSUInteger)end {
+    NSMutableArray *videoIds = [[NSMutableArray alloc] init];
+    for (int i = start; i < end; ++i) {
+        MABYT3_Activity_NewestVideoId *activity = activities[i];
+        NSString *videoId = activity.videoId;
+        if (videoId) {
+            [videoIds addObject:videoId];
+        }
+    }
+
+    return [videoIds componentsJoinedByString:@","];
+}
+
 #pragma mark
 #pragma mark - GTLYouTubeChannel
 
@@ -73,14 +107,15 @@ static NSUInteger UPLOADS_PAGE_LENGTH = 20;
 + (NSArray *)getVideoIdsArrayByGTLActivityList:(NSMutableArray *)activities {
     NSMutableArray *videoIdsPages = [[NSMutableArray alloc] init];
     NSUInteger count = activities.count;
-    NSUInteger pages = count / UPLOADS_PAGE_LENGTH;
-    NSUInteger lastNumber = count % UPLOADS_PAGE_LENGTH;
+    NSUInteger pageNumber = UPLOADS_PAGE_LENGTH;
+    NSUInteger pages = count / pageNumber;
+    NSUInteger lastNumber = count % pageNumber;
     if (lastNumber != 0) {
         pages++;
     }
     for (int j = 0; j < pages; ++j) {
-        NSUInteger start = j * UPLOADS_PAGE_LENGTH;
-        NSUInteger endMax = start + UPLOADS_PAGE_LENGTH;
+        NSUInteger start = j * pageNumber;
+        NSUInteger endMax = start + pageNumber;
         NSUInteger end = MIN(count, endMax);
         NSString *videoIdsString = [self getVideoIdsStringByGTLActivityList:activities from:start end:end];
         [videoIdsPages addObject:videoIdsString];
