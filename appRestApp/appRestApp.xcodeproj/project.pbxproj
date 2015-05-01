@@ -52,6 +52,9 @@
 		5ECE214D1AF36C8000A13D2D /* YoutubeModelParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ECE21331AF36C6200A13D2D /* YoutubeModelParser.swift */; };
 		5ECE214E1AF36C8300A13D2D /* YoutubeDataFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ECE21341AF36C6200A13D2D /* YoutubeDataFetcher.swift */; };
 		5ECE214F1AF36C8500A13D2D /* YoutubeFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ECE21351AF36C6200A13D2D /* YoutubeFetcher.swift */; };
+		5ED7D2CC1AF37FBC00082A68 /* YoutubeRetrievingActivityListItemsFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ED7D2CB1AF37FBC00082A68 /* YoutubeRetrievingActivityListItemsFetcher.swift */; };
+		5ED7D2CE1AF37FCF00082A68 /* YoutubeRetrievingActivityListItemsFetcherHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ED7D2CD1AF37FCF00082A68 /* YoutubeRetrievingActivityListItemsFetcherHelper.swift */; };
+		5ED7D2D01AF37FF700082A68 /* YoutubeBatchableConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ED7D2CF1AF37FF700082A68 /* YoutubeBatchableConstant.swift */; };
 		5EDAD2011AF06C2500F22525 /* YoutubeFetchActivityListTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EDAD2001AF06C2500F22525 /* YoutubeFetchActivityListTests.swift */; };
 		5EDFD4DE1AEDB3A30033E0A1 /* SwiftyUserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EDFD4DD1AEDB3A30033E0A1 /* SwiftyUserDefaults.swift */; };
 		5EDFD4DF1AEDB3E30033E0A1 /* LeftMenuSectionsUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E7BB3761AEDB17B00956E71 /* LeftMenuSectionsUtils.swift */; };
@@ -114,6 +117,9 @@
 		5ECE21331AF36C6200A13D2D /* YoutubeModelParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YoutubeModelParser.swift; sourceTree = "<group>"; };
 		5ECE21341AF36C6200A13D2D /* YoutubeDataFetcher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YoutubeDataFetcher.swift; sourceTree = "<group>"; };
 		5ECE21351AF36C6200A13D2D /* YoutubeFetcher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YoutubeFetcher.swift; sourceTree = "<group>"; };
+		5ED7D2CB1AF37FBC00082A68 /* YoutubeRetrievingActivityListItemsFetcher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YoutubeRetrievingActivityListItemsFetcher.swift; sourceTree = "<group>"; };
+		5ED7D2CD1AF37FCF00082A68 /* YoutubeRetrievingActivityListItemsFetcherHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YoutubeRetrievingActivityListItemsFetcherHelper.swift; sourceTree = "<group>"; };
+		5ED7D2CF1AF37FF700082A68 /* YoutubeBatchableConstant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YoutubeBatchableConstant.swift; sourceTree = "<group>"; };
 		5EDAD2001AF06C2500F22525 /* YoutubeFetchActivityListTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YoutubeFetchActivityListTests.swift; sourceTree = "<group>"; };
 		5EDFD4DD1AEDB3A30033E0A1 /* SwiftyUserDefaults.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyUserDefaults.swift; sourceTree = "<group>"; };
 		5EF192FA1AF36DBF0048C6AD /* AuthoredFetcher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AuthoredFetcher.swift; path = AuthoredFetcher/AuthoredFetcher.swift; sourceTree = "<group>"; };
@@ -284,6 +290,9 @@
 				5ECE21281AF36C6200A13D2D /* YoutubeRetrievingNewSubscriptionVideosFetcherHelper.swift */,
 				5ECE21291AF36C6200A13D2D /* YoutubeRetrievingPlayListItemsFetcher.swift */,
 				5ECE212A1AF36C6200A13D2D /* YoutubeRetrievingPlayListItemsFetcherHelper.swift */,
+				5ED7D2CB1AF37FBC00082A68 /* YoutubeRetrievingActivityListItemsFetcher.swift */,
+				5ED7D2CD1AF37FCF00082A68 /* YoutubeRetrievingActivityListItemsFetcherHelper.swift */,
+				5ED7D2CF1AF37FF700082A68 /* YoutubeBatchableConstant.swift */,
 			);
 			path = batchable;
 			sourceTree = "<group>";
@@ -533,14 +542,17 @@
 				5ECE21421AF36C6200A13D2D /* YoutubeFetcher.swift in Sources */,
 				5EDFD4DE1AEDB3A30033E0A1 /* SwiftyUserDefaults.swift in Sources */,
 				5E7BB3771AEDB17B00956E71 /* LeftMenuSectionsUtils.swift in Sources */,
+				5ED7D2CE1AF37FCF00082A68 /* YoutubeRetrievingActivityListItemsFetcherHelper.swift in Sources */,
 				5ECE213E1AF36C6200A13D2D /* NSDateExtensions.swift in Sources */,
 				5ECE21371AF36C6200A13D2D /* YoutubeRetrievingNewSubscriptionVideosFetcherHelper.swift in Sources */,
+				5ED7D2CC1AF37FBC00082A68 /* YoutubeRetrievingActivityListItemsFetcher.swift in Sources */,
 				5ECE213C1AF36C6200A13D2D /* YoutubeUserProfile.swift in Sources */,
 				5ECE213F1AF36C6200A13D2D /* YouTubeExtractorUtils.swift in Sources */,
 				5E540C9D1AEA5B29001174F4 /* Tools.swift in Sources */,
 				5ECE21381AF36C6200A13D2D /* YoutubeRetrievingPlayListItemsFetcher.swift in Sources */,
 				5ECE21401AF36C6200A13D2D /* YoutubeModelParser.swift in Sources */,
 				5ECE21391AF36C6200A13D2D /* YoutubeRetrievingPlayListItemsFetcherHelper.swift in Sources */,
+				5ED7D2D01AF37FF700082A68 /* YoutubeBatchableConstant.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

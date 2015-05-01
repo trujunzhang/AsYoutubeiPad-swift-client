@@ -22,7 +22,3 @@ let scope             = "https://www.googleapis.com/auth/youtube https://www.goo
 typealias ObjectHandler = (AnyObject!, Bool!) -> Void
 
 
-
-protocol FetchingNextDelegate {
-    func nextFetching(array: NSObject)
-}
