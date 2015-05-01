@@ -7,10 +7,11 @@
 //
 
 
-import Foundation
-import XCTest
+import Quick
+import Nimble
 
 class YoutubeFetchActivityListTests: YoutubeFetcherBase {
+
     override func setUp() {
         super.setUp()
         // Put setup code here. This method is called before the invocation of each test method in the class.
@@ -22,30 +23,15 @@ class YoutubeFetchActivityListTests: YoutubeFetcherBase {
     }
 
 
-    func _testFetchActivityListOnHomePage() {
+    func testFetchActivityListOnHomePage() {
         let expectation = expectationWithDescription("fetchActivityListOnHomePage")
 
         YoutubeFetcher.prepareFetchingActivityListOnHomePage({
             (object, sucess) -> Void in
 
-            XCTAssertNotNil(object, "object not nil")
+            self.checkResult(object, sucess: sucess)
 
-            self.isSucess = sucess
-
-            if (sucess == true) {
-                var array: NSArray = object as! NSArray
-
-                XCTAssertTrue(array.count == 20, "Array length must be 20")
-
-                XCTAssertTrue(array[0] is YoutubeVideoCache, "Array object must be GTLYouTubeActivity")
-
-                var channel: YoutubeVideoCache = array[0] as! YoutubeVideoCache
-//                var uploadsId = YoutubeParser.getChannelUploadsAsPlaylistId(channel)
-
-//                XCTAssertTrue(uploadsId == "UUbn1OgGei-DV7aSRo_HaAiw", "uploadsId must be UUbn1OgGei-DV7aSRo_HaAiw")
-            }
             expectation.fulfill()
-
         })
 
         waitForExpectationsWithTimeout(100) {
@@ -53,5 +39,23 @@ class YoutubeFetchActivityListTests: YoutubeFetcherBase {
             XCTAssertNil(error, "\(error)")
         }
     }
+
+    func checkResult(object: AnyObject, sucess: Bool) {
+        self.isSucess = sucess
+
+        expect(sucess).to(beTrue())
+
+        if (sucess == true) {
+            var array: NSArray = object as! NSArray
+
+            expect(array).toNot(beEmpty())
+
+            let firstObject: AnyObject = array[0]
+            expect(firstObject is YoutubeVideoCache).to(beTrue())
+
+            var channel: YoutubeVideoCache = firstObject as! YoutubeVideoCache
+        }
+    }
+
 
 }
