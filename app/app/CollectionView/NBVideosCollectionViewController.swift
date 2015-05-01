@@ -39,7 +39,16 @@ class NBVideosCollectionViewController: UIViewController {
         super.viewDidLoad()
 
         // create NICellFactory instance
+        self.makeCollectionView()
         cellFactory = NICollectionViewCellFactory()
+    }
+
+    func makeCollectionView() {
+        let flowLayout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
+        flowLayout.itemSize = CGSizeMake(214, 200)
+        collectionView = UICollectionView(frame: CGRectZero, collectionViewLayout: flowLayout)
+
+        LayoutUtils.LayoutFullView(collectionView!)
     }
 
     override func viewWillAppear(animated: Bool) {
