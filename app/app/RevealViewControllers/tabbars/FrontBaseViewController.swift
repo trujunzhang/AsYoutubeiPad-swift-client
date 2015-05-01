@@ -17,8 +17,8 @@ class FrontBaseViewController: UIViewController {
         // Do any additional setup after loading the view.
         if self.revealViewController() != nil {
 
-//            let leftMenuButton: UIBarButtonItem = UIBarButtonItem(image: UIImage(named: "reveal-icon"), style: .Plain, target: self.revealViewController(), action: "revealToggle:")
-            let leftMenuButton: UIBarButtonItem = UIBarButtonItem(image: UIImage(named: "Travel"), style: .Plain, target: self.revealViewController(), action: "revealToggle:")
+            let leftMenuButton: UIBarButtonItem = UIBarButtonItem(image: UIImage(named: "reveal-icon"), style: .Plain, target: self.revealViewController(), action: "revealToggle:")
+//            let leftMenuButton: UIBarButtonItem = UIBarButtonItem(image: UIImage(named: "Travel"), style: .Plain, target: self.revealViewController(), action: "revealToggle:")
             self.navigationItem.leftBarButtonItem = leftMenuButton
 
 //            self.view.addGestureRecognizer(self.revealViewController().tapGestureRecognizer()) // used
