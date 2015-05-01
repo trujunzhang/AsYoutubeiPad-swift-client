@@ -57,7 +57,7 @@ class YoutubeFetchActivityListTests: YoutubeFetcherBase, RetrievingItemsFetching
 
         println("newestVideoIdsArray is \(newestVideoIdsArray)")
 
-        self.checkFetchingNewestVideoIDSResult(array, sucess: true)
+//        self.checkFetchingNewestVideoIDSResult(array, sucess: true)
     }
 
     func checkFetchingNewestVideoIDSResult(object: AnyObject, sucess: Bool) {
