@@ -29,8 +29,8 @@ class NBVideosCollectionViewController: UIViewController {
                 var array: NSArray = object as! NSArray
                 var length = array.count
 
-                self.requestInfo.appendArray(array)
-
+                // Then reload tableview
+                self.createSections(array)
             }
         })
     }
@@ -51,11 +51,30 @@ class NBVideosCollectionViewController: UIViewController {
     }
 
     // MARK : model
-    func makeModel(tableContents: [AnyObject]) -> NIMutableCollectionViewModel {
-        let model: NIMutableCollectionViewModel = NIMutableCollectionViewModel(listArray: tableContents, delegate: cellFactory)
+    func makeModel(collectionContents: [AnyObject]) -> NIMutableCollectionViewModel {
+        let model: NIMutableCollectionViewModel = NIMutableCollectionViewModel(listArray: collectionContents, delegate: cellFactory)
 
         return model
     }
 
+    // MARK: refresh collection
+
+    func createSections(array: NSArray) {
+        // 1. 
+        self.requestInfo.appendArray(array)
+
+        let collectionContents: [AnyObject] = NBCollectionSectionGenerator.generatorSections(array)
+
+        model = makeModel(collectionContents)
+
+        reloadCollectionView(model!)
+    }
+
+    func reloadCollectionView(model: NIMutableCollectionViewModel) {
+        if let theTableView: UITableView = tableView {
+            theTableView.dataSource = model
+            theTableView.reloadData()
+        }
+    }
 
 }

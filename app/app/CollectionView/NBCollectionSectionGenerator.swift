@@ -11,4 +11,10 @@ import Foundation
 
 class NBCollectionSectionGenerator {
 
+    class func generatorSections(array: NSArray) -> [AnyObject] {
+        var collectionContents: [AnyObject] = [AnyObject]()
+
+        return collectionContents
+    }
+
 }
