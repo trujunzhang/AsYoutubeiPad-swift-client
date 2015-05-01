@@ -35,7 +35,7 @@ class NBMenuTableViewController: UIViewController, UITableViewDelegate, NBMenuTi
 
         if let theCellFactory: NICellFactory = cellFactory {
             theCellFactory.mapObjectClass(NIDrawRectBlockCellObject.self, toCellClass: VideoInfoDrawRectBlockCell.self)
-//            theCellFactory.mapObjectClass(NIDrawRectBlockCellObject.self, toCellClass: MenuTitleBarCellObject.self)
+            //            theCellFactory.mapObjectClass(NIDrawRectBlockCellObject.self, toCellClass: MenuTitleBarCellObject.self)
         }
 
         if let theTableView: UITableView = tableView {
@@ -120,7 +120,31 @@ class NBMenuTableViewController: UIViewController, UITableViewDelegate, NBMenuTi
         if let theTableModelRowInfo: NBTableModelRowInfo = tableModelRowInfo {
             let rowParamInfo: LeftRowParamInfo = theTableModelRowInfo.tableParams[index]
             println(rowParamInfo.simpleDescription)
+            tableRowTapped(rowParamInfo)
         }
+    }
+
+    func tableRowTapped(rowParamInfo: LeftRowParamInfo) {
+        var rowSectionIdentifier: CellIdentifier = rowParamInfo.rowSectionIdentifier
+        var rowParas: AnyObject = rowParamInfo.rowParas
+
+        switch (rowSectionIdentifier) {
+        case .UseProfileCellIdentifier:
+
+            break;
+        case .CategoriesCellIdentifier:
+
+            break;
+        case .SignUserCellIdentifier:
+
+            break;
+        case .SubscriptionsCellIdentifier:
+            RevealViewHelper.sharedInstance.changeChannelPanel(rowParas as! NSString)
+            break;
+        default:
+            break;
+        }
+
     }
 
     // MARK: NBMenuTitleBarTapProtocol

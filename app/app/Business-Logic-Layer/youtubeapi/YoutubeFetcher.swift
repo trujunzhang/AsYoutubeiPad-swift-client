@@ -54,7 +54,7 @@ class YoutubeFetcher: NSObject {
         // authored parameters
         self.youTubeService?.authorizer = YoutubeUserProfile.sharedInstance.auth
         var canAuthorie = YoutubeUserProfile.sharedInstance.auth.canAuthorize
-        println("canAuthorie is \(canAuthorie)")
+//        println("canAuthorie is \(canAuthorie)")
     }
 
     func fetchingLoggedUserChannelInfo() {
