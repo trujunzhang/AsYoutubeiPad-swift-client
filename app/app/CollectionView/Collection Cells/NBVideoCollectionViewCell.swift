@@ -23,11 +23,17 @@ class NBVideoCollectionViewCellObject: NSObject, NICollectionViewNibCellObject {
 
 class NBVideoCollectionViewCell: UICollectionViewCell, NICollectionViewCell {
 
+    @IBOutlet var titleLabel: UILabel!
+    @IBOutlet var infoLabel: UILabel!
+    @IBOutlet var thumbnailImage: UIImageView!
+    @IBOutlet var channelContainer: UIView!
+    @IBOutlet var channelThumbnailImage: UIImageView!
+    @IBOutlet var channelTitleLabel: UILabel!
+
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
     }
-
 
     // MARK: NICollectionViewCell
     func shouldUpdateCellWithObject(object: AnyObject!) -> Bool {
@@ -43,7 +49,7 @@ class NBVideoCollectionViewCell: UICollectionViewCell, NICollectionViewCell {
     func setupCell(videoCache: YoutubeVideoCache) {
 
         let videoTitle = YoutubeParser.getVideoSnippetTitle(videoCache)
-        let thumbnailUrl = YoutubeModelParser.getVideoSnippetThumbnails(videoCache!)
+        let thumbnailUrl = YoutubeModelParser.getVideoSnippetThumbnails(videoCache)
         let channelTitle = YoutubeParser.getVideoSnippetChannelTitle(videoCache)
         let publishedAgo = YoutubeParser.getVideoSnippetChannelPublishedAt(videoCache)
 
@@ -61,10 +67,10 @@ class NBVideoCollectionViewCell: UICollectionViewCell, NICollectionViewCell {
         channelTitleLabel.text = channelTitle
 
         // 5
-        setupChannelThumbnail()
+        setupChannelThumbnail(videoCache)
     }
 
-    func setupChannelThumbnail() {
+    func setupChannelThumbnail(videoCache: YoutubeVideoCache) {
         let channelID = YoutubeParser.getChannelIdByVideo(videoCache)
 
         YoutubeFetcher.sharedInstance.fetchChannelForThumbnail(channelID, completeHandler: {
