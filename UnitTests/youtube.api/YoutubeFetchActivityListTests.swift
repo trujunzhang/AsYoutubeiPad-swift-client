@@ -53,7 +53,6 @@ class YoutubeFetchActivityListTests: YoutubeFetcherBase, RetrievingItemsFetching
 
     func endFetchingAllItems(array: NSArray) {
         let sortedArray = YoutubeParser.sortNewestVideoListInActivityList(array)
-//        let sortedArray = array
         let newestVideoIdsArray = YoutubeParser.getNewestVideoIdsArrayByMABActivityList(sortedArray)
 
         println("newestVideoIdsArray is \(newestVideoIdsArray)")
