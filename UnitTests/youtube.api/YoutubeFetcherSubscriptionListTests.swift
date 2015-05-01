@@ -25,13 +25,13 @@ class YoutubeFetcherSubscriptionListTests: YoutubeFetcherBase, AuthorUserFetchin
     
     func _testRetrievingSubscriptionList() {
         expectation = expectationWithDescription("retrievingSubscriptionList")
-        
-        YoutubeFetcher.sharedInstance.delegate = self
+
+        AuthoredFetcher.sharedInstance.delegate = self
         let hasLogin = YoutubeUserProfile.sharedInstance.hasLogin()
         XCTAssertTrue(hasLogin == true, "Before testing fetching subscription list, must login first")
         
         if (hasLogin == true) {
-            YoutubeFetcher.sharedInstance.initLoggedUser()
+            AuthoredFetcher.sharedInstance.initLoggedUser()
         }
         
         waitForExpectationsWithTimeout(20) { (error) in

@@ -25,7 +25,7 @@ class YoutubeFetchActivityListTests: YoutubeFetcherBase {
     func _testFetchActivityListOnHomePage() {
         let expectation = expectationWithDescription("fetchActivityListOnHomePage")
 
-        YoutubeFetcher.sharedInstance.prepareFetchingActivityListOnHomePage({
+        YoutubeFetcher.prepareFetchingActivityListOnHomePage({
             (object, sucess) -> Void in
 
             XCTAssertNotNil(object, "object not nil")

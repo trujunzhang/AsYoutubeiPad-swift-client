@@ -28,7 +28,7 @@ class YoutubeFetcherForVideosTests: YoutubeFetcherBase {
         var videoCache:YoutubeVideoCache? // used
         
         requestInfo =
-            YoutubeFetcher.sharedInstance.prepareRequestSearch("sketch 3", completeHandler: { (object, sucess) -> Void in
+            YoutubeFetcher.prepareRequestSearch("sketch 3", completeHandler: { (object, sucess) -> Void in
                 XCTAssertNotNil(object, "object not nil")
                 
                 self.isSucess = sucess
@@ -71,7 +71,7 @@ class YoutubeFetcherForVideosTests: YoutubeFetcherBase {
         var videoCache:YoutubeVideoCache? // used
         
         requestInfo =
-            YoutubeFetcher.sharedInstance.prepareFetchingRelativeVideos(videoID, completeHandler: { (object, sucess) -> Void in
+            YoutubeFetcher.prepareFetchingRelativeVideos(videoID, completeHandler: { (object, sucess) -> Void in
                 XCTAssertNotNil(object, "object not nil")
                 
                 self.isSucess = sucess
@@ -111,7 +111,7 @@ class YoutubeFetcherForVideosTests: YoutubeFetcherBase {
     func _testFetchVideoDescription(){
         let expectation = expectationWithDescription("fetchVideoDescription")
         
-        YoutubeFetcher.sharedInstance.fetchVideoDescription(videoID, completeHandler: { (object, sucess) -> Void in
+        YoutubeFetcher.fetchVideoDescription(videoID, completeHandler: { (object, sucess) -> Void in
             
             XCTAssertNotNil(object, "object not nil")
             

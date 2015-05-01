@@ -27,7 +27,7 @@ class YoutubeRetrievingPlayListItemsFetcher: NSObject {
     func fetchingNextPlayListItemsFromChannelList(playlistID: NSString) {
         parameters["playlistId"] = playlistID as String
 
-        YoutubeFetcher.sharedInstance.fetchPlayListItemWithDictionary(parameters, completeHandler: {
+        YoutubeFetcher.fetchPlayListItemWithDictionary(parameters, completeHandler: {
             (object, sucess) -> Void in
 
             if (sucess == true) {

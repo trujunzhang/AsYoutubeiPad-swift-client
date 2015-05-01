@@ -192,7 +192,7 @@ class AuthoredFetcher: NSObject {
                     requestInfo.videoIdsPages = videoIdsPages
 
                     // 2. Fetching the first page
-                    YoutubeFetcher.sharedInstance().fetchVideoListWithVideoId(videoIdsPages[0] as! NSString, completeHandler: {
+                    YoutubeFetcher.fetchVideoListWithVideoId(videoIdsPages[0] as! NSString, completeHandler: {
                         (object, sucess) -> Void in
 
                         if (sucess == true) {

@@ -25,7 +25,7 @@ class YoutubeFetcherPlayListTests: YoutubeFetcherBase {
     func _testFetchPlayListWithPlayListId() {
         let expectation = expectationWithDescription("fetchPlayListWithPlayListId")
 
-        YoutubeFetcher.sharedInstance.fetchPlayListItemWithPlayListId(playlistID, completeHandler: {
+        YoutubeFetcher.fetchPlayListItemWithPlayListId(playlistID, completeHandler: {
             (object, sucess) -> Void in
 
             XCTAssertNotNil(object, "object not nil")
@@ -57,7 +57,7 @@ class YoutubeFetcherPlayListTests: YoutubeFetcherBase {
     func _testFetchGTLPlayListItems() {
         let expectation = expectationWithDescription("fetchGTLPlayListItems")
 
-        YoutubeFetcher.sharedInstance.fetchGTLPlayListItems(playlistID, completeHandler: {
+        AuthoredFetcher.sharedInstance.fetchGTLPlayListItems(playlistID, completeHandler: {
             (object, sucess) -> Void in
 
             XCTAssertNotNil(object, "object not nil")

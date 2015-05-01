@@ -24,7 +24,7 @@ class YoutubeFetcherForChannelTests: YoutubeFetcherBase {
     func _testFetchingChannelList() {
         let expectation = expectationWithDescription("fetchingChannelList")
 
-        YoutubeFetcher.sharedInstance.fetchingChannelList("UC0wObT_HayGfWLdRAnFyPwA", completeHandler: {
+        AuthoredFetcher.sharedInstance.fetchingChannelList("UC0wObT_HayGfWLdRAnFyPwA", completeHandler: {
             (object, sucess) -> Void in
             var channel: GTLYouTubeChannel = object as! GTLYouTubeChannel
             var imageUrl = channel.snippet.thumbnails.high
@@ -42,7 +42,7 @@ class YoutubeFetcherForChannelTests: YoutubeFetcherBase {
     func _testFetchChannelForThumbnail() {
         let expectation = expectationWithDescription("fetchChannelForThumbnail")
 
-        YoutubeFetcher.sharedInstance.fetchChannelForThumbnail("UCl-radPCbXcrYCE4EdNH3QA", completeHandler: {
+        YoutubeFetcher.fetchChannelForThumbnail("UCl-radPCbXcrYCE4EdNH3QA", completeHandler: {
             (object, sucess) -> Void in
 
             XCTAssertNotNil(object, "object not nil")
@@ -73,7 +73,7 @@ class YoutubeFetcherForChannelTests: YoutubeFetcherBase {
     func _testFetchChannelForUploadsIds() {
         let expectation = expectationWithDescription("fetchChannelForUploadsIds")
 
-        YoutubeFetcher.sharedInstance.fetchChannelForUploadsIds(channelIDs, completeHandler: {
+        YoutubeFetcher.fetchChannelForUploadsIds(channelIDs, completeHandler: {
             (object, sucess) -> Void in
 
             XCTAssertNotNil(object, "object not nil")
