@@ -10,6 +10,7 @@ import Foundation
 
 class RevealViewHelper: NSObject {
     var subscriptionsViewController: SubscriptionsViewController?
+    var revealViewController: SWRevealViewController?
 
     class var sharedInstance: RevealViewHelper {
 
@@ -24,8 +25,27 @@ class RevealViewHelper: NSObject {
         self.subscriptionsViewController = subscriptionsViewController
     }
 
+    func registerSWRevealViewController(revealViewController: SWRevealViewController) {
+        self.revealViewController = revealViewController
+    }
+
+    // MARK: SWRevealViewController
+    func openLeftMenu() {
+        if let theRevealViewController: SWRevealViewController = self.revealViewController {
+            theRevealViewController.setFrontViewPosition(.Right, animated: true)
+        }
+    }
+
+    func closeLeftMenu() {
+        if let theRevealViewController: SWRevealViewController = self.revealViewController {
+            theRevealViewController.setFrontViewPosition(.LeftSide, animated: true)
+
+        }
+    }
+
     func changeChannelPanel(channelId: NSString) {
         if let theSubscriptionsViewController: SubscriptionsViewController = self.subscriptionsViewController {
+            closeLeftMenu()
             theSubscriptionsViewController.showChannelPage(channelId)
         }
 

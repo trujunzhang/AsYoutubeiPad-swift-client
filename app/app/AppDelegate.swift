@@ -27,6 +27,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             revealViewController.rearViewRevealOverdraw = 0
 
             revealViewController.revealToggleAnimated(true)
+
+            RevealViewHelper.sharedInstance.registerSWRevealViewController(revealViewController)
         }
         return true
     }
