@@ -22,6 +22,7 @@
 // Library: YouTubeAPI3-Objective-C-wrapper
 #import "MABYouTube_Sources.h"
 #import "YoutubeParser.h"
+#import "GTLYoutubeUtils.h"
 
 // Library: IGYouTubeExtractor
 //#import "IGYouTubeExtractor.h"

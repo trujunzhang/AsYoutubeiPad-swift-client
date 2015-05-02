@@ -6,8 +6,9 @@
 //  Copyright (c) 2015 djzhang. All rights reserved.
 //
 
+import UIKit
+import XCTest
 
-import Quick
 import Nimble
 
 class YoutubeFetchActivityListTests: YoutubeFetcherBase, RetrievingItemsFetchingHelperDelegate {

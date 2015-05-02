@@ -17,7 +17,6 @@
 		5E540C9D1AEA5B29001174F4 /* Tools.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E540C9C1AEA5B29001174F4 /* Tools.swift */; };
 		5E540C9E1AEA5B2F001174F4 /* Tools.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E540C9C1AEA5B29001174F4 /* Tools.swift */; };
 		5E70DC4C1AF27F91003262F2 /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E70DC461AF27EA6003262F2 /* Nimble.framework */; };
-		5E70DC4D1AF27F91003262F2 /* Quick.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E70DC471AF27EA6003262F2 /* Quick.framework */; };
 		5E795B721AF3804B0046E1CC /* YoutubeBatchableConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ED7D2CF1AF37FF700082A68 /* YoutubeBatchableConstant.swift */; };
 		5E795B731AF3804D0046E1CC /* YoutubeRetrievingActivityListItemsFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ED7D2CB1AF37FBC00082A68 /* YoutubeRetrievingActivityListItemsFetcher.swift */; };
 		5E795B741AF380500046E1CC /* YoutubeRetrievingActivityListItemsFetcherHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ED7D2CD1AF37FCF00082A68 /* YoutubeRetrievingActivityListItemsFetcherHelper.swift */; };
@@ -147,7 +146,6 @@
 			files = (
 				9E63D12B11E44317ACB7A3DC /* libPods-appRestAppTests.a in Frameworks */,
 				5E70DC4C1AF27F91003262F2 /* Nimble.framework in Frameworks */,
-				5E70DC4D1AF27F91003262F2 /* Quick.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -511,7 +509,6 @@
 			);
 			inputPaths = (
 				"$(SRCROOT)/Carthage/Build/iOS/nimble.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/Quick.framework",
 			);
 			outputPaths = (
 			);

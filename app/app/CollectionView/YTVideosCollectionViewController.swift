@@ -18,7 +18,7 @@ class YTVideosCollectionViewController: UIViewController, UICollectionViewDataSo
 
 
     func makeRequestTask123() {
-        requestInfo = YoutubeFetcher.prepareFetchingActivityListOnHomePage({
+        requestInfo = AuthoredFetcher.sharedInstance.prepareFetchingActivityListOnHomePage({
             (object, sucess) -> Void in
             if (sucess == true) {
                 var array: NSArray = object as! NSArray
