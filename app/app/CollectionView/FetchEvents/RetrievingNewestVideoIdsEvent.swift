@@ -15,8 +15,11 @@ class RetrievingNewestVideoIdsEvent: NSObject, FetchEventProtocol, RetrievingIte
     var newestVideoIdsArray: NSArray?
     var currentPage = 0
 
+    var completeHandler: ObjectHandler?
+
     // MARK: FetchEventProtocol
-    func startFetching() {
+    func refreshEvent(completeHandler: ObjectHandler) {
+        self.completeHandler = completeHandler
         helper.delegate = self
         helper.startFetchingItems()
     }
@@ -25,14 +28,27 @@ class RetrievingNewestVideoIdsEvent: NSObject, FetchEventProtocol, RetrievingIte
         self.currentPage++
     }
 
-    func nextFetching() {
+    func nextFetching(completeHandler: ObjectHandler) {
+        let object:AnyObject = self.newestVideoIdsArray!.objectAtIndex(self.currentPage)
+        let videoIds: NSString = object as! NSString
+        YoutubeFetcher.fetchVideoListWithVideoId(videoIds, completeHandler: {
+            (object, sucess) -> Void in
 
+            if (sucess == true) {
+                // 1. array of YoutubeVideoCache
+                completeHandler(object, true)
+            } else {
+                completeHandler(nil, false)
+            }
+        })
     }
 
     func hasNextFetcing() -> Bool {
-        if (self.currentPage >= self.newestVideoIdsArray.count) {
+        let count = self.newestVideoIdsArray!.count
+        if (self.currentPage >= count) {
             return false
         }
+        
         return true
     }
 
@@ -41,6 +57,7 @@ class RetrievingNewestVideoIdsEvent: NSObject, FetchEventProtocol, RetrievingIte
         let sortedArray = YoutubeParser.filterSnippetTypeIsUploadInGTLActivity(array)
         self.newestVideoIdsArray = YoutubeParser.getVideoIdsArrayByGTLActivityList(sortedArray)
 
+        self.nextFetching(self.completeHandler!)
 //        println("count of sortedArray is \(sortedArray.count)")
 //        println("newestVideoIdsArray is \(newestVideoIdsArray)")
     }

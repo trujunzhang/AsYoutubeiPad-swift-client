@@ -10,22 +10,19 @@ import Foundation
 
 protocol FetchEventProtocol {
 
-    func startFetching()
-    
-    func endFetching()
-    
-    func nextFetching()
-    
+    func refreshEvent(completeHandler: ObjectHandler)
+
+    func nextFetching(completeHandler: ObjectHandler)
+
     func hasNextFetcing() -> Bool
-    
+
 }
 
 
-//func startFetching(){
+//func refreshEvent(completeHandler: ObjectHandler){
 //}
-//func endFetching(){
-//}
-//func nextFetching(){
+
+//func nextFetching(completeHandler: ObjectHandler){
 //}
 //func hasNextFetcing() -> Bool {
 //    return true
