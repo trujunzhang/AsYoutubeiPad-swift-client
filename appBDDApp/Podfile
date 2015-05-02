@@ -1,0 +1,37 @@
+source 'https://github.com/CocoaPods/Specs.git'
+platform :ios, '8.0'
+#use_frameworks!
+
+inhibit_all_warnings!
+
+# link_with 'app', 'appTests'
+
+def import_pods
+
+  pod 'Google-API-Client/YouTube'
+
+  pod 'IGYouTubeExtractor'
+
+  # ________________project library___________________
+  pod "App_Module_Resources", :path => "../modules/App_Module_Resources"
+  pod "YouTubeAPI3-Objective-C-wrapper", :path => "../modules/YouTubeAPI3-Objective-C-wrapper"
+  pod "AFNetworking", :path => "../dependencies/AFNetworking"
+
+
+end
+
+target 'appBDDApp', :exclusive => true do
+  # ________________common tools library___________________
+  import_pods
+
+end
+
+
+target 'appBDDAppTests', :exclusive => true do
+  import_pods
+
+  #pod 'Expecta'
+  #pod 'OCMock'
+  #pod 'OCMockito'
+
+end
