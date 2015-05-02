@@ -17,7 +17,6 @@
 		5EAB7FF51AF3B52500091E88 /* appBDDAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EAB7FF41AF3B52500091E88 /* appBDDAppTests.swift */; };
 		5EC54EEC1AF48107002422E1 /* Banana.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EC54EEB1AF48107002422E1 /* Banana.swift */; };
 		5EC54EF11AF48225002422E1 /* BananaSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EC54EF01AF48225002422E1 /* BananaSpec.swift */; };
-		5EC54EF21AF48250002422E1 /* Banana.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EC54EEB1AF48107002422E1 /* Banana.swift */; };
 		5EE2ED8A1AF47D1000C24820 /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5EE2ED881AF47D1000C24820 /* Nimble.framework */; };
 		5EE2ED8B1AF47D1000C24820 /* Quick.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5EE2ED891AF47D1000C24820 /* Quick.framework */; };
 		5EE2EDA71AF47DDF00C24820 /* AuthoredFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EE2ED911AF47DDF00C24820 /* AuthoredFetcher.swift */; };
@@ -39,6 +38,8 @@
 		5EE2EDBB1AF47E7400C24820 /* Tools.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EE2EDBA1AF47E7400C24820 /* Tools.swift */; };
 		5EE2EDBE1AF47E7C00C24820 /* SwiftyUserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EE2EDBD1AF47E7C00C24820 /* SwiftyUserDefaults.swift */; };
 		5EE2EDC21AF47E9E00C24820 /* LeftMenuSectionsUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EE2EDC11AF47E9E00C24820 /* LeftMenuSectionsUtils.swift */; };
+		5EE3E8A21AF48A9E0003F037 /* SwiftyUserDefaultsSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EE3E8A11AF48A9E0003F037 /* SwiftyUserDefaultsSpec.swift */; };
+		5EE3E8A31AF48AC90003F037 /* Banana.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EC54EEB1AF48107002422E1 /* Banana.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -87,6 +88,7 @@
 		5EE2EDBA1AF47E7400C24820 /* Tools.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tools.swift; sourceTree = "<group>"; };
 		5EE2EDBD1AF47E7C00C24820 /* SwiftyUserDefaults.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyUserDefaults.swift; sourceTree = "<group>"; };
 		5EE2EDC11AF47E9E00C24820 /* LeftMenuSectionsUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LeftMenuSectionsUtils.swift; path = ../../app/app/RevealViewControllers/leftmenu/LeftMenuSectionsUtils.swift; sourceTree = "<group>"; };
+		5EE3E8A11AF48A9E0003F037 /* SwiftyUserDefaultsSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SwiftyUserDefaultsSpec.swift; path = ../../Specs/SwiftyUserDefaults/SwiftyUserDefaultsSpec.swift; sourceTree = "<group>"; };
 		61F410111A48CF30B5EB7119 /* Pods-appBDDAppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-appBDDAppTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-appBDDAppTests/Pods-appBDDAppTests.debug.xcconfig"; sourceTree = "<group>"; };
 		87239E17B10170E3BC195F2C /* libPods-appBDDAppTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-appBDDAppTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		96075D14EEC1A39CB6F1F84A /* libPods-appBDDApp.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-appBDDApp.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -175,6 +177,7 @@
 		5EAB7FF11AF3B52500091E88 /* appBDDAppTests */ = {
 			isa = PBXGroup;
 			children = (
+				5EE3E8A01AF48A720003F037 /* SwiftyUserDefaults */,
 				5EC54EED1AF48127002422E1 /* Examples */,
 				5EAB7FF41AF3B52500091E88 /* appBDDAppTests.swift */,
 				5EAB7FF21AF3B52500091E88 /* Supporting Files */,
@@ -294,6 +297,14 @@
 				5EE2EDC11AF47E9E00C24820 /* LeftMenuSectionsUtils.swift */,
 			);
 			name = leftmenu;
+			sourceTree = "<group>";
+		};
+		5EE3E8A01AF48A720003F037 /* SwiftyUserDefaults */ = {
+			isa = PBXGroup;
+			children = (
+				5EE3E8A11AF48A9E0003F037 /* SwiftyUserDefaultsSpec.swift */,
+			);
+			name = SwiftyUserDefaults;
 			sourceTree = "<group>";
 		};
 		61BF901A0365E25B7320F2CA /* Pods */ = {
@@ -520,9 +531,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5EE3E8A31AF48AC90003F037 /* Banana.swift in Sources */,
 				5EAB7FF51AF3B52500091E88 /* appBDDAppTests.swift in Sources */,
-				5EC54EF21AF48250002422E1 /* Banana.swift in Sources */,
 				5EC54EF11AF48225002422E1 /* BananaSpec.swift in Sources */,
+				5EE3E8A21AF48A9E0003F037 /* SwiftyUserDefaultsSpec.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -576,7 +588,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEFINES_MODULE = NO;
+				DEFINES_MODULE = YES;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -622,7 +634,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEFINES_MODULE = NO;
+				DEFINES_MODULE = YES;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
