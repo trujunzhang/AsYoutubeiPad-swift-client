@@ -68,7 +68,7 @@ static NSUInteger UPLOADS_PAGE_LENGTH = 20;
         MABYT3_Activity_NewestVideoId *activity = activities[i];
         NSString *videoId = activity.videoId;
         if (videoId) {
-            if([videoId isEqualToString:@""]){
+            if ([videoId isEqualToString:@""]) {
                 videoId = @"";
             }
             [videoIds addObject:videoId];
@@ -103,7 +103,7 @@ static NSUInteger UPLOADS_PAGE_LENGTH = 20;
 
 + (NSString *)getVideoIdByGTLActivityContentDetails:(GTLYouTubeActivity *)activity {
     NSString *title = activity.snippet.title;
-    NSLog(@"title = %@", title);
+//    NSLog(@"title = %@", title);
     return activity.contentDetails.upload.videoId;
 }
 
@@ -144,11 +144,10 @@ static NSUInteger UPLOADS_PAGE_LENGTH = 20;
     NSMutableArray *uploadActivities = [[NSMutableArray alloc] init];
     for (GTLYouTubeActivity *activity in activities) {
         NSString *snippetTypeInActivity = [self getSnippetTypeInActivity:activity];
-//        if ([snippetTypeInActivity isEqualToString:@"upload"]) {
-        [uploadActivities addObject:activity];
-//        }
+        if ([snippetTypeInActivity isEqualToString:@"upload"]) {
+            [uploadActivities addObject:activity];
+        }
     }
-
 
     NSArray *dataArray = [NSArray arrayWithArray:uploadActivities];
     NSLog(@"dataArray = %d", dataArray.count);
@@ -164,7 +163,7 @@ static NSUInteger UPLOADS_PAGE_LENGTH = 20;
     }];
 
 //    [self printActivitySnippetPublishedAtForArray:sortedArray];
-    NSLog(@"sortedArray = %d", sortedArray.count);
+//    NSLog(@"sortedArray = %d", sortedArray.count);
 
     return sortedArray;
 }
