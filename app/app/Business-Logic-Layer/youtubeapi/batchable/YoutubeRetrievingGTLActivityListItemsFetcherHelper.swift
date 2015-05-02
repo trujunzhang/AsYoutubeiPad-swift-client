@@ -15,13 +15,13 @@ class YoutubeRetrievingGTLActivityListItemsFetcherHelper: NSObject, FetchingNext
     var nextPageToken = ""
 
     var fetchedItems: NSMutableArray = NSMutableArray()
-    var ItemsFetcher: YoutubeRetrievingGTLActivityListItemsFetcher?
+    var itemsFetcher: YoutubeRetrievingGTLActivityListItemsFetcher?
 
     func startFetchingItems() {
 
-        ItemsFetcher = YoutubeRetrievingGTLActivityListItemsFetcher()
-        if let playListItemsFetcher: YoutubeRetrievingGTLActivityListItemsFetcher = ItemsFetcher {
-            playListItemsFetcher.delegate = self
+        itemsFetcher = YoutubeRetrievingGTLActivityListItemsFetcher()
+        if let theItemsFetcher: YoutubeRetrievingGTLActivityListItemsFetcher = itemsFetcher {
+            theItemsFetcher.delegate = self
         }
 
         fetchingNextStep(true)
@@ -35,7 +35,7 @@ class YoutubeRetrievingGTLActivityListItemsFetcherHelper: NSObject, FetchingNext
             return
         }
 
-        if let theItemsFetcher: YoutubeRetrievingGTLActivityListItemsFetcher = ItemsFetcher {
+        if let theItemsFetcher: YoutubeRetrievingGTLActivityListItemsFetcher = itemsFetcher {
             theItemsFetcher.fetchingNextGTLActivityListItemsFromChannelList(nextPageToken)
         }
     }
@@ -46,8 +46,6 @@ class YoutubeRetrievingGTLActivityListItemsFetcherHelper: NSObject, FetchingNext
     func nextFetching(array: NSObject) {
         let items = array as! [AnyObject]
         fetchedItems.addObjectsFromArray(items)
-
-//        println("Result in nextFetching is \(playListItems.count)")
 
         fetchingNextStep(false)
     }

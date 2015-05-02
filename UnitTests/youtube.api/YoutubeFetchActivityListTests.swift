@@ -20,7 +20,7 @@ class YoutubeFetchActivityListTests: YoutubeFetcherBase, RetrievingItemsFetching
         let helper: YoutubeRetrievingGTLActivityListItemsFetcherHelper = YoutubeRetrievingGTLActivityListItemsFetcherHelper()
         helper.delegate = self
 
-        let array = YoutubeTestHelper.getSubscribedChannelIdsArray(subscribedChannelIds)
+//        let array = YoutubeTestHelper.getSubscribedChannelIdsArray(subscribedChannelIds)
         helper.startFetchingItems()
 
         waitForExpectationsWithTimeout(100) {
