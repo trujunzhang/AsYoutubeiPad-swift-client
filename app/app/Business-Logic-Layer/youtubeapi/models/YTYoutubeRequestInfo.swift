@@ -66,8 +66,9 @@ class YTYoutubeRequestInfo: NSObject {
         videoList.addObjectsFromArray(array as [AnyObject])
     }
 
-    func setNextPageToken(pageToken: NSString) {
-        self.nextPageToken = nextPageToken
+    func storeNextPageToken(pageToken: NSString) {
+        println("pageToken in storeNextPageToken is \(pageToken)")
+        self.nextPageToken = pageToken as String
     }
 
     func putNextPageToken(pageToken: NSString) {

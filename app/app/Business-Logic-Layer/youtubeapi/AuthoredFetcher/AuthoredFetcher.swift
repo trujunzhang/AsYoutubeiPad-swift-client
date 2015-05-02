@@ -192,7 +192,7 @@ class AuthoredFetcher: NSObject {
                 let array = responseInfo.items()
 
                 if (array.count >= 1) {
-                    requestInfo.putNextPageToken(responseInfo.nextPageToken)
+                    requestInfo.storeNextPageToken(responseInfo.nextPageToken)
                     completeHandler(array, true)
                 } else {
                     completeHandler(nil, false)
