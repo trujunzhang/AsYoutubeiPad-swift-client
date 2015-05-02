@@ -19,6 +19,7 @@ class YTVideoCollectionViewCell: UICollectionViewCell {
     @IBOutlet var channelThumbnailImage: UIImageView!
     @IBOutlet var channelTitleLabel: UILabel!
 
+    var imageUrl = ""
 
     var videoCache: YoutubeVideoCache?
 
@@ -51,19 +52,28 @@ class YTVideoCollectionViewCell: UICollectionViewCell {
     func setupChannelThumbnail() {
         let channelID = YoutubeParser.getChannelIdByVideo(videoCache)
 
+        if(self.imageUrl.isEmpty){
+            self.fetchChannelThumbnail(channelID)
+        }else{
+            self.channelThumbnailImage.hnk_setImageFromURL(NSURL(string: self.imageUrl)!)// used
+        }
+
+    }
+    
+    func fetchChannelThumbnail(channelID:NSString){
         YoutubeFetcher.fetchChannelForThumbnail(channelID, completeHandler: {
             (object, sucess) -> Void in
             if (sucess == true) {
                 var array: NSArray = object as! NSArray
-
+                
                 var channel: MABYT3_Channel = array[0] as! MABYT3_Channel
                 var imageUrl = YoutubeModelParser.getMABChannelThumbnalUrl(channel)
+                
+                self.imageUrl = imageUrl as String
 
-                let url = NSURL(string: imageUrl as String)
-                self.channelThumbnailImage.hnk_setImageFromURL(url!)// used
+                self.channelThumbnailImage.hnk_setImageFromURL(NSURL(string: self.imageUrl)!)// used
             }
         })
-
     }
 
 
