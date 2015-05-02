@@ -13,17 +13,8 @@ import Nimble
 
 class YoutubeFetchActivityListTests: YoutubeFetcherBase, RetrievingItemsFetchingHelperDelegate {
     var expectation: XCTestExpectation?
-    override func setUp() {
-        super.setUp()
-        // Put setup code here. This method is called before the invocation of each test method in the class.
-    }
 
-    override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-        super.tearDown()
-    }
-
-    func testFetchingNesestVideoIdsFromActivitylList() {
+    func testFetchingNesestVideoIdsFromGTLActivitylList() {
         expectation = expectationWithDescription("fetchActivityListOnHomePage")
 
         let helper: YoutubeRetrievingActivityListItemsFetcherHelper = YoutubeRetrievingActivityListItemsFetcherHelper()
@@ -64,40 +55,6 @@ class YoutubeFetchActivityListTests: YoutubeFetcherBase, RetrievingItemsFetching
     }
 
     func checkFetchingNewestVideoIDSResult(object: AnyObject, sucess: Bool) {
-        self.isSucess = sucess
-
-        expect(sucess).to(beTrue())
-
-        if (sucess == true) {
-            var array: NSArray = object as! NSArray
-
-            expect(array).toNot(beEmpty())
-
-            let firstObject: AnyObject = array[0]
-            expect(firstObject is YoutubeVideoCache).to(beTrue())
-
-            var channel: YoutubeVideoCache = firstObject as! YoutubeVideoCache
-        }
-    }
-
-    func _testFetchActivityListOnHomePage() {
-        let expectation = expectationWithDescription("fetchActivityListOnHomePage")
-
-        AuthoredFetcher.sharedInstance.prepareFetchingActivityListOnHomePage({
-            (object, sucess) -> Void in
-
-            self.checkResult(object, sucess: sucess)
-
-            expectation.fulfill()
-        })
-
-        waitForExpectationsWithTimeout(100) {
-            (error) in
-            XCTAssertNil(error, "\(error)")
-        }
-    }
-
-    func checkResult(object: AnyObject, sucess: Bool) {
         self.isSucess = sucess
 
         expect(sucess).to(beTrue())
