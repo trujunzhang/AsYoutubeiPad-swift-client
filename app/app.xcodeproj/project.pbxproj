@@ -48,6 +48,8 @@
 		5E3AB3CA1AE3D7DC00BB0944 /* PathExtensionFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E3AB3C41AE3D7DC00BB0944 /* PathExtensionFile.swift */; };
 		5E3AB3CB1AE3D7DC00BB0944 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E3AB3C51AE3D7DC00BB0944 /* Result.swift */; };
 		5E3AB3CC1AE3D7DC00BB0944 /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E3AB3C71AE3D7DC00BB0944 /* UIColorExtension.swift */; };
+		5E401BFE1AF4F1AC00613E28 /* YoutubeRetrievingGTLActivityListItemsFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E401BFC1AF4F1AC00613E28 /* YoutubeRetrievingGTLActivityListItemsFetcher.swift */; };
+		5E401BFF1AF4F1AC00613E28 /* YoutubeRetrievingGTLActivityListItemsFetcherHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E401BFD1AF4F1AC00613E28 /* YoutubeRetrievingGTLActivityListItemsFetcherHelper.swift */; };
 		5E43CDB61AEDC48500EFA0F8 /* LayoutUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E43CDB51AEDC48500EFA0F8 /* LayoutUtils.swift */; };
 		5E4BFB8D1AE3214100BC7A33 /* pop.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E87FD951AD8C2500021E80C /* pop.framework */; };
 		5E56998D1AEDCDA100EE0E6A /* ReusedViewControllers.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5E56998B1AEDCDA100EE0E6A /* ReusedViewControllers.storyboard */; };
@@ -124,6 +126,8 @@
 		5E3AB3C41AE3D7DC00BB0944 /* PathExtensionFile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PathExtensionFile.swift; sourceTree = "<group>"; };
 		5E3AB3C51AE3D7DC00BB0944 /* Result.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
 		5E3AB3C71AE3D7DC00BB0944 /* UIColorExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
+		5E401BFC1AF4F1AC00613E28 /* YoutubeRetrievingGTLActivityListItemsFetcher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YoutubeRetrievingGTLActivityListItemsFetcher.swift; sourceTree = "<group>"; };
+		5E401BFD1AF4F1AC00613E28 /* YoutubeRetrievingGTLActivityListItemsFetcherHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YoutubeRetrievingGTLActivityListItemsFetcherHelper.swift; sourceTree = "<group>"; };
 		5E43CDB51AEDC48500EFA0F8 /* LayoutUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LayoutUtils.swift; path = "Business-Logic-Layer/Utils/LayoutUtils.swift"; sourceTree = "<group>"; };
 		5E52BAC31AD8C449007C3F32 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
 		5E56998C1AEDCDA100EE0E6A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/ReusedViewControllers.storyboard; sourceTree = "<group>"; };
@@ -343,6 +347,8 @@
 		5E39C4491AF4798F0069AC33 /* batchable */ = {
 			isa = PBXGroup;
 			children = (
+				5E401BFC1AF4F1AC00613E28 /* YoutubeRetrievingGTLActivityListItemsFetcher.swift */,
+				5E401BFD1AF4F1AC00613E28 /* YoutubeRetrievingGTLActivityListItemsFetcherHelper.swift */,
 				5E39C44A1AF4798F0069AC33 /* YoutubeBatchableConstant.swift */,
 				5E39C44B1AF4798F0069AC33 /* YoutubeRetrievingActivityListItemsFetcher.swift */,
 				5E39C44C1AF4798F0069AC33 /* YoutubeRetrievingActivityListItemsFetcherHelper.swift */,
@@ -402,6 +408,13 @@
 			path = "UIColor-Hex-Swift-master";
 			sourceTree = "<group>";
 		};
+		5E401C001AF4F1B500613E28 /* FetchEvents */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = FetchEvents;
+			sourceTree = "<group>";
+		};
 		5E43CDB41AEDC47C00EFA0F8 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
@@ -451,6 +464,7 @@
 		5ED690F01AF0CD6800560A83 /* CollectionView */ = {
 			isa = PBXGroup;
 			children = (
+				5E401C001AF4F1B500613E28 /* FetchEvents */,
 				5EA80D881AF32B0E00A0D61D /* Collection Cells */,
 				5EA80D8D1AF32B1E00A0D61D /* NBCollectionSectionGenerator.swift */,
 				5EA80D8E1AF32B1E00A0D61D /* NBVideosCollectionViewController.swift */,
@@ -644,6 +658,7 @@
 				5E39C4601AF4798F0069AC33 /* YoutubeRetrievingActivityListItemsFetcher.swift in Sources */,
 				5EFED9AC1AE3B1E700EEB23E /* VideoInfoConstant.swift in Sources */,
 				5E917D951AECCEEC00922AE7 /* MenuLoginTitleBarCell.swift in Sources */,
+				5E401BFF1AF4F1AC00613E28 /* YoutubeRetrievingGTLActivityListItemsFetcherHelper.swift in Sources */,
 				5E39C4631AF4798F0069AC33 /* YoutubeRetrievingNewSubscriptionVideosFetcherHelper.swift in Sources */,
 				5E37DF911AE61D00009D605E /* LeftMenuViewController.swift in Sources */,
 				5E1E2CEB1AD8B898004CC05B /* AppDelegate.swift in Sources */,
@@ -665,6 +680,7 @@
 				5E3AB3CB1AE3D7DC00BB0944 /* Result.swift in Sources */,
 				5E39C45F1AF4798F0069AC33 /* YoutubeBatchableConstant.swift in Sources */,
 				5E39C4691AF4798F0069AC33 /* YoutubeApiConstant.swift in Sources */,
+				5E401BFE1AF4F1AC00613E28 /* YoutubeRetrievingGTLActivityListItemsFetcher.swift in Sources */,
 				5EBB47F51AF248E6007D6CE1 /* RevealViewHelper.swift in Sources */,
 				5E39C4651AF4798F0069AC33 /* YoutubeRetrievingPlayListItemsFetcherHelper.swift in Sources */,
 				5E37DF921AE61D00009D605E /* FrontBaseViewController.swift in Sources */,
