@@ -68,14 +68,12 @@ class YTVideosCollectionViewController: UIViewController, UICollectionViewDataSo
 
         self.delegate!.refreshEvent({
             (response, sucess) -> Void in
-
-            self.appendFetchedArray(response)
+            let array: NSArray = response as! NSArray
+            self.appendFetchedArray(array)
         })
     }
 
-    func appendFetchedArray(response: NSObject) {
-        let array: NSArray = response as! NSArray
-
+    func appendFetchedArray(array: NSArray) {
         self.videoList.addObjectsFromArray(array as [AnyObject])
         self.collectionView.reloadData()
     }
