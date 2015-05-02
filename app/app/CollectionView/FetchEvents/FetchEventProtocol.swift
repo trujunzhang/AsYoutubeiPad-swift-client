@@ -19,3 +19,14 @@ protocol FetchEventProtocol {
     func hasNextFetcing() -> Bool
     
 }
+
+
+//func startFetching(){
+//}
+//func endFetching(){
+//}
+//func nextFetching(){
+//}
+//func hasNextFetcing() -> Bool {
+//    return true
+//}
