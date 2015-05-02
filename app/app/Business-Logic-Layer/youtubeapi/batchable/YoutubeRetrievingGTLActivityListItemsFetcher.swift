@@ -20,7 +20,7 @@ class YoutubeRetrievingGTLActivityListItemsFetcher: NSObject {
         requestInfo = AuthoredFetcher.sharedInstance.prepareFetchingActivityListOnHomePage {
             (array, sucess) -> Void in
 
-            println("array in fetchingNextGTLActivityListItemsFromChannelList is \(array)")
+            println("array in fetchingNextGTLActivityListItemsFromChannelList is \(array.count)")
         }
 
 //        AuthoredFetcher.sharedInstance.prepareFetchingGTLActivityListOnHomePage({

@@ -178,21 +178,50 @@ class AuthoredFetcher: NSObject {
         var query: GTLQueryYouTube = GTLQueryYouTube.queryForActivitiesListWithPart("snippet,contentDetails") as! GTLQueryYouTube
         query.home = true
         query.maxResults = 50
-//        let publishedAfter:GTLDateTime = GTLDateTime.dateTimeWithRFC3339String("2015-04-28T07:00:00.000Z")
-//        query.publishedAfter = "2015-04-28T07:00:00.000Z"
-//        query.fields = "items/contentDetails,items/snippet(publishedAt,channelId,type),nextPageToken"// used
-//        query.fields = "items/contentDetails,items/snippet(publishedAt,channelId,type,title),nextPageToken"
-        query.fields = "items/contentDetails,items/snippet(publishedAt)"
+        query.fields = "items/contentDetails,items/snippet(publishedAt),nextPageToken"
 
+        //GTLYouTubeActivityListResponse
         service.executeQuery(query, completionHandler: {
             //GTLYouTubeActivity array
-            (ticket, resultList, error) -> Void in
+            (ticket, response, error) -> Void in
 
             println("error in fetchActivityList is \(error)")
 
             if (error == nil) {
-                let result = resultList as! GTLYouTubeActivityListResponse
-                let array = result.items()
+                let responseInfo: GTLYouTubeActivityListResponse = response as! GTLYouTubeActivityListResponse
+                let array = responseInfo.items()
+
+                if (array.count >= 1) {
+                    requestInfo.putNextPageToken(responseInfo.nextPageToken)
+                    completeHandler(array, true)
+                } else {
+                    completeHandler(nil, false)
+                }
+            } else {
+                completeHandler(nil, false)
+            }
+        })
+    }
+
+    func fetchGTLActivityListWithAccessTokenxxx(requestInfo: YTYoutubeRequestInfo, completeHandler: ObjectHandler) {
+
+        let service: GTLService = self.youTubeService!
+
+        var query: GTLQueryYouTube = GTLQueryYouTube.queryForActivitiesListWithPart("snippet,contentDetails") as! GTLQueryYouTube
+        query.home = true
+        query.maxResults = 50
+        query.fields = "items/contentDetails,items/snippet(publishedAt),nextPageToken"
+
+        //GTLYouTubeActivityListResponse
+        service.executeQuery(query, completionHandler: {
+            //GTLYouTubeActivity array
+            (ticket, response, error) -> Void in
+
+            println("error in fetchActivityList is \(error)")
+
+            if (error == nil) {
+                let responseInfo: GTLYouTubeActivityListResponse = response as! GTLYouTubeActivityListResponse
+                let array = responseInfo.items()
 
                 if (array.count >= 1) {
 //                    let sortedArray = YoutubeParser.filterSnippetTypeIsUploadInGTLActivity(array)
@@ -213,6 +242,7 @@ class AuthoredFetcher: NSObject {
 //                        }
 //                    })
 
+                    requestInfo.putNextPageToken(responseInfo.nextPageToken)
                     completeHandler(array, true)
                 } else {
                     completeHandler(nil, false)

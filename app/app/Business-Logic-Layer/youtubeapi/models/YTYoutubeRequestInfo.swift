@@ -17,7 +17,7 @@ enum YTSegmentItemType: Int {
 
 
 class YTYoutubeRequestInfo: NSObject {
-    var parameters:NSMutableDictionary = NSMutableDictionary()
+    var parameters: NSMutableDictionary = NSMutableDictionary()
     var videoList: NSMutableArray = NSMutableArray()
     var videoIdsPages: [AnyObject] = [AnyObject]()
 
@@ -64,6 +64,10 @@ class YTYoutubeRequestInfo: NSObject {
 
     func appendArray(array: NSArray) {
         videoList.addObjectsFromArray(array as [AnyObject])
+    }
+
+    func setNextPageToken(pageToken: NSString) {
+        self.nextPageToken = nextPageToken
     }
 
     func putNextPageToken(pageToken: NSString) {
