@@ -9,5 +9,13 @@
 import Foundation
 
 protocol FetchEventProtocol {
+
+    func startFetching()
+    
+    func endFetching()
+    
+    func nextFetching()
+    
+    func hasNextFetcing() -> Bool
     
 }
