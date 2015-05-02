@@ -66,16 +66,15 @@ class YTVideosCollectionViewController: UIViewController, UICollectionViewDataSo
         //        self.view.backgroundColor = UIColor.yellowColor()
         //        self.collectionView.backgroundColor = UIColor.orangeColor()
 
-//        if let theDelegate: FetchEventProtocol = self.delegate {
-//            theDelegate.refreshEvent({ (object, sucess) -> Void in
-//
-//                 self.appendFetchedArray(object)
-//            })
-//        }
+        self.delegate!.refreshEvent({
+            (response, sucess) -> Void in
+
+            self.appendFetchedArray(response)
+        })
     }
 
-    func appendFetchedArray(object: NSObject) {
-        let array: NSArray = object as! NSArray
+    func appendFetchedArray(response: NSObject) {
+        let array: NSArray = response as! NSArray
 
         self.videoList.addObjectsFromArray(array as [AnyObject])
         self.collectionView.reloadData()
