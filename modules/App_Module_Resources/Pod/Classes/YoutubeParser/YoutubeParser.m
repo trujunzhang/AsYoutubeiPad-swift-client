@@ -102,7 +102,7 @@ static NSUInteger UPLOADS_PAGE_LENGTH = 20;
 #pragma mark - GTLYouTubeActivity
 
 + (NSString *)getVideoIdByGTLActivityContentDetails:(GTLYouTubeActivity *)activity {
-    NSString *title = activity.snippet.title;
+//    NSString *title = activity.snippet.title;
 //    NSLog(@"title = %@", title);
     return activity.contentDetails.upload.videoId;
 }
