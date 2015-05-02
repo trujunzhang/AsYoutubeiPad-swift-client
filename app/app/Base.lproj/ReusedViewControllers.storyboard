@@ -137,19 +137,31 @@
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TDl-dl-ObG">
                                                     <rect key="frame" x="9" y="310" width="426" height="26"/>
                                                     <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EmG-p4-221">
-                                                            <rect key="frame" x="51" y="3" width="365" height="21"/>
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="AnN-Ej-saB">
+                                                            <rect key="frame" x="0.0" y="1" width="24" height="24"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="24" id="7Wb-eN-v0M"/>
+                                                                <constraint firstAttribute="width" constant="24" id="98b-XK-aj7"/>
+                                                            </constraints>
+                                                        </imageView>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EmG-p4-221">
+                                                            <rect key="frame" x="36" y="6" width="380" height="14"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="14" id="9uJ-mI-eHQ"/>
+                                                            </constraints>
                                                             <fontDescription key="fontDescription" type="system" pointSize="11"/>
                                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="AnN-Ej-saB">
-                                                            <rect key="frame" x="12" y="6" width="20" height="16"/>
-                                                        </imageView>
                                                     </subviews>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="26" id="1A3-9p-noa"/>
+                                                        <constraint firstItem="AnN-Ej-saB" firstAttribute="leading" secondItem="TDl-dl-ObG" secondAttribute="leading" id="7U5-7i-AG2"/>
+                                                        <constraint firstAttribute="trailing" secondItem="EmG-p4-221" secondAttribute="trailing" constant="10" id="Nc9-nX-Fiw"/>
+                                                        <constraint firstAttribute="centerY" secondItem="EmG-p4-221" secondAttribute="centerY" id="Tzi-xO-y3H"/>
+                                                        <constraint firstItem="EmG-p4-221" firstAttribute="leading" secondItem="AnN-Ej-saB" secondAttribute="trailing" constant="12" id="f26-JI-oMD"/>
+                                                        <constraint firstAttribute="centerY" secondItem="AnN-Ej-saB" secondAttribute="centerY" id="mF6-br-b8S"/>
                                                     </constraints>
                                                 </view>
                                             </subviews>
