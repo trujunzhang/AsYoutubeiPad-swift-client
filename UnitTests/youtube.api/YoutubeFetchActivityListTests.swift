@@ -20,7 +20,6 @@ class YoutubeFetchActivityListTests: YoutubeFetcherBase, RetrievingItemsFetching
         let helper: YoutubeRetrievingGTLActivityListItemsFetcherHelper = YoutubeRetrievingGTLActivityListItemsFetcherHelper()
         helper.delegate = self
 
-//        let array = YoutubeTestHelper.getSubscribedChannelIdsArray(subscribedChannelIds)
         helper.startFetchingItems()
 
         waitForExpectationsWithTimeout(100) {
@@ -31,6 +30,9 @@ class YoutubeFetchActivityListTests: YoutubeFetcherBase, RetrievingItemsFetching
 
 
     func endFetchingAllItems(array: NSArray) {
+//                    let sortedArray = YoutubeParser.filterSnippetTypeIsUploadInGTLActivity(array)
+//                    let videoIdsPages = YoutubeParser.getVideoIdsArrayByGTLActivityList(sortedArray)
+
         let sortedArray = YoutubeParser.sortNewestVideoListInActivityList(array)
         let newestVideoIdsArray = YoutubeParser.getNewestVideoIdsArrayByMABActivityList(sortedArray)
 

@@ -20,6 +20,12 @@ class YoutubeRetrievingGTLActivityListItemsFetcher: NSObject {
         requestInfo = AuthoredFetcher.sharedInstance.prepareFetchingActivityListOnHomePage {
             (array, sucess) -> Void in
 
+            if (sucess == true) {
+                if (self.delegate != nil) {
+                    self.delegate!.nextFetching(array)
+                }
+            }
+
             println("array in fetchingNextGTLActivityListItemsFromChannelList is \(array.count)")
         }
 
@@ -31,9 +37,7 @@ class YoutubeRetrievingGTLActivityListItemsFetcher: NSObject {
 //            if (sucess == true) {
 //                var array: NSArray = object as! NSArray
 //
-//                if (self.delegate != nil) {
-//                    self.delegate!.nextFetching(array)
-//                }
+
 //            }
 //        })
 

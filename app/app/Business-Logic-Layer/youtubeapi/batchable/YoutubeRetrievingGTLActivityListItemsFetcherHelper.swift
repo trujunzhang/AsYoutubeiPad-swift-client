@@ -24,29 +24,19 @@ class YoutubeRetrievingGTLActivityListItemsFetcherHelper: NSObject, FetchingNext
             theItemsFetcher.delegate = self
         }
 
-        fetchingNextStep(true)
+        fetchingNextStep()
     }
 
-    func fetchingNextStep(first: Bool) {
-        if (first == false && nextPageToken.isEmpty == true) {
-            if (self.delegate != nil) {
-                self.delegate!.endFetchingAllItems(fetchedItems)
-            }
-            return
-        }
-
+    func fetchingNextStep() {
         if let theItemsFetcher: YoutubeRetrievingGTLActivityListItemsFetcher = itemsFetcher {
             theItemsFetcher.fetchingNextGTLActivityListItemsFromChannelList(nextPageToken)
         }
     }
 
-
-
     // MARK: FetchingNextDelegate
     func nextFetching(array: NSObject) {
-        let items = array as! [AnyObject]
-        fetchedItems.addObjectsFromArray(items)
-
-        fetchingNextStep(false)
+        if (self.delegate != nil) {
+            self.delegate!.endFetchingAllItems(fetchedItems)
+        }
     }
 }
