@@ -62,6 +62,11 @@ class YTVideosCollectionViewController: UIViewController, UICollectionViewDataSo
         self.flowLayout.itemSize = CGSizeMake(214, 200)
         self.collectionView.dataSource = self
         self.collectionView.delegate = self
+        
+        if let theCollectionView: UICollectionView = self.collectionView {
+            theCollectionView.contentInset = UIEdgeInsetsMake(20.0, 20.0, 20.0, 20.0)
+            theCollectionView.backgroundColor = UIColor.clearColor()
+        }
 
         //        self.view.backgroundColor = UIColor.yellowColor()
         //        self.collectionView.backgroundColor = UIColor.orangeColor()
