@@ -14,42 +14,41 @@ class YTVideosCollectionViewController: UIViewController, UICollectionViewDataSo
 
     @IBOutlet weak var flowLayout: UICollectionViewFlowLayout!
 
-    var requestInfo = YTYoutubeRequestInfo()
-
     var delegate: FetchEventProtocol?
 
+    var videoList: NSMutableArray = NSMutableArray()
 
-    func makeRequestTask123() {
-        requestInfo = AuthoredFetcher.sharedInstance.prepareFetchingActivityListOnHomePage({
-            (object, sucess) -> Void in
-            if (sucess == true) {
-                var array: NSArray = object as! NSArray
+//    func makeRequestTask123() {
+//      let  requestInfo = AuthoredFetcher.sharedInstance.prepareFetchingActivityListOnHomePage({
+//            (object, sucess) -> Void in
+//            if (sucess == true) {
+//                var array: NSArray = object as! NSArray
+//
+//                var length = array.count
+//
+//                println("Length is \(length)")
+//
+//                self.requestInfo.appendArray(array)
+//
+//                self.collectionView.reloadData()
+//            }
+//        })
+//    }
 
-                var length = array.count
-
-                println("Length is \(length)")
-
-                self.requestInfo.appendArray(array)
-
-                self.collectionView.reloadData()
-            }
-        })
-    }
-
-    func makeRequestTask() {
-        requestInfo = YoutubeFetcher.prepareRequestSearch("Sketch 3", completeHandler: {
-            (object, sucess) -> Void in
-            if (sucess == true) {
-                var array: NSArray = object as! NSArray
-
-                var length = array.count
-
-                self.requestInfo.appendArray(array)
-
-                self.collectionView.reloadData()
-            }
-        })
-    }
+//    func makeRequestTask() {
+//        requestInfo = YoutubeFetcher.prepareRequestSearch("Sketch 3", completeHandler: {
+//            (object, sucess) -> Void in
+//            if (sucess == true) {
+//                var array: NSArray = object as! NSArray
+//
+//                var length = array.count
+//
+//                self.requestInfo.appendArray(array)
+//
+//                self.collectionView.reloadData()
+//            }
+//        })
+//    }
 
 
     required init(coder aDecoder: NSCoder) {
@@ -67,11 +66,19 @@ class YTVideosCollectionViewController: UIViewController, UICollectionViewDataSo
         //        self.view.backgroundColor = UIColor.yellowColor()
         //        self.collectionView.backgroundColor = UIColor.orangeColor()
 
-        if let theDelegate: FetchEventProtocol = self.delegate {
-            theDelegate.refreshEvent({ (object, sucess) -> Void in
-                
-            })
-        }
+//        if let theDelegate: FetchEventProtocol = self.delegate {
+//            theDelegate.refreshEvent({ (object, sucess) -> Void in
+//
+//                 self.appendFetchedArray(object)
+//            })
+//        }
+    }
+
+    func appendFetchedArray(object: NSObject) {
+        let array: NSArray = object as! NSArray
+
+        self.videoList.addObjectsFromArray(array as [AnyObject])
+        self.collectionView.reloadData()
     }
 
     override func viewWillAppear(animated: Bool) {
@@ -85,14 +92,14 @@ class YTVideosCollectionViewController: UIViewController, UICollectionViewDataSo
 
     // Mark : delegate of UICollectionViewDataSource
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return self.requestInfo.getVideoListCount()
+        return videoList.count
     }
 
     // The cell that is returned must be retrieved from a call to -dequeueReusableCellWithReuseIdentifier:forIndexPath:
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         let cell: YTVideoCollectionViewCell = collectionView.dequeueReusableCellWithReuseIdentifier("YTVideoCollectionViewCell", forIndexPath: indexPath) as! YTVideoCollectionViewCell
 
-        let videoCache: YoutubeVideoCache = self.requestInfo.videoList[indexPath.row] as! YoutubeVideoCache
+        let videoCache: YoutubeVideoCache = videoList[indexPath.row] as! YoutubeVideoCache
         cell.setupCell(videoCache)
 
         return cell
