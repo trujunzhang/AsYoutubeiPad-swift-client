@@ -18,15 +18,16 @@ class YoutubeRetrievingGTLActivityListItemsFetcher: NSObject {
 
     func fetchingNextGTLActivityListItemsFromChannelList(nextPageToken: String) {
         requestInfo = AuthoredFetcher.sharedInstance.prepareFetchingActivityListOnHomePage {
-            (array, sucess) -> Void in
+            (object, sucess) -> Void in
 
             if (sucess == true) {
+                var array: NSArray = object as! NSArray
                 if (self.delegate != nil) {
                     self.delegate!.nextFetching(array)
                 }
             }
 
-            println("array in fetchingNextGTLActivityListItemsFromChannelList is \(array.count)")
+            println("array in fetchingNextGTLActivityListItemsFromChannelList is \(object.count)")
         }
 
 //        AuthoredFetcher.sharedInstance.prepareFetchingGTLActivityListOnHomePage({
