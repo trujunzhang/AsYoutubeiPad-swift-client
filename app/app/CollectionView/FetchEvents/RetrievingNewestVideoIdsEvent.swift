@@ -8,21 +8,42 @@
 
 import Foundation
 
-class RetrievingNewestVideoIdsEvent: NSObject,FetchEventProtocol {
-    
-    func startFetching(){
-        
+class RetrievingNewestVideoIdsEvent: NSObject, FetchEventProtocol, RetrievingItemsFetchingHelperDelegate {
+
+    let helper: YoutubeRetrievingGTLActivityListItemsFetcherHelper = YoutubeRetrievingGTLActivityListItemsFetcherHelper()
+
+    var newestVideoIdsArray: NSArray?
+    var currentPage = 0
+
+    // MARK: FetchEventProtocol
+    func startFetching() {
+        helper.delegate = self
+        helper.startFetchingItems()
     }
-    
-    func endFetching(){
-        
+
+    func endFetching() {
+        self.currentPage++
     }
-    
-    func nextFetching(){
-        
+
+    func nextFetching() {
+
     }
-    
+
     func hasNextFetcing() -> Bool {
+        if (self.currentPage >= self.newestVideoIdsArray.count) {
+            return false
+        }
         return true
     }
+
+    // MARK: RetrievingItemsFetchingHelperDelegate
+    func endFetchingAllItems(array: NSArray) {
+        let sortedArray = YoutubeParser.filterSnippetTypeIsUploadInGTLActivity(array)
+        self.newestVideoIdsArray = YoutubeParser.getVideoIdsArrayByGTLActivityList(sortedArray)
+
+//        println("count of sortedArray is \(sortedArray.count)")
+//        println("newestVideoIdsArray is \(newestVideoIdsArray)")
+    }
+
+
 }
