@@ -11,12 +11,18 @@ import Foundation
 
 class YoutubeRetrievingGTLActivityListItemsFetcher: NSObject {
     var delegate: FetchingNextDelegate?
-
+    var requestInfo: YTYoutubeRequestInfo?
 
     override init() {
     }
 
     func fetchingNextGTLActivityListItemsFromChannelList(nextPageToken: String) {
+        requestInfo = AuthoredFetcher.sharedInstance.prepareFetchingActivityListOnHomePage {
+            (array, sucess) -> Void in
+
+            println("array in fetchingNextGTLActivityListItemsFromChannelList is \(array)")
+        }
+
 //        AuthoredFetcher.sharedInstance.prepareFetchingGTLActivityListOnHomePage({
 
 //        YoutubeFetcher.fetchGTLActivityListWithoutAuth(parameters, completeHandler: {

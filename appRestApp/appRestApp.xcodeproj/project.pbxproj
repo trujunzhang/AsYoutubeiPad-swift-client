@@ -64,6 +64,8 @@
 		5EDFD4DE1AEDB3A30033E0A1 /* SwiftyUserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EDFD4DD1AEDB3A30033E0A1 /* SwiftyUserDefaults.swift */; };
 		5EDFD4DF1AEDB3E30033E0A1 /* LeftMenuSectionsUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E7BB3761AEDB17B00956E71 /* LeftMenuSectionsUtils.swift */; };
 		5EDFD4E21AEDB4160033E0A1 /* SwiftyUserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EDFD4DD1AEDB3A30033E0A1 /* SwiftyUserDefaults.swift */; };
+		5EED601E1AF4DB10009C7AE8 /* YoutubeRetrievingGTLActivityListItemsFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E8F558D1AF4D766000DE3EF /* YoutubeRetrievingGTLActivityListItemsFetcher.swift */; };
+		5EED601F1AF4DB13009C7AE8 /* YoutubeRetrievingGTLActivityListItemsFetcherHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E8F558E1AF4D766000DE3EF /* YoutubeRetrievingGTLActivityListItemsFetcherHelper.swift */; };
 		5EF192FB1AF36DBF0048C6AD /* AuthoredFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EF192FA1AF36DBF0048C6AD /* AuthoredFetcher.swift */; };
 		5EF192FD1AF36E150048C6AD /* YoutubeFetcherConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EF192FC1AF36E150048C6AD /* YoutubeFetcherConstant.swift */; };
 		5EF192FE1AF36EDB0048C6AD /* AuthoredFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EF192FA1AF36DBF0048C6AD /* AuthoredFetcher.swift */; };
@@ -586,6 +588,7 @@
 				5ECE21461AF36C6F00A13D2D /* YoutubeRetrievingPlayListItemsFetcherHelper.swift in Sources */,
 				5ECE21491AF36C7600A13D2D /* YoutubeUserProfile.swift in Sources */,
 				5E4B4B5D1AEF252800F1B115 /* YoutubeFetchNewSubscriptionVideosTests.swift in Sources */,
+				5EED601E1AF4DB10009C7AE8 /* YoutubeRetrievingGTLActivityListItemsFetcher.swift in Sources */,
 				5ECE21431AF36C6900A13D2D /* YoutubeRetrievingNewSubscriptionVideosFetcher.swift in Sources */,
 				5EF192FF1AF36EE40048C6AD /* YoutubeFetcherConstant.swift in Sources */,
 				5EDAD2011AF06C2500F22525 /* YoutubeFetchActivityListTests.swift in Sources */,
@@ -594,6 +597,7 @@
 				5EDFD4DF1AEDB3E30033E0A1 /* LeftMenuSectionsUtils.swift in Sources */,
 				5ECE214A1AF36C7800A13D2D /* YTYoutubeRequestInfo.swift in Sources */,
 				5ECE214D1AF36C8000A13D2D /* YoutubeModelParser.swift in Sources */,
+				5EED601F1AF4DB13009C7AE8 /* YoutubeRetrievingGTLActivityListItemsFetcherHelper.swift in Sources */,
 				5ECE21471AF36C7200A13D2D /* LoggedUserChannelInfo.swift in Sources */,
 				5E83A76E1AEA50D100C37C84 /* appRestAppTests.swift in Sources */,
 				5EF192FE1AF36EDB0048C6AD /* AuthoredFetcher.swift in Sources */,

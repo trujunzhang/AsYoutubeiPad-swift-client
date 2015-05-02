@@ -17,11 +17,11 @@ class YoutubeFetchActivityListTests: YoutubeFetcherBase, RetrievingItemsFetching
     func testFetchingNesestVideoIdsFromGTLActivitylList() {
         expectation = expectationWithDescription("fetchActivityListOnHomePage")
 
-        let helper: YoutubeRetrievingActivityListItemsFetcherHelper = YoutubeRetrievingActivityListItemsFetcherHelper()
+        let helper: YoutubeRetrievingGTLActivityListItemsFetcherHelper = YoutubeRetrievingGTLActivityListItemsFetcherHelper()
         helper.delegate = self
 
-        let array = getSubscribedChannelIdsArray(subscribedChannelIds)
-        helper.startFetchingItems(array)
+        let array = YoutubeTestHelper.getSubscribedChannelIdsArray(subscribedChannelIds)
+        helper.startFetchingItems()
 
         waitForExpectationsWithTimeout(100) {
             (error) in
@@ -29,19 +29,6 @@ class YoutubeFetchActivityListTests: YoutubeFetcherBase, RetrievingItemsFetching
         }
     }
 
-    func getSubscribedChannelIdsArray(subscribedChannelIds: NSArray) -> NSMutableArray {
-        let array: NSMutableArray = NSMutableArray()
-        for line in subscribedChannelIds {
-            let lineString = line as! String
-            var fullNameArr = split(lineString) {
-                $0 == ","
-            }
-//            println("fullNameArr is \(fullNameArr)")
-            array.addObjectsFromArray(fullNameArr)
-        }
-//        println("array is \(array)")
-        return array;
-    }
 
     func endFetchingAllItems(array: NSArray) {
         let sortedArray = YoutubeParser.sortNewestVideoListInActivityList(array)

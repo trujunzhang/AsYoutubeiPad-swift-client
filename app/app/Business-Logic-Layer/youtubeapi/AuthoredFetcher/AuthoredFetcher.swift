@@ -166,12 +166,12 @@ class AuthoredFetcher: NSObject {
 
         requestInfo.makeRequestForActivityListOnHomePage()
 
-        fetchActivityListWithAccessToken(requestInfo, completeHandler: completeHandler)
+        fetchGTLActivityListWithAccessToken(requestInfo, completeHandler: completeHandler)
 
         return requestInfo
     }
 
-    func fetchActivityListWithAccessToken(requestInfo: YTYoutubeRequestInfo, completeHandler: ObjectHandler) {
+    func fetchGTLActivityListWithAccessToken(requestInfo: YTYoutubeRequestInfo, completeHandler: ObjectHandler) {
 
         let service: GTLService = self.youTubeService!
 
@@ -181,7 +181,8 @@ class AuthoredFetcher: NSObject {
 //        let publishedAfter:GTLDateTime = GTLDateTime.dateTimeWithRFC3339String("2015-04-28T07:00:00.000Z")
 //        query.publishedAfter = "2015-04-28T07:00:00.000Z"
 //        query.fields = "items/contentDetails,items/snippet(publishedAt,channelId,type),nextPageToken"// used
-        query.fields = "items/contentDetails,items/snippet(publishedAt,channelId,type,title),nextPageToken"
+//        query.fields = "items/contentDetails,items/snippet(publishedAt,channelId,type,title),nextPageToken"
+        query.fields = "items/contentDetails,items/snippet(publishedAt)"
 
         service.executeQuery(query, completionHandler: {
             //GTLYouTubeActivity array
@@ -194,26 +195,25 @@ class AuthoredFetcher: NSObject {
                 let array = result.items()
 
                 if (array.count >= 1) {
-
-                    let sortedArray = YoutubeParser.filterSnippetTypeIsUploadInGTLActivity(array)
-                    let videoIdsPages = YoutubeParser.getVideoIdsArrayByGTLActivityList(sortedArray)
+//                    let sortedArray = YoutubeParser.filterSnippetTypeIsUploadInGTLActivity(array)
+//                    let videoIdsPages = YoutubeParser.getVideoIdsArrayByGTLActivityList(sortedArray)
 
                     // 1. store videoIds pages array
-                    requestInfo.videoIdsPages = videoIdsPages
+//                    requestInfo.videoIdsPages = videoIdsPages
 
                     // 2. Fetching the first page
-                    YoutubeFetcher.fetchVideoListWithVideoId(videoIdsPages[0] as! NSString, completeHandler: {
-                        (object, sucess) -> Void in
+//                    YoutubeFetcher.fetchVideoListWithVideoId(videoIdsPages[0] as! NSString, completeHandler: {
+//                        (object, sucess) -> Void in
+//
+//                        if (sucess == true) {
+//                            // 2. array of YoutubeVideoCache
+//                            completeHandler(object, true)
+//                        } else {
+//                            completeHandler(nil, false)
+//                        }
+//                    })
 
-                        if (sucess == true) {
-                            // 2. array of YoutubeVideoCache
-                            completeHandler(object, true)
-                        } else {
-                            completeHandler(nil, false)
-                        }
-                    })
-
-//                    completeHandler(array, true)
+                    completeHandler(array, true)
                 } else {
                     completeHandler(nil, false)
                 }
