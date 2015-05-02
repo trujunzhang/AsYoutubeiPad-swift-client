@@ -143,8 +143,8 @@ static NSUInteger UPLOADS_PAGE_LENGTH = 20;
 + (NSArray *)filterSnippetTypeIsUploadInGTLActivity:(NSMutableArray *)activities {
     NSMutableArray *uploadActivities = [[NSMutableArray alloc] init];
     for (GTLYouTubeActivity *activity in activities) {
-        NSString *snippetTypeInActivity = [self getSnippetTypeInActivity:activity];
-        if ([snippetTypeInActivity isEqualToString:@"upload"]) {
+        NSString *typeValue = [self getSnippetTypeInActivity:activity];
+        if ([typeValue isEqualToString:@"upload"]) {
             [uploadActivities addObject:activity];
         }
     }

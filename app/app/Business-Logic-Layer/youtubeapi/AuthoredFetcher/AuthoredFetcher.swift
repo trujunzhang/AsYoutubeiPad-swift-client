@@ -178,7 +178,7 @@ class AuthoredFetcher: NSObject {
         var query: GTLQueryYouTube = GTLQueryYouTube.queryForActivitiesListWithPart("id,snippet,contentDetails") as! GTLQueryYouTube
         query.home = true
         query.maxResults = 50
-        query.fields = "items/contentDetails,items/snippet(publishedAt),nextPageToken"
+        query.fields = "items/contentDetails,items/snippet(publishedAt,type),nextPageToken"
 
         //GTLYouTubeActivityListResponse
         service.executeQuery(query, completionHandler: {
