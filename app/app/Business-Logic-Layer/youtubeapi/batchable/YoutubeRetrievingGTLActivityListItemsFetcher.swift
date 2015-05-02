@@ -21,26 +21,14 @@ class YoutubeRetrievingGTLActivityListItemsFetcher: NSObject {
             (object, sucess) -> Void in
 
             if (sucess == true) {
+                println("array in fetchingNextGTLActivityListItemsFromChannelList is \(object.count)")
                 var array: NSArray = object as! NSArray
                 if (self.delegate != nil) {
                     self.delegate!.nextFetching(array)
                 }
             }
-
-            println("array in fetchingNextGTLActivityListItemsFromChannelList is \(object.count)")
         }
 
-//        AuthoredFetcher.sharedInstance.prepareFetchingGTLActivityListOnHomePage({
-
-//        YoutubeFetcher.fetchGTLActivityListWithoutAuth(parameters, completeHandler: {
-//            (object, sucess) -> Void in
-//
-//            if (sucess == true) {
-//                var array: NSArray = object as! NSArray
-//
-
-//            }
-//        })
 
     }
 }
