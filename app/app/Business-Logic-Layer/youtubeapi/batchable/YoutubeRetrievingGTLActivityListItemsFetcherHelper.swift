@@ -14,29 +14,29 @@ class YoutubeRetrievingGTLActivityListItemsFetcherHelper: NSObject, FetchingNext
 
     var nextPageToken = ""
 
-    var fetchedGTLActivityListItems: NSMutableArray = NSMutableArray()
-    var youtubeRetrievingGTLActivityListItemsFetcher: YoutubeRetrievingGTLActivityListItemsFetcher?
+    var fetchedItems: NSMutableArray = NSMutableArray()
+    var ItemsFetcher: YoutubeRetrievingGTLActivityListItemsFetcher?
 
     func startFetchingItems() {
 
-        youtubeRetrievingGTLActivityListItemsFetcher = YoutubeRetrievingGTLActivityListItemsFetcher()
-        if let playListItemsFetcher: YoutubeRetrievingGTLActivityListItemsFetcher = youtubeRetrievingGTLActivityListItemsFetcher {
+        ItemsFetcher = YoutubeRetrievingGTLActivityListItemsFetcher()
+        if let playListItemsFetcher: YoutubeRetrievingGTLActivityListItemsFetcher = ItemsFetcher {
             playListItemsFetcher.delegate = self
         }
 
-        fetchingNextStep()
+        fetchingNextStep(true)
     }
 
-    func fetchingNextStep() {
-        if (nextPageToken.isEmpty == true) {
+    func fetchingNextStep(first: Bool) {
+        if (first == false && nextPageToken.isEmpty == true) {
             if (self.delegate != nil) {
-                self.delegate!.endFetchingAllItems(fetchedGTLActivityListItems)
+                self.delegate!.endFetchingAllItems(fetchedItems)
             }
             return
         }
 
-        if let playListItemsFetcher: YoutubeRetrievingGTLActivityListItemsFetcher = youtubeRetrievingGTLActivityListItemsFetcher {
-            playListItemsFetcher.fetchingNextGTLActivityListItemsFromChannelList(nextPageToken)
+        if let theItemsFetcher: YoutubeRetrievingGTLActivityListItemsFetcher = ItemsFetcher {
+            theItemsFetcher.fetchingNextGTLActivityListItemsFromChannelList(nextPageToken)
         }
     }
 
@@ -44,11 +44,11 @@ class YoutubeRetrievingGTLActivityListItemsFetcherHelper: NSObject, FetchingNext
 
     // MARK: FetchingNextDelegate
     func nextFetching(array: NSObject) {
-        let playListItems = array as! [AnyObject]
-        fetchedGTLActivityListItems.addObjectsFromArray(playListItems)
+        let items = array as! [AnyObject]
+        fetchedItems.addObjectsFromArray(items)
 
 //        println("Result in nextFetching is \(playListItems.count)")
 
-        fetchingNextStep()
+        fetchingNextStep(false)
     }
 }
