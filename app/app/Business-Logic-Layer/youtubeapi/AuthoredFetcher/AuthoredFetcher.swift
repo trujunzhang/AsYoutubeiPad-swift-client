@@ -175,7 +175,7 @@ class AuthoredFetcher: NSObject {
 
         let service: GTLService = self.youTubeService!
 
-        var query: GTLQueryYouTube = GTLQueryYouTube.queryForActivitiesListWithPart("snippet,contentDetails") as! GTLQueryYouTube
+        var query: GTLQueryYouTube = GTLQueryYouTube.queryForActivitiesListWithPart("id,snippet,contentDetails") as! GTLQueryYouTube
         query.home = true
         query.maxResults = 50
         query.fields = "items/contentDetails,items/snippet(publishedAt),nextPageToken"
@@ -192,7 +192,9 @@ class AuthoredFetcher: NSObject {
                 let array = responseInfo.items()
 
                 if (array.count >= 1) {
-                    requestInfo.storeNextPageToken(responseInfo.nextPageToken)
+                    let pageToken = responseInfo.nextPageToken
+                    println("pageToken in fetchGTLActivityListWithAccessToken is \(pageToken)")
+                    requestInfo.storeNextPageToken("")
                     completeHandler(array, true)
                 } else {
                     completeHandler(nil, false)
