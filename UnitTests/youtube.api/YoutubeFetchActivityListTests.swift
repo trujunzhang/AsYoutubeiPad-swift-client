@@ -32,14 +32,11 @@ class YoutubeFetchActivityListTests: YoutubeFetcherBase, RetrievingItemsFetching
     func endFetchingAllItems(array: NSArray) {
         println("count of array in endFetchingAllItems  is \(array.count)")
 
-        let sortedArray = YoutubeParser.filterSnippetTypeIsUploadInGTLActivity(array)
-        let newestVideoIdsArray = YoutubeParser.getVideoIdsArrayByGTLActivityList(sortedArray)
-
-//        let sortedArray = YoutubeParser.sortNewestVideoListInActivityList(array)
-//        let newestVideoIdsArray = YoutubeParser.getNewestVideoIdsArrayByMABActivityList(sortedArray)
-
-        println("count of sortedArray is \(sortedArray.count)")
-        println("newestVideoIdsArray is \(newestVideoIdsArray)")
+//        let sortedArray = YoutubeParser.filterSnippetTypeIsUploadInGTLActivity(array)
+//        let newestVideoIdsArray = YoutubeParser.getVideoIdsArrayByGTLActivityList(sortedArray)
+//
+//        println("count of sortedArray is \(sortedArray.count)")
+//        println("newestVideoIdsArray is \(newestVideoIdsArray)")
 
         expectation!.fulfill()
 //        self.checkFetchingNewestVideoIDSResult(array, sucess: true)

@@ -16,7 +16,7 @@ class YoutubeRetrievingGTLActivityListItemsFetcher: NSObject {
     override init() {
     }
 
-    func fetchingNextGTLActivityListItemsFromChannelList(nextPageToken: String) {
+    func fetchingNextGTLActivityListItemsFromChannelList() {
         requestInfo = AuthoredFetcher.sharedInstance.prepareFetchingActivityListOnHomePage {
             (object, sucess) -> Void in
 

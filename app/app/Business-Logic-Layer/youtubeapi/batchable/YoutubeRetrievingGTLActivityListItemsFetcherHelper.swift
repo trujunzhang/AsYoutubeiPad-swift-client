@@ -12,9 +12,6 @@ import Foundation
 class YoutubeRetrievingGTLActivityListItemsFetcherHelper: NSObject, FetchingNextDelegate {
     var delegate: RetrievingItemsFetchingHelperDelegate?
 
-    var nextPageToken = ""
-
-    var fetchedItems: NSMutableArray = NSMutableArray()
     var itemsFetcher: YoutubeRetrievingGTLActivityListItemsFetcher?
 
     func startFetchingItems() {
@@ -29,13 +26,14 @@ class YoutubeRetrievingGTLActivityListItemsFetcherHelper: NSObject, FetchingNext
 
     func fetchingNextStep() {
         if let theItemsFetcher: YoutubeRetrievingGTLActivityListItemsFetcher = itemsFetcher {
-            theItemsFetcher.fetchingNextGTLActivityListItemsFromChannelList(nextPageToken)
+            theItemsFetcher.fetchingNextGTLActivityListItemsFromChannelList()
         }
     }
 
     // MARK: FetchingNextDelegate
     func nextFetching(array: NSObject) {
         if (self.delegate != nil) {
+            var fetchedItems: NSArray = array as! NSArray
             self.delegate!.endFetchingAllItems(fetchedItems)
         }
     }
