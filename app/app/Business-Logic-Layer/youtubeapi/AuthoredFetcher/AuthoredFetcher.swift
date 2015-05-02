@@ -192,9 +192,6 @@ class AuthoredFetcher: NSObject {
                 let array = responseInfo.items()
 
                 if (array.count >= 1) {
-                    let pageToken = responseInfo.nextPageToken
-                    println("pageToken in fetchGTLActivityListWithAccessToken is \(pageToken)")
-                    requestInfo.storeNextPageToken("")
                     completeHandler(array, true)
                 } else {
                     completeHandler(nil, false)
