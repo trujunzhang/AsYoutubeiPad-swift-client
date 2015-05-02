@@ -15,10 +15,11 @@
 		5EAB7FE61AF3B52500091E88 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5EAB7FE51AF3B52500091E88 /* Images.xcassets */; };
 		5EAB7FE91AF3B52500091E88 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5EAB7FE71AF3B52500091E88 /* LaunchScreen.xib */; };
 		5EAB7FF51AF3B52500091E88 /* appBDDAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EAB7FF41AF3B52500091E88 /* appBDDAppTests.swift */; };
+		5EC54EEC1AF48107002422E1 /* Banana.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EC54EEB1AF48107002422E1 /* Banana.swift */; };
+		5EC54EF11AF48225002422E1 /* BananaSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EC54EF01AF48225002422E1 /* BananaSpec.swift */; };
+		5EC54EF21AF48250002422E1 /* Banana.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EC54EEB1AF48107002422E1 /* Banana.swift */; };
 		5EE2ED8A1AF47D1000C24820 /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5EE2ED881AF47D1000C24820 /* Nimble.framework */; };
 		5EE2ED8B1AF47D1000C24820 /* Quick.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5EE2ED891AF47D1000C24820 /* Quick.framework */; };
-		5EE2ED8D1AF47DA300C24820 /* Nimble.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 5EE2ED881AF47D1000C24820 /* Nimble.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		5EE2ED8E1AF47DA300C24820 /* Quick.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 5EE2ED891AF47D1000C24820 /* Quick.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		5EE2EDA71AF47DDF00C24820 /* AuthoredFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EE2ED911AF47DDF00C24820 /* AuthoredFetcher.swift */; };
 		5EE2EDA81AF47DDF00C24820 /* YoutubeBatchableConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EE2ED931AF47DDF00C24820 /* YoutubeBatchableConstant.swift */; };
 		5EE2EDA91AF47DDF00C24820 /* YoutubeRetrievingActivityListItemsFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EE2ED941AF47DDF00C24820 /* YoutubeRetrievingActivityListItemsFetcher.swift */; };
@@ -50,20 +51,6 @@
 		};
 /* End PBXContainerItemProxy section */
 
-/* Begin PBXCopyFilesBuildPhase section */
-		5EE2ED8C1AF47D1800C24820 /* CopyFiles */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-				5EE2ED8D1AF47DA300C24820 /* Nimble.framework in CopyFiles */,
-				5EE2ED8E1AF47DA300C24820 /* Quick.framework in CopyFiles */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXCopyFilesBuildPhase section */
-
 /* Begin PBXFileReference section */
 		236776EE0E1DB5BC2FB4E263 /* Pods-appBDDApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-appBDDApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-appBDDApp/Pods-appBDDApp.debug.xcconfig"; sourceTree = "<group>"; };
 		4BFE5FABE64C93E26F01B6C8 /* Pods-appBDDApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-appBDDApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-appBDDApp/Pods-appBDDApp.release.xcconfig"; sourceTree = "<group>"; };
@@ -77,6 +64,8 @@
 		5EAB7FEE1AF3B52500091E88 /* appBDDAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = appBDDAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5EAB7FF31AF3B52500091E88 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5EAB7FF41AF3B52500091E88 /* appBDDAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = appBDDAppTests.swift; sourceTree = "<group>"; };
+		5EC54EEB1AF48107002422E1 /* Banana.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Banana.swift; path = Examples/Banana.swift; sourceTree = "<group>"; };
+		5EC54EF01AF48225002422E1 /* BananaSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BananaSpec.swift; path = Examples/BananaSpec.swift; sourceTree = "<group>"; };
 		5EE2ED881AF47D1000C24820 /* Nimble.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Nimble.framework; path = Carthage/Build/iOS/Nimble.framework; sourceTree = "<group>"; };
 		5EE2ED891AF47D1000C24820 /* Quick.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quick.framework; path = Carthage/Build/iOS/Quick.framework; sourceTree = "<group>"; };
 		5EE2ED911AF47DDF00C24820 /* AuthoredFetcher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthoredFetcher.swift; sourceTree = "<group>"; };
@@ -160,6 +149,7 @@
 		5EAB7FDB1AF3B52500091E88 /* appBDDApp */ = {
 			isa = PBXGroup;
 			children = (
+				5EC54EEA1AF480EC002422E1 /* Examples */,
 				5EE2EDBF1AF47E8800C24820 /* RevealViewControllers */,
 				5EE2EDBC1AF47E7C00C24820 /* SwiftyUserDefaults */,
 				5EE2EDB91AF47E7400C24820 /* Tools */,
@@ -185,6 +175,7 @@
 		5EAB7FF11AF3B52500091E88 /* appBDDAppTests */ = {
 			isa = PBXGroup;
 			children = (
+				5EC54EED1AF48127002422E1 /* Examples */,
 				5EAB7FF41AF3B52500091E88 /* appBDDAppTests.swift */,
 				5EAB7FF21AF3B52500091E88 /* Supporting Files */,
 			);
@@ -197,6 +188,22 @@
 				5EAB7FF31AF3B52500091E88 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		5EC54EEA1AF480EC002422E1 /* Examples */ = {
+			isa = PBXGroup;
+			children = (
+				5EC54EEB1AF48107002422E1 /* Banana.swift */,
+			);
+			name = Examples;
+			sourceTree = "<group>";
+		};
+		5EC54EED1AF48127002422E1 /* Examples */ = {
+			isa = PBXGroup;
+			children = (
+				5EC54EF01AF48225002422E1 /* BananaSpec.swift */,
+			);
+			name = Examples;
 			sourceTree = "<group>";
 		};
 		5EE2ED8F1AF47DDF00C24820 /* youtubeapi */ = {
@@ -331,7 +338,7 @@
 				5EAB7FEB1AF3B52500091E88 /* Frameworks */,
 				5EAB7FEC1AF3B52500091E88 /* Resources */,
 				976988F55D0F193F4211014B /* Copy Pods Resources */,
-				5EE2ED8C1AF47D1800C24820 /* CopyFiles */,
+				5EC54EF31AF48275002422E1 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -432,6 +439,21 @@
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
+		5EC54EF31AF48275002422E1 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/nimble.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/Quick.framework",
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks";
+		};
 		976988F55D0F193F4211014B /* Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -483,6 +505,7 @@
 				5EE2EDA71AF47DDF00C24820 /* AuthoredFetcher.swift in Sources */,
 				5EAB7FE11AF3B52500091E88 /* ViewController.swift in Sources */,
 				5EE2EDB21AF47DDF00C24820 /* YoutubeApiConstant.swift in Sources */,
+				5EC54EEC1AF48107002422E1 /* Banana.swift in Sources */,
 				5EE2EDB81AF47DDF00C24820 /* YoutubeFetcherConstant.swift in Sources */,
 				5EE2EDAB1AF47DDF00C24820 /* YoutubeRetrievingNewSubscriptionVideosFetcher.swift in Sources */,
 				5EE2EDA81AF47DDF00C24820 /* YoutubeBatchableConstant.swift in Sources */,
@@ -498,6 +521,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				5EAB7FF51AF3B52500091E88 /* appBDDAppTests.swift in Sources */,
+				5EC54EF21AF48250002422E1 /* Banana.swift in Sources */,
+				5EC54EF11AF48225002422E1 /* BananaSpec.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -551,7 +576,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEFINES_MODULE = YES;
+				DEFINES_MODULE = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -597,7 +622,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEFINES_MODULE = YES;
+				DEFINES_MODULE = NO;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
