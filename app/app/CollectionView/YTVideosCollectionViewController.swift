@@ -75,7 +75,14 @@ class YTVideosCollectionViewController: UIViewController, UICollectionViewDataSo
                     actualSelf.insertRowAtTop()
                 }
             })
-
+            theCollectionView.addInfiniteScrollingWithActionHandler({
+                [weak self] in
+                if let actualSelf = self {
+                    // Captures an owning reference "actualSelf" so interacting with it in this
+                    // block is safe
+                    actualSelf.insertRowAtBottom()
+                }
+            })
         }
     }
 
@@ -89,10 +96,21 @@ class YTVideosCollectionViewController: UIViewController, UICollectionViewDataSo
                 theCollectionView.pullToRefreshView.stopAnimating()
             }
 
-            let array: NSArray = response as! NSArray
-            self.appendFetchedArray(array)
+            self.appendFetchedArray(response as! NSArray)
+        })
+    }
 
-            println("array in refreshEvent is \(array.count) ")
+    func insertRowAtBottom() {
+        if (self.delegate!.hasNextFetcing() == false) {
+            self.stopFetchedAnimation()
+            return
+        }
+        self.delegate!.nextFetching({
+            (response, sucess) -> Void in
+
+            self.stopFetchedAnimation()
+
+            self.appendFetchedArray(response as! NSArray)
         })
     }
 
@@ -114,10 +132,21 @@ class YTVideosCollectionViewController: UIViewController, UICollectionViewDataSo
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
 
+        self.startFetchedAnimation()
+    }
+
+    func startFetchedAnimation() {
         if let theCollectionView: UICollectionView = self.collectionView {
             theCollectionView.triggerPullToRefresh()
         }
     }
+
+    func stopFetchedAnimation() {
+        if let theCollectionView: UICollectionView = self.collectionView {
+            theCollectionView.pullToRefreshView.stopAnimating()
+        }
+    }
+
 
     // Mark : delegate of UICollectionViewDataSource
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
