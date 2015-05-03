@@ -56,11 +56,7 @@ class RevealViewHelper: NSObject {
         viewController.videoID = videoId as String
 
         if let theSubscriptionsViewController: SubscriptionsViewController = self.subscriptionsViewController {
-            theSubscriptionsViewController.addChildViewController(viewController)
-
-            let rootView: UIView = viewController.view
-            theSubscriptionsViewController.view.addSubview(rootView)
-            LayoutUtils.LayoutFullView(rootView)
+            theSubscriptionsViewController.navigationController?.pushViewController(viewController, animated: true)
         }
 
     }
