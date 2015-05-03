@@ -55,11 +55,14 @@ class RevealViewHelper: NSObject {
         let viewController: YTVideoWatchViewController = YTVideoWatchViewController()
         viewController.videoID = videoId as String
 
-//        self.addChildViewController(viewController)
-//
-//        let rootView: UIView = viewController.view
-//        self.view.addSubview(rootView)
-//        LayoutUtils.LayoutFullView(rootView)
+        if let theSubscriptionsViewController: SubscriptionsViewController = self.subscriptionsViewController {
+            theSubscriptionsViewController.addChildViewController(viewController)
+
+            let rootView: UIView = viewController.view
+            theSubscriptionsViewController.view.addSubview(rootView)
+            LayoutUtils.LayoutFullView(rootView)
+        }
+
     }
 
 }
