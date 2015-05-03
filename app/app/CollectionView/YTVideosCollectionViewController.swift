@@ -7,12 +7,18 @@
 //
 
 import Foundation
+import UIKit
 
 class YTVideosCollectionViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
 
     @IBOutlet var collectionView: UICollectionView!
 
-    @IBOutlet weak var flowLayout: UICollectionViewFlowLayout!
+
+    lazy var flowLayout: UICollectionViewFlowLayout = {
+        var flow = UICollectionViewFlowLayout()
+        flow.sectionInset = UIEdgeInsetsMake(2.0, 2.0, 2.0, 2.0)
+        return flow
+    }()
 
     var delegate: FetchEventProtocol?
 
@@ -33,9 +39,9 @@ class YTVideosCollectionViewController: UIViewController, UICollectionViewDataSo
         self.collectionView.dataSource = self
         self.collectionView.delegate = self
 
-//        self.collectionView.contentInset = UIEdgeInsetsMake(20.0, 20.0, 20.0, 20.0)
-        self.collectionView.backgroundColor = UIColor.clearColor()
+        self.collectionView.backgroundColor = UIColor(red: 230 / 255, green: 230 / 255, blue: 230 / 255, alpha: 1)
 
+        self.collectionView.bounces = true
         // If your collectionview has a content size big enough to scroll vertically, it's OK, but in your case it's not.
         self.collectionView.alwaysBounceVertical = true
 
