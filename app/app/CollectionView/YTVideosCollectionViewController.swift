@@ -13,11 +13,7 @@ class YTVideosCollectionViewController: UIViewController, UICollectionViewDataSo
 
     @IBOutlet var collectionView: UICollectionView!
 
-    lazy var flowLayout: UICollectionViewFlowLayout = {
-        var flow = UICollectionViewFlowLayout()
-        flow.sectionInset = UIEdgeInsetsMake(2.0, 2.0, 2.0, 2.0)
-        return flow
-    }()
+    @IBOutlet weak var flowLayout: UICollectionViewFlowLayout!
 
     var delegate: FetchEventProtocol?
 
@@ -40,14 +36,13 @@ class YTVideosCollectionViewController: UIViewController, UICollectionViewDataSo
 
         self.collectionView.backgroundColor = UIColor(red: 230 / 255, green: 230 / 255, blue: 230 / 255, alpha: 1)
 
-        self.collectionView.bounces = true
         // If your collectionview has a content size big enough to scroll vertically, it's OK, but in your case it's not.
         self.collectionView.alwaysBounceVertical = true
 
         // infinite scroll view for collection view
         self.collectionView.infiniteScrollIndicatorStyle = .Gray;
-        registerInfiniteScrollView()
 
+        self.registerInfiniteScrollView()
         self.setupRefreshViewController()
 
         insertRowAtTop()
