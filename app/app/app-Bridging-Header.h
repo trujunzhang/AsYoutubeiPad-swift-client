@@ -33,7 +33,10 @@
 #import "SRTParserInterface.h"
 
 // Library:SVPullToRefresh
-#import "SVPullToRefresh.h"
+//#import "SVPullToRefresh.h"
+
+// Library:UIScrollView-InfiniteScroll
+#import <UIScrollView+InfiniteScroll.h>
 
 // Library: STCollapseTableView [used]
 //#import "STCollapseTableView.h"
