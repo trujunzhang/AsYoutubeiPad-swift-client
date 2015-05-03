@@ -179,7 +179,7 @@ class AuthoredFetcher: NSObject {
         query.home = true
         query.maxResults = 50
         query.fields = "items/contentDetails,items/snippet(publishedAt,type),nextPageToken"
-        query.publishedAfter = publishedAfter
+//        query.publishedAfter = publishedAfter
 
         //GTLYouTubeActivityListResponse
         service.executeQuery(query, completionHandler: {

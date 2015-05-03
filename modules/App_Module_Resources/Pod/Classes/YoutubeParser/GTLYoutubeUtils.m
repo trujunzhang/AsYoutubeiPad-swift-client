@@ -20,7 +20,7 @@
     NSDateComponents *components = [cal components:NSWeekdayCalendarUnit | NSYearCalendarUnit | NSMonthCalendarUnit | NSDayCalendarUnit fromDate:[[NSDate alloc] init]];
 
 //    [components setDay:([components day] - 7)];
-    [components setDay:([components day] - 2)];
+    [components setDay:([components day] - 1)];
     NSDate *lastWeek = [cal dateFromComponents:components];
 
 //    NSLog(@"lastWeek=%@", lastWeek);
