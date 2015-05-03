@@ -42,6 +42,11 @@ class YTVideoCollectionViewCell: UICollectionViewCell {
         let placeHolder = UIImage(named: "Travel")
 
 //        thumbnailImage.sd_setImageWithURL(url,placeHolder:placeHolder,options: SDWebImageDownloaderOptions.LowPriority)
+        
+//        thumbnailImage.sd_setImageWithURL(url)
+        
+        
+        thumbnailImage.sd_setImageWithURL(url, placeholderImage: placeHolder, options: SDWebImageOptions.LowPriority )
 
 //        self.thumbnailImage.hnk_setImageFromURL(NSURL(string: self.imageUrl)!)// used
 

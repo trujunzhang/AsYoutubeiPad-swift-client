@@ -143,7 +143,7 @@ class YTVideosCollectionViewController: UIViewController, UICollectionViewDataSo
     func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
 
         let width: CGFloat = self.view.bounds.size.width / 4 - (COLLECTION_CELL_INSET_VALUE * 2)
-        let height: CGFloat = 240;
+        let height: CGFloat = 200;
 
         return CGSizeMake(width, height)
     }
@@ -158,10 +158,10 @@ class YTVideosCollectionViewController: UIViewController, UICollectionViewDataSo
 
         cell.setupCell(videoList[indexPath.row] as! YoutubeVideoCache)
 
-        cell.layer.borderWidth = 0.5
-        cell.layer.borderColor = UIColor(red: 220 / 255, green: 220 / 255, blue: 220 / 255, alpha: 1).CGColor
-        cell.layer.cornerRadius = 4
-        cell.backgroundColor = UIColor.whiteColor()
+//        cell.layer.borderWidth = 0.5
+//        cell.layer.borderColor = UIColor(red: 220 / 255, green: 220 / 255, blue: 220 / 255, alpha: 1).CGColor
+//        cell.layer.cornerRadius = 4
+//        cell.backgroundColor = UIColor.whiteColor()
 
         return cell
     }
