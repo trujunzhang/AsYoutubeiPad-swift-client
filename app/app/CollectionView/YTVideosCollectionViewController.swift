@@ -16,7 +16,7 @@ class YTVideosCollectionViewController: UIViewController, UICollectionViewDataSo
 
     var delegate: FetchEventProtocol?
 
-    var refreshControl: UIRefreshControl!
+    var refreshControl: SWRefreshControl!
 
     var videoList: NSMutableArray = NSMutableArray()
 
@@ -45,11 +45,11 @@ class YTVideosCollectionViewController: UIViewController, UICollectionViewDataSo
 
         self.setupRefreshViewController()
 
-//        insertRowAtTop()
+        insertRowAtTop()
     }
 
     func setupRefreshViewController() {
-        self.refreshControl = UIRefreshControl()
+        self.refreshControl = SWRefreshControl()
         self.refreshControl.addTarget(self, action: "endRefreshingRefreshControl", forControlEvents: UIControlEvents.ValueChanged)
 
         self.collectionView.addSubview(refreshControl)

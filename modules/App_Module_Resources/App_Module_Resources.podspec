@@ -69,5 +69,9 @@ Pod::Spec.new do |s|
     sub.source_files = 'Pod/Classes/ObservingPlayerItem/*.{h,m}'
   end
 
+  s.subspec 'SWRefreshControl' do |sub|
+    sub.source_files = 'Pod/Classes/SWRefreshControl/*.{h,m}'
+  end
+
 
 end
