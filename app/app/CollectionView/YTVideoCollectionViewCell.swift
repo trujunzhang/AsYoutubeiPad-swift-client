@@ -8,6 +8,7 @@
 
 import UIKit
 import Haneke
+import WebImage
 
 class YTVideoCollectionViewCell: UICollectionViewCell {
 
@@ -35,6 +36,14 @@ class YTVideoCollectionViewCell: UICollectionViewCell {
         // 1
         let url = NSURL(string: thumbnailUrl as String)
         thumbnailImage.hnk_setImageFromURL(url!) // used
+        let placeHolder = UIImage(named:"Travel")
+        
+        thumbnailImage.sd_setImageWithURL(url)
+        
+//        thumbnailImage.sd_setImageWithURL(url, placeholderImage: placeHolder, options: SDWebImageDownloaderOptions.LowPriority)
+//        [imageView sd_setImageWithURL:[NSURL URLWithString:@"https://graph.facebook.com/olivier.poitrey/picture"]
+//            placeholderImage:[UIImage imageNamed:@"avatar-placeholder.png"]
+//            options:SDWebImageRefreshCached];
 
         // 2
         titleLabel.text = videoTitle
@@ -55,7 +64,8 @@ class YTVideoCollectionViewCell: UICollectionViewCell {
         if(self.imageUrl.isEmpty){
             self.fetchChannelThumbnail(channelID)
         }else{
-            self.channelThumbnailImage.hnk_setImageFromURL(NSURL(string: self.imageUrl)!)// used
+            self.channelThumbnailImage.sd_setImageWithURL(NSURL(string: self.imageUrl)!)
+//            self.channelThumbnailImage.hnk_setImageFromURL(NSURL(string: self.imageUrl)!)// used
         }
 
     }
@@ -71,7 +81,8 @@ class YTVideoCollectionViewCell: UICollectionViewCell {
                 
                 self.imageUrl = imageUrl as String
 
-                self.channelThumbnailImage.hnk_setImageFromURL(NSURL(string: self.imageUrl)!)// used
+                self.channelThumbnailImage.sd_setImageWithURL(NSURL(string: self.imageUrl)!)
+//                self.channelThumbnailImage.hnk_setImageFromURL(NSURL(string: self.imageUrl)!)// used
             }
         })
     }

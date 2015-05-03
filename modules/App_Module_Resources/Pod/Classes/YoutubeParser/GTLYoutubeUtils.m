@@ -14,7 +14,7 @@
 /**
 * "publishedAt": "2015-04-30T19:00:01.000Z",
 */
-+ (NSString *)getPublishedAfter {
++ (GTLDateTime *)getPublishedAfterAsGTLDateTime {
     NSCalendar *cal = [NSCalendar currentCalendar];
 
     NSDateComponents *components = [cal components:NSWeekdayCalendarUnit | NSYearCalendarUnit | NSMonthCalendarUnit | NSDayCalendarUnit fromDate:[[NSDate alloc] init]];
@@ -26,7 +26,12 @@
 //    NSLog(@"lastWeek=%@", lastWeek);
 
     GTLDateTime *gtlDateTime = [GTLDateTime dateTimeWithDate:lastWeek timeZone:nil];
-    NSString *string = gtlDateTime.RFC3339String;
+
+    return gtlDateTime;
+}
+
++ (NSString *)getPublishedAfter {
+    NSString *string = [self getPublishedAfterAsGTLDateTime].RFC3339String;
 
     return string;
 }

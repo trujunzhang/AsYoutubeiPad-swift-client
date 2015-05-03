@@ -5,7 +5,11 @@
 
 #import <Foundation/Foundation.h>
 
+@class GTLDateTime;
+
 
 @interface GTLYoutubeUtils : NSObject
++ (GTLDateTime *)getPublishedAfterAsGTLDateTime;
+
 + (NSString *)getPublishedAfter;
 @end

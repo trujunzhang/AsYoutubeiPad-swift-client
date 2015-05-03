@@ -166,19 +166,20 @@ class AuthoredFetcher: NSObject {
 
         requestInfo.makeRequestForActivityListOnHomePage()
 
-        fetchGTLActivityListWithAccessToken(requestInfo, completeHandler: completeHandler)
+        let publishedAfter: GTLDateTime = GTLYoutubeUtils.getPublishedAfterAsGTLDateTime()
+        fetchGTLActivityListWithAccessToken(publishedAfter, completeHandler: completeHandler)
 
         return requestInfo
     }
 
-    func fetchGTLActivityListWithAccessToken(requestInfo: YTYoutubeRequestInfo, completeHandler: ObjectHandler) {
-
+    func fetchGTLActivityListWithAccessToken(publishedAfter: GTLDateTime, completeHandler: ObjectHandler) {
         let service: GTLService = self.youTubeService!
 
         var query: GTLQueryYouTube = GTLQueryYouTube.queryForActivitiesListWithPart("id,snippet,contentDetails") as! GTLQueryYouTube
         query.home = true
         query.maxResults = 50
         query.fields = "items/contentDetails,items/snippet(publishedAt,type),nextPageToken"
+        query.publishedAfter = publishedAfter
 
         //GTLYouTubeActivityListResponse
         service.executeQuery(query, completionHandler: {
