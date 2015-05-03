@@ -13,7 +13,6 @@ class YTVideosCollectionViewController: UIViewController, UICollectionViewDataSo
 
     @IBOutlet var collectionView: UICollectionView!
 
-
     lazy var flowLayout: UICollectionViewFlowLayout = {
         var flow = UICollectionViewFlowLayout()
         flow.sectionInset = UIEdgeInsetsMake(2.0, 2.0, 2.0, 2.0)
@@ -73,7 +72,6 @@ class YTVideosCollectionViewController: UIViewController, UICollectionViewDataSo
     }
 
     func startFetchedAnimation() {
-//        self.collectionView.setContentOffset(CGPointMake(0, -CGRectGetHeight(self.refreshControl.frame)), animated: true)
         self.refreshControl.beginRefreshing()
     }
 
@@ -133,6 +131,14 @@ class YTVideosCollectionViewController: UIViewController, UICollectionViewDataSo
     }
 
     // Mark : delegate of UICollectionViewDataSource
+    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
+
+        let width: CGFloat = self.view.bounds.size.width * 0.98;
+        let height: CGFloat = 150.0;
+
+        return CGSizeMake(width, height)
+    }
+
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return videoList.count
     }
