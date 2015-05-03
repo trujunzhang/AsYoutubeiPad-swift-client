@@ -66,16 +66,39 @@ class YTVideosCollectionViewController: UIViewController, UICollectionViewDataSo
         if let theCollectionView: UICollectionView = self.collectionView {
             theCollectionView.contentInset = UIEdgeInsetsMake(20.0, 20.0, 20.0, 20.0)
             theCollectionView.backgroundColor = UIColor.clearColor()
-        }
 
-        //        self.view.backgroundColor = UIColor.yellowColor()
-        //        self.collectionView.backgroundColor = UIColor.orangeColor()
+            theCollectionView.addPullToRefreshWithActionHandler({
+                [weak self] in
+                if let actualSelf = self {
+                    // Captures an owning reference "actualSelf" so interacting with it in this
+                    // block is safe
+                    actualSelf.insertRowAtTop()
+                }
+            })
+
+        }
+    }
+
+    func insertRowAtTop() {
+        self.cleanupFetchedArray()
 
         self.delegate!.refreshEvent({
             (response, sucess) -> Void in
+
+            if let theCollectionView: UICollectionView = self.collectionView {
+                theCollectionView.pullToRefreshView.stopAnimating()
+            }
+
             let array: NSArray = response as! NSArray
             self.appendFetchedArray(array)
+
+            println("array in refreshEvent is \(array.count) ")
         })
+    }
+
+    func cleanupFetchedArray() {
+        self.videoList = NSMutableArray()
+        self.collectionView.reloadData()
     }
 
     func appendFetchedArray(array: NSArray) {
@@ -90,6 +113,10 @@ class YTVideosCollectionViewController: UIViewController, UICollectionViewDataSo
 
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
+
+        if let theCollectionView: UICollectionView = self.collectionView {
+            theCollectionView.triggerPullToRefresh()
+        }
     }
 
     // Mark : delegate of UICollectionViewDataSource
