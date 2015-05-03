@@ -8,13 +8,14 @@
 
 import Foundation
 
+let COLLECTION_CELL_INSET_VALUE: CGFloat = 5.0
 
 extension YTVideosCollectionViewController {
-    
+
     class func instance() -> YTVideosCollectionViewController {
-        
+
         var viewController: YTVideosCollectionViewController = UIStoryboard(name: "ReusedViewControllers", bundle: nil).instantiateViewControllerWithIdentifier("YTVideosCollectionViewController") as! YTVideosCollectionViewController
-        
+
         return viewController
     }
 }
