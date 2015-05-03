@@ -106,11 +106,11 @@ class YTVideosCollectionViewController: UIViewController, UICollectionViewDataSo
     }
 
     func appendFetchedArray(array: NSArray) {
-
+        let lastCount = self.videoList.count
         // 2. update collection view
         self.videoList.addObjectsFromArray(array as [AnyObject])
 
-        if (self.videoList.count == 0) {
+        if (lastCount == 0) {
             self.collectionView.reloadData()
         } else {
             self.batchUpdateCollectionView(array)
