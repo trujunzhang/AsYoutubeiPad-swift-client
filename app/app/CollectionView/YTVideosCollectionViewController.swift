@@ -110,17 +110,11 @@ class YTVideosCollectionViewController: UIViewController, UICollectionViewDataSo
         // 2. update collection view
         self.videoList.addObjectsFromArray(array as [AnyObject])
 
-        self.collectionView.performBatchUpdates({
-            let resultsSize = self.videoList.count
-            let newSize = array.count
-            var arrayWithIndexPaths = NSMutableArray()
-            var i = 0
-            for (i = 0; i < newSize; i++) {
-                arrayWithIndexPaths.addObject(NSIndexPath(forRow: i + resultsSize, inSection: 0))
-            }
-            self.collectionView.insertItemsAtIndexPaths(arrayWithIndexPaths as [AnyObject])
-        },
-                completion: nil)
+        if (self.videoList.count == 0) {
+            self.collectionView.reloadData()
+        } else {
+            self.batchUpdateCollectionView(array)
+        }
 
         // 1. stop animation
         self.stopFetchedAnimation()
@@ -129,6 +123,20 @@ class YTVideosCollectionViewController: UIViewController, UICollectionViewDataSo
         if (self.delegate!.hasNextFetcing() == false) {
             self.collectionView.removeInfiniteScroll()
         }
+    }
+
+    func batchUpdateCollectionView(array: NSArray) {
+        let resultsSize = self.videoList.count
+
+        var arrayWithIndexPaths = NSMutableArray()
+        for (var i = 0; i < array.count; i++) {
+            arrayWithIndexPaths.addObject(NSIndexPath(forRow: i + resultsSize, inSection: 0))
+        }
+
+        self.collectionView.performBatchUpdates({
+            self.collectionView.insertItemsAtIndexPaths(arrayWithIndexPaths as [AnyObject])
+        },
+                completion: nil)
     }
 
     // Mark : delegate of UICollectionViewDataSource
