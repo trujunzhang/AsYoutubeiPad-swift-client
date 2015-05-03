@@ -7,7 +7,9 @@
 //
 
 import UIKit
-import Haneke
+
+//import Haneke
+
 import WebImage
 
 class YTVideoCollectionViewCell: UICollectionViewCell {
@@ -36,14 +38,17 @@ class YTVideoCollectionViewCell: UICollectionViewCell {
         // 1
         let url = NSURL(string: thumbnailUrl as String)
         thumbnailImage.hnk_setImageFromURL(url!) // used
-        let placeHolder = UIImage(named:"Travel")
-        
-        thumbnailImage.sd_setImageWithURL(url)
-        
+
+        let placeHolder = UIImage(named: "Travel")
+
+//        thumbnailImage.sd_setImageWithURL(url)
+
 //        thumbnailImage.sd_setImageWithURL(url, placeholderImage: placeHolder, options: SDWebImageDownloaderOptions.LowPriority)
 //        [imageView sd_setImageWithURL:[NSURL URLWithString:@"https://graph.facebook.com/olivier.poitrey/picture"]
 //            placeholderImage:[UIImage imageNamed:@"avatar-placeholder.png"]
 //            options:SDWebImageRefreshCached];
+
+//        self.thumbnailImage.hnk_setImageFromURL(NSURL(string: self.imageUrl)!)// used
 
         // 2
         titleLabel.text = videoTitle
@@ -61,24 +66,24 @@ class YTVideoCollectionViewCell: UICollectionViewCell {
     func setupChannelThumbnail() {
         let channelID = YoutubeParser.getChannelIdByVideo(videoCache)
 
-        if(self.imageUrl.isEmpty){
+        if (self.imageUrl.isEmpty) {
             self.fetchChannelThumbnail(channelID)
-        }else{
+        } else {
             self.channelThumbnailImage.sd_setImageWithURL(NSURL(string: self.imageUrl)!)
 //            self.channelThumbnailImage.hnk_setImageFromURL(NSURL(string: self.imageUrl)!)// used
         }
 
     }
-    
-    func fetchChannelThumbnail(channelID:NSString){
+
+    func fetchChannelThumbnail(channelID: NSString) {
         YoutubeFetcher.fetchChannelForThumbnail(channelID, completeHandler: {
             (object, sucess) -> Void in
             if (sucess == true) {
                 var array: NSArray = object as! NSArray
-                
+
                 var channel: MABYT3_Channel = array[0] as! MABYT3_Channel
                 var imageUrl = YoutubeModelParser.getMABChannelThumbnalUrl(channel)
-                
+
                 self.imageUrl = imageUrl as String
 
                 self.channelThumbnailImage.sd_setImageWithURL(NSURL(string: self.imageUrl)!)

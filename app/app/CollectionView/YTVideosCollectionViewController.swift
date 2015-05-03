@@ -33,7 +33,7 @@ class YTVideosCollectionViewController: UIViewController, UICollectionViewDataSo
         self.collectionView.dataSource = self
         self.collectionView.delegate = self
 
-        self.collectionView.contentInset = UIEdgeInsetsMake(20.0, 20.0, 20.0, 20.0)
+//        self.collectionView.contentInset = UIEdgeInsetsMake(20.0, 20.0, 20.0, 20.0)
         self.collectionView.backgroundColor = UIColor.clearColor()
 
         // If your collectionview has a content size big enough to scroll vertically, it's OK, but in your case it's not.
@@ -67,7 +67,7 @@ class YTVideosCollectionViewController: UIViewController, UICollectionViewDataSo
     }
 
     func startFetchedAnimation() {
-        self.collectionView.setContentOffset(CGPointMake(0, -CGRectGetHeight(self.refreshControl.frame)), animated: true)
+//        self.collectionView.setContentOffset(CGPointMake(0, -CGRectGetHeight(self.refreshControl.frame)), animated: true)
         self.refreshControl.beginRefreshing()
     }
 
