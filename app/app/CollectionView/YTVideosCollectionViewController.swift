@@ -16,7 +16,7 @@ class YTVideosCollectionViewController: UIViewController, UICollectionViewDataSo
 
     var delegate: FetchEventProtocol?
 
-    var refreshControl: SWRefreshControl!
+    var refreshControl: UIRefreshControl!
 
     var videoList: NSMutableArray = NSMutableArray()
 
@@ -49,7 +49,7 @@ class YTVideosCollectionViewController: UIViewController, UICollectionViewDataSo
     }
 
     func setupRefreshViewController() {
-        self.refreshControl = SWRefreshControl()
+        self.refreshControl = UIRefreshControl()
         self.refreshControl.addTarget(self, action: "endRefreshingRefreshControl", forControlEvents: UIControlEvents.ValueChanged)
 
         self.collectionView.addSubview(refreshControl)
@@ -67,6 +67,7 @@ class YTVideosCollectionViewController: UIViewController, UICollectionViewDataSo
     }
 
     func startFetchedAnimation() {
+        self.collectionView.setContentOffset(CGPointMake(0, -CGRectGetHeight(self.refreshControl.frame)), animated: true)
         self.refreshControl.beginRefreshing()
     }
 
