@@ -60,10 +60,10 @@ Pod::Spec.new do |s|
   end
 
   # for WatchView
-  #s.subspec 'Subtitles' do |sub|
-  #  sub.source_files = 'Pod/Classes/Subtitles/*/*.{h,m}'
-  #  sub.dependency 'Bolts'
-  #end
+  s.subspec 'Subtitles' do |sub|
+    sub.source_files = 'Pod/Classes/Subtitles/*/*.{h,m}'
+    sub.dependency 'Bolts'
+  end
 
   s.subspec 'ObservingPlayerItem' do |sub|
     sub.source_files = 'Pod/Classes/ObservingPlayerItem/*.{h,m}'

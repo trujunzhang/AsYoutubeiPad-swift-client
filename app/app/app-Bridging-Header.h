@@ -25,12 +25,12 @@
 #import "GTLYoutubeUtils.h"
 
 // Library: IGYouTubeExtractor
-//#import "IGYouTubeExtractor.h"
+#import "IGYouTubeExtractor.h"
 
 // Library: Subtitles [used]
-//#import "SOSubtitle.h"
-//#import "SOSRTParserHelper.h"
-//#import "SRTParserInterface.h"
+#import "SOSubtitle.h"
+#import "SOSRTParserHelper.h"
+#import "SRTParserInterface.h"
 
 
 
@@ -61,7 +61,7 @@
 //#import "WebImage.h"
 
 // Library: Bolts-iOS
-//#import <Bolts/Bolts.h>
+#import <Bolts/Bolts.h>
 
 //#import "ImageCacheInterface.h"
 

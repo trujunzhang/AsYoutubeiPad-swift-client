@@ -15,7 +15,7 @@ class YTVideoWatchPlaylistViewController : UIViewController {
     var requestInfo = YTYoutubeRequestInfo()
     
     func makeRequestTask(){
-        requestInfo = YoutubeFetcher.sharedInstance.prepareFetchingRelativeVideos(videoID, completeHandler: { (object, sucess) -> Void in
+        requestInfo = YoutubeFetcher.prepareFetchingRelativeVideos(videoID, completeHandler: { (object, sucess) -> Void in
             if(sucess == true){
                 var array:NSArray = object as! NSArray
                 

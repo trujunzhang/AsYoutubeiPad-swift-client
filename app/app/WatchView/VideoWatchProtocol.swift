@@ -10,5 +10,5 @@ import Foundation
 
 
 protocol MoviePlayerListenerProtocol  {
-    func updateForRowAtIndexPath(indexPath: NSIndexPath!, rowType:LeftTableRowType)
+//    func updateForRowAtIndexPath(indexPath: NSIndexPath!, rowType:LeftTableRowType)
 }
