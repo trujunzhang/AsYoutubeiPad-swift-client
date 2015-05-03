@@ -147,8 +147,12 @@ class YTVideosCollectionViewController: UIViewController, UICollectionViewDataSo
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         let cell: YTVideoCollectionViewCell = collectionView.dequeueReusableCellWithReuseIdentifier("YTVideoCollectionViewCell", forIndexPath: indexPath) as! YTVideoCollectionViewCell
 
-        let videoCache: YoutubeVideoCache = videoList[indexPath.row] as! YoutubeVideoCache
-        cell.setupCell(videoCache)
+        cell.setupCell(videoList[indexPath.row] as! YoutubeVideoCache)
+
+        cell.layer.borderWidth = 0.5
+        cell.layer.borderColor = UIColor(red: 220 / 255, green: 220 / 255, blue: 220 / 255, alpha: 1).CGColor
+        cell.layer.cornerRadius = 4
+        cell.backgroundColor = UIColor.whiteColor()
 
         return cell
     }
@@ -158,8 +162,7 @@ class YTVideosCollectionViewController: UIViewController, UICollectionViewDataSo
     //MARK: UICollectionViewDelegate
 
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
-        let videoCache: YoutubeVideoCache = videoList[indexPath.row] as! YoutubeVideoCache
-        let videoId: NSString = YoutubeParser.getWatchVideoId(videoCache)
+        let videoId: NSString = YoutubeParser.getWatchVideoId(videoList[indexPath.row] as! YoutubeVideoCache)
 
         RevealViewHelper.sharedInstance.pushWatchVideoViewController(videoId)
     }
