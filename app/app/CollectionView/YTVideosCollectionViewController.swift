@@ -109,7 +109,18 @@ class YTVideosCollectionViewController: UIViewController, UICollectionViewDataSo
 
         // 2. update collection view
         self.videoList.addObjectsFromArray(array as [AnyObject])
-        self.collectionView.reloadData()
+
+        self.collectionView.performBatchUpdates({
+            let resultsSize = self.videoList.count
+            let newSize = array.count
+            var arrayWithIndexPaths = NSMutableArray()
+            var i = 0
+            for (i = 0; i < newSize; i++) {
+                arrayWithIndexPaths.addObject(NSIndexPath(forRow: i + resultsSize, inSection: 0))
+            }
+            self.collectionView.insertItemsAtIndexPaths(arrayWithIndexPaths as [AnyObject])
+        },
+                completion: nil)
 
         // 1. stop animation
         self.stopFetchedAnimation()
