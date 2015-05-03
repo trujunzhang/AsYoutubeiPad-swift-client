@@ -6,72 +6,73 @@
 //  Copyright (c) 2015 djzhang. All rights reserved.
 //
 
+//extension xxx {
+//
+//    class func instance() -> xxx {
+//
+//        return UIStoryboard(name: STORYBOARD_VIDEOWATCH_NAME, bundle: nil).instantiateViewControllerWithIdentifier("xxx") as! xxx
+//    }
+//}
+
 import Foundation
 
-class WatchViewStoryboardUtils {
-    
-    private class func getVideoWatchStoryboard() -> UIStoryboard {
-        let storyboard:UIStoryboard = UIStoryboard(name: "VideoWatchStoryboard", bundle: nil)
-        
-        return storyboard
-    }
-    
-    
-    // MARK : WatchView
-    class func getMovieEmbeddedViewController() -> MovieEmbeddedViewController {
-        var viewController: MovieEmbeddedViewController = getVideoWatchStoryboard().instantiateViewControllerWithIdentifier("MovieEmbeddedViewController") as! MovieEmbeddedViewController
-        
-        return viewController
-    }
-    
-    class func getYTVideoWatchInfoViewController() -> YTVideoWatchInfoViewController {
-        var viewController: YTVideoWatchInfoViewController = getVideoWatchStoryboard().instantiateViewControllerWithIdentifier("YTVideoWatchInfoViewController") as! YTVideoWatchInfoViewController
-        
-        return viewController
-    }
-    
-    class func getYTVideoWatchSideViewController() -> YTVideoWatchSideViewController {
-        var viewController: YTVideoWatchSideViewController = getVideoWatchStoryboard().instantiateViewControllerWithIdentifier("YTVideoWatchSideViewController") as! YTVideoWatchSideViewController
-        
-        return viewController
-    }
-    
-    class func getYTVideoWatchPlaylistHeaderViewController() -> YTVideoWatchPlaylistHeaderViewController {
-        var viewController: YTVideoWatchPlaylistHeaderViewController = getVideoWatchStoryboard().instantiateViewControllerWithIdentifier("YTVideoWatchPlaylistHeaderViewController") as! YTVideoWatchPlaylistHeaderViewController
-        
-        return viewController
-    }
-    
-    class func getYTVideoWatchPlaylistViewController() -> YTVideoWatchPlaylistViewController {
-        var viewController: YTVideoWatchPlaylistViewController = getVideoWatchStoryboard().instantiateViewControllerWithIdentifier("YTVideoWatchPlaylistViewController") as! YTVideoWatchPlaylistViewController
-        
-        return viewController
-    }
-    
-    // MARK: MovieEmbedded Bars
-    class func getMovieEmbeddedNormalBarViewController() -> MovieEmbeddedNormalBarViewController {
-        var viewController: MovieEmbeddedNormalBarViewController = getVideoWatchStoryboard().instantiateViewControllerWithIdentifier("MovieEmbeddedNormalBarViewController") as! MovieEmbeddedNormalBarViewController
-        
-        return viewController
-    }
-    
-    
-    
-    class func getVideoInfoViewController() -> VideoInfoViewController {
-        var viewController: VideoInfoViewController = getVideoWatchStoryboard().instantiateViewControllerWithIdentifier("VideoInfoViewController") as! VideoInfoViewController
-        
-        return viewController
-    }
-    
-    
-    //    class func getMovieEmbeddedFullscreenBarViewController() -> MovieEmbeddedFullscreenBarViewController {
-    //        var viewController: MovieEmbeddedFullscreenBarViewController = getVideoWatchStoryboard().instantiateViewControllerWithIdentifier("MovieEmbeddedFullscreenBarViewController") as! MovieEmbeddedFullscreenBarViewController
-    //
-    //        return viewController
-    //    }
-    
-    
-    
+let STORYBOARD_VIDEOWATCH_NAME = "VideoWatchStoryboard"
 
-    
+extension MovieEmbeddedViewController {
+
+    class func instance() -> MovieEmbeddedViewController {
+
+        return UIStoryboard(name: STORYBOARD_VIDEOWATCH_NAME, bundle: nil).instantiateViewControllerWithIdentifier("MovieEmbeddedViewController") as! MovieEmbeddedViewController
+    }
 }
+
+
+extension YTVideoWatchInfoViewController {
+
+    class func instance() -> YTVideoWatchInfoViewController {
+
+        return UIStoryboard(name: STORYBOARD_VIDEOWATCH_NAME, bundle: nil).instantiateViewControllerWithIdentifier("YTVideoWatchInfoViewController") as! YTVideoWatchInfoViewController
+    }
+}
+
+extension YTVideoWatchSideViewController {
+
+    class func instance() -> YTVideoWatchSideViewController {
+
+        return UIStoryboard(name: STORYBOARD_VIDEOWATCH_NAME, bundle: nil).instantiateViewControllerWithIdentifier("YTVideoWatchSideViewController") as! YTVideoWatchSideViewController
+    }
+}
+
+extension YTVideoWatchPlaylistHeaderViewController {
+
+    class func instance() -> YTVideoWatchPlaylistHeaderViewController {
+
+        return UIStoryboard(name: STORYBOARD_VIDEOWATCH_NAME, bundle: nil).instantiateViewControllerWithIdentifier("YTVideoWatchPlaylistHeaderViewController") as! YTVideoWatchPlaylistHeaderViewController
+    }
+}
+
+extension YTVideoWatchPlaylistViewController {
+
+    class func instance() -> YTVideoWatchPlaylistViewController {
+
+        return UIStoryboard(name: STORYBOARD_VIDEOWATCH_NAME, bundle: nil).instantiateViewControllerWithIdentifier("YTVideoWatchPlaylistViewController") as! YTVideoWatchPlaylistViewController
+    }
+}
+
+extension MovieEmbeddedNormalBarViewController {
+
+    class func instance() -> MovieEmbeddedNormalBarViewController {
+
+        return UIStoryboard(name: STORYBOARD_VIDEOWATCH_NAME, bundle: nil).instantiateViewControllerWithIdentifier("MovieEmbeddedNormalBarViewController") as! MovieEmbeddedNormalBarViewController
+    }
+}
+
+extension VideoInfoViewController {
+
+    class func instance() -> VideoInfoViewController {
+
+        return UIStoryboard(name: STORYBOARD_VIDEOWATCH_NAME, bundle: nil).instantiateViewControllerWithIdentifier("VideoInfoViewController") as! VideoInfoViewController
+    }
+}
+
+
