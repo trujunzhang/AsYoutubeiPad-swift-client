@@ -67,6 +67,9 @@ class YTVideosCollectionViewController: UIViewController, UICollectionViewDataSo
             theCollectionView.contentInset = UIEdgeInsetsMake(20.0, 20.0, 20.0, 20.0)
             theCollectionView.backgroundColor = UIColor.clearColor()
             
+            theCollectionView.addInfiniteScrollWithHandler({ (collectionView) -> Void in
+                self.insertRowAtBottom()
+            })
             
             //            theCollectionView.addInfiniteScrollingWithActionHandler({
             //                [weak self] in
@@ -128,13 +131,13 @@ class YTVideosCollectionViewController: UIViewController, UICollectionViewDataSo
     
     func startFetchedAnimation() {
         if let theCollectionView: UICollectionView = self.collectionView {
-//            theCollectionView.triggerPullToRefresh()
+            //            theCollectionView.triggerPullToRefresh()
         }
     }
     
     func stopFetchedAnimation() {
         if let theCollectionView: UICollectionView = self.collectionView {
-//            theCollectionView.pullToRefreshView.stopAnimating()
+            theCollectionView.finishInfiniteScroll()
         }
     }
     
