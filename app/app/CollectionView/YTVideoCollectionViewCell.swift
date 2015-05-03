@@ -55,7 +55,7 @@ class YTVideoCollectionViewCell: UICollectionViewCell {
         channelTitleLabel.text = channelTitle
 
         // 5
-        setupChannelThumbnail()
+//        setupChannelThumbnail()
     }
 
     func setupChannelThumbnail() {
