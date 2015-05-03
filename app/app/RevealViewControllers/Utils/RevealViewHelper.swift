@@ -51,4 +51,8 @@ class RevealViewHelper: NSObject {
 
     }
 
+    func pushWatchVideoViewController(videoId: NSString) {
+
+    }
+
 }
