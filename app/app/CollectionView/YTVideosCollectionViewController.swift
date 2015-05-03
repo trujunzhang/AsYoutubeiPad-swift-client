@@ -67,7 +67,7 @@ class YTVideosCollectionViewController: UIViewController, UICollectionViewDataSo
             theCollectionView.contentInset = UIEdgeInsetsMake(20.0, 20.0, 20.0, 20.0)
             theCollectionView.backgroundColor = UIColor.clearColor()
 
-            theCollectionView.infiniteScrollIndicatorStyle = .White;
+            theCollectionView.infiniteScrollIndicatorStyle = .Gray;
             registerInfiniteScrollView()
         }
 
