@@ -112,12 +112,13 @@ class YTVideosCollectionViewController: UIViewController, UICollectionViewDataSo
     }
 
     func appendFetchedArray(array: NSArray) {
-        // 1. stop animation
-        self.stopFetchedAnimation()
 
         // 2. update collection view
         self.videoList.addObjectsFromArray(array as [AnyObject])
         self.collectionView.reloadData()
+
+        // 1. stop animation
+        self.stopFetchedAnimation()
 
         // 3. check next fetcher
         if (self.delegate!.hasNextFetcing() == false) {
