@@ -45,12 +45,12 @@ class YTVideosCollectionViewController: UIViewController, UICollectionViewDataSo
 
         self.setupRefreshViewController()
 
-        insertRowAtTop()
+//        insertRowAtTop()
     }
 
     func setupRefreshViewController() {
         self.refreshControl = UIRefreshControl()
-        self.refreshControl.addTarget(self, action: "refresh", forControlEvents: UIControlEvents.ValueChanged)
+        self.refreshControl.addTarget(self, action: "endRefreshingRefreshControl", forControlEvents: UIControlEvents.ValueChanged)
 
         self.collectionView.addSubview(refreshControl)
     }
@@ -67,7 +67,7 @@ class YTVideosCollectionViewController: UIViewController, UICollectionViewDataSo
     }
 
     func startFetchedAnimation() {
-//        self.refreshControl.beginRefreshing()
+        self.refreshControl.beginRefreshing()
     }
 
     func stopFetchedAnimation() {
@@ -75,8 +75,8 @@ class YTVideosCollectionViewController: UIViewController, UICollectionViewDataSo
         self.collectionView.finishInfiniteScroll()
     }
 
-
-    func refresh() {
+    // MARK: UIRefreshControl' target
+    func endRefreshingRefreshControl() {
         insertRowAtTop()
     }
 
