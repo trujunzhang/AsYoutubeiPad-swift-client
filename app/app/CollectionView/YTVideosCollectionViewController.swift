@@ -36,6 +36,7 @@ class YTVideosCollectionViewController: UIViewController, UICollectionViewDataSo
         self.collectionView.contentInset = UIEdgeInsetsMake(20.0, 20.0, 20.0, 20.0)
         self.collectionView.backgroundColor = UIColor.clearColor()
 
+        // If your collectionview has a content size big enough to scroll vertically, it's OK, but in your case it's not.
         self.collectionView.alwaysBounceVertical = true
 
         // infinite scroll view for collection view
