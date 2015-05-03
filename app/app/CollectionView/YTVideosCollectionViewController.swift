@@ -67,10 +67,7 @@ class YTVideosCollectionViewController: UIViewController, UICollectionViewDataSo
             theCollectionView.contentInset = UIEdgeInsetsMake(20.0, 20.0, 20.0, 20.0)
             theCollectionView.backgroundColor = UIColor.clearColor()
 
-            theCollectionView.addInfiniteScrollWithHandler({
-                (collectionView) -> Void in
-                self.insertRowAtBottom()
-            })
+            registerInfiniteScrollView()
         }
 
         insertRowAtTop()
@@ -91,6 +88,13 @@ class YTVideosCollectionViewController: UIViewController, UICollectionViewDataSo
             (response, sucess) -> Void in
 
             self.appendFetchedArray(response as! NSArray)
+        })
+    }
+
+    func registerInfiniteScrollView() {
+        self.collectionView.addInfiniteScrollWithHandler({
+            (collectionView) -> Void in
+            self.insertRowAtBottom()
         })
     }
 
