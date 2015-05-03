@@ -16,39 +16,9 @@ class YTVideosCollectionViewController: UIViewController, UICollectionViewDataSo
 
     var delegate: FetchEventProtocol?
 
+    var refreshControl: UIRefreshControl!
+
     var videoList: NSMutableArray = NSMutableArray()
-
-    //    func makeRequestTask123() {
-    //      let  requestInfo = AuthoredFetcher.sharedInstance.prepareFetchingActivityListOnHomePage({
-    //            (object, sucess) -> Void in
-    //            if (sucess == true) {
-    //                var array: NSArray = object as! NSArray
-    //
-    //                var length = array.count
-    //
-    //                println("Length is \(length)")
-    //
-    //                self.requestInfo.appendArray(array)
-    //
-    //                self.collectionView.reloadData()
-    //            }
-    //        })
-    //    }
-
-    //    func makeRequestTask() {
-    //        requestInfo = YoutubeFetcher.prepareRequestSearch("Sketch 3", completeHandler: {
-    //            (object, sucess) -> Void in
-    //            if (sucess == true) {
-    //                var array: NSArray = object as! NSArray
-    //
-    //                var length = array.count
-    //
-    //                self.requestInfo.appendArray(array)
-    //
-    //                self.collectionView.reloadData()
-    //            }
-    //        })
-    //    }
 
 
     required init(coder aDecoder: NSCoder) {
@@ -63,14 +33,47 @@ class YTVideosCollectionViewController: UIViewController, UICollectionViewDataSo
         self.collectionView.dataSource = self
         self.collectionView.delegate = self
 
-        if let theCollectionView: UICollectionView = self.collectionView {
-            theCollectionView.contentInset = UIEdgeInsetsMake(20.0, 20.0, 20.0, 20.0)
-            theCollectionView.backgroundColor = UIColor.clearColor()
+        self.collectionView.contentInset = UIEdgeInsetsMake(20.0, 20.0, 20.0, 20.0)
+        self.collectionView.backgroundColor = UIColor.clearColor()
 
-            theCollectionView.infiniteScrollIndicatorStyle = .Gray;
-            registerInfiniteScrollView()
-        }
+        self.collectionView.infiniteScrollIndicatorStyle = .Gray;
+        registerInfiniteScrollView()
 
+        self.setupRefreshViewController()
+
+//        insertRowAtTop()
+    }
+
+    func setupRefreshViewController() {
+        self.refreshControl = UIRefreshControl()
+        self.refreshControl.attributedTitle = NSAttributedString(string: "引っ張って更新")
+        self.refreshControl.addTarget(self, action: "refresh", forControlEvents: UIControlEvents.ValueChanged)
+
+        self.collectionView.addSubview(refreshControl)
+    }
+
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+
+    }
+
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+
+        self.startFetchedAnimation()
+    }
+
+    func startFetchedAnimation() {
+        self.refreshControl.beginRefreshing()
+    }
+
+    func stopFetchedAnimation() {
+        self.refreshControl.endRefreshing()
+        self.collectionView.finishInfiniteScroll()
+    }
+
+
+    func refresh() {
         insertRowAtTop()
     }
 
@@ -117,30 +120,6 @@ class YTVideosCollectionViewController: UIViewController, UICollectionViewDataSo
             self.collectionView.removeInfiniteScroll()
         }
     }
-
-    override func viewWillAppear(animated: Bool) {
-        super.viewWillAppear(animated)
-
-    }
-
-    override func viewDidAppear(animated: Bool) {
-        super.viewDidAppear(animated)
-
-        self.startFetchedAnimation()
-    }
-
-    func startFetchedAnimation() {
-        if let theCollectionView: UICollectionView = self.collectionView {
-            //            theCollectionView.triggerPullToRefresh()
-        }
-    }
-
-    func stopFetchedAnimation() {
-        if let theCollectionView: UICollectionView = self.collectionView {
-            theCollectionView.finishInfiniteScroll()
-        }
-    }
-
 
     // Mark : delegate of UICollectionViewDataSource
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
