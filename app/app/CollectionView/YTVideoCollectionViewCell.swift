@@ -37,11 +37,17 @@ class YTVideoCollectionViewCell: UICollectionViewCell {
 
         // 1
         let url = NSURL(string: thumbnailUrl as String)
-        thumbnailImage.hnk_setImageFromURL(url!) // used
+//        thumbnailImage.hnk_setImageFromURL(url!) // used
 
         let placeHolder = UIImage(named: "Travel")
 
+//        thumbnailImage.sd_setImageWithURL(url,placeHolder:placeHolder,options: SDWebImageDownloaderOptions.LowPriority)
+        
 //        thumbnailImage.sd_setImageWithURL(url)
+        
+        thumbnailImage.sd_setImageWithURL(url, placeholderImage: placeHolder)
+        
+        thumbnailImage.sd_setImageWithURL(url, placeholderImage: placeHolder, options: SDWebImageOptions.LowPriority | SDWebImageOptions.TransformAnimatedImage)
 
 //        thumbnailImage.sd_setImageWithURL(url, placeholderImage: placeHolder, options: SDWebImageDownloaderOptions.LowPriority)
 //        [imageView sd_setImageWithURL:[NSURL URLWithString:@"https://graph.facebook.com/olivier.poitrey/picture"]
