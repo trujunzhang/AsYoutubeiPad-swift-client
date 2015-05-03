@@ -14,6 +14,8 @@ protocol FetchEventProtocol {
 
     func nextFetching(completeHandler: ObjectHandler)
 
+    func endFetching()
+
     func hasNextFetcing() -> Bool
 
 }
