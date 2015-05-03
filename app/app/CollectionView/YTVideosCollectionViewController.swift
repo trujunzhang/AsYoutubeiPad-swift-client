@@ -41,12 +41,11 @@ class YTVideosCollectionViewController: UIViewController, UICollectionViewDataSo
 
         self.setupRefreshViewController()
 
-//        insertRowAtTop()
+        insertRowAtTop()
     }
 
     func setupRefreshViewController() {
         self.refreshControl = UIRefreshControl()
-        self.refreshControl.attributedTitle = NSAttributedString(string: "引っ張って更新")
         self.refreshControl.addTarget(self, action: "refresh", forControlEvents: UIControlEvents.ValueChanged)
 
         self.collectionView.addSubview(refreshControl)
@@ -64,7 +63,7 @@ class YTVideosCollectionViewController: UIViewController, UICollectionViewDataSo
     }
 
     func startFetchedAnimation() {
-        self.refreshControl.beginRefreshing()
+//        self.refreshControl.beginRefreshing()
     }
 
     func stopFetchedAnimation() {
