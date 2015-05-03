@@ -113,7 +113,7 @@ class YTVideosCollectionViewController: UIViewController, UICollectionViewDataSo
         if (lastCount == 0) {
             self.collectionView.reloadData()
         } else {
-            self.batchUpdateCollectionView(array)
+            self.batchUpdateCollectionView(array.count)
         }
 
         // 1. stop animation
@@ -125,11 +125,11 @@ class YTVideosCollectionViewController: UIViewController, UICollectionViewDataSo
         }
     }
 
-    func batchUpdateCollectionView(array: NSArray) {
-        let resultsSize = self.videoList.count
+    func batchUpdateCollectionView(newCount: Int) {
+        let resultsSize = self.videoList.count - newCount
 
         var arrayWithIndexPaths = NSMutableArray()
-        for (var i = 0; i < array.count; i++) {
+        for (var i = 0; i < newCount; i++) {
             arrayWithIndexPaths.addObject(NSIndexPath(forRow: i + resultsSize, inSection: 0))
         }
 
