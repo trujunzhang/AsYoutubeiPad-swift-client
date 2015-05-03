@@ -53,16 +53,12 @@ class YTVideosCollectionViewController: UIViewController, UICollectionViewDataSo
         insertRowAtTop()
     }
 
-    override func viewWillAppear(animated: Bool) {
-        super.viewWillAppear(animated)
-
-    }
 
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
 
         self.startFetchedAnimation()
-        self.insertRowAtTop() // test
+//        self.insertRowAtTop() // test
     }
 
     func startFetchedAnimation() {
@@ -127,7 +123,7 @@ class YTVideosCollectionViewController: UIViewController, UICollectionViewDataSo
     // Mark : delegate of UICollectionViewDataSource
     func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
 
-        let width: CGFloat = self.view.bounds.size.width / 3 - (COLLECTION_CELL_INSET_VALUE * 2)
+        let width: CGFloat = self.view.bounds.size.width / 4 - (COLLECTION_CELL_INSET_VALUE * 2)
         let height: CGFloat = 240;
 
         return CGSizeMake(width, height)
