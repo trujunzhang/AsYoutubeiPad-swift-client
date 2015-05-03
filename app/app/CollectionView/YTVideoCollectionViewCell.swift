@@ -43,13 +43,6 @@ class YTVideoCollectionViewCell: UICollectionViewCell {
 
 //        thumbnailImage.sd_setImageWithURL(url,placeHolder:placeHolder,options: SDWebImageDownloaderOptions.LowPriority)
 
-        thumbnailImage.sd_setImageWithURL(url, placeholderImage: placeHolder, options: SDWebImageOptions.LowPriority | SDWebImageOptions.TransformAnimatedImage)
-
-//        thumbnailImage.sd_setImageWithURL(url, placeholderImage: placeHolder, options: SDWebImageDownloaderOptions.LowPriority)
-//        [imageView sd_setImageWithURL:[NSURL URLWithString:@"https://graph.facebook.com/olivier.poitrey/picture"]
-//            placeholderImage:[UIImage imageNamed:@"avatar-placeholder.png"]
-//            options:SDWebImageRefreshCached];
-
 //        self.thumbnailImage.hnk_setImageFromURL(NSURL(string: self.imageUrl)!)// used
 
         // 2
