@@ -113,78 +113,35 @@
                                             <rect key="frame" x="0.0" y="0.0" width="443" height="340"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="z2M-CH-kIC">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="z2M-CH-kIC">
                                                     <rect key="frame" x="8" y="8" width="427" height="239"/>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R5Q-cK-Fv9">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R5Q-cK-Fv9">
                                                     <rect key="frame" x="8" y="254" width="427" height="30"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="30" id="4ex-xL-RYd"/>
-                                                    </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mJn-s2-ww4">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mJn-s2-ww4">
                                                     <rect key="frame" x="8" y="284" width="427" height="18"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="18" id="hLr-TH-PnV"/>
-                                                    </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="11"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TDl-dl-ObG">
-                                                    <rect key="frame" x="9" y="310" width="426" height="26"/>
-                                                    <subviews>
-                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="AnN-Ej-saB">
-                                                            <rect key="frame" x="0.0" y="1" width="24" height="24"/>
-                                                            <constraints>
-                                                                <constraint firstAttribute="height" constant="24" id="7Wb-eN-v0M"/>
-                                                                <constraint firstAttribute="width" constant="24" id="98b-XK-aj7"/>
-                                                            </constraints>
-                                                        </imageView>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EmG-p4-221">
-                                                            <rect key="frame" x="36" y="6" width="380" height="14"/>
-                                                            <constraints>
-                                                                <constraint firstAttribute="height" constant="14" id="9uJ-mI-eHQ"/>
-                                                            </constraints>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="11"/>
-                                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                            <nil key="highlightedColor"/>
-                                                        </label>
-                                                    </subviews>
-                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="26" id="1A3-9p-noa"/>
-                                                        <constraint firstItem="AnN-Ej-saB" firstAttribute="leading" secondItem="TDl-dl-ObG" secondAttribute="leading" id="7U5-7i-AG2"/>
-                                                        <constraint firstAttribute="trailing" secondItem="EmG-p4-221" secondAttribute="trailing" constant="10" id="Nc9-nX-Fiw"/>
-                                                        <constraint firstAttribute="centerY" secondItem="EmG-p4-221" secondAttribute="centerY" id="Tzi-xO-y3H"/>
-                                                        <constraint firstItem="EmG-p4-221" firstAttribute="leading" secondItem="AnN-Ej-saB" secondAttribute="trailing" constant="12" id="f26-JI-oMD"/>
-                                                        <constraint firstAttribute="centerY" secondItem="AnN-Ej-saB" secondAttribute="centerY" id="mF6-br-b8S"/>
-                                                    </constraints>
-                                                </view>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="AnN-Ej-saB">
+                                                    <rect key="frame" x="13" y="303" width="24" height="24"/>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EmG-p4-221">
+                                                    <rect key="frame" x="52" y="308" width="380" height="14"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                        <constraints>
-                                            <constraint firstAttribute="trailing" secondItem="R5Q-cK-Fv9" secondAttribute="trailing" constant="8" id="4rF-lg-d0m"/>
-                                            <constraint firstItem="z2M-CH-kIC" firstAttribute="top" secondItem="k5v-EP-O1O" secondAttribute="top" constant="8" id="8b8-4s-0fC"/>
-                                            <constraint firstAttribute="bottom" secondItem="TDl-dl-ObG" secondAttribute="bottom" constant="4" id="I0Q-eB-NeP"/>
-                                            <constraint firstAttribute="trailing" secondItem="mJn-s2-ww4" secondAttribute="trailing" constant="8" id="MwW-ij-Nhq"/>
-                                            <constraint firstItem="mJn-s2-ww4" firstAttribute="top" secondItem="R5Q-cK-Fv9" secondAttribute="bottom" id="Qw6-0l-gpb"/>
-                                            <constraint firstItem="R5Q-cK-Fv9" firstAttribute="top" secondItem="z2M-CH-kIC" secondAttribute="bottom" constant="7" id="Ro4-eX-0mn"/>
-                                            <constraint firstItem="TDl-dl-ObG" firstAttribute="top" secondItem="mJn-s2-ww4" secondAttribute="bottom" constant="8" id="U2f-3C-8dp"/>
-                                            <constraint firstAttribute="trailing" secondItem="z2M-CH-kIC" secondAttribute="trailing" constant="8" id="USB-dY-A0U"/>
-                                            <constraint firstItem="mJn-s2-ww4" firstAttribute="leading" secondItem="k5v-EP-O1O" secondAttribute="leading" constant="8" id="Vxu-Dc-fMG"/>
-                                            <constraint firstAttribute="trailing" secondItem="TDl-dl-ObG" secondAttribute="trailing" constant="8" id="WNt-hT-pLj"/>
-                                            <constraint firstItem="R5Q-cK-Fv9" firstAttribute="leading" secondItem="k5v-EP-O1O" secondAttribute="leading" constant="8" id="jOD-Em-J0e"/>
-                                            <constraint firstItem="z2M-CH-kIC" firstAttribute="leading" secondItem="k5v-EP-O1O" secondAttribute="leading" constant="8" id="wGR-zA-AcK"/>
-                                            <constraint firstItem="TDl-dl-ObG" firstAttribute="leading" secondItem="k5v-EP-O1O" secondAttribute="leading" constant="9" id="wdt-Tl-pke"/>
-                                        </constraints>
                                         <connections>
-                                            <outlet property="channelContainer" destination="TDl-dl-ObG" id="TgQ-3p-5WZ"/>
                                             <outlet property="channelThumbnailImage" destination="AnN-Ej-saB" id="D9v-6m-MuT"/>
                                             <outlet property="channelTitleLabel" destination="EmG-p4-221" id="b65-Jg-SDh"/>
                                             <outlet property="infoLabel" destination="mJn-s2-ww4" id="CNk-fX-pd0"/>
