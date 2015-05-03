@@ -36,6 +36,7 @@
 		5E1E2CF21AD8B898004CC05B /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5E1E2CF11AD8B898004CC05B /* Images.xcassets */; };
 		5E1E2CF51AD8B898004CC05B /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5E1E2CF31AD8B898004CC05B /* LaunchScreen.xib */; };
 		5E2209A81AD8CBE300DD748D /* Autolayout.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5E2209A61AD8CBE300DD748D /* Autolayout.storyboard */; };
+		5E238F181AF662FF00917FB1 /* SearchEventProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E238F171AF662FF00917FB1 /* SearchEventProtocol.swift */; };
 		5E2B64D71AF5BD8800FB3CC6 /* VideoWatchStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5E2B64D51AF5BD8800FB3CC6 /* VideoWatchStoryboard.storyboard */; };
 		5E3294261AF246490055C454 /* YTVideoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E3294231AF246490055C454 /* YTVideoCollectionViewCell.swift */; };
 		5E3294271AF246490055C454 /* YTVideosCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E3294241AF246490055C454 /* YTVideosCollectionViewController.swift */; };
@@ -135,6 +136,7 @@
 		5E1E2CFF1AD8B898004CC05B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5E1E2D001AD8B898004CC05B /* appTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = appTests.swift; sourceTree = "<group>"; };
 		5E2209A71AD8CBE300DD748D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Autolayout.storyboard; sourceTree = "<group>"; };
+		5E238F171AF662FF00917FB1 /* SearchEventProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SearchEventProtocol.swift; path = FetchEvents/SearchEventProtocol.swift; sourceTree = "<group>"; };
 		5E2B64D61AF5BD8800FB3CC6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/VideoWatchStoryboard.storyboard; sourceTree = "<group>"; };
 		5E3294231AF246490055C454 /* YTVideoCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YTVideoCollectionViewCell.swift; sourceTree = "<group>"; };
 		5E3294241AF246490055C454 /* YTVideosCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YTVideosCollectionViewController.swift; sourceTree = "<group>"; };
@@ -502,6 +504,7 @@
 		5E401C001AF4F1B500613E28 /* FetchEvents */ = {
 			isa = PBXGroup;
 			children = (
+				5E238F171AF662FF00917FB1 /* SearchEventProtocol.swift */,
 				5E401C031AF4F49400613E28 /* RetrievingNewestVideoIdsEvent.swift */,
 				5E401C011AF4F22000613E28 /* FetchEventProtocol.swift */,
 			);
@@ -756,6 +759,7 @@
 				5E0514BD1AEDC60900A90A0B /* YTTabBar.swift in Sources */,
 				5E401C021AF4F22000613E28 /* FetchEventProtocol.swift in Sources */,
 				5E3AB3CC1AE3D7DC00BB0944 /* UIColorExtension.swift in Sources */,
+				5E238F181AF662FF00917FB1 /* SearchEventProtocol.swift in Sources */,
 				5ECA615C1AECC88B00D02728 /* MenuTitleBarBaseCellObject.swift in Sources */,
 				5EA80D8F1AF32B1E00A0D61D /* NBCollectionSectionGenerator.swift in Sources */,
 				5EFED9A61AE3AB3F00EEB23E /* VideoInfoDrawRectBlockCell.swift in Sources */,
