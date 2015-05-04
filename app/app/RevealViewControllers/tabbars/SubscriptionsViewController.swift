@@ -89,6 +89,7 @@ class SubscriptionsViewController: FrontBaseViewController {
         let viewController: YTVideosCollectionViewController = YTVideosCollectionViewController.instance()
         let event: RetrievingNewestVideoIdsEvent = RetrievingNewestVideoIdsEvent()
         viewController.delegate = event
+        viewController.eventObject = ""
 
         let rootView: UIView = viewController.view
         self.view.addSubview(rootView)

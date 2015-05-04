@@ -12,9 +12,14 @@ import Cartography
 class YTVideoWatchViewController: UIViewController {
 
     // MARK : All containers
-    var _moviePlayContainer: UIView?
-    var _videoInfoContainer: UIView?
-    var _videoOtherContainer: UIView?
+    var videoInfoContainer: UIView?
+    var videoOtherContainer: UIView?
+
+    lazy var moviePlayContainer: UIView = {
+        var container = UIView()
+        container.backgroundColor = UIColor.redColor()
+        return container
+    }()
 
     var group: Cartography.ConstraintGroup = Cartography.ConstraintGroup()
 
@@ -33,17 +38,14 @@ class YTVideoWatchViewController: UIViewController {
     }
 
     func makeMovieEmbeddedViewController() {
-        if let container: UIView = _moviePlayContainer {
-            movieEmbeddedViewController = MovieEmbeddedViewController.instance()
-            movieEmbeddedViewController?.videoID = videoID
+        movieEmbeddedViewController = MovieEmbeddedViewController.instance()
+        movieEmbeddedViewController?.videoID = videoID
 
-            movieEmbeddedView = movieEmbeddedViewController?.view
+        movieEmbeddedView = movieEmbeddedViewController?.view
+        movieEmbeddedView?.backgroundColor = UIColor.yellowColor() // test
 
-            movieEmbeddedView?.backgroundColor = UIColor.yellowColor() // test
-
-            if let view: UIView = movieEmbeddedView {
-                container.addSubview(view)
-            }
+        if let view: UIView = movieEmbeddedView {
+            self.moviePlayContainer.addSubview(view)
         }
 
         if let controller: UIViewController = movieEmbeddedViewController {
@@ -52,17 +54,15 @@ class YTVideoWatchViewController: UIViewController {
     }
 
     func makeAllContainers() {
-        _moviePlayContainer = UIView()
-        _moviePlayContainer?.backgroundColor = UIColor.redColor()
-        self.view.addSubview(_moviePlayContainer!)
+        self.view.addSubview(moviePlayContainer)
 
-        _videoInfoContainer = UIView()
-        _videoInfoContainer?.backgroundColor = UIColor.greenColor()
-        self.view.addSubview(_videoInfoContainer!)
+        videoInfoContainer = UIView()
+        videoInfoContainer?.backgroundColor = UIColor.greenColor()
+        self.view.addSubview(videoInfoContainer!)
 
-        _videoOtherContainer = UIView()
-        _videoOtherContainer?.backgroundColor = UIColor.blueColor()
-        self.view.addSubview(_videoOtherContainer!)
+        videoOtherContainer = UIView()
+        videoOtherContainer?.backgroundColor = UIColor.blueColor()
+        self.view.addSubview(videoOtherContainer!)
     }
 
     override func viewDidLayoutSubviews() {
@@ -77,7 +77,7 @@ class YTVideoWatchViewController: UIViewController {
 
     func setupViewVerticalLayout() {
 
-        group = constrain(_moviePlayContainer!, _videoInfoContainer!, _videoOtherContainer!, replace: group) {
+        group = constrain(moviePlayContainer, videoInfoContainer!, videoOtherContainer!, replace: group) {
             view1, view2, view3 in
             // _moviePlayContainer
             view1.leading == view1.superview!.leading
@@ -105,7 +105,7 @@ class YTVideoWatchViewController: UIViewController {
 
     func setupViewHorizontalLayout() {
 
-        group = constrain(_moviePlayContainer!, _videoInfoContainer!, _videoOtherContainer!, replace: group) {
+        group = constrain(moviePlayContainer, videoInfoContainer!, videoOtherContainer!, replace: group) {
             view1, view2, view3 in
             // _moviePlayContainer
             view1.leading == view1.superview!.leading
