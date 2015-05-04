@@ -11,6 +11,9 @@ import Cartography
 
 class YTVideoWatchViewController: UIViewController {
 
+    var videoID = ""
+    var group: Cartography.ConstraintGroup = Cartography.ConstraintGroup()
+
     // MARK : All containers
     lazy var moviePlayContainer: UIView = {
         var container = UIView()
@@ -28,40 +31,26 @@ class YTVideoWatchViewController: UIViewController {
         return container
     }()
 
-    var group: Cartography.ConstraintGroup = Cartography.ConstraintGroup()
 
-    var videoID = ""
-
-    var movieEmbeddedViewController: MovieEmbeddedViewController?
+    lazy var movieEmbeddedViewController: MovieEmbeddedViewController = {
+        return MovieEmbeddedViewController.instance()
+    }()
     var movieEmbeddedView: UIView?
 
     override func viewDidLoad() {
         // initialize all containers
-        makeAllContainers()
+        self.view.addSubview(moviePlayContainer)
+        self.view.addSubview(videoInfoContainer)
+        self.view.addSubview(videoOtherContainer)
 
         makeMovieEmbeddedViewController()
     }
 
     func makeMovieEmbeddedViewController() {
-        movieEmbeddedViewController = MovieEmbeddedViewController.instance()
-        movieEmbeddedViewController?.videoID = videoID
+        movieEmbeddedViewController.videoID = videoID
 
-        movieEmbeddedView = movieEmbeddedViewController?.view
-        movieEmbeddedView?.backgroundColor = UIColor.yellowColor() // test
-
-        if let view: UIView = movieEmbeddedView {
-            self.moviePlayContainer.addSubview(view)
-        }
-
-        if let controller: UIViewController = movieEmbeddedViewController {
-            self.addChildViewController(controller)
-        }
-    }
-
-    func makeAllContainers() {
-        self.view.addSubview(moviePlayContainer)
-        self.view.addSubview(videoInfoContainer)
-        self.view.addSubview(videoOtherContainer)
+        self.moviePlayContainer.addSubview(movieEmbeddedViewController.view)
+        self.addChildViewController(movieEmbeddedViewController)
     }
 
     override func viewDidLayoutSubviews() {
@@ -98,7 +87,6 @@ class YTVideoWatchViewController: UIViewController {
 
             view3.top == view1.bottom
             view3.bottom == view3.superview!.bottom
-
         }
     }
 
