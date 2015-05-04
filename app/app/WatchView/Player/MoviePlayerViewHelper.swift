@@ -28,7 +28,6 @@ class MoviePlayerViewHelper: MovieEmbeddedBasedBarViewController, PeriodicTimePr
     // MARK : array of PeriodicTimeProtocol
     var periodicTimeProtocols: [PeriodicTimeProtocol] = [PeriodicTimeProtocol]()
 
-
     // MARK: - View Lifecycle
 
     func prepareUI(_seekber: UISlider, _playPauseButton: UIButton, _elapsedTimeLabel: UILabel, _remainingTimeLabel: UILabel, _videoPlayerView: AVPlayerView, _loadingIndicator: UIActivityIndicatorView) {
@@ -151,9 +150,7 @@ class MoviePlayerViewHelper: MovieEmbeddedBasedBarViewController, PeriodicTimePr
 
     func play() {
         self.videoPlayer!.play()
-
         //        self.setPlayPauseButtonImage(true)
-
     }
 
     func pause() {

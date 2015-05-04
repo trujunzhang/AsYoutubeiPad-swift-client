@@ -77,7 +77,6 @@ class MovieEmbeddedNormalBarViewController: MoviePlayerViewHelper {
         if let url: NSURL = videoURL {
             setVideoURL(url, videoID: videoID)
         }
-
     }
 
     // MARK : Events for Top buttons
