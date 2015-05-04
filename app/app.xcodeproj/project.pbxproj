@@ -38,7 +38,6 @@
 		5E2209A81AD8CBE300DD748D /* Autolayout.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5E2209A61AD8CBE300DD748D /* Autolayout.storyboard */; };
 		5E238F181AF662FF00917FB1 /* SearchEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E238F171AF662FF00917FB1 /* SearchEvent.swift */; };
 		5E2B64D71AF5BD8800FB3CC6 /* VideoWatchStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5E2B64D51AF5BD8800FB3CC6 /* VideoWatchStoryboard.storyboard */; };
-		5E3294261AF246490055C454 /* YTVideoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E3294231AF246490055C454 /* YTVideoCollectionViewCell.swift */; };
 		5E3294271AF246490055C454 /* YTVideosCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E3294241AF246490055C454 /* YTVideosCollectionViewController.swift */; };
 		5E37DF901AE61D00009D605E /* LeftMenuSectionsUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E37DF8A1AE61D00009D605E /* LeftMenuSectionsUtils.swift */; };
 		5E37DF911AE61D00009D605E /* LeftMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E37DF8B1AE61D00009D605E /* LeftMenuViewController.swift */; };
@@ -74,6 +73,8 @@
 		5E917D951AECCEEC00922AE7 /* MenuLoginTitleBarCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E917D941AECCEEC00922AE7 /* MenuLoginTitleBarCell.swift */; };
 		5E9F197C1AEBB27400CC4D47 /* Haneke.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E9F197B1AEBB27400CC4D47 /* Haneke.framework */; };
 		5EA5D0071AECB7EF00E0BE18 /* YTMenuRowCellObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EA5D0061AECB7EF00E0BE18 /* YTMenuRowCellObject.swift */; };
+		5EA6916E1AF7407500DF0298 /* YTVideoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EA6916D1AF7407500DF0298 /* YTVideoCollectionViewCell.swift */; };
+		5EA691701AF7409000DF0298 /* VideoCollectionViewCellLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EA6916F1AF7409000DF0298 /* VideoCollectionViewCellLayout.swift */; };
 		5EA6F25E1AD8C9930017493D /* Cartography.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5EA6F25C1AD8C9930017493D /* Cartography.framework */; };
 		5EA80D8B1AF32B0E00A0D61D /* NBVideoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EA80D891AF32B0E00A0D61D /* NBVideoCollectionViewCell.swift */; };
 		5EA80D8F1AF32B1E00A0D61D /* NBCollectionSectionGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EA80D8D1AF32B1E00A0D61D /* NBCollectionSectionGenerator.swift */; };
@@ -138,7 +139,6 @@
 		5E2209A71AD8CBE300DD748D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Autolayout.storyboard; sourceTree = "<group>"; };
 		5E238F171AF662FF00917FB1 /* SearchEvent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SearchEvent.swift; path = FetchEvents/SearchEvent.swift; sourceTree = "<group>"; };
 		5E2B64D61AF5BD8800FB3CC6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/VideoWatchStoryboard.storyboard; sourceTree = "<group>"; };
-		5E3294231AF246490055C454 /* YTVideoCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YTVideoCollectionViewCell.swift; sourceTree = "<group>"; };
 		5E3294241AF246490055C454 /* YTVideosCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YTVideosCollectionViewController.swift; sourceTree = "<group>"; };
 		5E37DF8A1AE61D00009D605E /* LeftMenuSectionsUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LeftMenuSectionsUtils.swift; sourceTree = "<group>"; };
 		5E37DF8B1AE61D00009D605E /* LeftMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LeftMenuViewController.swift; sourceTree = "<group>"; };
@@ -176,6 +176,8 @@
 		5E917D941AECCEEC00922AE7 /* MenuLoginTitleBarCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MenuLoginTitleBarCell.swift; path = MenuCells/MenuLoginTitleBarCell.swift; sourceTree = "<group>"; };
 		5E9F197B1AEBB27400CC4D47 /* Haneke.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Haneke.framework; path = Carthage/Build/iOS/Haneke.framework; sourceTree = "<group>"; };
 		5EA5D0061AECB7EF00E0BE18 /* YTMenuRowCellObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = YTMenuRowCellObject.swift; path = MenuCells/YTMenuRowCellObject.swift; sourceTree = "<group>"; };
+		5EA6916D1AF7407500DF0298 /* YTVideoCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = YTVideoCollectionViewCell.swift; path = UICollectionCells/YTVideoCollectionViewCell.swift; sourceTree = "<group>"; };
+		5EA6916F1AF7409000DF0298 /* VideoCollectionViewCellLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = VideoCollectionViewCellLayout.swift; path = UICollectionCells/VideoCollectionViewCellLayout.swift; sourceTree = "<group>"; };
 		5EA6F25C1AD8C9930017493D /* Cartography.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cartography.framework; path = Carthage/Build/iOS/Cartography.framework; sourceTree = "<group>"; };
 		5EA6F25D1AD8C9930017493D /* WebImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebImage.framework; path = Carthage/Build/iOS/WebImage.framework; sourceTree = "<group>"; };
 		5EA6F2601AD8CA020017493D /* app-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "app-Bridging-Header.h"; sourceTree = "<group>"; };
@@ -517,6 +519,15 @@
 			name = Utils;
 			sourceTree = "<group>";
 		};
+		5EA6916C1AF7404400DF0298 /* UICollectionCells */ = {
+			isa = PBXGroup;
+			children = (
+				5EA6916F1AF7409000DF0298 /* VideoCollectionViewCellLayout.swift */,
+				5EA6916D1AF7407500DF0298 /* YTVideoCollectionViewCell.swift */,
+			);
+			name = UICollectionCells;
+			sourceTree = "<group>";
+		};
 		5EA80D881AF32B0E00A0D61D /* Collection Cells */ = {
 			isa = PBXGroup;
 			children = (
@@ -558,11 +569,11 @@
 		5ED690F01AF0CD6800560A83 /* CollectionView */ = {
 			isa = PBXGroup;
 			children = (
+				5EA6916C1AF7404400DF0298 /* UICollectionCells */,
 				5E401C001AF4F1B500613E28 /* FetchEvents */,
 				5EA80D881AF32B0E00A0D61D /* Collection Cells */,
 				5EA80D8D1AF32B1E00A0D61D /* NBCollectionSectionGenerator.swift */,
 				5EA80D8E1AF32B1E00A0D61D /* NBVideosCollectionViewController.swift */,
-				5E3294231AF246490055C454 /* YTVideoCollectionViewCell.swift */,
 				5E3294241AF246490055C454 /* YTVideosCollectionViewController.swift */,
 				5ECB14D21AF0D3D1006592AC /* YTVideoCollectionConstant.swift */,
 			);
@@ -767,6 +778,7 @@
 				5E39C4601AF4798F0069AC33 /* YoutubeRetrievingActivityListItemsFetcher.swift in Sources */,
 				5EFED9AC1AE3B1E700EEB23E /* VideoInfoConstant.swift in Sources */,
 				5E917D951AECCEEC00922AE7 /* MenuLoginTitleBarCell.swift in Sources */,
+				5EA691701AF7409000DF0298 /* VideoCollectionViewCellLayout.swift in Sources */,
 				5E401BFF1AF4F1AC00613E28 /* YoutubeRetrievingGTLActivityListItemsFetcherHelper.swift in Sources */,
 				5E032D331AF5B7A4006125AA /* AVPlayerView.swift in Sources */,
 				5E39C4631AF4798F0069AC33 /* YoutubeRetrievingNewSubscriptionVideosFetcherHelper.swift in Sources */,
@@ -784,6 +796,7 @@
 				5EFED9AA1AE3B17400EEB23E /* VideoInfoViewController.swift in Sources */,
 				5EA5D0071AECB7EF00E0BE18 /* YTMenuRowCellObject.swift in Sources */,
 				5E39C4641AF4798F0069AC33 /* YoutubeRetrievingPlayListItemsFetcher.swift in Sources */,
+				5EA6916E1AF7407500DF0298 /* YTVideoCollectionViewCell.swift in Sources */,
 				5EBEE6FF1AEB3292001ED7AB /* YTSectionTitleCellObject.swift in Sources */,
 				5EBEE6FD1AEB327C001ED7AB /* MenuLoggedTitleBarCell.swift in Sources */,
 				5E39C46D1AF4798F0069AC33 /* YoutubeModelParser.swift in Sources */,
@@ -820,7 +833,6 @@
 				5E39C4681AF4798F0069AC33 /* LoggedUserChannelInfo.swift in Sources */,
 				5ECB14D31AF0D3D1006592AC /* YTVideoCollectionConstant.swift in Sources */,
 				5E3AB3C81AE3D7DC00BB0944 /* Path.swift in Sources */,
-				5E3294261AF246490055C454 /* YTVideoCollectionViewCell.swift in Sources */,
 				5E0514B51AEDC54C00A90A0B /* ChannelPageViewController.swift in Sources */,
 				5E032D3B1AF5B7A4006125AA /* YTVideoWatchPlaylistHeaderViewController.swift in Sources */,
 				5E032D381AF5B7A4006125AA /* YTVideoWatchInfoViewController.swift in Sources */,
