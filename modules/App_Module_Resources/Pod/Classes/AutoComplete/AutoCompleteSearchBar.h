@@ -5,16 +5,16 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "AutoCompleteFetchOperation.h"
 
-@interface AutoCompleteSearchBar : UISearchBar<AutoCompleteSearchDelegate, UIGestureRecognizerDelegate, UISearchBarDelegate, UITableViewDataSource, UITableViewDelegate> {
-    NSArray* autoCompleteResults;
-    UIGestureRecognizer* tapGestureRecognizer;
+@interface AutoCompleteSearchBar : UISearchBar <UIGestureRecognizerDelegate, UISearchBarDelegate, UITableViewDataSource, UITableViewDelegate> {
+    NSArray *autoCompleteResults;
+    UIGestureRecognizer *tapGestureRecognizer;
 }
 
-@property (strong, readwrite) UITableView *autoCompleteTableView;
-@property NSOperationQueue* operationQueue;
+@property(nonatomic, retain) UIPopoverController *popoverController;
+@property(strong, readwrite) UITableView *autoCompleteTableView;
 
 - (void)reloadData;
+
 - (void)hideAutoCompleteView;
 @end

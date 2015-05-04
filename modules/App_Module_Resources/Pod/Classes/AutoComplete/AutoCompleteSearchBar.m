@@ -36,7 +36,6 @@ static NSString *autoCompleteCellIdentifier = @"AutoCompleteSearchBarCell";
 }
 
 - (void)initialize {
-    self.operationQueue = [[NSOperationQueue alloc] init];
     autoCompleteResults = @[];
 
     // Init AutoCompleteTableView
@@ -116,7 +115,6 @@ static NSString *autoCompleteCellIdentifier = @"AutoCompleteSearchBarCell";
 
 - (void)updateAutoCompleteResults {
 //    [self.operationQueue cancelAllOperations];
-//    [self.operationQueue addOperation:[[AutoCompleteFetchOperation alloc] initWithSearchString:self.text delegate:self]];
 
     if ([self.text isEqualToString:@""]) {
         return;
