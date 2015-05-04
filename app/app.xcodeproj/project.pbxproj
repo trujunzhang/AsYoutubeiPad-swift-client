@@ -71,7 +71,6 @@
 		5E401C041AF4F49400613E28 /* RetrievingNewestVideoIdsEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E401C031AF4F49400613E28 /* RetrievingNewestVideoIdsEvent.swift */; };
 		5E43CDB61AEDC48500EFA0F8 /* LayoutUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E43CDB51AEDC48500EFA0F8 /* LayoutUtils.swift */; };
 		5E4BFB8D1AE3214100BC7A33 /* pop.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E87FD951AD8C2500021E80C /* pop.framework */; };
-		5E56998D1AEDCDA100EE0E6A /* ReusedViewControllers.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5E56998B1AEDCDA100EE0E6A /* ReusedViewControllers.storyboard */; };
 		5E917D951AECCEEC00922AE7 /* MenuLoginTitleBarCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E917D941AECCEEC00922AE7 /* MenuLoginTitleBarCell.swift */; };
 		5E9F197C1AEBB27400CC4D47 /* Haneke.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E9F197B1AEBB27400CC4D47 /* Haneke.framework */; };
 		5EA5D0071AECB7EF00E0BE18 /* YTMenuRowCellObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EA5D0061AECB7EF00E0BE18 /* YTMenuRowCellObject.swift */; };
@@ -96,6 +95,7 @@
 		5EFED9AC1AE3B1E700EEB23E /* VideoInfoConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EFED9AB1AE3B1E700EEB23E /* VideoInfoConstant.swift */; };
 		5EFFA2961AF5BA0100095130 /* YoutubeDataFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EFFA2941AF5BA0100095130 /* YoutubeDataFetcher.swift */; };
 		5EFFA2971AF5BA0100095130 /* YouTubeExtractorUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EFFA2951AF5BA0100095130 /* YouTubeExtractorUtils.swift */; };
+		65B8CBFE8D3DCB369C7D2BCD /* ReusedViewControllers.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 65B8C55A2F1ADE8A7EF3F7C7 /* ReusedViewControllers.storyboard */; };
 		FE4BD745914619899B4CFFE4 /* libPods-app.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EC98874876136DD34019F3EC /* libPods-app.a */; };
 /* End PBXBuildFile section */
 
@@ -171,7 +171,6 @@
 		5E401C031AF4F49400613E28 /* RetrievingNewestVideoIdsEvent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RetrievingNewestVideoIdsEvent.swift; path = FetchEvents/RetrievingNewestVideoIdsEvent.swift; sourceTree = "<group>"; };
 		5E43CDB51AEDC48500EFA0F8 /* LayoutUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LayoutUtils.swift; path = "../Business-Logic-Layer/Utils/LayoutUtils.swift"; sourceTree = "<group>"; };
 		5E52BAC31AD8C449007C3F32 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
-		5E56998C1AEDCDA100EE0E6A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/ReusedViewControllers.storyboard; sourceTree = "<group>"; };
 		5E87FD931AD8C24B0021E80C /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Bolts.framework; path = Carthage/Build/iOS/Bolts.framework; sourceTree = "<group>"; };
 		5E87FD951AD8C2500021E80C /* pop.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = pop.framework; path = Carthage/Build/iOS/pop.framework; sourceTree = "<group>"; };
 		5E917D941AECCEEC00922AE7 /* MenuLoginTitleBarCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MenuLoginTitleBarCell.swift; path = MenuCells/MenuLoginTitleBarCell.swift; sourceTree = "<group>"; };
@@ -199,6 +198,7 @@
 		5EFED9AB1AE3B1E700EEB23E /* VideoInfoConstant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoInfoConstant.swift; sourceTree = "<group>"; };
 		5EFFA2941AF5BA0100095130 /* YoutubeDataFetcher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YoutubeDataFetcher.swift; sourceTree = "<group>"; };
 		5EFFA2951AF5BA0100095130 /* YouTubeExtractorUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YouTubeExtractorUtils.swift; sourceTree = "<group>"; };
+		65B8C81EFD99EC85AB8C87BE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = app/Base.lproj/ReusedViewControllers.storyboard; sourceTree = "<group>"; };
 		6F41558897D0187FFE158F21 /* libPods-appTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-appTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EC98874876136DD34019F3EC /* libPods-app.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-app.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F56A9DEB18C78036C526EAC9 /* Pods-app.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-app.debug.xcconfig"; path = "Pods/Target Support Files/Pods-app/Pods-app.debug.xcconfig"; sourceTree = "<group>"; };
@@ -231,6 +231,7 @@
 				5E87FD931AD8C24B0021E80C /* Bolts.framework */,
 				EC98874876136DD34019F3EC /* libPods-app.a */,
 				6F41558897D0187FFE158F21 /* libPods-appTests.a */,
+				65B8C55A2F1ADE8A7EF3F7C7 /* ReusedViewControllers.storyboard */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -346,7 +347,6 @@
 				5EC282D61ADCEA9F007CB736 /* Cartography */,
 				5E1E2CEA1AD8B898004CC05B /* AppDelegate.swift */,
 				5E1E2CEE1AD8B898004CC05B /* Main.storyboard */,
-				5E56998B1AEDCDA100EE0E6A /* ReusedViewControllers.storyboard */,
 				5E2B64D51AF5BD8800FB3CC6 /* VideoWatchStoryboard.storyboard */,
 				5E1E2CF11AD8B898004CC05B /* Images.xcassets */,
 				5E1E2CF31AD8B898004CC05B /* LaunchScreen.xib */,
@@ -692,9 +692,9 @@
 				5E1E2CF51AD8B898004CC05B /* LaunchScreen.xib in Resources */,
 				5E2B64D71AF5BD8800FB3CC6 /* VideoWatchStoryboard.storyboard in Resources */,
 				5EA80D941AF32B5A00A0D61D /* NBVideoCollectionViewCell.xib in Resources */,
-				5E56998D1AEDCDA100EE0E6A /* ReusedViewControllers.storyboard in Resources */,
 				5E1E2CF21AD8B898004CC05B /* Images.xcassets in Resources */,
 				5E2209A81AD8CBE300DD748D /* Autolayout.storyboard in Resources */,
+				65B8CBFE8D3DCB369C7D2BCD /* ReusedViewControllers.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -871,10 +871,10 @@
 			name = VideoWatchStoryboard.storyboard;
 			sourceTree = "<group>";
 		};
-		5E56998B1AEDCDA100EE0E6A /* ReusedViewControllers.storyboard */ = {
+		65B8C55A2F1ADE8A7EF3F7C7 /* ReusedViewControllers.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				5E56998C1AEDCDA100EE0E6A /* Base */,
+				65B8C81EFD99EC85AB8C87BE /* Base */,
 			);
 			name = ReusedViewControllers.storyboard;
 			sourceTree = "<group>";
