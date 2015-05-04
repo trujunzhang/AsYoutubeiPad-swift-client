@@ -32,10 +32,8 @@ class YTVideoWatchViewController: UIViewController {
 
     var videoID = ""
 
-
     var movieEmbeddedViewController: MovieEmbeddedViewController?
     var movieEmbeddedView: UIView?
-
 
     override func viewDidLoad() {
         // initialize all containers
@@ -128,7 +126,6 @@ class YTVideoWatchViewController: UIViewController {
             view3.bottom == view3.superview!.bottom
 
             view3.leading == view1.trailing
-
         }
     }
 
