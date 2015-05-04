@@ -10,162 +10,158 @@ import Foundation
 import AVFoundation
 import UIKit
 
-class MoviePlayerViewHelper : MovieEmbeddedBasedBarViewController, PeriodicTimeProtocol,ObservingPlayerItemDelegate {
+class MoviePlayerViewHelper: MovieEmbeddedBasedBarViewController, PeriodicTimeProtocol, ObservingPlayerItemDelegate {
     var mLoadingIndicator: UIActivityIndicatorView!
-    
+
     var mSeekber: UISlider!
     var mPlayPauseButton: UIButton!
     var mElapsedTimeLabel: UILabel!
     var mRemainingTimeLabel: UILabel!
     var mVideoPlayerView: AVPlayerView!
-    
-    
+
+
     var playerItem: ObservingPlayerItem? = nil
     var videoPlayer: AVPlayer? = nil
     var videoTimeObserver: AnyObject? = nil
     var playingRateAfterScrub: Float = 0
-    
+
     // MARK : array of PeriodicTimeProtocol
-    var periodicTimeProtocols:[PeriodicTimeProtocol] = [PeriodicTimeProtocol]()
-    
-    
+    var periodicTimeProtocols: [PeriodicTimeProtocol] = [PeriodicTimeProtocol]()
+
+
     // MARK: - View Lifecycle
-    
-    func prepareUI(_seekber: UISlider,_playPauseButton: UIButton, _elapsedTimeLabel: UILabel, _remainingTimeLabel: UILabel, _videoPlayerView: AVPlayerView, _loadingIndicator: UIActivityIndicatorView){
+
+    func prepareUI(_seekber: UISlider, _playPauseButton: UIButton, _elapsedTimeLabel: UILabel, _remainingTimeLabel: UILabel, _videoPlayerView: AVPlayerView, _loadingIndicator: UIActivityIndicatorView) {
         mSeekber = _seekber
         mPlayPauseButton = _playPauseButton
         mElapsedTimeLabel = _elapsedTimeLabel
         mRemainingTimeLabel = _remainingTimeLabel
-        
+
         mVideoPlayerView = _videoPlayerView
-        
+
         mLoadingIndicator = _loadingIndicator
     }
-    
-    func initAVPlayer(url: NSURL){
 
-        
+    func initAVPlayer(url: NSURL) {
+
         self.playerItem = ObservingPlayerItem(URL: url)
         self.playerItem!.delegate = self;
-        
+
         self.videoPlayer = AVPlayer(playerItem: self.playerItem)
-        
+
         self.mVideoPlayerView.setPlayer(self.videoPlayer!)
         self.mVideoPlayerView.setVideoFillMode(AVLayerVideoGravityResizeAspect)
-        
+
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "playerItemDidReachEnd:", name: AVPlayerItemDidPlayToEndTimeNotification, object: self.videoPlayer?.currentItem)
-        
-        
+
         addPlayerTimeObserver()
-        
-        
-        
+
         self.mSeekber.minimumTrackTintColor = UIColor.whiteColor()
         self.mSeekber.maximumTrackTintColor = UIColor.blackColor()
         self.mSeekber.setValue(0, animated: false)
         //        self.syncPlayPauseButtonImage()
         self.updateTimeLabel()
-        
+
         self.addPeriodicTimeProtocol(self)
-        
+
         //        self.singleTap.requireGestureRecognizerToFail(self.doubleTap)
     }
-    
-    override func observeValueForKeyPath(keyPath: String, ofObject object: AnyObject, change: [NSObject : AnyObject], context: UnsafeMutablePointer<()>) {
+
+    override func observeValueForKeyPath(keyPath: String, ofObject object: AnyObject, change: [NSObject:AnyObject], context: UnsafeMutablePointer<()>) {
         if keyPath == "readyForDisplay" {
             dispatch_async(dispatch_get_main_queue(), {
                 var x = 0
             })
         }
     }
-    
-    
-    
+
+
+
     // MARK: - Player Notifications
-    
+
     func playerItemDidReachEnd(notification: NSNotification) {
         self.syncPlayPauseButtonImage()
         self.seekToTime(0)
     }
-    
+
     //    func
-    
+
     // MARK: - Player Item
-    
+
     func isPlaying() -> Bool {
         return playingRateAfterScrub != 0 || self.videoPlayer!.rate != 0
     }
-    
+
     func playerItemDuration() -> CMTime {
         let playerItem: AVPlayerItem = self.videoPlayer!.currentItem
         if playerItem.status == .ReadyToPlay {
             return playerItem.duration
         }
-        
+
         return kCMTimeInvalid
     }
-    
-    
+
+
     // MARK: - Player Appearance
-    
+
     func syncSeekber() {
         let playerDuration: CMTime = self.playerItemDuration()
-        
+
         if !playerDuration.isValid {
             self.mSeekber.minimumValue = 0
             return
         }
-        
+
         let duration: Double = CMTimeGetSeconds(playerDuration)
         let currentTime: Double = CMTimeGetSeconds(self.videoPlayer!.currentTime())
-        
-        let progress: Float = Float(currentTime/duration)
+
+        let progress: Float = Float(currentTime / duration)
         self.mSeekber.setValue(progress, animated: true)
     }
-    
+
     func updateTimeLabel() {
         let playerDuration: CMTime = self.playerItemDuration()
-        
+
         if !playerDuration.isValid {
             return
         }
-        
+
         let duration: Double = CMTimeGetSeconds(playerDuration)
         let currentTime: Double = CMTimeGetSeconds(self.videoPlayer!.currentTime())
-        
-        let elapsedTimeMin: Int = Int(currentTime/60)
-        let elapsedTimeSec: Int = Int(currentTime) - elapsedTimeMin*60
-        
-        let remainingTimeMin: Int = Int((duration - currentTime)/60)
-        let remainingTimeSec: Int = Int(duration - currentTime) - remainingTimeMin*60
-        
-        self.mElapsedTimeLabel.text = getTimeString(elapsedTimeMin,timeSec: elapsedTimeSec)
-        self.mRemainingTimeLabel.text = getTimeString(remainingTimeMin,timeSec: remainingTimeSec)
+
+        let elapsedTimeMin: Int = Int(currentTime / 60)
+        let elapsedTimeSec: Int = Int(currentTime) - elapsedTimeMin * 60
+
+        let remainingTimeMin: Int = Int((duration - currentTime) / 60)
+        let remainingTimeSec: Int = Int(duration - currentTime) - remainingTimeMin * 60
+
+        self.mElapsedTimeLabel.text = getTimeString(elapsedTimeMin, timeSec: elapsedTimeSec)
+        self.mRemainingTimeLabel.text = getTimeString(remainingTimeMin, timeSec: remainingTimeSec)
     }
-    
-    func getTimeString(timeMin: Int,timeSec: Int) -> String {
-        let min_p:String = String(format: "%02d", timeMin)
-        let sec_p:String = String(format: "%02d", timeSec)
-        
+
+    func getTimeString(timeMin: Int, timeSec: Int) -> String {
+        let min_p: String = String(format: "%02d", timeMin)
+        let sec_p: String = String(format: "%02d", timeSec)
+
         return "\(min_p):\(sec_p)"
     }
-    
-    
+
+
     // MARK: - Play & Pause
-    
+
     func play() {
         self.videoPlayer!.play()
-        
+
         //        self.setPlayPauseButtonImage(true)
-        
+
     }
-    
+
     func pause() {
         self.videoPlayer!.pause()
-        
+
         //        self.setPlayPauseButtonImage(false)
     }
-    
+
     //    @IBAction
     func playOrPause(sender: AnyObject) {
         if self.isPlaying() {
@@ -173,106 +169,107 @@ class MoviePlayerViewHelper : MovieEmbeddedBasedBarViewController, PeriodicTimeP
         } else {
             self.play()
         }
-        
+
         self.syncPlayPauseButtonImage()
     }
-    
+
     func syncPlayPauseButtonImage() {
         setPlayPauseButtonImage(self.isPlaying())
     }
-    
-    
-    func setPlayPauseButtonImage(isPlaying:Bool) {
+
+
+    func setPlayPauseButtonImage(isPlaying: Bool) {
         if isPlaying == true {
-            self.mPlayPauseButton.setImage(UIImage(named:"mp_embedded_pause"), forState: .Normal)
+            self.mPlayPauseButton.setImage(UIImage(named: "mp_embedded_pause"), forState: .Normal)
         } else {
-            self.mPlayPauseButton.setImage(UIImage(named:"mp_embedded_play"), forState: .Normal)
+            self.mPlayPauseButton.setImage(UIImage(named: "mp_embedded_play"), forState: .Normal)
         }
     }
-    
-    func removePlayerTimeObserver(){
-        if(self.videoTimeObserver != nil){
-            
+
+    func removePlayerTimeObserver() {
+        if (self.videoTimeObserver != nil) {
+
             self.videoPlayer!.removeTimeObserver(self.videoTimeObserver)
-            
+
             self.videoTimeObserver = nil
         }
     }
-    
-    func addPlayerTimeObserver(){
-        if(self.videoTimeObserver == nil){
-            
+
+    func addPlayerTimeObserver() {
+        if (self.videoTimeObserver == nil) {
+
             self.videoTimeObserver = self.videoPlayer!.addPeriodicTimeObserverForInterval(CMTimeMake(150, 600),
-                queue: dispatch_get_main_queue(),
-                usingBlock: {[unowned self](CMTime) in
-                    
-                    self.runPeriodicTimes()
-                    
-                })
-            
-            
+                    queue: dispatch_get_main_queue(),
+                    usingBlock: {
+                        [unowned self](CMTime) in
+
+                        self.runPeriodicTimes()
+
+                    })
+
+
         }
     }
-    
-    
+
+
     // MARK: - Seek
-    
+
     //    @IBAction
     func beginScrubbing(slider: UISlider) {
         self.playingRateAfterScrub = self.videoPlayer!.rate
         self.removePlayerTimeObserver()
         self.pause()
     }
-    
+
     //    @IBAction
     func endScrubbing(slider: UISlider) {
         //        if self.playingRateAfterScrub != 0 {
-        
+
         self.play()
         addPlayerTimeObserver()
         self.playingRateAfterScrub = 0
         //        }
     }
-    
+
     //    @IBAction
     func scrub(slider: UISlider) {
         self.seekToTime(Double(slider.value))
     }
-    
+
     func isScrubbing() -> Bool {
         return playingRateAfterScrub != 0
     }
-    
-    
+
+
     //    @IBAction
     func back() {
         self.seekToTime(0)
     }
-    
+
     //    @IBAction
     func next() {
         self.seekToTime(1)
     }
-    
+
     func seekToTime(position: Double) {
         let playerDuration: CMTime = self.playerItemDuration()
-        
+
         if !playerDuration.isValid {
             self.mSeekber.minimumValue = 0
             return
         }
-        
-        let duration: Double  = CMTimeGetSeconds(playerDuration)
-        
+
+        let duration: Double = CMTimeGetSeconds(playerDuration)
+
         let currentTime: Double = CMTimeGetSeconds(videoPlayer!.currentTime())
         if (currentTime <= 0 && position == 0) || (currentTime >= duration && position == 1) {
             return
         }
-        
+
         let time: Double = duration * position
         self.videoPlayer!.seekToTime(CMTimeMakeWithSeconds(time, Int32(NSEC_PER_SEC)))
     }
-    
+
     // MARK: - Tap Gesture
     //    @IBAction
     func hideMenu() {
@@ -290,7 +287,7 @@ class MoviePlayerViewHelper : MovieEmbeddedBasedBarViewController, PeriodicTimeP
         //            })
         //        }
     }
-    
+
     //    @IBAction
     func zoomPlayer() {
         if self.mVideoPlayerView.videoFillMode() == AVLayerVideoGravityResizeAspect {
@@ -299,62 +296,62 @@ class MoviePlayerViewHelper : MovieEmbeddedBasedBarViewController, PeriodicTimeP
             self.mVideoPlayerView.setVideoFillMode(AVLayerVideoGravityResizeAspect)
         }
     }
-    
+
     // MARK :
-    func playerTimeChanged(){
+    func playerTimeChanged() {
         self.syncSeekber()
         self.updateTimeLabel()
     }
-    
-    func runPeriodicTimes(){
-        
+
+    func runPeriodicTimes() {
+
         let _periodicTimeProtocols: [PeriodicTimeProtocol] = self.periodicTimeProtocols
-        
-        for periodicTimeProtocol in _periodicTimeProtocols{
-            
+
+        for periodicTimeProtocol in _periodicTimeProtocols {
+
             let _periodicTimeProtocol: PeriodicTimeProtocol = periodicTimeProtocol as PeriodicTimeProtocol
             _periodicTimeProtocol.playerTimeChanged()
-            
+
         }
-        
-        
+
+
     }
-    
-    func addPeriodicTimeProtocol(periodicTimeProtocol:PeriodicTimeProtocol){
+
+    func addPeriodicTimeProtocol(periodicTimeProtocol: PeriodicTimeProtocol) {
         periodicTimeProtocols.append(periodicTimeProtocol)
     }
-    
+
     // MARK :
-    func showLoadingPanel(){
+    func showLoadingPanel() {
         mLoadingIndicator.startAnimating()
         mLoadingIndicator.hidesWhenStopped = true
     }
-    
-    func hideLoadingPanel(){
+
+    func hideLoadingPanel() {
         mLoadingIndicator.stopAnimating()
     }
-    
-    
+
+
     // MARK :
-    func playerItemReachedEnd(){
+    func playerItemReachedEnd() {
         var x = 0
     }
-    
-    func playerItemStalled(){
+
+    func playerItemStalled() {
         var x = 0
     }
-    
-    func playerItemReadyToPlay(){
+
+    func playerItemReadyToPlay() {
         hideLoadingPanel()
     }
-    
-    func playerItemPlayFailed(){
+
+    func playerItemPlayFailed() {
         var x = 0
     }
-    
-    func playerItemRemovedObservation(){
+
+    func playerItemRemovedObservation() {
         var x = 0
     }
-    
-    
+
+
 }

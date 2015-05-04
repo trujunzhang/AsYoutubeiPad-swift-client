@@ -20,8 +20,6 @@ class MovieEmbeddedViewController: UIViewController {
 
     var group: Cartography.ConstraintGroup?
 
-    var playerView: UIView?
-
     lazy var normalBarViewController: MovieEmbeddedNormalBarViewController = {
         return MovieEmbeddedNormalBarViewController.instance()
     }()
