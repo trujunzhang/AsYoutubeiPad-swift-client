@@ -92,4 +92,8 @@ class YTYoutubeRequestInfo: NSObject {
         return self.parameters.objectForKey("pageToken") as! NSString
     }
 
+    func hasNextPageToken() -> Bool {
+        return (self.parameters.objectForKey("pageToken") as! String).isEmpty == false
+    }
+
 }
