@@ -12,7 +12,7 @@ class ViewController: UIViewController, AuthorUserFetchingDelegate, UISearchBarD
 
 
     var popoverController: UIPopoverController?
-    var popoverTableViewController: PopoverTableViewController?
+    var popoverTableViewController: PopoverTableViewController = PopoverTableViewController()
 
     var rightBarItem: UIBarButtonItem?
 
@@ -120,13 +120,14 @@ class ViewController: UIViewController, AuthorUserFetchingDelegate, UISearchBarD
             (object, sucess) -> Void in
             if (sucess == true) {
                 let array: NSArray = object as! NSArray
+
+                self.popoverTableViewController.reloadTableContents(array)
             }
         })
     }
 
     func makePopoverController() {
-        popoverTableViewController = PopoverTableViewController()
-        popoverController = UIPopoverController(contentViewController: popoverTableViewController!)
+        popoverController = UIPopoverController(contentViewController: popoverTableViewController)
     }
 
     func showPopover() {
