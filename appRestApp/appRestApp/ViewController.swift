@@ -8,9 +8,19 @@
 
 import UIKit
 
-class ViewController: UIViewController, AuthorUserFetchingDelegate,UISearchBarDelegate {
-    
-    @IBOutlet weak var searchBar: AutoCompleteSearchBar!
+class ViewController: UIViewController, AuthorUserFetchingDelegate, UISearchBarDelegate {
+
+    lazy var searchBar: AutoCompleteSearchBar = {
+        let searchBar: AutoCompleteSearchBar = AutoCompleteSearchBar(frame: CGRectMake(0, 0, 300, 20))
+        searchBar.placeholder = "Searching..."
+        searchBar.delegate = self
+
+        searchBar.backgroundColor = UIColor.clearColor()
+        searchBar.showsCancelButton = true
+        searchBar.userInteractionEnabled = true
+
+        return searchBar
+    }()
 
     @IBOutlet weak var loginButton: UIButton!
     override func viewDidLoad() {
@@ -23,6 +33,11 @@ class ViewController: UIViewController, AuthorUserFetchingDelegate,UISearchBarDe
 
 //            self.startFetchingLoggedSubscriptionList() // used
         }
+
+
+
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(customView: searchBar)
+
     }
 
     override func didReceiveMemoryWarning() {
@@ -72,14 +87,15 @@ class ViewController: UIViewController, AuthorUserFetchingDelegate,UISearchBarDe
 
     func endFetchingUserSubscriptions(array: NSArray) {
     }
-    
+
     // MARK: UISearchBarDelegate
     func searchBar(searchBar: UISearchBar, textDidChange searchText: String) {
-        let theSearchBar: AutoCompleteSearchBar = searchBar as!  AutoCompleteSearchBar
+        let theSearchBar: AutoCompleteSearchBar = searchBar as! AutoCompleteSearchBar
         theSearchBar.reloadData()
     }
+
     func searchBarCancelButtonClicked(searchBar: UISearchBar) {
-        let theSearchBar: AutoCompleteSearchBar = searchBar as!  AutoCompleteSearchBar
+        let theSearchBar: AutoCompleteSearchBar = searchBar as! AutoCompleteSearchBar
         theSearchBar.hideAutoCompleteView()
     }
 
