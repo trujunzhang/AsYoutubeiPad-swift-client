@@ -51,9 +51,11 @@ class RevealViewHelper: NSObject {
 
     }
 
-    func pushWatchVideoViewController(videoId: NSString) {
+    func pushWatchVideoViewController(videoCache: YoutubeVideoCache) {
         let viewController: YTVideoWatchViewController = YTVideoWatchViewController()
-        viewController.videoID = videoId as String
+
+        viewController.videoID = YoutubeParser.getWatchVideoId(videoCache) as String
+        viewController.title = YoutubeParser.getVideoSnippetTitle(videoCache) as String
 
         if let theSubscriptionsViewController: SubscriptionsViewController = self.subscriptionsViewController {
             theSubscriptionsViewController.navigationController?.pushViewController(viewController, animated: true)

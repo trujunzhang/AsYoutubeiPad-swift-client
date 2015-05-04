@@ -172,9 +172,8 @@ class YTVideosCollectionViewController: UIViewController, UICollectionViewDataSo
     //MARK: UICollectionViewDelegate
 
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
-        let videoId: NSString = YoutubeParser.getWatchVideoId(videoList[indexPath.row] as! YoutubeVideoCache)
 
-        RevealViewHelper.sharedInstance.pushWatchVideoViewController(videoId)
+        RevealViewHelper.sharedInstance.pushWatchVideoViewController(videoList[indexPath.row] as! YoutubeVideoCache)
     }
 
 }
