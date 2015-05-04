@@ -62,6 +62,7 @@ class MovieEmbeddedNormalBarViewController: MoviePlayerViewHelper {
     }()
     var videoID = ""
 
+    //MARK: UIViewController lifecycle
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -73,11 +74,31 @@ class MovieEmbeddedNormalBarViewController: MoviePlayerViewHelper {
         prepareUI(durationSlider, _playPauseButton: playPauseButton, _elapsedTimeLabel: timeElapsedLabel, _remainingTimeLabel: timeRemainingLabel, _videoPlayerView: videoPlayerView, _loadingIndicator: loadingIndicator)
 
         showLoadingPanel()
+    }
 
-        if let url: NSURL = videoURL {
-            setVideoURL(url, videoID: videoID)
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+    }
+
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+
+        if let viewController: MoviePlayerViewHelper = moviePlayerViewController {
+//            viewController.play()
         }
     }
+
+    override func viewWillDisappear(animated: Bool) {
+        super.viewWillDisappear(animated)
+
+
+    }
+
+    override func viewDidDisappear(animated: Bool) {
+        super.viewDidDisappear(animated)
+    }
+
+
 
     // MARK : Events for Top buttons
     @IBAction func repeatButtonEvent(sender: AnyObject) {
