@@ -231,7 +231,6 @@
 				5E87FD931AD8C24B0021E80C /* Bolts.framework */,
 				EC98874876136DD34019F3EC /* libPods-app.a */,
 				6F41558897D0187FFE158F21 /* libPods-appTests.a */,
-				65B8C55A2F1ADE8A7EF3F7C7 /* ReusedViewControllers.storyboard */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -619,6 +618,7 @@
 		AA4B77283D03A4084AB3C91E /* Pods */ = {
 			isa = PBXGroup;
 			children = (
+				65B8C55A2F1ADE8A7EF3F7C7 /* ReusedViewControllers.storyboard */,
 				F56A9DEB18C78036C526EAC9 /* Pods-app.debug.xcconfig */,
 				33A19E501CD1C695FC7E8FA4 /* Pods-app.release.xcconfig */,
 				5A453D09E91E275880C7A46C /* Pods-appTests.debug.xcconfig */,
