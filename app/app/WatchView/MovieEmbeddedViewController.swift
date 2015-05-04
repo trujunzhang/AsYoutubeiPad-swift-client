@@ -11,7 +11,11 @@ import Cartography
 
 class MovieEmbeddedViewController: UIViewController {
 
-    var videoID = ""
+    var videoID: String = "" {
+        didSet {
+            YoutubeExtractor()
+        }
+    }
     var dict: [String:IGYouTubeVideo] = [:]
 
     var group: Cartography.ConstraintGroup?
@@ -27,22 +31,15 @@ class MovieEmbeddedViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        YoutubeExtractor()
-
         self.addChildViewController(self.normalBarViewController)
     }
-
 
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
 
         LayoutUtils.LayoutFullView(self.view)
-        layoutEmbeddedBar()
-    }
-
-
-    func playVideo(videoURL: NSURL) {
-        self.normalBarViewController.setVideoURL(videoURL, videoID: videoID)
+        self.view.addSubview(normalBarViewController.view)
+        LayoutUtils.LayoutFullView(normalBarViewController.view)
     }
 
 
@@ -64,14 +61,9 @@ class MovieEmbeddedViewController: UIViewController {
         })
     }
 
-    override func viewDidLayoutSubviews() {
 
-    }
-
-
-    func layoutEmbeddedBar() {
-        self.view.addSubview(normalBarViewController.view)
-        LayoutUtils.LayoutFullView(normalBarViewController.view)
+    func playVideo(videoURL: NSURL) {
+        self.normalBarViewController.setVideoURL(videoURL, videoID: videoID)
     }
 
 
