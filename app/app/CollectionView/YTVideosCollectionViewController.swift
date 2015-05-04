@@ -16,6 +16,7 @@ class YTVideosCollectionViewController: UIViewController, UICollectionViewDataSo
     @IBOutlet weak var flowLayout: UICollectionViewFlowLayout!
 
     var delegate: FetchEventProtocol?
+    var eventObject: AnyObject?
 
     var videoList: NSMutableArray = NSMutableArray()
 
@@ -78,7 +79,7 @@ class YTVideosCollectionViewController: UIViewController, UICollectionViewDataSo
     func insertRowAtTop() {
         self.cleanupFetchedArray()
 
-        self.delegate!.refreshEvent({
+        self.delegate!.refreshEvent(eventObject!, completeHandler: {
             (response, sucess) -> Void in
 
             self.appendFetchedArray(response as! NSArray)
@@ -86,7 +87,7 @@ class YTVideosCollectionViewController: UIViewController, UICollectionViewDataSo
     }
 
     func insertRowAtBottom() {
-        self.delegate!.nextFetching({
+        self.delegate!.nextFetching(eventObject!, completeHandler: {
             (response, sucess) -> Void in
 
             self.appendFetchedArray(response as! NSArray)

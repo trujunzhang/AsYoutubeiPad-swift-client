@@ -15,7 +15,7 @@ class SearchEvent: NSObject, FetchEventProtocol {
     var completeHandler: ObjectHandler?
 
     // MARK: FetchEventProtocol
-    func refreshEvent(completeHandler: ObjectHandler) {
+    func refreshEvent(object: AnyObject, completeHandler: ObjectHandler) {
         requestInfo =
                 YoutubeFetcher.prepareRequestSearch("sketch 3", completeHandler: {
                     (object, sucess) -> Void in
@@ -29,7 +29,7 @@ class SearchEvent: NSObject, FetchEventProtocol {
     func endFetching() {
     }
 
-    func nextFetching(completeHandler: ObjectHandler) {
+    func nextFetching(object: AnyObject, completeHandler: ObjectHandler) {
         YoutubeFetcher.search(requestInfo, completeHandler: completeHandler)
     }
 

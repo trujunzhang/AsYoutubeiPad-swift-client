@@ -10,9 +10,9 @@ import Foundation
 
 protocol FetchEventProtocol {
 
-    func refreshEvent(completeHandler: ObjectHandler)
+    func refreshEvent(object: AnyObject, completeHandler: ObjectHandler)
 
-    func nextFetching(completeHandler: ObjectHandler)
+    func nextFetching(object: AnyObject, completeHandler: ObjectHandler)
 
     func endFetching()
 
