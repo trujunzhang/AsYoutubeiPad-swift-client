@@ -13,6 +13,7 @@
 
 @property(nonatomic, retain) UIPopoverController *popoverController;
 @property(strong, readwrite) UITableView *autoCompleteTableView;
+@property(strong, readwrite) UIBarButtonItem *parentItem;
 
 - (void)reloadData;
 

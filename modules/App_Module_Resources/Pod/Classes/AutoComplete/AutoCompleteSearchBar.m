@@ -191,11 +191,7 @@ static NSString *autoCompleteCellIdentifier = @"AutoCompleteSearchBarCell";
 - (void)showPopup {
 //    self.popoverController.popoverContentSize = _autoCompleteTableView.contentSize;
 
-    [self.popoverController presentPopoverFromBarButtonItem:self permittedArrowDirections:UIPopoverArrowDirectionAny animated:YES];
-//    [self.popoverController presentPopoverFromRect:self.frame
-//                                            inView:self
-//                          permittedArrowDirections:UIPopoverArrowDirectionAny
-//                                          animated:YES];
+    [self.popoverController presentPopoverFromBarButtonItem:self.parentItem permittedArrowDirections:UIPopoverArrowDirectionAny animated:YES];
 }
 
 #pragma mark

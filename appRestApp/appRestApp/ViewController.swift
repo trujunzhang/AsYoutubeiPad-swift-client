@@ -34,9 +34,9 @@ class ViewController: UIViewController, AuthorUserFetchingDelegate, UISearchBarD
 //            self.startFetchingLoggedSubscriptionList() // used
         }
 
-
-
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem(customView: searchBar)
+        let rightBarItem = UIBarButtonItem(customView: searchBar)
+        searchBar.parentItem = rightBarItem
+        self.navigationItem.rightBarButtonItem = rightBarItem
 
     }
 

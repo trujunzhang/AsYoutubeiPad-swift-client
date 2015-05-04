@@ -368,10 +368,10 @@
                 });
             }];
 
-    if (self.lastTask) {
-        [self.lastTask cancel];
-    }
-    self.lastTask = task;
+//    if (self.lastTask) {
+//        [self.lastTask cancel];
+//    }
+//    self.lastTask = task;
 
     return task;
 }
