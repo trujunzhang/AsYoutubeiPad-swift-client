@@ -4,9 +4,12 @@
 //  Created by Matthew Ott on 2/27/15.
 //
 
+#import <YouTubeAPI3-Objective-C-wrapper/YoutubeResponseInfo.h>
 #import "AutoCompleteSearchBar.h"
+#import "MABYT3_APIRequest.h"
 
 static NSString *autoCompleteCellIdentifier = @"AutoCompleteSearchBarCell";
+
 @implementation AutoCompleteSearchBar
 
 #pragma mark - Init
@@ -33,14 +36,14 @@ static NSString *autoCompleteCellIdentifier = @"AutoCompleteSearchBarCell";
 }
 
 - (void)initialize {
-    self.operationQueue = [[NSOperationQueue alloc]init];
+    self.operationQueue = [[NSOperationQueue alloc] init];
     autoCompleteResults = @[];
 
     // Init AutoCompleteTableView
     [self setAutoCompleteTableView:[[UITableView alloc] initWithFrame:[self getAutoCompleteTableFrame]]];
     [self.autoCompleteTableView setDelegate:self];
     [self.autoCompleteTableView setDataSource:self];
-    
+
     // Add a gesture for dismissing the keyboard and AutoCompleteTable when tapping outside of the UITableViewCells.
     tapGestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(hideAutoCompleteView)];
     [tapGestureRecognizer setCancelsTouchesInView:NO];
@@ -66,7 +69,7 @@ static NSString *autoCompleteCellIdentifier = @"AutoCompleteSearchBarCell";
                                       reuseIdentifier:autoCompleteCellIdentifier];
     }
     cell.textLabel.text = autoCompleteResults[indexPath.row];
-    cell.accessibilityLabel = [NSString stringWithFormat:@"{%ld,%ld}",(long)indexPath.section,(long)indexPath.row];
+    cell.accessibilityLabel = [NSString stringWithFormat:@"{%ld,%ld}", (long) indexPath.section, (long) indexPath.row];
     return cell;
 }
 
@@ -80,12 +83,12 @@ static NSString *autoCompleteCellIdentifier = @"AutoCompleteSearchBarCell";
 #pragma mark - UIGestureRecognizerDelegate
 
 /**
- * Check the bounds of the tap gesture to make sure it doesn't interfere with the UITableViewCell taps.
- */
--(BOOL)gestureRecognizerShouldBegin:(UIGestureRecognizer *)gestureRecognizer {
+* Check the bounds of the tap gesture to make sure it doesn't interfere with the UITableViewCell taps.
+*/
+- (BOOL)gestureRecognizerShouldBegin:(UIGestureRecognizer *)gestureRecognizer {
     if (gestureRecognizer == tapGestureRecognizer && autoCompleteResults.count) {
         CGPoint location = [gestureRecognizer locationInView:self.autoCompleteTableView];
-        UITableViewCell* lastCell = [self.autoCompleteTableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:(autoCompleteResults.count - 1) inSection:0]];
+        UITableViewCell *lastCell = [self.autoCompleteTableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:(autoCompleteResults.count - 1) inSection:0]];
         if (lastCell.frame.origin.y + lastCell.frame.size.height >= location.y) {
             return NO;
         }
@@ -95,7 +98,7 @@ static NSString *autoCompleteCellIdentifier = @"AutoCompleteSearchBarCell";
 
 #pragma mark - AutoCompleteSearchDelegate
 
-- (void)onAutoCompleteResultsReceived:(NSArray*)results {    
+- (void)onAutoCompleteResultsReceived:(NSArray *)results {
     autoCompleteResults = results;
     if (results && results.count) {
         [self showAutoCompleteView];
@@ -112,8 +115,14 @@ static NSString *autoCompleteCellIdentifier = @"AutoCompleteSearchBarCell";
 }
 
 - (void)updateAutoCompleteResults {
-    [self.operationQueue cancelAllOperations];
-    [self.operationQueue addOperation:[[AutoCompleteFetchOperation alloc]initWithSearchString:self.text delegate:self]];
+//    [self.operationQueue cancelAllOperations];
+//    [self.operationQueue addOperation:[[AutoCompleteFetchOperation alloc] initWithSearchString:self.text delegate:self]];
+
+    if ([self.text isEqualToString:@""]) {
+        return;
+    }
+
+    [self startFetching:self.text];
 }
 
 - (BOOL)becomeFirstResponder {
@@ -174,6 +183,19 @@ static NSString *autoCompleteCellIdentifier = @"AutoCompleteSearchBarCell";
     frame.origin.y += self.frame.size.height;
     frame.size.height = self.superview.frame.size.height - self.frame.size.height;
     return frame;
+}
+
+- (void)startFetching:(NSString *)searchString {
+    NSURLSessionDataTask *task =
+            [[MABYT3_AutoCompleteRequest sharedInstance]
+                    autoCompleteSuggestionsWithSearchWish:searchString
+                                               completion:^(YoutubeResponseInfo *responseInfo, NSError *error) {
+                                                   if (responseInfo) {
+                                                       [self onAutoCompleteResultsReceived:responseInfo.array];
+                                                   } else {
+                                                       NSLog(@"ERROR: %@", error);
+                                                   }
+                                               }];
 }
 
 @end
