@@ -42,7 +42,7 @@
 #import <UIScrollView+InfiniteScroll.h>
 
 // Library: TTTAttributedLabel
-#import "TTTAttributedLabel"
+#import "TTTAttributedLabel.h"
 
 // Library: STCollapseTableView [used]
 //#import "STCollapseTableView.h"
