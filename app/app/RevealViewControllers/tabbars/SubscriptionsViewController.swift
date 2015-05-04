@@ -16,6 +16,8 @@ class SubscriptionsViewController: FrontBaseViewController {
     // JetBrainsTV
 //    let channelID = "UCGp4UBwpTNegd_4nCpuBcow"
 
+    lazy var searchBar: UISearchBar = UISearchBar(frame: CGRectMake(0, 0, 200, 20))
+
     var lastViewController: UIViewController?
 
 
@@ -25,6 +27,11 @@ class SubscriptionsViewController: FrontBaseViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        searchBar.placeholder = "Searching..."
+        var rightNavBarButton = UIBarButtonItem(customView: searchBar)
+
+        self.navigationItem.rightBarButtonItem = rightNavBarButton
 
         // Register
         if self.revealViewController() != nil {
