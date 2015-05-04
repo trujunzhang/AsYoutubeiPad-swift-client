@@ -6,7 +6,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface AutoCompleteSearchBar : UISearchBar <UIGestureRecognizerDelegate, UISearchBarDelegate, UITableViewDataSource, UITableViewDelegate> {
+@interface AutoCompleteSearchBar : UISearchBar <UIGestureRecognizerDelegate, UISearchBarDelegate, UITableViewDataSource, UITableViewDelegate, UIPopoverControllerDelegate> {
     NSArray *autoCompleteResults;
     UIGestureRecognizer *tapGestureRecognizer;
 }

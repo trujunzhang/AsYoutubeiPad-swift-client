@@ -43,6 +43,8 @@ static NSString *autoCompleteCellIdentifier = @"AutoCompleteSearchBarCell";
     [self.autoCompleteTableView setDelegate:self];
     [self.autoCompleteTableView setDataSource:self];
 
+    self.popoverController = [[UIPopoverController alloc] initWithContentViewController:self.autoCompleteTableView];
+
     // Add a gesture for dismissing the keyboard and AutoCompleteTable when tapping outside of the UITableViewCells.
     tapGestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(hideAutoCompleteView)];
     [tapGestureRecognizer setCancelsTouchesInView:NO];
@@ -137,18 +139,19 @@ static NSString *autoCompleteCellIdentifier = @"AutoCompleteSearchBarCell";
 
 - (void)showAutoCompleteView {
     if (_autoCompleteTableView) {
-        [self.autoCompleteTableView setHidden:NO];
-        [self.superview bringSubviewToFront:self];
-        [self.superview insertSubview:self.autoCompleteTableView
-                         belowSubview:self];
-        [self.autoCompleteTableView setUserInteractionEnabled:YES];
+//        [self.autoCompleteTableView setHidden:NO];
+//        [self.superview bringSubviewToFront:self];
+//        [self.superview insertSubview:self.autoCompleteTableView
+//                         belowSubview:self];
+//        [self.autoCompleteTableView setUserInteractionEnabled:YES];
         [self.autoCompleteTableView reloadData];
+        [self showPopup];
     }
 }
 
 - (void)hideAutoCompleteView {
     if (_autoCompleteTableView) {
-        [self.autoCompleteTableView setHidden:YES];
+//        [self.autoCompleteTableView setHidden:YES];
         [self.autoCompleteTableView removeFromSuperview];
     }
 }
@@ -183,6 +186,20 @@ static NSString *autoCompleteCellIdentifier = @"AutoCompleteSearchBarCell";
     return frame;
 }
 
+#pragma mark UIPopoverController
+
+- (void)showPopup {
+//    self.popoverController.popoverContentSize = _autoCompleteTableView.contentSize;
+
+    [self.popoverController presentPopoverFromBarButtonItem:self permittedArrowDirections:UIPopoverArrowDirectionAny animated:YES];
+//    [self.popoverController presentPopoverFromRect:self.frame
+//                                            inView:self
+//                          permittedArrowDirections:UIPopoverArrowDirectionAny
+//                                          animated:YES];
+}
+
+#pragma mark
+
 - (void)startFetching:(NSString *)searchString {
     NSURLSessionDataTask *task =
             [[MABYT3_AutoCompleteRequest sharedInstance]
@@ -195,5 +212,6 @@ static NSString *autoCompleteCellIdentifier = @"AutoCompleteSearchBarCell";
                                                    }
                                                }];
 }
+
 
 @end
