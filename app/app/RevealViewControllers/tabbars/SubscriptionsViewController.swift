@@ -28,9 +28,7 @@ class SubscriptionsViewController: FrontBaseViewController {
         super.viewDidLoad()
 
         searchBar.placeholder = "Searching..."
-        var rightNavBarButton = UIBarButtonItem(customView: searchBar)
-
-        self.navigationItem.rightBarButtonItem = rightNavBarButton
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(customView: searchBar)
 
         // Register
         if self.revealViewController() != nil {
