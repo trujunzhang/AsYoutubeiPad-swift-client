@@ -44,18 +44,8 @@ static NSString *autoCompleteCellIdentifier = @"AutoCompleteSearchBarCell";
     [self.autoCompleteTableView setDataSource:self];
 
     self.popoverController = [[UIPopoverController alloc] initWithContentViewController:self.autoCompleteTableView];
-
-    // Add a gesture for dismissing the keyboard and AutoCompleteTable when tapping outside of the UITableViewCells.
-    tapGestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(hideAutoCompleteView)];
-    [tapGestureRecognizer setCancelsTouchesInView:NO];
-    // See gestureRecognizerShouldBegin method for details.
-    tapGestureRecognizer.delegate = self;
-    [self.autoCompleteTableView addGestureRecognizer:tapGestureRecognizer];
 }
 
-- (void)dealloc {
-    [self.autoCompleteTableView removeFromSuperview];
-}
 
 #pragma mark - UITableViewDataSource
 
@@ -79,22 +69,6 @@ static NSString *autoCompleteCellIdentifier = @"AutoCompleteSearchBarCell";
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     self.text = [self tableView:tableView cellForRowAtIndexPath:indexPath].textLabel.text;
     [self resignFirstResponder];
-}
-
-#pragma mark - UIGestureRecognizerDelegate
-
-/**
-* Check the bounds of the tap gesture to make sure it doesn't interfere with the UITableViewCell taps.
-*/
-- (BOOL)gestureRecognizerShouldBegin:(UIGestureRecognizer *)gestureRecognizer {
-    if (gestureRecognizer == tapGestureRecognizer && autoCompleteResults.count) {
-        CGPoint location = [gestureRecognizer locationInView:self.autoCompleteTableView];
-        UITableViewCell *lastCell = [self.autoCompleteTableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:(autoCompleteResults.count - 1) inSection:0]];
-        if (lastCell.frame.origin.y + lastCell.frame.size.height >= location.y) {
-            return NO;
-        }
-    }
-    return [super gestureRecognizerShouldBegin:gestureRecognizer];
 }
 
 #pragma mark - AutoCompleteSearchDelegate
@@ -152,7 +126,7 @@ static NSString *autoCompleteCellIdentifier = @"AutoCompleteSearchBarCell";
 - (void)hideAutoCompleteView {
     if (_autoCompleteTableView) {
 //        [self.autoCompleteTableView setHidden:YES];
-        [self.autoCompleteTableView removeFromSuperview];
+//        [self.autoCompleteTableView removeFromSuperview];
     }
 }
 
