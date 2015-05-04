@@ -14,12 +14,14 @@ class MovieEmbeddedViewController: UIViewController {
     var videoID = ""
     var dict: [String:IGYouTubeVideo] = [:]
 
+    var group: Cartography.ConstraintGroup?
+
     var playerView: UIView?
 
-    var normalBarViewController: MovieEmbeddedNormalBarViewController?
-    var normalBarRootView: UIView?
+    lazy var normalBarViewController: MovieEmbeddedNormalBarViewController = {
+        return MovieEmbeddedNormalBarViewController.instance()
+    }()
 
-    var group: Cartography.ConstraintGroup?
 
     // MARK : Life-Cycle
     override func viewDidLoad() {
@@ -27,7 +29,7 @@ class MovieEmbeddedViewController: UIViewController {
 
         YoutubeExtractor()
 
-        makeEmbeddedBars()
+        self.addChildViewController(self.normalBarViewController)
     }
 
 
@@ -38,20 +40,9 @@ class MovieEmbeddedViewController: UIViewController {
         layoutEmbeddedBar()
     }
 
-    func makeEmbeddedBars() {
-        // normal bar
-        normalBarViewController = MovieEmbeddedNormalBarViewController.instance()
-
-        if let controller: UIViewController = normalBarViewController {
-            self.addChildViewController(controller)
-        }
-    }
-
 
     func playVideo(videoURL: NSURL) {
-        if let viewController: MovieEmbeddedNormalBarViewController = normalBarViewController {
-            viewController.setVideoURL(videoURL, videoID: videoID)
-        }
+        self.normalBarViewController.setVideoURL(videoURL, videoID: videoID)
     }
 
 
@@ -79,10 +70,8 @@ class MovieEmbeddedViewController: UIViewController {
 
 
     func layoutEmbeddedBar() {
-        normalBarRootView = normalBarViewController?.view
-
-        self.view.addSubview(normalBarRootView!)
-        LayoutUtils.LayoutFullView(normalBarRootView!)
+        self.view.addSubview(normalBarViewController.view)
+        LayoutUtils.LayoutFullView(normalBarViewController.view)
     }
 
 

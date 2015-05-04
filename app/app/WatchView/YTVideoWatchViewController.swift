@@ -35,7 +35,6 @@ class YTVideoWatchViewController: UIViewController {
     lazy var movieEmbeddedViewController: MovieEmbeddedViewController = {
         return MovieEmbeddedViewController.instance()
     }()
-    var movieEmbeddedView: UIView?
 
     override func viewDidLoad() {
         // initialize all containers
