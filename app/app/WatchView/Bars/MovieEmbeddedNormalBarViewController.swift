@@ -84,14 +84,16 @@ class MovieEmbeddedNormalBarViewController: MoviePlayerViewHelper {
         super.viewDidAppear(animated)
 
         if let viewController: MoviePlayerViewHelper = moviePlayerViewController {
-//            viewController.play()
+            viewController.play()
         }
     }
 
     override func viewWillDisappear(animated: Bool) {
         super.viewWillDisappear(animated)
 
-
+        if let viewController: MoviePlayerViewHelper = moviePlayerViewController {
+            viewController.pause()()
+        }
     }
 
     override func viewDidDisappear(animated: Bool) {

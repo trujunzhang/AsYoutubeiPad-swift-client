@@ -149,13 +149,17 @@ class MoviePlayerViewHelper: MovieEmbeddedBasedBarViewController, PeriodicTimePr
     // MARK: - Play & Pause
 
     func play() {
-        self.videoPlayer!.play()
+        if let theVideoPlayer: AVPlayer = self.videoPlayer {
+            theVideoPlayer.play()
+        }
+
         //        self.setPlayPauseButtonImage(true)
     }
 
     func pause() {
-        self.videoPlayer!.pause()
-
+        if let theVideoPlayer: AVPlayer = self.videoPlayer {
+            theVideoPlayer.pause()
+        }
         //        self.setPlayPauseButtonImage(false)
     }
 
