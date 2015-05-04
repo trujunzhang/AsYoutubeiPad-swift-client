@@ -12,12 +12,19 @@ import Cartography
 class YTVideoWatchViewController: UIViewController {
 
     // MARK : All containers
-    var videoInfoContainer: UIView?
-    var videoOtherContainer: UIView?
-
     lazy var moviePlayContainer: UIView = {
         var container = UIView()
         container.backgroundColor = UIColor.redColor()
+        return container
+    }()
+    lazy var videoInfoContainer: UIView = {
+        var container = UIView()
+        container.backgroundColor = UIColor.greenColor()
+        return container
+    }()
+    lazy var videoOtherContainer: UIView = {
+        var container = UIView()
+        container.backgroundColor = UIColor.blueColor()
         return container
     }()
 
@@ -55,14 +62,8 @@ class YTVideoWatchViewController: UIViewController {
 
     func makeAllContainers() {
         self.view.addSubview(moviePlayContainer)
-
-        videoInfoContainer = UIView()
-        videoInfoContainer?.backgroundColor = UIColor.greenColor()
-        self.view.addSubview(videoInfoContainer!)
-
-        videoOtherContainer = UIView()
-        videoOtherContainer?.backgroundColor = UIColor.blueColor()
-        self.view.addSubview(videoOtherContainer!)
+        self.view.addSubview(videoInfoContainer)
+        self.view.addSubview(videoOtherContainer)
     }
 
     override func viewDidLayoutSubviews() {
@@ -77,7 +78,7 @@ class YTVideoWatchViewController: UIViewController {
 
     func setupViewVerticalLayout() {
 
-        group = constrain(moviePlayContainer, videoInfoContainer!, videoOtherContainer!, replace: group) {
+        group = constrain(moviePlayContainer, videoInfoContainer, videoOtherContainer, replace: group) {
             view1, view2, view3 in
             // _moviePlayContainer
             view1.leading == view1.superview!.leading
@@ -105,7 +106,7 @@ class YTVideoWatchViewController: UIViewController {
 
     func setupViewHorizontalLayout() {
 
-        group = constrain(moviePlayContainer, videoInfoContainer!, videoOtherContainer!, replace: group) {
+        group = constrain(moviePlayContainer, videoInfoContainer, videoOtherContainer, replace: group) {
             view1, view2, view3 in
             // _moviePlayContainer
             view1.leading == view1.superview!.leading
