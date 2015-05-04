@@ -14,7 +14,7 @@ import Nimble
 class YoutubeFetchActivityListTests: YoutubeFetcherBase, RetrievingItemsFetchingHelperDelegate {
     var expectation: XCTestExpectation?
 
-    func testFetchingNesestVideoIdsFromGTLActivitylList() {
+    func _testFetchingNesestVideoIdsFromGTLActivitylList() {
         expectation = expectationWithDescription("fetchActivityListOnHomePage")
 
         let helper: YoutubeRetrievingGTLActivityListItemsFetcherHelper = YoutubeRetrievingGTLActivityListItemsFetcherHelper()

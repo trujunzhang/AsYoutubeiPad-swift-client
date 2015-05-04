@@ -93,6 +93,7 @@ class YoutubeDataFetcher: NSObject {
         MABYT3_AutoCompleteRequest.sharedInstance().autoCompleteSuggestionsWithSearchWish(searchWish, completion: {
             (responseInfo, error) -> Void in
             if (error == nil) {
+                // array of NSString
                 completeHandler(responseInfo.array, true)
             } else {
                 completeHandler(nil, false)
