@@ -31,13 +31,13 @@ static NSUInteger search_maxResults = 20;
 
 @interface MABYT3_VideoGoogleRequest : MABYT3_YoutubeRequest
 
-@property (nonatomic, strong) NSURLSessionDataTask *lastTask;
+@property(nonatomic, strong) NSURLSessionDataTask *lastTask;
 
 + (MABYT3_VideoGoogleRequest *)sharedInstance;
 
 - (NSURLSessionDataTask *)fetchCaptainTracks:(NSString *)videoId completion:(MABYoutubeResponseBlock)completion;
 
-- (NSURLSessionDataTask *)fetchVideoTranscript:(NSString *)videoId  withTrack:(id)track completion:(MABYoutubeResponseBlock)completion;
+- (NSURLSessionDataTask *)fetchVideoTranscript:(NSString *)videoId withTrack:(id)track completion:(MABYoutubeResponseBlock)completion;
 @end
 
 
@@ -52,11 +52,13 @@ static NSUInteger search_maxResults = 20;
 
 @interface MABYT3_AutoCompleteRequest : MABYT3_YoutubeRequest
 
-@property (nonatomic, strong) NSURLSessionDataTask *lastTask;
+@property(nonatomic, strong) NSURLSessionDataTask *lastTask;
 
 + (MABYT3_AutoCompleteRequest *)sharedInstance;
 
 - (NSURLSessionDataTask *)autoCompleteSuggestions:(id)parameters completion:(MABYoutubeResponseBlock)completion;
+
+- (NSURLSessionDataTask *)autoCompleteSuggestionsWithSearchWish:(id)searchWish completion:(MABYoutubeResponseBlock)completion;
 
 - (void)cancelAllTask;
 

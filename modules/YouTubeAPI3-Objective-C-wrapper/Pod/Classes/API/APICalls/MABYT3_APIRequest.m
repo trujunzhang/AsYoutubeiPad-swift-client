@@ -330,6 +330,17 @@
     return _sharedClient;
 }
 
+- (NSURLSessionDataTask *)autoCompleteSuggestionsWithSearchWish:(id)searchWish completion:(MABYoutubeResponseBlock)completion {
+    NSMutableDictionary *parameters = [[NSMutableDictionary alloc] init];
+
+    [parameters setObject:@"youtube" forKey:@"client"];
+    [parameters setObject:@"yt" forKey:@"ds"];
+    [parameters setObject:@"json" forKey:@"alt"];
+    [parameters setObject:searchWish forKey:@"q"];
+
+    return [self autoCompleteSuggestions:parameters completion:completion];
+}
+
 
 - (NSURLSessionDataTask *)autoCompleteSuggestions:(NSMutableDictionary *)parameters completion:(MABYoutubeResponseBlock)completion {
     //@"http://suggestqueries.google.com
