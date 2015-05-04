@@ -68,7 +68,10 @@ Pod::Spec.new do |s|
   s.subspec 'ObservingPlayerItem' do |sub|
     sub.source_files = 'Pod/Classes/ObservingPlayerItem/*.{h,m}'
   end
-
+  
+  s.subspec 'AutoComplete' do |sub|
+    sub.source_files = 'Pod/Classes/AutoComplete/*.{h,m}'
+  end
 
 
 end

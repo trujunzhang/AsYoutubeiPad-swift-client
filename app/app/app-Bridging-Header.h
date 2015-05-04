@@ -8,6 +8,7 @@
 //#import "ASTableView.h"
 
 // Library:(App_Module_Resources):[SWRefreshControl]
+#import "SearchAutoComplete.h"
 //#import "SWRefreshControl.h"
 
 // Library: SWRevealViewController
