@@ -7,9 +7,15 @@
 
 @class NICollectionViewModel;
 @class NIMutableCollectionViewModel;
+@class NITableViewModel;
+@class NIMutableTableViewModel;
 
 
-@interface NimbusCollectionsUtils : NSObject
+@interface NimbusViewModelUtils : NSObject
+
++ (NITableViewModel *)makeNITableViewModel:(NSArray *)contents;
+
++ (NIMutableTableViewModel *)makeNIMutableTableViewModel:(NSArray *)contents;
 
 + (NICollectionViewModel *)makeNICollectionViewModel:(NSArray *)collectionContents;
 

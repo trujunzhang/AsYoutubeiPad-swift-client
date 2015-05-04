@@ -17,6 +17,8 @@ def import_pods
   pod "YouTubeAPI3-Objective-C-wrapper", :path => "../modules/YouTubeAPI3-Objective-C-wrapper"
   pod "AFNetworking", :path => "../dependencies/AFNetworking"
 
+  pod "Nimbus", :path => "../dependencies/Nimbus"
+
 
 end
 

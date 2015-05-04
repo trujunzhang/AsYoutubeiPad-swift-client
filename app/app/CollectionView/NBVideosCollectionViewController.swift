@@ -76,7 +76,7 @@ class NBVideosCollectionViewController: UICollectionViewController, NICollection
     // MARK : model
     func makeModel(collectionContents: [AnyObject]) -> NIMutableCollectionViewModel {
 //        let model: NIMutableCollectionViewModel = NIMutableCollectionViewModel(listArray: collectionContents, delegate: cellFactory)
-        let model: NIMutableCollectionViewModel = NimbusCollectionsUtils.makeNIMutableCollectionViewModel(collectionContents)
+        let model: NIMutableCollectionViewModel = NimbusViewModelUtils.makeNIMutableCollectionViewModel(collectionContents)
 
 
         return model

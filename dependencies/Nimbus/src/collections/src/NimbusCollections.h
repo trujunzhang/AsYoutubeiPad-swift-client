@@ -57,6 +57,6 @@
 #import "NICollectionViewModel.h"
 #import "NIMutableCollectionViewModel.h"
 
-#import "NimbusCollectionsUtils.h"
+#import "NimbusViewModelUtils.h"
 
 /**@}*/

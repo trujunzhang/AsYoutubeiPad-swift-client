@@ -34,3 +34,11 @@
 
 
 #import <AFNetworking/AFNetworking.h>
+
+// Library: Nimbus(object-c)
+#import "NimbusCore.h"
+#import "NimbusWebController.h"
+#import "NimbusModels.h"
+#import "NimbusAttributedLabel.h"
+#import "NimbusCollections.h"
+
