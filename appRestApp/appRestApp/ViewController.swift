@@ -8,7 +8,9 @@
 
 import UIKit
 
-class ViewController: UIViewController, AuthorUserFetchingDelegate {
+class ViewController: UIViewController, AuthorUserFetchingDelegate,UISearchBarDelegate {
+    
+    @IBOutlet weak var searchBar: AutoCompleteSearchBar!
 
     @IBOutlet weak var loginButton: UIButton!
     override func viewDidLoad() {
@@ -66,13 +68,20 @@ class ViewController: UIViewController, AuthorUserFetchingDelegate {
 
     // MARK: AuthorUserFetchingDelegate
     func endFetchingUserChannel(channel: GTLYouTubeChannel) {
-        let x = 0
-
     }
 
     func endFetchingUserSubscriptions(array: NSArray) {
-        let x = 0
-
     }
+    
+    // MARK: UISearchBarDelegate
+    func searchBar(searchBar: UISearchBar, textDidChange searchText: String) {
+        let theSearchBar: AutoCompleteSearchBar = searchBar as!  AutoCompleteSearchBar
+        theSearchBar.reloadData()
+    }
+    func searchBarCancelButtonClicked(searchBar: UISearchBar) {
+        let theSearchBar: AutoCompleteSearchBar = searchBar as!  AutoCompleteSearchBar
+        theSearchBar.hideAutoCompleteView()
+    }
+
 }
 

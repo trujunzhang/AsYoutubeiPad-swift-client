@@ -5,6 +5,9 @@
 
 // Project Object-c files
 
+// Library:(App_Module_Resources):[SWRefreshControl]
+#import "SearchAutoComplete.h"
+
 // Library: gtm-oauth2
 #import "GTMOAuth2Authentication.h"
 #import "GTMOAuth2ViewControllerTouch.h"

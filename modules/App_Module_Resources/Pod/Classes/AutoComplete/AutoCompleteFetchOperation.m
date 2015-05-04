@@ -33,6 +33,9 @@
             }
         }
         
+         [results addObject:@"wanghao"];
+         [results addObject:@"djzhang"];
+        
         // Alphabetically sort the results.
         [results sortUsingComparator:^NSComparisonResult(id obj1, id obj2) {
             if ([obj1 isKindOfClass:[NSString class]] && [obj2 isKindOfClass:[NSString class]]) {

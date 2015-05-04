@@ -95,7 +95,7 @@ static NSString *autoCompleteCellIdentifier = @"AutoCompleteSearchBarCell";
 
 #pragma mark - AutoCompleteSearchDelegate
 
-- (void)onAutoCompleteResultsReceived:(NSArray*)results {
+- (void)onAutoCompleteResultsReceived:(NSArray*)results {    
     autoCompleteResults = results;
     if (results && results.count) {
         [self showAutoCompleteView];

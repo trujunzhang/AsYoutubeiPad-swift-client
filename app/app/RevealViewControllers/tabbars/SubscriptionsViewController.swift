@@ -16,10 +16,9 @@ class SubscriptionsViewController: FrontBaseViewController {
     // JetBrainsTV
 //    let channelID = "UCGp4UBwpTNegd_4nCpuBcow"
 
-    lazy var searchBar: UISearchBar = UISearchBar(frame: CGRectMake(0, 0, 300, 20))
+    lazy var searchBar: UISearchBar = AutoCompleteSearchBar(frame: CGRectMake(0, 0, 300, 20))
 
     var lastViewController: UIViewController?
-
 
     var menuTableViewController: NBMenuTableViewController?
     // unused(test)
