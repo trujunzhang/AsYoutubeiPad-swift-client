@@ -11,7 +11,7 @@ import Foundation
 
 import UIKit
 import XCTest
-
+import Nimble
 
 class AutoCompleteSuggestionsTests: YoutubeFetcherBase {
 
@@ -20,21 +20,12 @@ class AutoCompleteSuggestionsTests: YoutubeFetcherBase {
         let expectation = expectationWithDescription("autoCompleteSuggestionsWithSearchWish")
 
         YoutubeDataFetcher.sharedInstance.autoCompleteSuggestionsWithSearchWish("sketch 3", completeHandler: {
-            (subtitleString, sucess) -> Void in
+            (object, sucess) -> Void in
 
-            XCTAssertNotNil(subtitleString, "object not nil")
-
-            self.isSucess = sucess
+            expect(sucess).to(beTrue())
 
             if (sucess == true) {
-                XCTAssertTrue(subtitleString is NSString, "Array object must be NSString")
-
-                var subtitle: NSString = subtitleString as! NSString
-                XCTAssertFalse(subtitle.isEqualToString(""), "Array object must be NSString")
-
-                let expect = 1923
-//                let  array : NSMutableArray = Tools.checkParseSRTFromString(subtitle, expect: expect) // TODO djzhang (2015-04-24)
-//                XCTAssertEqual(array.count, expect, "The same length")
+                expect(object as! NSArray).toNot(beEmpty())
             }
             expectation.fulfill()
 
