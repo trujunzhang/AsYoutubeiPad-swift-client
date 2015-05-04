@@ -37,6 +37,10 @@ class YTVideoWatchViewController: UIViewController {
     }()
 
     override func viewDidLoad() {
+        super.viewDidLoad()
+
+        self.edgesForExtendedLayout = .None
+
         // initialize all containers
         self.view.addSubview(moviePlayContainer)
         self.view.addSubview(videoInfoContainer)
