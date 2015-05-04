@@ -144,7 +144,7 @@ class YTVideosCollectionViewController: UIViewController, UICollectionViewDataSo
     func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
 
         let width: CGFloat = self.view.bounds.size.width / 4 - (COLLECTION_CELL_INSET_VALUE * 2)
-        let height: CGFloat = 200;
+        let height: CGFloat = 240;
 
         return CGSizeMake(width, height)
     }

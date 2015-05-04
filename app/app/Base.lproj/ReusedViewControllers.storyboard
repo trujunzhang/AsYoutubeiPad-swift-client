@@ -114,7 +114,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="z2M-CH-kIC">
-                                                    <rect key="frame" x="8" y="8" width="427" height="228"/>
+                                                    <rect key="frame" x="8" y="8" width="427" height="236"/>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R5Q-cK-Fv9">
                                                     <rect key="frame" x="8" y="248" width="427" height="36"/>
@@ -162,7 +162,7 @@
                                             <constraint firstAttribute="trailing" secondItem="R5Q-cK-Fv9" secondAttribute="trailing" constant="8" id="Tbf-VS-Ucl"/>
                                             <constraint firstItem="AnN-Ej-saB" firstAttribute="leading" secondItem="k5v-EP-O1O" secondAttribute="leading" constant="13" id="aLe-UN-xeX"/>
                                             <constraint firstItem="z2M-CH-kIC" firstAttribute="leading" secondItem="k5v-EP-O1O" secondAttribute="leading" constant="8" id="dnB-IN-PzX"/>
-                                            <constraint firstItem="R5Q-cK-Fv9" firstAttribute="top" secondItem="z2M-CH-kIC" secondAttribute="bottom" constant="12" id="dyJ-Qs-yAW"/>
+                                            <constraint firstItem="R5Q-cK-Fv9" firstAttribute="top" secondItem="z2M-CH-kIC" secondAttribute="bottom" constant="4" id="dyJ-Qs-yAW"/>
                                             <constraint firstAttribute="bottom" secondItem="EmG-p4-221" secondAttribute="bottom" constant="18" id="g2w-8L-4eh"/>
                                             <constraint firstItem="mJn-s2-ww4" firstAttribute="top" secondItem="R5Q-cK-Fv9" secondAttribute="bottom" id="tCV-nf-ceI"/>
                                             <constraint firstAttribute="trailing" secondItem="mJn-s2-ww4" secondAttribute="trailing" constant="8" id="tr3-Zo-gt8"/>
