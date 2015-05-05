@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController, AuthorUserFetchingDelegate, UISearchBarDelegate {
+class ViewController: UIViewController, AuthorUserFetchingDelegate, UISearchBarDelegate, UIPopoverControllerDelegate {
 
     var searchActive: Bool = false
 
@@ -45,6 +45,7 @@ class ViewController: UIViewController, AuthorUserFetchingDelegate, UISearchBarD
         self.navigationItem.rightBarButtonItem = rightBarItem
 
         searchBar.delegate = self
+
     }
 
 
@@ -106,16 +107,16 @@ class ViewController: UIViewController, AuthorUserFetchingDelegate, UISearchBarD
         })
     }
 
-    func makePopoverController() {
-        popoverController = UIPopoverController(contentViewController: popoverTableViewController)
-    }
 
     func showPopover() {
         if (popoverController != nil) {
             return
         }
-        makePopoverController()
+
+        popoverController = UIPopoverController(contentViewController: popoverTableViewController)
         popoverController?.presentPopoverFromBarButtonItem(rightBarItem!, permittedArrowDirections: .Any, animated: true)
+
+        popoverController?.delegate = self
     }
 
 
@@ -142,12 +143,21 @@ class ViewController: UIViewController, AuthorUserFetchingDelegate, UISearchBarD
 
     func searchBar(searchBar: UISearchBar, textDidChange searchText: String) {
 
+        showPopover()
+
         let searchWish = searchBar.text
+        
+
         if (searchWish.isEmpty == false) {
             self.fetchAutoCompleteSuggestions(searchBar.text)
         }
 
     }
 
+    // MARK: UIPopoverControllerDelegate
+    func popoverControllerDidDismissPopover(popoverController: UIPopoverController) {
+        self.popoverController = nil
+        self.searchBar.resignFirstResponder()
+    }
 }
 
