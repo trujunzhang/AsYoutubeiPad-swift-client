@@ -50,33 +50,9 @@ class SubscriptionsViewController: FrontBaseViewController {
 
 //        showChannelPage(channelID)
 
-        //        showLeftMenu() // test
-
         showCollectionPanel()//test
     }
 
-    func showLeftMenu() {
-        menuTableViewController = NBMenuTableViewController.instance()
-
-        if let viewController: UIViewController = menuTableViewController {
-            menuTableRootView = viewController.view
-
-            self.view.addSubview(menuTableRootView!)
-
-            layout(menuTableRootView!) {
-                view1 in
-
-                view1.leading == view1.superview!.leading
-
-                view1.top == view1.superview!.top
-                view1.bottom == view1.superview!.bottom
-
-                view1.width == LEFT_MENU_WIDTH
-            }
-
-            self.addChildViewController(viewController)
-        }
-    }
 
     func cleanLastController() {
         if let theViewController: UIViewController = self.lastViewController {
@@ -115,6 +91,9 @@ class SubscriptionsViewController: FrontBaseViewController {
     }
 
     func showCollectionPanel() {
+        if (YoutubeUserProfile.sharedInstance.hasLogin() == false) {
+            return
+        }
 //        let channelPageViewController: NBVideosCollectionViewController = NBVideosCollectionViewController.instance()
 
         let viewController: YTVideosCollectionViewController = YTVideosCollectionViewController.instance()
@@ -122,11 +101,10 @@ class SubscriptionsViewController: FrontBaseViewController {
         viewController.delegate = event
         viewController.eventObject = ""
 
-        let rootView: UIView = viewController.view
-        self.view.addSubview(rootView)
-        LayoutUtils.LayoutFullView(rootView)
-
         self.addChildViewController(viewController)
+
+        self.view.addSubview(viewController.view)
+        LayoutUtils.LayoutFullView(viewController.view)
     }
 
     func showWatchVideoPage() {
