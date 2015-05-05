@@ -159,8 +159,6 @@ class SubscriptionsViewController: FrontBaseViewController, UIPopoverControllerD
         // Dispose of any resources that can be recreated.
     }
 
-
-
     // MARK: UIPopoverControllerDelegate
     func popoverControllerDidDismissPopover(popoverController: UIPopoverController) {
         self.searchBar.resignFirstResponder()

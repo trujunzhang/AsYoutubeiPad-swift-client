@@ -12,11 +12,14 @@ protocol PopoverContentSelectedProtocol {
     func didSelectItemFromPopover(content: AnyObject)
 }
 
+protocol PopoverEvent {
+    func startPopoverEvent(sender: AnyObject)
+}
+
 protocol AutoCompleteProtocol {
 
     func showPopover()
 
     func hidePopover()
 
-    func search(searchWish: String)
 }

@@ -8,6 +8,9 @@
 
 import Foundation
 
-class AutoCompletePopoverEvent {
-    
+class AutoCompletePopoverEvent: NSObject, PopoverEvent {
+
+    func startPopoverEvent(sender: AnyObject) {
+
+    }
 }
