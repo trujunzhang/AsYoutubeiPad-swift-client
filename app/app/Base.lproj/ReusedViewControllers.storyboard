@@ -211,6 +211,8 @@
                     <connections>
                         <outlet property="collectionView" destination="u8s-ED-R7v" id="Mwq-AW-Aln"/>
                         <outlet property="flowLayout" destination="WOA-4v-D1G" id="mhh-1R-4zC"/>
+                        <outlet property="indicatorView" destination="vA9-1X-z6E" id="S9e-l7-xXc"/>
+                        <outlet property="loadingPanel" destination="V66-dS-eQW" id="ajA-YK-9AQ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RSa-z4-TlN" userLabel="First Responder" sceneMemberID="firstResponder"/>

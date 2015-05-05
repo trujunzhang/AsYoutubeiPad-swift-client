@@ -11,6 +11,10 @@ import UIKit
 
 class YTVideosCollectionViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
 
+    @IBOutlet weak var loadingPanel: UIView!
+    
+    @IBOutlet weak var indicatorView: UIActivityIndicatorView!
+    
     @IBOutlet var collectionView: UICollectionView!
 
     @IBOutlet weak var flowLayout: UICollectionViewFlowLayout!
