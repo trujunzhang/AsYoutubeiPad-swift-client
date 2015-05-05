@@ -24,6 +24,8 @@ class AutoCompletePopoverSearchBar: UISearchBar, UISearchBarDelegate {
 
     override init(frame: CGRect) {
         super.init(frame: frame)
+
+        delegate = self
     }
 
 //    func makeSearchBar(popoverController: UIPopoverController, delegate: AutoCompleteProtocol) {
