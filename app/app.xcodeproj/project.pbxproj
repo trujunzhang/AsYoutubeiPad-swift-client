@@ -70,6 +70,7 @@
 		5E401C041AF4F49400613E28 /* RetrievingNewestVideoIdsEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E401C031AF4F49400613E28 /* RetrievingNewestVideoIdsEvent.swift */; };
 		5E43CDB61AEDC48500EFA0F8 /* LayoutUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E43CDB51AEDC48500EFA0F8 /* LayoutUtils.swift */; };
 		5E4BFB8D1AE3214100BC7A33 /* pop.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E87FD951AD8C2500021E80C /* pop.framework */; };
+		5E5F8A261AF8C80700466FA0 /* AutoCompletePopoverEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E5F8A251AF8C80700466FA0 /* AutoCompletePopoverEvent.swift */; };
 		5E67E7481AF8A8E300F07031 /* NSDateISO8601.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E67E7451AF8A8E300F07031 /* NSDateISO8601.swift */; };
 		5E67E7491AF8A8E300F07031 /* String+Trim.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E67E7471AF8A8E300F07031 /* String+Trim.swift */; };
 		5E67E7511AF8A8FF00F07031 /* AutoCompletePopoverController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E67E74B1AF8A8FF00F07031 /* AutoCompletePopoverController.swift */; };
@@ -177,6 +178,7 @@
 		5E401C031AF4F49400613E28 /* RetrievingNewestVideoIdsEvent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RetrievingNewestVideoIdsEvent.swift; path = FetchEvents/RetrievingNewestVideoIdsEvent.swift; sourceTree = "<group>"; };
 		5E43CDB51AEDC48500EFA0F8 /* LayoutUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LayoutUtils.swift; path = "../Business-Logic-Layer/Utils/LayoutUtils.swift"; sourceTree = "<group>"; };
 		5E52BAC31AD8C449007C3F32 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
+		5E5F8A251AF8C80700466FA0 /* AutoCompletePopoverEvent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AutoCompletePopoverEvent.swift; path = Events/AutoCompletePopoverEvent.swift; sourceTree = "<group>"; };
 		5E67E7451AF8A8E300F07031 /* NSDateISO8601.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSDateISO8601.swift; sourceTree = "<group>"; };
 		5E67E7471AF8A8E300F07031 /* String+Trim.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Trim.swift"; sourceTree = "<group>"; };
 		5E67E74B1AF8A8FF00F07031 /* AutoCompletePopoverController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AutoCompletePopoverController.swift; sourceTree = "<group>"; };
@@ -396,6 +398,14 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		5E2B1FC61AF8C7620046ABCB /* Events */ = {
+			isa = PBXGroup;
+			children = (
+				5E5F8A251AF8C80700466FA0 /* AutoCompletePopoverEvent.swift */,
+			);
+			name = Events;
+			sourceTree = "<group>";
+		};
 		5E37DF861AE61D00009D605E /* RevealViewControllers */ = {
 			isa = PBXGroup;
 			children = (
@@ -553,6 +563,7 @@
 		5E67E74A1AF8A8FF00F07031 /* Popover */ = {
 			isa = PBXGroup;
 			children = (
+				5E2B1FC61AF8C7620046ABCB /* Events */,
 				5E67E74B1AF8A8FF00F07031 /* AutoCompletePopoverController.swift */,
 				5E67E74C1AF8A8FF00F07031 /* contentviews */,
 				5E67E74E1AF8A8FF00F07031 /* items */,
@@ -834,6 +845,7 @@
 				5EFED9A61AE3AB3F00EEB23E /* VideoInfoDrawRectBlockCell.swift in Sources */,
 				5EA80D901AF32B1E00A0D61D /* NBVideosCollectionViewController.swift in Sources */,
 				5E39C4601AF4798F0069AC33 /* YoutubeRetrievingActivityListItemsFetcher.swift in Sources */,
+				5E5F8A261AF8C80700466FA0 /* AutoCompletePopoverEvent.swift in Sources */,
 				5EFED9AC1AE3B1E700EEB23E /* VideoInfoConstant.swift in Sources */,
 				5E917D951AECCEEC00922AE7 /* MenuLoginTitleBarCell.swift in Sources */,
 				5EA691701AF7409000DF0298 /* VideoCollectionViewCellLayout.swift in Sources */,
