@@ -91,11 +91,25 @@ class SubscriptionsViewController: FrontBaseViewController {
         self.cleanLastController()
 
         // 2. Add new panel to root view
-        let channelPageViewController: ChannelPageViewController = ChannelPageViewController() // used
-        channelPageViewController.channelID = channelID as String
-        self.addChildViewController(channelPageViewController)
+        let viewController: ChannelPageViewController = ChannelPageViewController() // used
+        viewController.channelID = channelID as String
+        self.addChildViewController(viewController)
 
-        let rootView: UIView = channelPageViewController.view
+        let rootView: UIView = viewController.view
+        self.view.addSubview(rootView)
+        LayoutUtils.LayoutFullView(rootView)
+    }
+
+    func showSearchPanel(searchWish: String) {
+        // 1. Clean last panel
+        self.cleanLastController()
+
+        // 2. Add new panel to root view
+        let viewController: YTVideosCollectionViewController = YTVideosCollectionViewController.instance()
+
+        self.addChildViewController(viewController)
+
+        let rootView: UIView = viewController.view
         self.view.addSubview(rootView)
         LayoutUtils.LayoutFullView(rootView)
     }

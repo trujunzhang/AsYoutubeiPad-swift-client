@@ -43,12 +43,18 @@ class RevealViewHelper: NSObject {
         }
     }
 
+    func showSearchResultPanel(searchWish: String) {
+        if let theSubscriptionsViewController: SubscriptionsViewController = self.subscriptionsViewController {
+            closeLeftMenu()
+            theSubscriptionsViewController.showSearchPanel(searchWish)
+        }
+    }
+
     func changeChannelPanel(channelId: NSString) {
         if let theSubscriptionsViewController: SubscriptionsViewController = self.subscriptionsViewController {
             closeLeftMenu()
             theSubscriptionsViewController.showChannelPage(channelId)
         }
-
     }
 
     func pushWatchVideoViewController(videoCache: YoutubeVideoCache) {

@@ -53,6 +53,8 @@ class AutoCompletePopoverSearchBar: UISearchBar, UISearchBarDelegate, UIPopoverC
 
     func searchBarSearchButtonClicked(searchBar: UISearchBar) {
         searchActive = false;
+        let searchWish: String = searchBar.text
+
     }
 
     func searchBar(searchBar: UISearchBar, textDidChange searchText: String) {
