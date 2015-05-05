@@ -178,14 +178,23 @@
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="V66-dS-eQW">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="V66-dS-eQW" userLabel="LoadingPanel">
                                 <rect key="frame" x="0.0" y="40" width="600" height="40"/>
                                 <subviews>
-                                    <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="vA9-1X-z6E">
+                                    <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="vA9-1X-z6E">
                                         <rect key="frame" x="290" y="10" width="20" height="20"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="20" id="jkl-J8-OLc"/>
+                                            <constraint firstAttribute="width" constant="20" id="z6J-Ia-KDc"/>
+                                        </constraints>
                                     </activityIndicatorView>
                                 </subviews>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="centerX" secondItem="vA9-1X-z6E" secondAttribute="centerX" id="4db-ex-Tkm"/>
+                                    <constraint firstAttribute="height" constant="40" id="itU-81-blp"/>
+                                    <constraint firstAttribute="centerY" secondItem="vA9-1X-z6E" secondAttribute="centerY" id="l8i-ft-zFS"/>
+                                </constraints>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -194,6 +203,9 @@
                             <constraint firstItem="u8s-ED-R7v" firstAttribute="bottom" secondItem="USD-eb-yup" secondAttribute="top" id="AFj-08-Q98"/>
                             <constraint firstAttribute="centerX" secondItem="u8s-ED-R7v" secondAttribute="centerX" id="NEF-cf-PlV"/>
                             <constraint firstAttribute="centerY" secondItem="u8s-ED-R7v" secondAttribute="centerY" id="Thd-KI-BEf"/>
+                            <constraint firstItem="V66-dS-eQW" firstAttribute="leading" secondItem="kg5-LQ-O9M" secondAttribute="leading" id="dwp-Ch-XNO"/>
+                            <constraint firstAttribute="trailing" secondItem="V66-dS-eQW" secondAttribute="trailing" id="ryK-BS-pNT"/>
+                            <constraint firstItem="V66-dS-eQW" firstAttribute="top" secondItem="sJP-4A-plg" secondAttribute="bottom" constant="20" id="yPK-bg-X6c"/>
                         </constraints>
                     </view>
                     <connections>
