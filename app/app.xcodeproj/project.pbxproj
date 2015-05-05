@@ -367,6 +367,7 @@
 				5E1E2CF11AD8B898004CC05B /* Images.xcassets */,
 				5E1E2CF31AD8B898004CC05B /* LaunchScreen.xib */,
 				5E2209A61AD8CBE300DD748D /* Autolayout.storyboard */,
+				65B8C55A2F1ADE8A7EF3F7C7 /* ReusedViewControllers.storyboard */,
 				5E1E2CE81AD8B898004CC05B /* Supporting Files */,
 			);
 			path = app;
@@ -698,7 +699,6 @@
 		AA4B77283D03A4084AB3C91E /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				65B8C55A2F1ADE8A7EF3F7C7 /* ReusedViewControllers.storyboard */,
 				F56A9DEB18C78036C526EAC9 /* Pods-app.debug.xcconfig */,
 				33A19E501CD1C695FC7E8FA4 /* Pods-app.release.xcconfig */,
 				5A453D09E91E275880C7A46C /* Pods-appTests.debug.xcconfig */,
@@ -965,6 +965,7 @@
 				65B8C81EFD99EC85AB8C87BE /* Base */,
 			);
 			name = ReusedViewControllers.storyboard;
+			path = ..;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
