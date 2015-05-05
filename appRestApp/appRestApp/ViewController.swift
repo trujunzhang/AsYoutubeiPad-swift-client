@@ -100,14 +100,7 @@ class ViewController: UIViewController, AuthorUserFetchingDelegate, UIPopoverCon
     }
 
 
-    func fetchAutoCompleteSuggestions(searchWish: String) {
-        YoutubeDataFetcher.sharedInstance.autoCompleteSuggestionsWithSearchWish(searchWish, completeHandler: {
-            (object, sucess) -> Void in
-            if (sucess == true) {
-                self.popoverTableViewController.contents = (object as! NSArray) as! [String]
-            }
-        })
-    }
+
 
     // MARK: UIPopoverControllerDelegate
     func popoverControllerDidDismissPopover(popoverController: UIPopoverController) {
@@ -138,6 +131,16 @@ class ViewController: UIViewController, AuthorUserFetchingDelegate, UIPopoverCon
 
     func search(searchWish: String) {
         fetchAutoCompleteSuggestions(searchWish)
+    }
+
+    // MARK: search event
+    func fetchAutoCompleteSuggestions(searchWish: String) {
+        YoutubeDataFetcher.sharedInstance.autoCompleteSuggestionsWithSearchWish(searchWish, completeHandler: {
+            (object, sucess) -> Void in
+            if (sucess == true) {
+                self.popoverTableViewController.contents = (object as! NSArray) as! [String]
+            }
+        })
     }
 
     // MARK: PopoverContentSelectedProtocol

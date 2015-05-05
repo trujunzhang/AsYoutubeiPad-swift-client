@@ -10,14 +10,40 @@ import UIKit
 import AVFoundation
 import Cartography
 
-class SubscriptionsViewController: FrontBaseViewController {
+class SubscriptionsViewController: FrontBaseViewController, UIPopoverControllerDelegate, AutoCompleteProtocol, PopoverContentSelectedProtocol {
     // JFK Library
     let channelID = "UCl-radPCbXcrYCE4EdNH3QA"
     // JetBrainsTV
 //    let channelID = "UCGp4UBwpTNegd_4nCpuBcow"
 
-    lazy var searchBar: UISearchBar = AutoCompleteSearchBar(frame: CGRectMake(0, 0, 300, 20))
+    // MARK: searchBar
+    var popoverController: UIPopoverController?
 
+    lazy var popoverTableViewController: PopoverTableViewController = {
+        let contentViewController: PopoverTableViewController = PopoverTableViewController()
+
+        contentViewController.contentSelectedDelegate = self
+
+        return contentViewController
+    }()
+
+    var rightBarItem: UIBarButtonItem?
+
+    lazy var searchBar: AutoCompletePopoverSearchBar = {
+        let _searchBar: AutoCompletePopoverSearchBar = AutoCompletePopoverSearchBar(frame: CGRectMake(0, 0, 300, 20))
+        _searchBar.placeholder = "Searching..."
+
+        _searchBar.backgroundColor = UIColor.clearColor()
+        _searchBar.showsCancelButton = true
+        _searchBar.userInteractionEnabled = true
+
+        _searchBar.autoCompleteDelegate = self
+
+        return _searchBar
+    }()
+
+
+    // MARK:
     var lastViewController: UIViewController?
 
     var menuTableViewController: NBMenuTableViewController?
@@ -27,8 +53,8 @@ class SubscriptionsViewController: FrontBaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        searchBar.placeholder = "Searching..."
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem(customView: searchBar)
+        rightBarItem = UIBarButtonItem(customView: searchBar)
+        self.navigationItem.rightBarButtonItem = rightBarItem
 
         // Register
         if self.revealViewController() != nil {
@@ -131,6 +157,54 @@ class SubscriptionsViewController: FrontBaseViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+
+
+
+    // MARK: UIPopoverControllerDelegate
+    func popoverControllerDidDismissPopover(popoverController: UIPopoverController) {
+        self.searchBar.resignFirstResponder()
+        hidePopover()
+    }
+
+    // MARK: AutoCompleteProtocol
+    func showPopover() {
+        if (popoverController != nil) {
+            return
+        }
+
+        popoverController = UIPopoverController(contentViewController: popoverTableViewController)
+
+        if let thePopoverController: UIPopoverController = popoverController {
+            thePopoverController.presentPopoverFromBarButtonItem(rightBarItem!, permittedArrowDirections: .Any, animated: true)
+
+            thePopoverController.delegate = self
+            searchBar.popoverController = thePopoverController
+        }
+    }
+
+    func hidePopover() {
+        self.popoverController = nil
+    }
+
+
+    func search(searchWish: String) {
+        fetchAutoCompleteSuggestions(searchWish)
+    }
+
+    // MARK: search event
+    func fetchAutoCompleteSuggestions(searchWish: String) {
+        YoutubeDataFetcher.sharedInstance.autoCompleteSuggestionsWithSearchWish(searchWish, completeHandler: {
+            (object, sucess) -> Void in
+            if (sucess == true) {
+                self.popoverTableViewController.contents = (object as! NSArray) as! [String]
+            }
+        })
+    }
+
+    // MARK: PopoverContentSelectedProtocol
+    func didSelectItemFromPopover(content: AnyObject) {
+        self.searchBar.text = content as! String
     }
 
 
