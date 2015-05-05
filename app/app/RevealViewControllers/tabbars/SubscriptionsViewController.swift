@@ -95,9 +95,8 @@ class SubscriptionsViewController: FrontBaseViewController {
         viewController.channelID = channelID as String
         self.addChildViewController(viewController)
 
-        let rootView: UIView = viewController.view
-        self.view.addSubview(rootView)
-        LayoutUtils.LayoutFullView(rootView)
+        self.view.addSubview(viewController.view)
+        LayoutUtils.LayoutFullView(viewController.view)
     }
 
     func showSearchPanel(searchWish: String) {
@@ -111,9 +110,8 @@ class SubscriptionsViewController: FrontBaseViewController {
 
         self.addChildViewController(viewController)
 
-        let rootView: UIView = viewController.view
-        self.view.addSubview(rootView)
-        LayoutUtils.LayoutFullView(rootView)
+        self.view.addSubview(viewController.view)
+        LayoutUtils.LayoutFullView(viewController.view)
     }
 
     func showCollectionPanel() {
