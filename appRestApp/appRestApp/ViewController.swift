@@ -14,7 +14,9 @@ class ViewController: UIViewController, AuthorUserFetchingDelegate, UIPopoverCon
 
     lazy var popoverTableViewController: PopoverTableViewController = {
         let contentViewController: PopoverTableViewController = PopoverTableViewController()
+
         contentViewController.contentSelectedDelegate = self
+
         return contentViewController
     }()
 
@@ -45,7 +47,8 @@ class ViewController: UIViewController, AuthorUserFetchingDelegate, UIPopoverCon
             //            self.startFetchingLoggedSubscriptionList() // used
         }
 
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem(customView: searchBar)
+        rightBarItem = UIBarButtonItem(customView: searchBar)
+        self.navigationItem.rightBarButtonItem = rightBarItem
     }
 
 
