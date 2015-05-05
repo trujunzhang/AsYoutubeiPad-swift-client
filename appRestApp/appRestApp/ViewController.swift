@@ -10,6 +10,7 @@ import UIKit
 
 class ViewController: UIViewController, AuthorUserFetchingDelegate, UISearchBarDelegate {
 
+    var searchActive: Bool = false
 
     var popoverController: UIPopoverController?
     var popoverTableViewController: PopoverTableViewController = PopoverTableViewController()
@@ -94,35 +95,12 @@ class ViewController: UIViewController, AuthorUserFetchingDelegate, UISearchBarD
     func endFetchingUserSubscriptions(array: NSArray) {
     }
 
-    // MARK: UISearchBarDelegate
-    func searchBar(searchBar: UISearchBar, textDidChange searchText: String) {
-        //        let theSearchBar: AutoCompleteSearchBar = searchBar as! AutoCompleteSearchBar
-        //        theSearchBar.reloadData()
-
-        let searchWish = searchBar.text
-        if (searchWish.isEmpty == false) {
-            self.fetchAutoCompleteSuggestions(searchBar.text)
-        }
-
-        showPopover()
-
-    }
-
-    func searchBarCancelButtonClicked(searchBar: UISearchBar) {
-        //        let theSearchBar: AutoCompleteSearchBar = searchBar as! AutoCompleteSearchBar
-        //        theSearchBar.hideAutoCompleteView()
-
-        popoverController = nil
-    }
 
     func fetchAutoCompleteSuggestions(searchWish: String) {
         YoutubeDataFetcher.sharedInstance.autoCompleteSuggestionsWithSearchWish(searchWish, completeHandler: {
             (object, sucess) -> Void in
             if (sucess == true) {
-                let array: NSArray = object as! NSArray
-
-                self.popoverTableViewController.contents = array as! [String]
-//                self.popoverTableViewController.reloadTableContents(array)
+                self.popoverTableViewController.contents = (object as! NSArray) as! [String]
             }
         })
     }
@@ -139,6 +117,36 @@ class ViewController: UIViewController, AuthorUserFetchingDelegate, UISearchBarD
         popoverController?.presentPopoverFromBarButtonItem(rightBarItem!, permittedArrowDirections: .Any, animated: true)
     }
 
+
+    // MARK: UISearchBarDelegate
+    func searchBarTextDidBeginEditing(searchBar: UISearchBar) {
+        searchActive = true;
+    }
+
+    func searchBarTextDidEndEditing(searchBar: UISearchBar) {
+        searchActive = false;
+    }
+
+    func searchBarCancelButtonClicked(searchBar: UISearchBar) {
+        searchActive = false;
+
+
+        popoverController = nil
+    }
+
+    func searchBarSearchButtonClicked(searchBar: UISearchBar) {
+        searchActive = false;
+    }
+
+    func searchBar(searchBar: UISearchBar, textDidChange searchText: String) {
+
+        let searchWish = searchBar.text
+        if (searchWish.isEmpty == false) {
+            self.fetchAutoCompleteSuggestions(searchBar.text)
+        }
+
+        showPopover()
+    }
 
 }
 
