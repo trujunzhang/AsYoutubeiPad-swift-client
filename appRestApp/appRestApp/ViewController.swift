@@ -18,15 +18,14 @@ class ViewController: UIViewController, AuthorUserFetchingDelegate, UISearchBarD
     var rightBarItem: UIBarButtonItem?
 
     lazy var searchBar: UISearchBar = {
-        let searchBar: UISearchBar = UISearchBar(frame: CGRectMake(0, 0, 300, 20))
-        searchBar.placeholder = "Searching..."
-        searchBar.delegate = self
+        let _searchBar: UISearchBar = UISearchBar(frame: CGRectMake(0, 0, 300, 20))
+        _searchBar.placeholder = "Searching..."
 
-        searchBar.backgroundColor = UIColor.clearColor()
-        searchBar.showsCancelButton = true
-        searchBar.userInteractionEnabled = true
+        _searchBar.backgroundColor = UIColor.clearColor()
+        _searchBar.showsCancelButton = true
+        _searchBar.userInteractionEnabled = true
 
-        return searchBar
+        return _searchBar
     }()
 
     @IBOutlet weak var loginButton: UIButton!
@@ -44,6 +43,8 @@ class ViewController: UIViewController, AuthorUserFetchingDelegate, UISearchBarD
         rightBarItem = UIBarButtonItem(customView: searchBar)
         //        searchBar.parentItem = rightBarItem
         self.navigationItem.rightBarButtonItem = rightBarItem
+
+        searchBar.delegate = self
     }
 
 
@@ -121,6 +122,8 @@ class ViewController: UIViewController, AuthorUserFetchingDelegate, UISearchBarD
     // MARK: UISearchBarDelegate
     func searchBarTextDidBeginEditing(searchBar: UISearchBar) {
         searchActive = true;
+
+        showPopover()
     }
 
     func searchBarTextDidEndEditing(searchBar: UISearchBar) {
@@ -129,7 +132,6 @@ class ViewController: UIViewController, AuthorUserFetchingDelegate, UISearchBarD
 
     func searchBarCancelButtonClicked(searchBar: UISearchBar) {
         searchActive = false;
-
 
         popoverController = nil
     }
@@ -145,7 +147,6 @@ class ViewController: UIViewController, AuthorUserFetchingDelegate, UISearchBarD
             self.fetchAutoCompleteSuggestions(searchBar.text)
         }
 
-        showPopover()
     }
 
 }
