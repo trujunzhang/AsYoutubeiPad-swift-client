@@ -48,6 +48,8 @@ class SubscriptionsViewController: FrontBaseViewController {
             RevealViewHelper.sharedInstance.registerSubscriptionsViewController(self)
         }
 
+        self.edgesForExtendedLayout = .None
+
 //        showChannelPage(channelID)
 
         showCollectionPanel()//test
