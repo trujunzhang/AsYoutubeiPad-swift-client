@@ -154,10 +154,6 @@ class ViewController: UIViewController, AuthorUserFetchingDelegate, UISearchBarD
 
     }
 
-    // MARK: UIPopoverControllerDelegate
-    func popoverControllerDidDismissPopover(popoverController: UIPopoverController) {
-        self.popoverController = nil
-        self.searchBar.resignFirstResponder()
-    }
+
 }
 
