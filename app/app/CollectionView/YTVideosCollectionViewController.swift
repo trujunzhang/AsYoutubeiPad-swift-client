@@ -12,9 +12,9 @@ import UIKit
 class YTVideosCollectionViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
 
     @IBOutlet weak var loadingPanel: UIView!
-    
+
     @IBOutlet weak var indicatorView: UIActivityIndicatorView!
-    
+
     @IBOutlet var collectionView: UICollectionView!
 
     @IBOutlet weak var flowLayout: UICollectionViewFlowLayout!
@@ -53,9 +53,9 @@ class YTVideosCollectionViewController: UIViewController, UICollectionViewDataSo
         self.flowLayout.sectionInset = UIEdgeInsetsMake(COLLECTION_CELL_INSET_VALUE, COLLECTION_CELL_INSET_VALUE, COLLECTION_CELL_INSET_VALUE, COLLECTION_CELL_INSET_VALUE)
 
         self.registerInfiniteScrollView()
-        self.collectionView.addSubview(refreshControl)
 
         insertRowAtTop()
+
     }
 
 
@@ -63,7 +63,6 @@ class YTVideosCollectionViewController: UIViewController, UICollectionViewDataSo
         super.viewDidAppear(animated)
 
         self.startFetchedAnimation()
-//        self.insertRowAtTop() // test
     }
 
     func startFetchedAnimation() {
@@ -81,11 +80,12 @@ class YTVideosCollectionViewController: UIViewController, UICollectionViewDataSo
     }
 
     func insertRowAtTop() {
+        showLoadingPanel()
         self.cleanupFetchedArray()
 
         self.delegate!.refreshEvent(eventObject!, completeHandler: {
             (response, sucess) -> Void in
-
+            self.hideLoadingPanel()
             self.appendFetchedArray(response as! NSArray)
         })
     }
@@ -178,6 +178,23 @@ class YTVideosCollectionViewController: UIViewController, UICollectionViewDataSo
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
 
         RevealViewHelper.sharedInstance.pushWatchVideoViewController(videoList[indexPath.row] as! YoutubeVideoCache)
+    }
+
+    // MARK: Loading panel
+    func showLoadingPanel() {
+        loadingPanel.backgroundColor = UIColor.clearColor()
+        loadingPanel.hidden = false
+        indicatorView.startAnimating()
+        indicatorView.hidesWhenStopped = true
+
+        refreshControl.removeFromSuperview()
+    }
+
+    func hideLoadingPanel() {
+        loadingPanel.hidden = true
+        indicatorView.stopAnimating()
+
+        self.collectionView.addSubview(refreshControl)
     }
 
 }
