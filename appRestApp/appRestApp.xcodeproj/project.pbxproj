@@ -30,6 +30,7 @@
 		5E83A75F1AEA50D100C37C84 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5E83A75E1AEA50D100C37C84 /* Images.xcassets */; };
 		5E83A7621AEA50D100C37C84 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5E83A7601AEA50D100C37C84 /* LaunchScreen.xib */; };
 		5E83A76E1AEA50D100C37C84 /* appRestAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E83A76D1AEA50D100C37C84 /* appRestAppTests.swift */; };
+		5E8E0E961AF870E600B60789 /* AutoCompleteProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E8E0E951AF870E600B60789 /* AutoCompleteProtocol.swift */; };
 		5E8F558F1AF4D766000DE3EF /* YoutubeRetrievingGTLActivityListItemsFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E8F558D1AF4D766000DE3EF /* YoutubeRetrievingGTLActivityListItemsFetcher.swift */; };
 		5E8F55901AF4D766000DE3EF /* YoutubeRetrievingGTLActivityListItemsFetcherHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E8F558E1AF4D766000DE3EF /* YoutubeRetrievingGTLActivityListItemsFetcherHelper.swift */; };
 		5EA685281AEF4F2A0047FA91 /* YoutubeFetcherPlayListItemTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EA685271AEF4F2A0047FA91 /* YoutubeFetcherPlayListItemTests.swift */; };
@@ -119,6 +120,7 @@
 		5E83A7671AEA50D100C37C84 /* appRestAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = appRestAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5E83A76C1AEA50D100C37C84 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5E83A76D1AEA50D100C37C84 /* appRestAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = appRestAppTests.swift; sourceTree = "<group>"; };
+		5E8E0E951AF870E600B60789 /* AutoCompleteProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AutoCompleteProtocol.swift; sourceTree = "<group>"; };
 		5E8F558D1AF4D766000DE3EF /* YoutubeRetrievingGTLActivityListItemsFetcher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YoutubeRetrievingGTLActivityListItemsFetcher.swift; sourceTree = "<group>"; };
 		5E8F558E1AF4D766000DE3EF /* YoutubeRetrievingGTLActivityListItemsFetcherHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YoutubeRetrievingGTLActivityListItemsFetcherHelper.swift; sourceTree = "<group>"; };
 		5EA685271AEF4F2A0047FA91 /* YoutubeFetcherPlayListItemTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YoutubeFetcherPlayListItemTests.swift; sourceTree = "<group>"; };
@@ -205,6 +207,7 @@
 		5E141A441AF7A4FF008FAD0F /* items */ = {
 			isa = PBXGroup;
 			children = (
+				5E8E0E951AF870E600B60789 /* AutoCompleteProtocol.swift */,
 				5E141A461AF7A526008FAD0F /* AutoCompletePopoverSearchBar.swift */,
 			);
 			path = items;
@@ -629,6 +632,7 @@
 				5ECE213B1AF36C6200A13D2D /* YoutubeApiConstant.swift in Sources */,
 				5E83A7581AEA50D100C37C84 /* AppDelegate.swift in Sources */,
 				5EF192FD1AF36E150048C6AD /* YoutubeFetcherConstant.swift in Sources */,
+				5E8E0E961AF870E600B60789 /* AutoCompleteProtocol.swift in Sources */,
 				5ECE21421AF36C6200A13D2D /* YoutubeFetcher.swift in Sources */,
 				5EA926531AF3BBDA006E85CD /* YoutubeDataFetcher.swift in Sources */,
 				5E141A451AF7A4FF008FAD0F /* PopoverTableViewController.swift in Sources */,

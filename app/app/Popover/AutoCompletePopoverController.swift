@@ -10,10 +10,14 @@ import Foundation
 
 class AutoCompletePopoverController: UIPopoverController, UIPopoverControllerDelegate {
 
+    override init(contentViewController viewController: UIViewController) {
+        super.init(contentViewController: viewController)
+
+        self.delegate = self
+    }
 
     // MARK: UIPopoverControllerDelegate
     func popoverControllerDidDismissPopover(popoverController: UIPopoverController) {
-//        self.popoverController = nil
 //        self.searchBar.resignFirstResponder()
     }
 }

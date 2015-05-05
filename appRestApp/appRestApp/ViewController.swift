@@ -8,22 +8,23 @@
 
 import UIKit
 
-class ViewController: UIViewController, AuthorUserFetchingDelegate, UISearchBarDelegate, UIPopoverControllerDelegate {
+class ViewController: UIViewController, AuthorUserFetchingDelegate, UIPopoverControllerDelegate, AutoCompleteProtocol {
 
-    var searchActive: Bool = false
 
     var popoverController: UIPopoverController?
     var popoverTableViewController: PopoverTableViewController = PopoverTableViewController()
 
     var rightBarItem: UIBarButtonItem?
 
-    lazy var searchBar: UISearchBar = {
-        let _searchBar: UISearchBar = UISearchBar(frame: CGRectMake(0, 0, 300, 20))
+    lazy var searchBar: AutoCompletePopoverSearchBar = {
+        let _searchBar: AutoCompletePopoverSearchBar = AutoCompletePopoverSearchBar(frame: CGRectMake(0, 0, 300, 20))
         _searchBar.placeholder = "Searching..."
 
         _searchBar.backgroundColor = UIColor.clearColor()
         _searchBar.showsCancelButton = true
         _searchBar.userInteractionEnabled = true
+
+        _searchBar.autoCompleteDelegate = self
 
         return _searchBar
     }()
@@ -44,7 +45,10 @@ class ViewController: UIViewController, AuthorUserFetchingDelegate, UISearchBarD
         //        searchBar.parentItem = rightBarItem
         self.navigationItem.rightBarButtonItem = rightBarItem
 
-        searchBar.delegate = self
+//        searchBar.delegate = self
+
+
+//        searchBar.makeSearchBar(popoverController, delegate: self)
 
     }
 
@@ -107,53 +111,39 @@ class ViewController: UIViewController, AuthorUserFetchingDelegate, UISearchBarD
         })
     }
 
+    // MARK: UIPopoverControllerDelegate
+    func popoverControllerDidDismissPopover(popoverController: UIPopoverController) {
+        self.searchBar.resignFirstResponder()
+        hidePopover()
+    }
 
+    // MARK: AutoCompleteProtocol
     func showPopover() {
         if (popoverController != nil) {
             return
         }
 
         popoverController = UIPopoverController(contentViewController: popoverTableViewController)
-        popoverController?.presentPopoverFromBarButtonItem(rightBarItem!, permittedArrowDirections: .Any, animated: true)
 
-        popoverController?.delegate = self
-    }
+        if let thePopoverController: UIPopoverController = popoverController {
+            thePopoverController.presentPopoverFromBarButtonItem(rightBarItem!, permittedArrowDirections: .Any, animated: true)
 
-
-    // MARK: UISearchBarDelegate
-    func searchBarTextDidBeginEditing(searchBar: UISearchBar) {
-        searchActive = true;
-
-        showPopover()
-    }
-
-    func searchBarTextDidEndEditing(searchBar: UISearchBar) {
-        searchActive = false;
-    }
-
-    func searchBarCancelButtonClicked(searchBar: UISearchBar) {
-        searchActive = false;
-
-        popoverController = nil
-    }
-
-    func searchBarSearchButtonClicked(searchBar: UISearchBar) {
-        searchActive = false;
-    }
-
-    func searchBar(searchBar: UISearchBar, textDidChange searchText: String) {
-
-        showPopover()
-
-        let searchWish = searchBar.text
-        
-
-        if (searchWish.isEmpty == false) {
-            self.fetchAutoCompleteSuggestions(searchBar.text)
+            thePopoverController.delegate = self
+            searchBar.popoverController = thePopoverController
         }
+    }
+
+    func hidePopover() {
+        self.popoverController = nil
+    }
+
+    func didSelectItemFromPopover() {
 
     }
 
+    func search(searchWish: String) {
+
+    }
 
 }
 

@@ -9,10 +9,14 @@
 import Foundation
 
 
-class AutoCompletePopoverSearchBar: UISearchBar {
+class AutoCompletePopoverSearchBar: UISearchBar, UISearchBarDelegate {
     var autoCompleteResults: [String] = [String]()
     var popoverController: UIPopoverController?
+    var autoCompleteDelegate: AutoCompleteProtocol?
 
+    var searchActive: Bool = false
+
+    var lastSearchWish = ""
 
     required init(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
@@ -22,11 +26,36 @@ class AutoCompletePopoverSearchBar: UISearchBar {
         super.init(frame: frame)
     }
 
-    func reloadData() {
+//    func makeSearchBar(popoverController: UIPopoverController, delegate: AutoCompleteProtocol) {
+//        self.popoverController = popoverController
+//        self.autoCompleteDelegate = delegate
+//    }
 
+    // MARK: UISearchBarDelegate
+    func searchBarTextDidBeginEditing(searchBar: UISearchBar) {
+        searchActive = true;
+
+        autoCompleteDelegate?.showPopover()
     }
 
-    func hideAutoCompleteView() {
+    func searchBarCancelButtonClicked(searchBar: UISearchBar) {
+        searchActive = false;
+
+        autoCompleteDelegate?.hidePopover()
+    }
+
+    func searchBarSearchButtonClicked(searchBar: UISearchBar) {
+        searchActive = false;
+    }
+
+    func searchBar(searchBar: UISearchBar, textDidChange searchText: String) {
+
+        autoCompleteDelegate?.showPopover()
+
+        let searchWish = searchBar.text
+        if (searchWish.isEmpty == false) {
+            autoCompleteDelegate?.search(searchWish)
+        }
 
     }
 
