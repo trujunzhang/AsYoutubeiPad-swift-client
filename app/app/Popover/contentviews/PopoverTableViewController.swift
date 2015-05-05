@@ -43,4 +43,11 @@ class PopoverTableViewController: UITableViewController, UITableViewDataSource, 
         return cell;
     }
 
+    //MARK: UITableViewDelegate
+
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        self.contentSelectedDelegate?.didSelectItemFromPopover(contents[indexPath.row])
+    }
+
+
 }

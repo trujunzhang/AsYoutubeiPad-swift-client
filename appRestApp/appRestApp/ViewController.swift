@@ -138,8 +138,8 @@ class ViewController: UIViewController, AuthorUserFetchingDelegate, UIPopoverCon
     }
 
     // MARK: PopoverContentSelectedProtocol
-    func didSelectItemFromPopover() {
-
+    func didSelectItemFromPopover(content: AnyObject) {
+        self.searchBar.text = content as! String
     }
 
 }
