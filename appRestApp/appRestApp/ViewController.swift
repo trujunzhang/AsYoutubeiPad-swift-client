@@ -121,7 +121,8 @@ class ViewController: UIViewController, AuthorUserFetchingDelegate, UISearchBarD
             if (sucess == true) {
                 let array: NSArray = object as! NSArray
 
-                self.popoverTableViewController.reloadTableContents(array)
+                self.popoverTableViewController.contents = array as! [String]
+//                self.popoverTableViewController.reloadTableContents(array)
             }
         })
     }
