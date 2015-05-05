@@ -189,11 +189,6 @@ class SubscriptionsViewController: FrontBaseViewController, UIPopoverControllerD
 
 
     func search(searchWish: String) {
-        fetchAutoCompleteSuggestions(searchWish)
-    }
-
-    // MARK: search event
-    func fetchAutoCompleteSuggestions(searchWish: String) {
         YoutubeDataFetcher.sharedInstance.autoCompleteSuggestionsWithSearchWish(searchWish, completeHandler: {
             (object, sucess) -> Void in
             if (sucess == true) {
@@ -204,6 +199,7 @@ class SubscriptionsViewController: FrontBaseViewController, UIPopoverControllerD
 
     // MARK: PopoverContentSelectedProtocol
     func didSelectItemFromPopover(content: AnyObject) {
+        self.popoverController!.dismissPopoverAnimated(true)
         self.searchBar.text = content as! String
     }
 

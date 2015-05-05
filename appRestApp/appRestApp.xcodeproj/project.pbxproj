@@ -12,6 +12,7 @@
 		5E141A471AF7A526008FAD0F /* AutoCompletePopoverSearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E141A461AF7A526008FAD0F /* AutoCompletePopoverSearchBar.swift */; };
 		5E3AF35C1AF4D2E60017DEB5 /* YoutubeConstantsForTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E3AF35B1AF4D2E60017DEB5 /* YoutubeConstantsForTests.swift */; };
 		5E4B4B5D1AEF252800F1B115 /* YoutubeFetchNewSubscriptionVideosTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E4B4B5C1AEF252800F1B115 /* YoutubeFetchNewSubscriptionVideosTests.swift */; };
+		5E5230791AF8C8AC00538AB1 /* AutoCompletePopoverEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E5230781AF8C8AC00538AB1 /* AutoCompletePopoverEvent.swift */; };
 		5E540C901AEA5A73001174F4 /* YoutubeDataFetcherForCaptionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E540C8B1AEA5A73001174F4 /* YoutubeDataFetcherForCaptionTests.swift */; };
 		5E540C911AEA5A73001174F4 /* YouTubeExtractorUtilsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E540C8C1AEA5A73001174F4 /* YouTubeExtractorUtilsTests.swift */; };
 		5E540C921AEA5A73001174F4 /* YoutubeFetcherBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E540C8D1AEA5A73001174F4 /* YoutubeFetcherBase.swift */; };
@@ -101,6 +102,7 @@
 		5E141A461AF7A526008FAD0F /* AutoCompletePopoverSearchBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AutoCompletePopoverSearchBar.swift; sourceTree = "<group>"; };
 		5E3AF35B1AF4D2E60017DEB5 /* YoutubeConstantsForTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = YoutubeConstantsForTests.swift; path = ../../UnitTests/YoutubeConstantsForTests.swift; sourceTree = "<group>"; };
 		5E4B4B5C1AEF252800F1B115 /* YoutubeFetchNewSubscriptionVideosTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YoutubeFetchNewSubscriptionVideosTests.swift; sourceTree = "<group>"; };
+		5E5230781AF8C8AC00538AB1 /* AutoCompletePopoverEvent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AutoCompletePopoverEvent.swift; sourceTree = "<group>"; };
 		5E540C8B1AEA5A73001174F4 /* YoutubeDataFetcherForCaptionTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YoutubeDataFetcherForCaptionTests.swift; sourceTree = "<group>"; };
 		5E540C8C1AEA5A73001174F4 /* YouTubeExtractorUtilsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YouTubeExtractorUtilsTests.swift; sourceTree = "<group>"; };
 		5E540C8D1AEA5A73001174F4 /* YoutubeFetcherBase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YoutubeFetcherBase.swift; sourceTree = "<group>"; };
@@ -188,6 +190,7 @@
 		5E141A411AF7A4FF008FAD0F /* Popover */ = {
 			isa = PBXGroup;
 			children = (
+				5E5230771AF8C8AC00538AB1 /* Events */,
 				5EA6B41F1AF86E1B00C24EF4 /* AutoCompletePopoverController.swift */,
 				5E141A421AF7A4FF008FAD0F /* contentviews */,
 				5E141A441AF7A4FF008FAD0F /* items */,
@@ -211,6 +214,14 @@
 				5E141A461AF7A526008FAD0F /* AutoCompletePopoverSearchBar.swift */,
 			);
 			path = items;
+			sourceTree = "<group>";
+		};
+		5E5230771AF8C8AC00538AB1 /* Events */ = {
+			isa = PBXGroup;
+			children = (
+				5E5230781AF8C8AC00538AB1 /* AutoCompletePopoverEvent.swift */,
+			);
+			path = Events;
 			sourceTree = "<group>";
 		};
 		5E540C8A1AEA5A73001174F4 /* youtube.api */ = {
@@ -645,6 +656,7 @@
 				5ED282DF1AF86D2D00939081 /* NSDateISO8601.swift in Sources */,
 				5E141A471AF7A526008FAD0F /* AutoCompletePopoverSearchBar.swift in Sources */,
 				5ED7D2CC1AF37FBC00082A68 /* YoutubeRetrievingActivityListItemsFetcher.swift in Sources */,
+				5E5230791AF8C8AC00538AB1 /* AutoCompletePopoverEvent.swift in Sources */,
 				5ECE213C1AF36C6200A13D2D /* YoutubeUserProfile.swift in Sources */,
 				5E540C9D1AEA5B29001174F4 /* Tools.swift in Sources */,
 				5ECE21381AF36C6200A13D2D /* YoutubeRetrievingPlayListItemsFetcher.swift in Sources */,
