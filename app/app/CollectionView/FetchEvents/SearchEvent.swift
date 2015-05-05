@@ -16,7 +16,7 @@ class SearchEvent: NSObject, FetchEventProtocol {
     func refreshEvent(object: AnyObject, completeHandler: ObjectHandler) {
         let searchWish = object as! String
         requestInfo =
-                YoutubeFetcher.prepareRequestSearch("sketch 3", completeHandler: {
+                YoutubeFetcher.prepareRequestSearch(searchWish, completeHandler: {
                     (object, sucess) -> Void in
                     if (sucess == true) {
                         self.requestInfo.appendArray(object as! NSArray)

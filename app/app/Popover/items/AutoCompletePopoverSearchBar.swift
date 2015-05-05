@@ -15,8 +15,6 @@ class AutoCompletePopoverSearchBar: UISearchBar, UISearchBarDelegate, UIPopoverC
 
     var popoverEvent: PopoverEvent?
 
-    var searchActive: Bool = false
-
     var lastSearchWish = ""
 
     // MARK:
