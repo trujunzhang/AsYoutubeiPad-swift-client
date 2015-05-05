@@ -50,9 +50,8 @@ class AutoCompletePopoverSearchBar: UISearchBar, UISearchBarDelegate {
         autoCompleteDelegate?.showPopover()
 
         if (isSameSearchWish(searchBar.text) == false) {
-            autoCompleteDelegate?.search(searchBar.text)
+            autoCompleteDelegate?.search(searchBar.text.trim())
         }
-
     }
 
     func isSameSearchWish(searchWish: String) -> Bool {
