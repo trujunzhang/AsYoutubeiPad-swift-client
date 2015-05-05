@@ -44,12 +44,6 @@ class ViewController: UIViewController, AuthorUserFetchingDelegate, UIPopoverCon
         rightBarItem = UIBarButtonItem(customView: searchBar)
         //        searchBar.parentItem = rightBarItem
         self.navigationItem.rightBarButtonItem = rightBarItem
-
-//        searchBar.delegate = self
-
-
-//        searchBar.makeSearchBar(popoverController, delegate: self)
-
     }
 
 
@@ -82,7 +76,6 @@ class ViewController: UIViewController, AuthorUserFetchingDelegate, UIPopoverCon
         navCon.providesPresentationContextTransitionStyle = true
         navCon.definesPresentationContext = true
         navCon.modalPresentationStyle = .PageSheet
-
 
         self.presentViewController(navCon, animated: true) {
             () -> Void in
@@ -142,7 +135,7 @@ class ViewController: UIViewController, AuthorUserFetchingDelegate, UIPopoverCon
     }
 
     func search(searchWish: String) {
-
+        fetchAutoCompleteSuggestions(searchWish)
     }
 
 }

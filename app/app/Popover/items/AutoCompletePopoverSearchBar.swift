@@ -28,11 +28,6 @@ class AutoCompletePopoverSearchBar: UISearchBar, UISearchBarDelegate {
         delegate = self
     }
 
-//    func makeSearchBar(popoverController: UIPopoverController, delegate: AutoCompleteProtocol) {
-//        self.popoverController = popoverController
-//        self.autoCompleteDelegate = delegate
-//    }
-
     // MARK: UISearchBarDelegate
     func searchBarTextDidBeginEditing(searchBar: UISearchBar) {
         searchActive = true;
@@ -54,11 +49,19 @@ class AutoCompletePopoverSearchBar: UISearchBar, UISearchBarDelegate {
 
         autoCompleteDelegate?.showPopover()
 
-        let searchWish = searchBar.text
-        if (searchWish.isEmpty == false) {
-            autoCompleteDelegate?.search(searchWish)
+        if (isSameSearchWish(searchBar.text) == false) {
+            autoCompleteDelegate?.search(searchBar.text)
         }
 
+    }
+
+    func isSameSearchWish(searchWish: String) -> Bool {
+        if (searchWish.trim() == lastSearchWish.trim()) {
+            return true
+        }
+
+        lastSearchWish = searchWish
+        return false
     }
 
 }
