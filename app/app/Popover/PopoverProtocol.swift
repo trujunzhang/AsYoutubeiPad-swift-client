@@ -8,12 +8,14 @@
 
 import Foundation
 
+typealias SearchBarChangedHandler = (AnyObject!) -> Void
+
 protocol PopoverContentSelectedProtocol {
     func didSelectItemFromPopover(content: AnyObject)
 }
 
 protocol PopoverEvent {
-    func startPopoverEvent(sender: AnyObject)
+    func startPopoverEvent(sender: AnyObject, handler: SearchBarChangedHandler)
 }
 
 protocol AutoCompleteProtocol {

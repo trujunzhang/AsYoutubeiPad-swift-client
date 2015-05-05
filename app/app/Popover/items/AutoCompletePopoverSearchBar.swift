@@ -9,14 +9,25 @@
 import Foundation
 
 
-class AutoCompletePopoverSearchBar: UISearchBar, UISearchBarDelegate {
+class AutoCompletePopoverSearchBar: UISearchBar, UISearchBarDelegate, UIPopoverControllerDelegate, PopoverContentSelectedProtocol {
     var autoCompleteResults: [String] = [String]()
     var popoverController: UIPopoverController?
-    var autoCompleteDelegate: AutoCompleteProtocol?
+
+    var popoverEvent: PopoverEvent?
 
     var searchActive: Bool = false
 
     var lastSearchWish = ""
+
+    // MARK:
+    var rightBarItem: UIBarButtonItem?
+    lazy var popoverTableViewController: PopoverTableViewController = {
+        let contentViewController: PopoverTableViewController = PopoverTableViewController()
+
+        contentViewController.contentSelectedDelegate = self
+
+        return contentViewController
+    }()
 
     required init(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
@@ -32,13 +43,12 @@ class AutoCompletePopoverSearchBar: UISearchBar, UISearchBarDelegate {
     func searchBarTextDidBeginEditing(searchBar: UISearchBar) {
         searchActive = true;
 
-        autoCompleteDelegate?.showPopover()
+        showPopover()
     }
 
     func searchBarCancelButtonClicked(searchBar: UISearchBar) {
         searchActive = false;
-
-        autoCompleteDelegate?.hidePopover()
+        self.popoverController = nil
     }
 
     func searchBarSearchButtonClicked(searchBar: UISearchBar) {
@@ -47,10 +57,13 @@ class AutoCompletePopoverSearchBar: UISearchBar, UISearchBarDelegate {
 
     func searchBar(searchBar: UISearchBar, textDidChange searchText: String) {
 
-        autoCompleteDelegate?.showPopover()
+        showPopover()
 
         if (isSameSearchWish(searchBar.text) == false) {
-            autoCompleteDelegate?.search(searchBar.text.trim())
+            popoverEvent?.startPopoverEvent(searchBar.text.trim(), handler: {
+                (object) -> Void in
+                self.popoverTableViewController.contents = object as! [String]
+            })
         }
     }
 
@@ -61,6 +74,37 @@ class AutoCompletePopoverSearchBar: UISearchBar, UISearchBarDelegate {
 
         lastSearchWish = searchWish
         return false
+    }
+
+
+    // MARK: AutoCompleteProtocol
+    func showPopover() {
+        if (popoverController != nil) {
+            return
+        }
+
+        popoverController = UIPopoverController(contentViewController: popoverTableViewController)
+
+        if let thePopoverController: UIPopoverController = popoverController {
+            thePopoverController.presentPopoverFromBarButtonItem(rightBarItem!, permittedArrowDirections: .Any, animated: true)
+
+            thePopoverController.delegate = self
+            self.popoverController = thePopoverController
+        }
+    }
+
+
+
+    // MARK: UIPopoverControllerDelegate
+    func popoverControllerDidDismissPopover(popoverController: UIPopoverController) {
+        self.popoverController = nil
+        self.resignFirstResponder()
+    }
+
+    // MARK: PopoverContentSelectedProtocol
+    func didSelectItemFromPopover(content: AnyObject) {
+        self.popoverController!.dismissPopoverAnimated(true)
+        self.text = content as! String
     }
 
 }
