@@ -56,6 +56,7 @@ class YTVideosCollectionViewController: UIViewController, UICollectionViewDataSo
 
         insertRowAtTop()
 
+        indicatorView.color = UIColor.lightGrayColor()
     }
 
 
