@@ -12,6 +12,8 @@ class PopoverTableViewController: UITableViewController, UITableViewDataSource, 
 
 //    var contents = ["San Francisco", "New York", "San Jose", "Chicago", "Los Angeles", "Austin", "Seattle"]
 
+    var contentSelectedDelegate: PopoverContentSelectedProtocol?
+
     var contents: [String] = [String]() {
         didSet {
             self.tableView.reloadData()

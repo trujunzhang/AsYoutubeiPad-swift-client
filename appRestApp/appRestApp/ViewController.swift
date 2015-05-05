@@ -8,11 +8,15 @@
 
 import UIKit
 
-class ViewController: UIViewController, AuthorUserFetchingDelegate, UIPopoverControllerDelegate, AutoCompleteProtocol {
-
+class ViewController: UIViewController, AuthorUserFetchingDelegate, UIPopoverControllerDelegate, AutoCompleteProtocol, PopoverContentSelectedProtocol {
 
     var popoverController: UIPopoverController?
-    var popoverTableViewController: PopoverTableViewController = PopoverTableViewController()
+
+    lazy var popoverTableViewController: PopoverTableViewController = {
+        let contentViewController: PopoverTableViewController = PopoverTableViewController()
+        contentViewController.contentSelectedDelegate = self
+        return contentViewController
+    }()
 
     var rightBarItem: UIBarButtonItem?
 
@@ -41,9 +45,7 @@ class ViewController: UIViewController, AuthorUserFetchingDelegate, UIPopoverCon
             //            self.startFetchingLoggedSubscriptionList() // used
         }
 
-        rightBarItem = UIBarButtonItem(customView: searchBar)
-        //        searchBar.parentItem = rightBarItem
-        self.navigationItem.rightBarButtonItem = rightBarItem
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(customView: searchBar)
     }
 
 
@@ -130,12 +132,14 @@ class ViewController: UIViewController, AuthorUserFetchingDelegate, UIPopoverCon
         self.popoverController = nil
     }
 
-    func didSelectItemFromPopover() {
-
-    }
 
     func search(searchWish: String) {
         fetchAutoCompleteSuggestions(searchWish)
+    }
+
+    // MARK: PopoverContentSelectedProtocol
+    func didSelectItemFromPopover() {
+
     }
 
 }

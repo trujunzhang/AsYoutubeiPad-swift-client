@@ -8,13 +8,15 @@
 
 import Foundation
 
+protocol PopoverContentSelectedProtocol {
+    func didSelectItemFromPopover(content: AnyObject)
+}
+
 protocol AutoCompleteProtocol {
 
     func showPopover()
 
     func hidePopover()
-
-    func didSelectItemFromPopover()
 
     func search(searchWish: String)
 }
