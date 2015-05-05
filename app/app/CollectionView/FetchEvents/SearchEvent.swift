@@ -12,16 +12,15 @@ import Foundation
 class SearchEvent: NSObject, FetchEventProtocol {
     var requestInfo = YTYoutubeRequestInfo()
 
-    var completeHandler: ObjectHandler?
-
     // MARK: FetchEventProtocol
     func refreshEvent(object: AnyObject, completeHandler: ObjectHandler) {
+        let searchWish = object as! String
         requestInfo =
                 YoutubeFetcher.prepareRequestSearch("sketch 3", completeHandler: {
                     (object, sucess) -> Void in
                     if (sucess == true) {
                         self.requestInfo.appendArray(object as! NSArray)
-
+                        completeHandler(object, true)
                     }
                 })
     }
