@@ -25,6 +25,7 @@ class SubscriptionsViewController: FrontBaseViewController {
         _searchBar.showsCancelButton = true
         _searchBar.userInteractionEnabled = true
 
+        _searchBar.popoverEvent = AutoCompletePopoverEvent()
         return _searchBar
     }()
 
@@ -39,9 +40,10 @@ class SubscriptionsViewController: FrontBaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem(customView: searchBar)
+        let searchItem: UIBarButtonItem = UIBarButtonItem(customView: searchBar)
+//        self.navigationItem.titleView = searchBar
+        self.navigationItem.rightBarButtonItem = searchItem
         self.searchBar.rightBarItem = self.navigationItem.rightBarButtonItem
-        self.searchBar.popoverEvent = AutoCompletePopoverEvent()
 
         // Register
         if self.revealViewController() != nil {
