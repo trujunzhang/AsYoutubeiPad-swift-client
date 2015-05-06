@@ -3,7 +3,7 @@
 // Copyright (c) 2015 Nimbus. All rights reserved.
 //
 
-#import "NBVideosCollectionViewController.h"
+#import "NBMultableCollectionBaseViewController.h"
 #import "NICollectionViewModel.h"
 #import "NICollectionViewCellFactory.h"
 
@@ -11,20 +11,19 @@
 #import "NimbusCore.h"
 #import "NBVideoCollectionViewCell.h"
 
-@interface NBVideosCollectionViewController ()
+@interface NBMultableCollectionBaseViewController ()
 
 // A model exists through the lifetime of the controller.
-@property(nonatomic, strong) NICollectionViewModel *model;
+@property(nonatomic, strong) NIMutableCollectionViewModel *model;
 
 @end
 
-@implementation NBVideosCollectionViewController
+@implementation NBMultableCollectionBaseViewController
 
 - (id)initWithCollectionViewLayout:(UICollectionViewLayout *)layout {
-    UICollectionViewFlowLayout *flowLayout = [[UICollectionViewFlowLayout alloc] init];
-    flowLayout.itemSize = CGSizeMake(216, 200);
-    if ((self = [super initWithCollectionViewLayout:flowLayout])) {
-        self.title = @"Nibs";
+    self.flowLayout = [[UICollectionViewFlowLayout alloc] init];
+    self.flowLayout.itemSize = CGSizeMake(216, 200);
+    if ((self = [super initWithCollectionViewLayout:self.flowLayout])) {
 
         NSArray *collectionContents =
                 @[
@@ -34,7 +33,7 @@
                         [NBVideoCollectionViewCellObject objectWithTitle:@"Title 1"],
                 ];
 
-        _model = [[NICollectionViewModel alloc] initWithListArray:collectionContents
+        _model = [[NIMutableCollectionViewModel alloc] initWithListArray:collectionContents
                                                          delegate:(id) [NICollectionViewCellFactory class]];
     }
     return self;

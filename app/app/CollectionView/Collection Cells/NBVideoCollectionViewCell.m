@@ -19,15 +19,15 @@
 @implementation NBVideoCollectionViewCellObject
 
 + (instancetype)objectWithTitle:(NSString *)title {
-  NBVideoCollectionViewCellObject * object = [[[self class] alloc] init];
-  object.title = title;
-  return object;
+    NBVideoCollectionViewCellObject * object = [[[self class] alloc] init];
+    object.title = title;
+    return object;
 }
 
 #pragma mark - NICollectionViewNibCellObject
 
 - (UINib *)collectionViewCellNib {
-  return [UINib nibWithNibName:NSStringFromClass([NBVideoCollectionViewCell class]) bundle:nil];
+    return [UINib nibWithNibName:NSStringFromClass([NBVideoCollectionViewCell class]) bundle:nil];
 }
 
 @end
@@ -37,8 +37,8 @@
 #pragma mark - NICollectionViewCell
 
 - (BOOL)shouldUpdateCellWithObject:(NBVideoCollectionViewCellObject *)object {
-  self.label.text = object.title;
-  return YES;
+    self.label.text = object.title;
+    return YES;
 }
 
 @end

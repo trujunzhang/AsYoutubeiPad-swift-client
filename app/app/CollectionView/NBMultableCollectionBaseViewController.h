@@ -6,6 +6,8 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 
-@interface NBVideosCollectionViewController : UICollectionViewController
+@interface NBMultableCollectionBaseViewController : UICollectionViewController
+
+@property (nonatomic, strong) UICollectionViewFlowLayout *flowLayout;
 
 @end

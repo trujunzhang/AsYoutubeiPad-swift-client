@@ -95,8 +95,8 @@ class SubscriptionsViewController: FrontBaseViewController {
 
         // 2. Add new panel to root view
         let viewController: NBVideosCollectionViewController = NBVideosCollectionViewController.instance()
-//        viewController.delegate = SearchEvent()
-//        viewController.eventObject = searchWish
+        viewController.delegate = SearchEvent()
+        viewController.eventObject = searchWish
 
         self.addChildViewController(viewController)
 
