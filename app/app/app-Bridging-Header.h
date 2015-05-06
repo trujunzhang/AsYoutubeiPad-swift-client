@@ -4,6 +4,7 @@
 
 
 // Project Object-c files
+#import "NBVideosCollectionViewController.h"
 
 //#import "ASTableView.h"
 

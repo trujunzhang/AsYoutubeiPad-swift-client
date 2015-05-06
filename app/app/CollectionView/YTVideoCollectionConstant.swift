@@ -15,18 +15,17 @@ extension YTVideosCollectionViewController {
 
     class func instance() -> YTVideosCollectionViewController {
 
-        var viewController: YTVideosCollectionViewController = UIStoryboard(name: "ReusedViewControllers", bundle: nil).instantiateViewControllerWithIdentifier("YTVideosCollectionViewController") as! YTVideosCollectionViewController
+        return  UIStoryboard(name: "ReusedViewControllers", bundle: nil).instantiateViewControllerWithIdentifier("YTVideosCollectionViewController") as! YTVideosCollectionViewController
 
-        return viewController
     }
 }
+
 
 extension NBVideosCollectionViewController {
-
+    
     class func instance() -> NBVideosCollectionViewController {
 
-        var viewController: NBVideosCollectionViewController = UIStoryboard(name: "ReusedViewControllers", bundle: nil).instantiateViewControllerWithIdentifier("NBVideosCollectionViewController") as! NBVideosCollectionViewController
-
-        return viewController
+        return NBVideosCollectionViewController()
     }
 }
+

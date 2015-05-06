@@ -94,9 +94,9 @@ class SubscriptionsViewController: FrontBaseViewController {
         self.cleanLastController()
 
         // 2. Add new panel to root view
-        let viewController: YTVideosCollectionViewController = YTVideosCollectionViewController.instance()
-        viewController.delegate = SearchEvent()
-        viewController.eventObject = searchWish
+        let viewController: NBVideosCollectionViewController = NBVideosCollectionViewController.instance()
+//        viewController.delegate = SearchEvent()
+//        viewController.eventObject = searchWish
 
         self.addChildViewController(viewController)
 

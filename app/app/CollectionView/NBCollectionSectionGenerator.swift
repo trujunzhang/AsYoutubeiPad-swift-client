@@ -15,11 +15,11 @@ class NBCollectionSectionGenerator {
         // of YoutubeVideoCache
         var collectionContents: [AnyObject] = [AnyObject]()
 
-        for object in array {
-            let videoCache: YoutubeVideoCache = object as! YoutubeVideoCache
-            let cellObject: NBVideoCollectionViewCellObject = NBVideoCollectionViewCellObject(videoCache: videoCache)
-            collectionContents.append(cellObject)
-        }
+//        for object in array {
+//            let videoCache: YoutubeVideoCache = object as! YoutubeVideoCache
+//            let cellObject: NBVideoCollectionViewCellObject = NBVideoCollectionViewCellObject(videoCache: videoCache)
+//            collectionContents.append(cellObject)
+//        }
 
         return collectionContents
     }
