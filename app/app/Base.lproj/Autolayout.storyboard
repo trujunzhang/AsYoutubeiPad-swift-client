@@ -72,11 +72,22 @@
                                     <string>Title</string>
                                 </scopeButtonTitles>
                             </searchBar>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Webstorm" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ig0-ed-xhJ">
+                                <rect key="frame" x="280" y="300" width="79" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="1Dm-cE-n52"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="centerX" secondItem="vJj-0o-dpP" secondAttribute="centerX" id="MBY-6j-mL6"/>
+                            <constraint firstAttribute="trailing" secondItem="Ig0-ed-xhJ" secondAttribute="trailing" constant="241" id="MEZ-ct-xgc"/>
                             <constraint firstItem="vJj-0o-dpP" firstAttribute="top" secondItem="OUB-73-v2z" secondAttribute="bottom" constant="10" id="tbu-7y-akE"/>
+                            <constraint firstItem="9fm-75-1S1" firstAttribute="top" secondItem="Ig0-ed-xhJ" secondAttribute="bottom" constant="215" id="y45-3V-30v"/>
                         </constraints>
                     </view>
                     <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
