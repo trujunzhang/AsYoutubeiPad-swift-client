@@ -51,8 +51,8 @@ class AutoCompletePopoverSearchBar: UISearchBar, UISearchBarDelegate, UIPopoverC
     }
 
     func searchBarSearchButtonClicked(searchBar: UISearchBar) {
-        self.resignFirstResponder()
         self.popoverController!.dismissPopoverAnimated(false)
+        self.resignFirstResponder()
         RevealViewHelper.sharedInstance.showSearchResultPanel(searchBar.text)
     }
 
@@ -96,9 +96,11 @@ class AutoCompletePopoverSearchBar: UISearchBar, UISearchBarDelegate, UIPopoverC
 
 
     // MARK: PopoverContentSelectedProtocol
-    func didSelectItemFromPopover(content: AnyObject) {
-        self.popoverController!.dismissPopoverAnimated(false)
+    func didPickItemFromPopover(content: AnyObject) {
+//        self.popoverController!.dismissPopoverAnimated(false)
         self.text = content as! String
+
+        searchBarSearchButtonClicked(self)
     }
 
     // MARK: NSNotificationCenter

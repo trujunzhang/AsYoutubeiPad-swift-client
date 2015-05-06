@@ -11,7 +11,7 @@ import Foundation
 typealias SearchBarChangedHandler = (AnyObject!) -> Void
 
 protocol PopoverContentSelectedProtocol {
-    func didSelectItemFromPopover(content: AnyObject)
+    func didPickItemFromPopover(content: AnyObject)
 }
 
 protocol PopoverEvent {
