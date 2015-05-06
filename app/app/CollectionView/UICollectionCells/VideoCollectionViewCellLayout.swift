@@ -22,6 +22,8 @@ class VideoCollectionViewCellLayout {
     var channelThumbnailImage: UIImageView!
     var channelTitleLabel: UILabel!
 
+    var group: Cartography.ConstraintGroup = Cartography.ConstraintGroup()
+
     /**
     ||  thumbnailImage(120*90)(480*360), ratio is (1.3333333333)(0.75)
     ||
@@ -39,22 +41,29 @@ class VideoCollectionViewCellLayout {
     :param: channelThumbnailImage
     :param: channelTitleLabel
     */
-    class func layoutVideoThumbnailImageContainer(thumbnailImage: UIImageView, totalTimeLabel: UILabel) {
-        layout(thumbnailImage, totalTimeLabel) {
+    func layoutVideoThumbnailImageContainer(thumbnailImage: UIImageView, totalTimeLabel: UILabel) {
+
+        println("thumbnailImage is \(thumbnailImage)")
+        
+        group = layout(thumbnailImage, totalTimeLabel,replace:group) {
             view1, view2 in
 
-            view1.top == view1.superview!.top
-            view1.leading == view1.superview!.leading
-            view1.trailing == view1.superview!.trailing
-            view1.height == (view1.width / 4) * 3
 
-            view2.trailing == view2.superview!.trailing
-            view2.bottom == view2.superview!.bottom
-            view2.height == 10
+            view1.leading == view1.superview!.leading
+//            view1.trailing == view1.superview!.trailing
+            view1.top == view1.superview!.top
+//            view1.height == (view1.width / 4) * 3
+//            view1.height == view1.superview!.width
+            view1.width == 20
+            view1.height == 20
+
+//            view2.trailing == view2.superview!.trailing
+//            view2.bottom == view2.superview!.bottom
+//            view2.height == 10
         }
     }
 
-    class func layoutVideoInfoContainer(infoContainer: UIView) {
+    func layoutVideoInfoContainer(infoContainer: UIView) {
         layout(infoContainer) {
             view1 in
 
@@ -65,9 +74,9 @@ class VideoCollectionViewCellLayout {
         }
     }
 
-    class func layoutVideoTitleLabelAndInfoLabel(titleLabel: UILabel, infoLabel: UILabel) {
+    func layoutVideoTitleLabelAndInfoLabel(titleLabel: UILabel, infoLabel: UILabel) {
         layout(titleLabel, infoLabel) {
-            view1,view2 in
+            view1, view2 in
 
             view1.leading == view1.superview!.leading
             view1.trailing == view1.superview!.trailing
@@ -81,9 +90,9 @@ class VideoCollectionViewCellLayout {
         }
     }
 
-    class func layoutVideoChanelContainer(channelThumbnailImage: UIImageView, channelTitleLabel: UILabel) {
+    func layoutVideoChanelContainer(channelThumbnailImage: UIImageView, channelTitleLabel: UILabel) {
         layout(channelThumbnailImage, channelTitleLabel) {
-            view1,view2 in
+            view1, view2 in
 
             view1.leading == view1.superview!.leading
             view1.bottom == view1.superview!.bottom - 4

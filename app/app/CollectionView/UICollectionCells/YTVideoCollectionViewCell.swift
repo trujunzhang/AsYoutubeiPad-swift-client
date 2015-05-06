@@ -30,9 +30,10 @@ class YTVideoCollectionViewCell: UICollectionViewCell {
 
     var videoCache: YoutubeVideoCache?
 
+//    var cellLayout: VideoCollectionViewCellLayout = VideoCollectionViewCellLayout()
 
     func setupCell(_videoCache: YoutubeVideoCache) {
-//        VideoCollectionViewCellLayout.layoutVideoThumbnailImageContainer(thumbnailImage, totalTimeLabel: totalTimeLabel)
+//        cellLayout.layoutVideoThumbnailImageContainer(thumbnailImage, totalTimeLabel: totalTimeLabel)
 //        VideoCollectionViewCellLayout.layoutVideoInfoContainer(infoContainer)
 //        VideoCollectionViewCellLayout.layoutVideoTitleLabelAndInfoLabel(titleLabel, infoLabel: infoLabel)
 //        VideoCollectionViewCellLayout.layoutVideoChanelContainer(channelThumbnailImage, channelTitleLabel: channelTitleLabel)
