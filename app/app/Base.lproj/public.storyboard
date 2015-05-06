@@ -7,7 +7,7 @@
         <!--Loading View Controller-->
         <scene sceneID="KmQ-EE-JqE">
             <objects>
-                <viewController id="RAe-B3-VHW" customClass="LoadingViewController" customModule="app" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LoadingViewController" id="RAe-B3-VHW" customClass="LoadingViewController" customModule="app" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="RSI-Ey-vao"/>
                         <viewControllerLayoutGuide type="bottom" id="iqZ-M0-RAM"/>
@@ -54,7 +54,7 @@
         <!--Request Failure View Controller-->
         <scene sceneID="iwu-EA-njU">
             <objects>
-                <viewController id="tqr-T9-DHt" customClass="RequestFailureViewController" customModule="app" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="RequestFailureViewController" id="tqr-T9-DHt" customClass="RequestFailureViewController" customModule="app" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="5Py-f3-s8L"/>
                         <viewControllerLayoutGuide type="bottom" id="CYr-zD-0xw"/>
