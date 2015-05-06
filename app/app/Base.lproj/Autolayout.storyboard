@@ -63,6 +63,15 @@
                                     <action selector="xxx:" destination="J4G-BV-OhN" eventType="touchUpInside" id="Gf0-PO-dlc"/>
                                 </connections>
                             </button>
+                            <searchBar contentMode="redraw" fixedFrame="YES" backgroundImage="channels4_banner.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="QE8-Rw-iH8">
+                                <rect key="frame" x="0.0" y="139" width="600" height="44"/>
+                                <color key="backgroundColor" red="1" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <textInputTraits key="textInputTraits" keyboardAppearance="light"/>
+                                <scopeButtonTitles>
+                                    <string>Title</string>
+                                    <string>Title</string>
+                                </scopeButtonTitles>
+                            </searchBar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -114,4 +123,7 @@
             <point key="canvasLocation" x="751" y="2758"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="channels4_banner.jpg" width="1060" height="177"/>
+    </resources>
 </document>

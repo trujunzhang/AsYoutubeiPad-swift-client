@@ -18,7 +18,7 @@ class SubscriptionsViewController: FrontBaseViewController {
 
     // MARK: searchBar
     lazy var searchBar: AutoCompletePopoverSearchBar = {
-        let _searchBar: AutoCompletePopoverSearchBar = AutoCompletePopoverSearchBar(frame: CGRectMake(0, 0, 300, 20))
+        let _searchBar: AutoCompletePopoverSearchBar = AutoCompletePopoverSearchBar(frame: CGRectMake(0, 0, 200, 20))
         _searchBar.placeholder = "Searching..."
 
         _searchBar.backgroundColor = UIColor.clearColor()
