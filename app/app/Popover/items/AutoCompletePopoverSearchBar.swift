@@ -34,8 +34,7 @@ class AutoCompletePopoverSearchBar: UISearchBar, UISearchBarDelegate, UIPopoverC
     override init(frame: CGRect) {
         super.init(frame: frame)
 
-//        UIColor(red: 230 / 255, green: 230 / 255, blue: 230 / 255, alpha: 1)
-
+        //        UIColor(red: 230 / 255, green: 230 / 255, blue: 230 / 255, alpha: 1)
         delegate = self
     }
 
@@ -45,11 +44,10 @@ class AutoCompletePopoverSearchBar: UISearchBar, UISearchBarDelegate, UIPopoverC
     }
 
     func searchBarTextDidEndEditing(searchBar: UISearchBar) {
-        self.popoverController = nil
     }
 
     func searchBarCancelButtonClicked(searchBar: UISearchBar) {
-        self.popoverController = nil
+        self.popoverController!.dismissPopoverAnimated(false)
     }
 
     func searchBarSearchButtonClicked(searchBar: UISearchBar) {
@@ -97,6 +95,18 @@ class AutoCompletePopoverSearchBar: UISearchBar, UISearchBarDelegate, UIPopoverC
     }
 
 
+    // MARK: PopoverContentSelectedProtocol
+    func didSelectItemFromPopover(content: AnyObject) {
+        self.popoverController!.dismissPopoverAnimated(false)
+        self.text = content as! String
+    }
+
+    // MARK: NSNotificationCenter
+    func onKeyboardHide() {
+        if (self.popoverController != nil) {
+            self.popoverController = nil
+        }
+    }
 
     // MARK: UIPopoverControllerDelegate
     func popoverControllerDidDismissPopover(popoverController: UIPopoverController) {
@@ -104,10 +114,5 @@ class AutoCompletePopoverSearchBar: UISearchBar, UISearchBarDelegate, UIPopoverC
         self.resignFirstResponder()
     }
 
-    // MARK: PopoverContentSelectedProtocol
-    func didSelectItemFromPopover(content: AnyObject) {
-        self.popoverController!.dismissPopoverAnimated(true)
-        self.text = content as! String
-    }
 
 }
