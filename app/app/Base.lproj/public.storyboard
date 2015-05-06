@@ -42,6 +42,10 @@
                             <constraint firstItem="AFW-KN-k22" firstAttribute="leading" secondItem="Vsv-Kt-Tra" secondAttribute="leading" id="nJQ-5h-2aG"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="indicatorView" destination="FIH-h0-isl" id="eij-nO-uGf"/>
+                        <outlet property="loadingPanel" destination="AFW-KN-k22" id="mqj-Wj-N9I"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UnR-Ka-7Vv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

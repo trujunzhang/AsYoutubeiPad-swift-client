@@ -8,6 +8,7 @@
 
 import Foundation
 
+
 extension LoadingViewController {
     
     class func instance() -> LoadingViewController {

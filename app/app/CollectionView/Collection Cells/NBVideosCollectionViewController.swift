@@ -9,6 +9,12 @@
 import Foundation
 
 class NBVideosCollectionViewController: NBMultableCollectionBaseViewController {
+    // MARK: Public ViewControllers
+    lazy var loadingViewController:LoadingViewController = {
+        return LoadingViewController.instance()
+        }()
+    
+    
     var delegate: FetchEventProtocol?
     var eventObject: AnyObject?
     
@@ -27,10 +33,21 @@ class NBVideosCollectionViewController: NBMultableCollectionBaseViewController {
         self.flowLayout.sectionInset = UIEdgeInsetsMake(COLLECTION_CELL_INSET_VALUE, COLLECTION_CELL_INSET_VALUE, COLLECTION_CELL_INSET_VALUE, COLLECTION_CELL_INSET_VALUE)
         
         self.registerInfiniteScrollView()
+        self.insertLoadingViewPanel()
         
-        //        insertRowAtTop()
+        insertRowAtTop()
         
         //        indicatorView.color = UIColor.lightGrayColor()
+    }
+    
+    func insertLoadingViewPanel(){
+        self.addChildViewController(loadingViewController)
+        self.view.addSubview(loadingViewController.view)
+        loadingViewController.layoutPanel()
+    }
+    
+    func insertRequestFailureViewPanel(){
+        
     }
     
     func registerInfiniteScrollView() {
@@ -42,12 +59,12 @@ class NBVideosCollectionViewController: NBMultableCollectionBaseViewController {
     
     
     func insertRowAtTop() {
-        //        showLoadingPanel()
+        self.showLoadingPanel()
         self.cleanupFetchedArray()
         
         self.delegate!.refreshEvent(eventObject!, completeHandler: {
             (response, sucess) -> Void in
-            //            self.hideLoadingPanel()
+            self.hideLoadingPanel()
             self.appendFetchedArray(response as! NSArray)
         })
     }
@@ -71,18 +88,30 @@ class NBVideosCollectionViewController: NBMultableCollectionBaseViewController {
         self.videoList.addObjectsFromArray(array as [AnyObject])
         
         if (lastCount == 0) {
-//            self.collectionView.reloadData()
+            //            self.collectionView.reloadData()
         } else {
-//            self.batchUpdateCollectionView(array.count)
+            //            self.batchUpdateCollectionView(array.count)
         }
         
         // 1. stop animation
-//        self.stopFetchedAnimation()
+        //        self.stopFetchedAnimation()
         
         // 3. check next fetcher
         if (self.delegate!.hasNextFetcing() == false) {
             self.collectionView!.removeInfiniteScroll()
         }
+    }
+    
+    func showLoadingPanel() {
+        loadingViewController.showLoadingPanel()
+        
+        refreshControl.removeFromSuperview()
+    }
+    
+    func hideLoadingPanel() {
+        loadingViewController.hideLoadingPanel()
+        
+        self.collectionView!.addSubview(refreshControl)
     }
     
     
