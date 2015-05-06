@@ -54,7 +54,7 @@ class VideoCollectionViewCellLayout {
         }
     }
 
-    class func layoutVideoTitleLabel(infoContainer: UIView) {
+    class func layoutVideoInfoContainer(infoContainer: UIView) {
         layout(infoContainer) {
             view1 in
 
@@ -65,9 +65,9 @@ class VideoCollectionViewCellLayout {
         }
     }
 
-    class func layoutVideoTitleLabel(titleLabel: UILabel, infoLabel: UILabel) {
+    class func layoutVideoTitleLabelAndInfoLabel(titleLabel: UILabel, infoLabel: UILabel) {
         layout(titleLabel, infoLabel) {
-            view1 in
+            view1,view2 in
 
             view1.leading == view1.superview!.leading
             view1.trailing == view1.superview!.trailing
@@ -81,9 +81,9 @@ class VideoCollectionViewCellLayout {
         }
     }
 
-    class func layoutVideoInfoContainer(channelThumbnailImage: UIImageView, channelTitleLabel: UILabel) {
+    class func layoutVideoChanelContainer(channelThumbnailImage: UIImageView, channelTitleLabel: UILabel) {
         layout(channelThumbnailImage, channelTitleLabel) {
-            view1 in
+            view1,view2 in
 
             view1.leading == view1.superview!.leading
             view1.bottom == view1.superview!.bottom - 4
