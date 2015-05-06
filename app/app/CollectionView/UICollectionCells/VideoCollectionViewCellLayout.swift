@@ -24,7 +24,7 @@ class VideoCollectionViewCellLayout {
     var channelTitleLabel: UILabel!
 
     /**
-    ||  thumbnailImage(120*90)(480*360), ratio is (1.3333333333)(0.75),16/9(ratio)
+    ||  thumbnailImage(120*90)(480*360), ratio is (1.3333333333)(0.75)
     ||
     ||   titleLabel
     ||   infoLabel
@@ -40,7 +40,7 @@ class VideoCollectionViewCellLayout {
     :param: channelThumbnailImage
     :param: channelTitleLabel
     */
-    class func layoutVideoThumbnailImageContainer(thumbnailImage: UIImageView, titleLabel: UILabel, infoLabel: UILabel, channelContainer: UIView, channelThumbnailImage: UIImageView, channelTitleLabel: UILabel) {
+    class func layoutVideoThumbnailImageContainer(thumbnailImage: UIImageView, totalTimeLabel: UILabel) {
 
     }
 
