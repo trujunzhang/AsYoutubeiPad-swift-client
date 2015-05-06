@@ -14,6 +14,12 @@ extension LoadingViewController {
         
         return  UIStoryboard(name: "Public", bundle: nil).instantiateViewControllerWithIdentifier("LoadingViewController") as! LoadingViewController
     }
+}
+
+extension RequestFailureViewController {
     
-    
+    class func instance() -> RequestFailureViewController {
+        
+        return  UIStoryboard(name: "Public", bundle: nil).instantiateViewControllerWithIdentifier("RequestFailureViewController") as! RequestFailureViewController
+    }
 }

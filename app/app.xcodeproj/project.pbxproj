@@ -34,6 +34,7 @@
 		5E0AC21F1AFA3F30002677C4 /* public.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5E0AC21D1AFA3F30002677C4 /* public.storyboard */; };
 		5E0AC2221AFA3F69002677C4 /* LoadingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E0AC2211AFA3F69002677C4 /* LoadingViewController.swift */; };
 		5E0AC2241AFA3F89002677C4 /* PublicConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E0AC2231AFA3F89002677C4 /* PublicConstant.swift */; };
+		5E0AC2261AFA4139002677C4 /* RequestFailureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E0AC2251AFA4139002677C4 /* RequestFailureViewController.swift */; };
 		5E0BD1011AE72617001E43B7 /* NBMenuSectionGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E0BD1001AE72617001E43B7 /* NBMenuSectionGenerator.swift */; };
 		5E0D4B541AF9D960004987F1 /* AppColorScheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E0D4B531AF9D960004987F1 /* AppColorScheme.swift */; };
 		5E1E2CEB1AD8B898004CC05B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E1E2CEA1AD8B898004CC05B /* AppDelegate.swift */; };
@@ -143,6 +144,7 @@
 		5E0AC21E1AFA3F30002677C4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/public.storyboard; sourceTree = "<group>"; };
 		5E0AC2211AFA3F69002677C4 /* LoadingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoadingViewController.swift; path = Public/LoadingViewController.swift; sourceTree = "<group>"; };
 		5E0AC2231AFA3F89002677C4 /* PublicConstant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PublicConstant.swift; path = Public/PublicConstant.swift; sourceTree = "<group>"; };
+		5E0AC2251AFA4139002677C4 /* RequestFailureViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestFailureViewController.swift; sourceTree = "<group>"; };
 		5E0BD1001AE72617001E43B7 /* NBMenuSectionGenerator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NBMenuSectionGenerator.swift; sourceTree = "<group>"; };
 		5E0D4B531AF9D960004987F1 /* AppColorScheme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppColorScheme.swift; sourceTree = "<group>"; };
 		5E1E2CE51AD8B898004CC05B /* app.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = app.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -334,6 +336,7 @@
 		5E0AC2201AFA3F39002677C4 /* Public */ = {
 			isa = PBXGroup;
 			children = (
+				5E0AC2251AFA4139002677C4 /* RequestFailureViewController.swift */,
 				5E0AC2231AFA3F89002677C4 /* PublicConstant.swift */,
 				5E0AC2211AFA3F69002677C4 /* LoadingViewController.swift */,
 			);
@@ -930,6 +933,7 @@
 				5E37DF901AE61D00009D605E /* LeftMenuSectionsUtils.swift in Sources */,
 				5E67E7531AF8A8FF00F07031 /* AutoCompletePopoverSearchBar.swift in Sources */,
 				5E032D3D1AF5B7A4006125AA /* YTVideoWatchSideViewController.swift in Sources */,
+				5E0AC2261AFA4139002677C4 /* RequestFailureViewController.swift in Sources */,
 				5E39C45E1AF4798F0069AC33 /* AuthoredFetcher.swift in Sources */,
 				5E032D391AF5B7A4006125AA /* VideoWatchProtocol.swift in Sources */,
 				5E39C46B1AF4798F0069AC33 /* YTYoutubeRequestInfo.swift in Sources */,
