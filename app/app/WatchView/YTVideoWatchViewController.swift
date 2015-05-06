@@ -36,6 +36,8 @@ class YTVideoWatchViewController: UIViewController {
         return MovieEmbeddedViewController.instance()
     }()
 
+    var videoInfoViewController: VideoInfoViewController = VideoInfoViewController()
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -47,6 +49,7 @@ class YTVideoWatchViewController: UIViewController {
         self.view.addSubview(videoOtherContainer)
 
         makeMovieEmbeddedViewController()
+        makeVideoInfoViewController()
     }
 
     func makeMovieEmbeddedViewController() {
@@ -54,6 +57,13 @@ class YTVideoWatchViewController: UIViewController {
 
         self.moviePlayContainer.addSubview(movieEmbeddedViewController.view)
         self.addChildViewController(movieEmbeddedViewController)
+    }
+
+    func makeVideoInfoViewController() {
+//        videoInfoViewController.videoID = videoID
+
+        self.videoInfoContainer.addSubview(videoInfoViewController.view)
+        self.addChildViewController(videoInfoViewController)
     }
 
     override func viewDidLayoutSubviews() {

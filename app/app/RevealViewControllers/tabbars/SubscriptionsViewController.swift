@@ -52,7 +52,9 @@ class SubscriptionsViewController: FrontBaseViewController {
 
 //        showChannelPage(channelID)
 
-        showCollectionPanel()//test
+//        showCollectionPanel()//test
+
+        showWatchVideoPage()
     }
 
 
@@ -110,15 +112,14 @@ class SubscriptionsViewController: FrontBaseViewController {
     }
 
     func showWatchVideoPage() {
-//        let channelPageViewController: YTVideoWatchViewController = YTVideoWatchViewController()
-//        //        channelPageViewController.videoID = "uD6Okha_Yj0"// has subtitle
-//        channelPageViewController.videoID = "eoXneK3WIgQ"  // no  subtitle
-//        
-//        self.addChildViewController(channelPageViewController)
-//        
-//        let rootView: UIView = channelPageViewController.view
-//        self.view.addSubview(rootView)
-//        LayoutUtils.LayoutFullView(rootView)
+        let viewController: YTVideoWatchViewController = YTVideoWatchViewController()
+        //        channelPageViewController.videoID = "uD6Okha_Yj0"// has subtitle
+        viewController.videoID = "eoXneK3WIgQ"  // no  subtitle
+
+        self.addChildViewController(viewController)
+
+        self.view.addSubview(viewController.view)
+        LayoutUtils.LayoutFullView(viewController.view)
     }
 
     //    func test(){
