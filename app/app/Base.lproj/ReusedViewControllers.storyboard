@@ -116,7 +116,7 @@
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="z2M-CH-kIC">
                                                     <rect key="frame" x="8" y="8" width="427" height="236"/>
                                                 </imageView>
-                                                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Oex-UW-eiW" userLabel="infoContain">
+                                                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Oex-UW-eiW" userLabel="infoContainer">
                                                     <rect key="frame" x="8" y="228" width="427" height="119"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R5Q-cK-Fv9">
@@ -156,7 +156,7 @@
                                         <connections>
                                             <outlet property="channelThumbnailImage" destination="AnN-Ej-saB" id="D9v-6m-MuT"/>
                                             <outlet property="channelTitleLabel" destination="EmG-p4-221" id="b65-Jg-SDh"/>
-                                            <outlet property="infoContain" destination="Oex-UW-eiW" id="pyL-xw-q7a"/>
+                                            <outlet property="infoContainer" destination="Oex-UW-eiW" id="SuW-2H-oyh"/>
                                             <outlet property="infoLabel" destination="mJn-s2-ww4" id="CNk-fX-pd0"/>
                                             <outlet property="thumbnailImage" destination="z2M-CH-kIC" id="ci9-BR-IuT"/>
                                             <outlet property="titleLabel" destination="R5Q-cK-Fv9" id="uTD-L3-tBt"/>

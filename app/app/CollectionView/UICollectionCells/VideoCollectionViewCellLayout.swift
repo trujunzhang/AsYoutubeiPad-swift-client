@@ -11,7 +11,12 @@ import Cartography
 
 
 class VideoCollectionViewCellLayout {
+
     var thumbnailImage: UIImageView!
+
+    var infoContain: UIView!
+    var totalTimeLabel: UILabel!
+
     var titleLabel: UILabel!
     var infoLabel: UILabel!
     var channelContainer: UIView!
@@ -19,7 +24,7 @@ class VideoCollectionViewCellLayout {
     var channelTitleLabel: UILabel!
 
     /**
-    ||  thumbnailImage(120*90)(480*360), ratio is (1.3333333333)(0.75)
+    ||  thumbnailImage(120*90)(480*360), ratio is (1.3333333333)(0.75),16/9(ratio)
     ||
     ||   titleLabel
     ||   infoLabel
@@ -35,6 +40,10 @@ class VideoCollectionViewCellLayout {
     :param: channelThumbnailImage
     :param: channelTitleLabel
     */
+    class func layoutVideoThumbnailImageContainer(thumbnailImage: UIImageView, titleLabel: UILabel, infoLabel: UILabel, channelContainer: UIView, channelThumbnailImage: UIImageView, channelTitleLabel: UILabel) {
+
+    }
+
     class func layoutVideoCollectionViewCell(thumbnailImage: UIImageView, titleLabel: UILabel, infoLabel: UILabel, channelContainer: UIView, channelThumbnailImage: UIImageView, channelTitleLabel: UILabel) {
 
     }

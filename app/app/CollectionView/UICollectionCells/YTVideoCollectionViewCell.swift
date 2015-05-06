@@ -14,7 +14,7 @@ import WebImage
 
 class YTVideoCollectionViewCell: UICollectionViewCell {
     
-    @IBOutlet weak var infoContain: UIView!
+    @IBOutlet weak var infoContainer: UIView!
     
     @IBOutlet var thumbnailImage: UIImageView!
     @IBOutlet weak var totalTimeLabel: UILabel!
