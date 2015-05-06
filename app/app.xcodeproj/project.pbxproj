@@ -31,6 +31,7 @@
 		5E0514C01AEDC60900A90A0B /* YTTabBarItemsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E0514BC1AEDC60900A90A0B /* YTTabBarItemsViewController.swift */; };
 		5E0514C21AEDC62900A90A0B /* YTTabbarConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E0514C11AEDC62900A90A0B /* YTTabbarConstants.swift */; };
 		5E0BD1011AE72617001E43B7 /* NBMenuSectionGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E0BD1001AE72617001E43B7 /* NBMenuSectionGenerator.swift */; };
+		5E0D4B541AF9D960004987F1 /* AppColorScheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E0D4B531AF9D960004987F1 /* AppColorScheme.swift */; };
 		5E1E2CEB1AD8B898004CC05B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E1E2CEA1AD8B898004CC05B /* AppDelegate.swift */; };
 		5E1E2CF01AD8B898004CC05B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5E1E2CEE1AD8B898004CC05B /* Main.storyboard */; };
 		5E1E2CF21AD8B898004CC05B /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5E1E2CF11AD8B898004CC05B /* Images.xcassets */; };
@@ -135,6 +136,7 @@
 		5E0514BC1AEDC60900A90A0B /* YTTabBarItemsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YTTabBarItemsViewController.swift; sourceTree = "<group>"; };
 		5E0514C11AEDC62900A90A0B /* YTTabbarConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YTTabbarConstants.swift; sourceTree = "<group>"; };
 		5E0BD1001AE72617001E43B7 /* NBMenuSectionGenerator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NBMenuSectionGenerator.swift; sourceTree = "<group>"; };
+		5E0D4B531AF9D960004987F1 /* AppColorScheme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppColorScheme.swift; sourceTree = "<group>"; };
 		5E1E2CE51AD8B898004CC05B /* app.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = app.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5E1E2CE91AD8B898004CC05B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5E1E2CEA1AD8B898004CC05B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -351,6 +353,7 @@
 		5E1E2CE71AD8B898004CC05B /* app */ = {
 			isa = PBXGroup;
 			children = (
+				5E0D4B531AF9D960004987F1 /* AppColorScheme.swift */,
 				5E67E74A1AF8A8FF00F07031 /* Popover */,
 				5E032D1D1AF5B7A4006125AA /* WatchView */,
 				5ED690F01AF0CD6800560A83 /* CollectionView */,
@@ -860,6 +863,7 @@
 				5E39C4611AF4798F0069AC33 /* YoutubeRetrievingActivityListItemsFetcherHelper.swift in Sources */,
 				5E0514BF1AEDC60900A90A0B /* YTTabBarItemsUtils.swift in Sources */,
 				5E032D341AF5B7A4006125AA /* CMTime+Validation.swift in Sources */,
+				5E0D4B541AF9D960004987F1 /* AppColorScheme.swift in Sources */,
 				5E39C46E1AF4798F0069AC33 /* YoutubeFetcher.swift in Sources */,
 				5E032D361AF5B7A4006125AA /* PeriodicTimeProtocol.swift in Sources */,
 				5E0514B71AEDC58000A90A0B /* YoutubePageConstants.swift in Sources */,

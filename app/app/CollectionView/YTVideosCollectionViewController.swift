@@ -42,7 +42,7 @@ class YTVideosCollectionViewController: UIViewController, UICollectionViewDataSo
         self.collectionView.dataSource = self
         self.collectionView.delegate = self
 
-        self.collectionView.backgroundColor = UIColor(red: 230 / 255, green: 230 / 255, blue: 230 / 255, alpha: 1)
+        self.collectionView.backgroundColor = UIColor(rgba: VIDEO_INFO_BACKGROUND_COLOR)
 
         // If your collectionview has a content size big enough to scroll vertically, it's OK, but in your case it's not.
         self.collectionView.alwaysBounceVertical = true
