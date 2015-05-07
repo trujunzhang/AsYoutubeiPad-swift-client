@@ -29,6 +29,10 @@
 
 @interface NBVideoCollectionViewCell : UICollectionViewCell <NICollectionViewCell>
 
-@property(nonatomic, strong) IBOutlet UILabel *label;
+
+@property (weak, nonatomic) IBOutlet UIImageView *thumbnailImage;
+@property (weak, nonatomic) IBOutlet UILabel *titleLabel;
+@property (weak, nonatomic) IBOutlet UILabel *infoLabel;
+@property (weak, nonatomic) IBOutlet UILabel *channelTitleLabel;
 
 @end

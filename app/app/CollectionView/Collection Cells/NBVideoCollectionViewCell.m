@@ -14,8 +14,10 @@
 // limitations under the License.
 //
 
+#import <WebImage/WebImage.h>
 #import "NBVideoCollectionViewCell.h"
 #import "YoutubeVideoCache.h"
+#import "YoutubeParser.h"
 
 @implementation NBVideoCollectionViewCellObject
 
@@ -35,10 +37,24 @@
 
 @implementation NBVideoCollectionViewCell
 
+
 #pragma mark - NICollectionViewCell
 
 - (BOOL)shouldUpdateCellWithObject:(NBVideoCollectionViewCellObject *)object {
     YoutubeVideoCache *videoCache = object.videoCache;
+
+    NSString *videoTitle = [YoutubeParser getVideoSnippetTitle:videoCache];
+    NSString *thumbnailUrl = [YoutubeParser getVideoSnippetThumbnails:videoCache];
+    NSString *channelTitle = [YoutubeParser getVideoSnippetChannelTitle:videoCache];
+    NSString *publishedAgo = [YoutubeParser getVideoSnippetChannelPublishedAt:videoCache];
+
+    _titleLabel.text = videoTitle;
+    _infoLabel.text = publishedAgo;
+    _channelTitleLabel.text = channelTitle;
+
+    [_thumbnailImage sd_setImageWithURL:[NSURL URLWithString:thumbnailUrl]
+                       placeholderImage:[UIImage imageNamed:@"thumbnail_border"]
+                                options:SDWebImageRefreshCached];
 
     return YES;
 }

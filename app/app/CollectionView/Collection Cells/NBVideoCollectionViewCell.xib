@@ -5,7 +5,14 @@
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="NBVideoCollectionViewCell"/>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="NBVideoCollectionViewCell">
+            <connections>
+                <outlet property="channelTitleLabel" destination="iic-ig-j8a" id="Nc8-hz-A0a"/>
+                <outlet property="infoLabel" destination="367-AS-Xbb" id="zsK-5F-u2f"/>
+                <outlet property="thumbnailImage" destination="e1z-DV-oxL" id="hS6-rl-Nmy"/>
+                <outlet property="titleLabel" destination="bsu-71-mJO" id="9q1-iS-e3m"/>
+            </connections>
+        </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="eig-34-YUy" customClass="NBVideoCollectionViewCell">
             <rect key="frame" x="0.0" y="0.0" width="216" height="200"/>
