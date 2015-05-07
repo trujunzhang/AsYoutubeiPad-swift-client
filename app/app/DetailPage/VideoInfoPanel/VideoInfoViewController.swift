@@ -23,7 +23,6 @@ class VideoInfoViewController: UIViewController, UITableViewDelegate, VideoInfoT
     var cellFactory: NICellFactory?
     
     var videoInfoObject: VideoInfoObject?
-    var obj: NIDrawRectBlockCellObject?
     
     var tableContents: [AnyObject] = [AnyObject]()
     
@@ -34,8 +33,7 @@ class VideoInfoViewController: UIViewController, UITableViewDelegate, VideoInfoT
             if (sucess == true) {
                 let array:NSArray = object as! NSArray
                 if(array.count == 1){
-                    let videoCache:YoutubeVideoCache = array[0] as! YoutubeVideoCache
-                   self.videoInfoObject =  VideoInfoObject.convertToVideoInfoObject(videoCache)
+                   self.reloadTableData(array[0] as! YoutubeVideoCache)
                 }
             }else{
                 
@@ -66,7 +64,8 @@ class VideoInfoViewController: UIViewController, UITableViewDelegate, VideoInfoT
         
     }
     
-    func reloadTableData(){
+    func reloadTableData(videoCache: YoutubeVideoCache){
+        self.videoInfoObject =  VideoInfoObject.convertToVideoInfoObject(videoCache)
         
         makeModel()
         
@@ -107,7 +106,6 @@ class VideoInfoViewController: UIViewController, UITableViewDelegate, VideoInfoT
         }
         
         videoInfoObject = VideoInfoObject()
-        obj = NIDrawRectBlockCellObject(block: drawTextBlock, object: videoInfoObject)
         tableContents = [
             NIDrawRectBlockCellObject(block: drawTextBlock, object: videoInfoObject),
             NITitleCellObject(title: "toggle"),
