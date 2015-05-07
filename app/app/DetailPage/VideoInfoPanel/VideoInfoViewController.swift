@@ -39,14 +39,12 @@ class VideoInfoViewController: UIViewController, UITableViewDelegate, VideoInfoT
             view1.leading == view1.superview!.leading + VIDEO_INFO_TABLEVIEW_MARGIN_LEFT_RIGHT
             view1.trailing == view1.superview!.trailing - VIDEO_INFO_TABLEVIEW_MARGIN_LEFT_RIGHT
 
-            view1.top == view1.superview!.top + 20 + 100
+            view1.top == view1.superview!.top + 20
             view1.bottom == view1.superview!.bottom - 20
         }
 
         tableView?.dataSource = model
         tableView?.delegate = self
-
-//        tableView?.rowHeight = 100
     }
 
     override func viewWillAppear(animated: Bool) {
