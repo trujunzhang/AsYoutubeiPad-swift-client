@@ -36,7 +36,7 @@ class YTVideoCollectionViewCell: UICollectionViewCell {
         let videoTitle = YoutubeParser.getVideoSnippetTitle(videoCache)
         let thumbnailUrl = YoutubeModelParser.getVideoSnippetThumbnails(videoCache!)
         let channelTitle = YoutubeParser.getVideoSnippetChannelTitle(videoCache)
-        let publishedAgo = YoutubeParser.getVideoSnippetChannelPublishedAt(videoCache)
+        let viewCount = YoutubeParser.getVideoStatisticsViewCount(videoCache)
         let timeAgo = YoutubeParser.getVideoTimeAgoFromPublishedAt(videoCache)
         let totoalTime = YoutubeParser.getVideoDurationForVideoInfo(videoCache)
 
@@ -48,7 +48,7 @@ class YTVideoCollectionViewCell: UICollectionViewCell {
 
         // 2
         titleLabel.text = videoTitle
-        infoLabel.text = timeAgo
+        infoLabel.text = "\(timeAgo) \(viewCount)"
         channelTitleLabel.text = channelTitle
 
         println("timeAgo is [\(timeAgo)]")
