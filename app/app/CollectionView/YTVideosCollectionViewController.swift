@@ -186,10 +186,10 @@ class YTVideosCollectionViewController: UIViewController, UICollectionViewDataSo
         
         cell.setupCell(videoList[indexPath.row] as! YoutubeVideoCache)
         
-        //        cell.layer.borderWidth = 0.5
-        //        cell.layer.borderColor = UIColor(red: 220 / 255, green: 220 / 255, blue: 220 / 255, alpha: 1).CGColor
-        //        cell.layer.cornerRadius = 4
-        //        cell.backgroundColor = UIColor.whiteColor()
+                cell.layer.borderWidth = 0.5
+                cell.layer.borderColor = UIColor(red: 220 / 255, green: 220 / 255, blue: 220 / 255, alpha: 1).CGColor
+                cell.layer.cornerRadius = 4
+                cell.backgroundColor = UIColor.whiteColor()
         
         return cell
     }

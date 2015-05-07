@@ -342,7 +342,7 @@ static NSUInteger UPLOADS_PAGE_LENGTH = 20;
 + (NSString *)getVideoDurationForVideoInfo:(YoutubeVideoCache *)video {
     NSString *durationString = [YoutubeParser parseISO8601Duration:video.contentDetails.duration];
 //   NSLog(@"durationString = %@", durationString);
-    return [NSString stringWithFormat:@" %@ ", durationString];
+    return [NSString stringWithFormat:@" %@  ", durationString];
 }
 
 

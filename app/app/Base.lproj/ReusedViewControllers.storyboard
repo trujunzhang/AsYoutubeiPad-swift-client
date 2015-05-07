@@ -120,13 +120,13 @@
                                                         <constraint firstAttribute="width" secondItem="z2M-CH-kIC" secondAttribute="height" multiplier="16/9" id="Rc8-je-iNd"/>
                                                     </constraints>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1:01:01" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nzN-6U-Kbr" userLabel="timeLabel">
-                                                    <rect key="frame" x="382" y="227" width="49" height="21"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1:01:01" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nzN-6U-Kbr" userLabel="timeLabel">
+                                                    <rect key="frame" x="397" y="230" width="42" height="18"/>
                                                     <color key="backgroundColor" white="0.25" alpha="0.77000000000000002" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="height" constant="21" id="pzw-ik-BUV"/>
+                                                        <constraint firstAttribute="height" constant="18" id="pzw-ik-BUV"/>
                                                     </constraints>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -165,7 +165,7 @@
                                             <constraint firstItem="EmG-p4-221" firstAttribute="leading" secondItem="k5v-EP-O1O" secondAttribute="leading" constant="8" id="0Gd-IR-waJ"/>
                                             <constraint firstAttribute="trailing" secondItem="EmG-p4-221" secondAttribute="trailing" constant="8" id="5hY-y8-guq"/>
                                             <constraint firstItem="mJn-s2-ww4" firstAttribute="top" secondItem="R5Q-cK-Fv9" secondAttribute="bottom" constant="2" id="8wZ-E8-9fI"/>
-                                            <constraint firstAttribute="trailing" secondItem="nzN-6U-Kbr" secondAttribute="trailing" constant="12" id="Dvw-IQ-hiD"/>
+                                            <constraint firstAttribute="trailing" secondItem="nzN-6U-Kbr" secondAttribute="trailing" constant="4" id="Dvw-IQ-hiD"/>
                                             <constraint firstItem="mJn-s2-ww4" firstAttribute="leading" secondItem="k5v-EP-O1O" secondAttribute="leading" constant="8" id="GDm-4v-Vmr"/>
                                             <constraint firstAttribute="trailing" secondItem="R5Q-cK-Fv9" secondAttribute="trailing" constant="8" id="IYP-X7-oeG"/>
                                             <constraint firstItem="z2M-CH-kIC" firstAttribute="top" secondItem="k5v-EP-O1O" secondAttribute="top" id="UTW-C2-4Rn"/>
