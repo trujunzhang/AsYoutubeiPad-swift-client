@@ -46,7 +46,7 @@ class YTVideoCollectionViewCell: UICollectionViewCell {
 
         // 2
         titleLabel.text = videoTitle
-        infoLabel.text = "\(timeAgo) \(viewCount)"
+        infoLabel.text = "\(timeAgo), \(viewCount)"
         channelTitleLabel.text = channelTitle
 
 //        println("timeAgo is [\(timeAgo)]")
