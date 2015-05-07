@@ -18,8 +18,8 @@ class NBVideosCollectionViewController: NBMultableCollectionBaseViewController {
         }()
     
     
-   private var delegate: FetchEventProtocol?
-   private var eventObject: AnyObject?
+    private var delegate: FetchEventProtocol?
+    private var eventObject: AnyObject?
     
     var videoList: NSMutableArray = NSMutableArray()
     
@@ -69,8 +69,6 @@ class NBVideosCollectionViewController: NBMultableCollectionBaseViewController {
         self.showLoadingPanel()
         self.cleanupFetchedArray()
         
-        println("refreshEvent is \(eventObject!)")
-        
         self.delegate!.refreshEvent(eventObject!, completeHandler: {
             (response, sucess) -> Void in
             
@@ -87,7 +85,9 @@ class NBVideosCollectionViewController: NBMultableCollectionBaseViewController {
         self.delegate!.nextFetching(eventObject!, completeHandler: {
             (response, sucess) -> Void in
             
-            self.appendFetchedArray(response as! NSArray)
+            if(sucess == true){
+                self.appendFetchedArray(response as! NSArray)
+            }
         })
     }
     
@@ -101,14 +101,10 @@ class NBVideosCollectionViewController: NBMultableCollectionBaseViewController {
         // 2. update collection view
         self.videoList.addObjectsFromArray(array as [AnyObject])
         
-        if (lastCount == 0) {
-            //            self.collectionView.reloadData()
-        } else {
-            //            self.batchUpdateCollectionView(array.count)
-        }
+        self.appendContents(array as [AnyObject])
         
         // 1. stop animation
-        //        self.stopFetchedAnimation()
+//                self.stopFetchedAnimation()
         
         // 3. check next fetcher
         if (self.delegate!.hasNextFetcing() == false) {

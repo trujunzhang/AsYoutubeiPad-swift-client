@@ -10,4 +10,6 @@
 
 @property (nonatomic, strong) UICollectionViewFlowLayout *flowLayout;
 
+- (void)appendContents:(NSArray *)array;
+
 @end
