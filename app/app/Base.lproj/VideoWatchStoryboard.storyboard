@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7702" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -218,23 +219,40 @@ Cg
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="af0-E2-Pxb" userLabel="playerViewContainer">
-                                <rect key="frame" x="90" y="91" width="254" height="216"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="af0-E2-Pxb" userLabel="playerViewContainer">
+                                <rect key="frame" x="0.0" y="20" width="300" height="169"/>
                                 <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="af0-E2-Pxb" secondAttribute="height" multiplier="16/9" id="Soe-VK-7uJ"/>
+                                    <constraint firstAttribute="width" constant="300" id="dQQ-v3-Loq"/>
+                                </constraints>
                             </view>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="weC-D3-Rp0" userLabel="videoInfoContainer">
-                                <rect key="frame" x="90" y="352" width="266" height="216"/>
-                                <color key="backgroundColor" red="1" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                            </view>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kUX-yu-XgA" userLabel="suggestionContainer">
-                                <rect key="frame" x="401" y="201" width="131" height="216"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kUX-yu-XgA" userLabel="suggestionContainer">
+                                <rect key="frame" x="300" y="20" width="300" height="580"/>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="weC-D3-Rp0" userLabel="videoInfoContainer">
+                                <rect key="frame" x="0.0" y="189" width="300" height="411"/>
+                                <color key="backgroundColor" red="1" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="af0-E2-Pxb" firstAttribute="leading" secondItem="5Mg-Cr-9Sa" secondAttribute="leading" id="BJb-0w-fDV"/>
+                            <constraint firstItem="kUX-yu-XgA" firstAttribute="top" secondItem="7eM-wE-WPY" secondAttribute="bottom" id="G7Y-71-pYA"/>
+                            <constraint firstItem="weC-D3-Rp0" firstAttribute="width" secondItem="af0-E2-Pxb" secondAttribute="width" id="RfY-08-i7n"/>
+                            <constraint firstItem="weC-D3-Rp0" firstAttribute="top" secondItem="af0-E2-Pxb" secondAttribute="bottom" id="UDc-Z1-1Jq"/>
+                            <constraint firstItem="THX-AL-GaK" firstAttribute="top" secondItem="weC-D3-Rp0" secondAttribute="bottom" id="Y2Y-yJ-zzv"/>
+                            <constraint firstItem="af0-E2-Pxb" firstAttribute="top" secondItem="7eM-wE-WPY" secondAttribute="bottom" id="bAj-nL-UjW"/>
+                            <constraint firstItem="kUX-yu-XgA" firstAttribute="leading" secondItem="weC-D3-Rp0" secondAttribute="trailing" id="cep-F3-zx2"/>
+                            <constraint firstAttribute="trailing" secondItem="kUX-yu-XgA" secondAttribute="trailing" id="mlv-Sk-fSN"/>
+                            <constraint firstItem="weC-D3-Rp0" firstAttribute="leading" secondItem="5Mg-Cr-9Sa" secondAttribute="leading" id="qfN-0Q-Azm"/>
+                            <constraint firstItem="THX-AL-GaK" firstAttribute="top" secondItem="kUX-yu-XgA" secondAttribute="bottom" id="zYr-55-gwi"/>
+                        </constraints>
                     </view>
                     <connections>
                         <outlet property="playerViewContainer" destination="af0-E2-Pxb" id="iOo-39-c2p"/>
+                        <outlet property="playerViewWidthConstraint" destination="dQQ-v3-Loq" id="cTT-bh-ai0"/>
                         <outlet property="suggestionContainer" destination="kUX-yu-XgA" id="zjl-7I-wwg"/>
                         <outlet property="videoInfoContainer" destination="weC-D3-Rp0" id="6QI-BZ-MmT"/>
                     </connections>
