@@ -93,6 +93,8 @@ class NBVideosCollectionViewController: NBMultableCollectionBaseViewController {
             
             if(sucess == true){
                 self.appendFetchedArray(response as! NSArray)
+            }else{
+                self.insertRequestFailureViewPanel()
             }
         })
     }
@@ -113,11 +115,8 @@ class NBVideosCollectionViewController: NBMultableCollectionBaseViewController {
             self.appendContents(array as [AnyObject])
         }
         
-        //        self.appendContents(array as [AnyObject])
-        //        self.batchUpdateCollectionView(array.count)
-        
         // 1. stop animation
-        //                self.stopFetchedAnimation()
+        //                        self.stopFetchedAnimation()
         
         // 3. check next fetcher
         if (self.delegate!.hasNextFetcing() == false) {
@@ -150,6 +149,12 @@ class NBVideosCollectionViewController: NBMultableCollectionBaseViewController {
         loadingViewController.hideLoadingPanel()
         
         self.collectionView!.addSubview(refreshControl)
+    }
+    
+    // MARK: UIRefreshControl' target
+    func endRefreshingRefreshControl() {
+        self.refreshControl.endRefreshing()
+        insertRowAtTop()
     }
     
     
