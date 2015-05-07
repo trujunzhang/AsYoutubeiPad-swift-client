@@ -65,7 +65,6 @@ class YTVideoWatchViewController: UIViewController {
         
         self.addChildViewController(videoInfoViewController)
         self.videoInfoContainer.addSubview(videoInfoViewController.view)
-        
     }
     
     override func viewDidLayoutSubviews() {

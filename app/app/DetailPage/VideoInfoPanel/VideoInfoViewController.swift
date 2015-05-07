@@ -67,7 +67,7 @@ class VideoInfoViewController: UIViewController, UITableViewDelegate, VideoInfoT
             view1 in
             
             view1.leading == view1.superview!.leading + VIDEO_INFO_TABLEVIEW_MARGIN_LEFT_RIGHT
-            view1.trailing == view1.superview!.trailing - VIDEO_INFO_TABLEVIEW_MARGIN_LEFT_RIGHT
+            view1.trailing == view1.superview!.trailing - VIDEO_INFO_TABLEVIEW_MARGIN_LEFT_RIGHT - 600
             
             view1.top == view1.superview!.top + VIDEO_INFO_TABLEVIEW_MARGIN_LEFT_RIGHT
             view1.bottom == view1.superview!.bottom - VIDEO_INFO_TABLEVIEW_MARGIN_LEFT_RIGHT
