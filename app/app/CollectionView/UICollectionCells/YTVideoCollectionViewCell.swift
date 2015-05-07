@@ -14,16 +14,12 @@ import WebImage
 
 class YTVideoCollectionViewCell: UICollectionViewCell {
 
-    @IBOutlet weak var infoContainer: UIView!
-
     @IBOutlet var thumbnailImage: UIImageView!
     @IBOutlet weak var totalTimeLabel: UILabel!
 
     @IBOutlet var titleLabel: UILabel!
     @IBOutlet var infoLabel: UILabel!
 
-    @IBOutlet var channelContainer: UIView!
-    @IBOutlet var channelThumbnailImage: UIImageView!
     @IBOutlet var channelTitleLabel: UILabel!
 
     var imageUrl = ""
@@ -50,7 +46,7 @@ class YTVideoCollectionViewCell: UICollectionViewCell {
         let url = NSURL(string: thumbnailUrl as String)
         //        thumbnailImage.hnk_setImageFromURL(url!) // used
 
-        let placeHolder = UIImage(named: "Travel")
+        let placeHolder = UIImage(named: "thumbnail_border")
 
         //        thumbnailImage.sd_setImageWithURL(url,placeHolder:placeHolder,options: SDWebImageDownloaderOptions.LowPriority)
 
@@ -70,38 +66,6 @@ class YTVideoCollectionViewCell: UICollectionViewCell {
         // 4
         channelTitleLabel.text = channelTitle
 
-        // 5
-        //        setupChannelThumbnail()
     }
-
-    func setupChannelThumbnail() {
-        let channelID = YoutubeParser.getChannelIdByVideo(videoCache)
-
-        if (self.imageUrl.isEmpty) {
-            self.fetchChannelThumbnail(channelID)
-        } else {
-            self.channelThumbnailImage.sd_setImageWithURL(NSURL(string: self.imageUrl)!)
-            //            self.channelThumbnailImage.hnk_setImageFromURL(NSURL(string: self.imageUrl)!)// used
-        }
-
-    }
-
-    func fetchChannelThumbnail(channelID: NSString) {
-        YoutubeFetcher.fetchChannelForThumbnail(channelID, completeHandler: {
-            (object, sucess) -> Void in
-            if (sucess == true) {
-                var array: NSArray = object as! NSArray
-
-                var channel: MABYT3_Channel = array[0] as! MABYT3_Channel
-                var imageUrl = YoutubeModelParser.getMABChannelThumbnalUrl(channel)
-
-                self.imageUrl = imageUrl as String
-
-                self.channelThumbnailImage.sd_setImageWithURL(NSURL(string: self.imageUrl)!)
-                //                self.channelThumbnailImage.hnk_setImageFromURL(NSURL(string: self.imageUrl)!)// used
-            }
-        })
-    }
-
 
 }

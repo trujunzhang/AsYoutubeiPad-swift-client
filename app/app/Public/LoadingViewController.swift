@@ -16,11 +16,13 @@ class LoadingViewController: UIViewController {
     
     // MARK: Loading panel
     func showLoadingPanel() {
+        
         loadingPanel.backgroundColor = UIColor.clearColor()
         loadingPanel.hidden = false
         indicatorView.startAnimating()
         indicatorView.hidesWhenStopped = true
-
+        
+//        indicatorView.color = UIColor.lightGrayColor()
     }
     
     func hideLoadingPanel() {
