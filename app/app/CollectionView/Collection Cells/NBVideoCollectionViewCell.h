@@ -16,16 +16,19 @@
 
 #import "NimbusCollections.h"
 
+@class YoutubeVideoCache;
+
+
 @interface NBVideoCollectionViewCellObject : NSObject <NICollectionViewNibCellObject>
 
-+ (instancetype)objectWithTitle:(NSString *)title;
++ (instancetype)objectWithVideoObject:(YoutubeVideoCache *)videoCache;
 
-@property (nonatomic, copy) NSString* title;
+@property(nonatomic, copy) YoutubeVideoCache *videoCache;
 
 @end
 
 @interface NBVideoCollectionViewCell : UICollectionViewCell <NICollectionViewCell>
 
-@property (nonatomic, strong) IBOutlet UILabel* label;
+@property(nonatomic, strong) IBOutlet UILabel *label;
 
 @end

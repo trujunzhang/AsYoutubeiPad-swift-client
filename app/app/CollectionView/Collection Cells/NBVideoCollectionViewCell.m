@@ -15,12 +15,13 @@
 //
 
 #import "NBVideoCollectionViewCell.h"
+#import "YoutubeVideoCache.h"
 
 @implementation NBVideoCollectionViewCellObject
 
-+ (instancetype)objectWithTitle:(NSString *)title {
-    NBVideoCollectionViewCellObject * object = [[[self class] alloc] init];
-    object.title = title;
++ (instancetype)objectWithVideoObject:(YoutubeVideoCache *)videoCache {
+    NBVideoCollectionViewCellObject *object = [[[self class] alloc] init];
+    object.videoCache = videoCache;
     return object;
 }
 
@@ -37,7 +38,8 @@
 #pragma mark - NICollectionViewCell
 
 - (BOOL)shouldUpdateCellWithObject:(NBVideoCollectionViewCellObject *)object {
-    self.label.text = object.title;
+    YoutubeVideoCache *videoCache = object.videoCache;
+
     return YES;
 }
 
