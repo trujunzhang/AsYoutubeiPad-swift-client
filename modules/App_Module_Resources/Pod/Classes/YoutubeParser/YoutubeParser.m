@@ -304,7 +304,9 @@ static NSUInteger UPLOADS_PAGE_LENGTH = 20;
     [formatter setNumberStyle:NSNumberFormatterDecimalStyle];
     NSString *newString = [formatter stringFromNumber:[NSNumber numberWithInteger:number]];
 
-    return [NSString stringWithFormat:@"%@ views", newString];
+    NSString *kFormatForNumber = [self kFormatForNumber:number.intValue];
+
+    return [NSString stringWithFormat:@"%@ views", kFormatForNumber];
 }
 
 
@@ -499,5 +501,15 @@ static NSUInteger UPLOADS_PAGE_LENGTH = 20;
     return [NSString stringWithFormat:@"%02d:%02d:%02d", hours, minutes, seconds];
 }
 
++ (NSString *)kFormatForNumber:(int)number {
+    int result;
+    if (number >= 1000) {
+        result = number / 1000;
+
+        NSString *kValue = [NSString stringWithFormat:@"%dk", result];
+        return kValue;
+    }
+    return [NSString stringWithFormat:@"%d", number];
+}
 
 @end

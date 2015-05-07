@@ -42,9 +42,7 @@ class YTVideoCollectionViewCell: UICollectionViewCell {
 
         // 1
         let url = NSURL(string: thumbnailUrl as String)
-        let placeHolder = UIImage(named: "thumbnail_border")
-
-        thumbnailImage.sd_setImageWithURL(url, placeholderImage: placeHolder, options: SDWebImageOptions.LowPriority)
+        thumbnailImage.sd_setImageWithURL(url, placeholderImage: UIImage(named: "thumbnail_border"), options: SDWebImageOptions.LowPriority)
 
         // 2
         titleLabel.text = videoTitle
