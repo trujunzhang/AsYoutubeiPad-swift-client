@@ -63,7 +63,7 @@ class YTVideosCollectionViewController: UIViewController, UICollectionViewDataSo
         self.collectionView.delegate = self
         
         self.collectionView.backgroundColor = UIColor(red: 230 / 255, green: 230 / 255, blue: 230 / 255, alpha: 1)
-//        self.collectionView.backgroundColor = UIColor.whiteColor()
+        //        self.collectionView.backgroundColor = UIColor.whiteColor()
         // If your collectionview has a content size big enough to scroll vertically, it's OK, but in your case it's not.
         self.collectionView.alwaysBounceVertical = true
         
@@ -186,10 +186,10 @@ class YTVideosCollectionViewController: UIViewController, UICollectionViewDataSo
         
         cell.setupCell(videoList[indexPath.row] as! YoutubeVideoCache)
         
-                cell.layer.borderWidth = 0.5
-                cell.layer.borderColor = UIColor(red: 220 / 255, green: 220 / 255, blue: 220 / 255, alpha: 1).CGColor
-                cell.layer.cornerRadius = 4
-                cell.backgroundColor = UIColor.whiteColor()
+//        cell.layer.borderWidth = 0.5
+//        cell.layer.borderColor = UIColor(red: 220 / 255, green: 220 / 255, blue: 220 / 255, alpha: 1).CGColor
+//        cell.layer.cornerRadius = 2
+//        cell.backgroundColor = UIColor.whiteColor()
         
         return cell
     }

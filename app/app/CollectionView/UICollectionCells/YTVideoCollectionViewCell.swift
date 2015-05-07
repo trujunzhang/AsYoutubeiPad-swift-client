@@ -50,12 +50,12 @@ class YTVideoCollectionViewCell: UICollectionViewCell {
         infoLabel.text = publishedAgo
         channelTitleLabel.text = channelTitle
         
-        println("time is [\(totoalTime)]")
+//        println("time is [\(totoalTime)]")
         totalTimeLabel.backgroundColor = UIColor(red: 31/255, green: 31/255, blue: 33/255, alpha: 0.6)
         totalTimeLabel.text = totoalTime
-        totalTimeLabel.sizeToFit()
-        totalTimeLabel.layoutIfNeeded()
-        totalTimeLabel.needsUpdateConstraints()
+//        totalTimeLabel.sizeToFit()
+//        totalTimeLabel.layoutIfNeeded()
+//        totalTimeLabel.needsUpdateConstraints()
     }
 
 }

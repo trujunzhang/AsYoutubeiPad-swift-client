@@ -121,7 +121,7 @@
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1:01:01" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nzN-6U-Kbr" userLabel="timeLabel">
-                                                    <rect key="frame" x="397" y="230" width="42" height="18"/>
+                                                    <rect key="frame" x="397" y="228" width="42" height="18"/>
                                                     <color key="backgroundColor" white="0.25" alpha="0.77000000000000002" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="18" id="pzw-ik-BUV"/>
@@ -173,7 +173,7 @@
                                             <constraint firstItem="R5Q-cK-Fv9" firstAttribute="leading" secondItem="k5v-EP-O1O" secondAttribute="leading" constant="8" id="Xe7-w7-fEW"/>
                                             <constraint firstItem="R5Q-cK-Fv9" firstAttribute="top" secondItem="z2M-CH-kIC" secondAttribute="bottom" constant="11" id="YTM-tt-WSH"/>
                                             <constraint firstAttribute="trailing" secondItem="mJn-s2-ww4" secondAttribute="trailing" constant="8" id="gle-60-xJ1"/>
-                                            <constraint firstItem="R5Q-cK-Fv9" firstAttribute="top" secondItem="nzN-6U-Kbr" secondAttribute="bottom" constant="12" id="hOZ-V9-1ZM"/>
+                                            <constraint firstItem="R5Q-cK-Fv9" firstAttribute="top" secondItem="nzN-6U-Kbr" secondAttribute="bottom" constant="14" id="hOZ-V9-1ZM"/>
                                             <constraint firstAttribute="trailing" secondItem="z2M-CH-kIC" secondAttribute="trailing" id="tLa-fF-Ldd"/>
                                             <constraint firstItem="z2M-CH-kIC" firstAttribute="leading" secondItem="k5v-EP-O1O" secondAttribute="leading" id="vge-eq-7Or"/>
                                         </constraints>
