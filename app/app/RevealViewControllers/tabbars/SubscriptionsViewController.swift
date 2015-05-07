@@ -56,9 +56,9 @@ class SubscriptionsViewController: FrontBaseViewController {
 
 //        showCollectionPanel()//test
 
-        showWatchVideoPage()
+//        showWatchVideoPage()
 
-//        showSearchPanel("Sketch 3")
+        showSearchPanel("Sketch 3")
 
         NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("onKeyboardHide"), name: UIKeyboardDidHideNotification, object: nil)
     }

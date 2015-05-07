@@ -21,7 +21,9 @@ class YoutubeModelParser {
     // MARK: Parse for GTLYouTubeVideo
 
     class func getVideoSnippetThumbnails(video: YoutubeVideoCache) -> NSString {
-        return video.snippet.thumbnails.standard.url;
+        let url = "https://i.ytimg.com/vi/\(video.identifier)/mqdefault.jpg"
+            //return video.snippet.thumbnails.standard.url
+        return url
     }
 
     class func getWatchVideoId(video: GTLYouTubeVideo) -> NSString {
