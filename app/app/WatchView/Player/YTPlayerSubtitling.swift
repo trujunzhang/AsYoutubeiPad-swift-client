@@ -11,7 +11,12 @@ import AVFoundation
 import UIKit
 
 class YTPlayerSubtitling :PeriodicTimeProtocol {
-    var videoID = ""
+    
+    var videoID: String = "" {
+        didSet {
+            fetchTracksAndCaptainForVideo(videoID)
+        }
+    }
     
     var moviePlayerViewController :MoviePlayerViewHelper? = nil
     
@@ -21,8 +26,6 @@ class YTPlayerSubtitling :PeriodicTimeProtocol {
     
     var currentText = ""
     
-    
-    
     func fetchTracksAndCaptainForVideo(_videoID: String) {
         YoutubeDataFetcher.sharedInstance.fetchCaptainTracksAndCaption(_videoID,completeHandler: { (subtitleString, sucess) -> Void in
             
@@ -30,29 +33,21 @@ class YTPlayerSubtitling :PeriodicTimeProtocol {
                 var subtitle:NSString = subtitleString as! NSString
                 self.prepareSubtitle(subtitle as! String)
             }
-            
         })
-        
     }
     
     func setPlayer(_videoID: String,_subtitleLabel : UILabel ,_moviePlayerViewController: MoviePlayerViewHelper ){
-        fetchTracksAndCaptainForVideo(_videoID)
-        
-        videoID = _videoID
-        subtitleLabel = _subtitleLabel
-        moviePlayerViewController = _moviePlayerViewController
+        self.videoID = _videoID
+        self.subtitleLabel = _subtitleLabel
+        self.moviePlayerViewController = _moviePlayerViewController
     }
     
     func prepareSubtitle(subtitleString : String){
-        
-        let srtParser:SOSRTParserHelper = SOSRTParserHelper()
-        
-        srtParser.parseSRTString(subtitleString, toDictionary: subtitlesParts) { (parsed, error) -> Void in
+        SOSRTParserHelper().parseSRTString(subtitleString, toDictionary: subtitlesParts) { (parsed, error) -> Void in
             if(parsed == true){
                 self.addToPeriodicTimeProtocol()
             }
         }
-        
     }
     
     func addToPeriodicTimeProtocol(){
@@ -67,7 +62,7 @@ class YTPlayerSubtitling :PeriodicTimeProtocol {
                     let nbSecondsElapsed: NSTimeInterval = CMTimeGetSeconds(time)
                     
                     let subtitle:NSString = SRTParserInterface.searchAndShowSubtitle(subtitlesParts, inTime: nbSecondsElapsed)
-
+                    
                     self.updateLabel(subtitle as String)
                     
                     
@@ -80,9 +75,6 @@ class YTPlayerSubtitling :PeriodicTimeProtocol {
     }
     
     func updateLabel(subtitle: String){
-//        if(subtitle == null){
-//            
-//        }
         if(subtitle.isEmpty == true || subtitle == currentText){
             return
         }
