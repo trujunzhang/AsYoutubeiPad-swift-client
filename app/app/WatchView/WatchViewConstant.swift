@@ -6,13 +6,6 @@
 //  Copyright (c) 2015 djzhang. All rights reserved.
 //
 
-//extension xxx {
-//
-//    class func instance() -> xxx {
-//
-//        return UIStoryboard(name: STORYBOARD_VIDEOWATCH_NAME, bundle: nil).instantiateViewControllerWithIdentifier("xxx") as! xxx
-//    }
-//}
 
 import Foundation
 

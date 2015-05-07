@@ -58,7 +58,7 @@ class RevealViewHelper: NSObject {
     }
 
     func pushWatchVideoViewController(videoCache: YoutubeVideoCache) {
-        let viewController: YTVideoWatchViewController = YTVideoWatchViewController()
+        let viewController: YTVideoWatchViewController = YTVideoWatchViewController.instance()
 
         viewController.videoID = YoutubeParser.getWatchVideoId(videoCache) as String
         viewController.title = YoutubeParser.getVideoSnippetTitle(videoCache) as String
