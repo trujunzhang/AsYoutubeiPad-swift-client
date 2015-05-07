@@ -21,9 +21,9 @@
 
 @interface NBVideoCollectionViewCellObject : NSObject <NICollectionViewNibCellObject>
 
-+ (instancetype)objectWithVideoObject:(YoutubeVideoCache *)videoCache;
+@property(nonatomic, strong) YoutubeVideoCache *videoCache;
 
-@property(nonatomic, copy) YoutubeVideoCache *videoCache;
++ (instancetype)objectWithVideoObject:(YoutubeVideoCache *)videoCache;
 
 @end
 
