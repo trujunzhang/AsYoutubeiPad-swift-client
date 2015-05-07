@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7702" systemVersion="14D131" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7702" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Ddk-dd-MSn">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="appRestApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="appBDDApp" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -34,6 +35,64 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+        </scene>
+        <!--Watch Video View Controller-->
+        <scene sceneID="PjR-m5-Q2e">
+            <objects>
+                <viewController id="Ddk-dd-MSn" customClass="WatchVideoViewController" customModule="appBDDApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="N9Z-ud-7sY"/>
+                        <viewControllerLayoutGuide type="bottom" id="DfI-tS-qek"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="g3q-bk-lVZ">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fhu-tP-eh5" userLabel="playerViewContainer">
+                                <rect key="frame" x="0.0" y="0.0" width="400" height="225"/>
+                                <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="400" id="UU1-oX-PcH"/>
+                                    <constraint firstAttribute="width" secondItem="fhu-tP-eh5" secondAttribute="height" multiplier="16/9" id="zmG-mG-qS9"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cJh-QN-ePp" userLabel="videoInfoContainer">
+                                <rect key="frame" x="0.0" y="225" width="400" height="375"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OEh-aU-V6d" userLabel="suggestionContainer">
+                                <rect key="frame" x="400" y="0.0" width="200" height="600"/>
+                                <color key="backgroundColor" red="1" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="cJh-QN-ePp" firstAttribute="top" secondItem="fhu-tP-eh5" secondAttribute="bottom" id="5RI-kK-iso"/>
+                            <constraint firstItem="OEh-aU-V6d" firstAttribute="leading" secondItem="cJh-QN-ePp" secondAttribute="trailing" id="7Kx-H2-fvY"/>
+                            <constraint firstItem="OEh-aU-V6d" firstAttribute="top" secondItem="N9Z-ud-7sY" secondAttribute="bottom" id="Aqs-Yg-moc"/>
+                            <constraint firstAttribute="trailing" secondItem="OEh-aU-V6d" secondAttribute="trailing" id="Qtu-tK-Zol"/>
+                            <constraint firstItem="DfI-tS-qek" firstAttribute="top" secondItem="OEh-aU-V6d" secondAttribute="bottom" id="Tt7-Co-KlF"/>
+                            <constraint firstItem="cJh-QN-ePp" firstAttribute="width" secondItem="fhu-tP-eh5" secondAttribute="width" id="UQd-o9-JLX"/>
+                            <constraint firstItem="DfI-tS-qek" firstAttribute="top" secondItem="cJh-QN-ePp" secondAttribute="bottom" id="ecA-IC-o0B"/>
+                            <constraint firstItem="fhu-tP-eh5" firstAttribute="top" secondItem="g3q-bk-lVZ" secondAttribute="top" id="lK1-8S-XRh"/>
+                            <constraint firstItem="fhu-tP-eh5" firstAttribute="leading" secondItem="g3q-bk-lVZ" secondAttribute="leading" id="vkB-hx-Jkz"/>
+                            <constraint firstItem="cJh-QN-ePp" firstAttribute="leading" secondItem="g3q-bk-lVZ" secondAttribute="leading" id="wkA-AG-MNt"/>
+                        </constraints>
+                    </view>
+                    <nil key="simulatedStatusBarMetrics"/>
+                    <nil key="simulatedTopBarMetrics"/>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="600" height="600"/>
+                    <connections>
+                        <outlet property="playerViewContainer" destination="fhu-tP-eh5" id="hSp-Pg-fVV"/>
+                        <outlet property="playerViewWidthConstraint" destination="UU1-oX-PcH" id="A9O-88-cC6"/>
+                        <outlet property="suggestionContainer" destination="OEh-aU-V6d" id="UiW-mk-FR9"/>
+                        <outlet property="videoInfoContainer" destination="cJh-QN-ePp" id="ErL-rZ-TWx"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="sPh-81-2Uh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="264" y="1314"/>
         </scene>
     </scenes>
 </document>
