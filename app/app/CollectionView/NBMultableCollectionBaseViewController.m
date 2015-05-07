@@ -54,6 +54,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
+     [self.collectionView registerClass:[NBVideoCollectionViewCell class] forCellWithReuseIdentifier:@"NBVideoCollectionViewCellObject"];
 }
 
 - (void)viewDidAppear:(BOOL)animated {

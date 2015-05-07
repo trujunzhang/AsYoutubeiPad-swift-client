@@ -37,6 +37,8 @@
 
 @implementation NBVideoCollectionViewCell
 
+//awakeFromNib
+
 
 #pragma mark - NICollectionViewCell
 
@@ -48,13 +50,13 @@
     NSString *channelTitle = [YoutubeParser getVideoSnippetChannelTitle:videoCache];
     NSString *publishedAgo = [YoutubeParser getVideoSnippetChannelPublishedAt:videoCache];
 
-    _titleLabel.text = videoTitle;
-    _infoLabel.text = publishedAgo;
-    _channelTitleLabel.text = channelTitle;
-
-    [_thumbnailImage sd_setImageWithURL:[NSURL URLWithString:thumbnailUrl]
-                       placeholderImage:[UIImage imageNamed:@"thumbnail_border"]
-                                options:SDWebImageRefreshCached];
+//    _titleLabel.text = videoTitle;
+//    _infoLabel.text = publishedAgo;
+//    _channelTitleLabel.text = channelTitle;
+//
+//    [_thumbnailImage sd_setImageWithURL:[NSURL URLWithString:thumbnailUrl]
+//                       placeholderImage:[UIImage imageNamed:@"thumbnail_border"]
+//                                options:SDWebImageRefreshCached];
 
     return YES;
 }
