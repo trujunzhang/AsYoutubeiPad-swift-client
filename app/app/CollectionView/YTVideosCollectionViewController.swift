@@ -73,6 +73,7 @@ class YTVideosCollectionViewController: UIViewController, UICollectionViewDataSo
         self.flowLayout.sectionInset = UIEdgeInsetsMake(COLLECTION_CELL_INSET_VALUE, COLLECTION_CELL_INSET_VALUE, COLLECTION_CELL_INSET_VALUE, COLLECTION_CELL_INSET_VALUE)
         
         self.registerInfiniteScrollView()
+        self.insertLoadingViewPanel()
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -204,13 +205,13 @@ class YTVideosCollectionViewController: UIViewController, UICollectionViewDataSo
     
     // MARK: Loading panel
     func showLoadingPanel() {
-//        loadingViewController.showLoadingPanel()
-        
+        loadingViewController.showLoadingPanel()
+        refreshControl.endRefreshing()
         refreshControl.removeFromSuperview()
     }
     
     func hideLoadingPanel() {
-//        loadingViewController.hideLoadingPanel()
+        loadingViewController.hideLoadingPanel()
         
         self.collectionView.addSubview(refreshControl)
     }

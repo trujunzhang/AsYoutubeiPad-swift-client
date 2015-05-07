@@ -14,15 +14,22 @@ class LoadingViewController: UIViewController {
     @IBOutlet weak var loadingPanel: UIView!
     @IBOutlet weak var indicatorView: UIActivityIndicatorView!
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        loadingPanel.backgroundColor = UIColor.clearColor()
+        
+        indicatorView.color = UIColor.lightGrayColor()
+    }
+    
     // MARK: Loading panel
     func showLoadingPanel() {
         
-        loadingPanel.backgroundColor = UIColor.clearColor()
+        
         loadingPanel.hidden = false
         indicatorView.startAnimating()
         indicatorView.hidesWhenStopped = true
         
-//        indicatorView.color = UIColor.lightGrayColor()
+        
     }
     
     func hideLoadingPanel() {
