@@ -64,8 +64,11 @@ class VideoInfoViewController: UIViewController, UITableViewDelegate, VideoInfoT
         
     }
     
+    
     func reloadTableData(videoCache: YoutubeVideoCache){
         self.videoInfoObject =  VideoInfoObject.convertToVideoInfoObject(videoCache)
+        
+        self.calcuteVideoInfoRect()
         
         makeModel()
         
@@ -76,6 +79,14 @@ class VideoInfoViewController: UIViewController, UITableViewDelegate, VideoInfoT
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         
+
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+    }
+    
+    func calcuteVideoInfoRect(){
         if let infoObject: VideoInfoObject = videoInfoObject {
             infoObject.videoInfoToggleProtocol = self
             let viewWidth = self.view.frame.size.width - (VIDEO_INFO_TABLEVIEW_MARGIN_LEFT_RIGHT * 2)
@@ -91,10 +102,6 @@ class VideoInfoViewController: UIViewController, UITableViewDelegate, VideoInfoT
             
             infoObject.descriptionRect = rect
         }
-    }
-    
-    override func viewDidAppear(animated: Bool) {
-        super.viewDidAppear(animated)
     }
     
     // MARK : model
