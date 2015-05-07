@@ -120,8 +120,11 @@
                                                         <constraint firstAttribute="width" secondItem="z2M-CH-kIC" secondAttribute="height" multiplier="16/9" id="Rc8-je-iNd"/>
                                                     </constraints>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="1:01:01" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nzN-6U-Kbr" userLabel="timeLabel">
-                                                    <rect key="frame" x="294" y="185" width="62" height="21"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1:01:01" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nzN-6U-Kbr" userLabel="timeLabel">
+                                                    <rect key="frame" x="373" y="227" width="58" height="21"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="21" id="pzw-ik-BUV"/>
+                                                    </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -161,6 +164,7 @@
                                             <constraint firstItem="EmG-p4-221" firstAttribute="leading" secondItem="k5v-EP-O1O" secondAttribute="leading" constant="8" id="0Gd-IR-waJ"/>
                                             <constraint firstAttribute="trailing" secondItem="EmG-p4-221" secondAttribute="trailing" constant="8" id="5hY-y8-guq"/>
                                             <constraint firstItem="mJn-s2-ww4" firstAttribute="top" secondItem="R5Q-cK-Fv9" secondAttribute="bottom" constant="2" id="8wZ-E8-9fI"/>
+                                            <constraint firstAttribute="trailing" secondItem="nzN-6U-Kbr" secondAttribute="trailing" constant="12" id="Dvw-IQ-hiD"/>
                                             <constraint firstItem="mJn-s2-ww4" firstAttribute="leading" secondItem="k5v-EP-O1O" secondAttribute="leading" constant="8" id="GDm-4v-Vmr"/>
                                             <constraint firstAttribute="trailing" secondItem="R5Q-cK-Fv9" secondAttribute="trailing" constant="8" id="IYP-X7-oeG"/>
                                             <constraint firstItem="z2M-CH-kIC" firstAttribute="top" secondItem="k5v-EP-O1O" secondAttribute="top" id="UTW-C2-4Rn"/>
@@ -168,6 +172,7 @@
                                             <constraint firstItem="R5Q-cK-Fv9" firstAttribute="leading" secondItem="k5v-EP-O1O" secondAttribute="leading" constant="8" id="Xe7-w7-fEW"/>
                                             <constraint firstItem="R5Q-cK-Fv9" firstAttribute="top" secondItem="z2M-CH-kIC" secondAttribute="bottom" constant="11" id="YTM-tt-WSH"/>
                                             <constraint firstAttribute="trailing" secondItem="mJn-s2-ww4" secondAttribute="trailing" constant="8" id="gle-60-xJ1"/>
+                                            <constraint firstItem="R5Q-cK-Fv9" firstAttribute="top" secondItem="nzN-6U-Kbr" secondAttribute="bottom" constant="12" id="hOZ-V9-1ZM"/>
                                             <constraint firstAttribute="trailing" secondItem="z2M-CH-kIC" secondAttribute="trailing" id="tLa-fF-Ldd"/>
                                             <constraint firstItem="z2M-CH-kIC" firstAttribute="leading" secondItem="k5v-EP-O1O" secondAttribute="leading" id="vge-eq-7Or"/>
                                         </constraints>
