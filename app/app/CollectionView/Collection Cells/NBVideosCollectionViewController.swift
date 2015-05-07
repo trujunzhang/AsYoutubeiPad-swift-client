@@ -13,10 +13,13 @@ class NBVideosCollectionViewController: NBMultableCollectionBaseViewController {
     lazy var loadingViewController:LoadingViewController = {
         return LoadingViewController.instance()
         }()
+    lazy var requestFailureViewController:RequestFailureViewController = {
+        return RequestFailureViewController.instance()
+        }()
     
     
-    var delegate: FetchEventProtocol?
-    var eventObject: AnyObject?
+   private var delegate: FetchEventProtocol?
+   private var eventObject: AnyObject?
     
     var videoList: NSMutableArray = NSMutableArray()
     
@@ -26,9 +29,13 @@ class NBVideosCollectionViewController: NBMultableCollectionBaseViewController {
         return refreshControl
         }()
     
+    func setCollectionTask(eventObject: AnyObject,delegate: FetchEventProtocol){
+        self.eventObject = eventObject
+        self.delegate = delegate
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         
         self.flowLayout.sectionInset = UIEdgeInsetsMake(COLLECTION_CELL_INSET_VALUE, COLLECTION_CELL_INSET_VALUE, COLLECTION_CELL_INSET_VALUE, COLLECTION_CELL_INSET_VALUE)
         
@@ -36,8 +43,6 @@ class NBVideosCollectionViewController: NBMultableCollectionBaseViewController {
         self.insertLoadingViewPanel()
         
         insertRowAtTop()
-        
-        //        indicatorView.color = UIColor.lightGrayColor()
     }
     
     func insertLoadingViewPanel(){
@@ -47,7 +52,9 @@ class NBVideosCollectionViewController: NBMultableCollectionBaseViewController {
     }
     
     func insertRequestFailureViewPanel(){
-        
+        self.addChildViewController(requestFailureViewController)
+        self.view.addSubview(requestFailureViewController.view)
+        loadingViewController.layoutPanel()
     }
     
     func registerInfiniteScrollView() {
@@ -62,10 +69,17 @@ class NBVideosCollectionViewController: NBMultableCollectionBaseViewController {
         self.showLoadingPanel()
         self.cleanupFetchedArray()
         
+        println("refreshEvent is \(eventObject!)")
+        
         self.delegate!.refreshEvent(eventObject!, completeHandler: {
             (response, sucess) -> Void in
-            self.hideLoadingPanel()
-            self.appendFetchedArray(response as! NSArray)
+            
+            if(sucess == true){
+                self.hideLoadingPanel()
+                self.appendFetchedArray(response as! NSArray)
+            }else{
+                self.insertRequestFailureViewPanel()
+            }
         })
     }
     
