@@ -99,17 +99,20 @@ class YoutubeFetcher: NSObject {
     // MARK : Videos.List
     class func fetchVideoListWithVideoId(videoIds: NSString, completeHandler: ObjectHandler) {
         var parameters = [
-            "part": "snippet,statistics",
-            "field":"items/snippet(publishedAt,title),items/statistics",
+            "part": "snippet,statistics,contentDetails",
+            "field":"items/snippet(publishedAt,title),items/statistics,items/contentDetails(duration)",
             "id": videoIds,
         ]
         
         fetchVideoList(parameters, completeHandler: completeHandler)
     }
     
+    
+    
     class func fetchVideoDescription(videoId: NSString, completeHandler: ObjectHandler) {
         var parameters = [
-            "part": "snippet, statistics",
+            "part": "snippet,statistics",
+            "field":"items/snippet(publishedAt,title,description),items/statistics",
             "id": videoId,
         ]
         

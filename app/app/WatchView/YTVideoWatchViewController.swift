@@ -61,7 +61,7 @@ class YTVideoWatchViewController: UIViewController {
     }
     
     func makeVideoInfoViewController() {
-        //        videoInfoViewController.videoID = videoID
+        videoInfoViewController.videoID = videoID
         
         self.addChildViewController(videoInfoViewController)
         self.videoInfoContainer.addSubview(videoInfoViewController.view)

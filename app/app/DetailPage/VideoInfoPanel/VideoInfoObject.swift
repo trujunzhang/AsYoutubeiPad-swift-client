@@ -41,5 +41,24 @@ class VideoInfoObject: NSObject {
 
 
     var currentRowHeight: CGFloat = 0
+    
+    class func convertToVideoInfoObject( videoCache: YoutubeVideoCache) -> VideoInfoObject{
+        let videoTitle = YoutubeParser.getVideoSnippetTitle(videoCache)
+        let descriptionString = YoutubeParser.getVideoDescription(videoCache)
+        let channelTitle = YoutubeParser.getVideoSnippetChannelTitle(videoCache)
+        let viewCount = YoutubeParser.getVideoStatisticsViewCount(videoCache)
+        let timeAgo = YoutubeParser.getVideoTimeAgoFromPublishedAt(videoCache)
+        
+        let object:VideoInfoObject = VideoInfoObject()
+        object.title = videoTitle
+        object.likeCount = viewCount
+        object.descriptionString = descriptionString
+        
+        return object
+    }
+    
+    
 
 }
+
+
