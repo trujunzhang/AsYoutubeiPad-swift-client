@@ -25,6 +25,12 @@ class YTVideoCollectionViewCell: UICollectionViewCell {
     var imageUrl = ""
 
     var videoCache: YoutubeVideoCache?
+    
+    override func prepareForReuse(){
+        super.prepareForReuse()
+        
+        thumbnailImage.sd_cancelCurrentImageLoad()
+    }
 
     func setupCell(_videoCache: YoutubeVideoCache) {
 
@@ -42,7 +48,7 @@ class YTVideoCollectionViewCell: UICollectionViewCell {
 
         // 1
         let url = NSURL(string: thumbnailUrl as String)
-        thumbnailImage.sd_setImageWithURL(url, placeholderImage: UIImage(named: "thumbnail_border"), options: SDWebImageOptions.LowPriority)
+        thumbnailImage.sd_setImageWithURL(url, placeholderImage: nil, options: SDWebImageOptions.LowPriority)
 
         // 2
         titleLabel.text = videoTitle
