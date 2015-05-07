@@ -42,11 +42,22 @@ class VideoInfoViewController: UIViewController, UITableViewDelegate, VideoInfoT
         })
     }
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    
+    
+    func reloadTableData(videoCache: YoutubeVideoCache){
+        self.videoInfoObject =  VideoInfoObject.convertToVideoInfoObject(videoCache)
         
-        self.view.backgroundColor = UIColor(rgba: VIDEO_INFO_BACKGROUND_COLOR)
-
+        self.calcuteVideoInfoRect()
+        
+        makeTableView()
+        makeModel()
+        
+        tableView?.dataSource = model
+        
+    }
+    
+    func makeTableView(){
+        
         tableView = UITableView()
         tableView?.delegate = self
         
@@ -61,25 +72,17 @@ class VideoInfoViewController: UIViewController, UITableViewDelegate, VideoInfoT
             view1.top == view1.superview!.top + VIDEO_INFO_TABLEVIEW_MARGIN_LEFT_RIGHT
             view1.bottom == view1.superview!.bottom - VIDEO_INFO_TABLEVIEW_MARGIN_LEFT_RIGHT
         }
-        
     }
     
-    
-    func reloadTableData(videoCache: YoutubeVideoCache){
-        self.videoInfoObject =  VideoInfoObject.convertToVideoInfoObject(videoCache)
+    override func viewDidLoad() {
+        super.viewDidLoad()
         
-        self.calcuteVideoInfoRect()
-        
-        makeModel()
-        
-        tableView?.dataSource = model
-        
+        self.view.backgroundColor = UIColor(rgba: VIDEO_INFO_BACKGROUND_COLOR)
     }
+
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
-        
-
     }
     
     override func viewDidAppear(animated: Bool) {
