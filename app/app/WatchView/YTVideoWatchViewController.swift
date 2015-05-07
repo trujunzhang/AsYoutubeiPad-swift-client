@@ -11,6 +11,7 @@ import Foundation
 class YTVideoWatchViewController: UIViewController {
     
     @IBOutlet weak var playerViewWidthConstraint: NSLayoutConstraint!
+    
     @IBOutlet weak var playerViewContainer: UIView!
     @IBOutlet weak var videoInfoContainer: UIView!
     @IBOutlet weak var suggestionContainer: UIView!

@@ -206,6 +206,43 @@ Cg
             </objects>
             <point key="canvasLocation" x="-314" y="3449"/>
         </scene>
+        <!--Video Watch View Controller-->
+        <scene sceneID="6cl-Es-gJr">
+            <objects>
+                <viewController id="BVf-Or-IAz" customClass="YTVideoWatchViewController" customModule="app" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="7eM-wE-WPY"/>
+                        <viewControllerLayoutGuide type="bottom" id="THX-AL-GaK"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="5Mg-Cr-9Sa">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="af0-E2-Pxb" userLabel="playerViewContainer">
+                                <rect key="frame" x="90" y="91" width="254" height="216"/>
+                                <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="weC-D3-Rp0" userLabel="videoInfoContainer">
+                                <rect key="frame" x="90" y="352" width="266" height="216"/>
+                                <color key="backgroundColor" red="1" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kUX-yu-XgA" userLabel="suggestionContainer">
+                                <rect key="frame" x="401" y="201" width="131" height="216"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="playerViewContainer" destination="af0-E2-Pxb" id="iOo-39-c2p"/>
+                        <outlet property="suggestionContainer" destination="kUX-yu-XgA" id="zjl-7I-wwg"/>
+                        <outlet property="videoInfoContainer" destination="weC-D3-Rp0" id="6QI-BZ-MmT"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="voR-n0-7FL" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-918" y="699"/>
+        </scene>
         <!--Movie Embedded View Controller-->
         <scene sceneID="Gyq-VS-Hhm">
             <objects>

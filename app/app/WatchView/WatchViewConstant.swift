@@ -18,6 +18,16 @@ import Foundation
 
 let STORYBOARD_VIDEOWATCH_NAME = "VideoWatchStoryboard"
 
+
+
+extension YTVideoWatchViewController {
+    
+    class func instance() -> YTVideoWatchViewController {
+        
+        return UIStoryboard(name: STORYBOARD_VIDEOWATCH_NAME, bundle: nil).instantiateViewControllerWithIdentifier("YTVideoWatchViewController") as! YTVideoWatchViewController
+    }
+}
+
 extension MovieEmbeddedViewController {
 
     class func instance() -> MovieEmbeddedViewController {
