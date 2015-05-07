@@ -46,7 +46,7 @@
     NSMutableArray* collectionContents = [[NSMutableArray alloc] init];
     for (id object in array) {
         [collectionContents addObject:[NBVideoCollectionViewCellObject objectWithTitle:@"Title 1"]];
-
+        
     }
     
     _model = [[NIMutableCollectionViewModel alloc] initWithListArray:collectionContents
@@ -79,11 +79,11 @@
       [NBVideoCollectionViewCellObject objectWithTitle:@"Title 1"],
       ];
     
-//    [self appendContents:collectionContents];
+    //    [self appendContents:collectionContents];
     
     //     self.collectionView.dataSource = _model;
     
-//    [self resetModel:@[]];
+    //    [self resetModel:@[]];
 }
 
 - (void)appendContents:(NSArray *)array {
@@ -102,14 +102,10 @@
     // visibility of the new objects.
     NSArray* indexPaths = [_model addObjectsFromArray:objects];
     
-    
-    
-    NSInteger x = 0;
-    
-    //    [self.collectionView performBatchUpdates:^{
-    //        [self.collectionView insertItemsAtIndexPaths:indexPaths];
-    //
-    //    } completion:nil];
+    [self.collectionView performBatchUpdates:^{
+        [self.collectionView insertItemsAtIndexPaths:indexPaths];
+        
+    } completion:nil];
     
     // Now that we've modified the model, we want to recompile the section index before notifying the
     // table view of changes to the model.

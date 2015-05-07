@@ -43,6 +43,10 @@ class NBVideosCollectionViewController: NBMultableCollectionBaseViewController {
         
         self.registerInfiniteScrollView()
         self.insertLoadingViewPanel()
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
         
         insertRowAtTop()
     }
@@ -106,11 +110,11 @@ class NBVideosCollectionViewController: NBMultableCollectionBaseViewController {
         if (lastCount == 0) {
             self.resetModel(array as [AnyObject])
         } else {
-//            self.batchUpdateCollectionView(array.count)
+            self.appendContents(array as [AnyObject])
         }
         
-//        self.appendContents(array as [AnyObject])
-//        self.batchUpdateCollectionView(array.count)
+        //        self.appendContents(array as [AnyObject])
+        //        self.batchUpdateCollectionView(array.count)
         
         // 1. stop animation
         //                self.stopFetchedAnimation()
