@@ -107,9 +107,9 @@ class VideoCollectionViewCellLayout {
     }
 
     class func calculateVideoCollectionViewCellHeight(width: CGFloat) -> CGFloat {
-        let thumbnailHeight: CGFloat = (width / 4) * 3
+        let thumbnailHeight: CGFloat = (width / 16) * 9
 
-        return 0
+        return thumbnailHeight + 90
     }
 
 }
