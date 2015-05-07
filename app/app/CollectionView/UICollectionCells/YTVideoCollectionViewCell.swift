@@ -27,16 +27,17 @@ class YTVideoCollectionViewCell: UICollectionViewCell {
     var videoCache: YoutubeVideoCache?
 
     func setupCell(_videoCache: YoutubeVideoCache) {
-        
+
         self.contentView.backgroundColor = UIColor.clearColor()
         self.backgroundColor = UIColor.whiteColor()
-        
+
         videoCache = _videoCache
 
         let videoTitle = YoutubeParser.getVideoSnippetTitle(videoCache)
-        let thumbnailUrl = YoutubeModelParser.getVideoSnippetThumbnails(videoCache!)        
+        let thumbnailUrl = YoutubeModelParser.getVideoSnippetThumbnails(videoCache!)
         let channelTitle = YoutubeParser.getVideoSnippetChannelTitle(videoCache)
         let publishedAgo = YoutubeParser.getVideoSnippetChannelPublishedAt(videoCache)
+        let timeAgo = YoutubeParser.getVideoTimeAgoFromPublishedAt(videoCache)
         let totoalTime = YoutubeParser.getVideoDurationForVideoInfo(videoCache)
 
         // 1
@@ -47,11 +48,11 @@ class YTVideoCollectionViewCell: UICollectionViewCell {
 
         // 2
         titleLabel.text = videoTitle
-        infoLabel.text = publishedAgo
+        infoLabel.text = timeAgo
         channelTitleLabel.text = channelTitle
-        
-//        println("time is [\(totoalTime)]")
-        totalTimeLabel.backgroundColor = UIColor(red: 31/255, green: 31/255, blue: 33/255, alpha: 0.6)
+
+        println("timeAgo is [\(timeAgo)]")
+        totalTimeLabel.backgroundColor = UIColor(red: 31 / 255, green: 31 / 255, blue: 33 / 255, alpha: 0.6)
         totalTimeLabel.text = totoalTime
 //        totalTimeLabel.sizeToFit()
 //        totalTimeLabel.layoutIfNeeded()

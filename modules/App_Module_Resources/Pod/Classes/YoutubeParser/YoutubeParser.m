@@ -11,6 +11,7 @@
 
 #import "MABYouTube_Sources.h"
 #import "GTLYouTube.h"
+#import "YoutubeVideoCache.h"
 
 
 @implementation YoutubeParser
@@ -286,6 +287,10 @@ static NSUInteger UPLOADS_PAGE_LENGTH = 20;
     return video.snippet.channelId;
 }
 
++ (NSString *)getVideoTimeAgoFromPublishedAt:(YoutubeVideoCache *)video {
+    NSDate *dateValue = video.snippet.publishedAt.dateValue;
+    return [dateValue timeAgo];
+}
 
 + (NSString *)getVideoSnippetTitle:(YoutubeVideoCache *)video {
     return video.snippet.title;

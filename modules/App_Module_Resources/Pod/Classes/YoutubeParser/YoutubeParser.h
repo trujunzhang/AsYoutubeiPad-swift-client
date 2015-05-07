@@ -8,6 +8,8 @@
 
 #import <Foundation/Foundation.h>
 
+@class YoutubeVideoCache;
+
 @interface YoutubeParser : NSObject
 
 #pragma mark
@@ -75,6 +77,8 @@
 + (NSString *)getWatchVideoId:(id)video;
 
 + (NSString *)getChannelIdByVideo:(id)video;
+
++ (NSString *)getVideoTimeAgoFromPublishedAt:(YoutubeVideoCache *)video;
 
 + (NSString *)getVideoSnippetTitle:(id)video;
 
