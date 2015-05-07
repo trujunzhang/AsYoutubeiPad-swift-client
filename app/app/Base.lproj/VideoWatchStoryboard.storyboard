@@ -210,7 +210,7 @@ Cg
         <!--Video Watch View Controller-->
         <scene sceneID="6cl-Es-gJr">
             <objects>
-                <viewController id="BVf-Or-IAz" customClass="YTVideoWatchViewController" customModule="app" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="YTVideoWatchViewController" id="BVf-Or-IAz" customClass="YTVideoWatchViewController" customModule="app" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="7eM-wE-WPY"/>
                         <viewControllerLayoutGuide type="bottom" id="THX-AL-GaK"/>
