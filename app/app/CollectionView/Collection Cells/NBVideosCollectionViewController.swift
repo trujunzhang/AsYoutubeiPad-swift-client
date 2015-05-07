@@ -37,6 +37,8 @@ class NBVideosCollectionViewController: NBMultableCollectionBaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.collectionView!.backgroundColor = UIColor(red: 230 / 255, green: 230 / 255, blue: 230 / 255, alpha: 1)
+        
         self.flowLayout.sectionInset = UIEdgeInsetsMake(COLLECTION_CELL_INSET_VALUE, COLLECTION_CELL_INSET_VALUE, COLLECTION_CELL_INSET_VALUE, COLLECTION_CELL_INSET_VALUE)
         
         self.registerInfiniteScrollView()
@@ -92,8 +94,8 @@ class NBVideosCollectionViewController: NBMultableCollectionBaseViewController {
     }
     
     func cleanupFetchedArray() {
-        //        self.videoList = NSMutableArray()
-        //        self.collectionView.reloadData()
+        self.videoList = NSMutableArray()
+        self.resetModel([])
     }
     
     func appendFetchedArray(array: NSArray) {
@@ -101,15 +103,37 @@ class NBVideosCollectionViewController: NBMultableCollectionBaseViewController {
         // 2. update collection view
         self.videoList.addObjectsFromArray(array as [AnyObject])
         
-        self.appendContents(array as [AnyObject])
+        if (lastCount == 0) {
+            self.resetModel(array as [AnyObject])
+        } else {
+//            self.batchUpdateCollectionView(array.count)
+        }
+        
+//        self.appendContents(array as [AnyObject])
+//        self.batchUpdateCollectionView(array.count)
         
         // 1. stop animation
-//                self.stopFetchedAnimation()
+        //                self.stopFetchedAnimation()
         
         // 3. check next fetcher
         if (self.delegate!.hasNextFetcing() == false) {
             self.collectionView!.removeInfiniteScroll()
         }
+    }
+    
+    func batchUpdateCollectionView(newCount: Int) {
+        var resultsSize = self.videoList.count - newCount
+        
+        var arrayWithIndexPaths = NSMutableArray()
+        for (var i = 0; i < newCount; i++) {
+            println("arrayWithIndexPaths is :\(i+resultsSize)")
+            arrayWithIndexPaths.addObject(NSIndexPath(forRow: i + resultsSize, inSection: 0))
+        }
+        
+        self.collectionView!.performBatchUpdates({
+            self.collectionView!.insertItemsAtIndexPaths(arrayWithIndexPaths as [AnyObject])
+            },
+            completion: nil)
     }
     
     func showLoadingPanel() {

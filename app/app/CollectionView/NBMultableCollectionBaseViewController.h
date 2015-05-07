@@ -11,5 +11,5 @@
 @property (nonatomic, strong) UICollectionViewFlowLayout *flowLayout;
 
 - (void)appendContents:(NSArray *)array;
-
+-(void)resetModel:(NSArray*)array;
 @end

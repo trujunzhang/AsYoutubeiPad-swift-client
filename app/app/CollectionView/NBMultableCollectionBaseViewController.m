@@ -24,24 +24,35 @@
     self.flowLayout = [[UICollectionViewFlowLayout alloc] init];
     self.flowLayout.itemSize = CGSizeMake(216, 200);
     if ((self = [super initWithCollectionViewLayout:self.flowLayout])) {
-
+        
         NSArray *collectionContents =
-                @[
-                        [NBVideoCollectionViewCellObject objectWithTitle:@"Title 1"],
-                        [NBVideoCollectionViewCellObject objectWithTitle:@"Title 1"],
-                        [NBVideoCollectionViewCellObject objectWithTitle:@"Title 1"],
-                        [NBVideoCollectionViewCellObject objectWithTitle:@"Title 1"],
-                ];
-
-        _model = [[NIMutableCollectionViewModel alloc] initWithDelegate:(id) [NICollectionViewCellFactory class]];
+        @[
+          [NBVideoCollectionViewCellObject objectWithTitle:@"Title 1"],
+          [NBVideoCollectionViewCellObject objectWithTitle:@"Title 1"],
+          [NBVideoCollectionViewCellObject objectWithTitle:@"Title 1"],
+          [NBVideoCollectionViewCellObject objectWithTitle:@"Title 1"],
+          ];
+        
+        [self appendContents:collectionContents];
+        
+        //        _model = [[NIMutableCollectionViewModel alloc] initWithDelegate:(id) [NICollectionViewCellFactory class]];
         
         
-//        [self appendContents:collectionContents];
-        
-//        _model = [[NIMutableCollectionViewModel alloc] initWithListArray:collectionContents
-//                                                         delegate:(id) [NICollectionViewCellFactory class]];
     }
     return self;
+}
+
+-(void)resetModel:(NSArray*)array{
+    NSMutableArray* collectionContents = [[NSMutableArray alloc] init];
+    for (id object in array) {
+        [collectionContents addObject:[NBVideoCollectionViewCellObject objectWithTitle:@"Title 1"]];
+
+    }
+    
+    _model = [[NIMutableCollectionViewModel alloc] initWithListArray:collectionContents
+                                                            delegate:(id) [NICollectionViewCellFactory class]];
+    
+    self.collectionView.dataSource = _model;
 }
 
 - (id)init {
@@ -52,16 +63,32 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-
+    
     // Only assign the collection view's data source after the view has loaded.
     // You must be careful when you call self.collectionView in general because it will call loadView
     // if the view has not been loaded yet.
-    self.collectionView.dataSource = _model;
+    //    self.collectionView.dataSource = _model;
+}
+
+- (void)viewDidAppear:(BOOL)animated{
+    NSArray *collectionContents =
+    @[
+      [NBVideoCollectionViewCellObject objectWithTitle:@"Title 1"],
+      [NBVideoCollectionViewCellObject objectWithTitle:@"Title 1"],
+      [NBVideoCollectionViewCellObject objectWithTitle:@"Title 1"],
+      [NBVideoCollectionViewCellObject objectWithTitle:@"Title 1"],
+      ];
+    
+//    [self appendContents:collectionContents];
+    
+    //     self.collectionView.dataSource = _model;
+    
+//    [self resetModel:@[]];
 }
 
 - (void)appendContents:(NSArray *)array {
     // We first create a new section in the model.
-//    NSIndexSet* indexSet = [self.model addSectionWithTitle:[self randomName]];
+    //    NSIndexSet* indexSet = [self.model addSectionWithTitle:[self randomName]];
     
     // Then we create an array of objects that we want to add to this section.
     NSMutableArray *objects = [NSMutableArray array];
@@ -75,16 +102,25 @@
     // visibility of the new objects.
     NSArray* indexPaths = [_model addObjectsFromArray:objects];
     
+    
+    
+    NSInteger x = 0;
+    
+    //    [self.collectionView performBatchUpdates:^{
+    //        [self.collectionView insertItemsAtIndexPaths:indexPaths];
+    //
+    //    } completion:nil];
+    
     // Now that we've modified the model, we want to recompile the section index before notifying the
     // table view of changes to the model.
-//    [self.model updateSectionIndex];
+    //    [self.model updateSectionIndex];
     
     // Tell the table view that we've added a new section and that it should use the default
     // animation.
-//    [self.collectionView insertSections:indexSet withRowAnimation:UITableViewRowAnimationAutomatic];
+    //    [self.collectionView insertSections:indexSet withRowAnimation:UITableViewRowAnimationAutomatic];
     
     // Scroll the table view such that the last object is in view.
-//    [self.collectionView scrollToRowAtIndexPath:indexPaths.lastObject atScrollPosition:UITableViewScrollPositionBottom animated:YES];
+    //    [self.collectionView scrollToRowAtIndexPath:indexPaths.lastObject atScrollPosition:UITableViewScrollPositionBottom animated:YES];
 }
 
 
