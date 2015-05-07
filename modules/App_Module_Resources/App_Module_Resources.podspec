@@ -57,6 +57,7 @@ Pod::Spec.new do |s|
 
   s.subspec 'YoutubeParser' do |sub|
     sub.source_files = 'Pod/Classes/YoutubeParser/*.{h,m}'
+    sub.dependency 'NSDate+TimeAgo'
   end
 
   # for WatchView

@@ -19,8 +19,6 @@ def import_pods
    pod 'TTTAttributedLabel'
 
    pod 'IGYouTubeExtractor'
-   
-  pod 'NSDate+TimeAgo'
 
   # ________________project library___________________
   pod "App_Module_Resources", :path => "../modules/App_Module_Resources"

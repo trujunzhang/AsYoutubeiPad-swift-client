@@ -6,22 +6,9 @@
 //  Copyright (c) 2014 djzhang. All rights reserved.
 //
 
-#import <Google-API-Client/GTLYouTubeSubscription.h>
-#import <YouTubeAPI3-Objective-C-wrapper/MABYT3_Channel.h>
 #import "YoutubeParser.h"
-//#import "GTLYouTubeChannelContentDetails.h"
+#import "NSDate+TimeAgo.h"
 
-#import "MABYT3_Activity.h"
-#import "MABYT3_ResourceId.h"
-#import "MABYT3_ActivityContentDetails.h"
-#import "MABYT3_SearchItem.h"
-
-#import "YoutubeVideoCache.h"
-#import "GTLYouTubeSubscriptionSnippet.h"
-#import "GTLYouTubeResourceId.h"
-#import "GTLYouTubeThumbnailDetails.h"
-#import "GTLYouTubeThumbnail.h"
-#import "MABYT3_ChannelBrandingSettings.h"
 #import "MABYouTube_Sources.h"
 #import "GTLYouTube.h"
 

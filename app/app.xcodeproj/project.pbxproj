@@ -226,6 +226,7 @@
 		5EFED9A71AE3AC6700EEB23E /* VideoInfoObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoInfoObject.swift; sourceTree = "<group>"; };
 		5EFED9A91AE3B17400EEB23E /* VideoInfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoInfoViewController.swift; sourceTree = "<group>"; };
 		5EFED9AB1AE3B1E700EEB23E /* VideoInfoConstant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoInfoConstant.swift; sourceTree = "<group>"; };
+		5EFF0A231AFB361A00801CD7 /* TimeAgoDemo.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; name = TimeAgoDemo.playground; path = playground/TimeAgoDemo.playground; sourceTree = "<group>"; };
 		5EFFA2941AF5BA0100095130 /* YoutubeDataFetcher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YoutubeDataFetcher.swift; sourceTree = "<group>"; };
 		5EFFA2951AF5BA0100095130 /* YouTubeExtractorUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YouTubeExtractorUtils.swift; sourceTree = "<group>"; };
 		65B8C81EFD99EC85AB8C87BE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = app/Base.lproj/ReusedViewControllers.storyboard; sourceTree = "<group>"; };
@@ -375,6 +376,7 @@
 		5E1E2CE71AD8B898004CC05B /* app */ = {
 			isa = PBXGroup;
 			children = (
+				5EFF0A221AFB360000801CD7 /* playground */,
 				5E0AC2201AFA3F39002677C4 /* Public */,
 				5E0D4B531AF9D960004987F1 /* AppColorScheme.swift */,
 				5E67E74A1AF8A8FF00F07031 /* Popover */,
@@ -715,6 +717,14 @@
 				5EFED9AB1AE3B1E700EEB23E /* VideoInfoConstant.swift */,
 			);
 			path = VideoInfoPanel;
+			sourceTree = "<group>";
+		};
+		5EFF0A221AFB360000801CD7 /* playground */ = {
+			isa = PBXGroup;
+			children = (
+				5EFF0A231AFB361A00801CD7 /* TimeAgoDemo.playground */,
+			);
+			name = playground;
 			sourceTree = "<group>";
 		};
 		5EFFA2931AF5BA0100095130 /* DataFetcher */ = {
