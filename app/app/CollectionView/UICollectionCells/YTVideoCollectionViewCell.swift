@@ -49,7 +49,7 @@ class YTVideoCollectionViewCell: UICollectionViewCell {
         infoLabel.text = "\(timeAgo) \(viewCount)"
         channelTitleLabel.text = channelTitle
 
-        println("timeAgo is [\(timeAgo)]")
+//        println("timeAgo is [\(timeAgo)]")
         totalTimeLabel.backgroundColor = UIColor(red: 31 / 255, green: 31 / 255, blue: 33 / 255, alpha: 0.6)
         totalTimeLabel.text = totoalTime
 //        totalTimeLabel.sizeToFit()
