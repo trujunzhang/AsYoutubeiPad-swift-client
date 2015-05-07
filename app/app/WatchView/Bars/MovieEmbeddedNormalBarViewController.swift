@@ -57,10 +57,6 @@ class MovieEmbeddedNormalBarViewController: MoviePlayerViewHelper {
     // MARK : private variables
     var videoURL: NSURL?
     var moviePlayerViewController: MoviePlayerViewHelper?
-    lazy var playerSubtitling: YTPlayerSubtitling = {
-        return YTPlayerSubtitling()
-        }()
-    
     
     //MARK: UIViewController lifecycle
     
@@ -117,7 +113,7 @@ class MovieEmbeddedNormalBarViewController: MoviePlayerViewHelper {
     
     func setVideoURL(url: NSURL, videoID: String) {
         if let viewController: MoviePlayerViewHelper = moviePlayerViewController {
-            playerSubtitling.setPlayer(videoID, _subtitleLabel: subtitleLabel, _moviePlayerViewController: viewController)
+            YTPlayerSubtitling().setPlayer(videoID, _subtitleLabel: subtitleLabel, _moviePlayerViewController: viewController)
             viewController.initAVPlayer(url)
             viewController.play()
         }

@@ -3,27 +3,8 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--Video Watch Side View Controller-->
-        <scene sceneID="YZp-zI-BLo">
-            <objects>
-                <viewController storyboardIdentifier="YTVideoWatchSideViewController" id="WeF-cF-Aol" customClass="YTVideoWatchSideViewController" customModule="app" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="Ldx-r0-W9n"/>
-                        <viewControllerLayoutGuide type="bottom" id="mFo-E1-hxt"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="nS9-N4-Mnn">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="iBf-Eb-lfP" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-676" y="2299"/>
-        </scene>
         <!--Movie Embedded Normal Bar View Controller-->
         <scene sceneID="tTj-Ge-q3A">
             <objects>
@@ -279,122 +260,6 @@ Cg
             </objects>
             <point key="canvasLocation" x="220" y="1475"/>
         </scene>
-        <!--Video Watch Info View Controller-->
-        <scene sceneID="RuG-mH-dim">
-            <objects>
-                <viewController storyboardIdentifier="YTVideoWatchInfoViewController" id="g9e-mD-rzC" customClass="YTVideoWatchInfoViewController" customModule="app" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="vpF-YX-VYP"/>
-                        <viewControllerLayoutGuide type="bottom" id="kwS-W3-YNl"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="eyp-Dj-2jW">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IHA-s5-Ps5" userLabel="Content View">
-                                <rect key="frame" x="32" y="36" width="536" height="548"/>
-                                <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jVe-gv-viM" userLabel="topContainer">
-                                        <rect key="frame" x="0.0" y="-20" width="536" height="60"/>
-                                        <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="WebStorm 10 - New features" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CdY-eu-XvG">
-                                                <rect key="frame" x="22" y="20" width="492" height="18"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="2,222 views" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uve-to-7wM">
-                                                <rect key="frame" x="22" y="35" width="492" height="21"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JIP-Ug-Gxj">
-                                                <rect key="frame" x="481" y="16" width="39" height="39"/>
-                                                <state key="normal" image="expand_guide.png">
-                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                                </state>
-                                                <connections>
-                                                    <action selector="onClickExpand:" destination="g9e-mD-rzC" eventType="touchUpInside" id="4Q9-3r-0KR"/>
-                                                </connections>
-                                            </button>
-                                        </subviews>
-                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="60" id="sJW-3f-bB7"/>
-                                        </constraints>
-                                    </view>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Te7-2m-atw" userLabel="Empty">
-                                        <rect key="frame" x="0.0" y="478" width="536" height="10"/>
-                                        <color key="backgroundColor" red="1" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="10" id="wVY-V4-K2J"/>
-                                        </constraints>
-                                    </view>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XV4-Gl-9JR" userLabel="Bottom Divide">
-                                        <rect key="frame" x="14" y="488" width="508" height="1"/>
-                                        <color key="backgroundColor" red="0.85882352941176465" green="0.85882352941176465" blue="0.85882352941176465" alpha="1" colorSpace="calibratedRGB"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="1" id="0C6-jW-E4m"/>
-                                        </constraints>
-                                    </view>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Sdm-aF-XwF" userLabel="bottomContainer">
-                                        <rect key="frame" x="0.0" y="489" width="536" height="59"/>
-                                        <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yqw-TT-j5H">
-                                                <rect key="frame" x="34" y="14" width="65" height="28"/>
-                                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
-                                                <state key="normal" title="114" image="like.png">
-                                                    <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                                </state>
-                                            </button>
-                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fnD-n7-d8c">
-                                                <rect key="frame" x="101" y="16" width="65" height="28"/>
-                                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
-                                                <state key="normal" title="4" image="dislike.png">
-                                                    <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                                </state>
-                                            </button>
-                                        </subviews>
-                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="59" id="Sjz-Xm-dgz"/>
-                                        </constraints>
-                                    </view>
-                                </subviews>
-                                <color key="backgroundColor" red="1" green="0.99997437000274658" blue="0.99999129772186279" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="trailing" secondItem="XV4-Gl-9JR" secondAttribute="trailing" constant="14" id="6Em-sa-Ixm"/>
-                                    <constraint firstAttribute="trailing" secondItem="Te7-2m-atw" secondAttribute="trailing" id="910-rU-bIf"/>
-                                    <constraint firstAttribute="trailing" secondItem="jVe-gv-viM" secondAttribute="trailing" id="BbH-Rw-1VC"/>
-                                    <constraint firstItem="XV4-Gl-9JR" firstAttribute="leading" secondItem="IHA-s5-Ps5" secondAttribute="leading" constant="14" id="GP0-54-MoM"/>
-                                    <constraint firstItem="jVe-gv-viM" firstAttribute="leading" secondItem="IHA-s5-Ps5" secondAttribute="leading" id="TP4-BZ-70m"/>
-                                    <constraint firstItem="jVe-gv-viM" firstAttribute="top" secondItem="IHA-s5-Ps5" secondAttribute="top" constant="-20" id="TUQ-W6-det"/>
-                                    <constraint firstItem="XV4-Gl-9JR" firstAttribute="top" secondItem="Te7-2m-atw" secondAttribute="bottom" id="U8W-nA-Tta"/>
-                                    <constraint firstAttribute="trailing" secondItem="Sdm-aF-XwF" secondAttribute="trailing" id="lUr-zF-OmN"/>
-                                    <constraint firstItem="Te7-2m-atw" firstAttribute="leading" secondItem="IHA-s5-Ps5" secondAttribute="leading" id="m7e-I3-zNA"/>
-                                    <constraint firstItem="Sdm-aF-XwF" firstAttribute="top" secondItem="XV4-Gl-9JR" secondAttribute="bottom" id="qeV-wu-kHO"/>
-                                    <constraint firstItem="Sdm-aF-XwF" firstAttribute="leading" secondItem="IHA-s5-Ps5" secondAttribute="leading" id="tKW-NJ-anI"/>
-                                    <constraint firstAttribute="bottom" secondItem="Sdm-aF-XwF" secondAttribute="bottom" id="usx-zj-HAZ"/>
-                                </constraints>
-                            </view>
-                        </subviews>
-                        <color key="backgroundColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                        <constraints>
-                            <constraint firstItem="kwS-W3-YNl" firstAttribute="top" secondItem="IHA-s5-Ps5" secondAttribute="bottom" constant="16" id="9HU-ac-v4i"/>
-                            <constraint firstItem="IHA-s5-Ps5" firstAttribute="top" secondItem="vpF-YX-VYP" secondAttribute="bottom" constant="16" id="eAE-UP-oTI"/>
-                            <constraint firstItem="IHA-s5-Ps5" firstAttribute="leading" secondItem="eyp-Dj-2jW" secondAttribute="leadingMargin" constant="16" id="osp-6r-eza"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="IHA-s5-Ps5" secondAttribute="trailing" constant="16" id="xNW-ca-uRC"/>
-                        </constraints>
-                    </view>
-                    <connections>
-                        <outlet property="contentView" destination="IHA-s5-Ps5" id="xJE-Ew-lhN"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="g3Q-pW-H0a" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1568" y="1007"/>
-        </scene>
         <!--Video Watch Playlist Header View Controller-->
         <scene sceneID="WpG-sG-VBY">
             <objects>
@@ -431,30 +296,9 @@ Cg
             </objects>
             <point key="canvasLocation" x="1122" y="3469"/>
         </scene>
-        <!--Video Watch Playlist View Controller-->
-        <scene sceneID="sY5-hL-4ML">
-            <objects>
-                <viewController storyboardIdentifier="YTVideoWatchPlaylistViewController" id="P1R-FV-dgv" customClass="YTVideoWatchPlaylistViewController" customModule="app" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="weN-x1-Mz1"/>
-                        <viewControllerLayoutGuide type="bottom" id="xrZ-TR-BIX"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="4O3-iB-D9n">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="617-zI-Fq3" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2060" y="2411"/>
-        </scene>
     </scenes>
     <resources>
         <image name="cc.png" width="24" height="22"/>
-        <image name="dislike.png" width="32" height="32"/>
-        <image name="expand_guide.png" width="39" height="39"/>
-        <image name="like.png" width="32" height="32"/>
         <image name="mp_embedded_pause.png" width="18" height="18"/>
         <image name="mp_fullscreen.png" width="20" height="26"/>
         <image name="repeat.png" width="22" height="22"/>
