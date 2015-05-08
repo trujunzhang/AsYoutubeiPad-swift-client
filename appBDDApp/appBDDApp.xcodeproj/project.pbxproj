@@ -10,6 +10,7 @@
 		08D0931BC987ECFC72C77AC4 /* libPods-appBDDAppTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 87239E17B10170E3BC195F2C /* libPods-appBDDAppTests.a */; };
 		355B814C1917B6FE0C3C36B1 /* libPods-appBDDApp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 96075D14EEC1A39CB6F1F84A /* libPods-appBDDApp.a */; };
 		5E0CABE71AFC4DFE00AC6C68 /* SizeClass.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5E0CABE51AFC4DFE00AC6C68 /* SizeClass.storyboard */; };
+		5E0CABE91AFC542C00AC6C68 /* SizeClassViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E0CABE81AFC542C00AC6C68 /* SizeClassViewController.swift */; };
 		5E49FFE91AF4D388003954A8 /* YoutubeConstantsForTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E49FFE81AF4D388003954A8 /* YoutubeConstantsForTests.swift */; };
 		5E49FFEB1AF4D54C003954A8 /* GTLActivityListSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E49FFEA1AF4D54C003954A8 /* GTLActivityListSpec.swift */; };
 		5E9CB1431AFB68F9001B4910 /* WatchVideoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E9CB1421AFB68F9001B4910 /* WatchVideoViewController.swift */; };
@@ -60,6 +61,7 @@
 		236776EE0E1DB5BC2FB4E263 /* Pods-appBDDApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-appBDDApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-appBDDApp/Pods-appBDDApp.debug.xcconfig"; sourceTree = "<group>"; };
 		4BFE5FABE64C93E26F01B6C8 /* Pods-appBDDApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-appBDDApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-appBDDApp/Pods-appBDDApp.release.xcconfig"; sourceTree = "<group>"; };
 		5E0CABE61AFC4DFE00AC6C68 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/SizeClass.storyboard; sourceTree = "<group>"; };
+		5E0CABE81AFC542C00AC6C68 /* SizeClassViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SizeClassViewController.swift; sourceTree = "<group>"; };
 		5E49FFE81AF4D388003954A8 /* YoutubeConstantsForTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = YoutubeConstantsForTests.swift; path = ../../UnitTests/YoutubeConstantsForTests.swift; sourceTree = "<group>"; };
 		5E49FFEA1AF4D54C003954A8 /* GTLActivityListSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GTLActivityListSpec.swift; sourceTree = "<group>"; };
 		5E9CB1421AFB68F9001B4910 /* WatchVideoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WatchVideoViewController.swift; sourceTree = "<group>"; };
@@ -177,6 +179,7 @@
 		5EAB7FDB1AF3B52500091E88 /* appBDDApp */ = {
 			isa = PBXGroup;
 			children = (
+				5E0CABE81AFC542C00AC6C68 /* SizeClassViewController.swift */,
 				5E0CABE51AFC4DFE00AC6C68 /* SizeClass.storyboard */,
 				5E9CB1421AFB68F9001B4910 /* WatchVideoViewController.swift */,
 				5EC54EEA1AF480EC002422E1 /* Examples */,
@@ -540,6 +543,7 @@
 				5E9CB1431AFB68F9001B4910 /* WatchVideoViewController.swift in Sources */,
 				5EE2EDC21AF47E9E00C24820 /* LeftMenuSectionsUtils.swift in Sources */,
 				5EE2EDB51AF47DDF00C24820 /* NSDateExtensions.swift in Sources */,
+				5E0CABE91AFC542C00AC6C68 /* SizeClassViewController.swift in Sources */,
 				5EE2EDAE1AF47DDF00C24820 /* YoutubeRetrievingPlayListItemsFetcherHelper.swift in Sources */,
 				5EE2EDB41AF47DDF00C24820 /* YTYoutubeRequestInfo.swift in Sources */,
 				5EE2EDAC1AF47DDF00C24820 /* YoutubeRetrievingNewSubscriptionVideosFetcherHelper.swift in Sources */,
