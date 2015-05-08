@@ -323,8 +323,8 @@
 			children = (
 				5E065C731AFB7E10003EE40B /* Models */,
 				5E065C751AFB7E10003EE40B /* Table Cells */,
-				5E065C771AFB7E10003EE40B /* VideoInfoConstant.swift */,
 				5E065C781AFB7E10003EE40B /* VideoInfoPanel */,
+				5E065C771AFB7E10003EE40B /* VideoInfoConstant.swift */,
 			);
 			path = DetailPage;
 			sourceTree = "<group>";
