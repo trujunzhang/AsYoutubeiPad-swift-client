@@ -76,7 +76,6 @@
 		5E401BFF1AF4F1AC00613E28 /* YoutubeRetrievingGTLActivityListItemsFetcherHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E401BFD1AF4F1AC00613E28 /* YoutubeRetrievingGTLActivityListItemsFetcherHelper.swift */; };
 		5E401C021AF4F22000613E28 /* FetchEventProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E401C011AF4F22000613E28 /* FetchEventProtocol.swift */; };
 		5E401C041AF4F49400613E28 /* RetrievingNewestVideoIdsEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E401C031AF4F49400613E28 /* RetrievingNewestVideoIdsEvent.swift */; };
-		5E4BFB8D1AE3214100BC7A33 /* pop.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E87FD951AD8C2500021E80C /* pop.framework */; };
 		5E50B28B1AFB755E00829D62 /* SuggestionVideoListEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E50B28A1AFB755E00829D62 /* SuggestionVideoListEvent.swift */; };
 		5E5F8A261AF8C80700466FA0 /* AutoCompletePopoverEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E5F8A251AF8C80700466FA0 /* AutoCompletePopoverEvent.swift */; };
 		5E67E7481AF8A8E300F07031 /* NSDateISO8601.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E67E7451AF8A8E300F07031 /* NSDateISO8601.swift */; };
@@ -88,11 +87,9 @@
 		5E7E65AC1AFA2EA4006AE847 /* NBVideoCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E7E65AA1AFA2EA4006AE847 /* NBVideoCollectionViewCell.m */; };
 		5E7E65AD1AFA2EA4006AE847 /* NBVideoCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5E7E65AB1AFA2EA4006AE847 /* NBVideoCollectionViewCell.xib */; };
 		5E917D951AECCEEC00922AE7 /* MenuLoginTitleBarCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E917D941AECCEEC00922AE7 /* MenuLoginTitleBarCell.swift */; };
-		5E9F197C1AEBB27400CC4D47 /* Haneke.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E9F197B1AEBB27400CC4D47 /* Haneke.framework */; };
 		5EA5D0071AECB7EF00E0BE18 /* YTMenuRowCellObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EA5D0061AECB7EF00E0BE18 /* YTMenuRowCellObject.swift */; };
 		5EA6916E1AF7407500DF0298 /* YTVideoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EA6916D1AF7407500DF0298 /* YTVideoCollectionViewCell.swift */; };
 		5EA691701AF7409000DF0298 /* VideoCollectionViewCellLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EA6916F1AF7409000DF0298 /* VideoCollectionViewCellLayout.swift */; };
-		5EA6F25E1AD8C9930017493D /* Cartography.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5EA6F25C1AD8C9930017493D /* Cartography.framework */; };
 		5EA80D8F1AF32B1E00A0D61D /* NBCollectionSectionGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EA80D8D1AF32B1E00A0D61D /* NBCollectionSectionGenerator.swift */; };
 		5EA9E72C1AECBAE40041F9D5 /* YTMenuRemoteRowCellObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EA9E72B1AECBAE40041F9D5 /* YTMenuRemoteRowCellObject.swift */; };
 		5EBB47F51AF248E6007D6CE1 /* RevealViewHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EBB47F41AF248E6007D6CE1 /* RevealViewHelper.swift */; };
@@ -100,16 +97,39 @@
 		5EBEE6FF1AEB3292001ED7AB /* YTSectionTitleCellObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EBEE6FE1AEB3292001ED7AB /* YTSectionTitleCellObject.swift */; };
 		5EC804E31AE660CA00FC42C4 /* NBMenuTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EC804E21AE660CA00FC42C4 /* NBMenuTableViewController.swift */; };
 		5EC804E51AE662DF00FC42C4 /* LeftMenuConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EC804E41AE662DF00FC42C4 /* LeftMenuConstant.swift */; };
+		5EC96C0C1AFE273A00CD5387 /* Cartography.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5EC96C081AFE273A00CD5387 /* Cartography.framework */; };
+		5EC96C0D1AFE273A00CD5387 /* Haneke.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5EC96C091AFE273A00CD5387 /* Haneke.framework */; };
+		5EC96C0E1AFE273A00CD5387 /* pop.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5EC96C0A1AFE273A00CD5387 /* pop.framework */; };
+		5EC96C0F1AFE273A00CD5387 /* WebImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5EC96C0B1AFE273A00CD5387 /* WebImage.framework */; };
+		5EC96C111AFE276000CD5387 /* Cartography.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 5EC96C081AFE273A00CD5387 /* Cartography.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		5EC96C121AFE276000CD5387 /* Haneke.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 5EC96C091AFE273A00CD5387 /* Haneke.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		5EC96C131AFE276100CD5387 /* pop.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 5EC96C0A1AFE273A00CD5387 /* pop.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		5EC96C141AFE276100CD5387 /* WebImage.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 5EC96C0B1AFE273A00CD5387 /* WebImage.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		5ECA615C1AECC88B00D02728 /* MenuTitleBarBaseCellObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ECA615B1AECC88B00D02728 /* MenuTitleBarBaseCellObject.swift */; };
 		5ECB14D31AF0D3D1006592AC /* YTVideoCollectionConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ECB14D21AF0D3D1006592AC /* YTVideoCollectionConstant.swift */; };
 		5ECCE55A1AF8CFEE00DD913C /* PopoverProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ECCE5591AF8CFEE00DD913C /* PopoverProtocol.swift */; };
-		5EE318C11AF50E23003B3E83 /* WebImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5EA6F25D1AD8C9930017493D /* WebImage.framework */; };
 		5EE8C6911AEB6A3500156F4D /* SwiftyUserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EE8C6901AEB6A3500156F4D /* SwiftyUserDefaults.swift */; };
 		5EFFA2961AF5BA0100095130 /* YoutubeDataFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EFFA2941AF5BA0100095130 /* YoutubeDataFetcher.swift */; };
 		5EFFA2971AF5BA0100095130 /* YouTubeExtractorUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EFFA2951AF5BA0100095130 /* YouTubeExtractorUtils.swift */; };
 		65B8CBFE8D3DCB369C7D2BCD /* ReusedViewControllers.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 65B8C55A2F1ADE8A7EF3F7C7 /* ReusedViewControllers.storyboard */; };
 		FE4BD745914619899B4CFFE4 /* libPods-app.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EC98874876136DD34019F3EC /* libPods-app.a */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		5EC96C101AFE274400CD5387 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				5EC96C111AFE276000CD5387 /* Cartography.framework in CopyFiles */,
+				5EC96C121AFE276000CD5387 /* Haneke.framework in CopyFiles */,
+				5EC96C131AFE276100CD5387 /* pop.framework in CopyFiles */,
+				5EC96C141AFE276100CD5387 /* WebImage.framework in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		1509935D33F2EDACDF69A354 /* Pods-appTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-appTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-appTests/Pods-appTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -218,6 +238,10 @@
 		5EBEE6FE1AEB3292001ED7AB /* YTSectionTitleCellObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = YTSectionTitleCellObject.swift; path = MenuCells/YTSectionTitleCellObject.swift; sourceTree = "<group>"; };
 		5EC804E21AE660CA00FC42C4 /* NBMenuTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NBMenuTableViewController.swift; sourceTree = "<group>"; };
 		5EC804E41AE662DF00FC42C4 /* LeftMenuConstant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LeftMenuConstant.swift; sourceTree = "<group>"; };
+		5EC96C081AFE273A00CD5387 /* Cartography.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cartography.framework; path = Carthage/Cartography.framework; sourceTree = "<group>"; };
+		5EC96C091AFE273A00CD5387 /* Haneke.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Haneke.framework; path = Carthage/Haneke.framework; sourceTree = "<group>"; };
+		5EC96C0A1AFE273A00CD5387 /* pop.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = pop.framework; path = Carthage/pop.framework; sourceTree = "<group>"; };
+		5EC96C0B1AFE273A00CD5387 /* WebImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebImage.framework; path = Carthage/WebImage.framework; sourceTree = "<group>"; };
 		5ECA615B1AECC88B00D02728 /* MenuTitleBarBaseCellObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MenuTitleBarBaseCellObject.swift; path = MenuCells/MenuTitleBarBaseCellObject.swift; sourceTree = "<group>"; };
 		5ECB14D21AF0D3D1006592AC /* YTVideoCollectionConstant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YTVideoCollectionConstant.swift; sourceTree = "<group>"; };
 		5ECCE5591AF8CFEE00DD913C /* PopoverProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopoverProtocol.swift; sourceTree = "<group>"; };
@@ -236,10 +260,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				FE4BD745914619899B4CFFE4 /* libPods-app.a in Frameworks */,
-				5EA6F25E1AD8C9930017493D /* Cartography.framework in Frameworks */,
-				5E9F197C1AEBB27400CC4D47 /* Haneke.framework in Frameworks */,
-				5EE318C11AF50E23003B3E83 /* WebImage.framework in Frameworks */,
-				5E4BFB8D1AE3214100BC7A33 /* pop.framework in Frameworks */,
+				5EC96C0C1AFE273A00CD5387 /* Cartography.framework in Frameworks */,
+				5EC96C0D1AFE273A00CD5387 /* Haneke.framework in Frameworks */,
+				5EC96C0E1AFE273A00CD5387 /* pop.framework in Frameworks */,
+				5EC96C0F1AFE273A00CD5387 /* WebImage.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -249,6 +273,10 @@
 		0B7ED32E7A2330FF886E2633 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				5EC96C081AFE273A00CD5387 /* Cartography.framework */,
+				5EC96C091AFE273A00CD5387 /* Haneke.framework */,
+				5EC96C0A1AFE273A00CD5387 /* pop.framework */,
+				5EC96C0B1AFE273A00CD5387 /* WebImage.framework */,
 				5E9F197B1AEBB27400CC4D47 /* Haneke.framework */,
 				5EA6F25C1AD8C9930017493D /* Cartography.framework */,
 				5EA6F25D1AD8C9930017493D /* WebImage.framework */,
@@ -735,7 +763,7 @@
 				5E1E2CE21AD8B898004CC05B /* Frameworks */,
 				5E1E2CE31AD8B898004CC05B /* Resources */,
 				E426141233F1FB3F219399C0 /* Copy Pods Resources */,
-				5E87FD981AD8C33F0021E80C /* ShellScript */,
+				5EC96C101AFE274400CD5387 /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -798,23 +826,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		5E87FD981AD8C33F0021E80C /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"$(SRCROOT)/Carthage/Build/iOS/Cartography.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/pop.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/Haneke.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/WebImage.framework",
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "/usr/local/bin/carthage copy-frameworks";
-		};
 		D4789237DFF4F12057F6C6F0 /* Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -1092,6 +1103,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
+					"$(PROJECT_DIR)/Carthage",
 				);
 				INFOPLIST_FILE = app/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
@@ -1112,6 +1124,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
+					"$(PROJECT_DIR)/Carthage",
 				);
 				INFOPLIST_FILE = app/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.3;

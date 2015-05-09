@@ -8,32 +8,9 @@
 
 import UIKit
 
-class ViewController: UIViewController, AuthorUserFetchingDelegate, UIPopoverControllerDelegate, AutoCompleteProtocol, PopoverContentSelectedProtocol {
 
-    var popoverController: UIPopoverController?
+class ViewController: UIViewController, AuthorUserFetchingDelegate{
 
-    lazy var popoverTableViewController: PopoverTableViewController = {
-        let contentViewController: PopoverTableViewController = PopoverTableViewController()
-
-        contentViewController.contentSelectedDelegate = self
-
-        return contentViewController
-    }()
-
-    var rightBarItem: UIBarButtonItem?
-
-    lazy var searchBar: AutoCompletePopoverSearchBar = {
-        let _searchBar: AutoCompletePopoverSearchBar = AutoCompletePopoverSearchBar(frame: CGRectMake(0, 0, 300, 20))
-        _searchBar.placeholder = "Searching..."
-
-        _searchBar.backgroundColor = UIColor.clearColor()
-        _searchBar.showsCancelButton = true
-        _searchBar.userInteractionEnabled = true
-
-        _searchBar.autoCompleteDelegate = self
-
-        return _searchBar
-    }()
 
     @IBOutlet weak var loginButton: UIButton!
     override func viewDidLoad() {
@@ -47,8 +24,6 @@ class ViewController: UIViewController, AuthorUserFetchingDelegate, UIPopoverCon
             //            self.startFetchingLoggedSubscriptionList() // used
         }
 
-        rightBarItem = UIBarButtonItem(customView: searchBar)
-        self.navigationItem.rightBarButtonItem = rightBarItem
     }
 
 
@@ -101,52 +76,6 @@ class ViewController: UIViewController, AuthorUserFetchingDelegate, UIPopoverCon
 
 
 
-
-    // MARK: UIPopoverControllerDelegate
-    func popoverControllerDidDismissPopover(popoverController: UIPopoverController) {
-        self.searchBar.resignFirstResponder()
-        hidePopover()
-    }
-
-    // MARK: AutoCompleteProtocol
-    func showPopover() {
-        if (popoverController != nil) {
-            return
-        }
-
-        popoverController = UIPopoverController(contentViewController: popoverTableViewController)
-
-        if let thePopoverController: UIPopoverController = popoverController {
-            thePopoverController.presentPopoverFromBarButtonItem(rightBarItem!, permittedArrowDirections: .Any, animated: true)
-
-            thePopoverController.delegate = self
-            searchBar.popoverController = thePopoverController
-        }
-    }
-
-    func hidePopover() {
-        self.popoverController = nil
-    }
-
-
-    func search(searchWish: String) {
-        fetchAutoCompleteSuggestions(searchWish)
-    }
-
-    // MARK: search event
-    func fetchAutoCompleteSuggestions(searchWish: String) {
-        YoutubeDataFetcher.sharedInstance.autoCompleteSuggestionsWithSearchWish(searchWish, completeHandler: {
-            (object, sucess) -> Void in
-            if (sucess == true) {
-                self.popoverTableViewController.contents = (object as! NSArray) as! [String]
-            }
-        })
-    }
-
-    // MARK: PopoverContentSelectedProtocol
-    func didSelectItemFromPopover(content: AnyObject) {
-        self.searchBar.text = content as! String
-    }
 
 }
 
