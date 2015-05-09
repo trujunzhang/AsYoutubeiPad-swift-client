@@ -19,6 +19,7 @@ def import_pods
 
   pod "Nimbus", :path => "../dependencies/Nimbus"
 
+  pod 'NSDate+TimeAgo'
 
 end
 
