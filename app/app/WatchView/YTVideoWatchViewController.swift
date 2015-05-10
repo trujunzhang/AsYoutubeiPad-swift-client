@@ -62,7 +62,7 @@ class YTVideoWatchViewController: UIViewController {
         // initialize all containers
         makeMovieEmbeddedViewController()
        
-        self.addChildViewController(videoInfoTableViewController)
+//        self.addChildViewController(videoInfoTableViewController)
         self.addChildViewController(sideTableViewController)
 
         // test

@@ -86,7 +86,6 @@
 		5E70EFB31AFF00C400C99699 /* VideoInfoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E70EFB21AFF00C400C99699 /* VideoInfoTableViewCell.swift */; };
 		5E70EFB51AFF00DE00C99699 /* ChannelInfoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E70EFB41AFF00DE00C99699 /* ChannelInfoTableViewCell.swift */; };
 		5E70EFB71AFF00FC00C99699 /* SuggestionVideoInfoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E70EFB61AFF00FC00C99699 /* SuggestionVideoInfoTableViewCell.swift */; };
-		5E79A5EF1AFF672F00BAF1D6 /* VideoWatchBack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E79A5EE1AFF672F00BAF1D6 /* VideoWatchBack.swift */; };
 		5E7BA87F1AFA2FCD00C13E95 /* NBMultableCollectionBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E7BA87E1AFA2FCD00C13E95 /* NBMultableCollectionBaseViewController.m */; };
 		5E7DE3D11AFF518700E1D639 /* DetailPageTableUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E7DE3D01AFF518700E1D639 /* DetailPageTableUtils.swift */; };
 		5E7E65AC1AFA2EA4006AE847 /* NBVideoCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E7E65AA1AFA2EA4006AE847 /* NBVideoCollectionViewCell.m */; };
@@ -224,7 +223,6 @@
 		5E70EFB21AFF00C400C99699 /* VideoInfoTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = VideoInfoTableViewCell.swift; path = TableViewCells/VideoInfoTableViewCell.swift; sourceTree = "<group>"; };
 		5E70EFB41AFF00DE00C99699 /* ChannelInfoTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ChannelInfoTableViewCell.swift; path = TableViewCells/ChannelInfoTableViewCell.swift; sourceTree = "<group>"; };
 		5E70EFB61AFF00FC00C99699 /* SuggestionVideoInfoTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SuggestionVideoInfoTableViewCell.swift; path = TableViewCells/SuggestionVideoInfoTableViewCell.swift; sourceTree = "<group>"; };
-		5E79A5EE1AFF672F00BAF1D6 /* VideoWatchBack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoWatchBack.swift; sourceTree = "<group>"; };
 		5E7BA87D1AFA2FCD00C13E95 /* NBMultableCollectionBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NBMultableCollectionBaseViewController.h; sourceTree = "<group>"; };
 		5E7BA87E1AFA2FCD00C13E95 /* NBMultableCollectionBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NBMultableCollectionBaseViewController.m; sourceTree = "<group>"; };
 		5E7DE3D01AFF518700E1D639 /* DetailPageTableUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailPageTableUtils.swift; sourceTree = "<group>"; };
@@ -302,7 +300,6 @@
 		5E032D1D1AF5B7A4006125AA /* WatchView */ = {
 			isa = PBXGroup;
 			children = (
-				5E79A5EE1AFF672F00BAF1D6 /* VideoWatchBack.swift */,
 				5E032D1E1AF5B7A4006125AA /* Bars */,
 				5E032D211AF5B7A4006125AA /* MovieEmbeddedViewController.swift */,
 				5E032D221AF5B7A4006125AA /* Player */,
@@ -892,7 +889,6 @@
 				5E3AB3CC1AE3D7DC00BB0944 /* UIColorExtension.swift in Sources */,
 				5E238F181AF662FF00917FB1 /* SearchEvent.swift in Sources */,
 				5ECA615C1AECC88B00D02728 /* MenuTitleBarBaseCellObject.swift in Sources */,
-				5E79A5EF1AFF672F00BAF1D6 /* VideoWatchBack.swift in Sources */,
 				5EA80D8F1AF32B1E00A0D61D /* NBCollectionSectionGenerator.swift in Sources */,
 				5E39C4601AF4798F0069AC33 /* YoutubeRetrievingActivityListItemsFetcher.swift in Sources */,
 				5E5F8A261AF8C80700466FA0 /* AutoCompletePopoverEvent.swift in Sources */,

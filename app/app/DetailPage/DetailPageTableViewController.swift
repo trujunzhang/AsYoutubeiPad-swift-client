@@ -17,7 +17,7 @@ class DetailPageTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-//        self.makeVideoInfoSection() // test
+        self.makeVideoInfoSection() // test
     }
 
     func makeVideoInfoSection(){
