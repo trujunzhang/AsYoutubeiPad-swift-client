@@ -58,6 +58,7 @@ class DetailPageTableViewController: UITableViewController,UITableViewDelegate,U
         
         let cell = tableView.dequeueReusableCellWithIdentifier(section.identifer, forIndexPath: indexPath) as! UITableViewCell
         configureCell(cell, forRowAtIndexPath: indexPath)
+        
         return cell
     }
     

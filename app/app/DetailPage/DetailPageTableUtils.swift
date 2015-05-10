@@ -12,6 +12,8 @@ let VIDEO_INFO_CELL_IDENTIFER = "videoInfoIdentifier"
 let CHANNEL_INFO_CELL_IDENTIFER = "channelInfoIdentifier"
 let SUGGESTION_CELL_IDENTIFER = "suggestionVideoInfoIdentifier"
 
+
+
 class DetailPageSection{
     var sectionTitle = ""
     var identifer = ""
