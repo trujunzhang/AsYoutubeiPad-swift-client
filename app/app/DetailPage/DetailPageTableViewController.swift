@@ -10,6 +10,8 @@ import UIKit
 
 class DetailPageTableViewController: UITableViewController {
 
+    var videoInfoObject: VideoInfoObject?
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -37,6 +39,10 @@ class DetailPageTableViewController: UITableViewController {
         // #warning Incomplete method implementation.
         // Return the number of rows in the section.
         return 0
+    }
+
+    func addVideoInfo(videoInfoObject: VideoInfoObject){
+        self.videoInfoObject = videoInfoObject
     }
 
     /*

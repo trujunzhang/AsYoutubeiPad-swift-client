@@ -19,14 +19,50 @@ class YTVideoWatchViewController: UIViewController {
     @IBOutlet weak var videoInfoContainer: UIView!
     @IBOutlet weak var suggestionContainer: UIView!
     
-    var videoID = ""
+    var videoInfoObject: VideoInfoObject = VideoInfoObject()
+    var videoID: String = "" {
+        didSet {
+            //            fetchVideoInfo() // used
+            self.setupVideoInfoPanel() // test
+        }
+    }
+    func fetchVideoInfo(){
+        YoutubeFetcher.fetchVideoDescription(videoID, completeHandler: {
+            (object, sucess) -> Void in
+            
+            if (sucess == true) {
+                let array:NSArray = object as! NSArray
+                if(array.count == 1){
+                    //                    self.reloadTableData(array[0] as! YoutubeVideoCache)
+                    self.setupVideoInfoPanel()
+                }
+            }else{
+                
+            }
+            
+        })
+    }
+    
+    func setupVideoInfoPanel(){
+        videoInfoTableViewController.addVideoInfo(self.videoInfoObject)
+
+        
+    }
+    
+    lazy var videoInfoTableViewController : DetailPageTableViewController = {
+        return DetailPageTableViewController.instance()
+    }()
+
+    lazy var sideTableViewController : DetailPageTableViewController = {
+        return DetailPageTableViewController.instance()
+    }()
+
     
     lazy var movieEmbeddedViewController: MovieEmbeddedViewController = {
         return MovieEmbeddedViewController.instance()
         }()
     
-    var videoInfoViewController: VideoInfoViewController = VideoInfoViewController()
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -38,7 +74,9 @@ class YTVideoWatchViewController: UIViewController {
         self.view.addSubview(suggestionContainer)
         
         makeMovieEmbeddedViewController()
-        makeVideoInfoViewController()
+       
+        self.addChildViewController(videoInfoTableViewController)
+        self.addChildViewController(sideTableViewController)
     }
     
     func makeMovieEmbeddedViewController() {
@@ -49,12 +87,7 @@ class YTVideoWatchViewController: UIViewController {
         
     }
     
-    func makeVideoInfoViewController() {
-        videoInfoViewController.videoID = videoID
-        
-        self.addChildViewController(videoInfoViewController)
-        self.videoInfoContainer.addSubview(videoInfoViewController.view)
-    }
+
     
     override func viewDidLayoutSubviews() {
         func playerViewHeight(width:CGFloat) -> CGFloat {
@@ -79,10 +112,10 @@ class YTVideoWatchViewController: UIViewController {
             infoViewHeightConstraint.constant = 0
         }
     }
-
     
-
-
+    
+    
+    
     
     
 }

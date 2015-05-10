@@ -11,12 +11,8 @@ import UIKit
 import Cartography
 
 class VideoInfoViewController: UIViewController, UITableViewDelegate, VideoInfoToggleProtocol {
-    
-    var videoID: String = "" {
-        didSet {
-            fetchVideoInfo()
-        }
-    }
+
+
     
     var model: NITableViewModel?
     var tableView: UITableView?
@@ -26,21 +22,8 @@ class VideoInfoViewController: UIViewController, UITableViewDelegate, VideoInfoT
     
     var tableContents: [AnyObject] = [AnyObject]()
     
-    func fetchVideoInfo(){
-        YoutubeFetcher.fetchVideoDescription(videoID, completeHandler: {
-            (object, sucess) -> Void in
-            
-            if (sucess == true) {
-                let array:NSArray = object as! NSArray
-                if(array.count == 1){
-                   self.reloadTableData(array[0] as! YoutubeVideoCache)
-                }
-            }else{
-                
-            }
-            
-        })
-    }
+    
+
     
     
     
