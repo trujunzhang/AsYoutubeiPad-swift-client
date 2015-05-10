@@ -83,6 +83,9 @@
 		5E67E7521AF8A8FF00F07031 /* PopoverTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E67E74D1AF8A8FF00F07031 /* PopoverTableViewController.swift */; };
 		5E67E7531AF8A8FF00F07031 /* AutoCompletePopoverSearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E67E74F1AF8A8FF00F07031 /* AutoCompletePopoverSearchBar.swift */; };
 		5E70EFB01AFF000100C99699 /* DetailPageTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E70EFAF1AFF000100C99699 /* DetailPageTableViewController.swift */; };
+		5E70EFB31AFF00C400C99699 /* VideoInfoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E70EFB21AFF00C400C99699 /* VideoInfoTableViewCell.swift */; };
+		5E70EFB51AFF00DE00C99699 /* ChannelInfoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E70EFB41AFF00DE00C99699 /* ChannelInfoTableViewCell.swift */; };
+		5E70EFB71AFF00FC00C99699 /* SuggestionVideoInfoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E70EFB61AFF00FC00C99699 /* SuggestionVideoInfoTableViewCell.swift */; };
 		5E7BA87F1AFA2FCD00C13E95 /* NBMultableCollectionBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E7BA87E1AFA2FCD00C13E95 /* NBMultableCollectionBaseViewController.m */; };
 		5E7E65AC1AFA2EA4006AE847 /* NBVideoCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E7E65AA1AFA2EA4006AE847 /* NBVideoCollectionViewCell.m */; };
 		5E7E65AD1AFA2EA4006AE847 /* NBVideoCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5E7E65AB1AFA2EA4006AE847 /* NBVideoCollectionViewCell.xib */; };
@@ -216,6 +219,9 @@
 		5E67E74D1AF8A8FF00F07031 /* PopoverTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopoverTableViewController.swift; sourceTree = "<group>"; };
 		5E67E74F1AF8A8FF00F07031 /* AutoCompletePopoverSearchBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AutoCompletePopoverSearchBar.swift; sourceTree = "<group>"; };
 		5E70EFAF1AFF000100C99699 /* DetailPageTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailPageTableViewController.swift; sourceTree = "<group>"; };
+		5E70EFB21AFF00C400C99699 /* VideoInfoTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = VideoInfoTableViewCell.swift; path = TableViewCells/VideoInfoTableViewCell.swift; sourceTree = "<group>"; };
+		5E70EFB41AFF00DE00C99699 /* ChannelInfoTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ChannelInfoTableViewCell.swift; path = TableViewCells/ChannelInfoTableViewCell.swift; sourceTree = "<group>"; };
+		5E70EFB61AFF00FC00C99699 /* SuggestionVideoInfoTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SuggestionVideoInfoTableViewCell.swift; path = TableViewCells/SuggestionVideoInfoTableViewCell.swift; sourceTree = "<group>"; };
 		5E7BA87D1AFA2FCD00C13E95 /* NBMultableCollectionBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NBMultableCollectionBaseViewController.h; sourceTree = "<group>"; };
 		5E7BA87E1AFA2FCD00C13E95 /* NBMultableCollectionBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NBMultableCollectionBaseViewController.m; sourceTree = "<group>"; };
 		5E7E65A91AFA2EA4006AE847 /* NBVideoCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NBVideoCollectionViewCell.h; sourceTree = "<group>"; };
@@ -348,6 +354,7 @@
 		5E065C721AFB7E10003EE40B /* DetailPage */ = {
 			isa = PBXGroup;
 			children = (
+				5E70EFB11AFF008200C99699 /* TableViewCells */,
 				5E065C731AFB7E10003EE40B /* Models */,
 				5E065C751AFB7E10003EE40B /* Table Cells */,
 				5E065C781AFB7E10003EE40B /* VideoInfoPanel */,
@@ -665,6 +672,16 @@
 			path = items;
 			sourceTree = "<group>";
 		};
+		5E70EFB11AFF008200C99699 /* TableViewCells */ = {
+			isa = PBXGroup;
+			children = (
+				5E70EFB21AFF00C400C99699 /* VideoInfoTableViewCell.swift */,
+				5E70EFB41AFF00DE00C99699 /* ChannelInfoTableViewCell.swift */,
+				5E70EFB61AFF00FC00C99699 /* SuggestionVideoInfoTableViewCell.swift */,
+			);
+			name = TableViewCells;
+			sourceTree = "<group>";
+		};
 		5E7E65A81AFA2EA4006AE847 /* Collection Cells */ = {
 			isa = PBXGroup;
 			children = (
@@ -878,6 +895,7 @@
 				5E70EFB01AFF000100C99699 /* DetailPageTableViewController.swift in Sources */,
 				5E032D331AF5B7A4006125AA /* AVPlayerView.swift in Sources */,
 				5E39C4631AF4798F0069AC33 /* YoutubeRetrievingNewSubscriptionVideosFetcherHelper.swift in Sources */,
+				5E70EFB51AFF00DE00C99699 /* ChannelInfoTableViewCell.swift in Sources */,
 				5ECCE55A1AF8CFEE00DD913C /* PopoverProtocol.swift in Sources */,
 				5E37DF911AE61D00009D605E /* LeftMenuViewController.swift in Sources */,
 				5EFFA2961AF5BA0100095130 /* YoutubeDataFetcher.swift in Sources */,
@@ -924,6 +942,7 @@
 				5E032D301AF5B7A4006125AA /* MovieEmbeddedBasedBarViewController.swift in Sources */,
 				5E67E7511AF8A8FF00F07031 /* AutoCompletePopoverController.swift in Sources */,
 				5E39C46A1AF4798F0069AC33 /* YoutubeUserProfile.swift in Sources */,
+				5E70EFB31AFF00C400C99699 /* VideoInfoTableViewCell.swift in Sources */,
 				5E032D321AF5B7A4006125AA /* MovieEmbeddedViewController.swift in Sources */,
 				5E50B28B1AFB755E00829D62 /* SuggestionVideoListEvent.swift in Sources */,
 				5E3AB3CA1AE3D7DC00BB0944 /* PathExtensionFile.swift in Sources */,
@@ -944,6 +963,7 @@
 				5E065C7D1AFB7E10003EE40B /* VideoInfoViewController.swift in Sources */,
 				5EC804E51AE662DF00FC42C4 /* LeftMenuConstant.swift in Sources */,
 				5E67E7481AF8A8E300F07031 /* NSDateISO8601.swift in Sources */,
+				5E70EFB71AFF00FC00C99699 /* SuggestionVideoInfoTableViewCell.swift in Sources */,
 				5E065C7A1AFB7E10003EE40B /* VideoInfoObject.swift in Sources */,
 				5E3AB3C91AE3D7DC00BB0944 /* PathExtensionDir.swift in Sources */,
 				5E67E7521AF8A8FF00F07031 /* PopoverTableViewController.swift in Sources */,
