@@ -63,14 +63,34 @@ class DetailPageTableViewController: UITableViewController,UITableViewDelegate,U
     }
     
     func configureCell(cell: UITableViewCell, forRowAtIndexPath: NSIndexPath) {
-         let section:DetailPageSection = self.pageSections[forRowAtIndexPath.section]
+        let section:DetailPageSection = self.pageSections[forRowAtIndexPath.section]
+        let sectionIdentifier :    DetailPageCellIdentifier = section.sectionIdentifier!
         
+        switch(sectionIdentifier){
+        case DetailPageCellIdentifier.VideoInfoCellIdentifier:
+        let x = 0
+        break;
         
+        case DetailPageCellIdentifier.ChannelInfoCellIdentifier:
+        let x = 0
+        break;
+        
+        case DetailPageCellIdentifier.SuggestionListCellIdentifier:
+        let x = 0
+        break;
+        
+        default:
+            let x = 0
+        break;
+        
+        }
     }
     
     //MARK: UITableViewDelegate
     
     override  func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        
+        
         
     }
     
