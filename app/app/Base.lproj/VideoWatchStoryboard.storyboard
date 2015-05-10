@@ -328,6 +328,32 @@ Cg
             </objects>
             <point key="canvasLocation" x="-1068" y="1352.5"/>
         </scene>
+        <!--Detail Page Table View Controller-->
+        <scene sceneID="vjk-C6-nBo">
+            <objects>
+                <tableViewController id="ISH-Ci-yjZ" customClass="DetailPageTableViewController" customModule="app" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="0kJ-lO-NAO">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="jBb-g0-cNb">
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="jBb-g0-cNb" id="mV7-HV-SjD">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="ISH-Ci-yjZ" id="eoj-Tj-HEa"/>
+                            <outlet property="delegate" destination="ISH-Ci-yjZ" id="1uQ-fn-aqj"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jki-Cy-4h6" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-432" y="1531"/>
+        </scene>
         <!--View Controller-->
         <scene sceneID="XTs-eq-72t">
             <objects>

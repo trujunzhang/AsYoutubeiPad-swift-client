@@ -82,6 +82,7 @@
 		5E67E7511AF8A8FF00F07031 /* AutoCompletePopoverController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E67E74B1AF8A8FF00F07031 /* AutoCompletePopoverController.swift */; };
 		5E67E7521AF8A8FF00F07031 /* PopoverTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E67E74D1AF8A8FF00F07031 /* PopoverTableViewController.swift */; };
 		5E67E7531AF8A8FF00F07031 /* AutoCompletePopoverSearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E67E74F1AF8A8FF00F07031 /* AutoCompletePopoverSearchBar.swift */; };
+		5E70EFB01AFF000100C99699 /* DetailPageTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E70EFAF1AFF000100C99699 /* DetailPageTableViewController.swift */; };
 		5E7BA87F1AFA2FCD00C13E95 /* NBMultableCollectionBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E7BA87E1AFA2FCD00C13E95 /* NBMultableCollectionBaseViewController.m */; };
 		5E7E65AC1AFA2EA4006AE847 /* NBVideoCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E7E65AA1AFA2EA4006AE847 /* NBVideoCollectionViewCell.m */; };
 		5E7E65AD1AFA2EA4006AE847 /* NBVideoCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5E7E65AB1AFA2EA4006AE847 /* NBVideoCollectionViewCell.xib */; };
@@ -214,6 +215,7 @@
 		5E67E74B1AF8A8FF00F07031 /* AutoCompletePopoverController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AutoCompletePopoverController.swift; sourceTree = "<group>"; };
 		5E67E74D1AF8A8FF00F07031 /* PopoverTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopoverTableViewController.swift; sourceTree = "<group>"; };
 		5E67E74F1AF8A8FF00F07031 /* AutoCompletePopoverSearchBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AutoCompletePopoverSearchBar.swift; sourceTree = "<group>"; };
+		5E70EFAF1AFF000100C99699 /* DetailPageTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailPageTableViewController.swift; sourceTree = "<group>"; };
 		5E7BA87D1AFA2FCD00C13E95 /* NBMultableCollectionBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NBMultableCollectionBaseViewController.h; sourceTree = "<group>"; };
 		5E7BA87E1AFA2FCD00C13E95 /* NBMultableCollectionBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NBMultableCollectionBaseViewController.m; sourceTree = "<group>"; };
 		5E7E65A91AFA2EA4006AE847 /* NBVideoCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NBVideoCollectionViewCell.h; sourceTree = "<group>"; };
@@ -350,6 +352,7 @@
 				5E065C751AFB7E10003EE40B /* Table Cells */,
 				5E065C781AFB7E10003EE40B /* VideoInfoPanel */,
 				5E065C771AFB7E10003EE40B /* VideoInfoConstant.swift */,
+				5E70EFAF1AFF000100C99699 /* DetailPageTableViewController.swift */,
 			);
 			path = DetailPage;
 			sourceTree = "<group>";
@@ -872,6 +875,7 @@
 				5E917D951AECCEEC00922AE7 /* MenuLoginTitleBarCell.swift in Sources */,
 				5EA691701AF7409000DF0298 /* VideoCollectionViewCellLayout.swift in Sources */,
 				5E401BFF1AF4F1AC00613E28 /* YoutubeRetrievingGTLActivityListItemsFetcherHelper.swift in Sources */,
+				5E70EFB01AFF000100C99699 /* DetailPageTableViewController.swift in Sources */,
 				5E032D331AF5B7A4006125AA /* AVPlayerView.swift in Sources */,
 				5E39C4631AF4798F0069AC33 /* YoutubeRetrievingNewSubscriptionVideosFetcherHelper.swift in Sources */,
 				5ECCE55A1AF8CFEE00DD913C /* PopoverProtocol.swift in Sources */,
