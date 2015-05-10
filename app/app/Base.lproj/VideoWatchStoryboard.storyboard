@@ -186,7 +186,7 @@ Cg
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rsu-ie-ML4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-314" y="3449"/>
+            <point key="canvasLocation" x="-940" y="2449"/>
         </scene>
         <!--Video Watch View Controller-->
         <scene sceneID="6cl-Es-gJr">
@@ -265,25 +265,7 @@ Cg
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ep1-K2-yGH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="220" y="1475"/>
-        </scene>
-        <!--Video Watch Playlist Header View Controller-->
-        <scene sceneID="WpG-sG-VBY">
-            <objects>
-                <viewController storyboardIdentifier="YTVideoWatchPlaylistHeaderViewController" id="ME0-kX-hue" customClass="YTVideoWatchPlaylistHeaderViewController" customModule="app" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="qLi-iI-5WK"/>
-                        <viewControllerLayoutGuide type="bottom" id="eC3-wJ-aE1"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="85j-i4-LtK">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="agP-mx-GUV" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1036" y="2403"/>
+            <point key="canvasLocation" x="-940" y="1655"/>
         </scene>
         <!--Video Info View Controller-->
         <scene sceneID="c4d-fW-grU">
@@ -301,7 +283,7 @@ Cg
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jt1-H6-5Ax" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1122" y="3469"/>
+            <point key="canvasLocation" x="-102" y="2505"/>
         </scene>
     </scenes>
     <resources>
