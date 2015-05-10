@@ -345,27 +345,45 @@ Cg
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pvZ-Tj-0Pb" userLabel="topPanel">
                                             <rect key="frame" x="0.0" y="0.0" width="597" height="60"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eCx-4h-nf0" userLabel="infoLabel">
-                                                    <rect key="frame" x="8" y="33" width="500" height="14"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                                    <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uPg-5h-1nk" userLabel="toggle_button">
-                                                    <rect key="frame" x="545" y="8" width="44" height="44"/>
-                                                    <state key="normal" image="collapse_guide.png">
-                                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                                    </state>
-                                                </button>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sYj-H5-STx" userLabel="titleLabel">
-                                                    <rect key="frame" x="8" y="6" width="500" height="21"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sYj-H5-STx" userLabel="titleLabel">
+                                                    <rect key="frame" x="8" y="6" width="507" height="21"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="21" id="jWB-U2-7kO"/>
+                                                    </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eCx-4h-nf0" userLabel="infoLabel">
+                                                    <rect key="frame" x="8" y="33" width="507" height="14"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="14" id="BdI-gM-9Ee"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                    <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uPg-5h-1nk" userLabel="toggle_button">
+                                                    <rect key="frame" x="545" y="8" width="44" height="44"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="44" id="4yI-y1-0TI"/>
+                                                        <constraint firstAttribute="width" constant="44" id="u2G-ja-IJO"/>
+                                                    </constraints>
+                                                    <state key="normal" image="collapse_guide.png">
+                                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                    </state>
+                                                </button>
                                             </subviews>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <constraints>
+                                                <constraint firstItem="uPg-5h-1nk" firstAttribute="leading" secondItem="sYj-H5-STx" secondAttribute="trailing" constant="30" id="6NK-jr-gdt"/>
+                                                <constraint firstItem="eCx-4h-nf0" firstAttribute="leading" secondItem="pvZ-Tj-0Pb" secondAttribute="leading" constant="8" id="DTC-az-h86"/>
+                                                <constraint firstItem="sYj-H5-STx" firstAttribute="leading" secondItem="pvZ-Tj-0Pb" secondAttribute="leading" constant="8" id="FND-n5-hvH"/>
+                                                <constraint firstItem="uPg-5h-1nk" firstAttribute="top" secondItem="pvZ-Tj-0Pb" secondAttribute="top" constant="8" id="G3c-nm-hvO"/>
+                                                <constraint firstItem="sYj-H5-STx" firstAttribute="width" secondItem="eCx-4h-nf0" secondAttribute="width" id="Ksj-kP-K7x"/>
+                                                <constraint firstAttribute="trailing" secondItem="uPg-5h-1nk" secondAttribute="trailing" constant="8" id="Vsb-J5-R8y"/>
+                                                <constraint firstItem="sYj-H5-STx" firstAttribute="top" secondItem="pvZ-Tj-0Pb" secondAttribute="top" constant="6" id="a7V-xc-fzR"/>
+                                                <constraint firstItem="eCx-4h-nf0" firstAttribute="top" secondItem="sYj-H5-STx" secondAttribute="bottom" constant="6" id="cB4-p8-36W"/>
                                                 <constraint firstAttribute="height" constant="60" id="m8e-Fy-3Zk"/>
                                             </constraints>
                                         </view>
