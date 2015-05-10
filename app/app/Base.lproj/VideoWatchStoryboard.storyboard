@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7702" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
         <!--Movie Embedded Normal Bar View Controller-->
@@ -384,21 +385,47 @@ Cg
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qo5-Cb-Ney" userLabel="playerViewContainer">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qo5-Cb-Ney" userLabel="playerViewContainer">
                                 <rect key="frame" x="0.0" y="0.0" width="300" height="169"/>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="qo5-Cb-Ney" secondAttribute="height" multiplier="16/9" id="7y5-yM-rZb"/>
+                                    <constraint firstAttribute="width" constant="300" id="WJR-iY-ago"/>
+                                </constraints>
                             </view>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="epC-3v-k0A" userLabel="videoInfoContainer">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="epC-3v-k0A" userLabel="videoInfoContainer">
                                 <rect key="frame" x="0.0" y="169" width="300" height="431"/>
                                 <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="431" id="je1-Oy-y3V"/>
+                                </constraints>
                             </view>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7XA-wu-2DW" userLabel="sideContainer">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7XA-wu-2DW" userLabel="sideContainer">
                                 <rect key="frame" x="300" y="0.0" width="300" height="600"/>
                                 <color key="backgroundColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="300" id="gFP-e8-5Ue"/>
+                                    <constraint firstAttribute="height" constant="600" id="jxe-zF-pEq"/>
+                                </constraints>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="epC-3v-k0A" firstAttribute="leading" secondItem="vJO-76-86N" secondAttribute="leading" id="2Xl-e0-IQK"/>
+                            <constraint firstItem="epC-3v-k0A" firstAttribute="top" secondItem="qo5-Cb-Ney" secondAttribute="bottom" id="Fc1-tT-pXK"/>
+                            <constraint firstItem="qo5-Cb-Ney" firstAttribute="width" secondItem="epC-3v-k0A" secondAttribute="width" id="Qsx-BD-3LZ"/>
+                            <constraint firstItem="csG-UZ-rrZ" firstAttribute="top" secondItem="7XA-wu-2DW" secondAttribute="bottom" id="UBu-fh-drb"/>
+                            <constraint firstAttribute="trailing" secondItem="7XA-wu-2DW" secondAttribute="trailing" id="knV-H4-NUn"/>
+                            <constraint firstItem="qo5-Cb-Ney" firstAttribute="leading" secondItem="vJO-76-86N" secondAttribute="leading" id="pGk-og-IhH"/>
+                            <constraint firstItem="qo5-Cb-Ney" firstAttribute="top" secondItem="vJO-76-86N" secondAttribute="top" id="thG-CS-dal"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="infoViewHeightConstraint" destination="je1-Oy-y3V" id="xmO-ms-bAK"/>
+                        <outlet property="playerViewWidthConstraint" destination="WJR-iY-ago" id="yuq-N9-J7W"/>
+                        <outlet property="sideViewHeightConstraint" destination="jxe-zF-pEq" id="WEO-Xo-yC3"/>
+                        <outlet property="sideViewWidthConstraint" destination="gFP-e8-5Ue" id="BpQ-R0-rpQ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IN6-Jc-lmP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
