@@ -52,9 +52,9 @@ class SubscriptionsViewController: FrontBaseViewController {
         
         self.edgesForExtendedLayout = .None
         
-        //        showChannelPage(channelID)
+//                showChannelPage(channelID)
         
-        //        showCollectionPanel()//test
+//                showCollectionPanel()//test
         
         showWatchVideoPage()
         

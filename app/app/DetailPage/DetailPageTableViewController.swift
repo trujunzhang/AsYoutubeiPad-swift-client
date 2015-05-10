@@ -17,11 +17,12 @@ class DetailPageTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+//        self.makeVideoInfoSection() // test
     }
 
     func makeVideoInfoSection(){
-        
-        
+        let section:DetailPageSection = DetailPageSection.makeVideoInfoSection(self.videoInfoObject)
+        self.pageSections.append(section)
     }
 
     override func didReceiveMemoryWarning() {

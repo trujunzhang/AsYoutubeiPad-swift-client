@@ -23,7 +23,7 @@ class YTVideoWatchViewController: UIViewController {
     var videoID: String = "" {
         didSet {
             //            fetchVideoInfo() // used
-            self.setupVideoInfoPanel() // test
+//            self.setupVideoInfoPanel() // test
         }
     }
     func fetchVideoInfo(){
@@ -75,11 +75,11 @@ class YTVideoWatchViewController: UIViewController {
         
         makeMovieEmbeddedViewController()
        
-        self.addChildViewController(videoInfoTableViewController)
-        self.addChildViewController(sideTableViewController)
+//        self.addChildViewController(videoInfoTableViewController)
+//        self.addChildViewController(sideTableViewController)
 
         // test
-        self.sideContainer.addSubview(sideTableViewController.view)
+//        self.sideContainer.addSubview(sideTableViewController.view)
     }
     
     func makeMovieEmbeddedViewController() {
