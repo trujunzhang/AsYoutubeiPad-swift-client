@@ -387,6 +387,15 @@ Cg
                                                 <constraint firstAttribute="height" constant="60" id="m8e-Fy-3Zk"/>
                                             </constraints>
                                         </view>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OsZ-u7-xxl" userLabel="descriptionLabel">
+                                            <rect key="frame" x="8" y="68" width="577" height="131"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="131" id="8dB-Qp-hdW"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lPU-Ve-mwD" userLabel="dividePanel">
                                             <rect key="frame" x="8" y="207" width="584" height="1"/>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -414,15 +423,6 @@ Cg
                                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                             </state>
                                         </button>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OsZ-u7-xxl" userLabel="descriptionLabel">
-                                            <rect key="frame" x="8" y="68" width="577" height="131"/>
-                                            <constraints>
-                                                <constraint firstAttribute="height" constant="131" id="8dB-Qp-hdW"/>
-                                            </constraints>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
                                     </subviews>
                                     <color key="backgroundColor" red="1" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                     <constraints>
@@ -441,6 +441,14 @@ Cg
                                         <constraint firstItem="DDi-nf-nQC" firstAttribute="leading" secondItem="Ptz-I9-Rrf" secondAttribute="trailing" constant="20" id="yGk-9d-2QR"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="descriptionLabel" destination="OsZ-u7-xxl" id="b0X-8M-1px"/>
+                                    <outlet property="disLikeCountLabel" destination="DDi-nf-nQC" id="SOw-4n-oFj"/>
+                                    <outlet property="infoLabel" destination="eCx-4h-nf0" id="NQ9-AZ-mrv"/>
+                                    <outlet property="likeCountLabel" destination="Ptz-I9-Rrf" id="E9F-Op-sQR"/>
+                                    <outlet property="titleLabel" destination="sYj-H5-STx" id="Gnq-WI-aw7"/>
+                                    <outlet property="topPanel" destination="pvZ-Tj-0Pb" id="18r-SJ-WyX"/>
+                                </connections>
                             </tableViewCell>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="channelInfoIdentifier" rowHeight="63" id="kX3-Kl-Q7V" customClass="ChannelInfoTableViewCell" customModule="app" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
