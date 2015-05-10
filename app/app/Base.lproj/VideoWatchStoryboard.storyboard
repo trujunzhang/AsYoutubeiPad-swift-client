@@ -342,7 +342,7 @@ Cg
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="jBb-g0-cNb" id="mV7-HV-SjD">
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pvZ-Tj-0Pb" userLabel="topPanel">
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pvZ-Tj-0Pb" userLabel="topPanel">
                                             <rect key="frame" x="0.0" y="0.0" width="597" height="60"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eCx-4h-nf0" userLabel="infoLabel">
@@ -365,6 +365,9 @@ Cg
                                                 </label>
                                             </subviews>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="60" id="m8e-Fy-3Zk"/>
+                                            </constraints>
                                         </view>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lPU-Ve-mwD" userLabel="dividePanel">
                                             <rect key="frame" x="8" y="207" width="584" height="1"/>
@@ -393,8 +396,11 @@ Cg
                                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                             </state>
                                         </button>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OsZ-u7-xxl" userLabel="descriptionLabel">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OsZ-u7-xxl" userLabel="descriptionLabel">
                                             <rect key="frame" x="8" y="68" width="577" height="131"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="131" id="8dB-Qp-hdW"/>
+                                            </constraints>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
@@ -403,11 +409,17 @@ Cg
                                     <color key="backgroundColor" red="1" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                     <constraints>
                                         <constraint firstAttribute="bottom" secondItem="lPU-Ve-mwD" secondAttribute="bottom" constant="60" id="1QN-QB-GtF"/>
+                                        <constraint firstItem="pvZ-Tj-0Pb" firstAttribute="top" secondItem="mV7-HV-SjD" secondAttribute="top" id="9oG-6v-lUg"/>
+                                        <constraint firstItem="OsZ-u7-xxl" firstAttribute="leading" secondItem="mV7-HV-SjD" secondAttribute="leading" constant="8" id="AtQ-6C-Mae"/>
                                         <constraint firstItem="Ptz-I9-Rrf" firstAttribute="leading" secondItem="mV7-HV-SjD" secondAttribute="leading" constant="19" id="DMy-sf-z7o"/>
                                         <constraint firstAttribute="trailing" secondItem="lPU-Ve-mwD" secondAttribute="trailing" constant="8" id="F3y-UR-sHg"/>
+                                        <constraint firstItem="pvZ-Tj-0Pb" firstAttribute="leading" secondItem="mV7-HV-SjD" secondAttribute="leading" id="WKJ-l0-UEe"/>
+                                        <constraint firstAttribute="trailing" secondItem="OsZ-u7-xxl" secondAttribute="trailing" constant="15" id="XiZ-nE-POz"/>
                                         <constraint firstItem="lPU-Ve-mwD" firstAttribute="leading" secondItem="mV7-HV-SjD" secondAttribute="leading" constant="8" id="aKo-Tx-cKC"/>
                                         <constraint firstAttribute="bottom" secondItem="Ptz-I9-Rrf" secondAttribute="bottom" constant="16" id="eDF-Yz-utB"/>
+                                        <constraint firstAttribute="trailing" secondItem="pvZ-Tj-0Pb" secondAttribute="trailing" constant="3" id="ict-OK-nLV"/>
                                         <constraint firstAttribute="bottom" secondItem="DDi-nf-nQC" secondAttribute="bottom" constant="16" id="kaf-cn-VZ4"/>
+                                        <constraint firstItem="OsZ-u7-xxl" firstAttribute="top" secondItem="pvZ-Tj-0Pb" secondAttribute="bottom" constant="8" id="l1I-JE-WzM"/>
                                         <constraint firstItem="DDi-nf-nQC" firstAttribute="leading" secondItem="Ptz-I9-Rrf" secondAttribute="trailing" constant="20" id="yGk-9d-2QR"/>
                                     </constraints>
                                 </tableViewCellContentView>
