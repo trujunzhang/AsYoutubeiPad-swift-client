@@ -19,51 +19,45 @@ class YTVideoWatchViewController: UIViewController {
     @IBOutlet weak var videoInfoContainer: UIView!
     @IBOutlet weak var sideContainer: UIView!
     
-//    var videoInfoObject: VideoInfoObject = VideoInfoObject()
+    var videoInfoObject: VideoInfoObject = VideoInfoObject()
     
     var videoID: String = "" 
     
-//    func fetchVideoInfo(){
-//        YoutubeFetcher.fetchVideoDescription(videoID, completeHandler: {
-//            (object, sucess) -> Void in
-//            
-//            if (sucess == true) {
-//                let array:NSArray = object as! NSArray
-//                if(array.count == 1){
-//                    //                    self.reloadTableData(array[0] as! YoutubeVideoCache)
-//                }
-//            }else{
-//                
-//            }
-//            
-//        })
-//    }
-
-//    
-//    lazy var videoInfoTableViewController : DetailPageTableViewController = {
-//        return DetailPageTableViewController.instance()
-//    }()
-//
-//    lazy var sideTableViewController : DetailPageTableViewController = {
-//        return DetailPageTableViewController.instance()
-//    }()
+    func fetchVideoInfo(){
+        YoutubeFetcher.fetchVideoDescription(videoID, completeHandler: {
+            (object, sucess) -> Void in
+            
+            if (sucess == true) {
+                let array:NSArray = object as! NSArray
+                if(array.count == 1){
+                    //                    self.reloadTableData(array[0] as! YoutubeVideoCache)
+                }
+            }else{
+                
+            }
+            
+        })
+    }
 
     
-//    lazy var movieEmbeddedViewController: MovieEmbeddedViewController = {
-//        return MovieEmbeddedViewController.instance()
-//        }()
+    lazy var videoInfoTableViewController : DetailPageTableViewController = {
+        return DetailPageTableViewController.instance()
+    }()
+
+    lazy var sideTableViewController : DetailPageTableViewController = {
+        return DetailPageTableViewController.instance()
+    }()
+
+    
+    lazy var movieEmbeddedViewController: MovieEmbeddedViewController = {
+        return MovieEmbeddedViewController.instance()
+        }()
     
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-//        self.edgesForExtendedLayout = .None
-        
         // initialize all containers
-//        self.view.addSubview(playerViewContainer)
-//        self.view.addSubview(videoInfoContainer)
-//        self.view.addSubview(sideContainer)
-        
 //        makeMovieEmbeddedViewController()
        
 //        self.addChildViewController(videoInfoTableViewController)

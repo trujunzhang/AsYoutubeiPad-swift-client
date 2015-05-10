@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7702" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
         <!--Movie Embedded Normal Bar View Controller-->
@@ -199,20 +200,40 @@ Cg
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="af0-E2-Pxb" userLabel="playerViewContainer">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="af0-E2-Pxb" userLabel="playerViewContainer">
                                 <rect key="frame" x="0.0" y="0.0" width="300" height="169"/>
                                 <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="af0-E2-Pxb" secondAttribute="height" multiplier="16:9" id="l5t-3I-b9N"/>
+                                    <constraint firstAttribute="width" constant="300" id="mBN-12-qBf"/>
+                                </constraints>
                             </view>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="z6J-bC-UBF" userLabel="videoInfoContainer">
-                                <rect key="frame" x="0.0" y="169" width="300" height="411"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="z6J-bC-UBF" userLabel="videoInfoContainer">
+                                <rect key="frame" x="0.0" y="169" width="300" height="431"/>
                                 <color key="backgroundColor" red="1" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="431" id="0YU-kp-bIl"/>
+                                    <constraint firstAttribute="width" constant="300" id="jVw-jz-gzg"/>
+                                </constraints>
                             </view>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zsV-Hp-U34" userLabel="suggestionContainer">
-                                <rect key="frame" x="300" y="0.0" width="300" height="580"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zsV-Hp-U34" userLabel="suggestionContainer">
+                                <rect key="frame" x="300" y="0.0" width="300" height="600"/>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="600" id="B8Z-gn-trk"/>
+                                    <constraint firstAttribute="width" constant="300" id="bez-dx-QJ7"/>
+                                </constraints>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="af0-E2-Pxb" firstAttribute="leading" secondItem="5Mg-Cr-9Sa" secondAttribute="leading" id="13t-f2-lHQ"/>
+                            <constraint firstItem="THX-AL-GaK" firstAttribute="top" secondItem="zsV-Hp-U34" secondAttribute="bottom" id="8Kd-kK-q6X"/>
+                            <constraint firstItem="z6J-bC-UBF" firstAttribute="leading" secondItem="5Mg-Cr-9Sa" secondAttribute="leading" id="Fxv-uQ-3Bk"/>
+                            <constraint firstItem="z6J-bC-UBF" firstAttribute="top" secondItem="af0-E2-Pxb" secondAttribute="bottom" id="IPq-Rm-Hmk"/>
+                            <constraint firstAttribute="trailing" secondItem="zsV-Hp-U34" secondAttribute="trailing" id="pkG-Qd-aRx"/>
+                            <constraint firstItem="af0-E2-Pxb" firstAttribute="top" secondItem="5Mg-Cr-9Sa" secondAttribute="top" id="v9r-ED-y0u"/>
+                        </constraints>
                     </view>
                     <connections>
                         <outlet property="playerViewContainer" destination="af0-E2-Pxb" id="iOo-39-c2p"/>
