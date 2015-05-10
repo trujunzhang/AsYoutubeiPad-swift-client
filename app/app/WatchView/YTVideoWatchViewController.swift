@@ -17,9 +17,9 @@ class YTVideoWatchViewController: UIViewController {
     
     @IBOutlet weak var infoViewHeightConstraint: NSLayoutConstraint!
     
-//    @IBOutlet weak var playerViewContainer: UIView!
-//    @IBOutlet weak var videoInfoContainer: UIView!
-//    @IBOutlet weak var sideContainer: UIView!
+    @IBOutlet weak var playerViewContainer: UIView!
+    @IBOutlet weak var videoInfoContainer: UIView!
+    @IBOutlet weak var sideContainer: UIView!
     
     var videoInfoObject: VideoInfoObject = VideoInfoObject()
     
@@ -60,22 +60,22 @@ class YTVideoWatchViewController: UIViewController {
         super.viewDidLoad()
         
         // initialize all containers
-//        makeMovieEmbeddedViewController()
+        makeMovieEmbeddedViewController()
        
-//        self.addChildViewController(videoInfoTableViewController)
-//        self.addChildViewController(sideTableViewController)
+        self.addChildViewController(videoInfoTableViewController)
+        self.addChildViewController(sideTableViewController)
 
         // test
-//        self.sideContainer.addSubview(sideTableViewController.view)
+        self.sideContainer.addSubview(sideTableViewController.view)
     }
     
-//    func makeMovieEmbeddedViewController() {
-//        movieEmbeddedViewController.videoID = videoID
-//        
-//        self.addChildViewController(movieEmbeddedViewController)
-//        self.playerViewContainer.addSubview(movieEmbeddedViewController.view)
-//        
-//    }
+    func makeMovieEmbeddedViewController() {
+        movieEmbeddedViewController.videoID = videoID
+        
+        self.addChildViewController(movieEmbeddedViewController)
+        self.playerViewContainer.addSubview(movieEmbeddedViewController.view)
+        
+    }
     
 
     

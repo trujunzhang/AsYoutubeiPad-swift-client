@@ -422,9 +422,12 @@ Cg
                     </view>
                     <connections>
                         <outlet property="infoViewHeightConstraint" destination="je1-Oy-y3V" id="xmO-ms-bAK"/>
+                        <outlet property="playerViewContainer" destination="qo5-Cb-Ney" id="uLV-M1-rrR"/>
                         <outlet property="playerViewWidthConstraint" destination="WJR-iY-ago" id="yuq-N9-J7W"/>
+                        <outlet property="sideContainer" destination="7XA-wu-2DW" id="Jdk-BM-iXn"/>
                         <outlet property="sideViewHeightConstraint" destination="jxe-zF-pEq" id="WEO-Xo-yC3"/>
                         <outlet property="sideViewWidthConstraint" destination="gFP-e8-5Ue" id="BpQ-R0-rpQ"/>
+                        <outlet property="videoInfoContainer" destination="epC-3v-k0A" id="lYv-E6-jr9"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IN6-Jc-lmP" userLabel="First Responder" sceneMemberID="firstResponder"/>
