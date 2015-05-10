@@ -210,17 +210,41 @@ Cg
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kUX-yu-XgA" userLabel="suggestionContainer">
                                 <rect key="frame" x="300" y="20" width="300" height="580"/>
+                                <subviews>
+                                    <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XJJ-Gp-Hlo">
+                                        <rect key="frame" x="0.0" y="0.0" width="300" height="580"/>
+                                        <connections>
+                                            <segue destination="Vx3-cN-V9O" kind="embed" id="1vW-6y-kR2"/>
+                                        </connections>
+                                    </containerView>
+                                </subviews>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="XJJ-Gp-Hlo" secondAttribute="trailing" id="5Vd-bu-8d2"/>
+                                    <constraint firstItem="XJJ-Gp-Hlo" firstAttribute="top" secondItem="kUX-yu-XgA" secondAttribute="top" id="IYc-8G-rdq"/>
                                     <constraint firstAttribute="width" constant="300" id="JFm-zz-AJg"/>
                                     <constraint firstAttribute="height" constant="580" id="NSG-hu-UBq"/>
+                                    <constraint firstAttribute="bottom" secondItem="XJJ-Gp-Hlo" secondAttribute="bottom" id="hke-K8-S3T"/>
+                                    <constraint firstItem="XJJ-Gp-Hlo" firstAttribute="leading" secondItem="kUX-yu-XgA" secondAttribute="leading" id="nrh-J0-nfu"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="weC-D3-Rp0" userLabel="videoInfoContainer">
                                 <rect key="frame" x="0.0" y="189" width="300" height="411"/>
+                                <subviews>
+                                    <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="z7t-Nv-FFN">
+                                        <rect key="frame" x="0.0" y="0.0" width="300" height="411"/>
+                                        <connections>
+                                            <segue destination="hPM-Jg-8bd" kind="embed" id="eIZ-Ic-7oO"/>
+                                        </connections>
+                                    </containerView>
+                                </subviews>
                                 <color key="backgroundColor" red="1" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="z7t-Nv-FFN" secondAttribute="trailing" id="0Ub-aA-iqx"/>
                                     <constraint firstAttribute="height" constant="411" id="TG3-6l-Y1t"/>
+                                    <constraint firstItem="z7t-Nv-FFN" firstAttribute="leading" secondItem="weC-D3-Rp0" secondAttribute="leading" id="vs1-pr-NBL"/>
+                                    <constraint firstItem="z7t-Nv-FFN" firstAttribute="top" secondItem="weC-D3-Rp0" secondAttribute="top" id="y99-Hg-OAo"/>
+                                    <constraint firstAttribute="bottom" secondItem="z7t-Nv-FFN" secondAttribute="bottom" id="yps-oc-Bm2"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -265,7 +289,7 @@ Cg
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ep1-K2-yGH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-940" y="1655"/>
+            <point key="canvasLocation" x="-1676" y="2455"/>
         </scene>
         <!--Video Info View Controller-->
         <scene sceneID="c4d-fW-grU">
@@ -284,6 +308,44 @@ Cg
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jt1-H6-5Ax" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-102" y="2505"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="xhE-Wa-UL7">
+            <objects>
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="hPM-Jg-8bd" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="nFJ-BW-TbP"/>
+                        <viewControllerLayoutGuide type="bottom" id="Kc4-Ko-G31"/>
+                    </layoutGuides>
+                    <view key="view" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="kH2-48-BFb">
+                        <rect key="frame" x="0.0" y="0.0" width="300" height="411"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <toolbarItems/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="f7d-ZM-Wrf" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1068" y="1352.5"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="XTs-eq-72t">
+            <objects>
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="Vx3-cN-V9O" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="0sb-fo-U80"/>
+                        <viewControllerLayoutGuide type="bottom" id="ORo-Ej-1LI"/>
+                    </layoutGuides>
+                    <view key="view" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="Wjx-WM-Jdn">
+                        <rect key="frame" x="0.0" y="0.0" width="300" height="580"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <toolbarItems/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="m0Q-BA-8dJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-372" y="699"/>
         </scene>
     </scenes>
     <resources>

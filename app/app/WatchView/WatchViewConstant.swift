@@ -30,13 +30,6 @@ extension MovieEmbeddedViewController {
 }
 
 
-extension YTVideoWatchPlaylistHeaderViewController {
-
-    class func instance() -> YTVideoWatchPlaylistHeaderViewController {
-
-        return UIStoryboard(name: STORYBOARD_VIDEOWATCH_NAME, bundle: nil).instantiateViewControllerWithIdentifier("YTVideoWatchPlaylistHeaderViewController") as! YTVideoWatchPlaylistHeaderViewController
-    }
-}
 
 
 extension MovieEmbeddedNormalBarViewController {
@@ -47,12 +40,6 @@ extension MovieEmbeddedNormalBarViewController {
     }
 }
 
-extension VideoInfoViewController {
 
-    class func instance() -> VideoInfoViewController {
-
-        return UIStoryboard(name: STORYBOARD_VIDEOWATCH_NAME, bundle: nil).instantiateViewControllerWithIdentifier("VideoInfoViewController") as! VideoInfoViewController
-    }
-}
 
 
