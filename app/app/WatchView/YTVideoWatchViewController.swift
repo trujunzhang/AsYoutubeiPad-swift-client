@@ -19,61 +19,52 @@ class YTVideoWatchViewController: UIViewController {
     @IBOutlet weak var videoInfoContainer: UIView!
     @IBOutlet weak var sideContainer: UIView!
     
-    var videoInfoObject: VideoInfoObject = VideoInfoObject()
-    var videoID: String = "" {
-        didSet {
-            //            fetchVideoInfo() // used
-//            self.setupVideoInfoPanel() // test
-        }
-    }
-    func fetchVideoInfo(){
-        YoutubeFetcher.fetchVideoDescription(videoID, completeHandler: {
-            (object, sucess) -> Void in
-            
-            if (sucess == true) {
-                let array:NSArray = object as! NSArray
-                if(array.count == 1){
-                    //                    self.reloadTableData(array[0] as! YoutubeVideoCache)
-                    self.setupVideoInfoPanel()
-                }
-            }else{
-                
-            }
-            
-        })
-    }
+//    var videoInfoObject: VideoInfoObject = VideoInfoObject()
     
-    func setupVideoInfoPanel(){
-        //videoInfoTableViewController.addVideoInfo(self.videoInfoObject)
-
-        
-    }
+    var videoID: String = "" 
     
-    lazy var videoInfoTableViewController : DetailPageTableViewController = {
-        return DetailPageTableViewController.instance()
-    }()
+//    func fetchVideoInfo(){
+//        YoutubeFetcher.fetchVideoDescription(videoID, completeHandler: {
+//            (object, sucess) -> Void in
+//            
+//            if (sucess == true) {
+//                let array:NSArray = object as! NSArray
+//                if(array.count == 1){
+//                    //                    self.reloadTableData(array[0] as! YoutubeVideoCache)
+//                }
+//            }else{
+//                
+//            }
+//            
+//        })
+//    }
 
-    lazy var sideTableViewController : DetailPageTableViewController = {
-        return DetailPageTableViewController.instance()
-    }()
+//    
+//    lazy var videoInfoTableViewController : DetailPageTableViewController = {
+//        return DetailPageTableViewController.instance()
+//    }()
+//
+//    lazy var sideTableViewController : DetailPageTableViewController = {
+//        return DetailPageTableViewController.instance()
+//    }()
 
     
-    lazy var movieEmbeddedViewController: MovieEmbeddedViewController = {
-        return MovieEmbeddedViewController.instance()
-        }()
+//    lazy var movieEmbeddedViewController: MovieEmbeddedViewController = {
+//        return MovieEmbeddedViewController.instance()
+//        }()
     
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.edgesForExtendedLayout = .None
+//        self.edgesForExtendedLayout = .None
         
         // initialize all containers
-        self.view.addSubview(playerViewContainer)
-        self.view.addSubview(videoInfoContainer)
-        self.view.addSubview(sideContainer)
+//        self.view.addSubview(playerViewContainer)
+//        self.view.addSubview(videoInfoContainer)
+//        self.view.addSubview(sideContainer)
         
-        makeMovieEmbeddedViewController()
+//        makeMovieEmbeddedViewController()
        
 //        self.addChildViewController(videoInfoTableViewController)
 //        self.addChildViewController(sideTableViewController)
@@ -82,39 +73,39 @@ class YTVideoWatchViewController: UIViewController {
 //        self.sideContainer.addSubview(sideTableViewController.view)
     }
     
-    func makeMovieEmbeddedViewController() {
-        movieEmbeddedViewController.videoID = videoID
-        
-        self.addChildViewController(movieEmbeddedViewController)
-        self.playerViewContainer.addSubview(movieEmbeddedViewController.view)
-        
-    }
+//    func makeMovieEmbeddedViewController() {
+//        movieEmbeddedViewController.videoID = videoID
+//        
+//        self.addChildViewController(movieEmbeddedViewController)
+//        self.playerViewContainer.addSubview(movieEmbeddedViewController.view)
+//        
+//    }
     
 
     
-    override func viewDidLayoutSubviews() {
-        func playerViewHeight(width:CGFloat) -> CGFloat {
-            return width/16 * 9
-        }
-        
-        let rectWidth = self.view.frame.size.width
-        let rectHeight = self.view.frame.size.height
-        if UIDevice.currentDevice().orientation.isLandscape.boolValue {
-            //landscape
-            let playerWidth = rectWidth/3*2
-            playerViewWidthConstraint.constant = playerWidth
-            sideViewWidthConstraint.constant =  rectWidth - playerWidth
-            sideViewHeightConstraint.constant = rectHeight
-            infoViewHeightConstraint.constant = rectHeight - playerViewHeight(playerWidth)
-        } else {
-            // portraight
-            let playerWidth = rectWidth
-            playerViewWidthConstraint.constant = playerWidth
-            sideViewWidthConstraint.constant =  playerWidth
-            sideViewHeightConstraint.constant = rectHeight - playerViewHeight(playerWidth)
-            infoViewHeightConstraint.constant = 0
-        }
-    }
+//    override func viewDidLayoutSubviews() {
+//        func playerViewHeight(width:CGFloat) -> CGFloat {
+//            return width/16 * 9
+//        }
+//        
+//        let rectWidth = self.view.frame.size.width
+//        let rectHeight = self.view.frame.size.height
+//        if UIDevice.currentDevice().orientation.isLandscape.boolValue {
+//            //landscape
+//            let playerWidth = rectWidth/3*2
+//            playerViewWidthConstraint.constant = playerWidth
+//            sideViewWidthConstraint.constant =  rectWidth - playerWidth
+//            sideViewHeightConstraint.constant = rectHeight
+//            infoViewHeightConstraint.constant = rectHeight - playerViewHeight(playerWidth)
+//        } else {
+//            // portraight
+//            let playerWidth = rectWidth
+//            playerViewWidthConstraint.constant = playerWidth
+//            sideViewWidthConstraint.constant =  playerWidth
+//            sideViewHeightConstraint.constant = rectHeight - playerViewHeight(playerWidth)
+//            infoViewHeightConstraint.constant = 0
+//        }
+//    }
     
     
     
