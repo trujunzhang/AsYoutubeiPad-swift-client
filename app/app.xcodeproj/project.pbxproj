@@ -87,6 +87,7 @@
 		5E70EFB51AFF00DE00C99699 /* ChannelInfoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E70EFB41AFF00DE00C99699 /* ChannelInfoTableViewCell.swift */; };
 		5E70EFB71AFF00FC00C99699 /* SuggestionVideoInfoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E70EFB61AFF00FC00C99699 /* SuggestionVideoInfoTableViewCell.swift */; };
 		5E7BA87F1AFA2FCD00C13E95 /* NBMultableCollectionBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E7BA87E1AFA2FCD00C13E95 /* NBMultableCollectionBaseViewController.m */; };
+		5E7DE3D11AFF518700E1D639 /* DetailPageTableUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E7DE3D01AFF518700E1D639 /* DetailPageTableUtils.swift */; };
 		5E7E65AC1AFA2EA4006AE847 /* NBVideoCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E7E65AA1AFA2EA4006AE847 /* NBVideoCollectionViewCell.m */; };
 		5E7E65AD1AFA2EA4006AE847 /* NBVideoCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5E7E65AB1AFA2EA4006AE847 /* NBVideoCollectionViewCell.xib */; };
 		5E917D951AECCEEC00922AE7 /* MenuLoginTitleBarCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E917D941AECCEEC00922AE7 /* MenuLoginTitleBarCell.swift */; };
@@ -224,6 +225,7 @@
 		5E70EFB61AFF00FC00C99699 /* SuggestionVideoInfoTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SuggestionVideoInfoTableViewCell.swift; path = TableViewCells/SuggestionVideoInfoTableViewCell.swift; sourceTree = "<group>"; };
 		5E7BA87D1AFA2FCD00C13E95 /* NBMultableCollectionBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NBMultableCollectionBaseViewController.h; sourceTree = "<group>"; };
 		5E7BA87E1AFA2FCD00C13E95 /* NBMultableCollectionBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NBMultableCollectionBaseViewController.m; sourceTree = "<group>"; };
+		5E7DE3D01AFF518700E1D639 /* DetailPageTableUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailPageTableUtils.swift; sourceTree = "<group>"; };
 		5E7E65A91AFA2EA4006AE847 /* NBVideoCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NBVideoCollectionViewCell.h; sourceTree = "<group>"; };
 		5E7E65AA1AFA2EA4006AE847 /* NBVideoCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NBVideoCollectionViewCell.m; sourceTree = "<group>"; };
 		5E7E65AB1AFA2EA4006AE847 /* NBVideoCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NBVideoCollectionViewCell.xib; sourceTree = "<group>"; };
@@ -354,6 +356,7 @@
 		5E065C721AFB7E10003EE40B /* DetailPage */ = {
 			isa = PBXGroup;
 			children = (
+				5E7DE3D01AFF518700E1D639 /* DetailPageTableUtils.swift */,
 				5E70EFB11AFF008200C99699 /* TableViewCells */,
 				5E065C731AFB7E10003EE40B /* Models */,
 				5E065C751AFB7E10003EE40B /* Table Cells */,
@@ -949,6 +952,7 @@
 				5EA9E72C1AECBAE40041F9D5 /* YTMenuRemoteRowCellObject.swift in Sources */,
 				5E37DF901AE61D00009D605E /* LeftMenuSectionsUtils.swift in Sources */,
 				5E67E7531AF8A8FF00F07031 /* AutoCompletePopoverSearchBar.swift in Sources */,
+				5E7DE3D11AFF518700E1D639 /* DetailPageTableUtils.swift in Sources */,
 				5E0AC2261AFA4139002677C4 /* RequestFailureViewController.swift in Sources */,
 				5E39C45E1AF4798F0069AC33 /* AuthoredFetcher.swift in Sources */,
 				5E032D391AF5B7A4006125AA /* VideoWatchProtocol.swift in Sources */,

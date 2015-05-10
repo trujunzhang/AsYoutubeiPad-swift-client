@@ -288,7 +288,7 @@ Cg
         <!--Detail Page Table View Controller-->
         <scene sceneID="vjk-C6-nBo">
             <objects>
-                <tableViewController id="ISH-Ci-yjZ" customClass="DetailPageTableViewController" customModule="app" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="DetailPageTableViewController" id="ISH-Ci-yjZ" customClass="DetailPageTableViewController" customModule="app" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="269" sectionHeaderHeight="22" sectionFooterHeight="22" id="0kJ-lO-NAO">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

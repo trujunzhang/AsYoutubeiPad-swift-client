@@ -17,7 +17,7 @@ class YTVideoWatchViewController: UIViewController {
     
     @IBOutlet weak var playerViewContainer: UIView!
     @IBOutlet weak var videoInfoContainer: UIView!
-    @IBOutlet weak var suggestionContainer: UIView!
+    @IBOutlet weak var sideContainer: UIView!
     
     var videoInfoObject: VideoInfoObject = VideoInfoObject()
     var videoID: String = "" {
@@ -44,7 +44,7 @@ class YTVideoWatchViewController: UIViewController {
     }
     
     func setupVideoInfoPanel(){
-        videoInfoTableViewController.addVideoInfo(self.videoInfoObject)
+        //videoInfoTableViewController.addVideoInfo(self.videoInfoObject)
 
         
     }
@@ -71,12 +71,15 @@ class YTVideoWatchViewController: UIViewController {
         // initialize all containers
         self.view.addSubview(playerViewContainer)
         self.view.addSubview(videoInfoContainer)
-        self.view.addSubview(suggestionContainer)
+        self.view.addSubview(sideContainer)
         
         makeMovieEmbeddedViewController()
        
         self.addChildViewController(videoInfoTableViewController)
         self.addChildViewController(sideTableViewController)
+
+        // test
+        self.sideContainer.addSubview(sideTableViewController.view)
     }
     
     func makeMovieEmbeddedViewController() {
