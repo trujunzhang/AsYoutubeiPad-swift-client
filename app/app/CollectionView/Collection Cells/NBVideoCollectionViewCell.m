@@ -43,12 +43,12 @@
 #pragma mark - NICollectionViewCell
 
 - (BOOL)shouldUpdateCellWithObject:(NBVideoCollectionViewCellObject *)object {
-    YoutubeVideoCache *videoCache = object.videoCache;
+//    YoutubeVideoCache *videoCache = object.videoCache;
 
-    NSString *videoTitle = [YoutubeParser getVideoSnippetTitle:videoCache];
-    NSString *thumbnailUrl = [YoutubeParser getVideoSnippetThumbnails:videoCache];
-    NSString *channelTitle = [YoutubeParser getVideoSnippetChannelTitle:videoCache];
-    NSString *publishedAgo = [YoutubeParser getVideoSnippetChannelPublishedAt:videoCache];
+//    NSString *videoTitle = [YoutubeParser getVideoSnippetTitle:videoCache];
+//    NSString *thumbnailUrl = [YoutubeParser getVideoSnippetThumbnails:videoCache];
+//    NSString *channelTitle = [YoutubeParser getVideoSnippetChannelTitle:videoCache];
+//    NSString *publishedAgo = [YoutubeParser getVideoSnippetChannelPublishedAt:videoCache];
 
 //    _titleLabel.text = videoTitle;
 //    _infoLabel.text = publishedAgo;

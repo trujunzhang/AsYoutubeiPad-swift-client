@@ -2,7 +2,6 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7702" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
-        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
         <!--Movie Embedded Normal Bar View Controller-->
@@ -186,62 +185,7 @@ Cg
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rsu-ie-ML4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-940" y="2449"/>
-        </scene>
-        <!--Video Watch View Controller-->
-        <scene sceneID="6cl-Es-gJr">
-            <objects>
-                <viewController storyboardIdentifier="YTVideoWatchViewController" id="BVf-Or-IAz" customClass="YTVideoWatchViewController" customModule="app" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="7eM-wE-WPY"/>
-                        <viewControllerLayoutGuide type="bottom" id="THX-AL-GaK"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="5Mg-Cr-9Sa">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="af0-E2-Pxb" userLabel="playerViewContainer">
-                                <rect key="frame" x="0.0" y="0.0" width="300" height="169"/>
-                                <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="af0-E2-Pxb" secondAttribute="height" multiplier="16:9" id="l5t-3I-b9N"/>
-                                    <constraint firstAttribute="width" constant="300" id="mBN-12-qBf"/>
-                                </constraints>
-                            </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="z6J-bC-UBF" userLabel="videoInfoContainer">
-                                <rect key="frame" x="0.0" y="169" width="300" height="431"/>
-                                <color key="backgroundColor" red="1" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="431" id="0YU-kp-bIl"/>
-                                    <constraint firstAttribute="width" constant="300" id="jVw-jz-gzg"/>
-                                </constraints>
-                            </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zsV-Hp-U34" userLabel="suggestionContainer">
-                                <rect key="frame" x="300" y="0.0" width="300" height="600"/>
-                                <color key="backgroundColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="600" id="B8Z-gn-trk"/>
-                                    <constraint firstAttribute="width" constant="300" id="bez-dx-QJ7"/>
-                                </constraints>
-                            </view>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="af0-E2-Pxb" firstAttribute="leading" secondItem="5Mg-Cr-9Sa" secondAttribute="leading" id="13t-f2-lHQ"/>
-                            <constraint firstItem="THX-AL-GaK" firstAttribute="top" secondItem="zsV-Hp-U34" secondAttribute="bottom" id="8Kd-kK-q6X"/>
-                            <constraint firstItem="z6J-bC-UBF" firstAttribute="leading" secondItem="5Mg-Cr-9Sa" secondAttribute="leading" id="Fxv-uQ-3Bk"/>
-                            <constraint firstItem="z6J-bC-UBF" firstAttribute="top" secondItem="af0-E2-Pxb" secondAttribute="bottom" id="IPq-Rm-Hmk"/>
-                            <constraint firstAttribute="trailing" secondItem="zsV-Hp-U34" secondAttribute="trailing" id="pkG-Qd-aRx"/>
-                            <constraint firstItem="af0-E2-Pxb" firstAttribute="top" secondItem="5Mg-Cr-9Sa" secondAttribute="top" id="v9r-ED-y0u"/>
-                        </constraints>
-                    </view>
-                    <connections>
-                        <outlet property="playerViewContainer" destination="af0-E2-Pxb" id="iOo-39-c2p"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="voR-n0-7FL" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-918" y="699"/>
+            <point key="canvasLocation" x="-960" y="1881"/>
         </scene>
         <!--Movie Embedded View Controller-->
         <scene sceneID="Gyq-VS-Hhm">
@@ -259,7 +203,7 @@ Cg
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ep1-K2-yGH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1676" y="2455"/>
+            <point key="canvasLocation" x="-1696" y="1887"/>
         </scene>
         <!--Video Info View Controller-->
         <scene sceneID="c4d-fW-grU">
@@ -277,7 +221,7 @@ Cg
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jt1-H6-5Ax" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-102" y="2505"/>
+            <point key="canvasLocation" x="-122" y="1937"/>
         </scene>
         <!--Detail Page Table View Controller-->
         <scene sceneID="vjk-C6-nBo">
@@ -426,7 +370,39 @@ Cg
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jki-Cy-4h6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-432" y="1531"/>
+            <point key="canvasLocation" x="-520" y="471"/>
+        </scene>
+        <!--Video Watch View Controller-->
+        <scene sceneID="A2X-uS-Yt9">
+            <objects>
+                <viewController storyboardIdentifier="YTVideoWatchViewController" id="8QH-LW-deM" customClass="YTVideoWatchViewController" customModule="app" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="eWW-2R-mYh"/>
+                        <viewControllerLayoutGuide type="bottom" id="csG-UZ-rrZ"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="vJO-76-86N">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qo5-Cb-Ney" userLabel="playerViewContainer">
+                                <rect key="frame" x="0.0" y="0.0" width="300" height="169"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="epC-3v-k0A" userLabel="videoInfoContainer">
+                                <rect key="frame" x="0.0" y="169" width="300" height="431"/>
+                                <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7XA-wu-2DW" userLabel="sideContainer">
+                                <rect key="frame" x="300" y="0.0" width="300" height="600"/>
+                                <color key="backgroundColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="IN6-Jc-lmP" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1506" y="471"/>
         </scene>
     </scenes>
     <resources>
