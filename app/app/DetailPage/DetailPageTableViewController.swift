@@ -68,21 +68,21 @@ class DetailPageTableViewController: UITableViewController,UITableViewDelegate,U
         
         switch(sectionIdentifier){
         case DetailPageCellIdentifier.VideoInfoCellIdentifier:
-        let x = 0
-        break;
-        
+            let x = 0
+            break;
+            
         case DetailPageCellIdentifier.ChannelInfoCellIdentifier:
-        let x = 0
-        break;
-        
+            let x = 0
+            break;
+            
         case DetailPageCellIdentifier.SuggestionListCellIdentifier:
-        let x = 0
-        break;
-        
+            let x = 0
+            break;
+            
         default:
             let x = 0
-        break;
-        
+            break;
+            
         }
     }
     
