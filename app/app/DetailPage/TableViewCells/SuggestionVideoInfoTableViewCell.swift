@@ -9,7 +9,11 @@
 import UIKit
 
 class SuggestionVideoInfoTableViewCell: UITableViewCell {
-
+    
+    @IBOutlet weak var thumbnailImageView: UIImageView!
+    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var contentLabel: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -22,7 +26,6 @@ class SuggestionVideoInfoTableViewCell: UITableViewCell {
     }
     
     func configureCell(videoObject: YoutubeVideoCache){
-        let width =  self.frame.size.width
-        println("width is \(width)")
+       
     }
 }
