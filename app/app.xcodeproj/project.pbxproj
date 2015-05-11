@@ -437,8 +437,8 @@
 			isa = PBXGroup;
 			children = (
 				5E0AC2201AFA3F39002677C4 /* Public */,
-				5E032D1D1AF5B7A4006125AA /* WatchView */,
 				5ED690F01AF0CD6800560A83 /* CollectionView */,
+				5E032D1D1AF5B7A4006125AA /* WatchView */,
 				5E065C721AFB7E10003EE40B /* DetailPage */,
 				5E0514B81AEDC60900A90A0B /* YTTabbar */,
 				5E0514B11AEDC54C00A90A0B /* YoutubePage */,

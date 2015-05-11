@@ -20,19 +20,19 @@ class DetailPageTableViewController: UITableViewController,UITableViewDelegate,U
         self.tableView.dataSource = self
         self.tableView.delegate = self
         
-        self.makeVideoInfoSection() // test
+//        self.makeVideoInfoSection() // test
     }
     
     func makeVideoInfoSection(){
-                self.pageSections.append(DetailPageSection.makeVideoInfoSection(self.videoInfoObject))
+        self.pageSections.append(DetailPageSection.makeVideoInfoSection(self.videoInfoObject))
         
-                self.tableView.reloadData()
+        self.tableView.reloadData()
     }
     
     func appendSideVideos(array:NSArray){
-//        self.pageSections.append(DetailPageSection.makeSuggestionVideoListSection(array))
+        //        self.pageSections.append(DetailPageSection.makeSuggestionVideoListSection(array))
         
-//        self.tableView.reloadData()
+        //        self.tableView.reloadData()
     }
     
     override func didReceiveMemoryWarning() {
@@ -49,7 +49,6 @@ class DetailPageTableViewController: UITableViewController,UITableViewDelegate,U
     //MARK: UITableViewDataSource
     
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        println("sections count is \(self.pageSections.count)")
         return self.pageSections.count
     }
     
@@ -143,7 +142,7 @@ class DetailPageTableViewController: UITableViewController,UITableViewDelegate,U
     //    }
     //
     //    override  func tableView(tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
-    //        
+    //
     //        return UIView()
     //    }
     

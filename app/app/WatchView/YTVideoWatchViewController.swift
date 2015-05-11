@@ -63,21 +63,29 @@ class YTVideoWatchViewController: UIViewController {
         // initialize all containers
         makeMovieEmbeddedViewController()
         
-        //        self.addChildViewController(videoInfoTableViewController)
+        self.addChildViewController(videoInfoTableViewController)
         self.addChildViewController(sideTableViewController)
         
-        // test
+        
+        // videoInfoTableViewController
+        self.videoInfoContainer.addSubview(videoInfoTableViewController.view)
+        LayoutUtils.LayoutFullView(videoInfoTableViewController.view)
+        
+        videoInfoTableViewController.makeVideoInfoSection()
+        
+        // sideTableViewController
         self.sideContainer.addSubview(sideTableViewController.view)
         LayoutUtils.LayoutFullView(sideTableViewController.view)
         
-        self.searchTask.refreshEvent("sketch 3", completeHandler: {
-            (response, sucess) -> Void in
-            let array: NSArray = response as! NSArray
-            self.sideTableViewController.appendSideVideos(array)
-        })
+        // test
+//        self.searchTask.refreshEvent("sketch 3", completeHandler: {
+//            (response, sucess) -> Void in
+//            let array: NSArray = response as! NSArray
+//            self.videoInfoTableViewController.appendSideVideos(array)
+//        })
     }
     
-
+    
     
     func makeMovieEmbeddedViewController() {
         movieEmbeddedViewController.videoID = videoID
