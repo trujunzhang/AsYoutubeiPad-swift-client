@@ -46,8 +46,6 @@ class DetailPageTableViewController: UITableViewController,UITableViewDelegate,U
         self.videoInfoObject = videoInfoObject
     }
     
-    
-    
     //MARK: UITableViewDataSource
     
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
@@ -56,6 +54,9 @@ class DetailPageTableViewController: UITableViewController,UITableViewDelegate,U
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         let section:DetailPageSection = self.pageSections[section]
+        if(section.sectionIdentifier == DetailPageCellIdentifier.VideoInfoCellIdentifier ){
+            return 3
+        }
         return section.rowObjects.count
     }
     
