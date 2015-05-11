@@ -12,6 +12,8 @@ let VIDEO_INFO_CELL_IDENTIFER = "videoInfoCell"
 let VIDEO_DESCRIPTION_CELL_IDENTIFER = "descriptionCell"
 let VIDEO_STATISTIC_CELL_IDENTIFER = "statisticCell"
 
+
+
 let SUGGESTION_CELL_IDENTIFER = "suggestionVideoInfoCell"
 
 let CHANNEL_INFO_CELL_IDENTIFER = "channelCell"

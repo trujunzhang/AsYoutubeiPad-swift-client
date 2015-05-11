@@ -47,19 +47,25 @@ class DetailPageTableViewController: UITableViewController,UITableViewDelegate,U
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         let section:DetailPageSection = self.pageSections[section]
-        if(section.sectionIdentifier == DetailPageCellIdentifier.VideoInfoCellIdentifier ){
-            return 3
-        }
         return section.rowObjects.count
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let section:DetailPageSection = self.pageSections[indexPath.section]
         
-        let cell = tableView.dequeueReusableCellWithIdentifier(section.identifer, forIndexPath: indexPath) as! UITableViewCell
+        let identifer = getCellIdentifer(indexPath, section: section)
+        let cell = tableView.dequeueReusableCellWithIdentifier(identifer, forIndexPath: indexPath) as! UITableViewCell
         configureCell(cell, forRowAtIndexPath: indexPath)
         
         return cell
+    }
+    
+    func getCellIdentifer(indexPath: NSIndexPath,section:DetailPageSection ) -> String{
+        if(section.sectionIdentifier == DetailPageCellIdentifier.VideoInfoCellIdentifier){
+            
+        }
+        
+        return section.identifer
     }
     
     func configureCell(cell: UITableViewCell, forRowAtIndexPath: NSIndexPath) {
@@ -87,11 +93,10 @@ class DetailPageTableViewController: UITableViewController,UITableViewDelegate,U
         default:
             let x = 0
             break;
-            
         }
     }
     
-    func configureVideoInfoCell(){
+    func configureVideoInfoCell(rowObject: AnyObject,forRowAtIndexPath: NSIndexPath){
         
     }
     
