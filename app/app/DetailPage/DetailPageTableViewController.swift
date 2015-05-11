@@ -24,11 +24,15 @@ class DetailPageTableViewController: UITableViewController,UITableViewDelegate,U
     }
     
     func makeVideoInfoSection(){
-        let section:DetailPageSection = DetailPageSection.makeVideoInfoSection(self.videoInfoObject)
-        self.pageSections.append(section)
+        self.pageSections.append(DetailPageSection.makeVideoInfoSection(self.videoInfoObject))
         
         self.tableView.reloadData()
+    }
+    
+    func appendSideVideos(array:NSArray){
+        self.pageSections.append(DetailPageSection.makeSuggestionVideoListSection(array))
         
+        self.tableView.reloadData()
     }
     
     override func didReceiveMemoryWarning() {
@@ -74,11 +78,13 @@ class DetailPageTableViewController: UITableViewController,UITableViewDelegate,U
             break;
             
         case DetailPageCellIdentifier.ChannelInfoCellIdentifier:
-            let x = 0
+            let videoInfoCell: ChannelInfoTableViewCell = cell as! ChannelInfoTableViewCell
+            videoInfoCell.configureCell(rowObject as! VideoInfoObject)
             break;
             
         case DetailPageCellIdentifier.SuggestionListCellIdentifier:
-            let x = 0
+            let videoInfoCell: SuggestionVideoInfoTableViewCell = cell as! SuggestionVideoInfoTableViewCell
+            videoInfoCell.configureCell(rowObject as! YoutubeVideoCache)
             break;
             
         default:

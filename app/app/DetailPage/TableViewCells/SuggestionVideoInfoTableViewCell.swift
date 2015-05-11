@@ -20,5 +20,9 @@ class SuggestionVideoInfoTableViewCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
-
+    
+    func configureCell(videoObject: YoutubeVideoCache){
+        let width =  self.frame.size.width
+        println("width is \(width)")
+    }
 }

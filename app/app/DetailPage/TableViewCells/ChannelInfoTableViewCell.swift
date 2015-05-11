@@ -20,5 +20,12 @@ class ChannelInfoTableViewCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
+    
+    func configureCell(videoInfoObject: VideoInfoObject){
+        let width =  self.frame.size.width
+        println("width is \(width)")
+        //        self.titleLabel.text = videoInfoObject.title
+        //        self.infoLabel.text  = videoInfoObject.likeCount
+    }
 
 }

@@ -21,10 +21,10 @@ class YTVideoWatchViewController: UIViewController {
     @IBOutlet weak var videoInfoContainer: UIView!
     @IBOutlet weak var sideContainer: UIView!
     
-    let fetcherEvent : SearchTask = SearchTask()
+    let searchTask : SearchTask = SearchTask()
     var videoInfoObject: VideoInfoObject = VideoInfoObject()
     
-    var videoID: String = "" 
+    var videoID: String = ""
     
     func fetchVideoInfo(){
         YoutubeFetcher.fetchVideoDescription(videoID, completeHandler: {
@@ -41,34 +41,42 @@ class YTVideoWatchViewController: UIViewController {
             
         })
     }
-
+    
     
     lazy var videoInfoTableViewController : DetailPageTableViewController = {
         return DetailPageTableViewController.instance()
-    }()
-
+        }()
+    
     lazy var sideTableViewController : DetailPageTableViewController = {
         return DetailPageTableViewController.instance()
-    }()
-
+        }()
+    
     
     lazy var movieEmbeddedViewController: MovieEmbeddedViewController = {
         return MovieEmbeddedViewController.instance()
         }()
     
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         // initialize all containers
         makeMovieEmbeddedViewController()
-       
-//        self.addChildViewController(videoInfoTableViewController)
+        
+        //        self.addChildViewController(videoInfoTableViewController)
         self.addChildViewController(sideTableViewController)
-
+        
         // test
         self.sideContainer.addSubview(sideTableViewController.view)
+        
+        self.searchTask.refreshEvent("sketch 3", completeHandler: {
+            (response, sucess) -> Void in
+            let array: NSArray = response as! NSArray
+            self.sideTableViewController.appendSideVideos(array)
+        })
     }
+    
+
     
     func makeMovieEmbeddedViewController() {
         movieEmbeddedViewController.videoID = videoID
@@ -78,7 +86,7 @@ class YTVideoWatchViewController: UIViewController {
         
     }
     
-
+    
     
     override func viewDidLayoutSubviews() {
         func playerViewHeight(width:CGFloat) -> CGFloat {

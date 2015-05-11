@@ -17,7 +17,6 @@ protocol FetchTaskProtocol {
     func endFetching()
 
     func hasNextFetcing() -> Bool
-
 }
 
 

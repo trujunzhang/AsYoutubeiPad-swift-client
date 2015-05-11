@@ -36,4 +36,16 @@ class DetailPageSection{
         
         return section
     }
+    
+    class func makeSuggestionVideoListSection(array:NSArray) -> DetailPageSection{
+        let section: DetailPageSection = DetailPageSection()
+        
+        section.sectionTitle = ""
+        section.sectionIdentifier = DetailPageCellIdentifier.SuggestionListCellIdentifier
+        section.identifer = SUGGESTION_CELL_IDENTIFER
+        section.rowObjects = array as [AnyObject]
+        
+        return section
+    }
+    
 }
