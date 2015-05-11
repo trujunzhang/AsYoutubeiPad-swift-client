@@ -10,7 +10,7 @@ import UIKit
 
 class VideoDescriptionTableViewCell: UITableViewCell {
     
-    @IBOutlet weak var descriptionLabel: UILabel!
+    @IBOutlet weak var descriptionLabel: TTTAttributedLabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()

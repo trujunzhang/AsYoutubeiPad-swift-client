@@ -277,18 +277,18 @@ Cg
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ABV-gZ-ip6" id="kup-6B-Dqa">
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yrg-GX-0eU">
-                                            <rect key="frame" x="20" y="2" width="567" height="39"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yrg-GX-0eU" customClass="TTTAttributedLabel">
+                                            <rect key="frame" x="12" y="2" width="576" height="39"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="yrg-GX-0eU" firstAttribute="leading" secondItem="kup-6B-Dqa" secondAttribute="leading" constant="20" id="3BX-Sf-F8v"/>
-                                        <constraint firstAttribute="trailing" secondItem="yrg-GX-0eU" secondAttribute="trailing" constant="13" id="Cay-Rb-gtj"/>
-                                        <constraint firstAttribute="bottom" secondItem="yrg-GX-0eU" secondAttribute="bottom" constant="2" id="qtE-YM-MqD"/>
-                                        <constraint firstItem="yrg-GX-0eU" firstAttribute="top" secondItem="kup-6B-Dqa" secondAttribute="top" constant="2" id="ssb-uj-h66"/>
+                                        <constraint firstAttribute="trailing" secondItem="yrg-GX-0eU" secondAttribute="trailing" constant="12" id="5Ef-R6-oP9"/>
+                                        <constraint firstAttribute="bottom" secondItem="yrg-GX-0eU" secondAttribute="bottom" constant="2" id="dQX-LD-3Kx"/>
+                                        <constraint firstItem="yrg-GX-0eU" firstAttribute="top" secondItem="kup-6B-Dqa" secondAttribute="top" constant="2" id="du6-jm-ryq"/>
+                                        <constraint firstItem="yrg-GX-0eU" firstAttribute="leading" secondItem="kup-6B-Dqa" secondAttribute="leading" constant="12" id="fRX-c0-Ej5"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>

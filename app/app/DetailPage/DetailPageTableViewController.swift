@@ -22,15 +22,18 @@ class DetailPageTableViewController: UITableViewController,UITableViewDelegate,U
     }
     
     func makeVideoInfoSection(videoCache: YoutubeVideoCache){
-        self.pageSections.append(DetailPageSection.makeVideoInfoSection(videoCache))
+        let  videoInfoSections:[DetailPageSection] =  DetailPageSection.insertVideoInfoSection(videoCache,isOpen:true)
+        for section in videoInfoSections {
+            pageSections.append(section)
+        }
         
         self.tableView.reloadData()
     }
     
     func appendSideVideos(array:NSArray){
-        self.pageSections.append(DetailPageSection.makeSuggestionVideoListSection(array))
+                self.pageSections.append(DetailPageSection.makeSuggestionVideoListSection(array))
         
-        self.tableView.reloadData()
+                self.tableView.reloadData()
     }
     
     override func didReceiveMemoryWarning() {
@@ -54,20 +57,13 @@ class DetailPageTableViewController: UITableViewController,UITableViewDelegate,U
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let section:DetailPageSection = self.pageSections[indexPath.section]
         
-        let identifer = getCellIdentifer(indexPath, section: section)
-        let cell = tableView.dequeueReusableCellWithIdentifier(identifer, forIndexPath: indexPath) as! UITableViewCell
+        let cell = tableView.dequeueReusableCellWithIdentifier(section.identifer, forIndexPath: indexPath) as! UITableViewCell
+        
         configureCell(cell, forRowAtIndexPath: indexPath)
         
         return cell
     }
     
-    func getCellIdentifer(indexPath: NSIndexPath,section:DetailPageSection ) -> String{
-        if(section.sectionIdentifier == DetailPageCellIdentifier.VideoInfoCellIdentifier){
-            return VIDEO_ROWS_IDENTIFER[indexPath.row]
-        }
-        
-        return section.identifer
-    }
     
     func configureCell(cell: UITableViewCell, forRowAtIndexPath: NSIndexPath) {
         let section:DetailPageSection = self.pageSections[forRowAtIndexPath.section]
@@ -76,7 +72,21 @@ class DetailPageTableViewController: UITableViewController,UITableViewDelegate,U
         
         switch(sectionIdentifier){
         case DetailPageCellIdentifier.VideoInfoCellIdentifier:
-            configureVideoInfoCell(cell,rowObject:rowObject,forRowAtIndexPath:forRowAtIndexPath)
+            let videoInfoCell: VideoInfoTableViewCell = cell as! VideoInfoTableViewCell
+            videoInfoCell.configureCell(rowObject as! VideoInfoObject)
+            
+            break;
+        case DetailPageCellIdentifier.VideoDescriptionCellIdentifier:
+            
+            let videoInfoCell: VideoDescriptionTableViewCell = cell as! VideoDescriptionTableViewCell
+            videoInfoCell.configureCell(rowObject as! VideoDescriptonObject)
+            
+            break;
+        case DetailPageCellIdentifier.VideoStatisticCellIdentifier:
+            
+            let videoInfoCell: VideoStatisticTableViewCell = cell as! VideoStatisticTableViewCell
+            videoInfoCell.configureCell(rowObject as! VideoStatisticObject)
+            
             break;
             
         case DetailPageCellIdentifier.ChannelInfoCellIdentifier:
@@ -94,98 +104,48 @@ class DetailPageTableViewController: UITableViewController,UITableViewDelegate,U
         }
     }
     
-    func configureVideoInfoCell(cell: UITableViewCell,rowObject: AnyObject,forRowAtIndexPath: NSIndexPath){
-        switch(forRowAtIndexPath.row){
-        case 0:
-            let videoInfoCell: VideoInfoTableViewCell = cell as! VideoInfoTableViewCell
-            videoInfoCell.configureCell(rowObject as! VideoInfoObject)
-            break;
-        case 1:
-            let videoInfoCell: VideoDescriptionTableViewCell = cell as! VideoDescriptionTableViewCell
-            videoInfoCell.configureCell(rowObject as! VideoDescriptonObject)
-            break;
-        case 2:
-            let videoInfoCell: VideoStatisticTableViewCell = cell as! VideoStatisticTableViewCell
-            videoInfoCell.configureCell(rowObject as! VideoStatisticObject)
-            break;
-        default:
-            break;
-        }
-    }
     
     //MARK: UITableViewDelegate
     
     override  func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         if(indexPath.section == 0 && indexPath.row == 0 ){
-            let section:DetailPageSection = self.pageSections[indexPath.section]
+            let section:DetailPageSection = self.pageSections[0]
             
-            let animatedIndexPath = NSIndexPath(forRow: 1, inSection: 0)
+            self.tableView.beginUpdates()
+            
+            let animatedIndexPath = NSIndexPath(forRow: 0, inSection: 1)
             if(section.isOpen == true){
-                DetailPageSection.removeAnimatedObject(section, index: 1)
-                self.tableView.deleteRowsAtIndexPaths([animatedIndexPath], withRowAnimation: .Top)
+                DetailPageSection.removeAnimatedObject(self.pageSections[1], index: 0)
+                self.tableView.deleteRowsAtIndexPaths([animatedIndexPath], withRowAnimation: .Automatic)
             }else{
-                DetailPageSection.addAnimatedObject(section, index: 1)
-                self.tableView.insertRowsAtIndexPaths([animatedIndexPath], withRowAnimation: .Bottom)
+                DetailPageSection.addAnimatedObject(self.pageSections[1], index: 0)
+                self.tableView.insertRowsAtIndexPaths([animatedIndexPath], withRowAnimation: .Automatic)
             }
+            
+            self.tableView.endUpdates()
+            
+            section.isOpen = !section.isOpen
         }
     }
-    
-//    override func tableView(tableView: UITableView,
-//        shouldHighlightRowAtIndexPath indexPath: NSIndexPath) -> Bool{
-//            
-//            return false
-//    }
     
     override  func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         let section:DetailPageSection = self.pageSections[indexPath.section]
         let sectionIdentifier :    DetailPageCellIdentifier = section.sectionIdentifier!
         
-        var rowHeight:CGFloat = 0
-        switch(sectionIdentifier){
-        case DetailPageCellIdentifier.VideoInfoCellIdentifier:
-            switch(indexPath.row){
-            case 0:
-                rowHeight = 60
-                break;
-            case 1:
-                rowHeight = 140
-                break;
-            case 2:
-                rowHeight = 60
-                break;
-            default:
-                break;
-            }
-            
-            break;
-            
-        case DetailPageCellIdentifier.ChannelInfoCellIdentifier:
-            break;
-            
-        case DetailPageCellIdentifier.SuggestionListCellIdentifier:
-            rowHeight = 140
-            break;
-            
-        default:
-            
-            break;
-            
-        }
+        println("rowHeight is \(section.rowHeight)")
         
-        
-        return rowHeight
+        return section.rowHeight
     }
     
     override  func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         let section:DetailPageSection = self.pageSections[section]
-        if(section.sectionTitle.isEmpty == true){
-            return 0
-        }
-        return 50
+        
+        return section.sectionHeaderHeight
     }
     
     override  func tableView(tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
-        return 40.0
+        let section:DetailPageSection = self.pageSections[section]
+        return section.sectionFooterHeight
     }
     
     override  func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
