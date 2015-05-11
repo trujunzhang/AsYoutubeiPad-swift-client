@@ -40,10 +40,12 @@ class DetailPageSection{
     // MARK: animate object
     class func addAnimatedObject(section: DetailPageSection,index:Int){
         section.rowObjects.insert(section.animatedObject!, atIndex: index)
+        section.isOpen  = true
     }
     
     class func removeAnimatedObject(section: DetailPageSection,index:Int){
         section.rowObjects.removeAtIndex(index)
+        section.isOpen  = false
     }
     
     // MARK: make different sections

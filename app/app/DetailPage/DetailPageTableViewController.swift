@@ -119,15 +119,22 @@ class DetailPageTableViewController: UITableViewController,UITableViewDelegate,U
         if(indexPath.section == 0 && indexPath.row == 0 ){
             let section:DetailPageSection = self.pageSections[indexPath.section]
             
-            
+            let animatedIndexPath = NSIndexPath(forRow: 1, inSection: 0)
+            if(section.isOpen == true){
+                DetailPageSection.removeAnimatedObject(section, index: 1)
+               self.tableView.deleteRowsAtIndexPaths([animatedIndexPath], withRowAnimation: .Top)
+            }else{
+                DetailPageSection.addAnimatedObject(section, index: 1)
+                self.tableView.insertRowsAtIndexPaths([animatedIndexPath], withRowAnimation: .Bottom)
+            }
         }
     }
     
-//    override func tableView(tableView: UITableView,
-//        shouldHighlightRowAtIndexPath indexPath: NSIndexPath) -> Bool{
-//            
-//            return false
-//    }
+    //    override func tableView(tableView: UITableView,
+    //        shouldHighlightRowAtIndexPath indexPath: NSIndexPath) -> Bool{
+    //
+    //            return false
+    //    }
     
     override  func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         let section:DetailPageSection = self.pageSections[indexPath.section]
@@ -141,7 +148,7 @@ class DetailPageTableViewController: UITableViewController,UITableViewDelegate,U
                 rowHeight = 60
                 break;
             case 1:
-               rowHeight = 140
+                rowHeight = 140
                 break;
             case 2:
                 rowHeight = 60
@@ -149,7 +156,7 @@ class DetailPageTableViewController: UITableViewController,UITableViewDelegate,U
             default:
                 break;
             }
-
+            
             break;
             
         case DetailPageCellIdentifier.ChannelInfoCellIdentifier:
