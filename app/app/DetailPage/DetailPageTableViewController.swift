@@ -17,6 +17,7 @@ class DetailPageTableViewController: UITableViewController,UITableViewDelegate,U
         
         self.tableView.dataSource = self
         self.tableView.delegate = self
+        
         self.tableView.separatorStyle = .None
     }
     
@@ -115,14 +116,18 @@ class DetailPageTableViewController: UITableViewController,UITableViewDelegate,U
     //MARK: UITableViewDelegate
     
     override  func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        
+        if(indexPath.section == 0 && indexPath.row == 0 ){
+            let section:DetailPageSection = self.pageSections[indexPath.section]
+            
+            
+        }
     }
     
-    override func tableView(tableView: UITableView,
-        shouldHighlightRowAtIndexPath indexPath: NSIndexPath) -> Bool{
-            
-            return false
-    }
+//    override func tableView(tableView: UITableView,
+//        shouldHighlightRowAtIndexPath indexPath: NSIndexPath) -> Bool{
+//            
+//            return false
+//    }
     
     override  func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         let section:DetailPageSection = self.pageSections[indexPath.section]

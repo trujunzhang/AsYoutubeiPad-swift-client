@@ -30,11 +30,23 @@ public enum DetailPageCellIdentifier {
 
 
 class DetailPageSection{
+    var isOpen  = true
+    var animatedObject : AnyObject?
     var sectionIdentifier :    DetailPageCellIdentifier?
     var sectionTitle = ""
     var identifer = ""
     var rowObjects :[AnyObject] = [AnyObject]()
     
+    // MARK: animate object
+    class func addAnimatedObject(section: DetailPageSection,index:Int){
+        section.rowObjects.insert(section.animatedObject!, atIndex: index)
+    }
+    
+    class func removeAnimatedObject(section: DetailPageSection,index:Int){
+        section.rowObjects.removeAtIndex(index)
+    }
+    
+    // MARK: make different sections
     class func makeVideoInfoSection(videoCache: YoutubeVideoCache) -> DetailPageSection{
         let section: DetailPageSection = DetailPageSection()
         
@@ -43,8 +55,10 @@ class DetailPageSection{
         section.identifer = VIDEO_INFO_CELL_IDENTIFER
         
         section.rowObjects.append(VideoInfoObject())
-        section.rowObjects.append(VideoDescriptonObject())
         section.rowObjects.append(VideoStatisticObject())
+        
+        section.animatedObject = VideoDescriptonObject()
+        DetailPageSection.addAnimatedObject(section,index:1)
         
         return section
     }
