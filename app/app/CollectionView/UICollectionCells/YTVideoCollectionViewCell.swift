@@ -47,8 +47,8 @@ class YTVideoCollectionViewCell: UICollectionViewCell {
         let totoalTime = YoutubeParser.getVideoDurationForVideoInfo(videoCache)
 
         // 1
-        let url = NSURL(string: thumbnailUrl as String)
-        thumbnailImage.sd_setImageWithURL(url, placeholderImage: nil, options: SDWebImageOptions.LowPriority)
+//        let url = NSURL(string: thumbnailUrl as String)
+        thumbnailImage.sd_setImageWithURL(NSURL(string: thumbnailUrl as String), placeholderImage: nil, options: SDWebImageOptions.LowPriority)
 
         // 2
         titleLabel.text = videoTitle

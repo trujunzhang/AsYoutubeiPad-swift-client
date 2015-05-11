@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import WebImage
 
 class SuggestionVideoInfoTableViewCell: UITableViewCell {
     
@@ -18,14 +19,24 @@ class SuggestionVideoInfoTableViewCell: UITableViewCell {
         super.awakeFromNib()
         // Initialization code
     }
-
+    
     override func setSelected(selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
+        
         // Configure the view for the selected state
     }
     
-    func configureCell(videoObject: YoutubeVideoCache){
-       
+    func configureCell(videoCache: YoutubeVideoCache){
+        let videoTitle = YoutubeParser.getVideoSnippetTitle(videoCache)
+        let thumbnailUrl = YoutubeModelParser.getVideoSnippetThumbnails(videoCache)
+        let channelTitle = YoutubeParser.getVideoSnippetChannelTitle(videoCache)
+        let viewCount = YoutubeParser.getVideoStatisticsViewCount(videoCache)
+        let timeAgo = YoutubeParser.getVideoTimeAgoFromPublishedAt(videoCache)
+        let totoalTime = YoutubeParser.getVideoDurationForVideoInfo(videoCache)
+        
+        self.thumbnailImageView.sd_setImageWithURL(NSURL(string: thumbnailUrl as String), placeholderImage: nil, options: SDWebImageOptions.LowPriority)
+        
+        
+        
     }
 }
