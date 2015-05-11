@@ -74,9 +74,9 @@
 		5E401BFE1AF4F1AC00613E28 /* YoutubeRetrievingGTLActivityListItemsFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E401BFC1AF4F1AC00613E28 /* YoutubeRetrievingGTLActivityListItemsFetcher.swift */; };
 		5E401BFF1AF4F1AC00613E28 /* YoutubeRetrievingGTLActivityListItemsFetcherHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E401BFD1AF4F1AC00613E28 /* YoutubeRetrievingGTLActivityListItemsFetcherHelper.swift */; };
 		5E5F6C8B1B0030CC00D6808D /* FetchEventProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E5F6C871B0030CC00D6808D /* FetchEventProtocol.swift */; };
-		5E5F6C8C1B0030CC00D6808D /* RetrievingNewestVideoIdsEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E5F6C881B0030CC00D6808D /* RetrievingNewestVideoIdsEvent.swift */; };
-		5E5F6C8D1B0030CC00D6808D /* SearchEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E5F6C891B0030CC00D6808D /* SearchEvent.swift */; };
-		5E5F6C8E1B0030CC00D6808D /* SuggestionVideoListEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E5F6C8A1B0030CC00D6808D /* SuggestionVideoListEvent.swift */; };
+		5E5F6C8C1B0030CC00D6808D /* RetrievingNewestVideoIdsTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E5F6C881B0030CC00D6808D /* RetrievingNewestVideoIdsTask.swift */; };
+		5E5F6C8D1B0030CC00D6808D /* SearchTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E5F6C891B0030CC00D6808D /* SearchTask.swift */; };
+		5E5F6C8E1B0030CC00D6808D /* SuggestionVideoListTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E5F6C8A1B0030CC00D6808D /* SuggestionVideoListTask.swift */; };
 		5E5F8A261AF8C80700466FA0 /* AutoCompletePopoverEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E5F8A251AF8C80700466FA0 /* AutoCompletePopoverEvent.swift */; };
 		5E67E7481AF8A8E300F07031 /* NSDateISO8601.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E67E7451AF8A8E300F07031 /* NSDateISO8601.swift */; };
 		5E67E7491AF8A8E300F07031 /* String+Trim.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E67E7471AF8A8E300F07031 /* String+Trim.swift */; };
@@ -212,9 +212,9 @@
 		5E401BFD1AF4F1AC00613E28 /* YoutubeRetrievingGTLActivityListItemsFetcherHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YoutubeRetrievingGTLActivityListItemsFetcherHelper.swift; sourceTree = "<group>"; };
 		5E52BAC31AD8C449007C3F32 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
 		5E5F6C871B0030CC00D6808D /* FetchEventProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FetchEventProtocol.swift; sourceTree = "<group>"; };
-		5E5F6C881B0030CC00D6808D /* RetrievingNewestVideoIdsEvent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RetrievingNewestVideoIdsEvent.swift; sourceTree = "<group>"; };
-		5E5F6C891B0030CC00D6808D /* SearchEvent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchEvent.swift; sourceTree = "<group>"; };
-		5E5F6C8A1B0030CC00D6808D /* SuggestionVideoListEvent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SuggestionVideoListEvent.swift; sourceTree = "<group>"; };
+		5E5F6C881B0030CC00D6808D /* RetrievingNewestVideoIdsTask.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RetrievingNewestVideoIdsTask.swift; sourceTree = "<group>"; };
+		5E5F6C891B0030CC00D6808D /* SearchTask.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchTask.swift; sourceTree = "<group>"; };
+		5E5F6C8A1B0030CC00D6808D /* SuggestionVideoListTask.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SuggestionVideoListTask.swift; sourceTree = "<group>"; };
 		5E5F8A251AF8C80700466FA0 /* AutoCompletePopoverEvent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AutoCompletePopoverEvent.swift; path = Events/AutoCompletePopoverEvent.swift; sourceTree = "<group>"; };
 		5E67E7451AF8A8E300F07031 /* NSDateISO8601.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSDateISO8601.swift; sourceTree = "<group>"; };
 		5E67E7471AF8A8E300F07031 /* String+Trim.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Trim.swift"; sourceTree = "<group>"; };
@@ -626,9 +626,9 @@
 			isa = PBXGroup;
 			children = (
 				5E5F6C871B0030CC00D6808D /* FetchEventProtocol.swift */,
-				5E5F6C881B0030CC00D6808D /* RetrievingNewestVideoIdsEvent.swift */,
-				5E5F6C891B0030CC00D6808D /* SearchEvent.swift */,
-				5E5F6C8A1B0030CC00D6808D /* SuggestionVideoListEvent.swift */,
+				5E5F6C881B0030CC00D6808D /* RetrievingNewestVideoIdsTask.swift */,
+				5E5F6C891B0030CC00D6808D /* SearchTask.swift */,
+				5E5F6C8A1B0030CC00D6808D /* SuggestionVideoListTask.swift */,
 			);
 			path = FetchTask;
 			sourceTree = "<group>";
@@ -894,7 +894,7 @@
 				5E5F6C8B1B0030CC00D6808D /* FetchEventProtocol.swift in Sources */,
 				5E39C4601AF4798F0069AC33 /* YoutubeRetrievingActivityListItemsFetcher.swift in Sources */,
 				5E5F8A261AF8C80700466FA0 /* AutoCompletePopoverEvent.swift in Sources */,
-				5E5F6C8D1B0030CC00D6808D /* SearchEvent.swift in Sources */,
+				5E5F6C8D1B0030CC00D6808D /* SearchTask.swift in Sources */,
 				5E917D951AECCEEC00922AE7 /* MenuLoginTitleBarCell.swift in Sources */,
 				5EA691701AF7409000DF0298 /* VideoCollectionViewCellLayout.swift in Sources */,
 				5E401BFF1AF4F1AC00613E28 /* YoutubeRetrievingGTLActivityListItemsFetcherHelper.swift in Sources */,
@@ -920,7 +920,7 @@
 				5E39C4641AF4798F0069AC33 /* YoutubeRetrievingPlayListItemsFetcher.swift in Sources */,
 				5E065C6E1AFB7C5B003EE40B /* LayoutUtils.swift in Sources */,
 				5E065C7C1AFB7E10003EE40B /* VideoInfoConstant.swift in Sources */,
-				5E5F6C8E1B0030CC00D6808D /* SuggestionVideoListEvent.swift in Sources */,
+				5E5F6C8E1B0030CC00D6808D /* SuggestionVideoListTask.swift in Sources */,
 				5EA6916E1AF7407500DF0298 /* YTVideoCollectionViewCell.swift in Sources */,
 				5E7BA87F1AFA2FCD00C13E95 /* NBMultableCollectionBaseViewController.m in Sources */,
 				5EBEE6FF1AEB3292001ED7AB /* YTSectionTitleCellObject.swift in Sources */,
@@ -940,7 +940,7 @@
 				5E0AAA481AFF81A50068B6AA /* VideoInfoTableViewCellExt.swift in Sources */,
 				5EBB47F51AF248E6007D6CE1 /* RevealViewHelper.swift in Sources */,
 				5E67E7491AF8A8E300F07031 /* String+Trim.swift in Sources */,
-				5E5F6C8C1B0030CC00D6808D /* RetrievingNewestVideoIdsEvent.swift in Sources */,
+				5E5F6C8C1B0030CC00D6808D /* RetrievingNewestVideoIdsTask.swift in Sources */,
 				5E065C701AFB7CEE003EE40B /* AppColorScheme.swift in Sources */,
 				5E39C4651AF4798F0069AC33 /* YoutubeRetrievingPlayListItemsFetcherHelper.swift in Sources */,
 				5E032D3E1AF5B7A4006125AA /* YTVideoWatchViewController.swift in Sources */,

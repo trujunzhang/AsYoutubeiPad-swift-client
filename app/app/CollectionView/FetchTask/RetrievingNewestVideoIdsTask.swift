@@ -1,5 +1,5 @@
 //
-//  RetrievingNewestVideoIdsEvent.swift
+//  RetrievingNewestVideoIdsTask.swift
 //  app
 //
 //  Created by djzhang on 5/2/15.
@@ -8,7 +8,7 @@
 
 import Foundation
 
-class RetrievingNewestVideoIdsEvent: NSObject, FetchTaskProtocol, RetrievingItemsFetchingHelperDelegate {
+class RetrievingNewestVideoIdsTask: NSObject, FetchTaskProtocol, RetrievingItemsFetchingHelperDelegate {
 
     let helper: YoutubeRetrievingGTLActivityListItemsFetcherHelper = YoutubeRetrievingGTLActivityListItemsFetcherHelper()
 
