@@ -75,6 +75,7 @@ class DetailPageTableViewController: UITableViewController,UITableViewDelegate,U
         case DetailPageCellIdentifier.VideoInfoCellIdentifier:
             let videoInfoCell: VideoInfoTableViewCell = cell as! VideoInfoTableViewCell
             videoInfoCell.configureCell(rowObject as! VideoInfoObject)
+            videoInfoCell.videoInfoToggleProtocol = self
             break;
             
         case DetailPageCellIdentifier.ChannelInfoCellIdentifier:

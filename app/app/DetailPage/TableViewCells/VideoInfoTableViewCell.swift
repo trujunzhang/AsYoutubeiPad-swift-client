@@ -10,6 +10,8 @@ import UIKit
 
 class VideoInfoTableViewCell: UITableViewCell {
     var videoInfoObject: VideoInfoObject?
+    
+    var videoInfoToggleProtocol: VideoInfoToggleProtocol?
 
     @IBOutlet weak var topPanel: UIView!
     
