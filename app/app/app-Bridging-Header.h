@@ -53,7 +53,7 @@
 //#import "CHTCollectionViewWaterfallLayout.h"
 
 // Library: facebook/Pop
-#import <pop/POP.h>
+//#import <pop/POP.h>
 
 // Library: ObservingPlayerItem
 // url: https://github.com/acrookston/ObservingPlayerItem

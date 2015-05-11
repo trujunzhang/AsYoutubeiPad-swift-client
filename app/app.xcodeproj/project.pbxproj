@@ -30,7 +30,6 @@
 		5E065C701AFB7CEE003EE40B /* AppColorScheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E065C6F1AFB7CEE003EE40B /* AppColorScheme.swift */; };
 		5E065C7A1AFB7E10003EE40B /* VideoInfoObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E065C741AFB7E10003EE40B /* VideoInfoObject.swift */; };
 		5E065C7C1AFB7E10003EE40B /* VideoInfoConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E065C771AFB7E10003EE40B /* VideoInfoConstant.swift */; };
-		5E0AAA481AFF81A50068B6AA /* VideoInfoTableViewCellExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E0AAA471AFF81A50068B6AA /* VideoInfoTableViewCellExt.swift */; };
 		5E0AC2221AFA3F69002677C4 /* LoadingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E0AC2211AFA3F69002677C4 /* LoadingViewController.swift */; };
 		5E0AC2241AFA3F89002677C4 /* PublicConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E0AC2231AFA3F89002677C4 /* PublicConstant.swift */; };
 		5E0AC2261AFA4139002677C4 /* RequestFailureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E0AC2251AFA4139002677C4 /* RequestFailureViewController.swift */; };
@@ -98,11 +97,9 @@
 		5EC804E51AE662DF00FC42C4 /* LeftMenuConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EC804E41AE662DF00FC42C4 /* LeftMenuConstant.swift */; };
 		5EC96C0C1AFE273A00CD5387 /* Cartography.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5EC96C081AFE273A00CD5387 /* Cartography.framework */; };
 		5EC96C0D1AFE273A00CD5387 /* Haneke.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5EC96C091AFE273A00CD5387 /* Haneke.framework */; };
-		5EC96C0E1AFE273A00CD5387 /* pop.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5EC96C0A1AFE273A00CD5387 /* pop.framework */; };
 		5EC96C0F1AFE273A00CD5387 /* WebImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5EC96C0B1AFE273A00CD5387 /* WebImage.framework */; };
 		5EC96C111AFE276000CD5387 /* Cartography.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 5EC96C081AFE273A00CD5387 /* Cartography.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		5EC96C121AFE276000CD5387 /* Haneke.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 5EC96C091AFE273A00CD5387 /* Haneke.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		5EC96C131AFE276100CD5387 /* pop.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 5EC96C0A1AFE273A00CD5387 /* pop.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		5EC96C141AFE276100CD5387 /* WebImage.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 5EC96C0B1AFE273A00CD5387 /* WebImage.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		5ECA615C1AECC88B00D02728 /* MenuTitleBarBaseCellObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ECA615B1AECC88B00D02728 /* MenuTitleBarBaseCellObject.swift */; };
 		5ECB14D31AF0D3D1006592AC /* YTVideoCollectionConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ECB14D21AF0D3D1006592AC /* YTVideoCollectionConstant.swift */; };
@@ -123,7 +120,6 @@
 			files = (
 				5EC96C111AFE276000CD5387 /* Cartography.framework in CopyFiles */,
 				5EC96C121AFE276000CD5387 /* Haneke.framework in CopyFiles */,
-				5EC96C131AFE276100CD5387 /* pop.framework in CopyFiles */,
 				5EC96C141AFE276100CD5387 /* WebImage.framework in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -157,7 +153,6 @@
 		5E065C6F1AFB7CEE003EE40B /* AppColorScheme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppColorScheme.swift; path = "Business-Logic-Layer/Utils/AppColorScheme.swift"; sourceTree = "<group>"; };
 		5E065C741AFB7E10003EE40B /* VideoInfoObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoInfoObject.swift; sourceTree = "<group>"; };
 		5E065C771AFB7E10003EE40B /* VideoInfoConstant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoInfoConstant.swift; sourceTree = "<group>"; };
-		5E0AAA471AFF81A50068B6AA /* VideoInfoTableViewCellExt.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = VideoInfoTableViewCellExt.swift; path = TableViewCells/VideoInfoTableViewCellExt.swift; sourceTree = "<group>"; };
 		5E0AC2211AFA3F69002677C4 /* LoadingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoadingViewController.swift; path = Public/LoadingViewController.swift; sourceTree = "<group>"; };
 		5E0AC2231AFA3F89002677C4 /* PublicConstant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PublicConstant.swift; path = Public/PublicConstant.swift; sourceTree = "<group>"; };
 		5E0AC2251AFA4139002677C4 /* RequestFailureViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestFailureViewController.swift; sourceTree = "<group>"; };
@@ -258,7 +253,6 @@
 				FE4BD745914619899B4CFFE4 /* libPods-app.a in Frameworks */,
 				5EC96C0C1AFE273A00CD5387 /* Cartography.framework in Frameworks */,
 				5EC96C0D1AFE273A00CD5387 /* Haneke.framework in Frameworks */,
-				5EC96C0E1AFE273A00CD5387 /* pop.framework in Frameworks */,
 				5EC96C0F1AFE273A00CD5387 /* WebImage.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -648,7 +642,6 @@
 		5E70EFB11AFF008200C99699 /* TableViewCells */ = {
 			isa = PBXGroup;
 			children = (
-				5E0AAA471AFF81A50068B6AA /* VideoInfoTableViewCellExt.swift */,
 				5E70EFB21AFF00C400C99699 /* VideoInfoTableViewCell.swift */,
 				5E70EFB41AFF00DE00C99699 /* ChannelInfoTableViewCell.swift */,
 				5E70EFB61AFF00FC00C99699 /* SuggestionVideoInfoTableViewCell.swift */,
@@ -887,7 +880,6 @@
 				5E39C4691AF4798F0069AC33 /* YoutubeApiConstant.swift in Sources */,
 				5E032D311AF5B7A4006125AA /* MovieEmbeddedNormalBarViewController.swift in Sources */,
 				5E401BFE1AF4F1AC00613E28 /* YoutubeRetrievingGTLActivityListItemsFetcher.swift in Sources */,
-				5E0AAA481AFF81A50068B6AA /* VideoInfoTableViewCellExt.swift in Sources */,
 				5EBB47F51AF248E6007D6CE1 /* RevealViewHelper.swift in Sources */,
 				5E67E7491AF8A8E300F07031 /* String+Trim.swift in Sources */,
 				5E5F6C8C1B0030CC00D6808D /* RetrievingNewestVideoIdsTask.swift in Sources */,

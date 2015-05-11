@@ -172,81 +172,12 @@ class DetailPageTableViewController: UITableViewController,UITableViewDelegate,U
     // MARK: Video Info tableview cell's animate
     
     func updateAnimatedTableCell(animatedHeight: CGFloat) {
-                println("updateAnimatedTableCell is \(animatedHeight)")
-        self.videoInfoCellHeight = animatedHeight
-        
-        if let _tableView: UITableView = tableView {
-//                        _tableView.beginUpdates()
-//                        _tableView.reloadRowsAtIndexPaths([NSIndexPath(forRow: 0, inSection: 0)], withRowAnimation: .None)
-//                        _tableView.endUpdates()
-            _tableView.reloadData()
-            //            println("updateAnimatedTableCell")
-        }
-    }
+          }
     
-    func performAnimation(object: VideoInfoObject) {
-        object.prepareAnimate()
-        
-        var name = kCAMediaTimingFunctionEaseIn
-        
-        var toValue: CGFloat = 0
-        if (object.isOpen == false) {
-            name = kCAMediaTimingFunctionEaseOut
-            toValue = object.maxHeightValue
-        }
-        
-        let spring: POPBasicAnimation = POPBasicAnimation()
-        spring.timingFunction = CAMediaTimingFunction(name: name)
-        spring.completionBlock = {
-            (anim, finished) -> Void in
-            //            self.videoInfoObject!.currentRowHeight = toValue
-            //            self.updateAnimatedTableCell()
-        }
-        
-        let property: POPAnimatableProperty = POPAnimatableProperty.propertyWithName("com.rwt.heightContstraint", initializer: {
-            (object) -> Void in
-            
-            let prop: POPMutableAnimatableProperty = object as POPMutableAnimatableProperty
-            
-            // note the object used is NSLayoutConstraint, the same object we assign the animation to
-            prop.readBlock = {
-                (anyObject, values) -> Void in
-                
-                let animatedObject:VideoInfoObject = anyObject as! VideoInfoObject
-                values[0] = animatedObject.fromValue!
-            }
-            
-            prop.writeBlock = {
-                (anyObject, values) -> Void in
-                
-                //                let animatedObject:VideoInfoObject = anyObject as! VideoInfoObject
-                //                animatedObject.fromValue = values[0]
-                //                animatedObject.currentRowHeight = values[0]
-                
-                //                println("currentRowHeight is \(animatedObject.currentRowHeight )")
-                
-                dispatch_async(dispatch_get_main_queue(), { () -> Void in
-                    self.updateAnimatedTableCell( values[0])
-                })
-                
-            }
-            
-            // this helps Pop determine when the animation is over
-            prop.threshold = 0.01
-            
-        }) as! POPAnimatableProperty
-        
-        spring.property = property
-        spring.toValue = toValue
-        
-        object.isOpen = !(object.isOpen)
-        
-        object.pop_addAnimation(spring, forKey: "TableRowAnimate")
-    }
     
     // MARK : VideoInfoToggleProtocol
     func toggleVideoInfoPanel(object: VideoInfoObject) -> Void{
-        self.performAnimation(object)
+//        self.performAnimation(object)
     }
     
     

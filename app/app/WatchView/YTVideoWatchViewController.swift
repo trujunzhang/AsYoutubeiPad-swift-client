@@ -91,8 +91,8 @@ class YTVideoWatchViewController: UIViewController {
         let videoInfoObject: VideoInfoObject = VideoInfoObject()
         //landscape
         let playerWidth = self.view.frame.size.width/3*2
-        let descriptionHeight:CGFloat = VideoInfoTableViewCell.getDescriptionLabelHeight(videoInfoObject.descriptionString, width: playerWidth)
-        videoInfoObject.setDescriptionMaxHeight(descriptionHeight, _descriptionWidth: 0)
+//        let descriptionHeight:CGFloat = VideoInfoTableViewCell.getDescriptionLabelHeight(videoInfoObject.descriptionString, width: playerWidth)
+//        videoInfoObject.setDescriptionMaxHeight(descriptionHeight, _descriptionWidth: 0)
         
         videoInfoObject.videoInfoToggleProtocol = videoInfoTableViewController
         
