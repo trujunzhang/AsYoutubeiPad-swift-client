@@ -71,18 +71,30 @@ class YTVideoWatchViewController: UIViewController {
         self.videoInfoContainer.addSubview(videoInfoTableViewController.view)
         LayoutUtils.LayoutFullView(videoInfoTableViewController.view)
         
-        videoInfoTableViewController.makeVideoInfoSection()
+        
         
         // sideTableViewController
         self.sideContainer.addSubview(sideTableViewController.view)
         LayoutUtils.LayoutFullView(sideTableViewController.view)
         
         // test
-//        self.searchTask.refreshEvent("sketch 3", completeHandler: {
-//            (response, sucess) -> Void in
-//            let array: NSArray = response as! NSArray
-//            self.videoInfoTableViewController.appendSideVideos(array)
-//        })
+        //        self.searchTask.refreshEvent("sketch 3", completeHandler: {
+        //            (response, sucess) -> Void in
+        //            let array: NSArray = response as! NSArray
+        //            self.videoInfoTableViewController.appendSideVideos(array)
+        //        })
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        let videoInfoObject: VideoInfoObject = VideoInfoObject()
+        //landscape
+        let playerWidth = self.view.frame.size.width/3*2
+        let descriptionHeight:CGFloat = VideoInfoTableViewCell.getDescriptionLabelHeight(videoInfoObject.descriptionString, width: playerWidth)
+        videoInfoObject.setDescriptionMaxHeight(descriptionHeight, _descriptionWidth: 0)
+        
+        videoInfoTableViewController.makeVideoInfoSection(videoInfoObject)
     }
     
     

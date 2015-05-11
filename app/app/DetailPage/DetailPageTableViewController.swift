@@ -19,11 +19,10 @@ class DetailPageTableViewController: UITableViewController,UITableViewDelegate,U
         
         self.tableView.dataSource = self
         self.tableView.delegate = self
-        
-        videoInfoObject = VideoInfoObject()
     }
     
-    func makeVideoInfoSection(){
+    func makeVideoInfoSection(videoInfoObject: VideoInfoObject){
+        self.videoInfoObject = videoInfoObject
         self.pageSections.append(DetailPageSection.makeVideoInfoSection(self.videoInfoObject!))
         
         self.tableView.reloadData()

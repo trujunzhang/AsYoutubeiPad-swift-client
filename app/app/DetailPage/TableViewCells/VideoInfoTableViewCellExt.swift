@@ -10,9 +10,17 @@ import Foundation
 
 extension VideoInfoTableViewCell{
     
-    func getDescriptionLabelHeight() -> CGFloat{
-        let x =    self.videoInfoObject
+    class func getDescriptionLabelHeight(calcuteString: String, width: CGFloat) -> CGFloat{
         
-        return 0
+         func getDescriptionBlockCellFont() -> UIFont {
+            return UIFont.systemFontOfSize(12)
+        }
+        let boundingRect = calcuteString.boundingRectWithSize(CGSizeMake(width, CGFloat.max),
+            options: .UsesLineFragmentOrigin | .UsesFontLeading,
+            attributes: [NSFontAttributeName: getDescriptionBlockCellFont()],
+            context: nil)
+        
+        return boundingRect.size.height + 120 + 40
     }
+
 }

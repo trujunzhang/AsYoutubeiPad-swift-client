@@ -28,6 +28,7 @@ class VideoInfoTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        self.createTapGestureRecognizerForView(topPanel)
     }
 
     override func setSelected(selected: Bool, animated: Bool) {
@@ -36,6 +37,26 @@ class VideoInfoTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
+    // MARK: tapped event
+    func createTapGestureRecognizerForView(view: UIView) {
+        let playTap = UITapGestureRecognizer(target: self, action: "playTapped")
+        playTap.numberOfTouchesRequired = 1
+        playTap.numberOfTapsRequired = 1
+        view.userInteractionEnabled = true
+        view.addGestureRecognizer(playTap)
+    }
+    
+    // MARK: UITapGestureRecognizer
+    func playTapped() {
+        if let infoObject: VideoInfoObject = videoInfoObject {
+            infoObject.videoInfoToggleProtocol!.toggleVideoInfoPanel({
+                (object, isOpen) -> Void in
+                
+            })
+        }
+    }
+    
+    // MARK: Configure cell
     func configureCell(videoInfoObject: VideoInfoObject){
         self.titleLabel.text = videoInfoObject.title
         self.infoLabel.text  = videoInfoObject.likeCount

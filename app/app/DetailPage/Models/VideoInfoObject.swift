@@ -22,17 +22,16 @@ class VideoInfoObject: NSObject {
     var descriptionRect: CGRect?
 
     func prepareAnimate() {
-
         fromValue = 0
         if (isOpen == true) {
             fromValue = maxHeightValue
         }
     }
 
-    func setDescriptionMaxHeight(max: CGFloat, _descriptionWidth: CGFloat) {
+    func setDescriptionMaxHeight(maxHeight: CGFloat, _descriptionWidth: CGFloat) {
         descriptionWidth = _descriptionWidth
-        currentRowHeight = max
-        maxHeightValue = max
+        currentRowHeight = maxHeight
+        maxHeightValue = maxHeight
     }
 
     var title = "WebStorm 10 - New features"
