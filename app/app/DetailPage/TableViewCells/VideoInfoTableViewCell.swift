@@ -32,9 +32,9 @@ class VideoInfoTableViewCell: UITableViewCell {
     
     
     // MARK: Configure cell
-    func configureCell(videoInfoObject: VideoInfoObject){
-                self.titleLabel.text = videoInfoObject.title
-                self.infoLabel.text  = videoInfoObject.likeCount
+    func configureCell(object: VideoInfoObject){
+                self.titleLabel.text = object.title
+                self.infoLabel.text  = object.likeCount
         
         
         //        self.descriptionLabel.text = videoInfoObject.descriptionString

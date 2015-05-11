@@ -25,7 +25,6 @@ class DetailPageTableViewController: UITableViewController,UITableViewDelegate,U
     
     func makeVideoInfoSection(videoInfoObject: VideoInfoObject){
         self.videoInfoObject = videoInfoObject
-        self.videoInfoCellHeight = self.videoInfoObject!.currentRowHeight
         self.pageSections.append(DetailPageSection.makeVideoInfoSection(self.videoInfoObject!))
         
         self.tableView.reloadData()
@@ -78,7 +77,6 @@ class DetailPageTableViewController: UITableViewController,UITableViewDelegate,U
         case DetailPageCellIdentifier.VideoInfoCellIdentifier:
             let videoInfoCell: VideoInfoTableViewCell = cell as! VideoInfoTableViewCell
             let videoInfoObject: VideoInfoObject = rowObject as! VideoInfoObject
-            videoInfoObject.currentRowHeight = self.videoInfoCellHeight
             videoInfoCell.configureCell(videoInfoObject)
             break;
             
@@ -97,6 +95,10 @@ class DetailPageTableViewController: UITableViewController,UITableViewDelegate,U
             break;
             
         }
+    }
+    
+    func configureVideoInfoCell(){
+        
     }
     
     //MARK: UITableViewDelegate

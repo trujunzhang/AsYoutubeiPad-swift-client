@@ -25,8 +25,8 @@ class VideoDescriptionTableViewCell: UITableViewCell {
     
     
     // MARK: Configure cell
-    func configureCell(videoInfoObject: VideoInfoObject){
-        self.descriptionLabel.text = videoInfoObject.descriptionString
+    func configureCell(object: VideoDescriptonObject){
+        self.descriptionLabel.text = object.descriptionString
     }
     
 }
