@@ -9,7 +9,7 @@
 import UIKit
 
 class DetailPageTableViewController: UITableViewController,UITableViewDelegate,UITableViewDataSource {
-
+    
     var pageSections:[DetailPageSection] = [DetailPageSection]()
     
     override func viewDidLoad() {
@@ -37,7 +37,7 @@ class DetailPageTableViewController: UITableViewController,UITableViewDelegate,U
         // Dispose of any resources that can be recreated.
     }
     
-
+    
     
     //MARK: UITableViewDataSource
     
@@ -62,7 +62,7 @@ class DetailPageTableViewController: UITableViewController,UITableViewDelegate,U
     
     func getCellIdentifer(indexPath: NSIndexPath,section:DetailPageSection ) -> String{
         if(section.sectionIdentifier == DetailPageCellIdentifier.VideoInfoCellIdentifier){
-            
+            return VIDEO_ROWS_IDENTIFER[indexPath.row]
         }
         
         return section.identifer
@@ -75,14 +75,12 @@ class DetailPageTableViewController: UITableViewController,UITableViewDelegate,U
         
         switch(sectionIdentifier){
         case DetailPageCellIdentifier.VideoInfoCellIdentifier:
-            let videoInfoCell: VideoInfoTableViewCell = cell as! VideoInfoTableViewCell
-//            let videoInfoObject: VideoInfoObject = rowObject as! VideoInfoObject
-//            videoInfoCell.configureCell(videoInfoObject)
+            configureVideoInfoCell(cell,rowObject:rowObject,forRowAtIndexPath:forRowAtIndexPath)
             break;
             
         case DetailPageCellIdentifier.ChannelInfoCellIdentifier:
             let videoInfoCell: ChannelInfoTableViewCell = cell as! ChannelInfoTableViewCell
-//            videoInfoCell.configureCell(rowObject as! VideoInfoObject)
+            //            videoInfoCell.configureCell(rowObject as! VideoInfoObject)
             break;
             
         case DetailPageCellIdentifier.SuggestionListCellIdentifier:
@@ -91,13 +89,27 @@ class DetailPageTableViewController: UITableViewController,UITableViewDelegate,U
             break;
             
         default:
-            let x = 0
             break;
         }
     }
     
-    func configureVideoInfoCell(rowObject: AnyObject,forRowAtIndexPath: NSIndexPath){
-        
+    func configureVideoInfoCell(cell: UITableViewCell,rowObject: AnyObject,forRowAtIndexPath: NSIndexPath){
+        switch(forRowAtIndexPath.row){
+        case 0:
+            let videoInfoCell: VideoInfoTableViewCell = cell as! VideoInfoTableViewCell
+            videoInfoCell.configureCell(rowObject as! VideoInfoObject)
+            break;
+        case 1:
+            let videoInfoCell: VideoDescriptionTableViewCell = cell as! VideoDescriptionTableViewCell
+            videoInfoCell.configureCell(rowObject as! VideoDescriptonObject)
+            break;
+        case 2:
+            let videoInfoCell: VideoStatisticTableViewCell = cell as! VideoStatisticTableViewCell
+            videoInfoCell.configureCell(rowObject as! VideoStatisticObject)
+            break;
+        default:
+            break;
+        }
     }
     
     //MARK: UITableViewDelegate
@@ -119,10 +131,20 @@ class DetailPageTableViewController: UITableViewController,UITableViewDelegate,U
         var rowHeight:CGFloat = 0
         switch(sectionIdentifier){
         case DetailPageCellIdentifier.VideoInfoCellIdentifier:
-//            let rowObject: VideoInfoObject = section.rowObjects[indexPath.row] as! VideoInfoObject
-//            rowHeight = self.videoInfoCellHeight + VIDEO_INFO_TITLE_PANEL_HEIGHT
+            switch(indexPath.row){
+            case 0:
+                rowHeight = 60
+                break;
+            case 1:
+               rowHeight = 140
+                break;
+            case 2:
+                rowHeight = 60
+                break;
+            default:
+                break;
+            }
 
-            println("currentRowHeight is \(rowHeight)")
             break;
             
         case DetailPageCellIdentifier.ChannelInfoCellIdentifier:
@@ -170,7 +192,7 @@ class DetailPageTableViewController: UITableViewController,UITableViewDelegate,U
         return footerView
     }
     
-
+    
     
     
     

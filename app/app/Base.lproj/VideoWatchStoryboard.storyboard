@@ -227,7 +227,7 @@ Cg
         <!--Detail Page Table View Controller-->
         <scene sceneID="D0T-n3-FL8">
             <objects>
-                <tableViewController id="XIL-LQ-wFC" customClass="DetailPageTableViewController" customModule="app" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="DetailPageTableViewController" id="XIL-LQ-wFC" customClass="DetailPageTableViewController" customModule="app" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="KYc-Al-nm4">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -262,13 +262,19 @@ Cg
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ABV-gZ-ip6" id="kup-6B-Dqa">
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yrg-GX-0eU">
-                                            <rect key="frame" x="20" y="8" width="42" height="21"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yrg-GX-0eU">
+                                            <rect key="frame" x="20" y="8" width="567" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
+                                    <constraints>
+                                        <constraint firstItem="yrg-GX-0eU" firstAttribute="leading" secondItem="kup-6B-Dqa" secondAttribute="leading" constant="20" id="3BX-Sf-F8v"/>
+                                        <constraint firstAttribute="trailing" secondItem="yrg-GX-0eU" secondAttribute="trailing" constant="13" id="Cay-Rb-gtj"/>
+                                        <constraint firstAttribute="bottom" secondItem="yrg-GX-0eU" secondAttribute="bottom" constant="14" id="qtE-YM-MqD"/>
+                                        <constraint firstItem="yrg-GX-0eU" firstAttribute="top" secondItem="kup-6B-Dqa" secondAttribute="top" constant="8" id="ssb-uj-h66"/>
+                                    </constraints>
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="descriptionLabel" destination="yrg-GX-0eU" id="FPc-gz-aSl"/>
