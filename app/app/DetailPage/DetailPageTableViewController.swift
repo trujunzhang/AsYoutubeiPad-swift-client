@@ -122,7 +122,7 @@ class DetailPageTableViewController: UITableViewController,UITableViewDelegate,U
             let animatedIndexPath = NSIndexPath(forRow: 1, inSection: 0)
             if(section.isOpen == true){
                 DetailPageSection.removeAnimatedObject(section, index: 1)
-               self.tableView.deleteRowsAtIndexPaths([animatedIndexPath], withRowAnimation: .Top)
+                self.tableView.deleteRowsAtIndexPaths([animatedIndexPath], withRowAnimation: .Top)
             }else{
                 DetailPageSection.addAnimatedObject(section, index: 1)
                 self.tableView.insertRowsAtIndexPaths([animatedIndexPath], withRowAnimation: .Bottom)
@@ -130,11 +130,11 @@ class DetailPageTableViewController: UITableViewController,UITableViewDelegate,U
         }
     }
     
-    //    override func tableView(tableView: UITableView,
-    //        shouldHighlightRowAtIndexPath indexPath: NSIndexPath) -> Bool{
-    //
-    //            return false
-    //    }
+//    override func tableView(tableView: UITableView,
+//        shouldHighlightRowAtIndexPath indexPath: NSIndexPath) -> Bool{
+//            
+//            return false
+//    }
     
     override  func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         let section:DetailPageSection = self.pageSections[indexPath.section]
