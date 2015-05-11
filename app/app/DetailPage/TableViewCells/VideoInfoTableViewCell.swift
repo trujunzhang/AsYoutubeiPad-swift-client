@@ -10,8 +10,6 @@ import UIKit
 
 class VideoInfoTableViewCell: UITableViewCell {
     var videoInfoObject: VideoInfoObject?
-    
-    var videoInfoToggleProtocol: VideoInfoToggleProtocol?
 
     @IBOutlet weak var topPanel: UIView!
     
@@ -51,15 +49,19 @@ class VideoInfoTableViewCell: UITableViewCell {
     // MARK: UITapGestureRecognizer
     func playTapped() {
         if let infoObject: VideoInfoObject = videoInfoObject {
-            infoObject.videoInfoToggleProtocol!.toggleVideoInfoPanel({
-                (object, isOpen) -> Void in
-                
-            })
+             if let theVideoInfoToggleProtocol: VideoInfoToggleProtocol = infoObject.videoInfoToggleProtocol {
+                theVideoInfoToggleProtocol.toggleVideoInfoPanel({
+                    (object, isOpen) -> Void in
+                    
+                })
+            }
         }
     }
     
     // MARK: Configure cell
     func configureCell(videoInfoObject: VideoInfoObject){
+        self.videoInfoObject = videoInfoObject
+        
         self.titleLabel.text = videoInfoObject.title
         self.infoLabel.text  = videoInfoObject.likeCount
         

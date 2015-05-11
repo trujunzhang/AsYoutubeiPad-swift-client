@@ -74,7 +74,6 @@ class DetailPageTableViewController: UITableViewController,UITableViewDelegate,U
         case DetailPageCellIdentifier.VideoInfoCellIdentifier:
             let videoInfoCell: VideoInfoTableViewCell = cell as! VideoInfoTableViewCell
             videoInfoCell.configureCell(rowObject as! VideoInfoObject)
-            videoInfoCell.videoInfoToggleProtocol = self
             break;
             
         case DetailPageCellIdentifier.ChannelInfoCellIdentifier:
@@ -100,6 +99,11 @@ class DetailPageTableViewController: UITableViewController,UITableViewDelegate,U
         
         
         
+    }
+   override func tableView(tableView: UITableView,
+        shouldHighlightRowAtIndexPath indexPath: NSIndexPath) -> Bool{
+            
+            return false
     }
     
     override  func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
