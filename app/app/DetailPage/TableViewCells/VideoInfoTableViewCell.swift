@@ -53,10 +53,7 @@ class VideoInfoTableViewCell: UITableViewCell {
     func playTapped() {
         if let infoObject: VideoInfoObject = videoInfoObject {
              if let theVideoInfoToggleProtocol: VideoInfoToggleProtocol = infoObject.videoInfoToggleProtocol {
-                theVideoInfoToggleProtocol.toggleVideoInfoPanel({
-                    (object, isOpen) -> Void in
-                    
-                })
+                theVideoInfoToggleProtocol.toggleVideoInfoPanel(infoObject)
             }
         }
     }
@@ -69,7 +66,7 @@ class VideoInfoTableViewCell: UITableViewCell {
         self.infoLabel.text  = videoInfoObject.likeCount
         
         self.descriptionLabel.text = videoInfoObject.descriptionString
-        self.descriptionLabelHeightConstraint.constant = videoInfoObject.maxHeightValue
+        self.descriptionLabelHeightConstraint.constant = videoInfoObject.currentRowHeight
         
         if(videoInfoObject.isOpen == true){
             self.toggleButton.imageView?.image = UIImage(named: "expand_guide")

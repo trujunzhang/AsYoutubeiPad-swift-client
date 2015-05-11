@@ -11,6 +11,7 @@ import UIKit
 class DetailPageTableViewController: UITableViewController,UITableViewDelegate,UITableViewDataSource,VideoInfoToggleProtocol {
     
     var videoInfoObject: VideoInfoObject?
+    var videoInfoCellHeight : CGFloat = 0
     
     var pageSections:[DetailPageSection] = [DetailPageSection]()
     
@@ -19,10 +20,12 @@ class DetailPageTableViewController: UITableViewController,UITableViewDelegate,U
         
         self.tableView.dataSource = self
         self.tableView.delegate = self
+        self.tableView.separatorStyle = .None
     }
     
     func makeVideoInfoSection(videoInfoObject: VideoInfoObject){
         self.videoInfoObject = videoInfoObject
+        self.videoInfoCellHeight = self.videoInfoObject!.currentRowHeight
         self.pageSections.append(DetailPageSection.makeVideoInfoSection(self.videoInfoObject!))
         
         self.tableView.reloadData()
@@ -73,7 +76,9 @@ class DetailPageTableViewController: UITableViewController,UITableViewDelegate,U
         switch(sectionIdentifier){
         case DetailPageCellIdentifier.VideoInfoCellIdentifier:
             let videoInfoCell: VideoInfoTableViewCell = cell as! VideoInfoTableViewCell
-            videoInfoCell.configureCell(rowObject as! VideoInfoObject)
+            let videoInfoObject: VideoInfoObject = rowObject as! VideoInfoObject
+            videoInfoObject.currentRowHeight = self.videoInfoCellHeight
+            videoInfoCell.configureCell(videoInfoObject)
             break;
             
         case DetailPageCellIdentifier.ChannelInfoCellIdentifier:
@@ -97,9 +102,8 @@ class DetailPageTableViewController: UITableViewController,UITableViewDelegate,U
     
     override  func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         
-        
-        
     }
+    
     override func tableView(tableView: UITableView,
         shouldHighlightRowAtIndexPath indexPath: NSIndexPath) -> Bool{
             
@@ -114,8 +118,9 @@ class DetailPageTableViewController: UITableViewController,UITableViewDelegate,U
         switch(sectionIdentifier){
         case DetailPageCellIdentifier.VideoInfoCellIdentifier:
             let rowObject: VideoInfoObject = section.rowObjects[indexPath.row] as! VideoInfoObject
-            rowHeight = rowObject.currentRowHeight + VIDEO_INFO_TITLE_PANEL_HEIGHT
+            rowHeight = self.videoInfoCellHeight + VIDEO_INFO_TITLE_PANEL_HEIGHT
             
+            println("currentRowHeight is \(rowHeight)")
             break;
             
         case DetailPageCellIdentifier.ChannelInfoCellIdentifier:
@@ -149,7 +154,7 @@ class DetailPageTableViewController: UITableViewController,UITableViewDelegate,U
     
     override  func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let  headerCell:HeaderTableViewCell = tableView.dequeueReusableCellWithIdentifier(HEADER_CELL_IDENTIFIER) as! HeaderTableViewCell
-//        headerCell.backgroundColor = UIColor.cyanColor()
+        //        headerCell.backgroundColor = UIColor.cyanColor()
         
         headerCell.configureCell( self.pageSections[section].sectionTitle)
         
@@ -166,23 +171,28 @@ class DetailPageTableViewController: UITableViewController,UITableViewDelegate,U
     
     // MARK: Video Info tableview cell's animate
     
-    func updateAnimatedTableCell() {
+    func updateAnimatedTableCell(animatedHeight: CGFloat) {
+                println("updateAnimatedTableCell is \(animatedHeight)")
+        self.videoInfoCellHeight = animatedHeight
+        
         if let _tableView: UITableView = tableView {
-            _tableView.beginUpdates()
-            _tableView.reloadRowsAtIndexPaths([NSIndexPath(forRow: 0, inSection: 0)], withRowAnimation: .None)
-            _tableView.endUpdates()
+//                        _tableView.beginUpdates()
+//                        _tableView.reloadRowsAtIndexPaths([NSIndexPath(forRow: 0, inSection: 0)], withRowAnimation: .None)
+//                        _tableView.endUpdates()
+            _tableView.reloadData()
+            //            println("updateAnimatedTableCell")
         }
     }
     
-    func performAnimation() {
-        self.videoInfoObject?.prepareAnimate()
+    func performAnimation(object: VideoInfoObject) {
+        object.prepareAnimate()
         
         var name = kCAMediaTimingFunctionEaseIn
         
         var toValue: CGFloat = 0
-        if (videoInfoObject!.isOpen == false) {
+        if (object.isOpen == false) {
             name = kCAMediaTimingFunctionEaseOut
-            toValue = videoInfoObject!.maxHeightValue
+            toValue = object.maxHeightValue
         }
         
         let spring: POPBasicAnimation = POPBasicAnimation()
@@ -202,21 +212,23 @@ class DetailPageTableViewController: UITableViewController,UITableViewDelegate,U
             prop.readBlock = {
                 (anyObject, values) -> Void in
                 
-                if let object: VideoInfoObject = anyObject as? VideoInfoObject {
-                    values[0] = object.fromValue!
-                }
-                
+                let animatedObject:VideoInfoObject = anyObject as! VideoInfoObject
+                values[0] = animatedObject.fromValue!
             }
             
             prop.writeBlock = {
                 (anyObject, values) -> Void in
                 
-                if let object: VideoInfoObject = anyObject as? VideoInfoObject {
-                    object.fromValue = values[0]
-                    self.videoInfoObject!.currentRowHeight = values[0]
-                    
-                    self.updateAnimatedTableCell()
-                }
+                //                let animatedObject:VideoInfoObject = anyObject as! VideoInfoObject
+                //                animatedObject.fromValue = values[0]
+                //                animatedObject.currentRowHeight = values[0]
+                
+                //                println("currentRowHeight is \(animatedObject.currentRowHeight )")
+                
+                dispatch_async(dispatch_get_main_queue(), { () -> Void in
+                    self.updateAnimatedTableCell( values[0])
+                })
+                
             }
             
             // this helps Pop determine when the animation is over
@@ -227,14 +239,14 @@ class DetailPageTableViewController: UITableViewController,UITableViewDelegate,U
         spring.property = property
         spring.toValue = toValue
         
-        videoInfoObject!.isOpen = !(videoInfoObject!.isOpen)
+        object.isOpen = !(object.isOpen)
         
-        videoInfoObject!.pop_addAnimation(spring, forKey: "TableRowAnimate")
+        object.pop_addAnimation(spring, forKey: "TableRowAnimate")
     }
     
     // MARK : VideoInfoToggleProtocol
-    func toggleVideoInfoPanel(completionBlock: VideoToggleCompletionBlock) -> Void {
-        self.performAnimation()
+    func toggleVideoInfoPanel(object: VideoInfoObject) -> Void{
+        self.performAnimation(object)
     }
     
     
