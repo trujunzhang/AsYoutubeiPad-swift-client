@@ -9,6 +9,11 @@
 import UIKit
 
 class VideoStatisticTableViewCell: UITableViewCell {
+    
+        @IBOutlet weak var likeCountLabel: UIButton!
+    
+        @IBOutlet weak var disLikeCountLabel: UIButton!
+    
 
     override func awakeFromNib() {
         super.awakeFromNib()
