@@ -25,6 +25,8 @@ class VideoInfoTableViewCell: UITableViewCell {
     
     @IBOutlet weak var disLikeCountLabel: UIButton!
     
+    @IBOutlet weak var toggleButton: UIButton!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -62,6 +64,13 @@ class VideoInfoTableViewCell: UITableViewCell {
         self.infoLabel.text  = videoInfoObject.likeCount
         
         self.descriptionLabel.text = videoInfoObject.descriptionString
+        
+        if(videoInfoObject.isOpen == true){
+            self.toggleButton.imageView?.image = UIImage(named: "expand_guide")
+        }else{
+            self.toggleButton.imageView?.image = UIImage(named: "collapse_guide")
+        }
+        
     }
 
 }

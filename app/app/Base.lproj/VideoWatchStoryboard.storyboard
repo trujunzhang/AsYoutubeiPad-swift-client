@@ -285,7 +285,7 @@ Cg
                                         </view>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OsZ-u7-xxl" userLabel="descriptionLabel">
                                             <rect key="frame" x="8" y="62" width="584" height="143"/>
-                                            <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
@@ -342,6 +342,7 @@ Cg
                                     <outlet property="infoLabel" destination="eCx-4h-nf0" id="NQ9-AZ-mrv"/>
                                     <outlet property="likeCountLabel" destination="Ptz-I9-Rrf" id="E9F-Op-sQR"/>
                                     <outlet property="titleLabel" destination="sYj-H5-STx" id="Gnq-WI-aw7"/>
+                                    <outlet property="toggleButton" destination="uPg-5h-1nk" id="PTO-el-izQ"/>
                                     <outlet property="topPanel" destination="pvZ-Tj-0Pb" id="18r-SJ-WyX"/>
                                 </connections>
                             </tableViewCell>

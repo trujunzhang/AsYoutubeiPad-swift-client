@@ -111,6 +111,7 @@ class DetailPageTableViewController: UITableViewController,UITableViewDelegate,U
         case DetailPageCellIdentifier.VideoInfoCellIdentifier:
             let rowObject: VideoInfoObject = section.rowObjects[indexPath.row] as! VideoInfoObject
             rowHeight = rowObject.currentRowHeight + VIDEO_INFO_TITLE_PANEL_HEIGHT
+            
             break;
             
         case DetailPageCellIdentifier.ChannelInfoCellIdentifier:
@@ -162,6 +163,7 @@ class DetailPageTableViewController: UITableViewController,UITableViewDelegate,U
         self.videoInfoObject?.prepareAnimate()
         
         var name = kCAMediaTimingFunctionEaseIn
+        
         var toValue: CGFloat = 0
         if (videoInfoObject!.isOpen == false) {
             name = kCAMediaTimingFunctionEaseOut
