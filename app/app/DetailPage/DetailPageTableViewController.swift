@@ -21,7 +21,7 @@ class DetailPageTableViewController: UITableViewController,UITableViewDelegate,U
     }
     
     func makeVideoInfoSection(videoCache: YoutubeVideoCache){
-//        self.pageSections.append(DetailPageSection.makeVideoInfoSection(self.videoInfoObject!))
+        self.pageSections.append(DetailPageSection.makeVideoInfoSection(videoCache))
         
         self.tableView.reloadData()
     }

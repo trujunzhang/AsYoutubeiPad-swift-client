@@ -33,13 +33,16 @@ class DetailPageSection{
     var identifer = ""
     var rowObjects :[AnyObject] = [AnyObject]()
     
-    class func makeVideoInfoSection(object:AnyObject) -> DetailPageSection{
+    class func makeVideoInfoSection(videoCache: YoutubeVideoCache) -> DetailPageSection{
         let section: DetailPageSection = DetailPageSection()
         
         section.sectionTitle = ""
         section.sectionIdentifier = DetailPageCellIdentifier.VideoInfoCellIdentifier
         section.identifer = VIDEO_INFO_CELL_IDENTIFER
-        section.rowObjects.append(object)
+        
+        section.rowObjects.append(VideoInfoObject())
+        section.rowObjects.append(VideoDescriptonObject())
+        section.rowObjects.append(VideoStatisticObject())
         
         return section
     }
