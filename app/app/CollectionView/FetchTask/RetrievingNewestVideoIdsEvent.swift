@@ -8,7 +8,7 @@
 
 import Foundation
 
-class RetrievingNewestVideoIdsEvent: NSObject, FetchEventProtocol, RetrievingItemsFetchingHelperDelegate {
+class RetrievingNewestVideoIdsEvent: NSObject, FetchTaskProtocol, RetrievingItemsFetchingHelperDelegate {
 
     let helper: YoutubeRetrievingGTLActivityListItemsFetcherHelper = YoutubeRetrievingGTLActivityListItemsFetcherHelper()
 
@@ -17,7 +17,7 @@ class RetrievingNewestVideoIdsEvent: NSObject, FetchEventProtocol, RetrievingIte
 
     var completeHandler: ObjectHandler?
 
-    // MARK: FetchEventProtocol
+    // MARK: FetchTaskProtocol
     func refreshEvent(object: AnyObject, completeHandler: ObjectHandler) {
         self.completeHandler = completeHandler
         helper.delegate = self

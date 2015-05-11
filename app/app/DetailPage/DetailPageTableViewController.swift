@@ -64,11 +64,13 @@ class DetailPageTableViewController: UITableViewController,UITableViewDelegate,U
     
     func configureCell(cell: UITableViewCell, forRowAtIndexPath: NSIndexPath) {
         let section:DetailPageSection = self.pageSections[forRowAtIndexPath.section]
+        let rowObject: AnyObject = section.rowObjects[forRowAtIndexPath.row]
         let sectionIdentifier :    DetailPageCellIdentifier = section.sectionIdentifier!
         
         switch(sectionIdentifier){
         case DetailPageCellIdentifier.VideoInfoCellIdentifier:
-            let x = 0
+            let videoInfoCell: VideoInfoTableViewCell = cell as! VideoInfoTableViewCell
+            videoInfoCell.configureCell(rowObject as! VideoInfoObject)
             break;
             
         case DetailPageCellIdentifier.ChannelInfoCellIdentifier:

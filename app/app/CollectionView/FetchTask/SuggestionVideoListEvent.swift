@@ -13,7 +13,7 @@ class SuggestionVideoListEvent {
     
     var requestInfo = YTYoutubeRequestInfo()
     
-    // MARK: FetchEventProtocol
+    // MARK: FetchTaskProtocol
     func refreshEvent(object: AnyObject, completeHandler: ObjectHandler) {
         let videoID = object as! String
         requestInfo =

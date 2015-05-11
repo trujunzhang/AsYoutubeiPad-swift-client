@@ -9,6 +9,7 @@
 import UIKit
 
 class VideoInfoTableViewCell: UITableViewCell {
+    var videoInfoObject: VideoInfoObject?
 
     @IBOutlet weak var topPanel: UIView!
     
@@ -34,7 +35,10 @@ class VideoInfoTableViewCell: UITableViewCell {
     }
     
     func configureCell(videoInfoObject: VideoInfoObject){
-        
+       let width =  self.frame.size.width
+        println("width is \(width)")
+        self.titleLabel.text = videoInfoObject.title
+        self.infoLabel.text  = videoInfoObject.likeCount
     }
 
 }

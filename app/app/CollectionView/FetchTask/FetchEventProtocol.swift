@@ -1,5 +1,5 @@
 //
-//  FetchEventProtocol.swift
+//  FetchTaskProtocol.swift
 //  app
 //
 //  Created by djzhang on 5/2/15.
@@ -8,7 +8,7 @@
 
 import Foundation
 
-protocol FetchEventProtocol {
+protocol FetchTaskProtocol {
 
     func refreshEvent(object: AnyObject, completeHandler: ObjectHandler)
 

@@ -34,7 +34,7 @@ class YTVideosCollectionViewController: UIViewController, UICollectionViewDataSo
     
     @IBOutlet weak var flowLayout: UICollectionViewFlowLayout!
     
-    var delegate: FetchEventProtocol?
+    var delegate: FetchTaskProtocol?
     var eventObject: AnyObject?
     
     var videoList: NSMutableArray = NSMutableArray()
@@ -45,7 +45,7 @@ class YTVideosCollectionViewController: UIViewController, UICollectionViewDataSo
         return refreshControl
         }()
     
-    func setCollectionTask(eventObject: AnyObject,delegate: FetchEventProtocol){
+    func setCollectionTask(eventObject: AnyObject,delegate: FetchTaskProtocol){
         self.eventObject = eventObject
         self.delegate = delegate
     }

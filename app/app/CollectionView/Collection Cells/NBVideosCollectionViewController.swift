@@ -18,7 +18,7 @@ class NBVideosCollectionViewController: NBMultableCollectionBaseViewController {
         }()
     
     
-    private var delegate: FetchEventProtocol?
+    private var delegate: FetchTaskProtocol?
     private var eventObject: AnyObject?
     
     var videoList: NSMutableArray = NSMutableArray()
@@ -29,7 +29,7 @@ class NBVideosCollectionViewController: NBMultableCollectionBaseViewController {
         return refreshControl
         }()
     
-    func setCollectionTask(eventObject: AnyObject,delegate: FetchEventProtocol){
+    func setCollectionTask(eventObject: AnyObject,delegate: FetchTaskProtocol){
         self.eventObject = eventObject
         self.delegate = delegate
     }

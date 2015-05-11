@@ -9,10 +9,10 @@
 import Foundation
 
 
-class SearchEvent: NSObject, FetchEventProtocol {
+class SearchEvent: NSObject, FetchTaskProtocol {
     var requestInfo = YTYoutubeRequestInfo()
 
-    // MARK: FetchEventProtocol
+    // MARK: FetchTaskProtocol
     func refreshEvent(object: AnyObject, completeHandler: ObjectHandler) {
         let searchWish = object as! String
         requestInfo =

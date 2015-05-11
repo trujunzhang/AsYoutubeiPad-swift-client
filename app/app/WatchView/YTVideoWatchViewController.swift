@@ -21,6 +21,7 @@ class YTVideoWatchViewController: UIViewController {
     @IBOutlet weak var videoInfoContainer: UIView!
     @IBOutlet weak var sideContainer: UIView!
     
+    let fetcherEvent : SearchEvent = SearchEvent()
     var videoInfoObject: VideoInfoObject = VideoInfoObject()
     
     var videoID: String = "" 
