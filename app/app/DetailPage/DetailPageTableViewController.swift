@@ -24,9 +24,9 @@ class DetailPageTableViewController: UITableViewController,UITableViewDelegate,U
     }
     
     func makeVideoInfoSection(){
-        self.pageSections.append(DetailPageSection.makeVideoInfoSection(self.videoInfoObject))
+        //        self.pageSections.append(DetailPageSection.makeVideoInfoSection(self.videoInfoObject))
         
-        self.tableView.reloadData()
+        //        self.tableView.reloadData()
     }
     
     func appendSideVideos(array:NSArray){
@@ -49,6 +49,7 @@ class DetailPageTableViewController: UITableViewController,UITableViewDelegate,U
     //MARK: UITableViewDataSource
     
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+        println("sections count is \(self.pageSections.count)")
         return self.pageSections.count
     }
     
@@ -103,25 +104,48 @@ class DetailPageTableViewController: UITableViewController,UITableViewDelegate,U
     }
     
     override  func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-        return 0
-    }
-    
-    override  func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 0
-    }
-    
-    override  func tableView(tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
-        return 0
-    }
-    
-    override  func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        return UIView()
-    }
-    
-    override  func tableView(tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
+        let section:DetailPageSection = self.pageSections[indexPath.section]
+        let sectionIdentifier :    DetailPageCellIdentifier = section.sectionIdentifier!
         
-        return UIView()
+        var rowHeight:CGFloat = 0
+        switch(sectionIdentifier){
+        case DetailPageCellIdentifier.VideoInfoCellIdentifier:
+            rowHeight = 100
+            break;
+            
+        case DetailPageCellIdentifier.ChannelInfoCellIdentifier:
+            break;
+            
+        case DetailPageCellIdentifier.SuggestionListCellIdentifier:
+            rowHeight = 140
+            break;
+            
+        default:
+            
+            break;
+            
+        }
+        
+        
+        return rowHeight
     }
+    
+    //    override  func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+    //        return 0
+    //    }
+    //
+    //    override  func tableView(tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+    //        return 0
+    //    }
+    //
+    //    override  func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+    //        return UIView()
+    //    }
+    //
+    //    override  func tableView(tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
+    //        
+    //        return UIView()
+    //    }
     
     
     

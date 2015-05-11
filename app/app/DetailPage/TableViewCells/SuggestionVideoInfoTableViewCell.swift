@@ -36,6 +36,8 @@ class SuggestionVideoInfoTableViewCell: UITableViewCell {
         
         self.thumbnailImageView.sd_setImageWithURL(NSURL(string: thumbnailUrl as String), placeholderImage: nil, options: SDWebImageOptions.LowPriority)
         
+        self.titleLabel.text = videoTitle
+        self.contentLabel.text = "\(timeAgo), \(viewCount)"
         
         
     }
