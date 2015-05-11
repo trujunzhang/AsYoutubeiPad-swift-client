@@ -8,11 +8,8 @@
 
 import UIKit
 
-class DetailPageTableViewController: UITableViewController,UITableViewDelegate,UITableViewDataSource,VideoInfoToggleProtocol {
-    
-    var videoInfoObject: VideoInfoObject?
-    var videoInfoCellHeight : CGFloat = 0
-    
+class DetailPageTableViewController: UITableViewController,UITableViewDelegate,UITableViewDataSource {
+
     var pageSections:[DetailPageSection] = [DetailPageSection]()
     
     override func viewDidLoad() {
@@ -23,9 +20,8 @@ class DetailPageTableViewController: UITableViewController,UITableViewDelegate,U
         self.tableView.separatorStyle = .None
     }
     
-    func makeVideoInfoSection(videoInfoObject: VideoInfoObject){
-        self.videoInfoObject = videoInfoObject
-        self.pageSections.append(DetailPageSection.makeVideoInfoSection(self.videoInfoObject!))
+    func makeVideoInfoSection(videoCache: YoutubeVideoCache){
+//        self.pageSections.append(DetailPageSection.makeVideoInfoSection(self.videoInfoObject!))
         
         self.tableView.reloadData()
     }
@@ -41,9 +37,7 @@ class DetailPageTableViewController: UITableViewController,UITableViewDelegate,U
         // Dispose of any resources that can be recreated.
     }
     
-    func addVideoInfo(videoInfoObject: VideoInfoObject){
-        self.videoInfoObject = videoInfoObject
-    }
+
     
     //MARK: UITableViewDataSource
     
@@ -76,13 +70,13 @@ class DetailPageTableViewController: UITableViewController,UITableViewDelegate,U
         switch(sectionIdentifier){
         case DetailPageCellIdentifier.VideoInfoCellIdentifier:
             let videoInfoCell: VideoInfoTableViewCell = cell as! VideoInfoTableViewCell
-            let videoInfoObject: VideoInfoObject = rowObject as! VideoInfoObject
-            videoInfoCell.configureCell(videoInfoObject)
+//            let videoInfoObject: VideoInfoObject = rowObject as! VideoInfoObject
+//            videoInfoCell.configureCell(videoInfoObject)
             break;
             
         case DetailPageCellIdentifier.ChannelInfoCellIdentifier:
             let videoInfoCell: ChannelInfoTableViewCell = cell as! ChannelInfoTableViewCell
-            videoInfoCell.configureCell(rowObject as! VideoInfoObject)
+//            videoInfoCell.configureCell(rowObject as! VideoInfoObject)
             break;
             
         case DetailPageCellIdentifier.SuggestionListCellIdentifier:
@@ -120,9 +114,9 @@ class DetailPageTableViewController: UITableViewController,UITableViewDelegate,U
         var rowHeight:CGFloat = 0
         switch(sectionIdentifier){
         case DetailPageCellIdentifier.VideoInfoCellIdentifier:
-            let rowObject: VideoInfoObject = section.rowObjects[indexPath.row] as! VideoInfoObject
-            rowHeight = self.videoInfoCellHeight + VIDEO_INFO_TITLE_PANEL_HEIGHT
-            
+//            let rowObject: VideoInfoObject = section.rowObjects[indexPath.row] as! VideoInfoObject
+//            rowHeight = self.videoInfoCellHeight + VIDEO_INFO_TITLE_PANEL_HEIGHT
+
             println("currentRowHeight is \(rowHeight)")
             break;
             
@@ -171,19 +165,7 @@ class DetailPageTableViewController: UITableViewController,UITableViewDelegate,U
         return footerView
     }
     
-    
-    // MARK: Video Info tableview cell's animate
-    
-    func updateAnimatedTableCell(animatedHeight: CGFloat) {
-          }
-    
-    
-    // MARK : VideoInfoToggleProtocol
-    func toggleVideoInfoPanel(object: VideoInfoObject) -> Void{
-//        self.performAnimation(object)
-    }
-    
-    
+
     
     
     

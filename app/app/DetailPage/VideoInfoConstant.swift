@@ -17,7 +17,7 @@ let VIDEO_INFO_TOGGLE_WIDTH_HEIGHT: CGFloat = 39
 typealias VideoToggleCompletionBlock = (AnyObject!, Bool!) -> Void
 
 protocol VideoInfoToggleProtocol {
-    func toggleVideoInfoPanel(object: VideoInfoObject) -> Void
+//    func toggleVideoInfoPanel(object: VideoInfoObject) -> Void
 }
 
 //extension VideoInfoViewController {

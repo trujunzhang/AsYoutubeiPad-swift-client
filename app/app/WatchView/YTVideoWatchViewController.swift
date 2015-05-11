@@ -22,7 +22,6 @@ class YTVideoWatchViewController: UIViewController {
     @IBOutlet weak var sideContainer: UIView!
     
     let searchTask : SearchTask = SearchTask()
-    var videoInfoObject: VideoInfoObject = VideoInfoObject()
     
     var videoID: String = ""
     
@@ -88,8 +87,8 @@ class YTVideoWatchViewController: UIViewController {
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
         
-        let videoInfoObject: VideoInfoObject = VideoInfoObject()
-        sideTableViewController.makeVideoInfoSection(videoInfoObject)
+        let videoCache: YoutubeVideoCache = YoutubeVideoCache()
+        sideTableViewController.makeVideoInfoSection(videoCache)
     }
     
     
