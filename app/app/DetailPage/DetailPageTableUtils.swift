@@ -12,6 +12,8 @@ let VIDEO_INFO_CELL_IDENTIFER = "videoInfoIdentifier"
 let CHANNEL_INFO_CELL_IDENTIFER = "channelInfoIdentifier"
 let SUGGESTION_CELL_IDENTIFER = "suggestionVideoInfoIdentifier"
 
+let HEADER_CELL_IDENTIFIER = "headerCellIdentifier"
+
 public enum DetailPageCellIdentifier {
     case VideoInfoCellIdentifier
     case ChannelInfoCellIdentifier
@@ -40,7 +42,7 @@ class DetailPageSection{
     class func makeSuggestionVideoListSection(array:NSArray) -> DetailPageSection{
         let section: DetailPageSection = DetailPageSection()
         
-        section.sectionTitle = ""
+        section.sectionTitle = "Suggestions"
         section.sectionIdentifier = DetailPageCellIdentifier.SuggestionListCellIdentifier
         section.identifer = SUGGESTION_CELL_IDENTIFER
         section.rowObjects = array as [AnyObject]

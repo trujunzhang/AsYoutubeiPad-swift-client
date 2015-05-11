@@ -78,11 +78,11 @@ class YTVideoWatchViewController: UIViewController {
         LayoutUtils.LayoutFullView(sideTableViewController.view)
         
         // test
-        //        self.searchTask.refreshEvent("sketch 3", completeHandler: {
-        //            (response, sucess) -> Void in
-        //            let array: NSArray = response as! NSArray
-        //            self.videoInfoTableViewController.appendSideVideos(array)
-        //        })
+        self.searchTask.refreshEvent("sketch 3", completeHandler: {
+            (response, sucess) -> Void in
+            let array: NSArray = response as! NSArray
+            self.sideTableViewController.appendSideVideos(array)
+        })
     }
     
     override func viewDidAppear(animated: Bool) {
@@ -96,7 +96,7 @@ class YTVideoWatchViewController: UIViewController {
         
         videoInfoObject.videoInfoToggleProtocol = videoInfoTableViewController
         
-        videoInfoTableViewController.makeVideoInfoSection(videoInfoObject)
+        sideTableViewController.makeVideoInfoSection(videoInfoObject)
     }
     
     

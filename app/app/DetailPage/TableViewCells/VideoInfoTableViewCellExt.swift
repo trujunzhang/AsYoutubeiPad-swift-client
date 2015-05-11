@@ -20,7 +20,7 @@ extension VideoInfoTableViewCell{
             attributes: [NSFontAttributeName: getDescriptionBlockCellFont()],
             context: nil)
         
-        return boundingRect.size.height + 120 + 40
+        return boundingRect.size.height + 120
     }
 
 }

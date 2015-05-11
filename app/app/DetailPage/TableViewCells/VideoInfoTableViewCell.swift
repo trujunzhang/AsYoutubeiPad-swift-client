@@ -25,6 +25,9 @@ class VideoInfoTableViewCell: UITableViewCell {
     
     @IBOutlet weak var toggleButton: UIButton!
     
+    @IBOutlet weak var descriptionLabelHeightConstraint: NSLayoutConstraint!
+    
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -66,6 +69,7 @@ class VideoInfoTableViewCell: UITableViewCell {
         self.infoLabel.text  = videoInfoObject.likeCount
         
         self.descriptionLabel.text = videoInfoObject.descriptionString
+        self.descriptionLabelHeightConstraint.constant = videoInfoObject.maxHeightValue
         
         if(videoInfoObject.isOpen == true){
             self.toggleButton.imageView?.image = UIImage(named: "expand_guide")

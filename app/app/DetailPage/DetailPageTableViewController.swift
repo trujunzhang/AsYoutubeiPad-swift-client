@@ -29,9 +29,9 @@ class DetailPageTableViewController: UITableViewController,UITableViewDelegate,U
     }
     
     func appendSideVideos(array:NSArray){
-        //        self.pageSections.append(DetailPageSection.makeSuggestionVideoListSection(array))
+        self.pageSections.append(DetailPageSection.makeSuggestionVideoListSection(array))
         
-        //        self.tableView.reloadData()
+        self.tableView.reloadData()
     }
     
     override func didReceiveMemoryWarning() {
@@ -100,7 +100,7 @@ class DetailPageTableViewController: UITableViewController,UITableViewDelegate,U
         
         
     }
-   override func tableView(tableView: UITableView,
+    override func tableView(tableView: UITableView,
         shouldHighlightRowAtIndexPath indexPath: NSIndexPath) -> Bool{
             
             return false
@@ -135,22 +135,33 @@ class DetailPageTableViewController: UITableViewController,UITableViewDelegate,U
         return rowHeight
     }
     
-    //    override  func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-    //        return 0
-    //    }
-    //
-    //    override  func tableView(tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
-    //        return 0
-    //    }
-    //
-    //    override  func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-    //        return UIView()
-    //    }
-    //
-    //    override  func tableView(tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
-    //
-    //        return UIView()
-    //    }
+    override  func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        let section:DetailPageSection = self.pageSections[section]
+        if(section.sectionTitle.isEmpty == true){
+            return 0
+        }
+        return 50
+    }
+    
+    override  func tableView(tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+        return 40.0
+    }
+    
+    override  func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let  headerCell:HeaderTableViewCell = tableView.dequeueReusableCellWithIdentifier(HEADER_CELL_IDENTIFIER) as! HeaderTableViewCell
+//        headerCell.backgroundColor = UIColor.cyanColor()
+        
+        headerCell.configureCell( self.pageSections[section].sectionTitle)
+        
+        return headerCell
+    }
+    
+    override  func tableView(tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
+        let footerView = UIView(frame: CGRectMake(0, 0, tableView.frame.size.width, 40))
+        footerView.backgroundColor = UIColor.clearColor()
+        
+        return footerView
+    }
     
     
     // MARK: Video Info tableview cell's animate

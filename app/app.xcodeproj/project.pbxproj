@@ -39,6 +39,7 @@
 		5E0AC2261AFA4139002677C4 /* RequestFailureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E0AC2251AFA4139002677C4 /* RequestFailureViewController.swift */; };
 		5E0AC2291AFA4702002677C4 /* Public.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5E0AC2271AFA4702002677C4 /* Public.storyboard */; };
 		5E0BD1011AE72617001E43B7 /* NBMenuSectionGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E0BD1001AE72617001E43B7 /* NBMenuSectionGenerator.swift */; };
+		5E1A20AF1B00814700A6948B /* HeaderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E1A20AE1B00814700A6948B /* HeaderTableViewCell.swift */; };
 		5E1E2CEB1AD8B898004CC05B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E1E2CEA1AD8B898004CC05B /* AppDelegate.swift */; };
 		5E1E2CF01AD8B898004CC05B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5E1E2CEE1AD8B898004CC05B /* Main.storyboard */; };
 		5E1E2CF21AD8B898004CC05B /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5E1E2CF11AD8B898004CC05B /* Images.xcassets */; };
@@ -172,6 +173,7 @@
 		5E0AC2251AFA4139002677C4 /* RequestFailureViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestFailureViewController.swift; sourceTree = "<group>"; };
 		5E0AC2281AFA4702002677C4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Public.storyboard; sourceTree = "<group>"; };
 		5E0BD1001AE72617001E43B7 /* NBMenuSectionGenerator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NBMenuSectionGenerator.swift; sourceTree = "<group>"; };
+		5E1A20AE1B00814700A6948B /* HeaderTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HeaderTableViewCell.swift; path = TableViewCells/HeaderTableViewCell.swift; sourceTree = "<group>"; };
 		5E1E2CE51AD8B898004CC05B /* app.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = app.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5E1E2CE91AD8B898004CC05B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5E1E2CEA1AD8B898004CC05B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -684,6 +686,7 @@
 				5E70EFB21AFF00C400C99699 /* VideoInfoTableViewCell.swift */,
 				5E70EFB41AFF00DE00C99699 /* ChannelInfoTableViewCell.swift */,
 				5E70EFB61AFF00FC00C99699 /* SuggestionVideoInfoTableViewCell.swift */,
+				5E1A20AE1B00814700A6948B /* HeaderTableViewCell.swift */,
 			);
 			name = TableViewCells;
 			sourceTree = "<group>";
@@ -732,6 +735,7 @@
 		5ED690F01AF0CD6800560A83 /* CollectionView */ = {
 			isa = PBXGroup;
 			children = (
+				5ECB14D21AF0D3D1006592AC /* YTVideoCollectionConstant.swift */,
 				5E5F6C861B0030CC00D6808D /* FetchTask */,
 				5E0AC21B1AFA3B73002677C4 /* NBVideosCollectionViewController.swift */,
 				5E7BA87D1AFA2FCD00C13E95 /* NBMultableCollectionBaseViewController.h */,
@@ -740,7 +744,6 @@
 				5EA6916C1AF7404400DF0298 /* UICollectionCells */,
 				5EA80D8D1AF32B1E00A0D61D /* NBCollectionSectionGenerator.swift */,
 				5E3294241AF246490055C454 /* YTVideosCollectionViewController.swift */,
-				5ECB14D21AF0D3D1006592AC /* YTVideoCollectionConstant.swift */,
 			);
 			path = CollectionView;
 			sourceTree = "<group>";
@@ -907,6 +910,7 @@
 				5EFFA2961AF5BA0100095130 /* YoutubeDataFetcher.swift in Sources */,
 				5E1E2CEB1AD8B898004CC05B /* AppDelegate.swift in Sources */,
 				5E39C4621AF4798F0069AC33 /* YoutubeRetrievingNewSubscriptionVideosFetcher.swift in Sources */,
+				5E1A20AF1B00814700A6948B /* HeaderTableViewCell.swift in Sources */,
 				5E39C4611AF4798F0069AC33 /* YoutubeRetrievingActivityListItemsFetcherHelper.swift in Sources */,
 				5E0514BF1AEDC60900A90A0B /* YTTabBarItemsUtils.swift in Sources */,
 				5E032D341AF5B7A4006125AA /* CMTime+Validation.swift in Sources */,

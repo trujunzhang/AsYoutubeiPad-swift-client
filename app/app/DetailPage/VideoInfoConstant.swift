@@ -20,8 +20,6 @@ protocol VideoInfoToggleProtocol {
     func toggleVideoInfoPanel(completionBlock: VideoToggleCompletionBlock) -> Void
 }
 
-
-
 extension VideoInfoViewController {
     
     class func instance() -> VideoInfoViewController {
