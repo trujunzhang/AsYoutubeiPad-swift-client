@@ -24,15 +24,15 @@ class DetailPageTableViewController: UITableViewController,UITableViewDelegate,U
     }
     
     func makeVideoInfoSection(){
-        //        self.pageSections.append(DetailPageSection.makeVideoInfoSection(self.videoInfoObject))
+                self.pageSections.append(DetailPageSection.makeVideoInfoSection(self.videoInfoObject))
         
-        //        self.tableView.reloadData()
+                self.tableView.reloadData()
     }
     
     func appendSideVideos(array:NSArray){
-        self.pageSections.append(DetailPageSection.makeSuggestionVideoListSection(array))
+//        self.pageSections.append(DetailPageSection.makeSuggestionVideoListSection(array))
         
-        self.tableView.reloadData()
+//        self.tableView.reloadData()
     }
     
     override func didReceiveMemoryWarning() {
@@ -110,7 +110,7 @@ class DetailPageTableViewController: UITableViewController,UITableViewDelegate,U
         var rowHeight:CGFloat = 0
         switch(sectionIdentifier){
         case DetailPageCellIdentifier.VideoInfoCellIdentifier:
-            rowHeight = 100
+            rowHeight = 200
             break;
             
         case DetailPageCellIdentifier.ChannelInfoCellIdentifier:
