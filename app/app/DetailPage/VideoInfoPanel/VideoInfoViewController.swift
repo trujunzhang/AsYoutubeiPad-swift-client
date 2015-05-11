@@ -12,8 +12,6 @@ import Cartography
 
 class VideoInfoViewController: UIViewController, UITableViewDelegate, VideoInfoToggleProtocol {
 
-
-    
     var model: NITableViewModel?
     var tableView: UITableView?
     var cellFactory: NICellFactory?
@@ -21,11 +19,6 @@ class VideoInfoViewController: UIViewController, UITableViewDelegate, VideoInfoT
     var videoInfoObject: VideoInfoObject?
     
     var tableContents: [AnyObject] = [AnyObject]()
-    
-    
-
-    
-    
     
     func reloadTableData(videoCache: YoutubeVideoCache){
         self.videoInfoObject =  VideoInfoObject.convertToVideoInfoObject(videoCache)

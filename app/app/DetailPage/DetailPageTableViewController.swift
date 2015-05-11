@@ -8,9 +8,9 @@
 
 import UIKit
 
-class DetailPageTableViewController: UITableViewController,UITableViewDelegate,UITableViewDataSource {
+class DetailPageTableViewController: UITableViewController,UITableViewDelegate,UITableViewDataSource,VideoInfoToggleProtocol {
     
-    var videoInfoObject: VideoInfoObject = VideoInfoObject()
+    var videoInfoObject: VideoInfoObject?
     
     var pageSections:[DetailPageSection] = [DetailPageSection]()
     
@@ -20,11 +20,11 @@ class DetailPageTableViewController: UITableViewController,UITableViewDelegate,U
         self.tableView.dataSource = self
         self.tableView.delegate = self
         
-//        self.makeVideoInfoSection() // test
+        videoInfoObject = VideoInfoObject()
     }
     
     func makeVideoInfoSection(){
-        self.pageSections.append(DetailPageSection.makeVideoInfoSection(self.videoInfoObject))
+        self.pageSections.append(DetailPageSection.makeVideoInfoSection(self.videoInfoObject!))
         
         self.tableView.reloadData()
     }
@@ -109,7 +109,8 @@ class DetailPageTableViewController: UITableViewController,UITableViewDelegate,U
         var rowHeight:CGFloat = 0
         switch(sectionIdentifier){
         case DetailPageCellIdentifier.VideoInfoCellIdentifier:
-            rowHeight = 200
+            let rowObject: VideoInfoObject = section.rowObjects[indexPath.row] as! VideoInfoObject
+            rowHeight = rowObject.currentRowHeight + VIDEO_INFO_TITLE_PANEL_HEIGHT
             break;
             
         case DetailPageCellIdentifier.ChannelInfoCellIdentifier:
@@ -145,6 +146,80 @@ class DetailPageTableViewController: UITableViewController,UITableViewDelegate,U
     //
     //        return UIView()
     //    }
+    
+    
+    // MARK: Video Info tableview cell's animate
+    
+    func updateAnimatedTableCell() {
+        if let _tableView: UITableView = tableView {
+            _tableView.beginUpdates()
+            _tableView.reloadRowsAtIndexPaths([NSIndexPath(forRow: 0, inSection: 0)], withRowAnimation: .None)
+            _tableView.endUpdates()
+        }
+    }
+    
+    func performAnimation() {
+        self.videoInfoObject?.prepareAnimate()
+        
+        var name = kCAMediaTimingFunctionEaseIn
+        var toValue: CGFloat = 0
+        if (videoInfoObject!.isOpen == false) {
+            name = kCAMediaTimingFunctionEaseOut
+            toValue = videoInfoObject!.maxHeightValue
+        }
+        
+        let spring: POPBasicAnimation = POPBasicAnimation()
+        spring.timingFunction = CAMediaTimingFunction(name: name)
+        spring.completionBlock = {
+            (anim, finished) -> Void in
+            //            self.videoInfoObject!.currentRowHeight = toValue
+            //            self.updateAnimatedTableCell()
+        }
+        
+        let property: POPAnimatableProperty = POPAnimatableProperty.propertyWithName("com.rwt.heightContstraint", initializer: {
+            (object) -> Void in
+            
+            let prop: POPMutableAnimatableProperty = object as POPMutableAnimatableProperty
+            
+            // note the object used is NSLayoutConstraint, the same object we assign the animation to
+            prop.readBlock = {
+                (anyObject, values) -> Void in
+                
+                if let object: VideoInfoObject = anyObject as? VideoInfoObject {
+                    values[0] = object.fromValue!
+                }
+                
+            }
+            
+            prop.writeBlock = {
+                (anyObject, values) -> Void in
+                
+                if let object: VideoInfoObject = anyObject as? VideoInfoObject {
+                    object.fromValue = values[0]
+                    self.videoInfoObject!.currentRowHeight = values[0]
+                    
+                    self.updateAnimatedTableCell()
+                }
+            }
+            
+            // this helps Pop determine when the animation is over
+            prop.threshold = 0.01
+            
+        }) as! POPAnimatableProperty
+        
+        spring.property = property
+        spring.toValue = toValue
+        
+        videoInfoObject!.isOpen = !(videoInfoObject!.isOpen)
+        
+        videoInfoObject!.pop_addAnimation(spring, forKey: "TableRowAnimate")
+    }
+    
+    // MARK : VideoInfoToggleProtocol
+    func toggleVideoInfoPanel(completionBlock: VideoToggleCompletionBlock) -> Void {
+        self.performAnimation()
+    }
+    
     
     
     
