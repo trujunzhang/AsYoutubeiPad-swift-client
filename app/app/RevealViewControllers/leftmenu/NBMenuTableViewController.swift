@@ -34,7 +34,7 @@ class NBMenuTableViewController: UIViewController, UITableViewDelegate, NBMenuTi
         cellFactory = NICellFactory()
 
         if let theCellFactory: NICellFactory = cellFactory {
-            theCellFactory.mapObjectClass(NIDrawRectBlockCellObject.self, toCellClass: VideoInfoDrawRectBlockCell.self)
+//            theCellFactory.mapObjectClass(NIDrawRectBlockCellObject.self, toCellClass: VideoInfoDrawRectBlockCell.self)
             //            theCellFactory.mapObjectClass(NIDrawRectBlockCellObject.self, toCellClass: MenuTitleBarCellObject.self)
         }
 

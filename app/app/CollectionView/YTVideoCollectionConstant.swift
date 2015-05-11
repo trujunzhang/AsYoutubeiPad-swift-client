@@ -20,12 +20,12 @@ extension YTVideosCollectionViewController {
     }
 }
 
-
-extension NBVideosCollectionViewController {
-    
-    class func instance() -> NBVideosCollectionViewController {
-
-        return NBVideosCollectionViewController()
-    }
-}
+//
+//extension NBVideosCollectionViewController {
+//    
+//    class func instance() -> NBVideosCollectionViewController {
+//
+//        return NBVideosCollectionViewController()
+//    }
+//}
 

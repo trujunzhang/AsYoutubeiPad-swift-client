@@ -20,13 +20,13 @@ protocol VideoInfoToggleProtocol {
     func toggleVideoInfoPanel(completionBlock: VideoToggleCompletionBlock) -> Void
 }
 
-extension VideoInfoViewController {
-    
-    class func instance() -> VideoInfoViewController {
-        
-        return UIStoryboard(name: STORYBOARD_VIDEOWATCH_NAME, bundle: nil).instantiateViewControllerWithIdentifier("VideoInfoViewController") as! VideoInfoViewController
-    }
-}
+//extension VideoInfoViewController {
+//    
+//    class func instance() -> VideoInfoViewController {
+//        
+//        return UIStoryboard(name: STORYBOARD_VIDEOWATCH_NAME, bundle: nil).instantiateViewControllerWithIdentifier("VideoInfoViewController") as! VideoInfoViewController
+//    }
+//}
 
 
 extension DetailPageTableViewController {
