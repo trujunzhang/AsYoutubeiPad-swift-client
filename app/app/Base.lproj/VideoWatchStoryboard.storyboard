@@ -363,8 +363,7 @@ Cg
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="pNf-sO-bCp" userLabel="thumbnailImage">
                                             <rect key="frame" x="22" y="21" width="93" height="63"/>
                                             <constraints>
-                                                <constraint firstAttribute="width" constant="93" id="Isv-Mt-Ceu"/>
-                                                <constraint firstAttribute="width" secondItem="pNf-sO-bCp" secondAttribute="height" multiplier="31:21" id="OIX-az-6DB"/>
+                                                <constraint firstAttribute="width" secondItem="pNf-sO-bCp" secondAttribute="height" multiplier="31:21" id="j95-BD-jRQ"/>
                                             </constraints>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Smf-4r-8Zd" userLabel="titleLabel">
@@ -381,8 +380,9 @@ Cg
                                         </label>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstAttribute="trailing" secondItem="pNf-sO-bCp" secondAttribute="trailing" constant="485" id="H7f-vY-I7V"/>
-                                        <constraint firstAttribute="centerY" secondItem="pNf-sO-bCp" secondAttribute="centerY" id="kYK-Kn-rUP"/>
+                                        <constraint firstItem="pNf-sO-bCp" firstAttribute="leading" secondItem="xua-c3-F2S" secondAttribute="leading" constant="22" id="On7-Jh-SD0"/>
+                                        <constraint firstAttribute="bottom" secondItem="pNf-sO-bCp" secondAttribute="bottom" constant="20" id="VM4-gg-gBX"/>
+                                        <constraint firstItem="pNf-sO-bCp" firstAttribute="top" secondItem="xua-c3-F2S" secondAttribute="top" constant="21" id="jlE-ot-C7a"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
