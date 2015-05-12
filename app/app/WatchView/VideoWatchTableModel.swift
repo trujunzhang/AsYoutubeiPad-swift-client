@@ -18,12 +18,13 @@ class VideoWatchTableModel{
     var videoInfoSections:[DetailPageSection] = [DetailPageSection]()
     
     let videoCache: YoutubeVideoCache = YoutubeVideoCache()
-    var pageSections:[String:DetailPageSection] = [String:DetailPageSection]()
+    var pageSectionDict:[String:DetailPageSection] = [String:DetailPageSection]()
     
-    func makeVideoInfoSections() -> [DetailPageSection] {
-        self.videoInfoSections = DetailPageSection.insertVideoInfoSection(self.videoCache,videoInfoTappedEnable:self.videoInfoTappedEnable)
-        
-        return self.videoInfoSections
+    func makeVideoInfoSections()  {
+        let dict:[String:DetailPageSection] = DetailPageSection.insertVideoInfoSection(self.videoCache,videoInfoTappedEnable:self.videoInfoTappedEnable)
+        for (key,value) in dict {
+            self.pageSectionDict[key] = value
+        }
     }
     
     func makeSideVideos(array:NSArray) -> DetailPageSection {
@@ -33,11 +34,11 @@ class VideoWatchTableModel{
     }
     
     func getSectionByIndex(key: String) -> DetailPageSection{
-        return self.pageSections[key]!
+        return self.pageSectionDict[key]!
     }
     
     func getSectionCount() -> Int{
-        return self.pageSections.count
+        return self.pageSectionDict.count
     }
     
 }

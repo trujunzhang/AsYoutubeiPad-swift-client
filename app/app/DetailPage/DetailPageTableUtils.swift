@@ -51,19 +51,17 @@ class DetailPageSection : NSObject{
     }
     
     // MARK: make different sections
-    class func insertVideoInfoSection(videoCache: YoutubeVideoCache, videoInfoTappedEnable : Bool) -> [DetailPageSection]{
-        var pageSections:[DetailPageSection] = [DetailPageSection]()
+    class func insertVideoInfoSection(videoCache: YoutubeVideoCache, videoInfoTappedEnable : Bool) -> [String:DetailPageSection] {
+        var dict:[String:DetailPageSection] = [String:DetailPageSection]()
         
         var section: DetailPageSection = DetailPageSection.makeVideoInfoObjectSection(videoCache,videoInfoTappedEnable:videoInfoTappedEnable)
-        pageSections.append(section)
+        dict[VIDEO_INFO_CELL_IDENTIFER] = section
         
         section = DetailPageSection.makeVideoDescriptionObjectSection(videoCache)
-         pageSections.append(section)
         
         section = DetailPageSection.makeVideoStasticsObjectSection(videoCache)
-         pageSections.append(section)
         
-        return pageSections
+        return dict
     }
     
     // MARK: video info section
