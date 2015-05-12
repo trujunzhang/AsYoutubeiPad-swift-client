@@ -21,6 +21,9 @@ class YTVideoWatchViewController: UIViewController {
     @IBOutlet weak var videoInfoContainer: UIView!
     @IBOutlet weak var sideContainer: UIView!
     
+    @IBOutlet weak var videoInfoDivide: UIView!
+    
+    
     let watchTableModel: VideoWatchTableModel = VideoWatchTableModel()
     
     let suggestionVideoListTask : SuggestionVideoListTask = SuggestionVideoListTask()
@@ -78,6 +81,7 @@ class YTVideoWatchViewController: UIViewController {
         super.viewDidLoad()
         
         self.view.backgroundColor = UIColor(red: 230 / 255, green: 230 / 255, blue: 230 / 255, alpha: 1)
+        self.videoInfoDivide.backgroundColor  = UIColor(red: 0 / 255, green: 0 / 255, blue: 0 / 255, alpha: 0.4)
         
         // initialize all containers
         makeMovieEmbeddedViewController()

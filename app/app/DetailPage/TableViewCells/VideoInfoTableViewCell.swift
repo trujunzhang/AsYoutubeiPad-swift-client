@@ -26,7 +26,6 @@ class VideoInfoTableViewCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
         
         // Configure the view for the selected state
-        //        let ivView:UIImageView = UIImageView(image: UIImage(named: ""))
         let ivView: UIView = UIView()
         ivView.backgroundColor = UIColor.clearColor()
         self.selectedBackgroundView = ivView

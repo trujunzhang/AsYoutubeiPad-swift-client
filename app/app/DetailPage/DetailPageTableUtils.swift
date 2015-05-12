@@ -67,7 +67,7 @@ class DetailPageSection : NSObject{
         
         section.sectionTitle = ""
         section.rowHeight = 60
-        section.sectionHeaderHeight = 0
+        section.sectionHeaderHeight = 20
         section.sectionFooterHeight = 0
         section.sectionIdentifier = DetailPageCellIdentifier.VideoInfoCellIdentifier
         section.identifer = VIDEO_INFO_CELL_IDENTIFER

@@ -491,9 +491,21 @@ Cg
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="epC-3v-k0A" userLabel="videoInfoContainer">
                                 <rect key="frame" x="0.0" y="169" width="300" height="431"/>
-                                <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dSp-Zy-Ai1" userLabel="videoInfoDivide">
+                                        <rect key="frame" x="298" y="0.0" width="1" height="431"/>
+                                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="1" id="LWl-ET-JhB"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="dSp-Zy-Ai1" secondAttribute="trailing" constant="1" id="0mo-7z-muF"/>
+                                    <constraint firstItem="dSp-Zy-Ai1" firstAttribute="top" secondItem="epC-3v-k0A" secondAttribute="top" id="VfG-wQ-YN4"/>
                                     <constraint firstAttribute="height" constant="431" id="je1-Oy-y3V"/>
+                                    <constraint firstAttribute="bottom" secondItem="dSp-Zy-Ai1" secondAttribute="bottom" id="oa6-uz-q7O"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7XA-wu-2DW" userLabel="sideContainer">
@@ -524,6 +536,7 @@ Cg
                         <outlet property="sideViewHeightConstraint" destination="jxe-zF-pEq" id="WEO-Xo-yC3"/>
                         <outlet property="sideViewWidthConstraint" destination="gFP-e8-5Ue" id="BpQ-R0-rpQ"/>
                         <outlet property="videoInfoContainer" destination="epC-3v-k0A" id="lYv-E6-jr9"/>
+                        <outlet property="videoInfoDivide" destination="dSp-Zy-Ai1" id="egF-3f-Ywv"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IN6-Jc-lmP" userLabel="First Responder" sceneMemberID="firstResponder"/>
