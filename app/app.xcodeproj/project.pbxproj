@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5E38189F1B022086009C32B4 /* Cent.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E38189D1B022086009C32B4 /* Cent.framework */; };
+		5E3818A01B022086009C32B4 /* Dollar.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E38189E1B022086009C32B4 /* Dollar.framework */; };
 		5E46504B1B01F2C9009F908C /* VideoWatchTableModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E46504A1B01F2C9009F908C /* VideoWatchTableModel.swift */; };
 		5E6CCBE51B0192920040ACE7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E6CCBE41B0192920040ACE7 /* AppDelegate.swift */; };
 		5E6CCBE71B0192920040ACE7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E6CCBE61B0192920040ACE7 /* ViewController.swift */; };
@@ -130,6 +132,8 @@
 
 /* Begin PBXFileReference section */
 		0567AF415F4D5FE88421BB37 /* libPods-app.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-app.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		5E38189D1B022086009C32B4 /* Cent.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cent.framework; path = Carthage/Cent.framework; sourceTree = "<group>"; };
+		5E38189E1B022086009C32B4 /* Dollar.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Dollar.framework; path = Carthage/Dollar.framework; sourceTree = "<group>"; };
 		5E46504A1B01F2C9009F908C /* VideoWatchTableModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoWatchTableModel.swift; sourceTree = "<group>"; };
 		5E6CCBDF1B0192920040ACE7 /* app.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = app.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5E6CCBE31B0192920040ACE7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -254,6 +258,8 @@
 			files = (
 				ADD86E401BDEF01116544B69 /* libPods-app.a in Frameworks */,
 				5EFB6F0E1B01942B00423840 /* Cartography.framework in Frameworks */,
+				5E38189F1B022086009C32B4 /* Cent.framework in Frameworks */,
+				5E3818A01B022086009C32B4 /* Dollar.framework in Frameworks */,
 				5EFB6F101B01943200423840 /* WebImage.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -734,6 +740,8 @@
 		A4A5D8BDED1C2E5904FD2AC6 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				5E38189D1B022086009C32B4 /* Cent.framework */,
+				5E38189E1B022086009C32B4 /* Dollar.framework */,
 				5EFB6F0F1B01943200423840 /* WebImage.framework */,
 				5EFB6F0D1B01942B00423840 /* Cartography.framework */,
 				0567AF415F4D5FE88421BB37 /* libPods-app.a */,
@@ -876,6 +884,8 @@
 			inputPaths = (
 				"$(SRCROOT)/Carthage/WebImage.framework",
 				"$(SRCROOT)/Carthage/Cartography.framework",
+				"$(SRCROOT)/Carthage/Cent.framework",
+				"$(SRCROOT)/Carthage/Dollar.framework",
 			);
 			outputPaths = (
 			);

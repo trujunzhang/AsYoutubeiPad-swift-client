@@ -45,11 +45,15 @@ class YTVideoWatchViewController: UIViewController {
     
     
     lazy var videoInfoTableViewController : DetailPageTableViewController = {
-        return DetailPageTableViewController.instance()
+        let instance = DetailPageTableViewController.instance()
+        instance.watchTableModel = self.watchTableModel
+        return instance
         }()
     
     lazy var sideTableViewController : DetailPageTableViewController = {
-        return DetailPageTableViewController.instance()
+        let instance = DetailPageTableViewController.instance()
+        instance.watchTableModel = self.watchTableModel
+        return instance
         }()
     
     
@@ -143,7 +147,7 @@ class YTVideoWatchViewController: UIViewController {
         watchTableModel.PortraightStep = 0
         
         if( watchTableModel.LandscapeStep == 0){
-            sideTableViewController.removeVideoInfoSection(watchTableModel.videoInfoSections)
+            sideTableViewController.removeVideoInfoSection()
         }
         
         watchTableModel.LandscapeStep += 1
@@ -153,7 +157,7 @@ class YTVideoWatchViewController: UIViewController {
         watchTableModel.LandscapeStep = 0
         
         if( watchTableModel.PortraightStep == 0){
-            sideTableViewController.insertVideoInfoSection(watchTableModel.videoInfoSections)
+            sideTableViewController.insertVideoInfoSection()
         }
         
         watchTableModel.PortraightStep += 1

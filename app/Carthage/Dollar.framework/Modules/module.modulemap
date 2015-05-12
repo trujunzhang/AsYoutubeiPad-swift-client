@@ -1,0 +1,10 @@
+framework module Dollar {
+  umbrella header "Dollar.h"
+
+  export *
+  module * { export * }
+}
+
+module Dollar.Swift {
+    header "Dollar-Swift.h"
+}

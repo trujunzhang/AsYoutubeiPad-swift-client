@@ -7,10 +7,12 @@
 //
 
 import UIKit
+import Dollar
 
 class DetailPageTableViewController: UITableViewController,UITableViewDelegate,UITableViewDataSource {
     
     var watchTableModel: VideoWatchTableModel = VideoWatchTableModel()
+    var sectionKeys : [String] = [String]()
     var videoInfoTappedEnable : Bool = false
     
     override func viewDidLoad() {
@@ -22,41 +24,50 @@ class DetailPageTableViewController: UITableViewController,UITableViewDelegate,U
     }
     
     // MARK : methods for Video Info sections
-    func insertVideoInfoSection(videoInfoSections:[DetailPageSection]){
+    func insertVideoInfoSection(){
         
-        for (index ,section) in enumerate(videoInfoSections){
-            self.tableView.beginUpdates()
+        for (index ,key) in enumerate(VIDEO_ROWS_INFO_IDENTIFER){
             
-            //            pageSections.insert(section, atIndex: index)
-            
-            self.tableView.insertSections( NSIndexSet(index: index), withRowAnimation: UITableViewRowAnimation.Automatic)
-            
-            self.tableView.endUpdates()
+            if($.contains(self.sectionKeys, value: key) == false){
+                self.tableView.beginUpdates()
+                
+                self.sectionKeys.insert(key, atIndex: index)
+                
+                self.tableView.insertSections( NSIndexSet(index: index), withRowAnimation: UITableViewRowAnimation.Automatic)
+                
+                self.tableView.endUpdates()
+            }
         }
     }
     
     
-    func removeVideoInfoSection(videoInfoSections:[DetailPageSection]){
-        for section in videoInfoSections {
-            self.tableView.beginUpdates()
-            //            pageSections.removeAtIndex(0)
-            
-            let videoInfoIndexSet = NSIndexSet(index: 0)
-            self.tableView.deleteSections(videoInfoIndexSet, withRowAnimation: UITableViewRowAnimation.Automatic)
-            self.tableView.endUpdates()
+    func removeVideoInfoSection(){
+        
+        for (index ,key) in enumerate(VIDEO_ROWS_INFO_IDENTIFER){
+            if($.contains(self.sectionKeys, value: key) == true){
+                
+                self.tableView.beginUpdates()
+                
+              self.sectionKeys =  $.remove(self.sectionKeys) {
+                    $0 == key
+                }
+                
+                self.tableView.deleteSections(NSIndexSet(index: 0), withRowAnimation: UITableViewRowAnimation.Automatic)
+                self.tableView.endUpdates()
+            }
         }
     }
     
     // MARK: methods for Suggestion sections
-    func appendSideVideos(array:NSArray){
+    func appendSideVideos(){
         
-        self.tableView.beginUpdates()
+//        self.tableView.beginUpdates()
         
-//                self.pageSections.append(DetailPageSection.makeSuggestionVideoListSection(array))
+        //                self.pageSections.append(DetailPageSection.makeSuggestionVideoListSection(array))
         
-//                self.tableView.insertSections( NSIndexSet(index: self.pageSections.count-1), withRowAnimation: UITableViewRowAnimation.Automatic)
+        //                self.tableView.insertSections( NSIndexSet(index: self.pageSections.count-1), withRowAnimation: UITableViewRowAnimation.Automatic)
         
-        self.tableView.endUpdates()
+//        self.tableView.endUpdates()
         
     }
     
@@ -69,7 +80,7 @@ class DetailPageTableViewController: UITableViewController,UITableViewDelegate,U
     //MARK: UITableViewDataSource
     
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        return self.watchTableModel.getSectionCount()
+        return self.sectionKeys.count
     }
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -194,9 +205,10 @@ class DetailPageTableViewController: UITableViewController,UITableViewDelegate,U
     }
     
     func getSectionByIndex(index: Int) -> DetailPageSection{
+        let identifier :String =  self.sectionKeys[index]
         //        let sections:[DetailPageSection] = [DetailPageSection](self.pageSections.values)
         
-        return DetailPageSection()
+        return watchTableModel.getSectionByIndex(identifier)
     }
     
     

@@ -1,0 +1,10 @@
+framework module Cent {
+  umbrella header "Cent.h"
+
+  export *
+  module * { export * }
+}
+
+module Cent.Swift {
+    header "Cent-Swift.h"
+}
