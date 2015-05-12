@@ -7,3 +7,11 @@
 //
 
 import Foundation
+
+
+class VideoWatchTableModel{
+    var LandscapeStep: Int = 0
+    var PortraightStep: Int = 0
+    
+    let videoCache: YoutubeVideoCache = YoutubeVideoCache()
+}

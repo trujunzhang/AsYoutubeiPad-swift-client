@@ -21,11 +21,11 @@ class YTVideoWatchViewController: UIViewController {
     @IBOutlet weak var videoInfoContainer: UIView!
     @IBOutlet weak var sideContainer: UIView!
     
+    let watchTableModel: VideoWatchTableModel = VideoWatchTableModel()
+    
     let searchTask : SearchTask = SearchTask()
     
     var videoID: String = ""
-    
-    let videoCache: YoutubeVideoCache = YoutubeVideoCache()
     
     func fetchVideoInfo(){
         YoutubeFetcher.fetchVideoDescription(videoID, completeHandler: {
@@ -89,8 +89,8 @@ class YTVideoWatchViewController: UIViewController {
         
         
         
-//        videoInfoTableViewController.makeVideoInfoSection(videoCache,videoInfoTappedEnable:false)
-//        sideTableViewController.makeVideoInfoSection(videoCache,videoInfoTappedEnable:true)
+        //        videoInfoTableViewController.makeVideoInfoSection(videoCache,videoInfoTappedEnable:false)
+        //        sideTableViewController.makeVideoInfoSection(videoCache,videoInfoTappedEnable:true)
     }
     
     
@@ -134,13 +134,23 @@ class YTVideoWatchViewController: UIViewController {
     }
     
     func configureLandscapePanels(){
+        watchTableModel.PortraightStep = 0
+        
+        
+        watchTableModel.LandscapeStep += 1
         
     }
     
     func configurePortraightPanels(){
-         sideTableViewController.makeVideoInfoSection(videoCache,videoInfoTappedEnable:true)
+        watchTableModel.LandscapeStep = 0
+        
+        if( watchTableModel.PortraightStep == 0){
+            sideTableViewController.makeVideoInfoSection(watchTableModel.videoCache,videoInfoTappedEnable:true)
+        }
+        
+        watchTableModel.PortraightStep += 1
     }
- 
+    
     
     
 }
