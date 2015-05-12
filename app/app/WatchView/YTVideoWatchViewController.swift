@@ -83,7 +83,6 @@ class YTVideoWatchViewController: UIViewController {
         self.addChildViewController(videoInfoTableViewController)
         self.addChildViewController(sideTableViewController)
         
-        
         // videoInfoTableViewController
         self.videoInfoContainer.addSubview(videoInfoTableViewController.view)
         LayoutUtils.LayoutFullView(videoInfoTableViewController.view)
@@ -91,9 +90,6 @@ class YTVideoWatchViewController: UIViewController {
         // sideTableViewController
         self.sideContainer.addSubview(sideTableViewController.view)
         LayoutUtils.LayoutFullView(sideTableViewController.view)
-        
-        // test
-        //        self.watchTableModel.makeVideoInfoSections()
         
         self.suggestionVideoListTask.refreshEvent(self.videoID, completeHandler: {
             (response, sucess) -> Void in
