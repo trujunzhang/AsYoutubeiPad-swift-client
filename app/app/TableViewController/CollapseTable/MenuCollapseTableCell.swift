@@ -9,8 +9,6 @@
 import Foundation
 import UIKit
 
-//import Haneke
-
 class MenuCollapseTableCell: UITableViewCell {
     
     @IBOutlet var iconImage: UIImageView!

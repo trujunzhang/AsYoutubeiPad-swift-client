@@ -10,7 +10,7 @@
 import Foundation
 import UIKit
 import Cartography
-import Haneke
+
 
 // MARK : YTCategoryCellObject
 
@@ -89,7 +89,7 @@ class YTMenuRemoteRowCell: UITableViewCell, NICell {
             let imageUrl = cellObject.imageUrl
 
             // remote image
-            theThumbnailView.hnk_setImageFromURL(NSURL(string: cellObject.imageUrl)!)
+//            theThumbnailView.hnk_setImageFromURL(NSURL(string: cellObject.imageUrl)!)
 
             theTitleLabel.text = cellObject.title
         }

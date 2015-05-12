@@ -40,18 +40,16 @@ class DetailPageSection{
     var identifer = ""
     var rowObjects :[AnyObject] = [AnyObject]()
     var rowHeight: CGFloat = 80
-    var sectionHeaderHeight: CGFloat = 20
+    var sectionHeaderHeight: CGFloat = 40
     var sectionFooterHeight: CGFloat = 20
     
     // MARK: animate object
     class func addAnimatedObject(section: DetailPageSection,index:Int){
         section.rowObjects.insert(section.animatedObject!, atIndex: index)
-//                section.isOpen  = true
     }
     
     class func removeAnimatedObject(section: DetailPageSection,index:Int){
         section.rowObjects.removeAtIndex(index)
-//                section.isOpen  = false
     }
     
     // MARK: make different sections
@@ -120,6 +118,7 @@ class DetailPageSection{
         let section: DetailPageSection = DetailPageSection()
         
         section.sectionTitle = "Suggestions"
+        
         section.sectionIdentifier = DetailPageCellIdentifier.SuggestionListCellIdentifier
         section.identifer = SUGGESTION_CELL_IDENTIFER
         section.rowObjects = array as [AnyObject]

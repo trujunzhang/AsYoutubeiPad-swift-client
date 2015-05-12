@@ -8,7 +8,6 @@
 
 import UIKit
 
-//import Haneke
 
 import WebImage
 
