@@ -10,7 +10,7 @@ import UIKit
 
 class DetailPageTableViewController: UITableViewController,UITableViewDelegate,UITableViewDataSource {
     
-    var pageSections:[String:DetailPageSection] = [String:DetailPageSection]()
+    var watchTableModel: VideoWatchTableModel = VideoWatchTableModel()
     var videoInfoTappedEnable : Bool = false
     
     override func viewDidLoad() {
@@ -22,30 +22,24 @@ class DetailPageTableViewController: UITableViewController,UITableViewDelegate,U
     }
     
     // MARK : methods for Video Info sections
-    func makeVideoInfoSection(videoInfoSections:[DetailPageSection]){
+    func insertVideoInfoSection(videoInfoSections:[DetailPageSection]){
         
         for (index ,section) in enumerate(videoInfoSections){
             self.tableView.beginUpdates()
             
-//            pageSections.insert(section, atIndex: index)
+            //            pageSections.insert(section, atIndex: index)
             
             self.tableView.insertSections( NSIndexSet(index: index), withRowAnimation: UITableViewRowAnimation.Automatic)
             
             self.tableView.endUpdates()
         }
     }
-
+    
     
     func removeVideoInfoSection(videoInfoSections:[DetailPageSection]){
-        if(pageSections.count <= 3){
-            return
-        }
-        
         for section in videoInfoSections {
-//            let filter : [DetailPageSection] = filterSectionByIdentifier(section.identifer)
-//            println("filter is \(filter.count)")
             self.tableView.beginUpdates()
-//            pageSections.removeAtIndex(0)
+            //            pageSections.removeAtIndex(0)
             
             let videoInfoIndexSet = NSIndexSet(index: 0)
             self.tableView.deleteSections(videoInfoIndexSet, withRowAnimation: UITableViewRowAnimation.Automatic)
@@ -58,9 +52,9 @@ class DetailPageTableViewController: UITableViewController,UITableViewDelegate,U
         
         self.tableView.beginUpdates()
         
-//        self.pageSections.append(DetailPageSection.makeSuggestionVideoListSection(array))
+//                self.pageSections.append(DetailPageSection.makeSuggestionVideoListSection(array))
         
-        self.tableView.insertSections( NSIndexSet(index: self.pageSections.count-1), withRowAnimation: UITableViewRowAnimation.Automatic)
+//                self.tableView.insertSections( NSIndexSet(index: self.pageSections.count-1), withRowAnimation: UITableViewRowAnimation.Automatic)
         
         self.tableView.endUpdates()
         
@@ -75,7 +69,7 @@ class DetailPageTableViewController: UITableViewController,UITableViewDelegate,U
     //MARK: UITableViewDataSource
     
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        return self.pageSections.count
+        return self.watchTableModel.getSectionCount()
     }
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -144,22 +138,22 @@ class DetailPageTableViewController: UITableViewController,UITableViewDelegate,U
     }
     
     func toggleVideoDesctionAnimation(){
-//        let section:DetailPageSection = self.pageSections.values[0]
+        //        let section:DetailPageSection = self.pageSections.values[0]
         
-//        self.tableView.beginUpdates()
-//        
-//        let animatedIndexPath = NSIndexPath(forRow: 0, inSection: 1)
-//        if(section.isOpen == true){
-////            DetailPageSection.removeAnimatedObject(self.pageSections[1], index: 0)
-//            self.tableView.deleteRowsAtIndexPaths([animatedIndexPath], withRowAnimation: UITableViewRowAnimation.Automatic)
-//        }else{
-////            DetailPageSection.addAnimatedObject(self.pageSections[1], index: 0)
-//            self.tableView.insertRowsAtIndexPaths([animatedIndexPath], withRowAnimation: UITableViewRowAnimation.Automatic)
-//        }
-//        
-//        self.tableView.endUpdates()
-//        
-//        section.isOpen = !section.isOpen
+        //        self.tableView.beginUpdates()
+        //
+        //        let animatedIndexPath = NSIndexPath(forRow: 0, inSection: 1)
+        //        if(section.isOpen == true){
+        ////            DetailPageSection.removeAnimatedObject(self.pageSections[1], index: 0)
+        //            self.tableView.deleteRowsAtIndexPaths([animatedIndexPath], withRowAnimation: UITableViewRowAnimation.Automatic)
+        //        }else{
+        ////            DetailPageSection.addAnimatedObject(self.pageSections[1], index: 0)
+        //            self.tableView.insertRowsAtIndexPaths([animatedIndexPath], withRowAnimation: UITableViewRowAnimation.Automatic)
+        //        }
+        //
+        //        self.tableView.endUpdates()
+        //
+        //        section.isOpen = !section.isOpen
         
     }
     
@@ -187,7 +181,7 @@ class DetailPageTableViewController: UITableViewController,UITableViewDelegate,U
         let  headerCell:HeaderTableViewCell = tableView.dequeueReusableCellWithIdentifier(HEADER_CELL_IDENTIFIER) as! HeaderTableViewCell
         //        headerCell.backgroundColor = UIColor.cyanColor()
         
-//        headerCell.configureCell( self.pageSections.values[section].sectionTitle)
+        //        headerCell.configureCell( self.pageSections.values[section].sectionTitle)
         
         return headerCell
     }
@@ -200,9 +194,9 @@ class DetailPageTableViewController: UITableViewController,UITableViewDelegate,U
     }
     
     func getSectionByIndex(index: Int) -> DetailPageSection{
-        let sections:[DetailPageSection] = [DetailPageSection](self.pageSections.values)
+        //        let sections:[DetailPageSection] = [DetailPageSection](self.pageSections.values)
         
-        return sections[index]
+        return DetailPageSection()
     }
     
     

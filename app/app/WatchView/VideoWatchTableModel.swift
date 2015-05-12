@@ -18,7 +18,7 @@ class VideoWatchTableModel{
     var videoInfoSections:[DetailPageSection] = [DetailPageSection]()
     
     let videoCache: YoutubeVideoCache = YoutubeVideoCache()
-    
+    var pageSections:[String:DetailPageSection] = [String:DetailPageSection]()
     
     func makeVideoInfoSections() -> [DetailPageSection] {
         self.videoInfoSections = DetailPageSection.insertVideoInfoSection(self.videoCache,videoInfoTappedEnable:self.videoInfoTappedEnable)
@@ -26,5 +26,18 @@ class VideoWatchTableModel{
         return self.videoInfoSections
     }
     
+    func makeSideVideos(array:NSArray) -> DetailPageSection {
+        let section:DetailPageSection = DetailPageSection.makeSuggestionVideoListSection(array)
+        
+        return section
+    }
+    
+    func getSectionByIndex(key: String) -> DetailPageSection{
+        return self.pageSections[key]!
+    }
+    
+    func getSectionCount() -> Int{
+        return self.pageSections.count
+    }
     
 }

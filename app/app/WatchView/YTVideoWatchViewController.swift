@@ -80,9 +80,13 @@ class YTVideoWatchViewController: UIViewController {
         self.watchTableModel.makeVideoInfoSections()
         self.searchTask.refreshEvent("sketch 3", completeHandler: {
             (response, sucess) -> Void in
-            let array: NSArray = response as! NSArray
-            self.sideTableViewController.appendSideVideos(array)
+            self.insertSideSection(response as! NSArray)
         })
+    }
+    
+    func insertSideSection(array: NSArray){
+        watchTableModel.makeSideVideos(array)
+        self.sideTableViewController.appendSideVideos(array)
     }
     
     override func viewDidAppear(animated: Bool) {
@@ -142,14 +146,13 @@ class YTVideoWatchViewController: UIViewController {
         }
         
         watchTableModel.LandscapeStep += 1
-        
     }
     
     func configurePortraightPanels(){
         watchTableModel.LandscapeStep = 0
         
         if( watchTableModel.PortraightStep == 0){
-            sideTableViewController.makeVideoInfoSection(watchTableModel.videoInfoSections)
+            sideTableViewController.insertVideoInfoSection(watchTableModel.videoInfoSections)
         }
         
         watchTableModel.PortraightStep += 1
