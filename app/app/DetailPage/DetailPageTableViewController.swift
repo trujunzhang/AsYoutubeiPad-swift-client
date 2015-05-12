@@ -25,6 +25,9 @@ class DetailPageTableViewController: UITableViewController,UITableViewDelegate,U
     
     // MARK : methods for Video Info sections
     func insertVideoInfoSection(){
+        if(watchTableModel.containVideoInfo() == false){
+            return
+        }
         
         for (index ,key) in enumerate(VIDEO_ROWS_INFO_IDENTIFER){
             

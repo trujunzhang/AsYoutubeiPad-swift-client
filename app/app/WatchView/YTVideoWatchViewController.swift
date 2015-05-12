@@ -81,7 +81,7 @@ class YTVideoWatchViewController: UIViewController {
         LayoutUtils.LayoutFullView(sideTableViewController.view)
         
         // test
-        self.watchTableModel.makeVideoInfoSections()
+//        self.watchTableModel.makeVideoInfoSections()
         
         self.searchTask.refreshEvent("sketch 3", completeHandler: {
             (response, sucess) -> Void in

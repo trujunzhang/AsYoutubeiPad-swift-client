@@ -7,7 +7,7 @@
 //
 
 import Foundation
-
+import Dollar
 
 class VideoWatchTableModel{
     var LandscapeStep: Int = 0
@@ -37,6 +37,10 @@ class VideoWatchTableModel{
     
     func getSectionCount() -> Int{
         return self.pageSectionDict.count
+    }
+    
+    func containVideoInfo() -> Bool {
+        return $.contains($.keys(self.pageSectionDict), value: VIDEO_INFO_CELL_IDENTIFER)
     }
     
 }
