@@ -24,27 +24,45 @@ class DetailPageTableViewController: UITableViewController,UITableViewDelegate,U
     
     // MARK : methods for Video Info sections
     func makeVideoInfoSection(videoInfoSections:[DetailPageSection]){
-        for section in videoInfoSections {
-            pageSections.append(section)
-        }
         
-        self.tableView.reloadData()
+        for (index ,section) in enumerate(videoInfoSections){
+            self.tableView.beginUpdates()
+            
+            pageSections.insert(section, atIndex: index)
+            
+            self.tableView.insertSections( NSIndexSet(index: index), withRowAnimation: UITableViewRowAnimation.Automatic)
+            
+            self.tableView.endUpdates()
+        }
+
     }
     
-    func removeVideoInfoSection([DetailPageSection]){
-        self.tableView.beginUpdates()
+    func removeVideoInfoSection(videoInfoSections:[DetailPageSection]){
+        if(pageSections.count <= 3){
+            return
+        }
         
-        let animatedIndexPath = NSIndexPath(forRow: 0, inSection: 1)
-        self.tableView.deleteRowsAtIndexPaths([animatedIndexPath], withRowAnimation: UITableViewRowAnimation.Automatic)
-        
-        self.tableView.endUpdates()
+        for section in videoInfoSections {
+            self.tableView.beginUpdates()
+            pageSections.removeAtIndex(0)
+            
+            let videoInfoIndexSet = NSIndexSet(index: 0)
+            self.tableView.deleteSections(videoInfoIndexSet, withRowAnimation: UITableViewRowAnimation.Automatic)
+            self.tableView.endUpdates()
+        }
     }
     
     // MARK: methods for Suggestion sections
     func appendSideVideos(array:NSArray){
+        
+        self.tableView.beginUpdates()
+        
         self.pageSections.append(DetailPageSection.makeSuggestionVideoListSection(array))
         
-        self.tableView.reloadData()
+        self.tableView.insertSections( NSIndexSet(index: self.pageSections.count-1), withRowAnimation: UITableViewRowAnimation.Automatic)
+        
+        self.tableView.endUpdates()
+        
     }
     
     override func didReceiveMemoryWarning() {

@@ -137,8 +137,9 @@ class YTVideoWatchViewController: UIViewController {
     func configureLandscapePanels(){
         watchTableModel.PortraightStep = 0
         
-        
-         sideTableViewController.removeVideoInfoSection(watchTableModel.videoInfoSections)
+        if( watchTableModel.LandscapeStep == 0){
+            sideTableViewController.removeVideoInfoSection(watchTableModel.videoInfoSections)
+        }
         
         watchTableModel.LandscapeStep += 1
         
