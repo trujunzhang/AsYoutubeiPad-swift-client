@@ -99,7 +99,10 @@ class YTVideoWatchViewController: UIViewController {
     
     func insertSideSection(array: NSArray){
         watchTableModel.makeSideVideos(array)
-        self.sideTableViewController.appendSideVideos()
+        if UIDevice.currentDevice().orientation.isLandscape.boolValue == false{
+            self.sideTableViewController.appendSideVideos()
+        }
+        self.videoInfoTableViewController.appendSideVideos()
     }
     
     override func viewDidAppear(animated: Bool) {
