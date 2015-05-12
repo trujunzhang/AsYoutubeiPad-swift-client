@@ -48,7 +48,7 @@ class DetailPageTableViewController: UITableViewController,UITableViewDelegate,U
                 
                 self.tableView.beginUpdates()
                 
-              self.sectionKeys =  $.remove(self.sectionKeys) {
+                self.sectionKeys =  $.remove(self.sectionKeys) {
                     $0 == key
                 }
                 
@@ -61,13 +61,16 @@ class DetailPageTableViewController: UITableViewController,UITableViewDelegate,U
     // MARK: methods for Suggestion sections
     func appendSideVideos(){
         
-//        self.tableView.beginUpdates()
+        if($.contains(self.sectionKeys, value: SUGGESTION_CELL_IDENTIFER) == false){
+            self.tableView.beginUpdates()
+            
+            self.sectionKeys.append(SUGGESTION_CELL_IDENTIFER)
+            
+            self.tableView.insertSections( NSIndexSet(index: self.sectionKeys.count-1), withRowAnimation: UITableViewRowAnimation.Automatic)
+            
+            self.tableView.endUpdates()
+        }
         
-        //                self.pageSections.append(DetailPageSection.makeSuggestionVideoListSection(array))
-        
-        //                self.tableView.insertSections( NSIndexSet(index: self.pageSections.count-1), withRowAnimation: UITableViewRowAnimation.Automatic)
-        
-//        self.tableView.endUpdates()
         
     }
     
