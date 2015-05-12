@@ -49,7 +49,11 @@ class YTVideoWatchViewController: UIViewController {
     
     func reloadTableData(videoCache:YoutubeVideoCache){
         self.watchTableModel.makeVideoInfoSections(videoCache)
-        sideTableViewController.insertVideoInfoSection()
+        
+        if UIDevice.currentDevice().orientation.isLandscape.boolValue == false{
+            self.sideTableViewController.insertVideoInfoSection()
+        }
+        self.videoInfoTableViewController.insertVideoInfoSection()
     }
     
     lazy var videoInfoTableViewController : DetailPageTableViewController = {
@@ -99,10 +103,7 @@ class YTVideoWatchViewController: UIViewController {
     
     func insertSideSection(array: NSArray){
         watchTableModel.makeSideVideos(array)
-        if UIDevice.currentDevice().orientation.isLandscape.boolValue == false{
-            self.sideTableViewController.appendSideVideos()
-        }
-        self.videoInfoTableViewController.appendSideVideos()
+        self.sideTableViewController.appendSideVideos()
     }
     
     override func viewDidAppear(animated: Bool) {
