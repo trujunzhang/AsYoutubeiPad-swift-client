@@ -10,7 +10,7 @@ import UIKit
 
 class DetailPageTableViewController: UITableViewController,UITableViewDelegate,UITableViewDataSource {
     
-    var pageSections:[DetailPageSection] = [DetailPageSection]()
+    var pageSections:[String:DetailPageSection] = [String:DetailPageSection]()
     var videoInfoTappedEnable : Bool = false
     
     override func viewDidLoad() {
@@ -18,7 +18,6 @@ class DetailPageTableViewController: UITableViewController,UITableViewDelegate,U
         
         self.tableView.dataSource = self
         self.tableView.delegate = self
-        
         self.tableView.separatorStyle = .None
     }
     
@@ -28,14 +27,14 @@ class DetailPageTableViewController: UITableViewController,UITableViewDelegate,U
         for (index ,section) in enumerate(videoInfoSections){
             self.tableView.beginUpdates()
             
-            pageSections.insert(section, atIndex: index)
+//            pageSections.insert(section, atIndex: index)
             
             self.tableView.insertSections( NSIndexSet(index: index), withRowAnimation: UITableViewRowAnimation.Automatic)
             
             self.tableView.endUpdates()
         }
-
     }
+
     
     func removeVideoInfoSection(videoInfoSections:[DetailPageSection]){
         if(pageSections.count <= 3){
@@ -43,8 +42,10 @@ class DetailPageTableViewController: UITableViewController,UITableViewDelegate,U
         }
         
         for section in videoInfoSections {
+//            let filter : [DetailPageSection] = filterSectionByIdentifier(section.identifer)
+//            println("filter is \(filter.count)")
             self.tableView.beginUpdates()
-            pageSections.removeAtIndex(0)
+//            pageSections.removeAtIndex(0)
             
             let videoInfoIndexSet = NSIndexSet(index: 0)
             self.tableView.deleteSections(videoInfoIndexSet, withRowAnimation: UITableViewRowAnimation.Automatic)
@@ -57,7 +58,7 @@ class DetailPageTableViewController: UITableViewController,UITableViewDelegate,U
         
         self.tableView.beginUpdates()
         
-        self.pageSections.append(DetailPageSection.makeSuggestionVideoListSection(array))
+//        self.pageSections.append(DetailPageSection.makeSuggestionVideoListSection(array))
         
         self.tableView.insertSections( NSIndexSet(index: self.pageSections.count-1), withRowAnimation: UITableViewRowAnimation.Automatic)
         
@@ -78,12 +79,13 @@ class DetailPageTableViewController: UITableViewController,UITableViewDelegate,U
     }
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        let section:DetailPageSection = self.pageSections[section]
+        
+        let section:DetailPageSection =  getSectionByIndex(section)
         return section.rowObjects.count
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let section:DetailPageSection = self.pageSections[indexPath.section]
+        let section:DetailPageSection = getSectionByIndex(indexPath.section)
         
         let cell = tableView.dequeueReusableCellWithIdentifier(section.identifer, forIndexPath: indexPath) as! UITableViewCell
         
@@ -94,7 +96,7 @@ class DetailPageTableViewController: UITableViewController,UITableViewDelegate,U
     
     
     func configureCell(cell: UITableViewCell, forRowAtIndexPath: NSIndexPath) {
-        let section:DetailPageSection = self.pageSections[forRowAtIndexPath.section]
+        let section:DetailPageSection = getSectionByIndex(forRowAtIndexPath.section)
         let rowObject: AnyObject = section.rowObjects[forRowAtIndexPath.row]
         let sectionIdentifier :    DetailPageCellIdentifier = section.sectionIdentifier!
         
@@ -142,27 +144,27 @@ class DetailPageTableViewController: UITableViewController,UITableViewDelegate,U
     }
     
     func toggleVideoDesctionAnimation(){
-        let section:DetailPageSection = self.pageSections[0]
+//        let section:DetailPageSection = self.pageSections.values[0]
         
-        self.tableView.beginUpdates()
-        
-        let animatedIndexPath = NSIndexPath(forRow: 0, inSection: 1)
-        if(section.isOpen == true){
-            DetailPageSection.removeAnimatedObject(self.pageSections[1], index: 0)
-            self.tableView.deleteRowsAtIndexPaths([animatedIndexPath], withRowAnimation: UITableViewRowAnimation.Automatic)
-        }else{
-            DetailPageSection.addAnimatedObject(self.pageSections[1], index: 0)
-            self.tableView.insertRowsAtIndexPaths([animatedIndexPath], withRowAnimation: UITableViewRowAnimation.Automatic)
-        }
-        
-        self.tableView.endUpdates()
-        
-        section.isOpen = !section.isOpen
+//        self.tableView.beginUpdates()
+//        
+//        let animatedIndexPath = NSIndexPath(forRow: 0, inSection: 1)
+//        if(section.isOpen == true){
+////            DetailPageSection.removeAnimatedObject(self.pageSections[1], index: 0)
+//            self.tableView.deleteRowsAtIndexPaths([animatedIndexPath], withRowAnimation: UITableViewRowAnimation.Automatic)
+//        }else{
+////            DetailPageSection.addAnimatedObject(self.pageSections[1], index: 0)
+//            self.tableView.insertRowsAtIndexPaths([animatedIndexPath], withRowAnimation: UITableViewRowAnimation.Automatic)
+//        }
+//        
+//        self.tableView.endUpdates()
+//        
+//        section.isOpen = !section.isOpen
         
     }
     
     override  func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-        let section:DetailPageSection = self.pageSections[indexPath.section]
+        let section:DetailPageSection = getSectionByIndex(indexPath.section)
         let sectionIdentifier :    DetailPageCellIdentifier = section.sectionIdentifier!
         
         //        println("rowHeight is \(section.rowHeight)")
@@ -171,13 +173,13 @@ class DetailPageTableViewController: UITableViewController,UITableViewDelegate,U
     }
     
     override  func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        let section:DetailPageSection = self.pageSections[section]
+        let section:DetailPageSection = getSectionByIndex(section)
         
         return section.sectionHeaderHeight
     }
     
     override  func tableView(tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
-        let section:DetailPageSection = self.pageSections[section]
+        let section:DetailPageSection = getSectionByIndex(section)
         return section.sectionFooterHeight
     }
     
@@ -185,7 +187,7 @@ class DetailPageTableViewController: UITableViewController,UITableViewDelegate,U
         let  headerCell:HeaderTableViewCell = tableView.dequeueReusableCellWithIdentifier(HEADER_CELL_IDENTIFIER) as! HeaderTableViewCell
         //        headerCell.backgroundColor = UIColor.cyanColor()
         
-        headerCell.configureCell( self.pageSections[section].sectionTitle)
+//        headerCell.configureCell( self.pageSections.values[section].sectionTitle)
         
         return headerCell
     }
@@ -197,7 +199,11 @@ class DetailPageTableViewController: UITableViewController,UITableViewDelegate,U
         return footerView
     }
     
-    
+    func getSectionByIndex(index: Int) -> DetailPageSection{
+        let sections:[DetailPageSection] = [DetailPageSection](self.pageSections.values)
+        
+        return sections[index]
+    }
     
     
     

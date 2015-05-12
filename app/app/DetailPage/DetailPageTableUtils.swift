@@ -32,7 +32,7 @@ public enum DetailPageCellIdentifier {
 
 
 
-class DetailPageSection{
+class DetailPageSection : NSObject{
     var isOpen  = true
     var animatedObject : AnyObject?
     var sectionIdentifier :    DetailPageCellIdentifier?
