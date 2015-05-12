@@ -187,24 +187,14 @@ class DetailPageTableViewController: UITableViewController,UITableViewDelegate,U
         return section.sectionHeaderHeight
     }
     
-//    override  func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-//        let headerView = UIView()
-//        headerView.backgroundColor = UIColor.clearColor()
-//        return headerView
-//    }
-    
+
     
     override  func tableView(tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
         let section:DetailPageSection = getSectionByIndex(section)
         return section.sectionFooterHeight
     }
     
-//    override  func tableView(tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
-//        let footerView = UIView(frame: CGRectMake(0, 0, tableView.frame.size.width, 40))
-//        footerView.backgroundColor = UIColor.clearColor()
-//        
-//        return footerView
-//    }
+
     
     func getSectionByIndex(index: Int) -> DetailPageSection{
         let identifier :String =  self.sectionKeys[index]
