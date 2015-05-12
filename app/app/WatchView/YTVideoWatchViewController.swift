@@ -70,8 +70,6 @@ class YTVideoWatchViewController: UIViewController {
         self.videoInfoContainer.addSubview(videoInfoTableViewController.view)
         LayoutUtils.LayoutFullView(videoInfoTableViewController.view)
         
-        
-        
         // sideTableViewController
         self.sideContainer.addSubview(sideTableViewController.view)
         LayoutUtils.LayoutFullView(sideTableViewController.view)
@@ -88,7 +86,9 @@ class YTVideoWatchViewController: UIViewController {
         super.viewDidAppear(animated)
         
         let videoCache: YoutubeVideoCache = YoutubeVideoCache()
-        sideTableViewController.makeVideoInfoSection(videoCache)
+        
+        videoInfoTableViewController.makeVideoInfoSection(videoCache,videoInfoTappedEnable:false)
+        sideTableViewController.makeVideoInfoSection(videoCache,videoInfoTappedEnable:true)
     }
     
     
@@ -127,9 +127,10 @@ class YTVideoWatchViewController: UIViewController {
         }
     }
     
-    
-    
-    
+    func configureLandscapePanels(){
+        
+    }
+ 
     
     
 }

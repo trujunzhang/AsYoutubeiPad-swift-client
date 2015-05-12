@@ -11,6 +11,7 @@ import UIKit
 class DetailPageTableViewController: UITableViewController,UITableViewDelegate,UITableViewDataSource {
     
     var pageSections:[DetailPageSection] = [DetailPageSection]()
+    var videoInfoTappedEnable : Bool = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,7 +22,8 @@ class DetailPageTableViewController: UITableViewController,UITableViewDelegate,U
         self.tableView.separatorStyle = .None
     }
     
-    func makeVideoInfoSection(videoCache: YoutubeVideoCache){
+    func makeVideoInfoSection(videoCache: YoutubeVideoCache,videoInfoTappedEnable : Bool){
+        self.videoInfoTappedEnable = videoInfoTappedEnable
         let  videoInfoSections:[DetailPageSection] =  DetailPageSection.insertVideoInfoSection(videoCache,isOpen:true)
         for section in videoInfoSections {
             pageSections.append(section)
@@ -31,9 +33,9 @@ class DetailPageTableViewController: UITableViewController,UITableViewDelegate,U
     }
     
     func appendSideVideos(array:NSArray){
-                self.pageSections.append(DetailPageSection.makeSuggestionVideoListSection(array))
+        self.pageSections.append(DetailPageSection.makeSuggestionVideoListSection(array))
         
-                self.tableView.reloadData()
+        self.tableView.reloadData()
     }
     
     override func didReceiveMemoryWarning() {
@@ -108,31 +110,36 @@ class DetailPageTableViewController: UITableViewController,UITableViewDelegate,U
     //MARK: UITableViewDelegate
     
     override  func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        if(indexPath.section == 0 && indexPath.row == 0 ){
-            let section:DetailPageSection = self.pageSections[0]
-            
-            self.tableView.beginUpdates()
-            
-            let animatedIndexPath = NSIndexPath(forRow: 0, inSection: 1)
-            if(section.isOpen == true){
-                DetailPageSection.removeAnimatedObject(self.pageSections[1], index: 0)
-                self.tableView.deleteRowsAtIndexPaths([animatedIndexPath], withRowAnimation: .Automatic)
-            }else{
-                DetailPageSection.addAnimatedObject(self.pageSections[1], index: 0)
-                self.tableView.insertRowsAtIndexPaths([animatedIndexPath], withRowAnimation: .Automatic)
-            }
-            
-            self.tableView.endUpdates()
-            
-            section.isOpen = !section.isOpen
+        if(indexPath.section == 0 && indexPath.row == 0 && videoInfoTappedEnable == true){
+            self.toggleVideoDesctionAnimation()
         }
+    }
+    
+    func toggleVideoDesctionAnimation(){
+        let section:DetailPageSection = self.pageSections[0]
+        
+        self.tableView.beginUpdates()
+        
+        let animatedIndexPath = NSIndexPath(forRow: 0, inSection: 1)
+        if(section.isOpen == true){
+            DetailPageSection.removeAnimatedObject(self.pageSections[1], index: 0)
+            self.tableView.deleteRowsAtIndexPaths([animatedIndexPath], withRowAnimation: .Automatic)
+        }else{
+            DetailPageSection.addAnimatedObject(self.pageSections[1], index: 0)
+            self.tableView.insertRowsAtIndexPaths([animatedIndexPath], withRowAnimation: .Automatic)
+        }
+        
+        self.tableView.endUpdates()
+        
+        section.isOpen = !section.isOpen
+        
     }
     
     override  func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         let section:DetailPageSection = self.pageSections[indexPath.section]
         let sectionIdentifier :    DetailPageCellIdentifier = section.sectionIdentifier!
         
-        println("rowHeight is \(section.rowHeight)")
+        //        println("rowHeight is \(section.rowHeight)")
         
         return section.rowHeight
     }
