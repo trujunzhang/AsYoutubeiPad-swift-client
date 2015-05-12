@@ -18,6 +18,7 @@ class DetailPageTableViewController: UITableViewController,UITableViewDelegate,U
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.view.backgroundColor = UIColor.clearColor()
         self.tableView.dataSource = self
         self.tableView.delegate = self
         self.tableView.separatorStyle = .None
