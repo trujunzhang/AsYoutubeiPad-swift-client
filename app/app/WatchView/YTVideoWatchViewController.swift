@@ -78,6 +78,7 @@ class YTVideoWatchViewController: UIViewController {
         
         // test
         self.watchTableModel.makeVideoInfoSections()
+        
         self.searchTask.refreshEvent("sketch 3", completeHandler: {
             (response, sucess) -> Void in
             self.insertSideSection(response as! NSArray)
@@ -85,8 +86,8 @@ class YTVideoWatchViewController: UIViewController {
     }
     
     func insertSideSection(array: NSArray){
-        watchTableModel.makeSideVideos(array)
-        self.sideTableViewController.appendSideVideos(array)
+//        watchTableModel.makeSideVideos(array)
+//        self.sideTableViewController.appendSideVideos(array)
     }
     
     override func viewDidAppear(animated: Bool) {
