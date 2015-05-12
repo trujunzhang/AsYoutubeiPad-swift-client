@@ -77,6 +77,8 @@ class YTVideoWatchViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.view.backgroundColor = UIColor(red: 230 / 255, green: 230 / 255, blue: 230 / 255, alpha: 1)
+        
         // initialize all containers
         makeMovieEmbeddedViewController()
         
@@ -84,12 +86,14 @@ class YTVideoWatchViewController: UIViewController {
         self.addChildViewController(sideTableViewController)
         
         // videoInfoTableViewController
+        self.videoInfoContainer.backgroundColor = UIColor.clearColor()
         self.videoInfoContainer.addSubview(videoInfoTableViewController.view)
-        LayoutUtils.LayoutFullView(videoInfoTableViewController.view)
+        LayoutUtils.LayoutLeftAndRightMargin(videoInfoTableViewController.view,leftRightMargin:20)
         
         // sideTableViewController
+        self.sideContainer.backgroundColor = UIColor.clearColor()
         self.sideContainer.addSubview(sideTableViewController.view)
-        LayoutUtils.LayoutFullView(sideTableViewController.view)
+        LayoutUtils.LayoutLeftAndRightMargin(sideTableViewController.view,leftRightMargin:20)
         
         self.suggestionVideoListTask.refreshEvent(self.videoID, completeHandler: {
             (response, sucess) -> Void in
