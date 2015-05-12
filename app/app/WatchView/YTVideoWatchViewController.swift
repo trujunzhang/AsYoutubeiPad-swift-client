@@ -23,7 +23,7 @@ class YTVideoWatchViewController: UIViewController {
     
     let watchTableModel: VideoWatchTableModel = VideoWatchTableModel()
     
-    let searchTask : SearchTask = SearchTask()
+    let suggestionVideoListTask : SuggestionVideoListTask = SuggestionVideoListTask()
     
     var videoID: String = "" {
         didSet{
@@ -91,7 +91,7 @@ class YTVideoWatchViewController: UIViewController {
         // test
         //        self.watchTableModel.makeVideoInfoSections()
         
-        self.searchTask.refreshEvent("sketch 3", completeHandler: {
+        self.suggestionVideoListTask.refreshEvent(self.videoID, completeHandler: {
             (response, sucess) -> Void in
             self.insertSideSection(response as! NSArray)
         })

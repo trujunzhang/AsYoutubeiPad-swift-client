@@ -15,9 +15,9 @@ class SuggestionVideoListTask {
     
     // MARK: FetchTaskProtocol
     func refreshEvent(object: AnyObject, completeHandler: ObjectHandler) {
-        let videoID = object as! String
+        let relatedToVideoId = object as! String
         requestInfo =
-            YoutubeFetcher.prepareFetchingRelativeVideos(videoID, completeHandler: {
+            YoutubeFetcher.prepareFetchingRelativeVideos(relatedToVideoId, completeHandler: {
                 (object, sucess) -> Void in
                 if (sucess == true) {
                     self.requestInfo.appendArray(object as! NSArray)
