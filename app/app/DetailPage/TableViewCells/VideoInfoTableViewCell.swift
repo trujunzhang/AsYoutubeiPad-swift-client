@@ -41,8 +41,7 @@ class VideoInfoTableViewCell: UITableViewCell {
         if(object.videoInfoTappedEnable == false){
             toggleButton.hidden = true
         }
-         println("object.videoInfoTappedEnable is \(object.videoInfoTappedEnable)")
-        
+
         toggleButton.highlighted = true
         
         //        self.descriptionLabel.text = videoInfoObject.descriptionString

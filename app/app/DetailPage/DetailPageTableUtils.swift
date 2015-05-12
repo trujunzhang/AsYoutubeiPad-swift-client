@@ -81,9 +81,8 @@ class DetailPageSection{
         
         let object: VideoInfoObject = VideoInfoObject()
         object.videoInfoTappedEnable = videoInfoTappedEnable
-        println("videoInfoTappedEnable is \(videoInfoTappedEnable)")
         object.isExpand = false
-        section.rowObjects.append(VideoInfoObject())
+        section.rowObjects.append(object)
         
         return section
     }
