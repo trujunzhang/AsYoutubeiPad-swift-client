@@ -96,11 +96,7 @@ class YTVideoWatchViewController: UIViewController {
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
-        
-        
-        
-        //        videoInfoTableViewController.makeVideoInfoSection(videoCache,videoInfoTappedEnable:false)
-        //        sideTableViewController.makeVideoInfoSection(videoCache,videoInfoTappedEnable:true)
+
     }
     
     

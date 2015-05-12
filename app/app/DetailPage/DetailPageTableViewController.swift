@@ -180,36 +180,34 @@ class DetailPageTableViewController: UITableViewController,UITableViewDelegate,U
         return section.rowHeight
     }
     
+    
     override  func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         let section:DetailPageSection = getSectionByIndex(section)
         
         return section.sectionHeaderHeight
     }
     
+//    override  func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+//        let headerView = UIView()
+//        headerView.backgroundColor = UIColor.clearColor()
+//        return headerView
+//    }
+    
+    
     override  func tableView(tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
         let section:DetailPageSection = getSectionByIndex(section)
         return section.sectionFooterHeight
     }
     
-    override  func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        let  headerCell:HeaderTableViewCell = tableView.dequeueReusableCellWithIdentifier(HEADER_CELL_IDENTIFIER) as! HeaderTableViewCell
-        //        headerCell.backgroundColor = UIColor.cyanColor()
-        
-        //        headerCell.configureCell( self.pageSections.values[section].sectionTitle)
-        
-        return headerCell
-    }
-    
-    override  func tableView(tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
-        let footerView = UIView(frame: CGRectMake(0, 0, tableView.frame.size.width, 40))
-        footerView.backgroundColor = UIColor.clearColor()
-        
-        return footerView
-    }
+//    override  func tableView(tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
+//        let footerView = UIView(frame: CGRectMake(0, 0, tableView.frame.size.width, 40))
+//        footerView.backgroundColor = UIColor.clearColor()
+//        
+//        return footerView
+//    }
     
     func getSectionByIndex(index: Int) -> DetailPageSection{
         let identifier :String =  self.sectionKeys[index]
-        //        let sections:[DetailPageSection] = [DetailPageSection](self.pageSections.values)
         
         return watchTableModel.getSectionByIndex(identifier)
     }

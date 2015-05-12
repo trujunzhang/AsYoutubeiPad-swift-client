@@ -376,6 +376,7 @@ Cg
                                         <constraint firstItem="QP2-ZC-Cnh" firstAttribute="leading" secondItem="aUP-Ml-JbY" secondAttribute="leading" constant="30" id="uUK-H3-Z8e"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <connections>
                                     <outlet property="headerLabel" destination="QP2-ZC-Cnh" id="qpI-qS-7PX"/>
                                 </connections>
