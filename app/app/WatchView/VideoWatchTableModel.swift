@@ -14,12 +14,11 @@ class VideoWatchTableModel{
     var PortraightStep: Int = 0
     
     var videoInfoTappedEnable : Bool = false
-    
-    let videoCache: YoutubeVideoCache = YoutubeVideoCache()
+
     var pageSectionDict:[String:DetailPageSection] = [String:DetailPageSection]()
     
-    func makeVideoInfoSections()  {
-        let dict:[String:DetailPageSection] = DetailPageSection.insertVideoInfoSection(self.videoCache,videoInfoTappedEnable:self.videoInfoTappedEnable)
+    func makeVideoInfoSections(videoCache: YoutubeVideoCache)  {
+        let dict:[String:DetailPageSection] = DetailPageSection.insertVideoInfoSection(videoCache,videoInfoTappedEnable:self.videoInfoTappedEnable)
         for (key,value) in dict {
             self.pageSectionDict[key] = value
         }

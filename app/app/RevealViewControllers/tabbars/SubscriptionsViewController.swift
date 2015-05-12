@@ -121,7 +121,7 @@ class SubscriptionsViewController: FrontBaseViewController {
     
     func showWatchVideoPage() {
         let viewController: YTVideoWatchViewController = YTVideoWatchViewController.instance()
-//        viewController.videoID = "uD6Okha_Yj0"// has subtitle
+        viewController.videoID = "uD6Okha_Yj0"// has subtitle
         //        viewController.videoID = "eoXneK3WIgQ"  // no  subtitle
         
         self.addChildViewController(viewController)

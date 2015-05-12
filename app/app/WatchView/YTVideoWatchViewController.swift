@@ -25,7 +25,11 @@ class YTVideoWatchViewController: UIViewController {
     
     let searchTask : SearchTask = SearchTask()
     
-    var videoID: String = ""
+    var videoID: String = "" {
+        didSet{
+            fetchVideoInfo()
+        }
+    }
     
     func fetchVideoInfo(){
         YoutubeFetcher.fetchVideoDescription(videoID, completeHandler: {
@@ -34,7 +38,7 @@ class YTVideoWatchViewController: UIViewController {
             if (sucess == true) {
                 let array:NSArray = object as! NSArray
                 if(array.count == 1){
-                    //                    self.reloadTableData(array[0] as! YoutubeVideoCache)
+                    self.reloadTableData(array[0] as! YoutubeVideoCache)
                 }
             }else{
                 
@@ -43,6 +47,10 @@ class YTVideoWatchViewController: UIViewController {
         })
     }
     
+    func reloadTableData(videoCache:YoutubeVideoCache){
+        self.watchTableModel.makeVideoInfoSections(videoCache)
+        sideTableViewController.insertVideoInfoSection()
+    }
     
     lazy var videoInfoTableViewController : DetailPageTableViewController = {
         let instance = DetailPageTableViewController.instance()
@@ -81,7 +89,7 @@ class YTVideoWatchViewController: UIViewController {
         LayoutUtils.LayoutFullView(sideTableViewController.view)
         
         // test
-//        self.watchTableModel.makeVideoInfoSections()
+        //        self.watchTableModel.makeVideoInfoSections()
         
         self.searchTask.refreshEvent("sketch 3", completeHandler: {
             (response, sucess) -> Void in
@@ -96,7 +104,7 @@ class YTVideoWatchViewController: UIViewController {
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
-
+        
     }
     
     
