@@ -13,5 +13,18 @@ class VideoWatchTableModel{
     var LandscapeStep: Int = 0
     var PortraightStep: Int = 0
     
+    var videoInfoTappedEnable : Bool = false
+    
+    var videoInfoSections:[DetailPageSection] = [DetailPageSection]()
+    
     let videoCache: YoutubeVideoCache = YoutubeVideoCache()
+    
+    
+    func makeVideoInfoSections() -> [DetailPageSection] {
+        self.videoInfoSections = DetailPageSection.insertVideoInfoSection(self.videoCache,videoInfoTappedEnable:self.videoInfoTappedEnable)
+        
+        return self.videoInfoSections
+    }
+    
+    
 }

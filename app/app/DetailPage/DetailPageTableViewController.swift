@@ -22,10 +22,8 @@ class DetailPageTableViewController: UITableViewController,UITableViewDelegate,U
         self.tableView.separatorStyle = .None
     }
     
-    func makeVideoInfoSection(videoCache: YoutubeVideoCache,videoInfoTappedEnable : Bool){
-        self.videoInfoTappedEnable = videoInfoTappedEnable
-        
-        let  videoInfoSections:[DetailPageSection] =  DetailPageSection.insertVideoInfoSection(videoCache,videoInfoTappedEnable:self.videoInfoTappedEnable )
+    // MARK : methods for Video Info sections
+    func makeVideoInfoSection(videoInfoSections:[DetailPageSection]){
         for section in videoInfoSections {
             pageSections.append(section)
         }
@@ -33,6 +31,16 @@ class DetailPageTableViewController: UITableViewController,UITableViewDelegate,U
         self.tableView.reloadData()
     }
     
+    func removeVideoInfoSection([DetailPageSection]){
+        self.tableView.beginUpdates()
+        
+        let animatedIndexPath = NSIndexPath(forRow: 0, inSection: 1)
+        self.tableView.deleteRowsAtIndexPaths([animatedIndexPath], withRowAnimation: UITableViewRowAnimation.Automatic)
+        
+        self.tableView.endUpdates()
+    }
+    
+    // MARK: methods for Suggestion sections
     func appendSideVideos(array:NSArray){
         self.pageSections.append(DetailPageSection.makeSuggestionVideoListSection(array))
         
@@ -43,7 +51,6 @@ class DetailPageTableViewController: UITableViewController,UITableViewDelegate,U
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
     
     
     //MARK: UITableViewDataSource
@@ -124,10 +131,10 @@ class DetailPageTableViewController: UITableViewController,UITableViewDelegate,U
         let animatedIndexPath = NSIndexPath(forRow: 0, inSection: 1)
         if(section.isOpen == true){
             DetailPageSection.removeAnimatedObject(self.pageSections[1], index: 0)
-            self.tableView.deleteRowsAtIndexPaths([animatedIndexPath], withRowAnimation: .Automatic)
+            self.tableView.deleteRowsAtIndexPaths([animatedIndexPath], withRowAnimation: UITableViewRowAnimation.Automatic)
         }else{
             DetailPageSection.addAnimatedObject(self.pageSections[1], index: 0)
-            self.tableView.insertRowsAtIndexPaths([animatedIndexPath], withRowAnimation: .Automatic)
+            self.tableView.insertRowsAtIndexPaths([animatedIndexPath], withRowAnimation: UITableViewRowAnimation.Automatic)
         }
         
         self.tableView.endUpdates()

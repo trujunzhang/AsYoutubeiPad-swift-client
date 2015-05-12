@@ -77,6 +77,7 @@ class YTVideoWatchViewController: UIViewController {
         LayoutUtils.LayoutFullView(sideTableViewController.view)
         
         // test
+        self.watchTableModel.makeVideoInfoSections()
         self.searchTask.refreshEvent("sketch 3", completeHandler: {
             (response, sucess) -> Void in
             let array: NSArray = response as! NSArray
@@ -137,6 +138,8 @@ class YTVideoWatchViewController: UIViewController {
         watchTableModel.PortraightStep = 0
         
         
+         sideTableViewController.removeVideoInfoSection(watchTableModel.videoInfoSections)
+        
         watchTableModel.LandscapeStep += 1
         
     }
@@ -145,7 +148,7 @@ class YTVideoWatchViewController: UIViewController {
         watchTableModel.LandscapeStep = 0
         
         if( watchTableModel.PortraightStep == 0){
-            sideTableViewController.makeVideoInfoSection(watchTableModel.videoCache,videoInfoTappedEnable:true)
+            sideTableViewController.makeVideoInfoSection(watchTableModel.videoInfoSections)
         }
         
         watchTableModel.PortraightStep += 1
