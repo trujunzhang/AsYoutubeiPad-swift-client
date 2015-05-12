@@ -11,6 +11,10 @@ import Foundation
 class VideoInfoObject: NSObject{
     var title = "WebStorm 10 - New features"
     var likeCount = "2,222 views"
+    
+    var videoInfoTappedEnable : Bool = false
+    
+    var isExpand : Bool = false
 }
 
 class VideoDescriptonObject: NSObject{

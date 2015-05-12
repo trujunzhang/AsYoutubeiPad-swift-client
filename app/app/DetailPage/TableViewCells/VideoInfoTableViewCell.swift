@@ -14,10 +14,8 @@ class VideoInfoTableViewCell: UITableViewCell {
     
     @IBOutlet weak var infoLabel: UILabel!
 
-
-    //    @IBOutlet weak var toggleButton: UIButton!
     
-    
+    @IBOutlet weak var toggleButton: UIImageView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -28,7 +26,7 @@ class VideoInfoTableViewCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
         
         // Configure the view for the selected state
-//        let ivView:UIImageView = UIImageView(image: UIImage(named: ""))
+        //        let ivView:UIImageView = UIImageView(image: UIImage(named: ""))
         let ivView: UIView = UIView()
         ivView.backgroundColor = UIColor.clearColor()
         self.selectedBackgroundView = ivView
@@ -37,9 +35,15 @@ class VideoInfoTableViewCell: UITableViewCell {
     
     // MARK: Configure cell
     func configureCell(object: VideoInfoObject){
-                self.titleLabel.text = object.title
-                self.infoLabel.text  = object.likeCount
+        self.titleLabel.text = object.title
+        self.infoLabel.text  = object.likeCount
         
+        if(object.videoInfoTappedEnable == false){
+            toggleButton.hidden = true
+        }
+         println("object.videoInfoTappedEnable is \(object.videoInfoTappedEnable)")
+        
+        toggleButton.highlighted = true
         
         //        self.descriptionLabel.text = videoInfoObject.descriptionString
         //        self.descriptionLabelHeightConstraint.constant = videoInfoObject.currentRowHeight

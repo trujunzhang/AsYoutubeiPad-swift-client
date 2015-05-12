@@ -53,10 +53,10 @@ class DetailPageSection{
     }
     
     // MARK: make different sections
-    class func insertVideoInfoSection(videoCache: YoutubeVideoCache,isOpen:Bool) -> [DetailPageSection]{
+    class func insertVideoInfoSection(videoCache: YoutubeVideoCache, videoInfoTappedEnable : Bool) -> [DetailPageSection]{
         var pageSections:[DetailPageSection] = [DetailPageSection]()
         
-        var section: DetailPageSection = DetailPageSection.makeVideoInfoObjectSection(videoCache)
+        var section: DetailPageSection = DetailPageSection.makeVideoInfoObjectSection(videoCache,videoInfoTappedEnable:videoInfoTappedEnable)
         pageSections.append(section)
         
         section = DetailPageSection.makeVideoDescriptionObjectSection(videoCache)
@@ -69,7 +69,7 @@ class DetailPageSection{
     }
     
     // MARK: video info section
-    class func makeVideoInfoObjectSection(videoCache: YoutubeVideoCache) -> DetailPageSection{
+    class func makeVideoInfoObjectSection(videoCache: YoutubeVideoCache,videoInfoTappedEnable : Bool) -> DetailPageSection{
         let section: DetailPageSection = DetailPageSection()
         
         section.sectionTitle = ""
@@ -78,6 +78,11 @@ class DetailPageSection{
         section.sectionFooterHeight = 0
         section.sectionIdentifier = DetailPageCellIdentifier.VideoInfoCellIdentifier
         section.identifer = VIDEO_INFO_CELL_IDENTIFER
+        
+        let object: VideoInfoObject = VideoInfoObject()
+        object.videoInfoTappedEnable = videoInfoTappedEnable
+        println("videoInfoTappedEnable is \(videoInfoTappedEnable)")
+        object.isExpand = false
         section.rowObjects.append(VideoInfoObject())
         
         return section

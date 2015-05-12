@@ -24,7 +24,8 @@ class DetailPageTableViewController: UITableViewController,UITableViewDelegate,U
     
     func makeVideoInfoSection(videoCache: YoutubeVideoCache,videoInfoTappedEnable : Bool){
         self.videoInfoTappedEnable = videoInfoTappedEnable
-        let  videoInfoSections:[DetailPageSection] =  DetailPageSection.insertVideoInfoSection(videoCache,isOpen:true)
+        
+        let  videoInfoSections:[DetailPageSection] =  DetailPageSection.insertVideoInfoSection(videoCache,videoInfoTappedEnable:self.videoInfoTappedEnable )
         for section in videoInfoSections {
             pageSections.append(section)
         }

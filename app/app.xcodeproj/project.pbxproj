@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5E46504B1B01F2C9009F908C /* VideoWatchTableModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E46504A1B01F2C9009F908C /* VideoWatchTableModel.swift */; };
 		5E6CCBE51B0192920040ACE7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E6CCBE41B0192920040ACE7 /* AppDelegate.swift */; };
 		5E6CCBE71B0192920040ACE7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E6CCBE61B0192920040ACE7 /* ViewController.swift */; };
 		5E6CCBEA1B0192920040ACE7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5E6CCBE81B0192920040ACE7 /* Main.storyboard */; };
@@ -129,6 +130,7 @@
 
 /* Begin PBXFileReference section */
 		0567AF415F4D5FE88421BB37 /* libPods-app.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-app.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		5E46504A1B01F2C9009F908C /* VideoWatchTableModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoWatchTableModel.swift; sourceTree = "<group>"; };
 		5E6CCBDF1B0192920040ACE7 /* app.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = app.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5E6CCBE31B0192920040ACE7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5E6CCBE41B0192920040ACE7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -467,6 +469,7 @@
 		5EFB6F241B0194B300423840 /* WatchView */ = {
 			isa = PBXGroup;
 			children = (
+				5E46504A1B01F2C9009F908C /* VideoWatchTableModel.swift */,
 				5EFB6F251B0194B300423840 /* Bars */,
 				5EFB6F281B0194B300423840 /* MovieEmbeddedViewController.swift */,
 				5EFB6F291B0194B300423840 /* Player */,
@@ -966,6 +969,7 @@
 				5EFB6F3C1B0194B300423840 /* YTVideoWatchViewController.swift in Sources */,
 				5EFB6F331B0194B300423840 /* MovieEmbeddedNormalBarViewController.swift in Sources */,
 				5EFB6F0B1B0193E700423840 /* YoutubeFetcher.swift in Sources */,
+				5E46504B1B01F2C9009F908C /* VideoWatchTableModel.swift in Sources */,
 				5EFB6F221B0194A900423840 /* ChannelPageViewController.swift in Sources */,
 				5EFB6FCE1B01950B00423840 /* VideoCollectionViewCellLayout.swift in Sources */,
 				5EFB6F211B0194A900423840 /* ChannelBannerViewController.swift in Sources */,

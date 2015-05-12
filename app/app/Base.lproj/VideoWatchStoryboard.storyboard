@@ -257,12 +257,18 @@ Cg
                                             <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="collapse_guide.png" translatesAutoresizingMaskIntoConstraints="NO" id="5Lz-Bh-bga">
-                                            <rect key="frame" x="538" y="10" width="32" height="32"/>
+                                        <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="collapse_guide.png" highlightedImage="expand_guide.png" translatesAutoresizingMaskIntoConstraints="NO" id="5Lz-Bh-bga">
+                                            <rect key="frame" x="558" y="10" width="32" height="32"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="32" id="Cvh-UH-Nwm"/>
+                                                <constraint firstAttribute="width" constant="32" id="Xpj-eS-fkx"/>
+                                            </constraints>
                                         </imageView>
                                     </subviews>
                                     <constraints>
+                                        <constraint firstItem="5Lz-Bh-bga" firstAttribute="top" secondItem="W9J-1f-AxK" secondAttribute="top" constant="10" id="5oj-NY-xmm"/>
                                         <constraint firstAttribute="trailing" secondItem="0gE-4h-O7b" secondAttribute="trailing" constant="15" id="C2N-Le-zPw"/>
+                                        <constraint firstAttribute="trailing" secondItem="5Lz-Bh-bga" secondAttribute="trailing" constant="10" id="cgd-xI-jut"/>
                                         <constraint firstAttribute="trailing" secondItem="X38-XG-WYP" secondAttribute="trailing" constant="15" id="fct-po-D4p"/>
                                         <constraint firstItem="X38-XG-WYP" firstAttribute="leading" secondItem="W9J-1f-AxK" secondAttribute="leading" constant="21" id="fi4-Gy-jPI"/>
                                         <constraint firstItem="0gE-4h-O7b" firstAttribute="leading" secondItem="W9J-1f-AxK" secondAttribute="leading" constant="21" id="jkS-Ys-pMP"/>
@@ -273,6 +279,7 @@ Cg
                                 <connections>
                                     <outlet property="infoLabel" destination="X38-XG-WYP" id="iQc-Wu-K04"/>
                                     <outlet property="titleLabel" destination="0gE-4h-O7b" id="PJR-2U-NPS"/>
+                                    <outlet property="toggleButton" destination="5Lz-Bh-bga" id="6Fu-Ra-qK8"/>
                                 </connections>
                             </tableViewCell>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="descriptionCell" id="ABV-gZ-ip6" customClass="VideoDescriptionTableViewCell" customModule="app" customModuleProvider="target">
@@ -527,6 +534,7 @@ Cg
         <image name="cc.png" width="24" height="22"/>
         <image name="collapse_guide.png" width="11" height="7"/>
         <image name="dislike.png" width="20" height="24"/>
+        <image name="expand_guide.png" width="11" height="7"/>
         <image name="like.png" width="20" height="24"/>
         <image name="mp_embedded_pause.png" width="18" height="18"/>
         <image name="mp_fullscreen.png" width="20" height="26"/>

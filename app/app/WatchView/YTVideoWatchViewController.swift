@@ -25,6 +25,8 @@ class YTVideoWatchViewController: UIViewController {
     
     var videoID: String = ""
     
+    let videoCache: YoutubeVideoCache = YoutubeVideoCache()
+    
     func fetchVideoInfo(){
         YoutubeFetcher.fetchVideoDescription(videoID, completeHandler: {
             (object, sucess) -> Void in
@@ -85,10 +87,10 @@ class YTVideoWatchViewController: UIViewController {
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
         
-        let videoCache: YoutubeVideoCache = YoutubeVideoCache()
         
-        videoInfoTableViewController.makeVideoInfoSection(videoCache,videoInfoTappedEnable:false)
-        sideTableViewController.makeVideoInfoSection(videoCache,videoInfoTappedEnable:true)
+        
+//        videoInfoTableViewController.makeVideoInfoSection(videoCache,videoInfoTappedEnable:false)
+//        sideTableViewController.makeVideoInfoSection(videoCache,videoInfoTappedEnable:true)
     }
     
     
@@ -117,6 +119,8 @@ class YTVideoWatchViewController: UIViewController {
             sideViewWidthConstraint.constant =  rectWidth - playerWidth
             sideViewHeightConstraint.constant = rectHeight
             infoViewHeightConstraint.constant = rectHeight - playerViewHeight(playerWidth)
+            
+            self.configureLandscapePanels()
         } else {
             // portraight
             let playerWidth = rectWidth
@@ -124,11 +128,17 @@ class YTVideoWatchViewController: UIViewController {
             sideViewWidthConstraint.constant =  playerWidth
             sideViewHeightConstraint.constant = rectHeight - playerViewHeight(playerWidth)
             infoViewHeightConstraint.constant = 0
+            
+            self.configurePortraightPanels()
         }
     }
     
     func configureLandscapePanels(){
         
+    }
+    
+    func configurePortraightPanels(){
+         sideTableViewController.makeVideoInfoSection(videoCache,videoInfoTappedEnable:true)
     }
  
     
