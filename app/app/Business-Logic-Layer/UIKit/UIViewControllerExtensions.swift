@@ -22,7 +22,7 @@ extension UIViewController {
         viewController.view.removeFromSuperview()
     }
     
-    // MARK: - 
+    // MARK: -
     func insertRequestFailureViewPanel(viewController:RequestFailureViewController){
         self.addChildViewController(viewController)
         self.view.addSubview(viewController.view)

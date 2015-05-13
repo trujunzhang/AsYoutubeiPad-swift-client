@@ -18,14 +18,14 @@
                         <subviews>
                             <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="FIH-h0-isl">
                                 <rect key="frame" x="282" y="11" width="37" height="37"/>
-                                <color key="backgroundColor" red="0.60000002379999995" green="0.40000000600000002" blue="0.20000000300000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="37" id="5KM-xQ-CIg"/>
                                     <constraint firstAttribute="height" constant="37" id="DAT-th-7DS"/>
                                 </constraints>
                             </activityIndicatorView>
                         </subviews>
-                        <color key="backgroundColor" red="0.0" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="centerX" secondItem="FIH-h0-isl" secondAttribute="centerX" id="gTz-n5-WSb"/>
                             <constraint firstAttribute="centerY" secondItem="FIH-h0-isl" secondAttribute="centerY" id="qcN-Bu-Sbd"/>
