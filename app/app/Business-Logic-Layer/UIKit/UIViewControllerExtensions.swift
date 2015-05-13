@@ -10,7 +10,7 @@ import Foundation
 
 extension UIViewController {
     
-    // MARK:
+    // MARK: -
     func addLoadingViewPanel(viewController:LoadingViewController){
         self.addChildViewController(viewController)
         self.view.addSubview(viewController.view)
@@ -22,14 +22,14 @@ extension UIViewController {
         viewController.view.removeFromSuperview()
     }
     
-    // MARK
+    // MARK: - 
     func insertRequestFailureViewPanel(viewController:RequestFailureViewController){
         self.addChildViewController(viewController)
         self.view.addSubview(viewController.view)
         viewController.layoutPanel()
     }
     
-    // MARK: Loading panel
+    // MARK: Loading event
     /**
     example: 
            showLoadingPanel(loadingViewController)
@@ -45,12 +45,6 @@ extension UIViewController {
         viewController.hideLoadingPanel()
         removeLoadingViewPanel(viewController)
     }
-    
-    //    var refreshControl: UIRefreshControl  = UIRefreshControl()
-    
-    //    func configureRefreshControl(action: Selector) {
-    //        refreshControl = UIRefreshControl()
-    //        refreshControl?.addTarget(self, action: action, forControlEvents: .ValueChanged)
-    //    }
+
     
 }

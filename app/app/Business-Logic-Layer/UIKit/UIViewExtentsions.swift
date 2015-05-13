@@ -14,6 +14,21 @@ extension UIView {
         self.frame = CGRect(x:centerX, y:frame.origin.y, width:frame.size.width, height:frame.size.height)
     }
     
+    /**
+    AutoLayout: full superview
+    */
+    func LayoutFullView() {
+        layout(self) {
+            view1 in
+            
+            view1.centerX == view1.superview!.centerX
+            view1.centerY == view1.superview!.centerY
+            
+            view1.width == view1.superview!.width
+            view1.height == view1.superview!.height
+        }
+    }
+
 
     /**
     AutoLayout for margining self
@@ -36,9 +51,9 @@ extension UIView {
         layout(self) {
             view1 in
             
-            view1.leading == view1.superview!.leading
-            view1.trailing == view1.superview!.trailing
-            
+            view1.centerX == view1.superview!.centerX
+            view1.width == view1.superview!.width
+
             view1.top == view1.superview!.top + topMargin
             view1.height == height
         }
