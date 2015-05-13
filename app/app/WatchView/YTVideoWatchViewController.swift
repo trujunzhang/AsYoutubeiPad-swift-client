@@ -75,10 +75,11 @@ class YTVideoWatchViewController: UIViewController {
         videoInfoTableViewController.emptyVideoInfoTable()
         videoInfoTableViewController.showLoadingPanel(self,superView: self.videoInfoContainer)
         
-        var popTime = dispatch_time(DISPATCH_TIME_NOW, Int64(3.0 * Double(NSEC_PER_SEC)));
-        dispatch_after(popTime, dispatch_get_main_queue()) { () -> Void in
-            self.fetchVideoInfo()
-        }
+          self.fetchVideoInfo()
+//        var popTime = dispatch_time(DISPATCH_TIME_NOW, Int64(3.0 * Double(NSEC_PER_SEC)));
+//        dispatch_after(popTime, dispatch_get_main_queue()) { () -> Void in
+//            self.fetchVideoInfo()
+//        }
     }
 
     
