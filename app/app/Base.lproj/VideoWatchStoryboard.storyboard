@@ -355,7 +355,7 @@ Cg
                                     <outlet property="likeCountLabel" destination="1UI-7D-DiU" id="MOT-gm-N7M"/>
                                 </connections>
                             </tableViewCell>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="headerCell" id="TYe-nc-dwx" customClass="HeaderTableViewCell" customModule="app" customModuleProvider="target">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="headerCell" rowHeight="44" id="TYe-nc-dwx" customClass="HeaderTableViewCell" customModule="app" customModuleProvider="target">
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="TYe-nc-dwx" id="aUP-Ml-JbY">
                                     <autoresizingMask key="autoresizingMask"/>
