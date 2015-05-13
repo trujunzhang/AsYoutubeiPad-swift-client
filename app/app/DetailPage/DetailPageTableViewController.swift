@@ -155,36 +155,36 @@ class DetailPageTableViewController: UITableViewController,UITableViewDelegate,U
         switch(sectionIdentifier){
             
         case DetailPageCellIdentifier.SectionTitleCellIdentifier:
-            let videoInfoCell: HeaderTableViewCell = cell as! HeaderTableViewCell
-            videoInfoCell.configureCell(rowObject as! SectionTitleObject)
+            let cell: HeaderTableViewCell = cell as! HeaderTableViewCell
+            cell.configureCell(rowObject as! SectionTitleObject)
             
             break;
-        case DetailPageCellIdentifier.VideoInfoCellIdentifier:
-            let videoInfoCell: VideoInfoTableViewCell = cell as! VideoInfoTableViewCell
-            videoInfoCell.configureCell(rowObject as! VideoInfoObject)
+        case DetailPageCellIdentifier.cellIdentifier:
+            let cell: VideoInfoTableViewCell = cell as! VideoInfoTableViewCell
+            cell.configureCell(rowObject as! VideoInfoObject)
             
             break;
         case DetailPageCellIdentifier.VideoDescriptionCellIdentifier:
             
-            let videoInfoCell: VideoDescriptionTableViewCell = cell as! VideoDescriptionTableViewCell
-            videoInfoCell.configureCell(rowObject as! VideoDescriptonObject)
+            let cell: VideoDescriptionTableViewCell = cell as! VideoDescriptionTableViewCell
+            cell.configureCell(rowObject as! VideoDescriptonObject)
             
             break;
         case DetailPageCellIdentifier.VideoStatisticCellIdentifier:
             
-            let videoInfoCell: VideoStatisticTableViewCell = cell as! VideoStatisticTableViewCell
-            videoInfoCell.configureCell(rowObject as! VideoStatisticObject)
+            let cell: VideoStatisticTableViewCell = cell as! VideoStatisticTableViewCell
+            cell.configureCell(rowObject as! VideoStatisticObject)
             
             break;
             
         case DetailPageCellIdentifier.ChannelInfoCellIdentifier:
-            let videoInfoCell: ChannelInfoTableViewCell = cell as! ChannelInfoTableViewCell
-            //            videoInfoCell.configureCell(rowObject as! VideoInfoObject)
+            let cell: ChannelInfoTableViewCell = cell as! ChannelInfoTableViewCell
+            //            cell.configureCell(rowObject as! VideoInfoObject)
             break;
             
         case DetailPageCellIdentifier.SuggestionListCellIdentifier:
-            let videoInfoCell: SuggestionVideoInfoTableViewCell = cell as! SuggestionVideoInfoTableViewCell
-            videoInfoCell.configureCell(rowObject as! YoutubeVideoCache)
+            let cell: SuggestionVideoInfoTableViewCell = cell as! SuggestionVideoInfoTableViewCell
+            cell.configureCell(rowObject as! YoutubeVideoCache)
             break;
             
         default:
