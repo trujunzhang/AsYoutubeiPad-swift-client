@@ -11,18 +11,9 @@ import UIKit
 
 class YTVideosCollectionViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
     // MARK: Public ViewControllers
-    lazy var loadingViewController:LoadingViewController = {
-        return LoadingViewController.instance()
-        }()
-    lazy var requestFailureViewController:RequestFailureViewController = {
-        return RequestFailureViewController.instance()
-        }()
-    
-    func insertLoadingViewPanel(){
-        self.addChildViewController(loadingViewController)
-        self.view.addSubview(loadingViewController.view)
-        loadingViewController.layoutPanel()
-    }
+    lazy var loadingViewController:LoadingViewController = {return LoadingViewController.instance()}()
+    lazy var requestFailureViewController:RequestFailureViewController = {return RequestFailureViewController.instance()}()
+
     
     func insertRequestFailureViewPanel(){
         self.addChildViewController(requestFailureViewController)
@@ -73,7 +64,8 @@ class YTVideosCollectionViewController: UIViewController, UICollectionViewDataSo
         self.flowLayout.sectionInset = UIEdgeInsetsMake(COLLECTION_CELL_INSET_VALUE, COLLECTION_CELL_INSET_VALUE, COLLECTION_CELL_INSET_VALUE, COLLECTION_CELL_INSET_VALUE)
         
         self.registerInfiniteScrollView()
-        self.insertLoadingViewPanel()
+        
+        self.showAndAddLoadingPanel(loadingViewController, parentViewController: self, superView: self.view)
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -87,7 +79,7 @@ class YTVideosCollectionViewController: UIViewController, UICollectionViewDataSo
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
     }
-
+    
     
     func stopFetchedAnimation() {
         self.refreshControl.endRefreshing()
@@ -208,8 +200,7 @@ class YTVideosCollectionViewController: UIViewController, UICollectionViewDataSo
     }
     
     func hideLoadingPanel() {
-        loadingViewController.hideLoadingPanel()
-        
+        self.hideAndRemoveLoadingPanel(loadingViewController)
         self.collectionView.addSubview(refreshControl)
     }
     

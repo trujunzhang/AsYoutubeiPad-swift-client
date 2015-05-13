@@ -32,6 +32,6 @@ class LoadingViewController: UIViewController {
     
     // MARK: Layout Panel
     func layoutPanel(){
-       self.view.layoutPanelTopMarginAndHeight(40,height:60)
+       self.view.layoutPanelTopMarginAndHeight(140,height:60)
     }
 }
