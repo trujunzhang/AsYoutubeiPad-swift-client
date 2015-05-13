@@ -27,7 +27,7 @@ class YTVideosCollectionViewController: UIViewController, UICollectionViewDataSo
     func insertRequestFailureViewPanel(){
         self.addChildViewController(requestFailureViewController)
         self.view.addSubview(requestFailureViewController.view)
-        loadingViewController.layoutPanel()
+        requestFailureViewController.layoutPanel()
     }
     
     @IBOutlet var collectionView: UICollectionView!

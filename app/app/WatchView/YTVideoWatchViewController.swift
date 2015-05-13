@@ -30,7 +30,7 @@ class YTVideoWatchViewController: UIViewController {
     
     var videoID: String = "" {
         didSet{
-            fetchVideoInfo()
+//            fetchVideoInfo()
         }
     }
     

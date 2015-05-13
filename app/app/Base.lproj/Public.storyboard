@@ -17,10 +17,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AFW-KN-k22">
-                                <rect key="frame" x="0.0" y="40" width="600" height="60"/>
+                                <rect key="frame" x="0.0" y="80" width="600" height="50"/>
                                 <subviews>
                                     <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="FIH-h0-isl">
-                                        <rect key="frame" x="282" y="12" width="37" height="37"/>
+                                        <rect key="frame" x="282" y="7" width="37" height="37"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="37" id="3kT-1a-bfc"/>
                                             <constraint firstAttribute="height" constant="37" id="Jbv-8v-fDT"/>
@@ -29,17 +29,17 @@
                                 </subviews>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="centerY" secondItem="FIH-h0-isl" secondAttribute="centerY" id="x2m-gy-vwO"/>
-                                    <constraint firstAttribute="centerX" secondItem="FIH-h0-isl" secondAttribute="centerX" id="yLf-oy-mcL"/>
+                                    <constraint firstAttribute="height" constant="50" id="CEg-T5-bt1"/>
+                                    <constraint firstItem="FIH-h0-isl" firstAttribute="centerX" secondItem="AFW-KN-k22" secondAttribute="centerX" id="Zvp-Kk-8Sx"/>
+                                    <constraint firstItem="FIH-h0-isl" firstAttribute="centerY" secondItem="AFW-KN-k22" secondAttribute="centerY" id="gSq-Sk-vhz"/>
                                 </constraints>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.0" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="iqZ-M0-RAM" firstAttribute="top" secondItem="AFW-KN-k22" secondAttribute="bottom" constant="500" id="XNo-Xk-Kjv"/>
-                            <constraint firstAttribute="trailing" secondItem="AFW-KN-k22" secondAttribute="trailing" id="meb-ne-emw"/>
-                            <constraint firstItem="AFW-KN-k22" firstAttribute="leading" secondItem="Vsv-Kt-Tra" secondAttribute="leading" id="udo-T0-pUB"/>
-                            <constraint firstItem="AFW-KN-k22" firstAttribute="top" secondItem="RSI-Ey-vao" secondAttribute="bottom" constant="20" id="xJe-3W-co3"/>
+                            <constraint firstItem="AFW-KN-k22" firstAttribute="top" secondItem="RSI-Ey-vao" secondAttribute="bottom" constant="60" id="KTD-nx-jtK"/>
+                            <constraint firstItem="AFW-KN-k22" firstAttribute="leading" secondItem="Vsv-Kt-Tra" secondAttribute="leading" id="TgL-jH-Dcu"/>
+                            <constraint firstAttribute="trailing" secondItem="AFW-KN-k22" secondAttribute="trailing" id="g5q-tk-hHk"/>
                         </constraints>
                     </view>
                     <connections>

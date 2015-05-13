@@ -9,8 +9,11 @@
 import UIKit
 
 extension UITableView {
-    func scrollToBottom(animated: Bool = true) {
-        let bottomOffset = CGPointMake(0, contentSize.height - bounds.size.height)
-        setContentOffset(bottomOffset, animated: animated)
-    }
+
+    
+//    func configureRefreshControl(action: Selector) {
+//        refreshControl = UIRefreshControl()
+//        refreshControl?.addTarget(self, action: action, forControlEvents: .ValueChanged)
+//    }
+    
 }

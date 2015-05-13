@@ -21,6 +21,7 @@
 		5EA7D0F91B02E571005B4E16 /* UIControlExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EA7D0F41B02E571005B4E16 /* UIControlExtensions.swift */; };
 		5EA7D0FA1B02E571005B4E16 /* UITableViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EA7D0F51B02E571005B4E16 /* UITableViewExtensions.swift */; };
 		5EA7D0FB1B02E571005B4E16 /* UIViewExtentsions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EA7D0F61B02E571005B4E16 /* UIViewExtentsions.swift */; };
+		5EA7D0FD1B02E6D7005B4E16 /* UIViewControllerExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EA7D0FC1B02E6D7005B4E16 /* UIViewControllerExtensions.swift */; };
 		5EF002F11B019A54002D2A93 /* Public.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5EF002EB1B019A54002D2A93 /* Public.storyboard */; };
 		5EF002F21B019A54002D2A93 /* ReusedViewControllers.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5EF002ED1B019A54002D2A93 /* ReusedViewControllers.storyboard */; };
 		5EF002F31B019A54002D2A93 /* VideoWatchStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5EF002EF1B019A54002D2A93 /* VideoWatchStoryboard.storyboard */; };
@@ -155,6 +156,7 @@
 		5EA7D0F41B02E571005B4E16 /* UIControlExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UIControlExtensions.swift; path = UIKit/UIControlExtensions.swift; sourceTree = "<group>"; };
 		5EA7D0F51B02E571005B4E16 /* UITableViewExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UITableViewExtensions.swift; path = UIKit/UITableViewExtensions.swift; sourceTree = "<group>"; };
 		5EA7D0F61B02E571005B4E16 /* UIViewExtentsions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UIViewExtentsions.swift; path = UIKit/UIViewExtentsions.swift; sourceTree = "<group>"; };
+		5EA7D0FC1B02E6D7005B4E16 /* UIViewControllerExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UIViewControllerExtensions.swift; path = UIKit/UIViewControllerExtensions.swift; sourceTree = "<group>"; };
 		5EF002EC1B019A54002D2A93 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Public.storyboard; sourceTree = "<group>"; };
 		5EF002EE1B019A54002D2A93 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/ReusedViewControllers.storyboard; sourceTree = "<group>"; };
 		5EF002F01B019A54002D2A93 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/VideoWatchStoryboard.storyboard; sourceTree = "<group>"; };
@@ -360,6 +362,7 @@
 		5EA7D0EF1B02E3AF005B4E16 /* UIKit */ = {
 			isa = PBXGroup;
 			children = (
+				5EA7D0FC1B02E6D7005B4E16 /* UIViewControllerExtensions.swift */,
 				5EA7D0F21B02E571005B4E16 /* UIColorExtensions.swift */,
 				5EA7D0F31B02E571005B4E16 /* UIConstants.swift */,
 				5EA7D0F41B02E571005B4E16 /* UIControlExtensions.swift */,
@@ -1035,6 +1038,7 @@
 				5EFB6EF61B0193E700423840 /* Tools.swift in Sources */,
 				5EFB6F651B0194DF00423840 /* MenuLoginTitleBarCell.swift in Sources */,
 				5EFB6EFB1B0193E700423840 /* YoutubeRetrievingActivityListItemsFetcher.swift in Sources */,
+				5EA7D0FD1B02E6D7005B4E16 /* UIViewControllerExtensions.swift in Sources */,
 				5EFB6F051B0193E700423840 /* LoggedUserChannelInfo.swift in Sources */,
 				5EFB6F631B0194DF00423840 /* LeftMenuViewController.swift in Sources */,
 				5EFB6F361B0194B300423840 /* CMTime+Validation.swift in Sources */,

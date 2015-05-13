@@ -11,6 +11,16 @@ import Dollar
 
 class DetailPageTableViewController: UITableViewController,UITableViewDelegate,UITableViewDataSource {
     
+    // MARK: Public ViewControllers
+    lazy var loadingViewController:LoadingViewController = { return LoadingViewController.instance() }()
+    lazy var requestFailureViewController:RequestFailureViewController = { return RequestFailureViewController.instance() }()
+
+    
+    func configureRefreshControl(action: Selector) {
+        refreshControl = UIRefreshControl()
+        refreshControl?.addTarget(self, action: action, forControlEvents: .ValueChanged)
+    }
+    
     var watchTableModel: VideoWatchTableModel = VideoWatchTableModel()
     var sectionKeys : [String] = [String]()
     var videoInfoTappedEnable : Bool = false
@@ -21,9 +31,16 @@ class DetailPageTableViewController: UITableViewController,UITableViewDelegate,U
         self.view.backgroundColor = UIColor.clearColor()
         self.tableView.dataSource = self
         self.tableView.delegate = self
-        self.tableView.contentInset = UIEdgeInsetsMake(20, 20, 50, 50)
+//        self.tableView.contentInset = UIEdgeInsetsMake(20, 20, 20, 20)
         self.tableView.separatorStyle = .None
-//        self.tableView.ver
+        
+        configureRefreshControl("refreshEffect")
+        showLoadingPanel(loadingViewController)
+    }
+    
+    func refreshEffect() {
+        println("Refresh!")
+        refreshControl?.endRefreshing()
     }
     
     // MARK : methods for Video Info sections
@@ -185,20 +202,20 @@ class DetailPageTableViewController: UITableViewController,UITableViewDelegate,U
     }
     
     
-//    override  func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-//        let section:DetailPageSection = getSectionByIndex(section)
-//        
-//        return section.sectionHeaderHeight
-//    }
+    //    override  func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+    //        let section:DetailPageSection = getSectionByIndex(section)
+    //
+    //        return section.sectionHeaderHeight
+    //    }
     
-
     
-//    override  func tableView(tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
-//        let section:DetailPageSection = getSectionByIndex(section)
-//        return section.sectionFooterHeight
-//    }
     
-
+    //    override  func tableView(tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+    //        let section:DetailPageSection = getSectionByIndex(section)
+    //        return section.sectionFooterHeight
+    //    }
+    
+    
     
     func getSectionByIndex(index: Int) -> DetailPageSection{
         let identifier :String =  self.sectionKeys[index]
