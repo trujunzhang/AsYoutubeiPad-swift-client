@@ -13,38 +13,30 @@
                         <viewControllerLayoutGuide type="bottom" id="iqZ-M0-RAM"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Vsv-Kt-Tra">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="60"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AFW-KN-k22">
-                                <rect key="frame" x="0.0" y="80" width="600" height="50"/>
-                                <subviews>
-                                    <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="FIH-h0-isl">
-                                        <rect key="frame" x="282" y="7" width="37" height="37"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="37" id="3kT-1a-bfc"/>
-                                            <constraint firstAttribute="height" constant="37" id="Jbv-8v-fDT"/>
-                                        </constraints>
-                                    </activityIndicatorView>
-                                </subviews>
-                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="FIH-h0-isl">
+                                <rect key="frame" x="282" y="11" width="37" height="37"/>
+                                <color key="backgroundColor" red="0.60000002379999995" green="0.40000000600000002" blue="0.20000000300000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="CEg-T5-bt1"/>
-                                    <constraint firstItem="FIH-h0-isl" firstAttribute="centerX" secondItem="AFW-KN-k22" secondAttribute="centerX" id="Zvp-Kk-8Sx"/>
-                                    <constraint firstItem="FIH-h0-isl" firstAttribute="centerY" secondItem="AFW-KN-k22" secondAttribute="centerY" id="gSq-Sk-vhz"/>
+                                    <constraint firstAttribute="width" constant="37" id="5KM-xQ-CIg"/>
+                                    <constraint firstAttribute="height" constant="37" id="DAT-th-7DS"/>
                                 </constraints>
-                            </view>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="AFW-KN-k22" firstAttribute="top" secondItem="RSI-Ey-vao" secondAttribute="bottom" constant="60" id="KTD-nx-jtK"/>
-                            <constraint firstItem="AFW-KN-k22" firstAttribute="leading" secondItem="Vsv-Kt-Tra" secondAttribute="leading" id="TgL-jH-Dcu"/>
-                            <constraint firstAttribute="trailing" secondItem="AFW-KN-k22" secondAttribute="trailing" id="g5q-tk-hHk"/>
+                            <constraint firstAttribute="centerX" secondItem="FIH-h0-isl" secondAttribute="centerX" id="gTz-n5-WSb"/>
+                            <constraint firstAttribute="centerY" secondItem="FIH-h0-isl" secondAttribute="centerY" id="qcN-Bu-Sbd"/>
                         </constraints>
                     </view>
+                    <nil key="simulatedStatusBarMetrics"/>
+                    <nil key="simulatedTopBarMetrics"/>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="600" height="60"/>
                     <connections>
                         <outlet property="indicatorView" destination="FIH-h0-isl" id="eij-nO-uGf"/>
-                        <outlet property="loadingPanel" destination="AFW-KN-k22" id="mqj-Wj-N9I"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UnR-Ka-7Vv" userLabel="First Responder" sceneMemberID="firstResponder"/>

@@ -11,7 +11,7 @@ import Cartography
 
 class LoadingViewController: UIViewController {
     
-    @IBOutlet weak var loadingPanel: UIView!
+//    @IBOutlet weak var loadingPanel: UIView!
     @IBOutlet weak var indicatorView: UIActivityIndicatorView!
     
     override func viewDidLoad() {
@@ -24,18 +24,18 @@ class LoadingViewController: UIViewController {
     
     // MARK: Loading panel
     func showLoadingPanel() {
-        loadingPanel.hidden = false
+//        loadingPanel.hidden = false
         indicatorView.startAnimating()
         indicatorView.hidesWhenStopped = true
     }
     
     func hideLoadingPanel() {
-        loadingPanel.hidden = true
+//        loadingPanel.hidden = true
         indicatorView.stopAnimating()
     }
     
     // MARK: Layout Panel
     func layoutPanel(){
-       self.view.layoutPanelTopMarginAndHeight(40,height:60)
+//       self.view.layoutPanelTopMarginAndHeight(40,height:60)
     }
 }
