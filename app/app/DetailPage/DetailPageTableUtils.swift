@@ -14,17 +14,19 @@ let VIDEO_STATISTIC_CELL_IDENTIFER = "statisticCell"
 
 let VIDEO_ROWS_INFO_IDENTIFER:[String] = [VIDEO_INFO_CELL_IDENTIFER,VIDEO_DESCRIPTION_CELL_IDENTIFER,VIDEO_STATISTIC_CELL_IDENTIFER]
 
+let SECTION_TITLE_CELL_IDENTIFER = "headerCell"
+
 let SUGGESTION_CELL_IDENTIFER = "suggestionCell"
 
 let CHANNEL_INFO_CELL_IDENTIFER = "channelCell"
 
-let HEADER_CELL_IDENTIFIER = "headerCell"
 
 public enum DetailPageCellIdentifier {
     case VideoInfoCellIdentifier
     case VideoDescriptionCellIdentifier
     case VideoStatisticCellIdentifier
     case ChannelInfoCellIdentifier
+    case SectionTitleCellIdentifier
     case SuggestionListCellIdentifier
 }
 
@@ -111,10 +113,10 @@ class DetailPageSection : NSObject{
     
     
     // MARK: suggestion section
-    class func makeSectionTitleSection(array:NSArray) -> DetailPageSection{
+    class func makeSuggestionVideoListSection(array:NSArray) -> DetailPageSection{
         let section: DetailPageSection = DetailPageSection()
         
-        section.sectionTitle = "Suggestions"
+        section.sectionTitle = ""
         section.rowHeight = 80
         section.sectionHeaderHeight = 0
         section.sectionFooterHeight = 20
@@ -124,17 +126,18 @@ class DetailPageSection : NSObject{
         
         return section
     }
-
-    class func makeSuggestionVideoListSection(array:NSArray) -> DetailPageSection{
+    
+    // MARK: title section
+    class func makeSectionTitleSection(title:String) -> DetailPageSection{
         let section: DetailPageSection = DetailPageSection()
         
         section.sectionTitle = "Suggestions"
         section.rowHeight = 80
         section.sectionHeaderHeight = 0
         section.sectionFooterHeight = 20
-        section.sectionIdentifier = DetailPageCellIdentifier.SuggestionListCellIdentifier
-        section.identifer = SUGGESTION_CELL_IDENTIFER
-        section.rowObjects = array as [AnyObject]
+        section.sectionIdentifier = DetailPageCellIdentifier.SectionTitleCellIdentifier
+        section.identifer = SECTION_TITLE_CELL_IDENTIFER
+        section.rowObjects.append(SectionTitleObject(title: title))
         
         return section
     }

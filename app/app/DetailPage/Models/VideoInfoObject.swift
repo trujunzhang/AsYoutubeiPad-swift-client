@@ -26,7 +26,12 @@ class VideoStatisticObject: NSObject{
     var disLikeCount = "133"
 }
 
-
+class SectionTitleObject: NSObject{
+    var title = ""
+    init(title:String){
+        self.title = title
+    }
+}
 //
 //
 //class VideoInfoObject: NSObject {

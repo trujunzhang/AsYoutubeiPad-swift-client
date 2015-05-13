@@ -13,8 +13,8 @@ extension UIViewController {
     // MARK: -
     func addLoadingViewPanel(viewController:LoadingViewController,parentViewController:UIViewController,superView:UIView){
         parentViewController.addChildViewController(viewController)
-        println("superView is \(superView)")
-        println("viewController.view is \(viewController.view)")
+//        println("superView is \(superView)")
+//        println("viewController.view is \(viewController.view)")
         superView.addSubview(viewController.view)
         viewController.layoutPanel()
     }

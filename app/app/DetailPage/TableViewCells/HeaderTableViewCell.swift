@@ -24,8 +24,8 @@ class HeaderTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
-    func configureCell(sectionHeaderTitle: String){
-        self.headerLabel.text = sectionHeaderTitle
+    func configureCell(object: SectionTitleObject){
+        self.headerLabel.text = object.title
     }
     
 }

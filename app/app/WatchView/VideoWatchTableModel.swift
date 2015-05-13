@@ -14,7 +14,7 @@ class VideoWatchTableModel{
     var PortraightStep: Int = 0
     
     var videoInfoTappedEnable : Bool = false
-
+    
     var pageSectionDict:[String:DetailPageSection] = [String:DetailPageSection]()
     
     func makeVideoInfoSections(videoCache: YoutubeVideoCache)  {
@@ -26,11 +26,12 @@ class VideoWatchTableModel{
     }
     
     func makeSideVideos(array:NSArray) {
+        self.pageSectionDict[SECTION_TITLE_CELL_IDENTIFER] =  DetailPageSection.makeSectionTitleSection("Subscription")
         self.pageSectionDict[SUGGESTION_CELL_IDENTIFER] =  DetailPageSection.makeSuggestionVideoListSection(array)
     }
     
     func getSectionByIndex(key: String) -> DetailPageSection{
-      
+        
         return self.pageSectionDict[key]!
     }
     

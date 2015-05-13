@@ -28,7 +28,7 @@ class DetailPageTableViewController: UITableViewController,UITableViewDelegate,U
         self.tableView.separatorStyle = .None
     }
     
-    func  showLoadingPanel(parentViewController:UIViewController, superView:UIView) {
+    func showLoadingPanel(parentViewController:UIViewController, superView:UIView) {
         self.tableView.hidden = true
         
         refreshControl?.endRefreshing()
@@ -95,6 +95,16 @@ class DetailPageTableViewController: UITableViewController,UITableViewDelegate,U
     // MARK: methods for Suggestion sections
     func appendSideVideos(){
         
+        if($.contains(self.sectionKeys, value: SECTION_TITLE_CELL_IDENTIFER) == false){
+            self.tableView.beginUpdates()
+            
+            self.sectionKeys.append(SECTION_TITLE_CELL_IDENTIFER)
+            
+            self.tableView.insertSections( NSIndexSet(index: self.sectionKeys.count-1), withRowAnimation: UITableViewRowAnimation.None)
+            
+            self.tableView.endUpdates()
+        }
+        
         if($.contains(self.sectionKeys, value: SUGGESTION_CELL_IDENTIFER) == false){
             self.tableView.beginUpdates()
             
@@ -143,6 +153,12 @@ class DetailPageTableViewController: UITableViewController,UITableViewDelegate,U
         let sectionIdentifier :    DetailPageCellIdentifier = section.sectionIdentifier!
         
         switch(sectionIdentifier){
+            
+        case DetailPageCellIdentifier.SectionTitleCellIdentifier:
+            let videoInfoCell: HeaderTableViewCell = cell as! HeaderTableViewCell
+            videoInfoCell.configureCell(rowObject as! SectionTitleObject)
+            
+            break;
         case DetailPageCellIdentifier.VideoInfoCellIdentifier:
             let videoInfoCell: VideoInfoTableViewCell = cell as! VideoInfoTableViewCell
             videoInfoCell.configureCell(rowObject as! VideoInfoObject)
