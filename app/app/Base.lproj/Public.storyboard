@@ -25,7 +25,7 @@
                                 </constraints>
                             </activityIndicatorView>
                         </subviews>
-                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="centerX" secondItem="FIH-h0-isl" secondAttribute="centerX" id="gTz-n5-WSb"/>
                             <constraint firstAttribute="centerY" secondItem="FIH-h0-isl" secondAttribute="centerY" id="qcN-Bu-Sbd"/>

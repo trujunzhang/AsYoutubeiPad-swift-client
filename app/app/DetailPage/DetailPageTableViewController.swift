@@ -15,12 +15,6 @@ class DetailPageTableViewController: UITableViewController,UITableViewDelegate,U
     lazy var loadingViewController:LoadingViewController = { return LoadingViewController.instance() }()
     lazy var requestFailureViewController:RequestFailureViewController = { return RequestFailureViewController.instance() }()
     
-    
-    func configureRefreshControl(action: Selector) {
-        refreshControl = UIRefreshControl()
-        refreshControl?.addTarget(self, action: action, forControlEvents: .ValueChanged)
-    }
-    
     var watchTableModel: VideoWatchTableModel = VideoWatchTableModel()
     var sectionKeys : [String] = [String]()
     var videoInfoTappedEnable : Bool = false
@@ -32,19 +26,28 @@ class DetailPageTableViewController: UITableViewController,UITableViewDelegate,U
         self.tableView.dataSource = self
         self.tableView.delegate = self
         self.tableView.separatorStyle = .None
-        
-        configureRefreshControl("refreshEffect")
-        showLoadingPanel(loadingViewController)
     }
     
-    func refreshEffect() {
-        println("Refresh!")
+    func  showLoadingPanel(parentViewController:UIViewController, superView:UIView) {
         refreshControl?.endRefreshing()
+        self.showAndAddLoadingPanel(loadingViewController,parentViewController:parentViewController,superView:superView)
     }
     
     func  hideLoadingPanel( ) {
-        self.hideLoadingPanel(self.loadingViewController)
+        self.hideAndRemoveLoadingPanel(self.loadingViewController)
         refreshControl?.endRefreshing()
+    }
+    
+    // MARK: -
+    func emptyVideoInfoTable(){
+        for (index ,key) in enumerate(VIDEO_ROWS_INFO_IDENTIFER){
+            if($.contains(self.sectionKeys, value: key) == true){
+                self.sectionKeys =  $.remove(self.sectionKeys) {
+                    $0 == key
+                }
+            }
+        }
+        self.tableView.reloadData()
     }
     
     // MARK : methods for Video Info sections

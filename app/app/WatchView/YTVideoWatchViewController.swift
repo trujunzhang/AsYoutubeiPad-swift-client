@@ -66,8 +66,21 @@ class YTVideoWatchViewController: UIViewController {
     lazy var videoInfoTableViewController : DetailPageTableViewController = {
         let instance = DetailPageTableViewController.instance()
         instance.watchTableModel = self.watchTableModel
+        instance.refreshControl = UIRefreshControl()
+        instance.refreshControl?.addTarget(self, action: "videoInfoFresh", forControlEvents: .ValueChanged)
         return instance
         }()
+    
+    func videoInfoFresh() {
+        videoInfoTableViewController.emptyVideoInfoTable()
+        videoInfoTableViewController.showLoadingPanel(self,superView: self.videoInfoContainer)
+        
+        var popTime = dispatch_time(DISPATCH_TIME_NOW, Int64(3.0 * Double(NSEC_PER_SEC)));
+        dispatch_after(popTime, dispatch_get_main_queue()) { () -> Void in
+            self.fetchVideoInfo()
+        }
+    }
+
     
     lazy var sideTableViewController : DetailPageTableViewController = {
         let instance = DetailPageTableViewController.instance()
@@ -96,7 +109,8 @@ class YTVideoWatchViewController: UIViewController {
         // videoInfoTableViewController
         self.videoInfoContainer.backgroundColor = UIColor.clearColor()
         self.videoInfoContainer.addSubview(videoInfoTableViewController.view)
-        LayoutUtils.LayoutLeftAndRightMargin(videoInfoTableViewController.view,leftRightMargin:20)
+        videoInfoTableViewController.view.LayoutMargining(UIEdgeInsetsMake(20,20,20,20))
+        self.videoInfoTableViewController.showLoadingPanel(self,superView: self.videoInfoContainer)
         
         // sideTableViewController
         self.sideContainer.backgroundColor = UIColor.clearColor()

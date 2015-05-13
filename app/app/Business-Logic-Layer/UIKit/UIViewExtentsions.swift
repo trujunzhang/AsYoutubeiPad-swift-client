@@ -14,6 +14,7 @@ extension UIView {
         self.frame = CGRect(x:centerX, y:frame.origin.y, width:frame.size.width, height:frame.size.height)
     }
     
+    
     /**
     AutoLayout: full superview
     */
