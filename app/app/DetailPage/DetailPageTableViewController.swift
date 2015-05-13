@@ -21,7 +21,9 @@ class DetailPageTableViewController: UITableViewController,UITableViewDelegate,U
         self.view.backgroundColor = UIColor.clearColor()
         self.tableView.dataSource = self
         self.tableView.delegate = self
+        self.tableView.contentInset = UIEdgeInsetsMake(20, 20, 50, 50)
         self.tableView.separatorStyle = .None
+//        self.tableView.ver
     }
     
     // MARK : methods for Video Info sections
@@ -177,26 +179,24 @@ class DetailPageTableViewController: UITableViewController,UITableViewDelegate,U
     
     override  func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         let section:DetailPageSection = getSectionByIndex(indexPath.section)
-        let sectionIdentifier :    DetailPageCellIdentifier = section.sectionIdentifier!
-        
         //        println("rowHeight is \(section.rowHeight)")
         
         return section.rowHeight
     }
     
     
-    override  func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        let section:DetailPageSection = getSectionByIndex(section)
-        
-        return section.sectionHeaderHeight
-    }
+//    override  func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+//        let section:DetailPageSection = getSectionByIndex(section)
+//        
+//        return section.sectionHeaderHeight
+//    }
     
 
     
-    override  func tableView(tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
-        let section:DetailPageSection = getSectionByIndex(section)
-        return section.sectionFooterHeight
-    }
+//    override  func tableView(tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+//        let section:DetailPageSection = getSectionByIndex(section)
+//        return section.sectionFooterHeight
+//    }
     
 
     

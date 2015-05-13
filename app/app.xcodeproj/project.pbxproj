@@ -16,6 +16,11 @@
 		5E6CCBEC1B0192920040ACE7 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5E6CCBEB1B0192920040ACE7 /* Images.xcassets */; };
 		5E6CCBEF1B0192920040ACE7 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5E6CCBED1B0192920040ACE7 /* LaunchScreen.xib */; };
 		5E6CCBFB1B0192920040ACE7 /* appTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E6CCBFA1B0192920040ACE7 /* appTests.swift */; };
+		5EA7D0F71B02E571005B4E16 /* UIColorExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EA7D0F21B02E571005B4E16 /* UIColorExtensions.swift */; };
+		5EA7D0F81B02E571005B4E16 /* UIConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EA7D0F31B02E571005B4E16 /* UIConstants.swift */; };
+		5EA7D0F91B02E571005B4E16 /* UIControlExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EA7D0F41B02E571005B4E16 /* UIControlExtensions.swift */; };
+		5EA7D0FA1B02E571005B4E16 /* UITableViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EA7D0F51B02E571005B4E16 /* UITableViewExtensions.swift */; };
+		5EA7D0FB1B02E571005B4E16 /* UIViewExtentsions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EA7D0F61B02E571005B4E16 /* UIViewExtentsions.swift */; };
 		5EF002F11B019A54002D2A93 /* Public.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5EF002EB1B019A54002D2A93 /* Public.storyboard */; };
 		5EF002F21B019A54002D2A93 /* ReusedViewControllers.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5EF002ED1B019A54002D2A93 /* ReusedViewControllers.storyboard */; };
 		5EF002F31B019A54002D2A93 /* VideoWatchStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5EF002EF1B019A54002D2A93 /* VideoWatchStoryboard.storyboard */; };
@@ -145,6 +150,11 @@
 		5E6CCBF41B0192920040ACE7 /* appTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = appTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5E6CCBF91B0192920040ACE7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5E6CCBFA1B0192920040ACE7 /* appTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = appTests.swift; sourceTree = "<group>"; };
+		5EA7D0F21B02E571005B4E16 /* UIColorExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UIColorExtensions.swift; path = UIKit/UIColorExtensions.swift; sourceTree = "<group>"; };
+		5EA7D0F31B02E571005B4E16 /* UIConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UIConstants.swift; path = UIKit/UIConstants.swift; sourceTree = "<group>"; };
+		5EA7D0F41B02E571005B4E16 /* UIControlExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UIControlExtensions.swift; path = UIKit/UIControlExtensions.swift; sourceTree = "<group>"; };
+		5EA7D0F51B02E571005B4E16 /* UITableViewExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UITableViewExtensions.swift; path = UIKit/UITableViewExtensions.swift; sourceTree = "<group>"; };
+		5EA7D0F61B02E571005B4E16 /* UIViewExtentsions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UIViewExtentsions.swift; path = UIKit/UIViewExtentsions.swift; sourceTree = "<group>"; };
 		5EF002EC1B019A54002D2A93 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Public.storyboard; sourceTree = "<group>"; };
 		5EF002EE1B019A54002D2A93 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/ReusedViewControllers.storyboard; sourceTree = "<group>"; };
 		5EF002F01B019A54002D2A93 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/VideoWatchStoryboard.storyboard; sourceTree = "<group>"; };
@@ -347,9 +357,22 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		5EA7D0EF1B02E3AF005B4E16 /* UIKit */ = {
+			isa = PBXGroup;
+			children = (
+				5EA7D0F21B02E571005B4E16 /* UIColorExtensions.swift */,
+				5EA7D0F31B02E571005B4E16 /* UIConstants.swift */,
+				5EA7D0F41B02E571005B4E16 /* UIControlExtensions.swift */,
+				5EA7D0F51B02E571005B4E16 /* UITableViewExtensions.swift */,
+				5EA7D0F61B02E571005B4E16 /* UIViewExtentsions.swift */,
+			);
+			name = UIKit;
+			sourceTree = "<group>";
+		};
 		5EFB6EC71B0193E700423840 /* Business-Logic-Layer */ = {
 			isa = PBXGroup;
 			children = (
+				5EA7D0EF1B02E3AF005B4E16 /* UIKit */,
 				5EFB6ED01B0193E700423840 /* SwiftyUserDefaults */,
 				5EFB6ED21B0193E700423840 /* Tools */,
 				5EFB6ED41B0193E700423840 /* Utils */,
@@ -928,6 +951,7 @@
 				5EFB6F011B0193E700423840 /* YoutubeRetrievingPlayListItemsFetcher.swift in Sources */,
 				5EFB6FD61B01956200423840 /* LoadingViewController.swift in Sources */,
 				5EFB6F6B1B0194DF00423840 /* NBMenuTableViewController.swift in Sources */,
+				5EA7D0FA1B02E571005B4E16 /* UITableViewExtensions.swift in Sources */,
 				5EFB6F661B0194DF00423840 /* MenuTitleBarBaseCellObject.swift in Sources */,
 				5EFB6F001B0193E700423840 /* YoutubeRetrievingNewSubscriptionVideosFetcherHelper.swift in Sources */,
 				5EFB6EFF1B0193E700423840 /* YoutubeRetrievingNewSubscriptionVideosFetcher.swift in Sources */,
@@ -959,7 +983,9 @@
 				5EFB6F6A1B0194DF00423840 /* NBMenuSectionGenerator.swift in Sources */,
 				5EFB6F9D1B0194FA00423840 /* VideoInfoConstant.swift in Sources */,
 				5EFB6F1B1B01949E00423840 /* YTTabBarItemsUtils.swift in Sources */,
+				5EA7D0F81B02E571005B4E16 /* UIConstants.swift in Sources */,
 				5EFB6F031B0193E700423840 /* YoutubeDataFetcher.swift in Sources */,
+				5EA7D0FB1B02E571005B4E16 /* UIViewExtentsions.swift in Sources */,
 				5EFB6F081B0193E700423840 /* YTYoutubeRequestInfo.swift in Sources */,
 				5EFB6F451B0194D800423840 /* MenuCollapseTableCell.swift in Sources */,
 				5EFB6FCC1B01950B00423840 /* NBCollectionSectionGenerator.swift in Sources */,
@@ -967,6 +993,7 @@
 				5EFB6FD01B01950B00423840 /* YTVideoCollectionConstant.swift in Sources */,
 				5EFB6FC81B01950B00423840 /* FetchEventProtocol.swift in Sources */,
 				5EFB6F7E1B0194F300423840 /* PopoverTableViewController.swift in Sources */,
+				5EA7D0F91B02E571005B4E16 /* UIControlExtensions.swift in Sources */,
 				5EFB6F9C1B0194FA00423840 /* VideoStatisticTableViewCell.swift in Sources */,
 				5EFB6EF51B0193E700423840 /* SwiftyUserDefaults.swift in Sources */,
 				5EFB6F9A1B0194FA00423840 /* VideoDescriptionTableViewCell.swift in Sources */,
@@ -974,6 +1001,7 @@
 				5EFB6F3A1B0194B300423840 /* VideoWatchProtocol.swift in Sources */,
 				5EFB6F611B0194DF00423840 /* LeftMenuConstant.swift in Sources */,
 				5EFB6F931B0194FA00423840 /* DetailPageTableUtils.swift in Sources */,
+				5EA7D0F71B02E571005B4E16 /* UIColorExtensions.swift in Sources */,
 				5EFB6F021B0193E700423840 /* YoutubeRetrievingPlayListItemsFetcherHelper.swift in Sources */,
 				5EFB6F671B0194DF00423840 /* YTMenuRemoteRowCellObject.swift in Sources */,
 				5EFB6F3C1B0194B300423840 /* YTVideoWatchViewController.swift in Sources */,
