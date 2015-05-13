@@ -30,14 +30,14 @@ class DetailPageTableViewController: UITableViewController,UITableViewDelegate,U
     
     func  showLoadingPanel(parentViewController:UIViewController, superView:UIView) {
         self.tableView.hidden = true
-
+        
         refreshControl?.endRefreshing()
         self.showAndAddLoadingPanel(loadingViewController,parentViewController:parentViewController,superView:superView)
     }
     
     func  hideLoadingPanel( ) {
         self.tableView.hidden = false
-
+        
         self.hideAndRemoveLoadingPanel(self.loadingViewController)
         refreshControl?.endRefreshing()
     }

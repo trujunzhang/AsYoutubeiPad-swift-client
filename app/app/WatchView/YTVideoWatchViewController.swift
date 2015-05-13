@@ -92,8 +92,8 @@ class YTVideoWatchViewController: UIViewController {
         }()
     
     func sideTableFresh() {
-        videoInfoTableViewController.emptyVideoInfoTable()
-        videoInfoTableViewController.showLoadingPanel(self,superView: self.videoInfoContainer)
+        sideTableViewController.emptyVideoInfoTable()
+        sideTableViewController.showLoadingPanel(self,superView: self.sideContainer)
         
         self.suggestionVideoListTask.refreshEvent(self.videoID, completeHandler: {
             (response, sucess) -> Void in
@@ -121,13 +121,13 @@ class YTVideoWatchViewController: UIViewController {
         // videoInfoTableViewController
         self.videoInfoContainer.backgroundColor = UIColor.clearColor()
         self.videoInfoContainer.addSubview(videoInfoTableViewController.view)
-        self.videoInfoTableViewController.view.LayoutMargining(UIEdgeInsetsMake(20,20,20,20))
+        self.videoInfoTableViewController.view.LayoutMargining(UIEdgeInsetsMake(10,10,10,10))
         self.videoInfoTableViewController.showLoadingPanel(self,superView: self.videoInfoContainer)
         
         // sideTableViewController
         self.sideContainer.backgroundColor = UIColor.clearColor()
         self.sideContainer.addSubview(sideTableViewController.view)
-        self.sideTableViewController.view.LayoutMargining(UIEdgeInsetsMake(20,20,20,20))
+        self.sideTableViewController.view.LayoutMargining(UIEdgeInsetsMake(10,10,10,10))
         self.sideTableViewController.showLoadingPanel(self,superView: self.sideContainer)
         
         self.suggestionVideoListTask.refreshEvent(self.videoID, completeHandler: {
