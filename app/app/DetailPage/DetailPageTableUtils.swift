@@ -95,7 +95,9 @@ class DetailPageSection: NSObject {
         section.sectionFooterHeight = 0
         section.sectionIdentifier = DetailPageCellIdentifier.VideoDescriptionCellIdentifier
         section.identifer = VIDEO_DESCRIPTION_CELL_IDENTIFER
-        section.rowObjects.append(VideoDescriptonObject())
+
+        let desctiptionString = YoutubeParser.getVideoDescription(videoCache)
+        section.rowObjects.append(VideoDescriptonObject(descriptionString: desctiptionString))
 
         section.animatedObject = section.rowObjects[0]
 

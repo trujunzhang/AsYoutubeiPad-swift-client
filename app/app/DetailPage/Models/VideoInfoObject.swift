@@ -23,6 +23,10 @@ class VideoInfoObject: NSObject {
 
 class VideoDescriptonObject: NSObject {
     var descriptionString = "Both -updateConstraints and -updateViewConstraints may be called multiple times during a view's lifetime. (Calling setNeedsUpdateConstraints on a view will trigger this to happen, for example.) As a result, you need to make sure to prevent creating and activating duplicate constraints -- either using a BOOL to only perform certain constraint setup only once, or by making sure to deactivate/remove existing constraints before creating & activating new ones."
+
+    init(descriptionString:String){
+        self.descriptionString = descriptionString
+    }
 }
 
 class VideoStatisticObject: NSObject {
