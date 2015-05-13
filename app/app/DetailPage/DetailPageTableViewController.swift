@@ -14,7 +14,7 @@ class DetailPageTableViewController: UITableViewController,UITableViewDelegate,U
     // MARK: Public ViewControllers
     lazy var loadingViewController:LoadingViewController = { return LoadingViewController.instance() }()
     lazy var requestFailureViewController:RequestFailureViewController = { return RequestFailureViewController.instance() }()
-
+    
     
     func configureRefreshControl(action: Selector) {
         refreshControl = UIRefreshControl()
@@ -31,7 +31,6 @@ class DetailPageTableViewController: UITableViewController,UITableViewDelegate,U
         self.view.backgroundColor = UIColor.clearColor()
         self.tableView.dataSource = self
         self.tableView.delegate = self
-//        self.tableView.contentInset = UIEdgeInsetsMake(20, 20, 20, 20)
         self.tableView.separatorStyle = .None
         
         configureRefreshControl("refreshEffect")
@@ -40,6 +39,11 @@ class DetailPageTableViewController: UITableViewController,UITableViewDelegate,U
     
     func refreshEffect() {
         println("Refresh!")
+        refreshControl?.endRefreshing()
+    }
+    
+    func  hideLoadingPanel( ) {
+        self.hideLoadingPanel(self.loadingViewController)
         refreshControl?.endRefreshing()
     }
     
@@ -56,7 +60,7 @@ class DetailPageTableViewController: UITableViewController,UITableViewDelegate,U
                 
                 self.sectionKeys.insert(key, atIndex: index)
                 
-                self.tableView.insertSections( NSIndexSet(index: index), withRowAnimation: UITableViewRowAnimation.Automatic)
+                self.tableView.insertSections( NSIndexSet(index: index), withRowAnimation: UITableViewRowAnimation.None)
                 
                 self.tableView.endUpdates()
             }
