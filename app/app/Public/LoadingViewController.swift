@@ -16,8 +16,8 @@ class LoadingViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-//        indicatorView.color = UIColor.lightGrayColor()
-        indicatorView.color = UIColor.redColor()
+        indicatorView.color = UIColor.lightGrayColor()
+//        indicatorView.color = UIColor.redColor()
     }
     
     // MARK: Loading panel
@@ -32,6 +32,6 @@ class LoadingViewController: UIViewController {
     
     // MARK: Layout Panel
     func layoutPanel(){
-       self.view.layoutPanelTopMarginAndHeight(80,height:60)
+       self.view.layoutPanelTopMarginAndHeight(40,height:60)
     }
 }
