@@ -213,12 +213,7 @@ class DetailPageTableViewController: UITableViewController, UITableViewDelegate,
 
             break;
         case DetailPageCellIdentifier.SuggestionListCellIdentifier:
-            let videoCache =  rowObject as! YoutubeVideoCache
-            let videoId = YoutubeParser.getWatchVideoId(videoCache)
-            println("videoId is \(videoId)")
-
-            RevealViewHelper.sharedInstance.pushWatchVideoViewController(videoCache)
-            let x = 0
+            RevealViewHelper.sharedInstance.pushWatchVideoViewController(rowObject as! YoutubeVideoCache)
             break;
 
         default:
