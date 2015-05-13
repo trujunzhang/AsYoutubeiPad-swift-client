@@ -139,6 +139,7 @@ class YTVideoWatchViewController: UIViewController {
     func insertSideSection(array: NSArray){
         watchTableModel.makeSideVideos(array)
         self.sideTableViewController.appendSideVideos()
+        self.sideTableViewController.hideLoadingPanel()
     }
     
     override func viewDidAppear(animated: Bool) {

@@ -100,7 +100,7 @@ class DetailPageTableViewController: UITableViewController,UITableViewDelegate,U
             
             self.sectionKeys.append(SUGGESTION_CELL_IDENTIFER)
             
-            self.tableView.insertSections( NSIndexSet(index: self.sectionKeys.count-1), withRowAnimation: UITableViewRowAnimation.Automatic)
+            self.tableView.insertSections( NSIndexSet(index: self.sectionKeys.count-1), withRowAnimation: UITableViewRowAnimation.None)
             
             self.tableView.endUpdates()
         }
