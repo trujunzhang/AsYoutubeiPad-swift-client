@@ -84,6 +84,10 @@
 
 + (NSString *)getVideoStatisticsViewCount:(id)video;
 
++ (NSString *)getVideoLikeCountFromStatistics:(YoutubeVideoCache *)video;
+
++ (NSString *)getVideoDisLikeCountFromStatistics:(YoutubeVideoCache *)video;
+
 + (NSString *)getVideoStatisticsLikeCount:(id)video;
 
 + (NSString *)getVideoDescription:(id)video;

@@ -309,6 +309,15 @@ static NSUInteger UPLOADS_PAGE_LENGTH = 20;
     return [NSString stringWithFormat:@"%@ views", kFormatForNumber];
 }
 
++ (NSString *)getVideoLikeCountFromStatistics:(YoutubeVideoCache *)video {
+    NSNumber *likeCount = video.statistics.likeCount;
+    return [NSString stringWithFormat:@"%d", [likeCount intValue]];
+}
+
++ (NSString *)getVideoDisLikeCountFromStatistics:(YoutubeVideoCache *)video {
+    NSNumber *dislikeCount = video.statistics.dislikeCount;
+    return [NSString stringWithFormat:@"%d", [dislikeCount intValue]];
+}
 
 + (NSString *)getVideoStatisticsLikeCount:(YoutubeVideoCache *)video {
     NSNumber *likeCount = video.statistics.likeCount;

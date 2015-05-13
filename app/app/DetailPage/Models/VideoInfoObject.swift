@@ -8,30 +8,40 @@
 
 import Foundation
 
-class VideoInfoObject: NSObject{
+class VideoInfoObject: NSObject {
     var title = "WebStorm 10 - New features"
     var likeCount = "2,222 views"
-    
-    var videoInfoTappedEnable : Bool = false
-    
-    var isExpand : Bool = false
+
+    var videoInfoTappedEnable: Bool = false
+    var isExpand: Bool = false
+
+    init(title: String, likeCount: String) {
+        self.title = title
+        self.likeCount = likeCount
+    }
 }
 
-class VideoDescriptonObject: NSObject{
+class VideoDescriptonObject: NSObject {
     var descriptionString = "Both -updateConstraints and -updateViewConstraints may be called multiple times during a view's lifetime. (Calling setNeedsUpdateConstraints on a view will trigger this to happen, for example.) As a result, you need to make sure to prevent creating and activating duplicate constraints -- either using a BOOL to only perform certain constraint setup only once, or by making sure to deactivate/remove existing constraints before creating & activating new ones."
 }
 
-class VideoStatisticObject: NSObject{
+class VideoStatisticObject: NSObject {
     var likeCount = "122"
     var disLikeCount = "133"
+
+    init(likeCount: String, disLikeCount: String) {
+        self.likeCount = likeCount
+        self.disLikeCount = disLikeCount
+    }
 }
 
-class SectionTitleObject: NSObject{
+class SectionTitleObject: NSObject {
     var title = ""
-    init(title:String){
+    init(title: String) {
         self.title = title
     }
 }
+
 //
 //
 //class VideoInfoObject: NSObject {

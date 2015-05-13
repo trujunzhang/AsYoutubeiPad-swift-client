@@ -210,8 +210,14 @@ class DetailPageTableViewController: UITableViewController, UITableViewDelegate,
             self.toggleVideoDesctionAnimation()
             break;
         case DetailPageCellIdentifier.ChannelInfoCellIdentifier:
+
             break;
         case DetailPageCellIdentifier.SuggestionListCellIdentifier:
+            let videoCache =  rowObject as! YoutubeVideoCache
+            let videoId = YoutubeParser.getWatchVideoId(videoCache)
+            println("videoId is \(videoId)")
+
+            RevealViewHelper.sharedInstance.pushWatchVideoViewController(videoCache)
             let x = 0
             break;
 
