@@ -22,6 +22,9 @@ class HeaderTableViewCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
         
         // Configure the view for the selected state
+        let ivView: UIView = UIView()
+        ivView.backgroundColor = UIColor.clearColor()
+        self.selectedBackgroundView = ivView
     }
     
     func configureCell(object: SectionTitleObject){

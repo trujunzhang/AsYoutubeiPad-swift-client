@@ -361,7 +361,7 @@ Cg
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QP2-ZC-Cnh">
-                                            <rect key="frame" x="30" y="11" width="163" height="21"/>
+                                            <rect key="frame" x="30" y="18" width="163" height="21"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="21" id="981-mW-qvw"/>
                                                 <constraint firstAttribute="width" constant="163" id="jdh-uS-iiY"/>
@@ -372,7 +372,7 @@ Cg
                                         </label>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstAttribute="bottom" secondItem="QP2-ZC-Cnh" secondAttribute="bottom" constant="11" id="LcF-Ke-oV1"/>
+                                        <constraint firstAttribute="bottom" secondItem="QP2-ZC-Cnh" secondAttribute="bottom" constant="4" id="LcF-Ke-oV1"/>
                                         <constraint firstItem="QP2-ZC-Cnh" firstAttribute="leading" secondItem="aUP-Ml-JbY" secondAttribute="leading" constant="30" id="uUK-H3-Z8e"/>
                                     </constraints>
                                 </tableViewCellContentView>

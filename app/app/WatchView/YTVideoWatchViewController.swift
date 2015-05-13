@@ -146,8 +146,7 @@ class YTVideoWatchViewController: UIViewController {
         super.viewDidAppear(animated)
         
     }
-    
-    
+
     
     func makeMovieEmbeddedViewController() {
         movieEmbeddedViewController.videoID = videoID

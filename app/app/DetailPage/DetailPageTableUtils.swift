@@ -132,7 +132,7 @@ class DetailPageSection : NSObject{
         let section: DetailPageSection = DetailPageSection()
         
         section.sectionTitle = "Suggestions"
-        section.rowHeight = 80
+        section.rowHeight = 40
         section.sectionHeaderHeight = 0
         section.sectionFooterHeight = 20
         section.sectionIdentifier = DetailPageCellIdentifier.SectionTitleCellIdentifier
