@@ -50,15 +50,15 @@ class SubscriptionsViewController: FrontBaseViewController {
             RevealViewHelper.sharedInstance.registerSubscriptionsViewController(self)
         }
         
-        self.edgesForExtendedLayout = .None
+//        self.edgesForExtendedLayout = .None
         
-//                showChannelPage(channelID)
+        //                showChannelPage(channelID)
         
-//                showCollectionPanel()//test
+        //                showCollectionPanel()//test
         
-        showWatchVideoPage()
+        //        showWatchVideoPage()
         
-        //        showSearchPanel("Sketch 3")
+        showSearchPanel("Sketch 3")
         
         NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("onKeyboardHide"), name: UIKeyboardDidHideNotification, object: nil)
     }

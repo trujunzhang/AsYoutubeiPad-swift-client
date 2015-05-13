@@ -528,6 +528,7 @@ Cg
                             <constraint firstItem="qo5-Cb-Ney" firstAttribute="top" secondItem="vJO-76-86N" secondAttribute="top" id="thG-CS-dal"/>
                         </constraints>
                     </view>
+                    <extendedEdge key="edgesForExtendedLayout"/>
                     <connections>
                         <outlet property="infoViewHeightConstraint" destination="je1-Oy-y3V" id="xmO-ms-bAK"/>
                         <outlet property="playerViewContainer" destination="qo5-Cb-Ney" id="uLV-M1-rrR"/>
