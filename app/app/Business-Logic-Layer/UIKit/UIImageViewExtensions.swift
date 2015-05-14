@@ -7,9 +7,16 @@
 //
 
 import Foundation
+import WebImage
 
 extension UIImageView{
     
+    func ext_setImageWithString(url:String){
+        self.sd_setImageWithURL(NSURL(string: url), placeholderImage: nil, options: SDWebImageOptions.LowPriority)
+    }
     
+    func ext_setImageWithNSString(url:NSString){
+        self.ext_setImageWithString(url as String)
+    }
     
 }

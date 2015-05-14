@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import WebImage
+
 
 class SuggestionVideoInfoTableViewCell: UITableViewCell {
     
@@ -34,7 +34,7 @@ class SuggestionVideoInfoTableViewCell: UITableViewCell {
         let timeAgo = YoutubeParser.getVideoTimeAgoFromPublishedAt(videoCache)
         let totoalTime = YoutubeParser.getVideoDurationForVideoInfo(videoCache)
         
-        self.thumbnailImageView.sd_setImageWithURL(NSURL(string: thumbnailUrl as String), placeholderImage: nil, options: SDWebImageOptions.LowPriority)
+        self.thumbnailImageView.ext_setImageWithNSString(thumbnailUrl)
         
         self.titleLabel.text = videoTitle
         self.contentLabel.text = "\(timeAgo), \(viewCount)"
