@@ -37,7 +37,7 @@ class ChannelBannerViewController: UIViewController {
         let subscriptonCount = YoutubeParser.getChannelStatisticsSubscriberCount(channel)
 
         if(imageUrl.isEmpty == false){
-            self.channelThumbnailImageView.ext_setImageWithNSString(imageUrl)
+            self.channelThumbnailImageView.ext_setImageWithNSString(imageUrl,placeHolder:UIImage(named: DEFAULT_BANNER_IMAGE_NAME)!)
         }
         self.channelTitleLabel.text = title
         self.channelSubscribersLabel.text = subscriptonCount

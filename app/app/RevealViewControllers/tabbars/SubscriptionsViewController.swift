@@ -52,13 +52,13 @@ class SubscriptionsViewController: FrontBaseViewController {
         
 //        self.edgesForExtendedLayout = .None
         
-        //                showChannelPage(channelID)
+                        showChannelPage(channelID)
         
         //                showCollectionPanel()//test
         
         //        showWatchVideoPage()
         
-        showSearchPanel("Sketch 3")
+//        showSearchPanel("Sketch 3")
         
         NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("onKeyboardHide"), name: UIKeyboardDidHideNotification, object: nil)
     }

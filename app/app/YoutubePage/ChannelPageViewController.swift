@@ -35,24 +35,7 @@ class ChannelPageViewController: UIViewController {
         }
         
         //3.
-        if let theChannelBannerView: UIView = channelBannerViewController.view, theTabBarView: UIView = tabBarViewController.view {
-            layout(theChannelBannerView, theTabBarView) {
-                view1, view2 in
-                
-                view1.centerX == view1.superview!.centerX
-                view2.centerX == view1.centerX
-                
-                view1.width == view1.superview!.width
-                view2.width == view1.width
-                
-                view1.height == 200
-                
-                view1.top == view1.superview!.top
-                view2.top == view1.bottom
-                
-                view2.bottom == view2.superview!.bottom
-            }
-        }
+        channelBannerViewController.view.LayoutRelatedView(tabBarViewController.view,height:200)
     }
     
     override func viewDidAppear(animated: Bool) {
@@ -60,7 +43,7 @@ class ChannelPageViewController: UIViewController {
     }
     
     override func viewDidLayoutSubviews() {
-        var x = 0
+
     }
     
     // MARK: fetch channel by channelId
@@ -70,8 +53,7 @@ class ChannelPageViewController: UIViewController {
             (object, sucess) -> Void in
             
             if (sucess == true) {
-                var channel: MABYT3_Channel = object as! MABYT3_Channel
-                self.fetchedChannel(channel)
+                self.fetchedChannel(object as! MABYT3_Channel)
             }
         })
         
