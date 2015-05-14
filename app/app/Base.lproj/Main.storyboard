@@ -63,10 +63,11 @@
                         <viewControllerLayoutGuide type="bottom" id="CgT-f5-LIa"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="GJA-ki-alv">
-                        <rect key="frame" x="0.0" y="64" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="536"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <extendedEdge key="edgesForExtendedLayout"/>
                     <navigationItem key="navigationItem" id="4pr-W4-cq4"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Izz-I7-Ewa" userLabel="First Responder" sceneMemberID="firstResponder"/>

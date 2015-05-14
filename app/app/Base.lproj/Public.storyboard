@@ -31,6 +31,7 @@
                             <constraint firstAttribute="centerY" secondItem="FIH-h0-isl" secondAttribute="centerY" id="qcN-Bu-Sbd"/>
                         </constraints>
                     </view>
+                    <extendedEdge key="edgesForExtendedLayout"/>
                     <nil key="simulatedStatusBarMetrics"/>
                     <nil key="simulatedTopBarMetrics"/>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>

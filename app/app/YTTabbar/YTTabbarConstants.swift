@@ -13,9 +13,6 @@ let TAB_BAR_HEIGHT:CGFloat = 42
 extension YTTabBarItemsViewController {
     
     class func instance() -> YTTabBarItemsViewController {
-        
-        var viewController: YTTabBarItemsViewController = UIStoryboard(name: "ReusedViewControllers", bundle: nil).instantiateViewControllerWithIdentifier("YTTabBarItemsViewController") as! YTTabBarItemsViewController
-        
-        return viewController
+        return UIStoryboard(name: "ReusedViewControllers", bundle: nil).instantiateViewControllerWithIdentifier("YTTabBarItemsViewController") as! YTTabBarItemsViewController
     }
 }

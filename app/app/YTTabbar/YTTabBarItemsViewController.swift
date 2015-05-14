@@ -8,53 +8,46 @@
 
 import Foundation
 
+let TABLE_TITLE_ACTIVITY : String = "Activity"
+let TABLE_TITLE_VIDEOS: String = "Videos"
+let TABLE_TITLE_PLAYLIST: String = "PlayList"
+
 struct TabBarItemsDictionary {
-    var buttons: NSMutableDictionary?
-    var viewControllers: NSMutableDictionary?
+    var buttons: [String:UIButton] = [String:UIButton]()
+    var viewControllers:[String:UIViewController] = [String:UIViewController]()
 }
 
 
 class YTTabBarItemsViewController: UIViewController {
 
     @IBOutlet var buttonGroupPanel: UIView!
-
-
     @IBOutlet var activityButton: UIButton!
-
     @IBOutlet var videosButton: UIButton!
-
     @IBOutlet var playListButton: UIButton!
-
     @IBOutlet var separator1: UIImageView!
-
     @IBOutlet var separator2: UIImageView!
-
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         self.view.backgroundColor = UIColor.clearColor()
-
     }
 
     func makeTabBarItemsDictionary() -> TabBarItemsDictionary {
         let controller: UIViewController? = UIViewController()
         let collectionView: YTVideosCollectionViewController = YTVideosCollectionViewController.instance()
-//        let collectionView: NBVideosCollectionViewController = NBVideosCollectionViewController()
 
         //1
-        let buttons: NSMutableDictionary = NSMutableDictionary()
-        buttons.setObject(activityButton!, forKey: "Activity")
-        buttons.setObject(videosButton!, forKey: "Videos")
-        buttons.setObject(playListButton!, forKey: "PlayList")
+        var buttons: [String:UIButton] = [String:UIButton]()
+        buttons[TABLE_TITLE_ACTIVITY] = activityButton!
+        buttons[TABLE_TITLE_VIDEOS] = videosButton!
+        buttons[TABLE_TITLE_PLAYLIST] = playListButton!
 
         //2
-        let viewControllers: NSMutableDictionary = NSMutableDictionary()
-        viewControllers.setObject(collectionView, forKey: "Activity")
-//        viewControllers.setObject(controller!, forKey: "Activity")
-        viewControllers.setObject(controller!, forKey: "Videos")
-        viewControllers.setObject(controller!, forKey: "PlayList")
-
+        var viewControllers: [String:UIViewController] = [String:UIViewController]()
+        viewControllers[TABLE_TITLE_ACTIVITY] = collectionView
+        viewControllers[TABLE_TITLE_VIDEOS] = controller!
+        viewControllers[TABLE_TITLE_PLAYLIST] = controller!
 
         return TabBarItemsDictionary(buttons: buttons, viewControllers: viewControllers)
     }
