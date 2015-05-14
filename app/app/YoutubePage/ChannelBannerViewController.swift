@@ -19,7 +19,6 @@ class ChannelBannerViewController: UIViewController {
 
     override func viewDidLoad() {
         prepareFetchChannelInfo()
-
     }
 
     func prepareFetchChannelInfo() {
@@ -38,7 +37,7 @@ class ChannelBannerViewController: UIViewController {
         let subscriptonCount = YoutubeParser.getChannelStatisticsSubscriberCount(channel)
 
         if(imageUrl.isEmpty == false){
-//            self.channelThumbnailImageView.hnk_setImageFromURL(NSURL(string: imageUrl)!)
+            self.channelThumbnailImageView.ext_setImageWithNSString(imageUrl)
         }
         self.channelTitleLabel.text = title
         self.channelSubscribersLabel.text = subscriptonCount

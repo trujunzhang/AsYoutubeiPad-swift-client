@@ -17,31 +17,25 @@ class ChannelPageViewController: UIViewController {
         }
     }
     
-    var channelBannerViewController: ChannelBannerViewController?
-//    var channelBannerView: UIView?
+    lazy var channelBannerViewController: ChannelBannerViewController = {
+        return ChannelBannerViewController.instance()
+        }()
     
-    var tabBarViewController: YTTabBarController?
-    var tabBarView: UIView?
-    
+    var tabBarViewController: YTTabBarController = YTTabBarController()
     
     override func viewDidLoad() {
         // 1. Top channel Banner panel
-        channelBannerViewController = ChannelBannerViewController.instance()
-        self.view.addSubview(channelBannerViewController!.view)
-        
+        self.view.addSubview(channelBannerViewController.view)
         
         // 2.
-        tabBarViewController = YTTabBarController()
-        self.addChildViewController(tabBarViewController!)
-        
-        tabBarView = tabBarViewController!.view
-        tabBarView?.backgroundColor = UIColor.clearColor()
-        if let theTabBarView: UIView = tabBarView {
+        self.addChildViewController(tabBarViewController)
+        if let theTabBarView: UIView = tabBarViewController.view {
+            theTabBarView.backgroundColor = UIColor.clearColor()
             self.view.addSubview(theTabBarView)
         }
         
         //3.
-        if let theChannelBannerView: UIView = channelBannerViewController!.view, theTabBarView: UIView = tabBarView {
+        if let theChannelBannerView: UIView = channelBannerViewController.view, theTabBarView: UIView = tabBarViewController.view {
             layout(theChannelBannerView, theTabBarView) {
                 view1, view2 in
                 
@@ -84,9 +78,7 @@ class ChannelPageViewController: UIViewController {
     }
     
     func fetchedChannel(channel: MABYT3_Channel) {
-        if let theChannelBannerViewController: ChannelBannerViewController = channelBannerViewController {
-            theChannelBannerViewController.updatePanel(channel)
-        }
+        channelBannerViewController.updatePanel(channel)
     }
     
     
