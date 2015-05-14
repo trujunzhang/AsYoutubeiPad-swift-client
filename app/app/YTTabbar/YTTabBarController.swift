@@ -50,14 +50,12 @@ class YTTabBarController: UIViewController {
         super.viewDidLoad()
         // 1
         self.addChildViewController(tabBarItemsViewController)
+        self.view.addSubview(tabBarItemsViewController.view)
         
         tabBarItemsDictionary = tabBarItemsViewController.makeTabBarItemsDictionary()
         
-        // 2
-        
-        
         // 3
-        self.view.addSubview(tabBarItemsViewController.view)
+        
         self.view.addSubview(presentationView)
         
         // 4
@@ -111,10 +109,12 @@ class YTTabBarController: UIViewController {
         }
         
         presentationView.addSubview(viewController.view)
-        fitView(viewController.view, intoView: presentationView)
+        viewController.view.LayoutFullView()
+        //        fitView(viewController.view, intoView: presentationView)
     }
     
     func fitView(toPresentView: UIView, intoView containerView: UIView) {
+        
         layout(toPresentView, containerView) {
             view1, view2 in
             

@@ -19,38 +19,39 @@ struct TabBarItemsDictionary {
 
 
 class YTTabBarItemsViewController: UIViewController {
-
+    
     @IBOutlet var buttonGroupPanel: UIView!
     @IBOutlet var activityButton: UIButton!
     @IBOutlet var videosButton: UIButton!
     @IBOutlet var playListButton: UIButton!
     @IBOutlet var separator1: UIImageView!
     @IBOutlet var separator2: UIImageView!
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         self.view.backgroundColor = UIColor.clearColor()
     }
-
+    
     func makeTabBarItemsDictionary() -> TabBarItemsDictionary {
         let controller: UIViewController? = UIViewController()
         let collectionView: YTVideosCollectionViewController = YTVideosCollectionViewController.instance()
-
+        collectionView.setCollectionTask("reagan speech",delegate: SearchTask())
+        
         //1
         var buttons: [String:UIButton] = [String:UIButton]()
         buttons[TABLE_TITLE_ACTIVITY] = activityButton!
         buttons[TABLE_TITLE_VIDEOS] = videosButton!
         buttons[TABLE_TITLE_PLAYLIST] = playListButton!
-
+        
         //2
         var viewControllers: [String:UIViewController] = [String:UIViewController]()
         viewControllers[TABLE_TITLE_ACTIVITY] = collectionView
         viewControllers[TABLE_TITLE_VIDEOS] = controller!
         viewControllers[TABLE_TITLE_PLAYLIST] = controller!
-
+        
         return TabBarItemsDictionary(buttons: buttons, viewControllers: viewControllers)
     }
-
-
+    
+    
 }
