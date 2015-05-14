@@ -14,6 +14,13 @@ extension UIView {
         self.frame = CGRect(x:centerX, y:frame.origin.y, width:frame.size.width, height:frame.size.height)
     }
     
+    func removeAllSubViews(){
+        let subviews:[AnyObject] =  self.subviews
+        for subview in subviews{
+            subview.removeFromSuperview()
+        }
+    }
+    
     
     /**
     AutoLayout: full superview
@@ -27,6 +34,25 @@ extension UIView {
             
             view1.width == view1.superview!.width
             view1.height == view1.superview!.height
+        }
+    }
+    
+    func LayoutRelatedView(relatedView:UIView,height: CGFloat) {
+        layout(self,relatedView) {
+            view1,view2 in
+            
+            view1.centerX == view1.superview!.centerX
+            view2.centerX == view1.centerX
+            
+            view1.width == view1.superview!.width
+            view2.width == view1.width
+            
+            view1.height == height
+            
+            view1.top == view1.superview!.top
+            view2.top == view1.bottom
+            
+            view2.bottom == view2.superview!.bottom
         }
     }
 

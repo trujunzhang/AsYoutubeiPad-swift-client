@@ -54,32 +54,15 @@ class YTTabBarController: UIViewController {
         
         tabBarItemsDictionary = tabBarItemsViewController.makeTabBarItemsDictionary()
         
-        // 3
-        
+        // 2
         self.view.addSubview(presentationView)
         
-        // 4
-        layout(tabBarItemsViewController.view, presentationView) {
-            view1, view2 in
-            
-            view1.centerX == view1.superview!.centerX
-            view2.centerX == view1.centerX
-            
-            view1.width == view1.superview!.width
-            view2.width == view1.width
-            
-            view1.height == TAB_BAR_HEIGHT
-            
-            view1.top == view1.superview!.top
-            view2.top == view1.bottom
-            
-            view2.bottom == view2.superview!.bottom
-        }
+        // 3
+        tabBarItemsViewController.view.LayoutRelatedView(presentationView,height:TAB_BAR_HEIGHT)
     }
     
     
     override func viewWillAppear(animated: Bool) {
-        // 5
         self.viewFirstViewController()
     }
     
@@ -102,30 +85,11 @@ class YTTabBarController: UIViewController {
     }
     
     func selectViewController(viewController: UIViewController) {
-        let subviews = presentationView.subviews
-        if (subviews.count > 0) {
-            let presentedView: UIView = subviews.first! as! UIView
-            presentedView.removeFromSuperview()
-        }
+        presentationView.removeAllSubViews()
         
         presentationView.addSubview(viewController.view)
         viewController.view.LayoutFullView()
-        //        fitView(viewController.view, intoView: presentationView)
     }
-    
-    func fitView(toPresentView: UIView, intoView containerView: UIView) {
-        
-        layout(toPresentView, containerView) {
-            view1, view2 in
-            
-            view1.centerX == view2.centerX
-            view1.centerY == view2.centerY
-            
-            view1.width == view2.width
-            view1.height == view2.height
-        }
-    }
-    
     
     // Mark : YTTabBarDelegate
     //    func tabBar(tabBar: YTTabBar, didPressButton button: UIButton, atIndex tabIndex:NSInteger){
