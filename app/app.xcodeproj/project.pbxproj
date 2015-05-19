@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5E15E97F1B05904100B32C8F /* ChannelActivityVideoListTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E15E97E1B05904100B32C8F /* ChannelActivityVideoListTask.swift */; };
 		5E38189F1B022086009C32B4 /* Cent.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E38189D1B022086009C32B4 /* Cent.framework */; };
 		5E3818A01B022086009C32B4 /* Dollar.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E38189E1B022086009C32B4 /* Dollar.framework */; };
 		5E46504B1B01F2C9009F908C /* VideoWatchTableModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E46504A1B01F2C9009F908C /* VideoWatchTableModel.swift */; };
@@ -140,6 +141,7 @@
 
 /* Begin PBXFileReference section */
 		0567AF415F4D5FE88421BB37 /* libPods-app.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-app.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		5E15E97E1B05904100B32C8F /* ChannelActivityVideoListTask.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChannelActivityVideoListTask.swift; sourceTree = "<group>"; };
 		5E38189D1B022086009C32B4 /* Cent.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cent.framework; path = Carthage/Cent.framework; sourceTree = "<group>"; };
 		5E38189E1B022086009C32B4 /* Dollar.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Dollar.framework; path = Carthage/Dollar.framework; sourceTree = "<group>"; };
 		5E46504A1B01F2C9009F908C /* VideoWatchTableModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoWatchTableModel.swift; sourceTree = "<group>"; };
@@ -742,6 +744,7 @@
 		5EFB6FB81B01950B00423840 /* FetchTask */ = {
 			isa = PBXGroup;
 			children = (
+				5E15E97E1B05904100B32C8F /* ChannelActivityVideoListTask.swift */,
 				5EFB6FB91B01950B00423840 /* FetchEventProtocol.swift */,
 				5EFB6FBA1B01950B00423840 /* RetrievingNewestVideoIdsTask.swift */,
 				5EFB6FBB1B01950B00423840 /* SearchTask.swift */,
@@ -1008,6 +1011,7 @@
 				5EFB6F9C1B0194FA00423840 /* VideoStatisticTableViewCell.swift in Sources */,
 				5EFB6EF51B0193E700423840 /* SwiftyUserDefaults.swift in Sources */,
 				5EFB6F9A1B0194FA00423840 /* VideoDescriptionTableViewCell.swift in Sources */,
+				5E15E97F1B05904100B32C8F /* ChannelActivityVideoListTask.swift in Sources */,
 				5EFB6F391B0194B300423840 /* YTPlayerSubtitling.swift in Sources */,
 				5EFB6F3A1B0194B300423840 /* VideoWatchProtocol.swift in Sources */,
 				5EFB6F611B0194DF00423840 /* LeftMenuConstant.swift in Sources */,

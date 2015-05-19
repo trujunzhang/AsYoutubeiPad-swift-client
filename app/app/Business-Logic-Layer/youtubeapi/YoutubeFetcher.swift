@@ -47,10 +47,10 @@ class YoutubeFetcher: NSObject {
         })
     }
     
-    class func prepareFetchingRelativeVideos(relatedToVideoId: NSString, completeHandler: ObjectHandler) -> YTYoutubeRequestInfo {
+    class func prepareFetchingRelativeVideos(relatedToVideoId: String, completeHandler: ObjectHandler) -> YTYoutubeRequestInfo {
         var requestInfo: YTYoutubeRequestInfo = YTYoutubeRequestInfo()
         
-        requestInfo.makeRequestForRelatedVideo(relatedToVideoId)
+        requestInfo.makeRequestForRelatedVideo(relatedToVideoId )
         search(requestInfo, completeHandler: completeHandler)
         
         return requestInfo
@@ -58,10 +58,10 @@ class YoutubeFetcher: NSObject {
     
     
     // Mark : searchList
-    class func prepareRequestSearch(queryTeam: NSString, completeHandler: ObjectHandler) -> YTYoutubeRequestInfo {
+    class func prepareRequestSearch(queryTeam: String, completeHandler: ObjectHandler) -> YTYoutubeRequestInfo {
         var requestInfo: YTYoutubeRequestInfo = YTYoutubeRequestInfo()
         
-        requestInfo.makeRequestForSearchWithQueryTeam(queryTeam)
+        requestInfo.makeRequestForSearchWithQueryTeam(queryTeam )
         search(requestInfo, completeHandler: completeHandler)
         
         return requestInfo
@@ -69,8 +69,10 @@ class YoutubeFetcher: NSObject {
     
     
     class func search(requestInfo: YTYoutubeRequestInfo, completeHandler: ObjectHandler) {
+        let dict:[String:String] = [String:String]()
         
-        MABYT3_APIRequest.sharedInstance().searchForParameters(requestInfo.parameters, completion: {
+        MABYT3_APIRequest.sharedInstance().searchForParameters(dict, completion: {
+            //            MABYT3_APIRequest.sharedInstance().searchForParameters(requestInfo.parameters, completion: {
             (responseInfo, error) -> Void in
             
             if (error == nil) {
@@ -82,7 +84,9 @@ class YoutubeFetcher: NSObject {
                     
                     if (sucess == true) {
                         // 1. pageToken
-                        requestInfo.putNextPageToken(responseInfo.pageToken)
+                        if(responseInfo.pageToken != nil){
+                            requestInfo.putNextPageToken(responseInfo.pageToken)
+                        }
                         // 2. array of YoutubeVideoCache
                         completeHandler(object, true)
                     } else {
@@ -205,6 +209,7 @@ class YoutubeFetcher: NSObject {
         ]
         fetchActivityListWithoutAuth(parameters, completeHandler: completeHandler)
     }
+    
     // MABYT3_Activity
     class func fetchActivityListWithoutAuth(parameters: NSMutableDictionary, completeHandler: ObjectHandler) {
         

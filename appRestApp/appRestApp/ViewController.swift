@@ -15,8 +15,10 @@ class ViewController: UIViewController, AuthorUserFetchingDelegate{
     @IBOutlet weak var loginButton: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         // Do any additional setup after loading the view, typically from a nib.
         AuthoredFetcher.sharedInstance.delegate = self
+        
         if (YoutubeUserProfile.sharedInstance.hasLogin() == true) {
             loginButton.enabled = false
             loginButton.backgroundColor = UIColor.redColor()
@@ -49,6 +51,11 @@ class ViewController: UIViewController, AuthorUserFetchingDelegate{
                     () -> Void in
 
                 })
+                
+                if (YoutubeUserProfile.sharedInstance.hasLogin() == true) {
+                    self.loginButton.enabled = false
+                    self.loginButton.backgroundColor = UIColor.redColor()
+                }
             }
         }
 
