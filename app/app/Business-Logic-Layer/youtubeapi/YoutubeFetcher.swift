@@ -10,34 +10,34 @@ import Foundation
 
 
 class YoutubeFetcher: NSObject {
-    
-    
+
+
     class func fetchingUploadsIdFromChannelListByChannelIdsArray(channelIDsArray: NSArray, completeHandler: ObjectHandler) {
         let channels: NSMutableArray = NSMutableArray()
-        
+
         let count = channelIDsArray.count
         var fetchingStep = 0
         var channelIDs: NSString = channelIDsArray[fetchingStep] as! NSString
-        
+
         self.fetchingNextUploadsIdFromChannelList(channelIDs, completeHandler: {
             (object, sucess) -> Void in
-            
+
             if (sucess == true) {
                 var array: NSArray = object as! NSArray
-                
+
                 //                let count = array.count
                 //                println("channels count in fetchingUploadsIdFromChannelListByChannelIdsArray is \(count)")
-                
-                
+
+
             }
         })
-        
+
     }
-    
+
     class func fetchingNextUploadsIdFromChannelList(channelIDs: NSString, completeHandler: ObjectHandler) {
         AuthoredFetcher.sharedInstance.fetchingUploadsIdFromChannelList(channelIDs, completeHandler: {
             (object, sucess) -> Void in
-            
+
             if (sucess == true) {
                 var array: NSArray = object as! NSArray
                 //                let count = array.count
@@ -46,86 +46,84 @@ class YoutubeFetcher: NSObject {
             }
         })
     }
-    
+
     class func prepareFetchingRelativeVideos(relatedToVideoId: String, completeHandler: ObjectHandler) -> YTYoutubeRequestInfo {
         var requestInfo: YTYoutubeRequestInfo = YTYoutubeRequestInfo()
-        
-        requestInfo.makeRequestForRelatedVideo(relatedToVideoId )
+
+        requestInfo.makeRequestForRelatedVideo(relatedToVideoId)
         search(requestInfo, completeHandler: completeHandler)
-        
+
         return requestInfo
     }
-    
-    
+
+
     // Mark : searchList
     class func prepareRequestSearch(queryTeam: String, completeHandler: ObjectHandler) -> YTYoutubeRequestInfo {
         var requestInfo: YTYoutubeRequestInfo = YTYoutubeRequestInfo()
-        
-        requestInfo.makeRequestForSearchWithQueryTeam(queryTeam )
+
+        requestInfo.makeRequestForSearchWithQueryTeam(queryTeam)
         search(requestInfo, completeHandler: completeHandler)
-        
+
         return requestInfo
     }
-    
-    
+
+
     class func search(requestInfo: YTYoutubeRequestInfo, completeHandler: ObjectHandler) {
-        let dict:[String:String] = [String:String]()
-        
-        MABYT3_APIRequest.sharedInstance().searchForParameters(dict, completion: {
-            //            MABYT3_APIRequest.sharedInstance().searchForParameters(requestInfo.parameters, completion: {
+        MABYT3_APIRequest.sharedInstance().searchForParameters(requestInfo.parameters, completion: {
             (responseInfo, error) -> Void in
-            
+
             if (error == nil) {
                 // 2
                 let videoIds: NSString = YoutubeParser.getVideoIdsBySearchResult(responseInfo.array)
-                
+
                 self.fetchVideoListWithVideoId(videoIds, completeHandler: {
                     (object, sucess) -> Void in
-                    
+
                     if (sucess == true) {
+                        let array: NSArray = object as! NSArray
+                        println("\(array.count)")
                         // 1. pageToken
-                        if(responseInfo.pageToken != nil){
+                        if (responseInfo.pageToken != nil) {
                             requestInfo.putNextPageToken(responseInfo.pageToken)
                         }
                         // 2. array of YoutubeVideoCache
-                        completeHandler(object, true)
+                        completeHandler(array, true)
                     } else {
                         completeHandler(nil, false)
                     }
                 })
-                
+
             } else {
                 completeHandler(nil, false)
             }
         })
     }
-    
+
     // MARK : Videos.List
     class func fetchVideoListWithVideoId(videoIds: NSString, completeHandler: ObjectHandler) {
         var parameters = [
-            "part": "snippet,statistics,contentDetails",
-            "field":"items/snippet(publishedAt,title),items/statistics,items/contentDetails(duration)",
-            "id": videoIds,
+                "part": "snippet,statistics,contentDetails",
+                "field": "items/snippet(publishedAt,title),items/statistics,items/contentDetails(duration)",
+                "id": videoIds,
         ]
-        
+
         fetchVideoList(parameters, completeHandler: completeHandler)
     }
-    
-    
-    
+
+
     class func fetchVideoDescription(videoId: NSString, completeHandler: ObjectHandler) {
         var parameters = [
-            "part": "snippet,statistics",
-            "field":"items/snippet(publishedAt,title,description),items/statistics",
-            "id": videoId,
+                "part": "snippet,statistics",
+                "field": "items/snippet(publishedAt,title,description),items/statistics",
+                "id": videoId,
         ]
-        
+
         fetchVideoList(parameters, completeHandler: completeHandler)
     }
-    
+
     // YoutubeVideoCache
     class func fetchVideoList(_parameters: NSDictionary, completeHandler: ObjectHandler) {
-        
+
         MABYT3_APIRequest.sharedInstance().LISTVideosForURL(NSMutableDictionary(dictionary: _parameters), completion: {
             (responseInfo, error) -> Void in
             if (error == nil) {
@@ -135,12 +133,12 @@ class YoutubeFetcher: NSObject {
             }
         })
     }
-    
+
     // MARK : thumbnail
     class func fetchChannelForPageChannel(channelID: NSString, completeHandler: ObjectHandler) {
         self.fetchChannelWithChannelId(channelID, part: "statistics,brandingSettings", fields: "items(brandingSettings,statistics)", completeHandler: {
             (object, sucess) -> Void in
-            
+
             if (sucess == true) {
                 let array = object as! NSArray
                 if (array.count >= 1) {
@@ -153,40 +151,40 @@ class YoutubeFetcher: NSObject {
                 completeHandler(nil, false)
             }
         })
-        
+
     }
-    
+
     class func fetchVideoFromPlaylistItems(channelIDs: NSString, completeHandler: ObjectHandler) {
         self.fetchChannelForUploadsIds(channelIDs, completeHandler: {
             (object, sucess) -> Void in
-            
+
             if (sucess == true) {
                 var channels: NSArray = object as! NSArray
                 let playlistIds: NSString = YoutubeParser.getUploadsIdsAsPlaylistIds(channels)
-                
+
             }
         })
     }
-    
+
     class func fetchChannelForUploadsIds(channelIDs: NSString, completeHandler: ObjectHandler) {
         let fields = "items/contentDetails"
         fetchChannelWithChannelId(channelIDs, part: "contentDetails", fields: fields, completeHandler: completeHandler)
     }
-    
+
     class func fetchChannelForThumbnail(channelID: NSString, completeHandler: ObjectHandler) {
         let fields = "items/snippet(thumbnails)"
         fetchChannelWithChannelId(channelID, part: "snippet", fields: fields, completeHandler: completeHandler)
     }
-    
+
     // return MABYT3_Channel
     class func fetchChannelWithChannelId(channelID: NSString, part: String, fields: String, completeHandler: ObjectHandler) {
         var parameters = NSMutableDictionary(dictionary: [
-            "part": part,
-            "fields": fields,
-            "id": channelID,
-            ]
+                "part": part,
+                "fields": fields,
+                "id": channelID,
+        ]
         )
-        
+
         MABYT3_APIRequest.sharedInstance().LISTChannelsThumbnailsForURL(parameters, completion: {
             (responseInfo, error) -> Void in
             if (error == nil) {
@@ -196,25 +194,25 @@ class YoutubeFetcher: NSObject {
             }
         })
     }
-    
-    
-    
+
+
+
     // MARK: youtube.activities.list
     class func fetchActivityListWithChannelId(channelId: NSString, completeHandler: ObjectHandler) {
         var parameters: NSMutableDictionary = [
-            "part": "snippet,contentDetails",
-            "fields": "items/contentDetails,items/snippet(publishedAt)",
-            "maxResults": "2",
-            "key": apiKey
+                "part": "snippet,contentDetails",
+                "fields": "items/contentDetails,items/snippet(publishedAt)",
+                "maxResults": "2",
+                "key": apiKey
         ]
         fetchActivityListWithoutAuth(parameters, completeHandler: completeHandler)
     }
-    
+
     // MABYT3_Activity
     class func fetchActivityListWithoutAuth(parameters: NSMutableDictionary, completeHandler: ObjectHandler) {
-        
+
         //        println("parameters is \(parameters)")
-        
+
         MABYT3_APIRequest.sharedInstance().LISTActivitiesForURLFilterUpload(parameters, completion: {
             (responseInfo, error) -> Void in
             //MABYT3_Activity_NewestVideoId
@@ -227,23 +225,23 @@ class YoutubeFetcher: NSObject {
             }
         })
     }
-    
+
     // MARK : playlistItems.list
     class func fetchPlayListItemWithPlayListId(playlistID: NSString, completeHandler: ObjectHandler) {
         var parameters = NSMutableDictionary(dictionary: [
-            "part": "snippet,contentDetails",
-            "fields": "items/contentDetails,items/snippet(publishedAt,title)",
-            "playlistId": playlistID,
-            "maxResults": "5"
-            ]
+                "part": "snippet,contentDetails",
+                "fields": "items/contentDetails,items/snippet(publishedAt,title)",
+                "playlistId": playlistID,
+                "maxResults": "5"
+        ]
         )
         fetchPlayListItemWithDictionary(parameters, completeHandler: completeHandler)
     }
-    
+
     // MABYT3_PlayList
     class func fetchPlayListItemWithDictionary(parameters: NSMutableDictionary, completeHandler: ObjectHandler) {
         //        println("parameters is \(parameters)")
-        
+
         MABYT3_APIRequest.sharedInstance().LISTPlayListItemForURL(parameters, completion: {
             (responseInfo, error) -> Void in
             if (error == nil) {
@@ -253,6 +251,6 @@ class YoutubeFetcher: NSObject {
             }
         })
     }
-    
-    
+
+
 }
